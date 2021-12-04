@@ -23,11 +23,53 @@ const animate = () => {
 let agents = []
 let hexes = []
 const params = {
-  range: 300
+  numNodes: 200,
+  range: 200,
+  lineCap: 'butt',
+  showNode: false,
+  nodeType: 'hex',
+  lineWidthMax: 5
 } 
+
+const createTweakpane = () => {
+  const pane = new Tweakpane.Pane()
+  let folder
+  folder = pane.addFolder({ title: "Params"})
+  folder.addInput(params, 'range', {
+    min: 10,
+    max: 500,
+    step: 10
+  })
+  folder.addInput(params, 'numNodes', {
+    min: 10,
+    max: 500,
+    step: 10
+  })
+  folder.addInput(params, 'lineWidthMax', {
+    min: 5,
+    max: 100,
+    step: 1
+  })
+  folder.addInput(params, 'lineCap', {
+    options: {
+      butt: 'butt',
+      round: 'round',
+      square: 'square'
+    }
+  })
+  folder.addInput(params, 'nodeType', {
+    options: {
+      hex: 'hex',
+      circle: 'circle',
+    }
+  })
+  folder.addInput(params, 'showNode', {
+  })
+}
+
 const sketch = ({ context, width, height }) => {
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < params.numNodes; i++) {
     let x = random.range(0, width)
     let y = random.range(0, height)
     let hex = new Hex(x, y)
@@ -39,13 +81,13 @@ const sketch = ({ context, width, height }) => {
     const pen = context
     pen.fillStyle = 'black';
     pen.fillRect(0, 0, width, height);
-    for (let i = 0; i < hexes.length; i++) {
+    for (let i = 0; i < params.numNodes; i++) {
       const hex = hexes[i];
       for (let j = i + 1; j < hexes.length; j++) {
         const other = hexes[j];
         const dist = hex.pos.getDistance(other.pos)
         if (dist > params.range) continue
-        pen.lineWidth = math.mapRange(dist, 0, params.range, 12, 1)
+        pen.lineWidth = math.mapRange(dist, 0, params.range, params.lineWidthMax, 1)
         pen.beginPath()
         pen.moveTo(hex.pos.x, hex.pos.y)
         pen.lineTo(other.pos.x, other.pos.y)
@@ -56,6 +98,7 @@ const sketch = ({ context, width, height }) => {
         let l =         Color.parse(hex.color).hsla[2]
         // let a =         Color.parse(hex.color).hsla[3]
         pen.strokeStyle = hsla(h, s, l, a)
+        pen.lineCap = params.lineCap
         pen.stroke()
       }
 
@@ -63,13 +106,14 @@ const sketch = ({ context, width, height }) => {
 
     hexes.forEach(hex => {
       hex.update()
-      // hex.drawHex(pen)
-      // hex.drawCircle(pen)
+      if(params.showNode){
+        params.nodeType == 'hex' ?  hex.drawHex(pen) : hex.drawCircle(pen)
+      }
       hex.wrap(width, height)
     })
   };
 };
-
+createTweakpane()
 canvasSketch(sketch, settings);
 
 
