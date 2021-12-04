@@ -5,8 +5,10 @@ const Color = require('canvas-sketch-util/color');
 const Tweakpane = require('tweakpane');
 const { mapRange } = require('canvas-sketch-util/math');
 
+
+width = height = 2048
 const settings = {
-  dimensions: [2048, 2048],
+  dimensions: [width,height],
   animate: true
 };
 
@@ -27,14 +29,17 @@ const params = {
   range: 200,
   lineCap: 'butt',
   showNode: false,
+  showLines: true,
   nodeType: 'hex',
-  lineWidthMax: 5
-} 
+  lineWidthMax: 5,
+  radiusMin: 10,
+  radiusMax: 30
+}
 
 const createTweakpane = () => {
   const pane = new Tweakpane.Pane()
   let folder
-  folder = pane.addFolder({ title: "Params"})
+  folder = pane.addFolder({ title: "Params" })
   folder.addInput(params, 'range', {
     min: 10,
     max: 500,
@@ -44,12 +49,30 @@ const createTweakpane = () => {
     min: 10,
     max: 500,
     step: 10
-  })
+  })    .on('change', (e) => {
+    constructNodes(width, height)
+  }),
   folder.addInput(params, 'lineWidthMax', {
     min: 5,
     max: 100,
     step: 1
   })
+  folder.addInput(params, 'radiusMin', {
+    min: 1,
+    max: 200,
+    step: 1
+  })
+    .on('change', (e) => {
+      constructNodes(width, height)
+    }),
+  folder.addInput(params, 'radiusMax', {
+    min: 10,
+    max: 500,
+    step: 10
+  })
+    .on('change', (e) => {
+      constructNodes(width, height)
+    }),
   folder.addInput(params, 'lineCap', {
     options: {
       butt: 'butt',
@@ -65,19 +88,28 @@ const createTweakpane = () => {
   })
   folder.addInput(params, 'showNode', {
   })
+  folder.addInput(params, 'showLines', {
+  })
 }
 
-const sketch = ({ context, width, height }) => {
 
+const constructNodes = (width, height) => {
+  hexes = []
   for (let i = 0; i < params.numNodes; i++) {
     let x = random.range(0, width)
     let y = random.range(0, height)
     let hex = new Hex(x, y)
     hexes = [...hexes, hex]
   }
-  console.log(`🚀 ~ file: sketch-03.js ~ line 31 ~ sketch ~ hexes`, hexes)
+}
+const sketch = ({ context, width, height }) => {
+
+
+  constructNodes(width, height)
+
 
   return ({ context, width, height }) => {
+    console.log(`🚀 ~ file: sketch-03.js ~ line 31 ~ sketch ~ hexes`, hexes.length)
     const pen = context
     pen.fillStyle = 'black';
     pen.fillRect(0, 0, width, height);
@@ -90,12 +122,12 @@ const sketch = ({ context, width, height }) => {
         pen.lineWidth = math.mapRange(dist, 0, params.range, params.lineWidthMax, 1)
         pen.beginPath()
         pen.moveTo(hex.pos.x, hex.pos.y)
-        pen.lineTo(other.pos.x, other.pos.y)
+        params.showLines ? pen.lineTo(other.pos.x, other.pos.y) : 0
         let a = rangeAlpha(params.range, dist)
         // Color.parse(hex.color).hsla[3] = c
-        let h =         Color.parse(hex.color).hsla[0]
-        let s =         Color.parse(hex.color).hsla[1]
-        let l =         Color.parse(hex.color).hsla[2]
+        let h = Color.parse(hex.color).hsla[0]
+        let s = Color.parse(hex.color).hsla[1]
+        let l = Color.parse(hex.color).hsla[2]
         // let a =         Color.parse(hex.color).hsla[3]
         pen.strokeStyle = hsla(h, s, l, a)
         pen.lineCap = params.lineCap
@@ -106,8 +138,8 @@ const sketch = ({ context, width, height }) => {
 
     hexes.forEach(hex => {
       hex.update()
-      if(params.showNode){
-        params.nodeType == 'hex' ?  hex.drawHex(pen) : hex.drawCircle(pen)
+      if (params.showNode) {
+        params.nodeType == 'hex' ? hex.drawHex(pen) : hex.drawCircle(pen)
       }
       hex.wrap(width, height)
     })
@@ -134,7 +166,7 @@ class Agent {
   constructor(x, y) {
     this.pos = new Vector(x, y)
     this.vel = new Vector(random.range(-1, 1), random.range(-1, 1))
-    this.radius = random.range(10, 30)
+    this.radius = random.range(params.radiusMin, params.radiusMax)
   }
   update() {
     this.pos.x += this.vel.x
@@ -182,7 +214,7 @@ class Hex extends Agent {
     super(x, y)
     this.numOfSides = numOfSides
     this.positiveVelSum = parseFloat(makePositive(this.vel.x).toFixed(3) + makePositive(this.vel.y).toFixed(3))
-    this.color = hsla(((this.positiveVelSum * 360) % 360), this.positiveVelSum * 100, this.positiveVelSum * 80, this.positiveVelSum * 1)
+    this.color = hsla(((this.positiveVelSum * 360) % 360), 50, 50, 1)
   }
 
   drawHex(pen) {
@@ -215,5 +247,5 @@ const rangeAlpha = (range, dist) => {
   // let c = Color.parse(color).hsla[3]
   // let r = math.mapRange(dist, 0, range, 0, 1, true)
   return math.mapRange(dist, 0, range, 1, 0, true)
-  
+
 }
