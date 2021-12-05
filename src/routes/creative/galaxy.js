@@ -6,7 +6,8 @@ const Tweakpane = require('tweakpane');
 const { mapRange } = require('canvas-sketch-util/math');
 
 
-width = height = 2048
+width = 2048
+height = 2048
 
 
 // =============================================================================
@@ -20,22 +21,25 @@ const animate = () => {
 // ============================================================================= 
 
 let agents = []
-let hexes = []
+let stares = []
 const params = {
-  numNodes: 200,
+  numNodes: 45,
   range: 200,
   lineCap: 'butt',
-  showNode: false,
+  showNode: true,
   showLines: true,
-  nodeType: 'hex',
+  nodeType: 'circle',
   lineWidthMax: 5,
-  radiusMin: 10,
-  radiusMax: 30,
+  radiusMin: 20,
+  radiusMax: 40,
+  orbitMin: 20,
+  orbitMax: 40,
+  orbitBuffer: 30,
   animate: true
 }
 
 const settings = {
-  dimensions: [width,height],
+  dimensions: [width, height],
   animate: params.animate
 };
 
@@ -52,14 +56,14 @@ const createTweakpane = () => {
     min: 10,
     max: 500,
     step: 10
-  })    .on('change', (e) => {
+  }).on('change', (e) => {
     constructNodes(width, height)
   }),
-  folder.addInput(params, 'lineWidthMax', {
-    min: 5,
-    max: 100,
-    step: 1
-  })
+    folder.addInput(params, 'lineWidthMax', {
+      min: 5,
+      max: 100,
+      step: 1
+    })
   folder.addInput(params, 'radiusMin', {
     min: 1,
     max: 200,
@@ -68,24 +72,24 @@ const createTweakpane = () => {
     .on('change', (e) => {
       constructNodes(width, height)
     }),
-  folder.addInput(params, 'radiusMax', {
-    min: 10,
-    max: 500,
-    step: 10
-  })
-    .on('change', (e) => {
-      constructNodes(width, height)
-    }),
-  folder.addInput(params, 'lineCap', {
-    options: {
-      butt: 'butt',
-      round: 'round',
-      square: 'square'
-    }
-  })
+    folder.addInput(params, 'radiusMax', {
+      min: 10,
+      max: 500,
+      step: 10
+    })
+      .on('change', (e) => {
+        constructNodes(width, height)
+      }),
+    folder.addInput(params, 'lineCap', {
+      options: {
+        butt: 'butt',
+        round: 'round',
+        square: 'square'
+      }
+    })
   folder.addInput(params, 'nodeType', {
     options: {
-      hex: 'hex',
+      star: 'star',
       circle: 'circle',
     }
   })
@@ -97,56 +101,89 @@ const createTweakpane = () => {
   })
 }
 
+const generateShips = (pen, starId) => {
+  let star = stars.find(star => star.id == starId)
+  star.drawShips(pen)
+}
 
 const constructNodes = (width, height) => {
-  hexes = []
+  stars = []
   for (let i = 0; i < params.numNodes; i++) {
     let x = random.range(0, width)
     let y = random.range(0, height)
-    let hex = new Hex(x, y)
-    hexes = [...hexes, hex]
+    let id = `ID_${i}`
+    let star = new Star(id, parseInt(x), parseInt(y), parseInt(random.range(5, 50)))
+    let ships = []
+    for (let j = 0; j < star.numberOfShips; j++) {
+      console.log(`🚀 ~ file: galaxy.js ~ line 114 ~ constructNodes ~ x, y, star`, x, y, star.id)
+      let ship = new Ship(x, y, star.id)
+      ship.draw(star)
+      star.ships = [...star.ships, ship]
+    }
+    // star.ships = ships
+    stars = [...stars, star]
   }
 }
 const sketch = ({ context, width, height }) => {
 
 
   constructNodes(width, height)
+  stars.forEach(star => {
+    generateShips(context, star.id)
+  })
+  // =============================================================================
+  // Timer
+  // =============================================================================
+  // const timestamp = Math.round(Date.now() / 1000);
+  // const date = new Date()
+  // let seconds = date.getSeconds()
+  // const timer = setTimeout(varyColors, 1000)
+  // function varyColors() {
+  //   console.log(`varyColors timer running`)
+  //   adjustColorParams(colors.red, colors.green, colors.blue, colors.alpha)
+  //   if (settings.animate) {
+  //     setTimeout(varyColors, 33)
+  //   }
+  // }
+
+  // =============================================================================
+  //  / timer
+  // =============================================================================
 
 
   return ({ context, width, height }) => {
-    console.log(`🚀 ~ file: sketch-03.js ~ line 31 ~ sketch ~ hexes`, hexes.length)
     const pen = context
     pen.fillStyle = 'black';
     pen.fillRect(0, 0, width, height);
     for (let i = 0; i < params.numNodes; i++) {
-      const hex = hexes[i];
-      for (let j = i + 1; j < hexes.length; j++) {
-        const other = hexes[j];
-        const dist = hex.pos.getDistance(other.pos)
+      const star = stars[i];
+      for (let j = i + 1; j < stars.length; j++) {
+        const other = stars[j];
+        const dist = star.pos.getDistance(other.pos)
         if (dist > params.range) continue
         pen.lineWidth = math.mapRange(dist, 0, params.range, params.lineWidthMax, 1)
         pen.beginPath()
-        pen.moveTo(hex.pos.x, hex.pos.y)
+        pen.moveTo(star.pos.x, star.pos.y)
         params.showLines ? pen.lineTo(other.pos.x, other.pos.y) : 0
         let a = rangeAlpha(params.range, dist)
-        // Color.parse(hex.color).hsla[3] = c
-        let h = Color.parse(hex.color).hsla[0]
-        let s = Color.parse(hex.color).hsla[1]
-        let l = Color.parse(hex.color).hsla[2]
-        // let a =         Color.parse(hex.color).hsla[3]
+        // Color.parse(star.color).hsla[3] = c
+        let h = Color.parse(star.color).hsla[0]
+        let s = Color.parse(star.color).hsla[1]
+        let l = Color.parse(star.color).hsla[2]
+        // let a =         Color.parse(star.color).hsla[3]
         pen.strokeStyle = hsla(h, s, l, a)
         pen.lineCap = params.lineCap
         pen.stroke()
       }
-
     }
 
-    hexes.forEach(hex => {
-      hex.update()
+    stars.forEach(star => {
+      // star.update()
+      generateShips(context, star.id)
       if (params.showNode) {
-        params.nodeType == 'hex' ? hex.drawHex(pen) : hex.drawCircle(pen)
+        params.nodeType == 'star' ? star.drawStar(pen) : star.drawCircle(pen)
       }
-      hex.wrap(width, height)
+      star.wrap(width, height)
     })
   };
 };
@@ -187,14 +224,6 @@ class Agent {
     }
   }
 
-  // wrap(width, height) {
-  //   if (this.pos.x > width) this.pos.x = 0
-  //   if (this.pos.x < 0) this.pos.x = width
-  //   if (this.pos.y > height) this.pos.y = 0
-  //   if (this.pos.y < 0) this.pos.y = height
-  // }
-  // more succinct example taken from student celeph @ https://www.domestika.org/en/courses/2729-creative-coding-making-visuals-with-javascript/community/forum/topics/188605-wrap#topic_188605_new_post
-  // ===========================================================================
   wrap(width, height) {
     this.pos.x = (this.pos.x + width) % width;
     this.pos.y = (this.pos.y + height) % height;
@@ -214,15 +243,18 @@ class Agent {
   }
 }
 
-class Hex extends Agent {
-  constructor(x, y, numOfSides = 6, positiveVelSum = 0, color = "hsla(180,50%,50%,1)") {
+class Star extends Agent {
+  constructor(id, x, y, numberOfShips = 50, ships = [], numOfSides = 6, positiveVelSum = 0, color = "hsla(180,50%,50%,1)") {
     super(x, y)
+    this.id = id
     this.numOfSides = numOfSides
     this.positiveVelSum = parseFloat(makePositive(this.vel.x).toFixed(3) + makePositive(this.vel.y).toFixed(3))
     this.color = hsla(((this.positiveVelSum * 360) % 360), 50, 50, 1)
+    this.numberOfShips = numberOfShips
+    this.ships = ships
   }
 
-  drawHex(pen) {
+  drawStar(pen) {
     pen.save()
     pen.beginPath()
     pen.moveTo(this.pos.x + this.radius * Math.cos(0), this.pos.y + this.radius * Math.sin(0))
@@ -235,6 +267,47 @@ class Hex extends Agent {
     }
     pen.fill()
     pen.restore()
+  }
+
+  drawShips(pen) {
+    let increment = Math.PI * 2 / this.numberOfShips
+    let angle = 0
+    let shipRadius = 5
+    // pen.save()
+    this.ships.forEach(ship => {
+      // pen.save()
+
+      angle += increment
+      console.log(`🚀 ~ file: galaxy.js ~ line 278 ~ Star ~ drawShips ~ angle`, angle)
+      ship.x = this.pos.x + (this.radius + params.orbitBuffer) * Math.cos(angle); // in my pixijs stars, orbitBuffer was followed by `+ spiral`
+      // console.log(`🚀 ~ file: galaxy.js ~ line 279 ~ Star ~ drawShips ~ ship.x`, ship.x)
+      ship.y = this.pos.y + (this.radius + params.orbitBuffer) * Math.sin(angle);
+      pen.moveTo(ship.x + shipRadius * Math.cos(0), ship.y + shipRadius * Math.sin(0))
+
+      pen.arc(ship.x, ship.y, shipRadius, 0, Math.PI * 2) 
+      pen.strokeStyle = this.color
+      // pen.lineWidth = 40
+      pen.fillStyle = 'white'
+      pen.stroke()
+      // pen.fill()
+      // pen.restore()
+    })  
+    // pen.restore()
+  }
+}
+
+class Ship {
+  constructor(x, y, star) {
+    this.pos = new Vector(x, y)
+    this.vel = new Vector(random.range(-1, 1), random.range(-1, 1))
+    this.radius = random.range(params.orbitMin, params.orbitMax)
+    this.star = star
+  }
+
+  draw(star) {
+    let angle
+    this.x = star.pos.x + (star.radius + params.orbitBuffer) * Math.cos(angle); // in my pixijs stars, orbitBuffer was followed by `+ spiral`
+    this.y = star.pos.y + (star.radius + params.orbitBuffer) * Math.sin(angle);
   }
 }
 
@@ -249,8 +322,5 @@ const hsla = (h, s, l, a) => {
 }
 
 const rangeAlpha = (range, dist) => {
-  // let c = Color.parse(color).hsla[3]
-  // let r = math.mapRange(dist, 0, range, 0, 1, true)
   return math.mapRange(dist, 0, range, 1, 0, true)
-
 }

@@ -76,15 +76,15 @@ const sketch = ({ context, width, height }) => {
       let colors = generateVariedColors()
       context.shadowColor = colors[5]
       context.shadowBlur = random.range(25, 75)
-      
+
       // let grd = context.createLinearGradient(random.range(0, 100), random.range(0, 2000), x + i, y - i)
       let grd = context.createLinearGradient(random.range(0, 1), random.range(0, 2), x + angle, y - i)
       // let p = generateRadGradParams(width, height, 0, 0, .25,  .35, radius, radius, .25, .35)
       // let grd = context.createRadialGradient(...p)
-// =============================================================================
-// one thing I'd like to do is have a fully-transparent color to fade out gradients
-// =============================================================================
-let transparent = `hsla(0,0%,0%,0)`
+      // =============================================================================
+      // one thing I'd like to do is have a fully-transparent color to fade out gradients
+      // =============================================================================
+      let transparent = `hsla(0,0%,0%,0)`
       grd.addColorStop(random.range(0, 0.2), colors[5])
       // grd.addColorStop(random.range(0.2, .4), colors[4])
       // grd.addColorStop(random.range(0.4, 0.6), colors[5])
@@ -125,8 +125,8 @@ function drawBackgrounds(context, width, height, num) {
       let lower = j * .08
       lower < .95 ? lower : 0.9
       console.log(`🚀 ~ file: sketch-02.js ~ line 190 ~ colors.forEach ~ lower`, lower)
-      let clampedUpper = math.clamp(0.2 + (j*0.7), lower, 1)
-      let clampedLower = math.clamp((j*.1), 0, 0.9)
+      let clampedUpper = math.clamp(0.2 + (j * 0.7), lower, 1)
+      let clampedLower = math.clamp((j * .1), 0, 0.9)
       console.log(`🚀 ~ file: sketch-02.js ~ line 190 ~ drawBackgrounds ~ clampedLower`, clampedLower)
       console.log(`🚀 ~ file: sketch-02.js ~ line 190 ~ drawBackgrounds ~ clampedUpper`, clampedUpper)
       grd.addColorStop(random.range(clampedLower, clampedUpper), color)
