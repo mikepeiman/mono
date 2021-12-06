@@ -1,13 +1,13 @@
 const canvasSketch = require('canvas-sketch');
 
-
+let manager
 let fontFamily = "Century"
 let width = height = 1080
 const settings = {
   dimensions: [width, height]
 };
 
-let text
+let text = "m"
 let fontSize = 1200
 
 const sketch = () => {
@@ -20,7 +20,7 @@ const sketch = () => {
     pen.font = `${fontSize}px ${fontFamily}`
     pen.textBaseline = 'top'
     // pen.textAlign = 'center'
-    text = "M"
+    // text = "M"
     let metrics = pen.measureText(text)
     console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ return ~ metrics `, metrics)
     let mx = metrics.actualBoundingBoxLeft * -1
@@ -46,11 +46,18 @@ const sketch = () => {
 
 const onKeyUp = (e) => {
   console.log(`🚀 ~ file: sketch-05.js ~ line 50 ~ onKeyUp ~ e`, e)
-  text = e.key
+  text = e.key.toUpperCase()
+  manager.render()
+}
+document.addEventListener('keyup', onKeyUp)
+
+const start =  async () => {
+ manager = await canvasSketch(sketch, settings);
 }
 
-document.addEventListener('keyup', onKeyUp)
-canvasSketch(sketch, settings);
+start()
+
+/*
 
 const url = 'https://picsum.photos/200'
 const loadImage = (url) => {
@@ -75,3 +82,4 @@ const start = async () => {
 // }
 
 start()
+*/
