@@ -19,14 +19,14 @@ const imageContext = imageCanvas.getContext('2d')
 
 
 const sketch = async ({ context, width, height, update }) => {
-console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, width, height)
+  console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, width, height)
   const cell = 20
   const cols = Math.floor(width / cell)
   const rows = Math.floor(height / cell)
   const numCells = cols * rows
   typeCanvas.width = cols
   typeCanvas.height = rows
-  
+
   // image = await load({ url: 'assets/8040ebabaa90d7ac5908a1a50e7b7b40.jpg'})
   image = await load({ url: 'assets/1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg', crossOrigin: 'Anonymous' })
   // const image = await load({ url: 'static/20211106_151003.jpg', crossOrigin: 'Anonymous' })
@@ -35,8 +35,8 @@ console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, widt
   })
 
   return ({ context, width, height }) => {
-  console.log(`🚀 ~ file: sketch-05.js ~ line 35 ~ return ~ width, height`, width, height)
-    const cell = 20
+    console.log(`🚀 ~ file: sketch-05.js ~ line 35 ~ return ~ width, height`, width, height)
+    const cell = 10
     const imageCols = Math.floor(width / cell)
     const imageRows = Math.floor(height / cell)
     const imageCells = imageCols * imageRows
@@ -45,10 +45,10 @@ console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, widt
     typeCanvas.width = cols
     typeCanvas.height = rows
     context.restore()
-    
-    imageContext.fillStyle = 'red';
-    imageContext.fillRect(0, 0, imageCols,imageRows);
-    console.log(`🚀 ~ file: sketch-05.js ~ line 51 ~ return ~ imageCols,imageRows`, imageCols,imageRows)
+
+    // imageContext.fillStyle = '#333399';
+    // imageContext.fillRect(0, 0, imageCols, imageRows);
+    console.log(`🚀 ~ file: sketch-05.js ~ line 51 ~ return ~ imageCols,imageRows`, imageCols, imageRows)
 
     typeContext.fillStyle = 'black';
     typeContext.fillRect(0, 0, cols, rows);
@@ -58,7 +58,7 @@ console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, widt
     fontSize = cols
 
     typeContext.fillStyle = 'white'
-    imageContext.fillStyle = 'red'
+    // imageContext.fillStyle = 'red'
     typeContext.font = `${fontSize}px ${fontFamily}`
     typeContext.textBaseline = 'top'
     let metrics = typeContext.measureText(text)
@@ -76,11 +76,14 @@ console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, widt
 
     typeContext.stroke()
     typeContext.fillText(text, 0, 0)
+    // imageContext.fillText(image, 0, 0)
+    // imageContext.fillStyle = image
     // typeContext.fillStyle = 'white'
     typeContext.restore()
+    imageContext.drawImage(image, 0, 0, width, height)
 
     let typeData = typeContext.getImageData(0, 0, cols, rows).data
-    let imageData = imageContext.getImageData(0, 0, imageCols,imageRows).data
+    let imageData = imageContext.getImageData(0, 0, imageCols, imageRows).data
     console.log(`🚀 ~ file: sketch-05.js ~ line 81 ~ return ~ imageData`, imageData)
     console.log(`🚀 ~ file: sketch-05.js ~ line 53 ~ return ~ typeData`, typeData)
 
@@ -91,42 +94,64 @@ console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, widt
     pen.textAlign = 'center'
 
     pen.drawImage(typeCanvas, 0, 80, 80, 80)
-    // pen.drawImage(image, 0, 0, width, height)
     pen.drawImage(image, 0, 0, 80, 80)
 
-
-
-
-    for (let i = 0; i < numCells; i++) {
-      const col = i % cols
-      const row = Math.floor(i / cols)
+    for (let i = 0; i < imageCells; i++) {
+      const col = i % imageCols
+      const row = Math.floor(i / imageCols)
       const x = col * cell
       const y = row * cell
 
-      const r = typeData[i * 4 + 0]
-      const g = typeData[i * 4 + 1]
-      const b = typeData[i * 4 + 2]
-      const a = typeData[i * 4 + 3]
 
-      let glyph = getGlyph(r)
-      // glyph = loadImage()
-      pen.font = `${cell * 2}px ${fontFamily}`
-      if (Math.random() < 0.1) pen.font = `${cell * 6}px ${fontFamily}`
-      // pen.fillStyle = randomRGBA()
-      // pen.fillStyle = `rgba(${r},${g},${b},${a})`
-      // pen.fillStyle = glyph
+      const r = imageData[i * 4 + 0]
+      const g = imageData[i * 4 + 1]
+      const b = imageData[i * 4 + 2]
+      const a = imageData[i * 4 + 3]
+
+      
       pen.save()
       pen.translate(x, y)
-      pen.translate(cell * .5, cell * .5)
-
-      // pen.fillRect(0,0, cell, cell)
-      // pen.beginPath()
-      // pen.arc(0,0, cell / 2, 0, Math.PI * 2)
-      pen.fillText(glyph, 0, 0)
-      pen.fillStyle = 'white'
+      pen.beginPath()
+      // pen.fillStyle = randomRGBA()
+      pen.fillStyle =`rgba(${r},${g},${b},${a})`
+      pen.arc(0,0, cell / 2, 0, Math.PI * 2)
       pen.fill()
       pen.restore()
     }
+
+
+
+    // for (let i = 0; i < numCells; i++) {
+    //   const col = i % cols
+    //   const row = Math.floor(i / cols)
+    //   const x = col * cell
+    //   const y = row * cell
+
+    //   const r = typeData[i * 4 + 0]
+    //   const g = typeData[i * 4 + 1]
+    //   const b = typeData[i * 4 + 2]
+    //   const a = typeData[i * 4 + 3]
+
+    //   let glyph = getGlyph(r)
+    //   // glyph = loadImage()
+    //   pen.font = `${cell * 2}px ${fontFamily}`
+    //   if (Math.random() < 0.1) pen.font = `${cell * 6}px ${fontFamily}`
+    //   // pen.fillStyle = randomRGBA()
+    //   // pen.fillStyle = `rgba(${r},${g},${b},${a})`
+    //   // pen.fillStyle = glyph
+    //   pen.save()
+    //   pen.translate(x, y)
+    //   pen.translate(cell * .5, cell * .5)
+
+    //   // pen.fillRect(0,0, cell, cell)
+    //   // pen.beginPath()
+    //   // pen.arc(0,0, cell / 2, 0, Math.PI * 2)
+    //   pen.fillText(glyph, 0, 0)
+    //   pen.fillStyle = 'white'
+    //   pen.fill()
+    //   pen.restore()
+    // }
+
 
 
   };
