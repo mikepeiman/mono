@@ -1,9 +1,14 @@
 const canvasSketch = require('canvas-sketch');
 
+
+let fontFamily = "Century"
 let width = height = 1080
 const settings = {
   dimensions: [width, height]
 };
+
+let text
+let fontSize = 1200
 
 const sketch = () => {
   return ({ context, width, height }) => {
@@ -12,17 +17,16 @@ const sketch = () => {
     const pen = context
 
     pen.fillStyle = 'white'
-    pen.font = '1200px serif'
+    pen.font = `${fontSize}px ${fontFamily}`
     pen.textBaseline = 'top'
     // pen.textAlign = 'center'
-    let text = "e"
+    text = "M"
     let metrics = pen.measureText(text)
     console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ return ~ metrics `, metrics)
     let mx = metrics.actualBoundingBoxLeft * -1
     let my = metrics.actualBoundingBoxAscent * -1
     let mw = metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight;
     let mh = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent
-
     let x = (width - mw) * .5 - mx
     let y = (height - mh) * .5 - my
 
@@ -40,4 +44,34 @@ const sketch = () => {
   };
 };
 
+const onKeyUp = (e) => {
+  console.log(`🚀 ~ file: sketch-05.js ~ line 50 ~ onKeyUp ~ e`, e)
+  text = e.key
+}
+
+document.addEventListener('keyup', onKeyUp)
 canvasSketch(sketch, settings);
+
+const url = 'https://picsum.photos/200'
+const loadImage = (url) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    img.onload = () => resolve(img)
+    img.onerror = () => reject()
+    img.src = url
+  })
+}
+
+const start = async () => {
+  const img = await loadImage(url)
+  console.log(`🚀 ~ file: sketch-05.js ~ line 67 ~ loadImage ~ img`, img)
+  console.log(`This line`)
+}
+// const start = () => {
+//   loadImage(url).then(img => {
+//   console.log(`🚀 ~ file: sketch-05.js ~ line 67 ~ loadImage ~ img`, img)
+//   })
+//   console.log(`This line`)
+// }
+
+start()
