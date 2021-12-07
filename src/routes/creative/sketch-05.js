@@ -22,31 +22,31 @@ const typeContext = typeCanvas.getContext('2d')
 const imageCanvas = document.createElement('canvas')
 const imageContext = imageCanvas.getContext('2d')
 
-
+const images = [
+  '8040ebabaa90d7ac5908a1a50e7b7b40.jpg',
+  '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg',
+  '1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg',
+  '1200px-Paracas_National_Reserve._Ica,_Peru.jpg',
+  'download-_8_.jpg',
+  'download-_11_.jpg',
+  'download-_12_.jpg',
+  'download-_18_.jpg',
+  'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg',
+  'gettyimages-919352240-1024x1024.jpg',
+  'main-qimg-e61354cfbf095d6f10f71dae9d578369.jpg',
+  'springbrook national park, australia-2.jpg',
+  'svaneti-georgia-min.jpg',
+  'Thor-Peak-The-Greatest-Vertical-Drop-on-Earth.jpg',
+  'vinicunza peru.jpg',
+  '20211106_151003.jpg',
+  '20211101_151335.jpg',
+  '20211110_125044.jpg',
+  '20211110_125818_HDR.jpg',
+],
 params = {
-  cellSize: 12,
-  images: [
-    '8040ebabaa90d7ac5908a1a50e7b7b40.jpg',
-    '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg',
-    '1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg',
-    '1200px-Paracas_National_Reserve._Ica,_Peru.jpg',
-    'download-_8_.jpg',
-    'download-_11_.jpg',
-    'download-_12_.jpg',
-    'download-_18_.jpg',
-    'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg',
-    'gettyimages-919352240-1024x1024.jpg',
-    'main-qimg-e61354cfbf095d6f10f71dae9d578369.jpg',
-    'springbrook national park, australia-2.jpg',
-    'svaneti-georgia-min.jpg',
-    'Thor-Peak-The-Greatest-Vertical-Drop-on-Earth.jpg',
-    'vinicunza peru.jpg',
-    '20211106_151003.jpg',
-    '20211101_151335.jpg',
-    '20211110_125044.jpg',
-    '20211110_125818_HDR.jpg',
-  ],
-  image: 'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg',
+  cellSize: 3,
+  bg: '#ffffff',
+  image: images[5],
 }
 
 const createTweakpane = () => {
@@ -91,6 +91,13 @@ const createTweakpane = () => {
     console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
     manager.loadAndRun(sketch)
   })
+  folder.addInput(params, 'bg', {
+    view: 'color',
+    alpha: true
+  })
+  pane.on('change', (e) => {
+    manager.loadAndRun(sketch)
+  })
 }
 
 // const updateImage = (src) => {
@@ -125,7 +132,7 @@ const sketch = async ({ context, width, height, update }) => {
   update({
     // dimensions: [image.width * 1.5, image.height * 1.5]
     // dimensions: [image.width, image.height]
-    dimensions: [w * dimensionsFactor - (w * dimensionsFactor % params.cellSize), h * dimensionsFactor  - (h * dimensionsFactor % params.cellSize)]
+    dimensions: [w * dimensionsFactor - (w * dimensionsFactor % params.cellSize), h * dimensionsFactor - (h * dimensionsFactor % params.cellSize)]
     // dimensions: [image.width *.5, image.height * .5]
     // dimensions: [image.width * .25, image.height * .25]
   })
@@ -142,7 +149,7 @@ const sketch = async ({ context, width, height, update }) => {
     typeCanvas.width = cols
     typeCanvas.height = rows
 
-    context.fillStyle = 'white';
+    context.fillStyle = params.bg;
     context.fillRect(0, 0, width, height)
     console.log(`🚀 ~ file: sketch-05.js ~ line 51 ~ return ~ imageCols,imageRows`, imageCols, imageRows)
 
@@ -236,13 +243,22 @@ const sketch = async ({ context, width, height, update }) => {
       let colorRangeA = random.range(0, .5)
       linGrd.addColorStop(0, `rgba(${r * colorRangeR},${g * colorRangeG},${b * colorRangeB},${a * colorRangeA})`)
       linGrd.addColorStop(1, `rgba(${r},${g},${b},${a})`)
-      pen.fillStyle = `rgba(${r},${g},${b},${.75})`
-      pen.shadowBlur =
-        pen.shadowColor = `rgba(${r},${g},${b},${a})`
+      let colorSum = r + g + b
+      glyph = getGlyph(colorSum)
+      // console.log(`🚀 ~ file: sketch-05.js ~ line 249 ~ return ~ glyph`, glyph)
+      // console.log(`🚀 ~ file: sketch-05.js ~ line 248 ~ return ~ colorSum`, colorSum)
+      // pen.fillStyle = `rgba(${r},${g},${b},${1})`
+      pen.font = `normal normal ${r*2} ${colorSum / 4}px ${fontFamily}`
+
+      pen.fillText(glyph, 0, 0)
+      pen.fillStyle = linGrd
+      pen.shadowBlur = params.cellSize
+      pen.shadowColor = `rgba(${r},${g},${b},${a})`
       // pen.fillRect(0, 0, cell, cell)
       // pen.fillRect(0, 0, cell * .9, cell * .9)
       // pen.fillRect(0, 0, cell * .75, cell * .75)
-      pen.fillRect(0, 0, cell * .5, cell * .5)
+      // pen.fillRect(0, 0, cell * .5, cell * .5)
+      // pen.fillRect(0, 0, cell * .25, cell * .25)
       // pen.fillRect(0,0, 1, 1)
       // pen.arc(0, 0, cell / 2, 0, Math.PI * 2)
       pen.fill()
@@ -329,13 +345,15 @@ const randomRangedRGBA = (
 }
 
 const getGlyph = (v) => {
-  if (v < 50) { return '' }
-  if (v < 100) { return '.' }
-  if (v < 150) { return '/' }
-  if (v < 200) { return '@' }
-  const glyphs = '_= /'.split('')
-  let g = random.pick(glyphs)
-  return g
+// console.log(`🚀 ~ file: sketch-05.js ~ line 347 ~ getGlyph ~ v`, v)
+  if (v < 150) { return '*' }
+  if (v < 300) { return '\\' }
+  if (v < 450) { return '-' }
+  if (v < 600) { return '/' }
+  return '@'
+  // const glyphs = '_= /'.split('')
+  // let g = random.pick(glyphs)
+  // return g
 }
 
 
