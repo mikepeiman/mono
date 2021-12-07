@@ -2,11 +2,16 @@ const canvasSketch = require('canvas-sketch');
 const math = require('canvas-sketch-util/math')
 const random = require('canvas-sketch-util/random')
 const load = require('load-asset')
+const Tweakpane = require('tweakpane');
+
+
 let manager
 let fontFamily = "Century"
 let width = height = 1080
 const settings = {
-  dimensions: [width, height]
+  dimensions: [width, height],
+  // cellSize: 2,
+  // animate: true
 };
 
 let text = "A"
@@ -18,16 +23,9 @@ const imageCanvas = document.createElement('canvas')
 const imageContext = imageCanvas.getContext('2d')
 
 
-const sketch = async ({ context, width, height, update }) => {
-  console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, width, height)
-  const cell = 20
-  const cols = Math.floor(width / cell)
-  const rows = Math.floor(height / cell)
-  const numCells = cols * rows
-  typeCanvas.width = cols
-  typeCanvas.height = rows
-
-  let images = [
+params = {
+  cellSize: 6,
+  images: [
     '8040ebabaa90d7ac5908a1a50e7b7b40.jpg',
     '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg',
     '1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg',
@@ -47,26 +45,83 @@ const sketch = async ({ context, width, height, update }) => {
     '20211101_151335.jpg',
     '20211110_125044.jpg',
     '20211110_125818_HDR.jpg',
-  ]
-  // image = await load({ url: 'assets/8040ebabaa90d7ac5908a1a50e7b7b40.jpg' })
-  // image = await load({ url: 'assets/1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg' })
-  // image = await load({ url: 'assets/20211106_151003.jpg'})
-  // image = await load({ url: 'assets/1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg'})
-  // image = await load({ url: 'assets/1200px-Paracas_National_Reserve._Ica,_Peru.jpg'})
-  // image = await load({ url: 'assets/20211101_151335.jpg'}) // turkey tail florette
-  // image = await load({ url: 'assets/20211110_125044.jpg'}) // turkey tail shelf
-  // image = await load({ url: 'assets/20211110_125818_HDR.jpg'}) // turkey tail single focused
-  image = await load({ url: `assets/${images[13]}`}) // #0, 4 (.5), 5, 6, 7,  12 (.25), 13 (1.5), 14 (.5)
+  ],
+  image: 'download-_8_.jpg',
+}
+
+const createTweakpane = () => {
+  const pane = new Tweakpane.Pane()
+  let folder
+  folder = pane.addFolder({ title: "Settings" })
+  folder.addInput(params, 'cellSize', {
+    min: 1,
+    max: 50,
+    step: 1
+  }).on('change', (e) => {
+    console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
+    let props = manager.props
+    console.log(`🚀 ~ file: sketch-05.js ~ line 61 ~ createTweakpane ~ props `, props)
+    manager.update()
+  })
+  folder.addInput(params, 'image', {
+    options: {
+      '8040ebabaa90d7ac5908a1a50e7b7b40.jpg': '8040ebabaa90d7ac5908a1a50e7b7b40.jpg',
+      '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg': '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg',
+      '8040ebabaa90d7ac5908a1a50e7b7b40.jpg': '8040ebabaa90d7ac5908a1a50e7b7b40.jpg',
+      '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg': '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg',
+      '1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg': '1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg',
+      '1200px-Paracas_National_Reserve._Ica,_Peru.jpg': '1200px-Paracas_National_Reserve._Ica,_Peru.jpg',
+      'download-_8_.jpg': 'download-_8_.jpg',
+      'download-_11_.jpg': 'download-_11_.jpg',
+      'download-_12_.jpg': 'download-_12_.jpg',
+      'download-_18_.jpg': 'download-_18_.jpg',
+      'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg': 'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg',
+      'gettyimages-919352240-1024x1024.jpg': 'gettyimages-919352240-1024x1024.jpg',
+      'main-qimg-e61354cfbf095d6f10f71dae9d578369.jpg': 'main-qimg-e61354cfbf095d6f10f71dae9d578369.jpg',
+      'springbrook national park, australia-2.jpg': 'springbrook national park, australia-2.jpg',
+      'svaneti-georgia-min.jpg': 'svaneti-georgia-min.jpg',
+      'Thor-Peak-The-Greatest-Vertical-Drop-on-Earth.jpg': 'Thor-Peak-The-Greatest-Vertical-Drop-on-Earth.jpg',
+      'vinicunza peru.jpg': 'vinicunza peru.jpg',
+      '20211106_151003.jpg': '20211106_151003.jpg',
+      '20211101_151335.jpg': '20211101_151335.jpg',
+      '20211110_125044.jpg': '20211110_125044.jpg',
+      '20211110_125818_HDR.jpg': '20211110_125818_HDR.jpg',
+
+    }
+  }).on('change', (e) => {
+    console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
+    manager.loadAndRun(sketch)
+  })
+}
+
+// const updateImage = (src) => {
+//   console.log(`🚀 ~ file: sketch-05.js ~ line 79 ~ updateImage ~ src`, src)
+//   image = await load({ url: `assets/${src}`})
+// }
+
+const sketch = async ({ context, width, height, update }) => {
+
+  console.log(`🚀 ~ file: sketch-05.js ~ line 20 ~ sketch ~ width, height`, width, height)
+  const cell = settings.cellSize
+  const cols = Math.floor(width / cell)
+  const rows = Math.floor(height / cell)
+  const numCells = cols * rows
+  typeCanvas.width = cols
+  typeCanvas.height = rows
+
+  image = await load({ url: `assets/${params.image}` }) // #0 (1.5), 4 (.75), 5, 6, 7,  12 (.25), 13 (1.5), 14 (.5)
   update({
-    dimensions: [image.width * 1.5, image.height * 1.5]
+    // dimensions: [image.width * 1.5, image.height * 1.5]
     // dimensions: [image.width, image.height]
+    dimensions: [image.width * .75, image.height * .75]
     // dimensions: [image.width *.5, image.height * .5]
     // dimensions: [image.width * .25, image.height * .25]
   })
 
   return ({ context, width, height }) => {
+    // updateImage(params.image)
     console.log(`🚀 ~ file: sketch-05.js ~ line 35 ~ return ~ width, height`, width, height)
-    const cell = 10
+    const cell = params.cellSize
     const imageCols = Math.floor(width / cell)
     const imageRows = Math.floor(height / cell)
     const imageCells = imageCols * imageRows
@@ -75,12 +130,12 @@ const sketch = async ({ context, width, height, update }) => {
     typeCanvas.width = cols
     typeCanvas.height = rows
 
-    imageContext.fillStyle = 'black';
+    context.fillStyle = 'black';
     console.log(`🚀 ~ file: sketch-05.js ~ line 51 ~ return ~ imageCols,imageRows`, imageCols, imageRows)
 
-    typeContext.fillStyle = 'black';
-    typeContext.fillRect(0, 0, cols, rows);
-    console.log(`🚀 ~ file: sketch-05.js ~ line 40 ~ return ~ cols, rows`, cols, rows)
+    // typeContext.fillStyle = 'black';
+    // typeContext.fillRect(0, 0, cols, rows);
+    // console.log(`🚀 ~ file: sketch-05.js ~ line 40 ~ return ~ cols, rows`, cols, rows)
 
     const pen = context
     fontSize = cols
@@ -111,13 +166,21 @@ const sketch = async ({ context, width, height, update }) => {
     // imageContext.drawImage(image, 0, 0, imageCols * cell, imageRows * cell)
     imageContext.drawImage(image, 0, 0, width / cell, height / cell)
 
-    let typeData = typeContext.getImageData(0, 0, cols, rows).data
+    // let typeData = typeContext.getImageData(0, 0, cols, rows).data
     // let imageData = imageContext.getImageData(0, 0, imageCols, imageRows).data
     let imageData = imageContext.getImageData(0, 0, imageCols, imageRows).data
-    console.log(`🚀 ~ file: sketch-05.js ~ line 81 ~ return ~ imageData`, imageData)
-    console.log(`🚀 ~ file: sketch-05.js ~ line 53 ~ return ~ typeData`, typeData)
+    // console.log(`🚀 ~ file: sketch-05.js ~ line 81 ~ return ~ imageData`, imageData)
+    // console.log(`🚀 ~ file: sketch-05.js ~ line 53 ~ return ~ typeData`, typeData)
 
-    pen.fillStyle = "black"
+    let radGrd = pen.createRadialGradient(width * .5, height * .5, 0, width * .5 + 100, height * .5 + 100, height)
+    // radGrd.addColorStop(0, randomRGBA())
+    radGrd.addColorStop(0.25, randomRangedRGBA(0, 50, 50, 100, 150, 255, 55, 105))
+    radGrd.addColorStop(0.5, randomRangedRGBA(50, 100, 0, 50, 50, 205, 55, 105))
+    radGrd.addColorStop(0.75, randomRangedRGBA(50, 150, 50, 100, 150, 255, 55, 105))
+    radGrd.addColorStop(1, randomRangedRGBA(150, 255, 25, 50, 150, 205, 55, 105))
+    // pen.fillStyle = radGrd
+    // imageContext.fill()
+    pen.fill()
     pen.fillRect(0, 0, width, height)
 
     pen.textBaseline = 'middle'
@@ -152,12 +215,27 @@ const sketch = async ({ context, width, height, update }) => {
       pen.translate(cell * .5, cell * .5)
       // pen.fillText(glyph, 0, 0)
       pen.beginPath()
-      pen.arc(0, 0, cell / 2, 0, Math.PI * 2)
+      let gradientAngle1 = random.range(0, 1)
+      let gradientAngle2 = random.range(0, 1)
+      let linGrd = pen.createLinearGradient(cell * gradientAngle1, 0, cell * gradientAngle2, cell)
+      let colorRangeR = random.range(0, 1)
+      let colorRangeG = random.range(0, 1)
+      let colorRangeB = random.range(0, 1)
+      let colorRangeA = random.range(0, .5)
+      linGrd.addColorStop(0, `rgba(${r * colorRangeR},${g * colorRangeG},${b * colorRangeB},${a * colorRangeA})`)
+      linGrd.addColorStop(1, `rgba(${r},${g},${b},${a})`)
+      pen.fillStyle = linGrd
+      // pen.fillRect(0, 0, cell, cell)
+      pen.fillRect(0, 0, cell * .9, cell * .9)
+      // pen.fillRect(0, 0, cell * .75, cell * .75)
+      // pen.fillRect(0,0, cell * .5, cell * .5)
+      // pen.fillStyle
+      // pen.arc(0, 0, cell / 2, 0, Math.PI * 2)
       pen.fill()
       pen.restore()
     }
 
-    pen.drawImage(image, 0, 0, 180, 180)
+    // pen.drawImage(image, 0, 0, 180, 180)
 
     // for (let i = 0; i < numCells; i++) {
     //   const col = i % cols
@@ -201,22 +279,38 @@ const onKeyUp = (e) => {
   text = e.key.toUpperCase()
   manager.render()
 }
-document.addEventListener('keyup', onKeyUp)
+// document.addEventListener('keyup', onKeyUp)
 
 // const start = async () => {
 //   manager = await canvasSketch(sketch, settings);
 // }
 const start = async () => {
-  manager = await canvasSketch(sketch, settings);
-  const img = await loadImage(url)
-  console.log(`🚀 ~ file: sketch-05.js ~ line 67 ~ loadImage ~ img`, img)
-  console.log(`This line`)
+  manager = await canvasSketch(sketch, settings, params);
+  // manager = await canvasSketch(sketch, settings);
+  // manager.loadAndRun(sketch, settings)
+  // const img = await loadImage(url)
+  // console.log(`🚀 ~ file: sketch-05.js ~ line 67 ~ loadImage ~ img`, img)
+  // console.log(`This line`)
 }
 start()
+createTweakpane()
 
 
-const randomRGBA = (r = random.range(0, 255), g = random.range(0, 255), b = random.range(0, 255), a = random.range(0.1, 1)) => {
-  let color = `hsla(${r},${g}%,${b}%,${a})`
+const randomRGBA = (r = random.range(0, 255), g = random.range(0, 255), b = random.range(0, 255), a = random.range(0.5, .5)) => {
+  let color = `rgba(${r},${g}%,${b}%,${a})`
+  return color
+}
+const randomRangedRGBA = (
+  r1 = 0,
+  r2 = 255,
+  g1 = 0,
+  g2 = 255,
+  b1 = 0,
+  b2 = 255,
+  a1 = 0,
+  a2 = 255
+) => {
+  let color = `rgba(${random.range(r1, r2)},${random.range(g1, g2)}%,${random.range(b1, b2)}%,${random.range(a1, a2)})`
   return color
 }
 

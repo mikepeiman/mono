@@ -3,7 +3,7 @@ const math = require('canvas-sketch-util/math')
 const random = require('canvas-sketch-util/random')
 const Color = require('canvas-sketch-util/color');
 const Tweakpane = require('tweakpane');
-const { mapRange } = require('canvas-sketch-util/math');
+
 
 
 width = 2048
