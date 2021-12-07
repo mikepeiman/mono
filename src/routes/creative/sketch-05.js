@@ -36,12 +36,12 @@ const sketch = async ({ context, width, height, update }) => {
 
   return ({ context, width, height }) => {
     console.log(`🚀 ~ file: sketch-05.js ~ line 35 ~ return ~ width, height`, width, height)
-    const cell = 4
+    const cell = 10
     const imageCols = Math.floor(width / cell)
     const imageRows = Math.floor(height / cell)
     const imageCells = imageCols * imageRows
-    // imageCanvas.width = width
-    // imageCanvas.height = height
+    imageCanvas.width = width * cell
+    imageCanvas.height = height * cell
     typeCanvas.width = cols
     typeCanvas.height = rows
     // context.restore()
@@ -83,7 +83,7 @@ const sketch = async ({ context, width, height, update }) => {
     // typeContext.fillStyle = 'white'
     typeContext.restore()
     // imageContext.drawImage(image, 0, 0, imageCols * cell, imageRows * cell)
-    imageContext.drawImage(image, 0, 0, width, height)
+    imageContext.drawImage(image, 0, 0, width / cell, height / cell)
 
     let typeData = typeContext.getImageData(0, 0, cols, rows).data
     // let imageData = imageContext.getImageData(0, 0, imageCols, imageRows).data
