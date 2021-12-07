@@ -27,26 +27,26 @@ const sketch = async ({ context, width, height, update }) => {
   typeCanvas.width = cols
   typeCanvas.height = rows
 
-  // image = await load({ url: 'assets/8040ebabaa90d7ac5908a1a50e7b7b40.jpg'})
-  image = await load({ url: 'assets/1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg', crossOrigin: 'Anonymous' })
-  // const image = await load({ url: 'static/20211106_151003.jpg', crossOrigin: 'Anonymous' })
+  image = await load({ url: 'assets/8040ebabaa90d7ac5908a1a50e7b7b40.jpg' })
+  // image = await load({ url: 'assets/1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg' })
+  // image = await load({ url: 'assets/20211106_151003.jpg' })
   update({
     dimensions: [image.width, image.height]
   })
 
   return ({ context, width, height }) => {
     console.log(`🚀 ~ file: sketch-05.js ~ line 35 ~ return ~ width, height`, width, height)
-    const cell = 10
+    const cell = 4
     const imageCols = Math.floor(width / cell)
     const imageRows = Math.floor(height / cell)
     const imageCells = imageCols * imageRows
-    imageCanvas.width = imageCols
-    imageCanvas.height = imageRows
+    // imageCanvas.width = width
+    // imageCanvas.height = height
     typeCanvas.width = cols
     typeCanvas.height = rows
-    context.restore()
+    // context.restore()
 
-    // imageContext.fillStyle = '#333399';
+    imageContext.fillStyle = 'black';
     // imageContext.fillRect(0, 0, imageCols, imageRows);
     console.log(`🚀 ~ file: sketch-05.js ~ line 51 ~ return ~ imageCols,imageRows`, imageCols, imageRows)
 
@@ -72,6 +72,8 @@ const sketch = async ({ context, width, height, update }) => {
 
     typeContext.save()
     typeContext.translate(tx, ty)
+    // imageContext.save()
+    // imageContext.translate(tx, ty)
     typeContext.beginPath()
 
     typeContext.stroke()
@@ -80,21 +82,23 @@ const sketch = async ({ context, width, height, update }) => {
     // imageContext.fillStyle = image
     // typeContext.fillStyle = 'white'
     typeContext.restore()
+    // imageContext.drawImage(image, 0, 0, imageCols * cell, imageRows * cell)
     imageContext.drawImage(image, 0, 0, width, height)
 
     let typeData = typeContext.getImageData(0, 0, cols, rows).data
+    // let imageData = imageContext.getImageData(0, 0, imageCols, imageRows).data
     let imageData = imageContext.getImageData(0, 0, imageCols, imageRows).data
     console.log(`🚀 ~ file: sketch-05.js ~ line 81 ~ return ~ imageData`, imageData)
     console.log(`🚀 ~ file: sketch-05.js ~ line 53 ~ return ~ typeData`, typeData)
 
-    // pen.fillStyle = "black"
-    // pen.fillRect(0, 0, width, height)
+    pen.fillStyle = "black"
+    pen.fillRect(0, 0, width, height)
 
     pen.textBaseline = 'middle'
     pen.textAlign = 'center'
 
-    pen.drawImage(typeCanvas, 0, 80, 80, 80)
-    pen.drawImage(image, 0, 0, 80, 80)
+    // pen.drawImage(typeCanvas, 0, 180, 180, 180)
+    // pen.drawImage(image, 0, 0, 180, 180)
 
     for (let i = 0; i < imageCells; i++) {
       const col = i % imageCols
@@ -108,18 +112,26 @@ const sketch = async ({ context, width, height, update }) => {
       const b = imageData[i * 4 + 2]
       const a = imageData[i * 4 + 3]
 
-      
+
+      // pen.fillStyle = randomRGBA()
+      pen.fillStyle = `rgba(${r},${g},${b},${a})`
+      // console.log(`🚀 ~ file: sketch-05.js ~ line 114 ~ return ~ rgba(${r},${g},${b},${a})`, `rgba(${r},${g},${b},${a})`)
+      // pen.fillStyle = glyph
+      let glyph = getGlyph(r)
+      pen.font = `${cell * 2}px ${fontFamily}`
+      // pen.fillStyle = 'white'
+
       pen.save()
       pen.translate(x, y)
+      pen.translate(cell * .5, cell * .5)
+      // pen.fillText(glyph, 0, 0)
       pen.beginPath()
-      // pen.fillStyle = randomRGBA()
-      pen.fillStyle =`rgba(${r},${g},${b},${a})`
-      pen.arc(0,0, cell / 2, 0, Math.PI * 2)
+      pen.arc(0, 0, cell / 2, 0, Math.PI * 2)
       pen.fill()
       pen.restore()
     }
 
-
+    pen.drawImage(image, 0, 0, 180, 180)
 
     // for (let i = 0; i < numCells; i++) {
     //   const col = i % cols
