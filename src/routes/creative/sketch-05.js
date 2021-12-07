@@ -7,7 +7,7 @@ const Tweakpane = require('tweakpane');
 
 let manager
 let fontFamily = "Century"
-let width = height = 1080
+let width = height = 600
 const settings = {
   dimensions: [width, height],
   // cellSize: 2,
@@ -42,11 +42,36 @@ const images = [
   '20211101_151335.jpg',
   '20211110_125044.jpg',
   '20211110_125818_HDR.jpg',
+  '70.jpg',
+  '6bc3782329c30397e0679ed81b807bd8.jpg',
+  '8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg',
+  'A69F230D-437F-426F-9D97-0011DADF82C8.jpg',
 ],
-params = {
-  cellSize: 3,
-  bg: '#ffffff',
-  image: images[5],
+  params = {
+    cellSize: 3,
+    scaleDimensions: .25,
+    glyphScale: .25,
+    bg: '#000000ff',
+    image: images[14],
+  }
+
+paramsGlyphs = {
+  a: '\\',
+  va: 75,
+  b: '|',
+  vb: 125,
+  c: '/',
+  vc: 175,
+  d: 'v',
+  vd: 225,
+  e: '>',
+  ve: 275,
+  f: '<',
+  vf: 325,
+  g: '~',
+  vg: 375,
+  h: 'O',
+  vh: 525,
 }
 
 const createTweakpane = () => {
@@ -57,11 +82,77 @@ const createTweakpane = () => {
     min: 1,
     max: 50,
     step: 1
-  }).on('change', (e) => {
-    console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
-    let props = manager.props
-    console.log(`🚀 ~ file: sketch-05.js ~ line 61 ~ createTweakpane ~ props `, props)
-    manager.update()
+  })
+  folder.addInput(params, 'scaleDimensions', {
+    min: .25,
+    max: 4,
+    step: .25
+  })
+  folder.addInput(params, 'glyphScale', {
+    min: .05,
+    max: 1,
+    step: .05
+  })
+  folder.addInput(params, 'bg', {
+    view: 'color',
+    alpha: true
+  })
+
+  // .on('change', (e) => {
+  //   console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
+  //   let props = manager.props
+  //   console.log(`🚀 ~ file: sketch-05.js ~ line 61 ~ createTweakpane ~ props `, props)
+  //   // manager.update()
+  // })
+
+  folder = pane.addFolder({ title: 'Glyphs' })
+  folder.addInput(paramsGlyphs, 'a')
+  folder.addInput(paramsGlyphs, 'va', {
+    min: 0,
+    max: 755,
+    step: 25
+  })
+  folder.addInput(paramsGlyphs, 'b')
+  folder.addInput(paramsGlyphs, 'vb', {
+    min: 0,
+    max: 755,
+    step: 25
+  })
+  folder.addInput(paramsGlyphs, 'c')
+  folder.addInput(paramsGlyphs, 'vc', {
+    min: 0,
+    max: 755,
+    step: 25
+  })
+  folder.addInput(paramsGlyphs, 'd')
+  folder.addInput(paramsGlyphs, 'vd', {
+    min: 0,
+    max: 755,
+    step: 25
+  })
+  folder.addInput(paramsGlyphs, 'e')
+  folder.addInput(paramsGlyphs, 've', {
+    min: 0,
+    max: 755,
+    step: 25
+  })
+  folder.addInput(paramsGlyphs, 'f')
+  folder.addInput(paramsGlyphs, 'vf', {
+    min: 0,
+    max: 755,
+    step: 25
+  })
+  folder.addInput(paramsGlyphs, 'g')
+  folder.addInput(paramsGlyphs, 'vg', {
+    min: 0,
+    max: 755,
+    step: 25
+  })
+  folder.addInput(paramsGlyphs, 'h')
+  folder.addInput(paramsGlyphs, 'vh', {
+    min: 0,
+    max: 755,
+    step: 25
   })
   folder.addInput(params, 'image', {
     options: {
@@ -86,15 +177,17 @@ const createTweakpane = () => {
       '20211101_151335.jpg': '20211101_151335.jpg',
       '20211110_125044.jpg': '20211110_125044.jpg',
       '20211110_125818_HDR.jpg': '20211110_125818_HDR.jpg',
+      '70.jpg': '70.jpg',
+      '6bc3782329c30397e0679ed81b807bd8.jpg': '6bc3782329c30397e0679ed81b807bd8.jpg',
+      '8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg': '8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg',
+      'A69F230D-437F-426F-9D97-0011DADF82C8': 'A69F230D-437F-426F-9D97-0011DADF82C8.jpg',
     }
-  }).on('change', (e) => {
-    console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
-    manager.loadAndRun(sketch)
   })
-  folder.addInput(params, 'bg', {
-    view: 'color',
-    alpha: true
-  })
+  // .on('change', (e) => {
+  //   console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
+  //   // manager.loadAndRun(sketch)
+  // })
+
   pane.on('change', (e) => {
     manager.loadAndRun(sketch)
   })
@@ -118,21 +211,20 @@ const sketch = async ({ context, width, height, update }) => {
   image = await load({ url: `assets/${params.image}` })
   let w = image.width
   let h = image.height
-  let dimensionsFactor = 1
   let max = Math.max(w, h)
   console.log(`🚀 ~ file: sketch-05.js ~ line 116 ~ sketch ~ max`, max)
   w, h
   console.log(`🚀 ~ file: sketch-05.js ~ line 115 ~ sketch ~ w, h `, w, h)
-  if (max > 6000) dimensionsFactor = .25
-  if (max > 4000) dimensionsFactor = .5
-  if (max > 3000) dimensionsFactor = .75
-  if (max < 1000) dimensionsFactor = 1.25
-  console.log(`🚀 ~ file: sketch-05.js ~ line 123 ~ sketch ~ dimensionsFactor`, dimensionsFactor)
+  // if (max > 6000) params.scaleDimensions = .25
+  // if (max > 4000) params.scaleDimensions = .5
+  // if (max > 3000) params.scaleDimensions = .75
+  // if (max < 1000) params.scaleDimensions = 1.25
+  console.log(`🚀 ~ file: sketch-05.js ~ line 123 ~ sketch ~ params.scaleDimensions`, params.scaleDimensions)
 
   update({
     // dimensions: [image.width * 1.5, image.height * 1.5]
     // dimensions: [image.width, image.height]
-    dimensions: [w * dimensionsFactor - (w * dimensionsFactor % params.cellSize), h * dimensionsFactor - (h * dimensionsFactor % params.cellSize)]
+    dimensions: [w * params.scaleDimensions - (w * params.scaleDimensions % params.cellSize), h * params.scaleDimensions - (h * params.scaleDimensions % params.cellSize)]
     // dimensions: [image.width *.5, image.height * .5]
     // dimensions: [image.width * .25, image.height * .25]
   })
@@ -245,16 +337,24 @@ const sketch = async ({ context, width, height, update }) => {
       linGrd.addColorStop(1, `rgba(${r},${g},${b},${a})`)
       let colorSum = r + g + b
       glyph = getGlyph(colorSum)
+      let boldness = Math.ceil(colorSum / 100) * 100
+      fontSize = colorSum * params.glyphScale
+      // console.log(`🚀 ~ file: sketch-05.js ~ line 249 ~ return ~ boldness`, boldness)
+      // if(colorSum < 100) console.log(`low colorSum `, colorSum) 
       // console.log(`🚀 ~ file: sketch-05.js ~ line 249 ~ return ~ glyph`, glyph)
       // console.log(`🚀 ~ file: sketch-05.js ~ line 248 ~ return ~ colorSum`, colorSum)
       // pen.fillStyle = `rgba(${r},${g},${b},${1})`
-      pen.font = `normal normal ${r*2} ${colorSum / 4}px ${fontFamily}`
+      if (fontSize > 20) {
+        pen.font = `normal normal ${boldness} ${fontSize >= 20 ? fontSize : 20}px ${fontFamily}`
+        pen.fillText(glyph, 0, 0)
+      } else {
+        pen.fillRect(0, 0, cell, cell)
+      }
 
-      pen.fillText(glyph, 0, 0)
-      pen.fillStyle = linGrd
-      pen.shadowBlur = params.cellSize
-      pen.shadowColor = `rgba(${r},${g},${b},${a})`
-      // pen.fillRect(0, 0, cell, cell)
+      // pen.fillStyle = linGrd
+      pen.fillStyle = `rgba(${r},${g},${b},${a})`
+      // pen.shadowBlur = params.cellSize
+      // pen.shadowColor = `rgba(${r},${g},${b},${a})`
       // pen.fillRect(0, 0, cell * .9, cell * .9)
       // pen.fillRect(0, 0, cell * .75, cell * .75)
       // pen.fillRect(0, 0, cell * .5, cell * .5)
@@ -345,12 +445,15 @@ const randomRangedRGBA = (
 }
 
 const getGlyph = (v) => {
-// console.log(`🚀 ~ file: sketch-05.js ~ line 347 ~ getGlyph ~ v`, v)
-  if (v < 150) { return '*' }
-  if (v < 300) { return '\\' }
-  if (v < 450) { return '-' }
-  if (v < 600) { return '/' }
-  return '@'
+  // console.log(`🚀 ~ file: sketch-05.js ~ line 347 ~ getGlyph ~ v`, v)
+  if (v < paramsGlyphs.va) { return paramsGlyphs.a }
+  if (v < paramsGlyphs.vb) { return paramsGlyphs.b }
+  if (v < paramsGlyphs.vc) { return paramsGlyphs.c }
+  if (v < paramsGlyphs.vd) { return paramsGlyphs.d }
+  if (v < paramsGlyphs.ve) { return paramsGlyphs.e }
+  if (v < paramsGlyphs.vf) { return paramsGlyphs.f }
+  if (v < paramsGlyphs.vg) { return paramsGlyphs.g }
+  return paramsGlyphs.h
   // const glyphs = '_= /'.split('')
   // let g = random.pick(glyphs)
   // return g
