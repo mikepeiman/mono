@@ -24,7 +24,7 @@ const imageContext = imageCanvas.getContext('2d')
 
 
 params = {
-  cellSize: 6,
+  cellSize: 12,
   images: [
     '8040ebabaa90d7ac5908a1a50e7b7b40.jpg',
     '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg',
@@ -46,7 +46,7 @@ params = {
     '20211110_125044.jpg',
     '20211110_125818_HDR.jpg',
   ],
-  image: 'download-_8_.jpg',
+  image: 'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg',
 }
 
 const createTweakpane = () => {
@@ -86,7 +86,6 @@ const createTweakpane = () => {
       '20211101_151335.jpg': '20211101_151335.jpg',
       '20211110_125044.jpg': '20211110_125044.jpg',
       '20211110_125818_HDR.jpg': '20211110_125818_HDR.jpg',
-
     }
   }).on('change', (e) => {
     console.log(`🚀 ~ file: sketch-05.js ~ line 58 ~ createTweakpane ~ e`, e)
@@ -109,11 +108,24 @@ const sketch = async ({ context, width, height, update }) => {
   typeCanvas.width = cols
   typeCanvas.height = rows
 
-  image = await load({ url: `assets/${params.image}` }) // #0 (1.5), 4 (.75), 5, 6, 7,  12 (.25), 13 (1.5), 14 (.5)
+  image = await load({ url: `assets/${params.image}` })
+  let w = image.width
+  let h = image.height
+  let dimensionsFactor = 1
+  let max = Math.max(w, h)
+  console.log(`🚀 ~ file: sketch-05.js ~ line 116 ~ sketch ~ max`, max)
+  w, h
+  console.log(`🚀 ~ file: sketch-05.js ~ line 115 ~ sketch ~ w, h `, w, h)
+  if (max > 6000) dimensionsFactor = .25
+  if (max > 4000) dimensionsFactor = .5
+  if (max > 3000) dimensionsFactor = .75
+  if (max < 1000) dimensionsFactor = 1.25
+  console.log(`🚀 ~ file: sketch-05.js ~ line 123 ~ sketch ~ dimensionsFactor`, dimensionsFactor)
+
   update({
     // dimensions: [image.width * 1.5, image.height * 1.5]
     // dimensions: [image.width, image.height]
-    dimensions: [image.width * .75, image.height * .75]
+    dimensions: [w * dimensionsFactor - (w * dimensionsFactor % params.cellSize), h * dimensionsFactor  - (h * dimensionsFactor % params.cellSize)]
     // dimensions: [image.width *.5, image.height * .5]
     // dimensions: [image.width * .25, image.height * .25]
   })
@@ -130,7 +142,8 @@ const sketch = async ({ context, width, height, update }) => {
     typeCanvas.width = cols
     typeCanvas.height = rows
 
-    context.fillStyle = 'black';
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, width, height)
     console.log(`🚀 ~ file: sketch-05.js ~ line 51 ~ return ~ imageCols,imageRows`, imageCols, imageRows)
 
     // typeContext.fillStyle = 'black';
@@ -172,16 +185,15 @@ const sketch = async ({ context, width, height, update }) => {
     // console.log(`🚀 ~ file: sketch-05.js ~ line 81 ~ return ~ imageData`, imageData)
     // console.log(`🚀 ~ file: sketch-05.js ~ line 53 ~ return ~ typeData`, typeData)
 
-    let radGrd = pen.createRadialGradient(width * .5, height * .5, 0, width * .5 + 100, height * .5 + 100, height)
+    // let radGrd = pen.createRadialGradient(width * .5, height * .5, 0, width * .5 + 100, height * .5 + 100, height)
     // radGrd.addColorStop(0, randomRGBA())
-    radGrd.addColorStop(0.25, randomRangedRGBA(0, 50, 50, 100, 150, 255, 55, 105))
-    radGrd.addColorStop(0.5, randomRangedRGBA(50, 100, 0, 50, 50, 205, 55, 105))
-    radGrd.addColorStop(0.75, randomRangedRGBA(50, 150, 50, 100, 150, 255, 55, 105))
-    radGrd.addColorStop(1, randomRangedRGBA(150, 255, 25, 50, 150, 205, 55, 105))
+    // radGrd.addColorStop(0.25, randomRangedRGBA(0, 50, 50, 100, 150, 255, 55, 105))
+    // radGrd.addColorStop(0.5, randomRangedRGBA(50, 100, 0, 50, 50, 205, 55, 105))
+    // radGrd.addColorStop(0.75, randomRangedRGBA(50, 150, 50, 100, 150, 255, 55, 105))
+    // radGrd.addColorStop(1, randomRangedRGBA(150, 255, 25, 50, 150, 205, 55, 105))
     // pen.fillStyle = radGrd
     // imageContext.fill()
-    pen.fill()
-    pen.fillRect(0, 0, width, height)
+    // pen.fill()
 
     pen.textBaseline = 'middle'
     pen.textAlign = 'center'
@@ -212,10 +224,10 @@ const sketch = async ({ context, width, height, update }) => {
 
       pen.save()
       pen.translate(x, y)
-      pen.translate(cell * .5, cell * .5)
+      pen.translate(cell * .25, cell * .25)
       // pen.fillText(glyph, 0, 0)
-      pen.beginPath()
-      let gradientAngle1 = random.range(0, 1)
+      // pen.beginPath()
+      let gradientAngle1 = random.range(0, 2)
       let gradientAngle2 = random.range(0, 1)
       let linGrd = pen.createLinearGradient(cell * gradientAngle1, 0, cell * gradientAngle2, cell)
       let colorRangeR = random.range(0, 1)
@@ -224,12 +236,14 @@ const sketch = async ({ context, width, height, update }) => {
       let colorRangeA = random.range(0, .5)
       linGrd.addColorStop(0, `rgba(${r * colorRangeR},${g * colorRangeG},${b * colorRangeB},${a * colorRangeA})`)
       linGrd.addColorStop(1, `rgba(${r},${g},${b},${a})`)
-      pen.fillStyle = linGrd
+      pen.fillStyle = `rgba(${r},${g},${b},${.75})`
+      pen.shadowBlur =
+        pen.shadowColor = `rgba(${r},${g},${b},${a})`
       // pen.fillRect(0, 0, cell, cell)
-      pen.fillRect(0, 0, cell * .9, cell * .9)
+      // pen.fillRect(0, 0, cell * .9, cell * .9)
       // pen.fillRect(0, 0, cell * .75, cell * .75)
-      // pen.fillRect(0,0, cell * .5, cell * .5)
-      // pen.fillStyle
+      pen.fillRect(0, 0, cell * .5, cell * .5)
+      // pen.fillRect(0,0, 1, 1)
       // pen.arc(0, 0, cell / 2, 0, Math.PI * 2)
       pen.fill()
       pen.restore()
