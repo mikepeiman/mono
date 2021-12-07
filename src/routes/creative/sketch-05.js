@@ -27,11 +27,41 @@ const sketch = async ({ context, width, height, update }) => {
   typeCanvas.width = cols
   typeCanvas.height = rows
 
-  image = await load({ url: 'assets/8040ebabaa90d7ac5908a1a50e7b7b40.jpg' })
+  let images = [
+    '8040ebabaa90d7ac5908a1a50e7b7b40.jpg',
+    '1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg',
+    '1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg',
+    '1200px-Paracas_National_Reserve._Ica,_Peru.jpg',
+    'download-_8_.jpg',
+    'download-_11_.jpg',
+    'download-_12_.jpg',
+    'download-_18_.jpg',
+    'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg',
+    'gettyimages-919352240-1024x1024.jpg',
+    'main-qimg-e61354cfbf095d6f10f71dae9d578369.jpg',
+    'springbrook national park, australia-2.jpg',
+    'svaneti-georgia-min.jpg',
+    'Thor-Peak-The-Greatest-Vertical-Drop-on-Earth.jpg',
+    'vinicunza peru.jpg',
+    '20211106_151003.jpg',
+    '20211101_151335.jpg',
+    '20211110_125044.jpg',
+    '20211110_125818_HDR.jpg',
+  ]
+  // image = await load({ url: 'assets/8040ebabaa90d7ac5908a1a50e7b7b40.jpg' })
   // image = await load({ url: 'assets/1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg' })
-  // image = await load({ url: 'assets/20211106_151003.jpg' })
+  // image = await load({ url: 'assets/20211106_151003.jpg'})
+  // image = await load({ url: 'assets/1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg'})
+  // image = await load({ url: 'assets/1200px-Paracas_National_Reserve._Ica,_Peru.jpg'})
+  // image = await load({ url: 'assets/20211101_151335.jpg'}) // turkey tail florette
+  // image = await load({ url: 'assets/20211110_125044.jpg'}) // turkey tail shelf
+  // image = await load({ url: 'assets/20211110_125818_HDR.jpg'}) // turkey tail single focused
+  image = await load({ url: `assets/${images[13]}`}) // #0, 4 (.5), 5, 6, 7,  12 (.25), 13 (1.5), 14 (.5)
   update({
-    dimensions: [image.width, image.height]
+    dimensions: [image.width * 1.5, image.height * 1.5]
+    // dimensions: [image.width, image.height]
+    // dimensions: [image.width *.5, image.height * .5]
+    // dimensions: [image.width * .25, image.height * .25]
   })
 
   return ({ context, width, height }) => {
@@ -44,10 +74,8 @@ const sketch = async ({ context, width, height, update }) => {
     imageCanvas.height = height * cell
     typeCanvas.width = cols
     typeCanvas.height = rows
-    // context.restore()
 
     imageContext.fillStyle = 'black';
-    // imageContext.fillRect(0, 0, imageCols, imageRows);
     console.log(`🚀 ~ file: sketch-05.js ~ line 51 ~ return ~ imageCols,imageRows`, imageCols, imageRows)
 
     typeContext.fillStyle = 'black';
@@ -78,8 +106,6 @@ const sketch = async ({ context, width, height, update }) => {
 
     typeContext.stroke()
     typeContext.fillText(text, 0, 0)
-    // imageContext.fillText(image, 0, 0)
-    // imageContext.fillStyle = image
     // typeContext.fillStyle = 'white'
     typeContext.restore()
     // imageContext.drawImage(image, 0, 0, imageCols * cell, imageRows * cell)
