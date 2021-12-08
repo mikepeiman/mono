@@ -106,7 +106,7 @@ const createPane = () => {
   })
   folder.addInput(panelParams, 'scaleMax', {
     min: 1,
-    max: 100,
+    max: 10000,
     step: 1
   })
   folder.addInput(panelParams, 'lineCap', {
@@ -360,31 +360,43 @@ function varyGradAngle(pen, width, height, rndvar) {
 }
 
 function adjustColorParams(red, green, blue, alpha) {
-  let r, g, b, a
+  let r, g, b, a, sumOfColorValues
   let current, amp, movement
-  current = red.currentValue
-  amp = red.varianceAmplitude
-  movement = red.movementSpeed
+
   let colorParamsKeys = Object.keys(colorsParams)
   colorParamsKeys.forEach(key => {
     let value = colorsParams[key]
-    r = value.r
-    r = parseInt(random.range(r + amp, r - amp) + movement)
-    r = checkRGBwithinRange(r, "red")
-    colorsParams[key].r = r
-    g = value.g
-    g = parseInt(random.range(g + amp, g - amp) + movement)
-    g = checkRGBwithinRange(g, "green")
-    colorsParams[key].g = g
-    b = value.b
-    b = parseInt(random.range(b + amp, b - amp) + movement)
-    b = checkRGBwithinRange(b, "blue")
-    colorsParams[key].b = b
+    //..//
+      r = value.r
+      current = red.currentValue
+      sumOfColorValues += current
+      amp = red.varianceAmplitude
+      movement = red.movementSpeed
+      r = parseInt(random.range(r + amp, r - amp) + movement)
+      r = checkRGBwithinRange(r, "red")
+      colorsParams[key].r = r
+    //..//
+      g = value.g
+      current = green.currentValue
+      sumOfColorValues += current
+      amp = green.varianceAmplitude
+      movement = green.movementSpeed
+      g = parseInt(random.range(g + amp, g - amp) + movement)
+      g = checkRGBwithinRange(g, "green")
+      colorsParams[key].g = g
+    //..//
+      b = value.b
+      current = blue.currentValue
+      sumOfColorValues += current
+      amp = blue.varianceAmplitude
+      movement = blue.movementSpeed
+      b = parseInt(random.range(b + amp, b - amp) + movement)
+      b = checkRGBwithinRange(b, "blue")
+      colorsParams[key].b = b
     // a = value.a
     // a = parseInt(random.range(a + amp, a - amp) + movement)
     // a = checkAlphaWithinRange(a, "alpha")
     colorsParams[key].a = 1
-
   })
 }
 
