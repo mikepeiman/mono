@@ -370,6 +370,7 @@ const sketch = async ({ context, width, height, update }) => {
 
       // pen.fillStyle = linGrd
       // pen.fillStyle = `rgba(${r},${g},${b},${a})`
+      pen.rotate(boldness * .05)
       pen.shadowBlur = boldness
       pen.shadowColor = `rgba(${r},${g},${b},${a})`
       // pen.fillRect(0, 0, cell * .9, cell * .9)
