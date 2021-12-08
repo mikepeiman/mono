@@ -6,6 +6,7 @@ const Tweakpane = require('tweakpane');
 
 
 let manager
+let glyph
 let fontFamily = "Century"
 let width = height = 600
 const settings = {
@@ -42,17 +43,19 @@ const images = [
   '20211101_151335.jpg',
   '20211110_125044.jpg',
   '20211110_125818_HDR.jpg',
-  '70.jpg',
+  'download.gif',
   '6bc3782329c30397e0679ed81b807bd8.jpg',
   '8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg',
   'A69F230D-437F-426F-9D97-0011DADF82C8.jpg',
 ],
   params = {
-    cellSize: 3,
-    scaleDimensions: .25,
-    glyphScale: .25,
+    cellSize: 74,
+    scaleDimensions: 2.5,
+    glyphScale: .5,
+    glyph: ':',
+    singleGlyph: true,
     bg: '#000000ff',
-    image: images[14],
+    image: images[4],
   }
 
 paramsGlyphs = {
@@ -80,17 +83,17 @@ const createTweakpane = () => {
   folder = pane.addFolder({ title: "Settings" })
   folder.addInput(params, 'cellSize', {
     min: 1,
-    max: 50,
+    max: 100,
     step: 1
   })
   folder.addInput(params, 'scaleDimensions', {
     min: .25,
-    max: 4,
+    max: 10,
     step: .25
   })
   folder.addInput(params, 'glyphScale', {
     min: .05,
-    max: 1,
+    max: 2,
     step: .05
   })
   folder.addInput(params, 'bg', {
@@ -106,6 +109,8 @@ const createTweakpane = () => {
   // })
 
   folder = pane.addFolder({ title: 'Glyphs' })
+  folder.addInput(params, 'singleGlyph')
+  folder.addInput(params, 'glyph')
   folder.addInput(paramsGlyphs, 'a')
   folder.addInput(paramsGlyphs, 'va', {
     min: 0,
@@ -166,6 +171,9 @@ const createTweakpane = () => {
       'download-_11_.jpg': 'download-_11_.jpg',
       'download-_12_.jpg': 'download-_12_.jpg',
       'download-_18_.jpg': 'download-_18_.jpg',
+      'download-_1_.jpg': 'download-_1_.jpg',
+      'download-_19_.jpg': 'download-_19_.jpg',
+      'download-_2_.jpg': 'download-_22_.jpg',
       'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg': 'Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg',
       'gettyimages-919352240-1024x1024.jpg': 'gettyimages-919352240-1024x1024.jpg',
       'main-qimg-e61354cfbf095d6f10f71dae9d578369.jpg': 'main-qimg-e61354cfbf095d6f10f71dae9d578369.jpg',
@@ -178,6 +186,9 @@ const createTweakpane = () => {
       '20211110_125044.jpg': '20211110_125044.jpg',
       '20211110_125818_HDR.jpg': '20211110_125818_HDR.jpg',
       '70.jpg': '70.jpg',
+      'download.gif': 'download.gif',
+      'Bay.of.Kotor.original.15947.jpg': 'Bay.of.Kotor.original.15947.jpg',
+      'hvalfjorur-fjord.jpg': 'hvalfjorur-fjord.jpg',
       '6bc3782329c30397e0679ed81b807bd8.jpg': '6bc3782329c30397e0679ed81b807bd8.jpg',
       '8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg': '8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg',
       'A69F230D-437F-426F-9D97-0011DADF82C8': 'A69F230D-437F-426F-9D97-0011DADF82C8.jpg',
@@ -236,8 +247,10 @@ const sketch = async ({ context, width, height, update }) => {
     const imageCols = Math.floor(width / cell)
     const imageRows = Math.floor(height / cell)
     const imageCells = imageCols * imageRows
-    imageCanvas.width = width * cell
-    imageCanvas.height = height * cell
+    imageCanvas.width = width 
+    imageCanvas.height = height 
+    // imageCanvas.width = width * cell
+    // imageCanvas.height = height * cell
     typeCanvas.width = cols
     typeCanvas.height = rows
 
@@ -272,7 +285,7 @@ const sketch = async ({ context, width, height, update }) => {
     typeContext.beginPath()
 
     typeContext.stroke()
-    typeContext.fillText(text, 0, 0)
+    typeContext.fillText(text, random.range(0, params.cellSize),random.range(0, params.cellSize))
     // typeContext.fillStyle = 'white'
     typeContext.restore()
     // imageContext.drawImage(image, 0, 0, imageCols * cell, imageRows * cell)
@@ -314,92 +327,68 @@ const sketch = async ({ context, width, height, update }) => {
 
 
       // pen.fillStyle = randomRGBA()
-      pen.fillStyle = `rgba(${r},${g},${b},${a})`
+      // pen.fillStyle = `rgba(${r},${g},${b},${a})`
       // console.log(`🚀 ~ file: sketch-05.js ~ line 114 ~ return ~ rgba(${r},${g},${b},${a})`, `rgba(${r},${g},${b},${a})`)
       // pen.fillStyle = glyph
-      let glyph = getGlyph(r)
+      // let glyph = getGlyph(r)
       pen.font = `${cell * 2}px ${fontFamily}`
-      // pen.fillStyle = 'white'
-
       pen.save()
       pen.translate(x, y)
       pen.translate(cell * .25, cell * .25)
       // pen.fillText(glyph, 0, 0)
       // pen.beginPath()
-      let gradientAngle1 = random.range(0, 2)
-      let gradientAngle2 = random.range(0, 1)
-      let linGrd = pen.createLinearGradient(cell * gradientAngle1, 0, cell * gradientAngle2, cell)
-      let colorRangeR = random.range(0, 1)
-      let colorRangeG = random.range(0, 1)
-      let colorRangeB = random.range(0, 1)
-      let colorRangeA = random.range(0, .5)
-      linGrd.addColorStop(0, `rgba(${r * colorRangeR},${g * colorRangeG},${b * colorRangeB},${a * colorRangeA})`)
-      linGrd.addColorStop(1, `rgba(${r},${g},${b},${a})`)
+      // let gradientAngle1 = random.range(0, 2)
+      // let gradientAngle2 = random.range(0, 1)
+      // let linGrd = pen.createLinearGradient(cell * gradientAngle1, 0, cell * gradientAngle2, cell)
+      // let linGrd = pen.createLinearGradient(0, 0, cell, cell)
+      // let colorRangeR = random.range(0, 1)
+      // let colorRangeG = random.range(0, 1)
+      // let colorRangeB = random.range(0, 1)
+      // let colorRangeA = random.range(0, .5)
+      // linGrd.addColorStop(0, `rgba(${r * colorRangeR},${g * colorRangeG},${b * colorRangeB},${a * colorRangeA})`)
+      // linGrd.addColorStop(1, `rgba(${r},${g},${b},${a})`)
       let colorSum = r + g + b
-      glyph = getGlyph(colorSum)
-      let boldness = Math.ceil(colorSum / 100) * 100
-      fontSize = colorSum * params.glyphScale
+      let colorDiff = 775 - r - g - b
+      // params.singleGlyph ? glyph = params.glyph : glyph = getRandomGlyphFromString('|||||-+oc~@CO')
+      // glyph = getGlyph(colorSum)
+      let boldness = Math.ceil(colorSum / 100) 
+      // fontSize = colorSum * params.glyphScale
+      // if()
+      // fontSize = colorSum * params.glyphScale + 20
       // console.log(`🚀 ~ file: sketch-05.js ~ line 249 ~ return ~ boldness`, boldness)
       // if(colorSum < 100) console.log(`low colorSum `, colorSum) 
       // console.log(`🚀 ~ file: sketch-05.js ~ line 249 ~ return ~ glyph`, glyph)
       // console.log(`🚀 ~ file: sketch-05.js ~ line 248 ~ return ~ colorSum`, colorSum)
       // pen.fillStyle = `rgba(${r},${g},${b},${1})`
-      if (fontSize > 20) {
-        pen.font = `normal normal ${boldness} ${fontSize >= 20 ? fontSize : 20}px ${fontFamily}`
-        pen.fillText(glyph, 0, 0)
-      } else {
-        pen.fillRect(0, 0, cell, cell)
-      }
+      // let cutoff = params.cellSize
+      // if (fontSize > cutoff) {
+      //   pen.font = `normal normal ${boldness} ${fontSize >= cutoff ? fontSize : cutoff}px ${fontFamily}`
+      //   pen.fillText(glyph, 0, 0)
+      // } else {
+      //   pen.fillRect(0, 0, cell, cell)
+      // }
 
       // pen.fillStyle = linGrd
-      pen.fillStyle = `rgba(${r},${g},${b},${a})`
-      // pen.shadowBlur = params.cellSize
-      // pen.shadowColor = `rgba(${r},${g},${b},${a})`
+      // pen.fillStyle = `rgba(${r},${g},${b},${a})`
+      pen.shadowBlur = boldness
+      pen.shadowColor = `rgba(${r},${g},${b},${a})`
       // pen.fillRect(0, 0, cell * .9, cell * .9)
       // pen.fillRect(0, 0, cell * .75, cell * .75)
       // pen.fillRect(0, 0, cell * .5, cell * .5)
       // pen.fillRect(0, 0, cell * .25, cell * .25)
+      // pen.lineTo(cell,cell)
+      // pen.lineTo(0,0)
+      // pen.rect(0, 0, cell * params.glyphScale, cell * params.glyphScale)
+      pen.lineWidth = boldness * 2
+      pen.strokeStyle = `rgba(${r},${g},${b},${a})`
+      pen.strokeRect(0,0,cell * .5,cell * .5)
+      // pen.strokeStyle = `rgba(${r},${g},${b},${a})`
       // pen.fillRect(0,0, 1, 1)
-      // pen.arc(0, 0, cell / 2, 0, Math.PI * 2)
-      pen.fill()
+      // pen.arc(0, 0, cell / 2, 0, 5)
+      pen.stroke()
+      // pen.fill()
       pen.restore()
     }
-
-    // pen.drawImage(image, 0, 0, 180, 180)
-
-    // for (let i = 0; i < numCells; i++) {
-    //   const col = i % cols
-    //   const row = Math.floor(i / cols)
-    //   const x = col * cell
-    //   const y = row * cell
-
-    //   const r = typeData[i * 4 + 0]
-    //   const g = typeData[i * 4 + 1]
-    //   const b = typeData[i * 4 + 2]
-    //   const a = typeData[i * 4 + 3]
-
-    //   let glyph = getGlyph(r)
-    //   // glyph = loadImage()
-    //   pen.font = `${cell * 2}px ${fontFamily}`
-    //   if (Math.random() < 0.1) pen.font = `${cell * 6}px ${fontFamily}`
-    //   // pen.fillStyle = randomRGBA()
-    //   // pen.fillStyle = `rgba(${r},${g},${b},${a})`
-    //   // pen.fillStyle = glyph
-    //   pen.save()
-    //   pen.translate(x, y)
-    //   pen.translate(cell * .5, cell * .5)
-
-    //   // pen.fillRect(0,0, cell, cell)
-    //   // pen.beginPath()
-    //   // pen.arc(0,0, cell / 2, 0, Math.PI * 2)
-    //   pen.fillText(glyph, 0, 0)
-    //   pen.fillStyle = 'white'
-    //   pen.fill()
-    //   pen.restore()
-    // }
-
-
-
   };
 };
 
@@ -459,6 +448,11 @@ const getGlyph = (v) => {
   // return g
 }
 
+function getRandomGlyphFromString(str) {
+  let glyphs = str.split('')
+  let g = random.pick(glyphs)
+  return g
+}
 
 
 const url = 'https://picsum.photos/200'
