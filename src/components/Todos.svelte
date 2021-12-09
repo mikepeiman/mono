@@ -10,20 +10,21 @@
 
 <script>
 	export let todos;
+    console.log(`🚀 ~ file: Todos.svelte ~ line 13 ~ todos`, todos)
 </script>
 
 <svelte:head>
 	<title>Mike's Blog</title>
 </svelte:head>
 
-{#each todos as {author, tags, body}}
+{#each todos as {author, tags, quoteBody}}
 <main class="container max-w-xl mx-auto px-4">
     <div class="card text-center shadow-2xl mb-20">
         <figure class="px-10 pt-10">
             <!-- <img class="rounded-xl" src="{coverImage.url}" alt="{`Cover image for ${title}`}"> -->
         </figure>
         <div class="card-body">
-            <h1 class="title">{body}</h1>
+            <h1 class="title">{quoteBody}</h1>
             <p>{author.name}</p>
             <div class="flex justify-center mt-5 space-x-2">
                 {#each tags as tag}
