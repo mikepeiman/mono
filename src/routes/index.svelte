@@ -23,7 +23,7 @@
 		<h1>Welcome to MetaBrain</h1>
 		<p>An operating system for your mind</p>
 	</div>
-	<div class="posts">
+	<div class="posts py-10">
 		<Posts {posts}/>
 	</div>
 </div>

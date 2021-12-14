@@ -4,7 +4,7 @@
 	for (let i = 1; i < numSketches + 1; i++) {
         let url, name
         i < 10 ? name = `Sketch 0${i}` : name = `Sketch ${i}`
-        i < 10 ? url = `sketch0${i}` : url = `sketch${i}`
+        i < 10 ? url = `sketch0${i}` : url = `/sketch${i}`
 		let sketch = {
 			name: name,
 			url: url,

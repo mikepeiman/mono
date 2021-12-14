@@ -26,7 +26,7 @@
 	<title>Mike's Blog</title>
 </svelte:head>
 
-<div class="flex flex-col content-center items-center">
+<div class="flex flex-col content-center items-center px-48 pb-48">
     <div class="sm:-mx-5 md:-mx-10 lg:-mx-20 xl:-mx-38 mb-5 rounded-xl">
         <img src={post.coverImage.url} alt={`Cover image for ${title}`} />
     </div>

@@ -17,7 +17,7 @@
 </script>
 
 {#each posts as {title, slug, excerpt, coverImage, date, tags}}
-<main class="container max-w-xl mx-auto px-4">
+<main class="max-w-xl mx-auto px-4 py-8">
     <div class="card text-center shadow-2xl mb-20">
         <figure class="px-10 pt-10">
             <img class="rounded-xl" src="{coverImage.url}" alt="{`Cover image for ${title}`}">

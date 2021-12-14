@@ -15,6 +15,6 @@
     console.log(`🚀 ~ file: POSTS index.svelte ~ line 15 ~ posts`, posts)
 </script>
 
-<div class="posts">
+<div class="posts py-12">
 	<Posts {posts}/>
 </div>
