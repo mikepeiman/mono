@@ -13,7 +13,7 @@
 	}
 </script>
 
-<div class="sidebar bg-gray-700" id="sideNav">
+<div class="sidebar bg-gray-700 pt-5" id="sideNav">
 	<nav>
 		{#each sketches as sketch, i}
 			<a href={sketch.url} class="bg-indigo-600 hover:bg-indigo-500">{sketch.name}</a>
@@ -29,7 +29,7 @@
 	#sideNav {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: start;
 		align-items: flex-start;
 		font-family: 'Montserrat', sans-serif;
 		a {

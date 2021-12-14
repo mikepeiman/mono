@@ -19,35 +19,38 @@
 	<title>MetaBrain: Your Life OS</title>
 </svelte:head>
 <div class="main">
-	<h1>Welcome to MetaBrain</h1>
-	<p>An operating system for your mind</p>
-</div>
-<div class="posts">
-	<Posts {posts}/>
+	<div class="title flex flex-col items-center p-6">
+		<h1>Welcome to MetaBrain</h1>
+		<p>An operating system for your mind</p>
+	</div>
+	<div class="posts">
+		<Posts {posts}/>
+	</div>
 </div>
 
 <style>
 	.main {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		font-family: 'Montserrat', sans-serif;
+		grid-area: main;
+		display: grid;
+		height: auto;
+		grid-template-columns: 60vw;
+		grid-template-rows: 10rem auto;
+		grid-template-areas:
+			'title'
+			'body';
 	}
-
+	.title {
+		grid-area: title;
+	}
+	.posts {
+		grid-area: body;
+		height: auto;
+	}
+	.pad {
+		grid-area: pad;
+	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
-		background: -webkit-linear-gradient(
-			0deg,
-			rgba(72, 0, 36, 1) 0%,
-			rgba(9, 121, 121, 1) 25%,
-			rgba(56, 121, 255, 1) 50%,
-			rgba(121, 9, 121, 1) 75%,
-			rgba(2, 0, 76, 1) 100%
-		);
-
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
 	}
 </style>

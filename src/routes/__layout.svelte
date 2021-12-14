@@ -22,11 +22,10 @@
 	:global(#layout-container) {
 		// height: 100vh;
 		// width: 100vw;
-		grid-template-rows: 5rem 1fr 1fr 80px;
+		grid-template-rows: 5rem auto 80px;
 		grid-template-columns: 10rem calc(100vw - 20rem) 10rem;
 		grid-template-areas:
 			'header header header'
-			'sidebar main main'
 			'sidebar main main'
 			'footer footer footer';
 	}
