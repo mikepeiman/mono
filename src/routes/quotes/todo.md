@@ -1,13 +1,13 @@
 ## Quote structure from text:
-* quotes are in `" "` quotation marks
-* author is attributed with ` - `
-* author credential/identity is indicated after `,`
-* Tags material/reference is enclosed within `[ ]`
-* an axiomatic saying is prefaced with `Axiom: ` before the name of it `Axiom: Brandolinie's Law`
-* author DOB-Death noted as `(####-####)`
-* quotation year noted at `(####)`
-* if there is additional context or comment, it is signified by `@(xxx xxx)`
-* tags are specified as `#(xxx xxx, ccccc, zzzz)` comma separated, OR each as `#xxx #yyy`
+* quotes are in "" "" quotation marks
+* author is attributed with " - "
+* author credential/identity is indicated after ","
+* Tags material/reference is enclosed within "[ ]"
+* an axiomatic saying is prefaced with "Axiom: " before the name of it "Axiom: Brandolini's Law"
+* author DOB-Death noted as "(####-####)"
+* quotation year noted at "(####)"
+* if there is additional context or comment, it is signified by "@(xxx xxx)"
+* tags are specified as "#(xxx xxx, ccccc, zzzz)" comma separated, OR each as "#xxx #yyy"
 * I will need also a flag or rating to determine which quotes are authenticated, or the degree of confidence, plus Tagss for this
 
 ## Pseudocode
@@ -21,8 +21,8 @@
 * parseQuoteContext(item)
 
 ## Todo
-* need to clean quotes file more; multiline quotes are getting wrapped in `<div>`'s as separate items
-* the `<div><br></div>` are useful here; they delineate the actual quotes
+* need to clean quotes file more; multiline quotes are getting wrapped in "<div>"'s as separate items
+* the "<div><br></div>" are useful here; they delineate the actual quotes
 * refactor workingQuoteObject for, after quoteBody and author, a nextParts array so any further details can be looped through
 * in the markup.
 * I'm seeing problems in structure here, philosophical problems, like - what is a quote, really?
