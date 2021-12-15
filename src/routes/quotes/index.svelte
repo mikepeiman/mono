@@ -11,7 +11,7 @@
 <script>
 	import Quotes from '$components/Quotes.svelte';
 	import ParseQuotes from './parseQuotes.svelte';
-	import AddQuote from './addQuote.svelte';
+	import AddQuote from './AddQuote.svelte';
 	export let quotes;
 </script>
 
