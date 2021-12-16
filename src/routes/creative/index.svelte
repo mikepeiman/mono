@@ -20,8 +20,8 @@
 </svelte:head>
 <div class="main">
 	<div class="title flex flex-col items-center p-6">
-		<h1>Welcome to MetaBrain</h1>
-		<p>An operating system for your mind</p>
+		<h1>Creative coding</h1>
+		<p>Sketches and animations</p>
 	</div>
 	<div class="posts py-10">
 		<!-- <Posts {posts}/> -->
