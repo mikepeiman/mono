@@ -62,9 +62,9 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 <CanvasSketchEditor {sketch} {settings} {data}>
 	<ColorInput label='Background' bind:value={data.background} />
 	<ColorInput label='Foreground' bind:value={data.foreground} />
-	<Slider label='Arc Length' bind:value={data.arclen} />
-	<Slider label='Radius' bind:value={data.radius} />
-	<Slider label='Angle' bind:value={data.angle} min={-Math.PI} max={Math.PI} />
+	<Slider label='Arc Length' bind:value={data.arclen}  min=0.05 max=1 step=0.05 />
+	<Slider label='Radius' bind:value={data.radius} min=0.05 max=1 step=0.05 />
+	<Slider label='Angle' bind:value={data.angle} min={0} max={Math.PI * 2 + .1 } step=0.1/>
 	<Checkbox label='Outline' bind:checked={data.outline} />
 	{#if data.outline}
 		<Slider label='Line Width' bind:value={data.lineWidth} min=1 max=100 />

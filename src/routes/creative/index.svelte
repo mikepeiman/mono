@@ -11,7 +11,7 @@
 <script>
 	import Posts from "$components/Posts.svelte";
 	export let posts
-    console.log(`🚀 ~ file: index.svelte ~ line 14 ~ posts`, posts)
+    // console.log(`🚀 ~ file: index.svelte ~ line 14 ~ posts`, posts)
 
 </script>
 
