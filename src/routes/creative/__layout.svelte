@@ -1,17 +1,17 @@
 <script>
 	import Footer from '$components/Footer.svelte';
 	import SideNav from '$components/SideNav.svelte';
-	import '../app.scss';
-	import Nav from '../components/Nav.svelte';
+	import '../../app.scss';
+	import Nav from '$components/Nav.svelte';
 </script>
 
-<div id="app-layout" class="grid w-screen h-screen">
-	<Nav class="header">
+<div id="creative-layout" class="grid w-screen h-screen">
+	<!-- <Nav class="header">
 		<slot class="header" />
-	</Nav>
-	<!-- <SideNav class="sidebar">
+	</Nav> -->
+	<SideNav class="sidebar">
 		<slot class="sidebar" />
-	</SideNav> -->
+	</SideNav>
 	<div class="main flex flex-col items-center jutify-center">
 		<slot />
 	</div>
@@ -19,13 +19,12 @@
 </div>
 
 <style lang="scss">
-	:global(#app-layout) {
+	:global(#creative-layout) {
 		// height: 100vh;
 		// width: 100vw;
-		grid-template-rows: 5rem auto 80px;
-		grid-template-columns: 0 calc(100vw - 10rem) 10rem;
+		grid-template-rows: auto 80px;
+		grid-template-columns: 10rem calc(100vw - 20rem) 10rem;
 		grid-template-areas:
-			'header header header'
 			'sidebar main main'
 			'footer footer footer';
 	}
