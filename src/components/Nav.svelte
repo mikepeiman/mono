@@ -36,7 +36,6 @@
 	<nav class="w-screen flex justify-center items-center">
 		{#each links as link}
 			<a
-				on:click={(e) => getNavTarget(e.target)}
 				rel="prefetch"
 				sveltekit:prefetch
 				href={link.url}
