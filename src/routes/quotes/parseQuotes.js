@@ -55,7 +55,7 @@ function authorContainsDash(author){
 function getQuoteAuthor(workingQuoteObject) {
     let { author, remainingText } = workingQuoteObject
     workingQuoteObject['author'] = remainingText
-    console.log(remainingText)
+    // console.log(remainingText)
     let textEnd = remainingText.length;
     let separatorValue = findNextSeparatingCharacter(remainingText);
     if (separatorValue > -1 && separatorValue) {

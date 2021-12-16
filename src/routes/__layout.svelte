@@ -6,7 +6,7 @@
 </script>
 
 <div id="app-layout" class="grid w-screen h-screen">
-	<Nav class="header">
+	<Nav>
 		<slot class="header" />
 	</Nav>
 	<!-- <SideNav class="sidebar">
