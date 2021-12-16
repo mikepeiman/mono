@@ -24,7 +24,7 @@
 <style lang="scss">
 	:global(.sidebar) {
 		grid-area: sidebar;
-		width: 10rem;
+		width: fit-content;
 	}
 	#sideNav {
 		display: flex;

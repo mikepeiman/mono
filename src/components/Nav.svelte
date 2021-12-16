@@ -31,9 +31,9 @@
 
 </script>
 
-<div class="header bg-gray-700  bg-gradient-to-r from-gray-700 to-indigo-500 flex items-center">
+<div class="header w-auto bg-gray-700  bg-gradient-to-r from-gray-700 to-indigo-500 flex items-center">
 	<!--  bg-gradient-to-r from-gray-700 to-indigo-500  -->
-	<nav class="w-screen flex justify-center items-center">
+	<nav class="w-full flex justify-center items-center">
 		{#each links as link}
 			<a
 				rel="prefetch"
@@ -53,7 +53,7 @@
 	}
 	nav {
 		// width: 100vw;
-		padding-left: 10rem;
+		// padding-left: 10rem;
 		// font-family: 'Montserrat', sans-serif;
 		a {
 			@apply mx-6 text-xl transition-all duration-150;

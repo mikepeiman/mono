@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="footer w-screen grid bg-gradient-to-r from-slate-700 to-indigo-500 flex align-middle items-center justify-between">
+<div class="footer w-full grid bg-gradient-to-r from-slate-700 to-indigo-500 flex align-middle items-center justify-between">
     <button class="logo btn btn-outline place-content-center mx-5 p-5 rounded-lg bg-blue-700">Footer</button>
     <nav class="social w-full flex items-center justify-center">
         <p>This is the footer text. Made by Mike Peiman.</p>

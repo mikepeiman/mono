@@ -5,7 +5,7 @@
 	import Nav from '../components/Nav.svelte';
 </script>
 
-<div id="app-layout" class="grid w-screen h-screen">
+<div id="app-layout" class="grid w-auto h-screen">
 	<Nav>
 		<slot class="header" />
 	</Nav>
@@ -23,11 +23,11 @@
 		// height: 100vh;
 		// width: 100vw;
 		grid-template-rows: 5rem auto 80px;
-		grid-template-columns: 0 calc(100vw - 10rem) 10rem;
+		grid-template-columns: auto;
 		grid-template-areas:
-			'header header header'
-			'sidebar main main'
-			'footer footer footer';
+			' header '
+			' main '
+			' footer ';
 	}
 	.main {
 		grid-area: main;
