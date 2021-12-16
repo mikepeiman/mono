@@ -1,3 +1,11 @@
+<script context="module">
+	export async function load({ page, params }) {
+        console.log(`🚀 ~ file: nav.svelte ~ line 3 ~ load ~ params`, params)
+        console.log(`🚀 ~ file: nav.svelte ~ line 3 ~ load ~ page`, page)
+		
+	}
+</script>
+
 <script>
 	let links = [
 		{ title: 'Home', url: '/' },
@@ -31,6 +39,9 @@
 			@apply mx-6 text-xl;
 			:hover {
 				@apply text-sky-600 underline decoration-sky-100 underline-offset-2;
+			}
+			:active {
+				@apply text-fuchsia-400
 			}
 		}
 	}

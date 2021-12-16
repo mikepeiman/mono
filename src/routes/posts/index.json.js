@@ -15,7 +15,7 @@ export const get = async () => {
             }
           }`
     const { posts } = await client.request(query)
-    console.log(`🚀 ~ file: index.json.js ~ line 18 ~ get ~ posts`, posts)
+    // console.log(`🚀 ~ file: index.json.js ~ line 18 ~ get ~ posts`, posts)
     return {
       status: 200,
       body: { posts }
