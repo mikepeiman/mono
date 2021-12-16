@@ -1,5 +1,5 @@
 // const Color = require('canvas-sketch-util/color');
-import Color from 'canvas-sketch-util/color'
+import Color from 'canvas-sketch-util/color.js'
 
 export const parseHSLA = (color, opacity) => {
 console.log(`🚀 ~ file: parseColor.js ~ line 5 ~ parseColor ~ opacity`, opacity)

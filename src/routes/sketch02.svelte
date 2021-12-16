@@ -5,7 +5,7 @@
 	import OptionSelect from '$components/OptionSelect.svelte';
 	import Checkbox from '$components/Checkbox.svelte';
 	import { onMount } from 'svelte';
-	import random from 'canvas-sketch-util/random';
+	import random from 'canvas-sketch-util/random.js';
 	import { parseHSLA } from '$utils/parseColor';
 
 	const data = {
