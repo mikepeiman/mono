@@ -9,10 +9,15 @@
 </script>
 
 <script>
-import Sketch02 from './sketch02.svelte';
-import Sketch03 from './sketch03.svelte';
-import Sketch04 from './sketch04.svelte';
-import Sketch01 from './sketch01.svelte';
+	import Sketch02 from './sketch02.svelte';
+	import Sketch03 from './sketch03.svelte';
+	import Sketch04 from './sketch04.svelte';
+	import Sketch01 from './sketch01.svelte';
+	import Sketch05 from './sketch05.svelte';
+	import Sketch06 from './sketch06.svelte';
+	import Sketch07 from './sketch07.svelte';
+	import Sketch08 from './sketch08.svelte';
+	import Sketch09 from './sketch09.svelte';
 	export let posts;
 	// console.log(`🚀 ~ file: index.svelte ~ line 14 ~ posts`, posts)
 </script>
@@ -25,11 +30,16 @@ import Sketch01 from './sketch01.svelte';
 	<h1>Creative coding</h1>
 	<p>Sketches and animations</p>
 </div>
-<div class="main grid justify-items-center">
-<Sketch01 hidePanel="true" />
-<Sketch02 hidePanel="true" />
-<Sketch03 hidePanel="true" />
-<Sketch04 hidePanel="true" />
+<div class="main justify-items-center">
+	<Sketch01 hidePanel="true" />
+	<Sketch02 hidePanel="true" />
+	<Sketch03 hidePanel="true" />
+	<Sketch04 hidePanel="true" />
+	<Sketch05 hidePanel="true" />
+	<Sketch06 hidePanel="true" />
+	<Sketch07 hidePanel="true" />
+	<Sketch08 hidePanel="true" />
+	<Sketch09 hidePanel="true" />
 </div>
 
 <style>
@@ -39,8 +49,13 @@ import Sketch01 from './sketch01.svelte';
 	.main {
 		grid-area: main;
 		display: grid;
-
-		grid-template-columns: repeat(3, 1fr);
+		/* grid-template-columns: repeat(4, [sketch-col-start sketch-col-end] 1fr); */
+		grid-template-columns: repeat(auto-fill, minmax(10vw, 25vw));
+		grid-template-rows: repeat(auto-fill, [title-start] 1fr [sketch-start sketch-end] 4fr);
+		/* grid-auto-flow: column; */
+		grid-template-areas:
+			'sketch-title sketch-title sketch-title sketch-title'
+			'sketch-canvas sketch-canvas sketch-canvas sketch-canvas';
 	}
 	.pad {
 		grid-area: pad;

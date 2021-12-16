@@ -59,9 +59,11 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 		};
 	};
 </script>
-<div class="title bg-stone-900 border-b-2 border-stone-500 items-center justify-center flex">
-	<h1 class="text-3xl text-stone-500">{data.TITLE}</h1>
+
+<div class="title items-center justify-center flex">
+	<h1 class="text-3xl text-stone-500 p-4">{data.TITLE}</h1>
 </div>
+
 <CanvasSketchEditor {sketch} {settings} {data} {hidePanel} >
 	<ColorInput label='Background' bind:value={data.background} />
 	<ColorInput label='Foreground' bind:value={data.foreground} />
@@ -73,3 +75,12 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 		<Slider label='Line Width' bind:value={data.lineWidth} min=1 max=100 />
 	{/if}
 </CanvasSketchEditor>
+
+<style>
+
+	.sketch {
+		/* grid-area: sketch-canvas; */
+		/* width: auto;
+		height: auto; */
+	}
+</style>

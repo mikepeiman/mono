@@ -50,10 +50,10 @@
 </main>
 
 <style>
-	:global(body) {
+	/* :global(body) {
 		margin: 0;
 		padding: 0;
-	}
+	} */
 	
 	main {
 		width: 100%;
@@ -63,8 +63,15 @@
 		align-items: center;
 		flex-direction: row;
 	}
+	.title {
+		grid-area: sketch-title;
+		grid-row: title-start sketch-start;
+		grid-column: sketch-col-start sketch-col-end;
+	}
 	.sketch {
-		grid-area: main;
+		/* grid-area: sketch-canvas; */
+		width: auto;
+		grid-row: sketch-start;
 	}
 	.viewport {
 		display: flex;

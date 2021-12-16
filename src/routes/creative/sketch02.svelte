@@ -251,6 +251,10 @@
 	}
 </script>
 
+<div class="title items-center justify-center flex">
+	<h1 class="text-3xl text-stone-500 p-4">{data.TITLE}</h1>
+</div>
+
 <CanvasSketchEditor {sketch} {settings} {data} {hidePanel}>
 	<OptionSelect items={data.shapes} bind:selected={data.shape} />
 	<Checkbox label="Random fill" bind:checked={data.randomFill} />

@@ -60,6 +60,9 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	};
 </script>
 
+<div class="title items-center justify-center flex">
+	<h1 class="text-3xl text-stone-500 p-4">{data.TITLE}</h1>
+</div>
 <CanvasSketchEditor {sketch} {settings} {data} {hidePanel}>
 	<ColorInput label='Background' bind:value={data.background} />
 	<ColorInput label='Foreground' bind:value={data.foreground} />
