@@ -5,35 +5,36 @@
 	import Nav from '$components/Nav.svelte';
 </script>
 
-<div id="creative-layout" class="grid w-auto h-screen">
+<div id="creative-layout" class="grid w-auto h-full">
 	<!-- <Nav class="header">
 		<slot class="header" />
 	</Nav> -->
 	<SideNav class="sidebar">
 		<slot class="sidebar" />
 	</SideNav>
-	<div class="main h-screen flex flex-col items-center jutify-center">
-		<slot />
-	</div>
-	<!-- <Footer /> -->
+	<slot />
 </div>
 
 <style lang="scss">
 	:global(#creative-layout) {
-		// height: 100vh;
 		width: 100%;
-		grid-template-rows: auto;
-		grid-template-columns: 10rem 1fr;
+		grid-template-rows: auto 1fr;
+		grid-template-columns: auto 1fr;
 		grid-template-areas:
-			'sidebar main'
-			'sidebar footer';
+			'sidebar title'
+			'sidebar main';
 	}
 	.main {
-		grid-area: main;
-		// display: flex;
-		// flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		grid-area: main;
+		display: grid;
+		height: auto;
+		grid-template-columns: 60vw;
+		grid-template-rows: 10rem auto;
+		grid-template-areas:
+			'title'
+			'body';
 	}
 
 	.header {

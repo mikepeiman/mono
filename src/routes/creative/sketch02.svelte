@@ -1,4 +1,5 @@
 <script>
+	export let hidePanel = false
 	import CanvasSketchEditor from '$components/CanvasSketchEditor.svelte';
 	import Slider from '$components/Slider.svelte';
 	import ColorInput from '$components/ColorInput.svelte';
@@ -250,7 +251,7 @@
 	}
 </script>
 
-<CanvasSketchEditor {sketch} {settings} {data}>
+<CanvasSketchEditor {sketch} {settings} {data} {hidePanel}>
 	<OptionSelect items={data.shapes} bind:selected={data.shape} />
 	<Checkbox label="Random fill" bind:checked={data.randomFill} />
 	{#if !data.randomFill}
@@ -273,7 +274,7 @@
 		</div>
 	{/if}
 	<!-- <ColorInput  label="Foreground" bind:value={data.foreground} /> -->
-	<Checkbox label="Random stroke" bind:checked={data.randomStroke} />
+	<Checkbox label="Random stroke" bind:checked={data.randomStroke}  {hidePanel} />
 	<div class="input-group-wrapper">
 		<ColorInput
 			label="Stroke"

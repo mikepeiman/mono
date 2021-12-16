@@ -9,42 +9,38 @@
 </script>
 
 <script>
-	import Posts from "$components/Posts.svelte";
-	export let posts
-    // console.log(`🚀 ~ file: index.svelte ~ line 14 ~ posts`, posts)
-
+import Sketch02 from './sketch02.svelte';
+import Sketch03 from './sketch03.svelte';
+import Sketch04 from './sketch04.svelte';
+import Sketch01 from './sketch01.svelte';
+	export let posts;
+	// console.log(`🚀 ~ file: index.svelte ~ line 14 ~ posts`, posts)
 </script>
 
 <svelte:head>
 	<title>MetaBrain: Your Life OS</title>
 </svelte:head>
-<div class="main">
-	<div class="title flex flex-col items-center p-6">
-		<h1>Creative coding</h1>
-		<p>Sketches and animations</p>
-	</div>
-	<div class="posts py-10">
-		<!-- <Posts {posts}/> -->
-	</div>
+
+<div class="title flex flex-col items-center  p-6">
+	<h1>Creative coding</h1>
+	<p>Sketches and animations</p>
+</div>
+<div class="main grid justify-items-center">
+<Sketch01 hidePanel="true" />
+<Sketch02 hidePanel="true" />
+<Sketch03 hidePanel="true" />
+<Sketch04 hidePanel="true" />
 </div>
 
 <style>
-	.main {
-		grid-area: main;
-		display: grid;
-		height: auto;
-		grid-template-columns: 60vw;
-		grid-template-rows: 10rem auto;
-		grid-template-areas:
-			'title'
-			'body';
-	}
 	.title {
 		grid-area: title;
 	}
-	.posts {
-		grid-area: body;
-		height: auto;
+	.main {
+		grid-area: main;
+		display: grid;
+
+		grid-template-columns: repeat(3, 1fr);
 	}
 	.pad {
 		grid-area: pad;

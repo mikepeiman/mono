@@ -11,7 +11,7 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	import Checkbox from '$components/Checkbox.svelte';
 
 	const data = {
-		TITLE: "Sketch04",
+		TITLE: "Sketch01",
 		outline: true,
 		arclen: 0.5,
 		angle: 0,
@@ -61,13 +61,5 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 </script>
 
 <CanvasSketchEditor {sketch} {settings} {data} {hidePanel}>
-	<ColorInput label='Background' bind:value={data.background} />
-	<ColorInput label='Foreground' bind:value={data.foreground} />
-	<Slider label='Arc Length' bind:value={data.arclen} />
-	<Slider label='Radius' bind:value={data.radius} />
-	<Slider label='Angle' bind:value={data.angle} min={-Math.PI} max={Math.PI} />
-	<Checkbox label='Outline' bind:checked={data.outline} />
-	{#if data.outline}
-		<Slider label='Line Width' bind:value={data.lineWidth} min=1 max=100 />
-	{/if}
+
 </CanvasSketchEditor>

@@ -4,6 +4,7 @@ https://svelte.dev/repl/5ab538b7182941f789908a660e9bd25c?version=3.12.1
 Leaving his example as the first sketch here in honor of his work and amazing contributions -->
 
 <script>
+	export let hidePanel = false
 	import CanvasSketchEditor from '$components/CanvasSketchEditor.svelte';
 	import Slider from '$components/Slider.svelte';
 	import ColorInput from '$components/ColorInput.svelte';
@@ -59,7 +60,7 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	};
 </script>
 
-<CanvasSketchEditor {sketch} {settings} {data}>
+<CanvasSketchEditor {sketch} {settings} {data} {hidePanel} >
 	<ColorInput label='Background' bind:value={data.background} />
 	<ColorInput label='Foreground' bind:value={data.foreground} />
 	<Slider label='Arc Length' bind:value={data.arclen} />

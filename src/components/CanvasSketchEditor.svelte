@@ -3,7 +3,7 @@
 	export let settings = {};
 	export let data = {};
 	export let sketch = () => {};
-	
+	export let hidePanel = false
 	let localStorageSupported = (() => {
 		try {
 			return typeof window.localStorage !== 'undefined';
@@ -37,13 +37,16 @@
   }
 </script>
 
-<main>
+<main class="sketch">
 	<div class='viewport'>
 		<CanvasSketch {data} {settings} {sketch} />
 	</div>
+
+	{#if !hidePanel}
 	<div class='panel'>
 		<slot></slot>
 	</div>
+	{/if}
 </main>
 
 <style>
@@ -59,6 +62,9 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: row;
+	}
+	.sketch {
+		grid-area: main;
 	}
 	.viewport {
 		display: flex;
