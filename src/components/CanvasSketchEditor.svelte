@@ -17,7 +17,7 @@
 
 	import { page } from '$app/stores';
 	$: path = $page.path;
-    console.log(`🚀 ~ file: CanvasSketchEditor.svelte ~ line 20 ~ path`, path)
+	console.log(`🚀 ~ file: CanvasSketchEditor.svelte ~ line 20 ~ path`, path);
 	readData(settings, data);
 	$: saveData(settings, data);
 
@@ -40,11 +40,13 @@
 		}
 	}
 </script>
-{path}
-<main class="sketch" class:preview={"/creative" === path}>
+
+<main class="sketch" class:preview={'/creative' === path}>
+	{#if '/creative' === path}
 	<div class="title items-center justify-center flex">
 		<h1 class="text-2xl text-sky-200 mt-6">{data.TITLE}</h1>
 	</div>
+	{/if}
 	<div class="viewport">
 		<CanvasSketch {data} {settings} {sketch} />
 	</div>
@@ -63,16 +65,6 @@
 	} */
 
 	main {
-		// width: 100%;
-		// height: 100%;
-		// display: grid;
-		// grid-template-rows: 3rem 16rem;
-		// grid-template-areas:
-		// 	'sketch-title'
-		// 	'sketch-canvas';
-		// justify-content: center;
-		// align-items: center;
-		// flex-direction: row;
 		// ORIGINAL STYLES
 		width: 100%;
 		height: 100%;
@@ -80,6 +72,21 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: row;
+		// ADDED
+		grid-area: main;
+		&.preview {
+			grid-area: none;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			grid-template-rows: 3rem 16rem;
+			grid-template-areas:
+				'sketch-title'
+				'sketch-canvas';
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+		}
 	}
 	.title {
 		grid-area: sketch-title;

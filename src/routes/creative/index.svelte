@@ -31,15 +31,33 @@
 	<p>Sketches and animations</p>
 </div>
 <div class="main justify-items-center">
-	<Sketch01 hidePanel="true" />
-	<Sketch02 hidePanel="true" />
-	<Sketch03 hidePanel="true" />
-	<Sketch04 hidePanel="true" />
-	<Sketch05 hidePanel="true" />
-	<Sketch06 hidePanel="true" />
-	<Sketch07 hidePanel="true" />
-	<Sketch08 hidePanel="true" />
-	<Sketch09 hidePanel="true" />
+	<a href="/creative/sketch01">
+		<Sketch01 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch02">
+		<Sketch02 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch03">
+		<Sketch03 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch04">
+		<Sketch04 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch05">
+		<Sketch05 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch06">
+		<Sketch06 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch07">
+		<Sketch07 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch08">
+		<Sketch08 hidePanel="true" />
+	</a>
+	<a href="/creative/sketch09">
+		<Sketch09 hidePanel="true" />
+	</a>
 </div>
 
 <style lang="scss">
@@ -56,6 +74,9 @@
 		// 	grid-column: 1 / span 1;
 		// 	grid-row: 1 / span 1;
 		// }
+		a {
+			align-self: flex-start;
+		}
 	}
 	.pad {
 		grid-area: pad;
