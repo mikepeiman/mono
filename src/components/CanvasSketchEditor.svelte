@@ -14,6 +14,10 @@
 
 	// None of this will work in the sandbox REPL but it will work offline
 	// saveData(settings, data)
+
+	import { page } from '$app/stores';
+	$: path = $page.path;
+    console.log(`🚀 ~ file: CanvasSketchEditor.svelte ~ line 20 ~ path`, path)
 	readData(settings, data);
 	$: saveData(settings, data);
 
@@ -36,8 +40,8 @@
 		}
 	}
 </script>
-
-<main class="sketch">
+{path}
+<main class="sketch" class:preview={"/creative" === path}>
 	<div class="title items-center justify-center flex">
 		<h1 class="text-2xl text-sky-200 mt-6">{data.TITLE}</h1>
 	</div>
