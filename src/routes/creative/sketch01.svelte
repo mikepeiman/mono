@@ -23,6 +23,8 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	
 	const settings = {
 		scaleToView: true,
+		scaleToFit: true,
+		resizeCanvas: true,
 		dimensions: [ 1280, 1280 ]
 	};
 	

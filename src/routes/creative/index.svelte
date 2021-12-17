@@ -49,21 +49,13 @@
 	.main {
 		grid-area: main;
 		display: grid;
-		grid-template-rows: 25rem;
-		/* grid-template-columns: repeat(4, [sketch-col-start sketch-col-end] 1fr); */
-		/* grid-template-columns: repeat(auto-fit, 25rem); */
 		max-width: 100%;
-		/* grid-template-rows: repeat(auto-fill, [title-start] 1fr [sketch-start sketch-end] 4fr); */
-		/* grid-auto-flow: column; */
-		grid-template-columns: repeat(4, minmax(200px, 250px));
-		/* grid-template-areas:
-			'sketch-title sketch-title sketch-title sketch-title'
-			'sketch-canvas sketch-canvas sketch-canvas sketch-canvas'; */
-		:nth-child(4n + 2),
-		:nth-child(4n + 1) {
-			grid-column: 1 / span 1;
-			grid-row: 1 / span 1;
-		}
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		// :nth-child(4n + 2),
+		// :nth-child(4n + 1) {
+		// 	grid-column: 1 / span 1;
+		// 	grid-row: 1 / span 1;
+		// }
 	}
 	.pad {
 		grid-area: pad;

@@ -7,10 +7,10 @@
 	export let settings = {
 		dimensions: undefined
 	};
-	
+
 	export let data = {};
 	export let sketch = () => {};
-	
+
 	// handle sketch loaded
 	let loader, manager;
 	onMount(async () => {
@@ -20,10 +20,11 @@
 			parent: canvas.parentElement,
 			data
 		};
+        console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt`, opt)
 		loader = canvasSketch(sketch, opt);
 		manager = await loader;
 	});
-	
+
 	// handle sketch destroy
 	// onDestroy(() => {
 	// 	loader.then(m => m.destroy());
@@ -34,8 +35,8 @@
 	// update settings and data
 	$: manager && manager.update(settings);
 	$: dataChanged(data);
-	
-	function dataChanged (data) {
+
+	function dataChanged(data) {
 		if (manager) {
 			Object.assign(manager.props.data, data);
 			manager.render();
@@ -49,7 +50,9 @@
 	/* Optionally style the canvas here */
 	canvas {
 		margin: auto;
-    display: block;
-    box-shadow: 0px 2px 12px -2px rgba(0, 0, 0, 0.15);
+		display: block;
+		box-shadow: 0px 2px 12px -2px rgba(0, 0, 0, 0.15);
+		/* width: 100%;
+		height: auto; */
 	}
 </style>

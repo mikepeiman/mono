@@ -3,7 +3,7 @@
 	export let settings = {};
 	export let data = {};
 	export let sketch = () => {};
-	export let hidePanel = false
+	export let hidePanel = false;
 	let localStorageSupported = (() => {
 		try {
 			return typeof window.localStorage !== 'undefined';
@@ -13,43 +13,42 @@
 	})();
 
 	// None of this will work in the sandbox REPL but it will work offline
-    // saveData(settings, data)
-  readData(settings, data);
-  $: saveData(settings, data);
+	// saveData(settings, data)
+	readData(settings, data);
+	$: saveData(settings, data);
 
-  function saveData(settings, data) {
-    if (localStorageSupported && settings.localStorage !== false) {
-      window.localStorage.setItem(`${data.TITLE}`, JSON.stringify(data));
-    }
-  }
+	function saveData(settings, data) {
+		if (localStorageSupported && settings.localStorage !== false) {
+			window.localStorage.setItem(`${data.TITLE}`, JSON.stringify(data));
+		}
+	}
 
-  function readData(settings, data) {
-    if (localStorageSupported && settings.localStorage !== false) {
-      try {
-        const prev = window.localStorage.getItem(`${data.TITLE}`);
-        if (!prev) return;
-        const newData = JSON.parse(prev);
-        Object.assign(data, newData);
-      } catch (err) {
-        console.warn(err);
-      }
-    }
-  }
+	function readData(settings, data) {
+		if (localStorageSupported && settings.localStorage !== false) {
+			try {
+				const prev = window.localStorage.getItem(`${data.TITLE}`);
+				if (!prev) return;
+				const newData = JSON.parse(prev);
+				Object.assign(data, newData);
+			} catch (err) {
+				console.warn(err);
+			}
+		}
+	}
 </script>
 
 <main class="sketch">
-	
 	<div class="title items-center justify-center flex">
-		<h1 class="text-3xl text-stone-500 p-4">{data.TITLE}</h1>
+		<h1 class="text-2xl text-sky-200 mt-6">{data.TITLE}</h1>
 	</div>
-	<div class='viewport'>
+	<div class="viewport">
 		<CanvasSketch {data} {settings} {sketch} />
 	</div>
 
 	{#if !hidePanel}
-	<div class='panel'>
-		<slot></slot>
-	</div>
+		<div class="panel">
+			<slot />
+		</div>
 	{/if}
 </main>
 
@@ -58,19 +57,25 @@
 		margin: 0;
 		padding: 0;
 	} */
-	
+
 	main {
+		// width: 100%;
+		// height: 100%;
+		// display: grid;
+		// grid-template-rows: 3rem 16rem;
+		// grid-template-areas:
+		// 	'sketch-title'
+		// 	'sketch-canvas';
+		// justify-content: center;
+		// align-items: center;
+		// flex-direction: row;
+		// ORIGINAL STYLES
 		width: 100%;
 		height: 100%;
-		display: grid;
-		grid-template-rows: 4rem 16rem;
-		grid-template-areas: 
-		'sketch-title'
-		'sketch-canvas';
+		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: row;
-
 	}
 	.title {
 		grid-area: sketch-title;
@@ -78,7 +83,6 @@
 		grid-column: sketch-col-start sketch-col-end;
 	}
 	.sketch {
-
 		/* width: auto;
 		grid-row: sketch-start; */
 	}
