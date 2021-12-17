@@ -38,6 +38,10 @@
 </script>
 
 <main class="sketch">
+	
+	<div class="title items-center justify-center flex">
+		<h1 class="text-3xl text-stone-500 p-4">{data.TITLE}</h1>
+	</div>
 	<div class='viewport'>
 		<CanvasSketch {data} {settings} {sketch} />
 	</div>
@@ -49,7 +53,7 @@
 	{/if}
 </main>
 
-<style>
+<style lang="scss">
 	/* :global(body) {
 		margin: 0;
 		padding: 0;
@@ -58,10 +62,15 @@
 	main {
 		width: 100%;
 		height: 100%;
-		display: flex;
+		display: grid;
+		grid-template-rows: 4rem 16rem;
+		grid-template-areas: 
+		'sketch-title'
+		'sketch-canvas';
 		justify-content: center;
 		align-items: center;
 		flex-direction: row;
+
 	}
 	.title {
 		grid-area: sketch-title;
@@ -69,11 +78,12 @@
 		grid-column: sketch-col-start sketch-col-end;
 	}
 	.sketch {
-		/* grid-area: sketch-canvas; */
-		width: auto;
-		grid-row: sketch-start;
+
+		/* width: auto;
+		grid-row: sketch-start; */
 	}
 	.viewport {
+		grid-area: sketch-canvas;
 		display: flex;
 		justify-content: center;
 		align-items: center;
