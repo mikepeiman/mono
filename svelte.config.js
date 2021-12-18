@@ -26,7 +26,7 @@ const config = {
 					'$utils': path.resolve('./src/utils'),
 					'$lib': path.resolve('./src/lib'),
 					'$api': path.resolve('./src/routes/api'),
-					'$static': path.resolve('./static')
+					'$static': path.resolve('./static'),
 				}
 			},
 			optimizeDeps: {

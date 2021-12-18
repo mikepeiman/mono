@@ -26,7 +26,8 @@
 		{ title: 'Posts endpoint', url: '/posts.json' },
 		{ title: 'Todos', url: '/todos' },
 		{ title: 'Quotes', url: '/quotes' },
-		{ title: 'Creative', url: '/creative' }
+		{ title: 'Creative', url: '/creative' },
+		{ title: 'Mike', url: '/mikepeiman' },
 	];
 
 </script>
