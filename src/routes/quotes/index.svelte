@@ -16,7 +16,7 @@
 </script>
 
 
-<div class="flex">
+<div class="flex w-full h-full justify-start">
 	<ParseQuotes />
 	<!-- <Quotes {quotes} /> -->
 	<!-- <AddQuote /> -->

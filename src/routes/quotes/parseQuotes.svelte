@@ -114,11 +114,11 @@
 	}
 </script>
 
-<div class="quotes-wrapper flex flex-col w-full bg-black">
+<div class=" quotes-wrapper flex flex-col w-full bg-black">
 	<div class="file-and-search-wrapper flex items-start justify-center mt-12">
 		<div class="fileinput-wrapper ml-12">
 			<input
-				class="input input-primary w-48 p-0"
+				class="input input-primary w-48 p-0 border-2 border-indigo-600"
 				id="fileInput"
 				type="file"
 				bind:files={input_file}
@@ -130,7 +130,7 @@
 				type="text"
 				id="filterTextBar"
 				placeholder="Search quotes"
-				class="w-5/6 input input-primary rounded-md text-lg p-4 border-2 border-grey-200"
+				class="w-5/6 input input-primary rounded-md text-lg p-4 border-2 border-indigo-600 active:border-sky-300"
 				bind:value={searchTerm}
 			/>
 		</div>
