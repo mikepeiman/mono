@@ -32,16 +32,16 @@
 			// c[i].attributes.style.textContent = ""
 			// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 77 ~ resetCanvasSizes ~ c[i].attributes.style.value`, c[i].attributes.style.value)
 			// c[i].attributeStyleMap.delete('width')
-			c[i].attributeStyleMap.clear()
 			// c[i].width = w
 			// c[i].height = w
 			// c[i].style.width = w
 			// c[i].style.height = w
 			// c[i].removeAttribute('style')
-
+			
+			// c[i].attributeStyleMap.clear()
 			// c[i].setAttribute('width', w)
 			// c[i].setAttribute('height', w) 
-			// c[i].setAttribute('style', `width: ${w}; height: ${w};`) 
+			c[i].setAttribute('style', `width: ${w}; height: ${w};`) 
 
 			// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 76 ~ resetCanvasSizes ~ c[i].attributes.style`, c[i].attributes.style)
 			// c[i].attributes.style.width = `width:${w}px;`
