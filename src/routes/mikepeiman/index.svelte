@@ -43,22 +43,47 @@
 				user experience and design that helps realize human potential. I follow a first-principles
 				approach in my life and my work. In software design:
 			</p>
-			<ol class="not-prose">
-				<li>Never deny the end user basic options.</li>
-				<li>Lower the barrier to action.</li>
-				<li>Leverage visual intelligence.</li>
+			<ol class="not-prose opacity-100">
+				<li class="">
+					<span class="li-heading">Never deny the user basic options.</span>
+					<p class="li-snippet">
+						Users should be provided the means to customize the user interface as much as possible.
+					</p>
+				</li>
+				<li>
+					<span class="li-heading">Minimize barriers to action.</span>
+					<p class="li-snippet">
+						Users should be provided the means to customize the user interface as much as possible.
+					</p>
+				</li>
+				<li>
+					<span class="li-heading">Leverage visual intelligence.</span>
+					<p class="li-snippet">
+						Users should be provided the means to customize the user interface as much as possible.
+					</p>
+				</li>
 			</ol>
 		</div>
-		<div class="posts w-1/2 not-prose">
-			{#each selectedPosts as post}
-				<div class="card bg-sky-900 bg-opacity-50 m-3 card-body">
-					<div class="article-date p-0 m-0 text-sm font-light">
-						<Time timestamp={post.date} />
+		<div class="posts w-1/2 not-prose flex flex-col">
+			<div class="posts-panel">
+				{#each selectedPosts as post}
+					<div class="card bg-sky-900 bg-opacity-50 mx-3 mb-4 card-body">
+						<div class="article-date p-0 m-0 text-sm font-light">
+							<Time timestamp={post.date} />
+						</div>
+						<h3 class="text-xl my-2">{post.title}</h3>
+						<p class="text-sm font-light">{post.excerpt}</p>
 					</div>
-					<h3 class="text-xl my-2">{post.title}</h3>
-					<p class="text-sm font-light">{post.excerpt}</p>
-				</div>
-			{/each}
+				{/each}
+			</div>
+			<span class="view-more text-right  pr-4 "
+				><a href="/posts" class="decoration-dashed offset-2 decoration-2 decoration-sky-500"
+					>View more articles
+				</a>
+				<span class="text-sky-700 font-bold m-0 p-0">&#62</span>
+				<span class="text-sky-500 font-bold -ml-2 p-0">&#62</span>
+				<span class="text-sky-700 font-bold -ml-2 p-0">&#62</span>
+			</span>
 		</div>
 	</section>
 	<section class="statement flex m-6 items-center justify-center">
@@ -90,7 +115,6 @@
 
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0,300;1,300&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
-    
 
 	.intro {
 		// font-family: 'Montserrat', sans-serif;
@@ -98,25 +122,39 @@
 		font-family: 'Merriweather', serif;
 	}
 
-    ol {
-        --list-counter-size: 2rem;
-        counter-reset: intro-counter;
-        list-style: none;
-        li {
-            counter-increment: intro-counter;
-            margin: 0 0 0 0.5rem;
-            padding: 0 0 0 0.5rem;
-            position: relative;
-            &::marker {
-                content: counter(intro-counter) ". ";
-                color: white;
-                position: absolute;
-                top: 0;
-                left: calc(-1 * var(--list-counter-size));
-                font-size: 2rem;;
-            }
-        }
+    a {
+        @apply underline underline-offset-4  decoration-sky-500
     }
+
+	ol {
+		font-family: 'Merriweather', serif;
+		--list-counter-size: 2rem;
+		counter-reset: intro-counter;
+		list-style: none;
+		li {
+			counter-increment: intro-counter;
+			margin: 0 0 0 0.5rem;
+			padding: 0 0 0 0.5rem;
+			position: relative;
+			&::marker {
+				content: counter(intro-counter) '. ';
+				color: var(--color-sky-500);
+				font-weight: 700;
+				position: absolute;
+				top: 0;
+				left: calc(-1 * var(--list-counter-size));
+				font-size: 2rem;
+			}
+			.li-heading {
+				// font-family: 'Montserrat', sans-serif;
+				@apply font-black italic text-xl opacity-100 text-emerald-200;
+			}
+			.li-snippet {
+				font-family: 'Montserrat', sans-serif;
+				@apply mt-3 font-light;
+			}
+		}
+	}
 
 	.statement {
 		// font-family: 'Bad Script', cursive;
