@@ -179,7 +179,7 @@
 							Math.abs(data.itemWidth),
 							data.startAngle,
 							data.endAngle,
-							data.fillHSLA,
+							fill,
 							stroke,
 							data.lineWidthRandom
 						);

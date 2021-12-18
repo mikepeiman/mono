@@ -114,24 +114,26 @@
 	}
 </script>
 
-<div class="quotes-wrapper flex flex-col w-full">
-	<div class="fileinput-wrapper">
-		<input
-			class="input input-primary"
-			id="fileInput"
-			type="file"
-			bind:files={input_file}
-			on:change={readFile(input_file)}
-		/>
-	</div>
-	<div class="flex w-full items-center justify-center">
-		<input
-			type="text"
-			id="filterTextBar"
-			placeholder="Search quotes"
-			class="w-5/6 mt-5 input input-primary rounded-md text-lg p-4 border-2 border-grey-200"
-			bind:value={searchTerm}
-		/>
+<div class="quotes-wrapper flex flex-col w-full ">
+	<div class="file-and-search-wrapper flex items-start justify-center mt-12">
+		<div class="fileinput-wrapper">
+			<input
+				class="input input-primary w-48 p-0"
+				id="fileInput"
+				type="file"
+				bind:files={input_file}
+				on:change={readFile(input_file)}
+			/>
+		</div>
+		<div class="flex w-full items-center justify-start m-0 ml-8">
+			<input
+				type="text"
+				id="filterTextBar"
+				placeholder="Search quotes"
+				class="w-5/6 input input-primary rounded-md text-lg p-4 border-2 border-grey-200"
+				bind:value={searchTerm}
+			/>
+		</div>
 	</div>
 
 	<div class="quotes">
@@ -219,7 +221,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0,300;1,300&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
 
 	/* font-family: 'Allura', cursive;
@@ -239,27 +241,37 @@ font-family: 'Outfit', sans-serif;
 font-family: 'Overlock', cursive;
 font-family: 'Staatliches', cursive; */
 
-	input#filterTextBar {
-		margin: 4rem 0 0 0;
-	}
-
 	input#fileInput {
-		/* display: inline-block;
-		width: 100%; */
-		position: absolute;
-		left: 2rem;
-		top: 2rem;
-		padding: 60px 0 0 0;
+		/* display: inline-block; */
+		/* width: 100%; */
+		/* position: absolute; */
+		/* left: 2rem; */
+		/* top: 2rem; */
+		position: relative;
+		padding: 2.9rem 0 0 0;
 		height: 0px;
 		overflow: hidden;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		background: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698394-icon-130-cloud-upload-256.png')
-			center center no-repeat #e4e4e4;
-		border-radius: 20px;
-		background-size: 60px 60px;
+			center center no-repeat ;
+		border-radius: .5rem;
+		background-size: 3rem;
+		cursor: pointer;
+		:before {
+			content: 'Upload HTML file';
+			font-size: 2rem;
+			color: white;
+			height: 3rem;
+			width: 12rem;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -25px);
+		}
 	}
+	
 	.quotes {
 		/* font-family: 'Karla', sans-serif; */
 		/* font-family: 'Lemonada', cursive; */
