@@ -116,7 +116,7 @@
 
 <div class="quotes-wrapper flex flex-col w-full ">
 	<div class="file-and-search-wrapper flex items-start justify-center mt-12">
-		<div class="fileinput-wrapper">
+		<div class="fileinput-wrapper ml-12">
 			<input
 				class="input input-primary w-48 p-0"
 				id="fileInput"
@@ -139,9 +139,9 @@
 	<div class="quotes">
 		{#if quotes.length}
 			{#each filteredQuotes as quote, i}
-				<div class="card quote p-3 m-12 shadow-md border-sky-500 rounded-sm">
+				<div class="card quote p-3 m-12 shadow-md border-sky-500 rounded-sm bg-gradient-to-br from-blue-900 via-cyan-900 to-teal-900 rounded-xl">
 					<div class="badge bg-gray-700">{i + 1}</div>
-					<h1 class="quote-body p-8">
+					<h1 class="quote-body p-8 text-2xl">
 						<span class="quote-mark text-sky-300">&ldquo;</span>{@html quote.quoteBody}<span
 							class="quote-mark text-sky-300">&rdquo;</span
 						>
@@ -149,36 +149,36 @@
 					</h1>
 					<div class="flex flex-col justify-items-start place-items-start">
 						<!-- <h1 class="badge badge-xl badge-success">{quote.author}</h1> -->
-						<label class="input-group input-group-xs rounded-none">
-							<span class="quotepart-label">Author</span>
-							<span class="rounded-none badge badge-success bg-coolGray-900 text-sky-300 input-xs"
+						<label class="input-group input-group-xs">
+							<span class="bg-slate-900">Author</span>
+							<span class="badge badge-success bg-slate-900 text-sky-300 input-xs"
 								>{@html quote.author}</span
 							>
 						</label>
 						{#if quote.authorTitle}
-							<label class="input-group input-group-xs rounded-none">
-								<span class="quotepart-label rounded-none">Title</span>
+							<label class="input-group input-group-xs">
+								<span class="bg-slate-900">Title</span>
 								{#each quote.authorTitle as title}
 									<span
-										class="rounded-none badge badge-success bg-coolGray-900 text-sky-400 input-xs"
-										>{title}</span
+										class="badge badge-success bg-slate-900 text-sky-400 input-xs"
+										>{quote.authorTitle}</span
 									>
 								{/each}
 							</label>
 						{/if}
 						{#if quote.date}
 							<label class="input-group input-group-xs rounded-none">
-								<span class="quotepart-label rounded-none">Date</span>
-								<span class="rounded-none badge badge-info bg-coolGray-900 text-gray-400 input-xs"
+								<span class="bg-slate-900 rounded-none">Date</span>
+								<span class="rounded-none badge badge-info bg-slate-900 text-gray-400 input-xs"
 									>{quote.date}</span
 								>
 							</label>
 						{/if}
 						{#if quote.source}
 							<label class="input-group input-group-xs rounded-none">
-								<span class="quotepart-label rounded-none">Source</span>
+								<span class="bg-slate-900 rounded-none">Source</span>
 								<span
-									class="rounded-none badge badge-warning input-xs bg-coolGray-900 text-sky-500 input-xs"
+									class="rounded-none badge badge-warning input-xs bg-slate-900 text-sky-500 input-xs"
 									>{quote.source}</span
 								>
 							</label>
@@ -186,9 +186,9 @@
 						{#if quote.tags.length}
 							{#each quote.tags as tag}
 								<label class="input-group input-group-xs rounded-none">
-									<span class="quotepart-label rounded-none">Tags</span>
+									<span class="bg-slate-900 rounded-none">Tags</span>
 									<span
-										class="rounded-none badge badge-warning input-xs bg-coolGray-900 text-sky-500 input-xs"
+										class="rounded-none badge badge-warning input-xs bg-slate-900 text-sky-500 input-xs"
 										>{tag}</span
 									>
 								</label>
@@ -196,9 +196,9 @@
 						{/if}
 						{#if quote.context}
 							<label class="input-group input-group-xs rounded-none">
-								<span class="quotepart-label rounded-none">Context</span>
+								<span class="bg-slate-900 rounded-none">Context</span>
 								<span
-									class="rounded-none badge badge-warning input-xs bg-coolGray-900 text-sky-500 input-xs"
+									class="rounded-none badge badge-warning input-xs bg-slate-900 text-sky-500 input-xs"
 									>{quote.context}</span
 								>
 							</label>
@@ -207,7 +207,7 @@
 							{#each quote.details as detail}
 								DETAILS
 								<label class="input-group input-group-xs rounded-none">
-									<span class="quotepart-label rounded-none">{detail.type}</span>
+									<span class="bg-slate-900 rounded-none">{detail.type}</span>
 									<span class="rounded-none badge badge-info input-xs">{detail.value}</span>
 								</label>
 							{/each}
@@ -284,14 +284,14 @@ font-family: 'Staatliches', cursive; */
 		font-weight: 300;
 	}
 	.quote {
-		font-size: 150%;
-		background: linear-gradient(
-			36deg,
-			rgba(2, 0, 36, 0) 0%,
-			rgba(9, 9, 121, 0.5) 35%,
-			rgba(2, 0, 36, 0) 100%,
-			rgba(0, 212, 255, 0.1) 100%
-		);
+		// font-size: 150%;
+		// background: linear-gradient(
+		// 	36deg,
+		// 	rgba(2, 0, 36, 0) 0%,
+		// 	rgba(9, 9, 121, 0.5) 35%,
+		// 	rgba(2, 0, 36, 0) 100%,
+		// 	rgba(0, 212, 255, 0.1) 100%
+		// );
 	}
 
 	.quote-author {
@@ -344,9 +344,7 @@ font-family: 'Staatliches', cursive; */
 		border-radius: 5px 5px 5px 0;
 	}
 
-	.quotepart-label {
-		background: rgba(0, 0, 0, 0.8);
-		border-radius: 0px;
-		width: 4rem;
+	.input-group>span {
+		border-radius: 0;
 	}
 </style>
