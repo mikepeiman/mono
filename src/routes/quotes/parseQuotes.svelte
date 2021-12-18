@@ -114,7 +114,7 @@
 	}
 </script>
 
-<div class="quotes-wrapper flex flex-col w-full ">
+<div class="quotes-wrapper flex flex-col w-full bg-black">
 	<div class="file-and-search-wrapper flex items-start justify-center mt-12">
 		<div class="fileinput-wrapper ml-12">
 			<input
@@ -139,7 +139,7 @@
 	<div class="quotes">
 		{#if quotes.length}
 			{#each filteredQuotes as quote, i}
-				<div class="card quote p-3 m-12 shadow-md border-sky-500 rounded-sm bg-gradient-to-br from-blue-900 via-cyan-900 to-teal-900 rounded-xl">
+				<div class="card quote p-3 m-12 shadow-lg border border-2 border-gray-800 rounded-sm bg-gradient-to-br from-transparent via-gray-900  rounded-xl">
 					<div class="badge bg-gray-700">{i + 1}</div>
 					<h1 class="quote-body p-8 text-2xl">
 						<span class="quote-mark text-sky-300">&ldquo;</span>{@html quote.quoteBody}<span
@@ -240,6 +240,10 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Outfit', sans-serif;
 font-family: 'Overlock', cursive;
 font-family: 'Staatliches', cursive; */
+
+.quotes-wrapper {
+	background: #122334;
+}
 
 	input#fileInput {
 		/* display: inline-block; */
