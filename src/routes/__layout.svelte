@@ -12,9 +12,9 @@
 	<!-- <SideNav class="sidebar">
 		<slot class="sidebar" />
 	</SideNav> -->
-	<div class="main flex flex-col items-center jutify-center">
+	<!-- <div class="main flex flex-col items-center jutify-center"> -->
 		<slot />
-	</div>
+	<!-- </div> -->
 	<Footer />
 </div>
 
