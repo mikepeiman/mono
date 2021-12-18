@@ -25,6 +25,7 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 		scaleToView: true,
 		scaleToFit: true,
 		resizeCanvas: true,
+		scaleContext: true,
 		dimensions: [ 1280, 1280 ]
 	};
 	
@@ -76,7 +77,6 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 </CanvasSketchEditor>
 
 <style>
-
 	.sketch {
 		/* grid-area: sketch-canvas; */
 		/* width: auto;

@@ -1,5 +1,6 @@
 <script>
 	import CanvasSketch from './CanvasSketch.svelte';
+
 	export let settings = {};
 	export let data = {};
 	export let sketch = () => {};
@@ -17,9 +18,9 @@
 
 	import { page } from '$app/stores';
 	$: path = $page.path;
-	console.log(`🚀 ~ file: CanvasSketchEditor.svelte ~ line 20 ~ path`, path);
 	readData(settings, data);
 	$: saveData(settings, data);
+
 
 	function saveData(settings, data) {
 		if (localStorageSupported && settings.localStorage !== false) {
@@ -39,13 +40,15 @@
 			}
 		}
 	}
+
+
 </script>
 
 <main class="sketch" class:preview={'/creative' === path}>
 	{#if '/creative' === path}
-	<div class="title items-center justify-center flex">
-		<h1 class="text-2xl text-sky-200 mt-6">{data.TITLE}</h1>
-	</div>
+		<div class="title flex items-center justify-center flex w-full self-center">
+			<h1 class="text-2xl text-center text-sky-200 mt-6 w-full self-center">{data.TITLE}</h1>
+		</div>
 	{/if}
 	<div class="viewport">
 		<CanvasSketch {data} {settings} {sketch} />
@@ -90,8 +93,7 @@
 	}
 	.title {
 		grid-area: sketch-title;
-		grid-row: title-start sketch-start;
-		grid-column: sketch-col-start sketch-col-end;
+		// width: 300px;
 	}
 	.sketch {
 		/* width: auto;

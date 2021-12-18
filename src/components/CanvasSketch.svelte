@@ -1,30 +1,48 @@
+<script context="module">
+
+</script>
 <script>
-	import canvasSketch from 'canvas-sketch';
+	import {canvasSketch} from 'canvas-sketch';
 	import { onMount, onDestroy } from 'svelte';
 
-	let canvas;
+	let canvas
+	let width = 500
+	let canvasLoaded = false
 
 	export let settings = {
 		dimensions: undefined
 	};
 
 	export let data = {};
+	let opt = {}
 	export let sketch = () => {};
 
 	// handle sketch loaded
 	let loader, manager;
 	onMount(async () => {
-		const opt = {
+		 opt = await {
 			...settings,
 			canvas,
 			parent: canvas.parentElement,
 			data
 		};
-        console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt`, opt)
-		loader = canvasSketch(sketch, opt);
+		canvasLoaded = true
+        // console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt`, opt)
+        // console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt.parent`, opt.parent)
+		// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 26 ~ onMount ~ parent`, parent)
+		loader = await canvasSketch(sketch, opt);
 		manager = await loader;
+
 	});
 
+	$: {
+		if(opt.parent?.offsetWidth > 0){
+			width = opt.parent?.offsetWidth
+            console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 39 ~ width`, width)
+		}
+	}
+	
+	
 	// handle sketch destroy
 	// onDestroy(() => {
 	// 	loader.then(m => m.destroy());
@@ -35,6 +53,9 @@
 	// update settings and data
 	$: manager && manager.update(settings);
 	$: dataChanged(data);
+	// $: console.log(this)
+	// $: console.log(canvas)
+
 
 	function dataChanged(data) {
 		if (manager) {
@@ -42,9 +63,11 @@
 			manager.render();
 		}
 	}
+
+
 </script>
 
-<canvas bind:this={canvas} />
+	<canvas bind:this={canvas} style={`width: ${width}px`} />
 
 <style>
 	/* Optionally style the canvas here */
@@ -52,7 +75,10 @@
 		margin: auto;
 		display: block;
 		box-shadow: 0px 2px 12px -2px rgba(0, 0, 0, 0.15);
-		/* width: 100%;
-		height: auto; */
+		width: 100%;
+		/* width: inherit; */
+		/* min-width: inherit; */
+		height: auto;
 	}
+
 </style>
