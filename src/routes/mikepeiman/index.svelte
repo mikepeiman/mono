@@ -38,11 +38,15 @@
 	<section class="articles flex flex-row p-3 border border-t-2 border-sky-300">
 		<div class="intro w-1/2">
 			<h1>Hi, I'm Mike.</h1>
-			<p>I'm a creative and visionary software developer, and this is my professional blog.</p>
-			<ol>
-				<li>This is one.</li>
-				<li>This is two.</li>
-				<li>This is three.</li>
+			<p>
+				I'm a creative and visionary software developer, and this is my professional blog. I love
+				user experience and design that helps realize human potential. I follow a first-principles
+				approach in my life and my work. In software design:
+			</p>
+			<ol class="not-prose">
+				<li>Never deny the end user basic options.</li>
+				<li>Lower the barrier to action.</li>
+				<li>Leverage visual intelligence.</li>
 			</ol>
 		</div>
 		<div class="posts w-1/2 not-prose">
@@ -86,12 +90,33 @@
 
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0,300;1,300&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
+    
 
 	.intro {
 		// font-family: 'Montserrat', sans-serif;
-        // font-family: 'Overlock', cursive;
-        font-family: 'Merriweather', serif;
+		// font-family: 'Overlock', cursive;
+		font-family: 'Merriweather', serif;
 	}
+
+    ol {
+        --list-counter-size: 2rem;
+        counter-reset: intro-counter;
+        list-style: none;
+        li {
+            counter-increment: intro-counter;
+            margin: 0 0 0 0.5rem;
+            padding: 0 0 0 0.5rem;
+            position: relative;
+            &::marker {
+                content: counter(intro-counter) ". ";
+                color: white;
+                position: absolute;
+                top: 0;
+                left: calc(-1 * var(--list-counter-size));
+                font-size: 2rem;;
+            }
+        }
+    }
 
 	.statement {
 		// font-family: 'Bad Script', cursive;
