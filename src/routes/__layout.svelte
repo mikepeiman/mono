@@ -5,7 +5,7 @@
 	import Nav from '../components/Nav.svelte';
 </script>
 
-<div id="app-layout" class="grid w-auto h-screen">
+<div id="app-layout" class="grid w-auto h-screen bg-black">
 	<Nav>
 		<slot class="header" />
 	</Nav>
