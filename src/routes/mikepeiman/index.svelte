@@ -18,16 +18,19 @@
 	let projects = [
 		{
 			name: 'Project One',
+            url: './creative/sketch01',
 			tags: ['awesome', 'sauce', 'hot'],
 			desc: 'This project will burn your socks off'
 		},
 		{
 			name: 'Project Two',
+            url: './creative/sketch02',
 			tags: ['mysterious', 'fun', 'cool'],
 			desc: 'This project will cool your noggin'
 		},
 		{
 			name: 'Project Three',
+            url: './creative/sketch03',
 			tags: ['scary', 'epic', 'twisted'],
 			desc: 'This project will twist your knickers'
 		}
@@ -50,6 +53,7 @@
 					<p class="li-snippet">
 						Users should be provided the means to customize the user interface as much as possible.
 					</p>
+				</li>
 				<li class="mt-4">
 					<span class="li-heading">Minimize barriers to action.</span>
 					<p class="li-snippet">
@@ -71,17 +75,23 @@
 			<div class="posts-panel">
 				<h2 class="uppercase ml-3 -mt-2 mb-3 text-emerald-200">Recent posts</h2>
 				{#each selectedPosts as post}
-					<div class="post-card card bg-sky-500 bg-opacity-25 mx-3 mb-4 card-body rounded-md">
-						<div class="article-date p-0 m-0 text-sm font-light">
-							<Time timestamp={post.date} />
+					<a href={`/posts/${post.slug}`} class="no-underline">
+						<div
+							class="transition-all post-card card bg-sky-500 bg-opacity-25 mx-3 mb-4 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2"
+						>
+							<div class="article-date p-0 m-0 text-sm font-light">
+								<Time timestamp={post.date} />
+							</div>
+							<h3 class="text-xl mb-3 -mt-1 font-bold text-white text-3xl">{post.title}</h3>
+							<p class="text-sm font-light">{post.excerpt}</p>
 						</div>
-						<h3 class="text-xl mb-3 -mt-1 font-bold text-white text-3xl">{post.title}</h3>
-						<p class="text-sm font-light">{post.excerpt}</p>
-					</div>
+					</a>
 				{/each}
 			</div>
 			<span class="view-more text-right  pr-4 "
-				><a href="/posts" class="offset-4 decoration-2 decoration-sky-500 text-sky-500 hover:decoration-2 hover:decoration-white transition-all"
+				><a
+					href="/posts"
+					class="view-more-link offset-4 no-underline hover:decoration-2 hover:decoration-sky-500 text-sky-500 hover:text-cyan-300 hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition-all"
 					>View more articles
 				</a>
 				<span class="text-sky-700 font-bold m-0 p-0">&#62</span>
@@ -91,7 +101,9 @@
 		</div>
 	</section>
 	<section class="statement flex m-6 items-center justify-center">
-		<p class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-2/3 self-center py-12 border-t-2 border-b-2 border-sky-500">
+		<p
+			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-2/3 self-center py-12 border-t-2 border-b-2 border-sky-500"
+		>
 			&ldquo;Truth, freedom, health, wisdom, goodness: I'm dedicated to these things, and actively
 			trying to contribute to a society that embodies them more fully.&rdquo;
 		</p>
@@ -100,20 +112,24 @@
 		<h2 class="uppercase ml-3 text-emerald-200">Selected Projects</h2>
 		<div class="projects grid w-full">
 			{#each projects as project}
-				<div class="card p-6 bg-sky-500 bg-opacity-25 m-3 rounded-md">
-					<div class="flex flex-col">
-						<h2 class="text-2xl font-extrabold">{project.name}</h2>
-						<p class="mt-2 text-sm font-light">{project.desc}</p>
-						<div class="mt-4 flex flex-row">
-							{#each project.tags as tag}
-								<span
-									class="project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2"
-									>{tag}</span
-								>
-							{/each}
-						</div>
-					</div>
-				</div>
+				<a  href={`/${project.url}`} class="no-underline"> <!-- make a 'projects' directory for these -->
+                    <div
+                        class="card p-6 bg-sky-500 bg-opacity-25 m-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body rounded-md hover:bg-sky-900 hover:-translate-y-2"
+                    >
+                        <div class="flex flex-col">
+                            <h2 class="text-2xl font-extrabold">{project.name}</h2>
+                            <p class="mt-2 text-sm font-light">{project.desc}</p>
+                            <div class="mt-4 flex flex-row">
+                                {#each project.tags as tag}
+                                    <span
+                                        class="project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2"
+                                        >{tag}</span
+                                    >
+                                {/each}
+                            </div>
+                        </div>
+                    </div>
+                </a>
 			{/each}
 		</div>
 	</section>
@@ -126,24 +142,24 @@
 		font-family: 'Montserrat', sans-serif;
 		// font-family: 'Overlock', cursive;
 		// font-family: 'Merriweather', serif;
-        font-family: 'Karla', sans-serif;
+		font-family: 'Karla', sans-serif;
 
-        h1 {
-            font-family: 'Merriweather', serif;
-            font-family: 'Karla', sans-serif;
-            font-weight: 900;
-            //  font-family: 'Overlock', cursive;
-        }
+		h1 {
+			font-family: 'Merriweather', serif;
+			font-family: 'Karla', sans-serif;
+			font-weight: 900;
+			//  font-family: 'Overlock', cursive;
+		}
 	}
 	.intro-body {
 		font-family: 'Montserrat', sans-serif;
-        font-family: 'Karla', sans-serif;
-        line-height: 1.4;
+		font-family: 'Karla', sans-serif;
+		line-height: 1.4;
 		@apply mt-3 font-light;
 	}
 	.text-highlight {
 		font-family: 'Montserrat', sans-serif;
-        font-family: 'Karla', sans-serif;
+		font-family: 'Karla', sans-serif;
 		@apply mt-3 font-bold text-sky-500 italic;
 	}
 
@@ -155,6 +171,28 @@
 		h3 {
 			color: white;
 			font-size: 1.5rem;
+		}
+		position: relative;
+		transition: 0.3s;
+		&:after {
+			content: 'Read this...';
+			position: absolute;
+			opacity: 0;
+			bottom: 0;
+			right: 0;
+			transition: 0.3s;
+			padding: 0.5rem;
+		}
+		&:hover {
+			&:after {
+				content: 'Read this...';
+				position: absolute;
+				opacity: 1;
+				bottom: 0;
+				right: 0;
+				transition: 0.3s;
+				@apply text-cyan-400;
+			}
 		}
 	}
 
@@ -202,7 +240,6 @@
 		font-family: monospace;
 	}
 	.projects-group {
-
 		// font-family: 'Montserrat', sans-serif;
 	}
 	.projects {
