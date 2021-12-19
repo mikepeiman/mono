@@ -13,4 +13,8 @@ body {
 #app-layout {
     background: black;
 }
+
+.homepage {
+    max-width: 100vw;
+}
 </style>

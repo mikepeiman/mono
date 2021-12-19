@@ -58,10 +58,10 @@
     <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
 
 </div>
-<main class="center max-w-none lg:w-full lg:text-sm lg:mx-12 xl:w-4/5 2xl:w-3/5 3xl:w-1/2 mt-24">
-	<section class="articles flex flex-row p-3 pt-12 border-t-2 border-emerald-300">
-		<div class="intro w-3/5 pr-12 lg:pr-18 xl:pr-24">
-			<h1 class="font-regular text-5xl">Hi, I'm Mike.</h1>
+<main class="flex flex-col self-center w-screen lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-24">
+	<section class="articles flex flex-col w-full self-center md:flex-row p-3 pt-12 border-t-2 border-emerald-300">
+		<div class="intro flex flex-col lg:w-3/5 md:pr-12 lg:pr-18 xl:pr-24">
+			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-xl">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps
@@ -69,7 +69,7 @@
 				approach in my life and my work. Here are a few of my
 				<span class="text-emerald-200 font-bold">design principles</span>:
 			</p>
-			<ol class="ml-7 mt-6">
+			<ol class="pl-7 mt-6">
 				<li class="mt-4">
 					<span class="li-heading">Never deny the user basic options.</span>
 					<p class="li-snippet">
@@ -101,8 +101,8 @@
 				</li>
 			</ol>
 		</div>
-		<div class="posts w-2/5 not-prose flex flex-col">
-			<div class="posts-panel">
+		<div class="posts-panel w-4/5 flex flex-col self-center">
+			<div class="post w-full">
 				<h2 class="uppercase ml-3 -mt-2 mb-3 text-emerald-200">Recent posts</h2>
 				{#each selectedPosts as post}
 					<a href={`/posts/${post.slug}`} class="no-underline">
@@ -130,17 +130,17 @@
 			</span>
 		</div>
 	</section>
-	<section class="statement flex m-6 items-center justify-center">
+	<section class="statement flex flex-col w-full self-center text-center items-center justify-center">
 		<p
-			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-2/3 self-center py-12 border-t-2 border-b-2 border-sky-500"
+			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-auto lg:w-2/3 self-center py-12 border-t-2 border-b-2 border-sky-500"
 		>
 			&ldquo;Truth, freedom, health, wisdom, goodness: I'm dedicated to these things, and actively
 			trying to contribute to a society that embodies them more fully.&rdquo;
 		</p>
 	</section>
-	<section class="projects-group flex flex-col justify-center w-full">
+	<section class="projects-group flex flex-col w-full justify-center ">
 		<h2 class="uppercase ml-3 text-emerald-200">Selected Projects</h2>
-		<div class="projects grid w-full">
+		<div class="projects md:grid w-full flex flex-col">
 			{#each projects as project}
 				<a href={`/${project.url}`} class="no-underline">
 					<!-- make a 'projects' directory for these -->
