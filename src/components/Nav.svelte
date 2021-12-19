@@ -32,7 +32,7 @@
 
 </script>
 
-<div class="header sticky top-0 z-50 w-auto bg-sky-500 bg-opacity-10 border-b-2 border-sky-500 flex items-center">
+<div class="header sticky top-0 z-50 w-auto bg-black  border-b-2 border-sky-900 flex items-center">
 	<!-- bg-gradient-to-r from-transparent via-cyan-700  -->
 	<!--  bg-gradient-to-r from-gray-700 to-indigo-500  -->
 	<nav class="w-full flex justify-center items-center">

@@ -8,22 +8,22 @@
 		}
 	};
 
-    // import { icons } from '@iconify-json/mdi-light'
-    // console.log(`🚀 ~ file: index.svelte ~ line 13 ~ icons `, icons )
+	// import { icons } from '@iconify-json/mdi-light'
+	// console.log(`🚀 ~ file: index.svelte ~ line 13 ~ icons `, icons )
 </script>
 
 <script>
 	import Time from 'svelte-time';
-    import IconAccountBox from '~icons/mdi/account-box'
+	import IconAccountBox from '~icons/mdi/account-box';
 	import Icon from '@iconify/svelte'; // this is the online component
-    // import Icon, { addIcon } from '@iconify/svelte/dist/offline'; // this is the offline component
-    // import bellFill from '@iconify-icons/bi/bell-fill'; // this is the specific offline icon import
-    // import wrench from '@iconify-icons/fa/wrench'; // this is the specific offline icon import
-    // addIcon('bell', bellFill); // offline components must be added this way
-    // addIcon('wrench', wrench); // offline components must be added this way
-    // <Icon icon={bellFill} inline={true} /> // this is the format for an offline icon
-    import { collections } from '@iconify/collections';
-    console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections)
+	// import Icon, { addIcon } from '@iconify/svelte/dist/offline'; // this is the offline component
+	// import bellFill from '@iconify-icons/bi/bell-fill'; // this is the specific offline icon import
+	// import wrench from '@iconify-icons/fa/wrench'; // this is the specific offline icon import
+	// addIcon('bell', bellFill); // offline components must be added this way
+	// addIcon('wrench', wrench); // offline components must be added this way
+	// <Icon icon={bellFill} inline={true} /> // this is the format for an offline icon
+	import { collections } from '@iconify/collections';
+	console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections);
 	import Posts from '$components/Posts.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
@@ -49,20 +49,24 @@
 		}
 	];
 </script>
-<div class="flex flex-row mt-12">
+
+<!-- <div class="flex flex-row mt-12">
     <IconAccountBox style="font-size: 2em; color: red"/>
     <Icon icon="mdi-light:home" width="4rem" />
     <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
     <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  text-blue-400" width="4rem" />
     <Icon icon="fa:wrench" inline={true} class="icon-img  text-stone-400" width="4rem" />
     <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
-
-</div>
-<main class="flex flex-col self-center w-screen lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-24">
-	<section class="articles flex flex-col w-full self-center md:flex-row p-3 pt-12 border-t-2 border-emerald-300">
+</div> -->
+<main
+	class="homepage flex flex-col self-center w-screen lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-24"
+>
+	<section
+		class="articles flex flex-col w-full px-8 self-center md:flex-row p-3"
+	>
 		<div class="intro flex flex-col lg:w-3/5 md:pr-12 lg:pr-18 xl:pr-24">
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
-			<p class="intro-body text-xl">
+			<p class="intro-body text-lg font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps
 				realize human potential. I follow a <span class="text-highlight">first-principles</span>
@@ -101,13 +105,14 @@
 				</li>
 			</ol>
 		</div>
-		<div class="posts-panel w-4/5 flex flex-col self-center">
+        <div class="separator mt-9  h-6 rounded-xl bg-gradient-to-tl from-fuchsia-700 to-emerald-500 w-full mr-3"></div>
+		<div class="posts-panel flex flex-col self-center mt-9">
 			<div class="post w-full">
-				<h2 class="uppercase ml-3 -mt-2 mb-3 text-emerald-200">Recent posts</h2>
+				<h2 class="uppercase -mt-2 mb-3 text-emerald-200">Recent posts</h2>
 				{#each selectedPosts as post}
 					<a href={`/posts/${post.slug}`} class="no-underline">
 						<div
-							class="transition-all post-card card bg-sky-500 bg-opacity-25 mx-3 mb-4 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2"
+							class="transition-all post-card card bg-sky-500 bg-opacity-25 mb-4 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2"
 						>
 							<div class="article-date p-0 m-0 text-sm font-light">
 								<Time timestamp={post.date} />
@@ -130,7 +135,9 @@
 			</span>
 		</div>
 	</section>
-	<section class="statement flex flex-col w-full self-center text-center items-center justify-center">
+	<section
+		class="statement flex flex-col w-full self-center text-center items-center justify-center"
+	>
 		<p
 			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-auto lg:w-2/3 self-center py-12 border-t-2 border-b-2 border-sky-500"
 		>
@@ -167,13 +174,25 @@
 </main>
 
 <style lang="scss">
-	@import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0,300;1,300&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
+	// @import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0, 100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
+
+	.homepage {
+		// font-family: 'Be Vietnam Pro', sans-serif;
+		// font-family: 'Fira Sans', sans-serif;
+		// font-family: 'Newsreader', serif;
+		// font-family: 'Noto Sans Display', sans-serif;
+		// font-family: 'Nunito', sans-serif;
+		font-family: 'Sarabun', sans-serif;
+		// font-family: 'Source Sans 3', sans-serif;
+		// font-family: 'Source Serif 4', sans-serif;
+		// font-family: 'Vollkorn', serif;
+	}
 
 	.icon-img {
 		color: var(--color-fuchsia-300);
-        @apply emerald-500;
-        color: blue;
-        background: red;
+		@apply emerald-500;
+		color: blue;
+		background: red;
 	}
 
 	h1 {
@@ -182,28 +201,46 @@
 	}
 
 	.intro {
-		font-family: 'Montserrat', sans-serif;
-		// font-family: 'Overlock', cursive;
+		// font-family: 'Be Vietnam Pro', sans-serif;
+		// font-family: 'Montserrat', sans-serif;
+		font-family: 'Nunito', sans-serif;
+		// font-family: 'Sarabun', sans-serif;
+		// font-family: 'Source Serif 4', sans-serif;
+		// font-family: 'Noto Sans Display', sans-serif;
+		// font-family: 'Source Sans 3', sans-serif;
+		// font-family: 'Karla', sans-serif;
+		// font-family: 'Fira Sans', sans-serif;
+		// font-family: 'Newsreader', serif;
+		// font-family: 'Vollkorn', serif;
 		// font-family: 'Merriweather', serif;
-		font-family: 'Karla', sans-serif;
+		//  font-family: 'Overlock', cursive;
 
 		h1 {
-			font-family: 'Merriweather', serif;
-			font-family: 'Karla', sans-serif;
-			font-weight: 900;
+			// font-family: 'Nunito', sans-serif;
+			font-family: 'Newsreader', serif;
+			// font-family: 'Sarabun', sans-serif;
+			// font-family: 'Source Serif 4', sans-serif;
+			// font-family: 'Vollkorn', serif;
+			// font-family: 'Be Vietnam Pro', sans-serif;
+			// font-family: 'Fira Sans', sans-serif;
+			// font-family: 'Noto Sans Display', sans-serif;
+			// font-family: 'Source Sans 3', sans-serif;
+			// font-family: 'Merriweather', serif;
+			// font-family: 'Karla', sans-serif;
 			//  font-family: 'Overlock', cursive;
+			font-weight: 900;
 		}
 	}
 	.intro-body {
-		font-family: 'Montserrat', sans-serif;
-		font-family: 'Karla', sans-serif;
+		// font-family: 'Montserrat', sans-serif;
+		// font-family: 'Karla', sans-serif;
 		line-height: 1.4;
 		@apply mt-3 font-light;
 	}
 	.text-highlight {
 		// font-family: 'Montserrat', sans-serif;
 		// font-family: 'Karla', sans-serif;
-		@apply mt-3 font-bold text-sky-500 italic;
+		@apply mt-4 font-bold text-sky-500 italic;
 	}
 
 	a {
@@ -240,10 +277,11 @@
 	}
 
 	ol {
-		font-family: 'Merriweather', serif;
+		// font-family: 'Merriweather', serif;
 		--list-counter-size: 1.5rem;
 		counter-reset: intro-counter;
 		list-style: none;
+        position: relative;
 		li {
 			counter-increment: intro-counter;
 			position: relative;
@@ -258,7 +296,9 @@
 			}
 			.li-heading {
 				// font-family: 'Montserrat', sans-serif;
-				@apply font-black italic text-xl ml-3 opacity-100 text-emerald-200;
+                position: relative;
+                left: .75rem;
+				@apply font-extrabold italic text-xl  text-emerald-200 leading-none;
 			}
 			.li-snippet {
 				font-family: 'Montserrat', sans-serif;
