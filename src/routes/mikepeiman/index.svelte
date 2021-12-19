@@ -7,11 +7,23 @@
 			return { props: { posts } };
 		}
 	};
+
+    // import { icons } from '@iconify-json/mdi-light'
+    // console.log(`🚀 ~ file: index.svelte ~ line 13 ~ icons `, icons )
 </script>
 
 <script>
 	import Time from 'svelte-time';
-	import Icon from '@iconify/svelte';
+    import IconAccountBox from '~icons/mdi/account-box'
+	import Icon from '@iconify/svelte'; // this is the online component
+    // import Icon, { addIcon } from '@iconify/svelte/dist/offline'; // this is the offline component
+    // import bellFill from '@iconify-icons/bi/bell-fill'; // this is the specific offline icon import
+    // import wrench from '@iconify-icons/fa/wrench'; // this is the specific offline icon import
+    // addIcon('bell', bellFill); // offline components must be added this way
+    // addIcon('wrench', wrench); // offline components must be added this way
+    // <Icon icon={bellFill} inline={true} /> // this is the format for an offline icon
+    import { collections } from '@iconify/collections';
+    console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections)
 	import Posts from '$components/Posts.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
@@ -37,7 +49,15 @@
 		}
 	];
 </script>
+<div class="flex flex-row mt-12">
+    <IconAccountBox style="font-size: 2em; color: red"/>
+    <Icon icon="mdi-light:home" width="4rem" />
+    <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
+    <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  text-blue-400" width="4rem" />
+    <Icon icon="fa:wrench" inline={true} class="icon-img  text-stone-400" width="4rem" />
+    <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
 
+</div>
 <main class="center max-w-none lg:w-full lg:text-sm lg:mx-12 xl:w-4/5 2xl:w-3/5 3xl:w-1/2 mt-24">
 	<section class="articles flex flex-row p-3 pt-12 border-t-2 border-emerald-300">
 		<div class="intro w-3/5 pr-12 lg:pr-18 xl:pr-24">
@@ -52,8 +72,6 @@
 			<ol class="ml-7 mt-6">
 				<li class="mt-4">
 					<span class="li-heading">Never deny the user basic options.</span>
-					<Icon icon="mdi-light:home" width="4rem" />
-					<Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
 					<p class="li-snippet">
 						Users should be provided the means to <span class="italic text-fuchsia-400 font-medium"
 							>customize the user interface</span

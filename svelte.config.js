@@ -2,6 +2,7 @@ import preprocess from 'svelte-preprocess';
 import path from 'path'
 import { normalizePath } from 'vite'
 import vercel from '@sveltejs/adapter-vercel';
+import Icons from 'unplugin-icons/vite'
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	root: normalizePath(path.resolve('./')),
@@ -35,6 +36,11 @@ const config = {
 			ssr: {
 				noExternal: ['@urql/svelte'] // does this need the @ symbol?
 			},
+			plugins: [
+				Icons({
+					compiler: 'svelte',
+				  }),
+			],
 		}
 	},
 
