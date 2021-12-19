@@ -34,10 +34,10 @@
 	];
 </script>
 
-<main class="center max-w-none 2xl:w-3/4 w-full mt-24">
+<main class="center max-w-none lg:w-full lg:mx-12 xl:w-4/5 2xl:w-3/5 3xl:w-1/2 mt-24 mr-9">
 	<section class="articles flex flex-row p-3 pt-12 border-t-2 border-emerald-300">
-		<div class="intro w-3/5 pr-24">
-			<h1 class="font-semibold text-5xl">Hi, I'm Mike.</h1>
+		<div class="intro w-3/5 pr-12 lg:pr-18 xl:pr-24">
+			<h1 class="font-regular text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-xl">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="text-highlight">user experience</span> and design that helps realize human
@@ -91,7 +91,7 @@
 		</div>
 	</section>
 	<section class="statement flex m-6 items-center justify-center">
-		<p class="text-sky-500 text-3xl font-black text-center p-6 rounded-lg w-2/3 self-center">
+		<p class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-2/3 self-center py-12 border-t-2 border-b-2 border-sky-500">
 			&ldquo;Truth, freedom, health, wisdom, goodness: I'm dedicated to these things, and actively
 			trying to contribute to a society that embodies them more fully.&rdquo;
 		</p>
@@ -126,14 +126,25 @@
 		font-family: 'Montserrat', sans-serif;
 		// font-family: 'Overlock', cursive;
 		// font-family: 'Merriweather', serif;
+        font-family: 'Karla', sans-serif;
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-family: 'Karla', sans-serif;
+            font-weight: 900;
+            //  font-family: 'Overlock', cursive;
+        }
 	}
 	.intro-body {
 		font-family: 'Montserrat', sans-serif;
+        font-family: 'Karla', sans-serif;
+        line-height: 1.4;
 		@apply mt-3 font-light;
 	}
 	.text-highlight {
 		font-family: 'Montserrat', sans-serif;
-		@apply mt-3 font-medium text-sky-500 italic;
+        font-family: 'Karla', sans-serif;
+		@apply mt-3 font-bold text-sky-500 italic;
 	}
 
 	a {
@@ -180,10 +191,10 @@
 		// font-family: 'Coda', cursive;
 		// font-family: 'Forum', cursive;
 		// font-family: 'Gideon Roman', cursive;
-		// font-family: 'Karla', sans-serif;
+		font-family: 'Karla', sans-serif;
 		// font-family: 'Merriweather', serif;
 		// font-family: 'Montserrat', sans-serif;
-		font-family: 'Outfit', sans-serif;
+		// font-family: 'Outfit', sans-serif;
 		// font-family: 'Overlock', cursive;
 		// font-family: 'Staatliches', cursive;
 	}
