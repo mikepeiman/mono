@@ -11,6 +11,7 @@
 
 <script>
 	import Time from 'svelte-time';
+	import Icon from '@iconify/svelte';
 	import Posts from '$components/Posts.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
@@ -18,19 +19,19 @@
 	let projects = [
 		{
 			name: 'Project One',
-            url: './creative/sketch01',
+			url: './creative/sketch01',
 			tags: ['awesome', 'sauce', 'hot'],
 			desc: 'This project will burn your socks off'
 		},
 		{
 			name: 'Project Two',
-            url: './creative/sketch02',
+			url: './creative/sketch02',
 			tags: ['mysterious', 'fun', 'cool'],
 			desc: 'This project will cool your noggin'
 		},
 		{
 			name: 'Project Three',
-            url: './creative/sketch03',
+			url: './creative/sketch03',
 			tags: ['scary', 'epic', 'twisted'],
 			desc: 'This project will twist your knickers'
 		}
@@ -43,30 +44,41 @@
 			<h1 class="font-regular text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-xl">
 				I'm a creative software developer, and this is my professional blog. I love
-				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps realize human
-				potential. I follow a <span class="text-highlight">first-principles</span>
-				approach in my life and my work. Here are a few of my <span class="text-emerald-200 font-bold">design principles</span>:
+				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps
+				realize human potential. I follow a <span class="text-highlight">first-principles</span>
+				approach in my life and my work. Here are a few of my
+				<span class="text-emerald-200 font-bold">design principles</span>:
 			</p>
 			<ol class="ml-7 mt-6">
 				<li class="mt-4">
 					<span class="li-heading">Never deny the user basic options.</span>
+					<Icon icon="mdi-light:home" width="4rem" />
+					<Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
 					<p class="li-snippet">
-						Users should be provided the means to <span class="italic text-fuchsia-400 font-medium">customize the user interface</span> as much as possible.
+						Users should be provided the means to <span class="italic text-fuchsia-400 font-medium"
+							>customize the user interface</span
+						> as much as possible.
 					</p>
 				</li>
 				<li class="mt-4">
 					<span class="li-heading">Minimize barriers to action.</span>
 					<p class="li-snippet">
-						The app (or website) is <span class="italic text-sky-400 font-medium">for something</span>. Make it as <span class="italic text-fuchsia-400 font-medium">intuitive and efficient</span>
+						The app (or website) is <span class="italic text-sky-400 font-medium"
+							>for something</span
+						>. Make it as
+						<span class="italic text-fuchsia-400 font-medium">intuitive and efficient</span>
 						as possible to <span class="italic text-sky-400 font-medium">do that thing.</span>
 					</p>
 				</li>
 				<li class="mt-4">
 					<span class="li-heading">Leverage visual intelligence.</span>
 					<p class="li-snippet">
-						Augment words and iconography with <span class="italic text-fuchsia-400 font-medium">color</span> and structure - <span class="italic text-fuchsia-400 font-medium">draw the eye</span> to key points and
-						relationships. Effectively use negative space, layout and structure, diagrams and
-						images to communicate beyond mere words.
+						Augment words and iconography with <span class="italic text-fuchsia-400 font-medium"
+							>color</span
+						>
+						and structure - <span class="italic text-fuchsia-400 font-medium">draw the eye</span> to
+						key points and relationships. Effectively use negative space, layout and structure, diagrams
+						and images to communicate beyond mere words.
 					</p>
 				</li>
 			</ol>
@@ -112,24 +124,25 @@
 		<h2 class="uppercase ml-3 text-emerald-200">Selected Projects</h2>
 		<div class="projects grid w-full">
 			{#each projects as project}
-				<a  href={`/${project.url}`} class="no-underline"> <!-- make a 'projects' directory for these -->
-                    <div
-                        class="card p-6 bg-sky-500 bg-opacity-25 m-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body rounded-md hover:bg-sky-900 hover:-translate-y-2"
-                    >
-                        <div class="flex flex-col">
-                            <h2 class="text-2xl font-extrabold">{project.name}</h2>
-                            <p class="mt-2 text-sm font-light">{project.desc}</p>
-                            <div class="mt-4 flex flex-row">
-                                {#each project.tags as tag}
-                                    <span
-                                        class="project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2"
-                                        >{tag}</span
-                                    >
-                                {/each}
-                            </div>
-                        </div>
-                    </div>
-                </a>
+				<a href={`/${project.url}`} class="no-underline">
+					<!-- make a 'projects' directory for these -->
+					<div
+						class="card p-6 bg-sky-500 bg-opacity-25 m-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body rounded-md hover:bg-sky-900 hover:-translate-y-2"
+					>
+						<div class="flex flex-col">
+							<h2 class="text-2xl font-extrabold">{project.name}</h2>
+							<p class="mt-2 text-sm font-light">{project.desc}</p>
+							<div class="mt-4 flex flex-row">
+								{#each project.tags as tag}
+									<span
+										class="project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2"
+										>{tag}</span
+									>
+								{/each}
+							</div>
+						</div>
+					</div>
+				</a>
 			{/each}
 		</div>
 	</section>
@@ -138,11 +151,17 @@
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0,300;1,300&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
 
-    
-    h1 {
-        // @apply lg:text-xl xl:text-2xl 2xl:text-4xl 3xl:text-6xl; 
-        // these media queries do not work with @apply, need another strategy
-    }
+	.icon-img {
+		color: var(--color-fuchsia-300);
+        @apply emerald-500;
+        color: blue;
+        background: red;
+	}
+
+	h1 {
+		// @apply lg:text-xl xl:text-2xl 2xl:text-4xl 3xl:text-6xl;
+		// these media queries do not work with @apply, need another strategy
+	}
 
 	.intro {
 		font-family: 'Montserrat', sans-serif;
