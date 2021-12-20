@@ -3,15 +3,18 @@
 	import SideNav from '$components/SideNav.svelte';
 	import '../app.scss';
 	import Nav from '../components/Nav.svelte';
+	import { page } from '$app/stores';
+	$: path = $page.path;
+    $: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path)
 </script>
 
 <div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
+	{#if path != '/'}
 	<Nav>
 		<slot />
 	</Nav>
-	<!-- <SideNav class="sidebar">
-		<slot class="sidebar" />
-	</SideNav> -->
+	{/if}
+
 	<div class="main flex flex-col items-center jutify-center">
 		<slot />
 	</div>

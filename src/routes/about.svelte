@@ -7,9 +7,11 @@
 
 </svelte:head>
 <div class="main p-12 inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
-
-    <h1>About MetaBrain</h1>
-    <h2 class="cyan-500 text-3xl">TailwindCSS</h2>
+    <h1>About Me</h1>
+    <h2 class="cyan-500 text-3xl">I'm colorful</h2>
+</div>
+<div class="flex flex-col pt-10">
+    <h2>There are links to click. If you want.</h2>
 </div>
 
 <style>
