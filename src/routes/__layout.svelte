@@ -13,11 +13,16 @@
 	<Nav>
 		<slot />
 	</Nav>
-	{/if}
-
 	<div class="main flex flex-col items-center jutify-center">
 		<slot />
 	</div>
+	{:else}
+	<div class="main flex flex-col items-center -mt-12 jutify-center">
+		<slot />
+	</div>
+	{/if}
+
+
 	<Footer />
 </div>
 

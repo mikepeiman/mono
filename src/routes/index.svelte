@@ -59,19 +59,19 @@
 <main
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
 >
-	<section class="articles md:grid md:articles-change w-full px-2 md:px-4 lg:px-0 self-center  p-3">
+	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-lg xl:text-xl font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps
-				realize human potential. I follow a <span class="text-highlight">first-principles</span>
+				realize human potential. I follow a <span class="text-highlight text-cyan-400">first-principles</span>
 				approach in my life and my work. Here are a few of my
-				<span class="text-emerald-200 font-bold">design principles</span>:
+				<span class="text-lime-400 font-bold">design principles</span>:
 			</p>
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
-					<span class="li-heading">Never deny the user basic options.</span>
+					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Never deny the user basic options.</h2>
 					<p class="li-snippet">
 						Users should be provided the means to <span class="italic text-fuchsia-400 font-medium"
 							>customize the user interface</span
@@ -79,22 +79,22 @@
 					</p>
 				</li>
 				<li class="mt-4">
-					<span class="li-heading">Minimize barriers to action.</span>
+					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Minimize barriers to action.</h2>
 					<p class="li-snippet">
-						The app (or website) is <span class="italic text-sky-400 font-medium"
+						The app (or website) is <span class="italic text-cyan-400 font-medium"
 							>for something</span
 						>. Make it as
 						<span class="italic text-fuchsia-400 font-medium">intuitive and efficient</span>
-						as possible to <span class="italic text-sky-400 font-medium">do that thing.</span>
+						as possible to <span class="italic text-cyan-400 font-medium">do that thing.</span>
 					</p>
 				</li>
 				<li class="mt-4">
-					<span class="li-heading">Leverage visual intelligence.</span>
+					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Leverage visual intelligence.</h2>
 					<p class="li-snippet">
 						Augment words and iconography with <span class="italic text-fuchsia-400 font-medium"
 							>color</span
 						>
-						and structure - <span class="italic text-fuchsia-400 font-medium">draw the eye</span> to
+						and structure - <span class="italic text-cyan-400 font-medium">draw the eye</span> to
 						key points and relationships. Effectively use negative space, layout and structure, diagrams
 						and images to communicate beyond mere words.
 					</p>
@@ -104,7 +104,7 @@
 
 		<!-- SEPARATOR -->
 		<div
-			class="separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+			class="separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-l from-lime-400 via-cyan-400 to-lime-400 w-full"
 		/>
 		<!-- SEPARATOR -->
 
@@ -148,28 +148,27 @@
 			</div>
 		</div>
 		<!-- SEPARATOR -->
-		<div
+		<!-- <div
 			class="separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
-		/>
+		/> -->
 		<!-- SEPARATOR -->
 	</section>
 
 	<section
-		class="statement flex flex-col w-full self-center text-center items-center justify-center px-8"
+		class="flex flex-col w-full self-center text-center items-center justify-center px-8"
 	>
 		<p
-			class="text-white text-2xl font-light italic text-center p-6 rounded-lg w-auto xl:w-4/5 lg:text-3xl 2xl:w-2/3 2xl:text-4xl self-center py-12 "
+			class="statement text-2xl font-light italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 lg:text-3xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
 		>
-			&ldquo;Truth, freedom, health, wisdom, goodness: I'm dedicated to these things, and actively
-			trying to contribute to a society that embodies them more fully.&rdquo;
+			<span class="text-amber-300 font-medium">&ldquo;If a system is to serve the creative spirit, it must be entirely comprehensible to a single individual.&rdquo;</span> <br><span class="font-light text-stone-500">Daniel H. H. Ingalls</span>
 		</p>
 	</section>
 
-	<section class="projects flex flex-col w-full justify-center px-2 md:px-4 lg:px-0">
+	<section class="projects flex flex-col w-full justify-center px-4 md:px-6 lg:px-0">
 		<!-- SEPARATOR -->
-		<div
+		<!-- <div
 			class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
-		/>
+		/> -->
 		<!-- SEPARATOR -->
 		<div class="flex flex-row items-end justify-between">
 			<h2
@@ -250,6 +249,10 @@
 	h1 {
 		font-family: 'Newsreader', serif;
 	}
+
+	.separator {
+		@apply  bg-gradient-to-l from-lime-400 via-cyan-400 to-lime-400;
+	}
 	.separator-2 {
 		grid-area: separator;
 	}
@@ -295,7 +298,7 @@
 	.text-highlight {
 		// font-family: 'Montserrat', sans-serif;
 		// font-family: 'Karla', sans-serif;
-		@apply mt-4 font-bold text-sky-500 italic;
+		@apply font-bold italic;
 	}
 
 	a {
@@ -340,13 +343,13 @@
 		.icon-wrapper {
 			@apply -mr-4 transition text-2xl;
 			&:nth-of-type(1) {
-				@apply text-orange-400 transition;
+				@apply text-orange-400 transition  delay-100;
 			}
 			&:nth-of-type(2) {
-				@apply text-orange-600 transition;
+				@apply text-orange-600 transition  delay-200;
 			}
 			&:nth-of-type(3) {
-				@apply text-orange-800 transition;
+				@apply text-orange-800 transition  delay-300;
 			}
 		}
 		.view-more {
@@ -427,7 +430,7 @@
 				// font-family: 'Montserrat', sans-serif;
 				position: relative;
 				left: 0.75rem;
-				@apply font-extrabold italic text-xl  text-emerald-200 leading-none;
+				// @apply font-extrabold italic text-xl  text-emerald-200 leading-none;
 			}
 			.li-snippet {
 				font-family: 'Montserrat', sans-serif;
@@ -441,12 +444,29 @@
 		// font-family: 'Coda', cursive;
 		// font-family: 'Forum', cursive;
 		// font-family: 'Gideon Roman', cursive;
-		font-family: 'Karla', sans-serif;
+		// font-family: 'Karla', sans-serif;
 		// font-family: 'Merriweather', serif;
-		// font-family: 'Montserrat', sans-serif;
+		font-family: 'Montserrat', sans-serif;
 		// font-family: 'Outfit', sans-serif;
 		// font-family: 'Overlock', cursive;
 		// font-family: 'Staatliches', cursive;
+				// font-family: 'Be Vietnam Pro', sans-serif;
+		// font-family: 'Montserrat', sans-serif;
+		// font-family: 'Nunito', sans-serif;
+		// font-family: 'Sarabun', sans-serif;
+		// font-family: 'Source Serif 4', sans-serif;
+		// font-family: 'Noto Sans Display', sans-serif;
+		// font-family: 'Source Sans 3', sans-serif;
+		// font-family: 'Karla', sans-serif;
+		// font-family: 'Fira Sans', sans-serif;
+		// font-family: 'Newsreader', serif;
+		// font-family: 'Vollkorn', serif;
+		// font-family: 'Merriweather', serif;
+		//  font-family: 'Overlock', cursive;
+		font-weight: 300;
+		// font-weight: 500;
+		// font-weight: 700;
+		// font-weight: 900;
 	}
 	.article-date {
 		font-family: monospace;
