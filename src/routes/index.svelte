@@ -21,7 +21,7 @@
 
 	import { page } from '$app/stores';
 	$: path = $page.path;
-    $: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path)
+	$: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path);
 	import Posts from '$components/Posts.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
@@ -118,15 +118,15 @@
 						<div
 							class="post-card transition card card-body p-6 lg:p-9 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2"
 						>
-							<div class="article-date p-0 m-0 text-xs font-light">
+							<div class="article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200">
 								<Time timestamp={post.date} />
 							</div>
-							<h3
-								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-3 -mt-1 font-bold text-white"
+							<h1
+								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white"
 							>
 								{post.title}
-							</h3>
-							<p class="text-sm font-light">{post.excerpt}</p>
+							</h1>
+							<p class="text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200">{post.excerpt}</p>
 						</div>
 					</a>
 				{/each}
@@ -172,13 +172,16 @@
 		/>
 		<!-- SEPARATOR -->
 		<div class="flex flex-row items-end justify-between">
-			<h2 class="recent-label uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2">
+			<h2
+				class="recent-label uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2"
+			>
 				Selected Projects
 			</h2>
 			<h2
 				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end hover:decoration-2 hover:decoration-orange-200 text-orange-200 hover:text-white hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
 			>
-				<a href="/creative" class="view-more-link offset-4 pr-2 no-underline ">View more projects</a>
+				<a href="/creative" class="view-more-link offset-4 pr-2 no-underline ">View more projects</a
+				>
 				<div class="icon-wrapper -top-1px xl:top-1px">
 					<IconChevronRight class="icon-chevron" />
 				</div>
@@ -198,8 +201,8 @@
 						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="flex flex-col">
-							<h2 class="text-2xl font-extrabold">{project.name}</h2>
-							<p class="mt-2 text-sm font-light">{project.desc}</p>
+							<h1 class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white">{project.name}</h1>
+							<p class="mt-2 text-sm md:text-base xl:text-lg tracking-wider  font-light">{project.desc}</p>
 							<div class="mt-4 flex flex-row">
 								{#each project.tags as tag}
 									<span
@@ -245,8 +248,7 @@
 	}
 
 	h1 {
-		// @apply lg:text-xl xl:text-2xl 2xl:text-4xl 3xl:text-6xl;
-		// these media queries do not work with @apply, need another strategy
+		font-family: 'Newsreader', serif;
 	}
 	.separator-2 {
 		grid-area: separator;
@@ -301,8 +303,8 @@
 	}
 
 	.icon-wrapper {
-        position: absolute;
-        // padding-top: 2px;
+		position: absolute;
+		// padding-top: 2px;
 		@apply -mr-4 transition right-0 text-2xl;
 		&:nth-of-type(1) {
 			@apply text-blue-400 right-6 transition;
@@ -315,10 +317,10 @@
 		}
 	}
 	.view-more {
-        .view-more-link {
-            @apply pr-4 pb-2;
-        }
-        // padding-bottom: 1px;
+		.view-more-link {
+			@apply pr-4 pb-2;
+		}
+		// padding-bottom: 1px;
 		transition: all 0.3s;
 		&:hover {
 			.icon-wrapper {
@@ -339,7 +341,6 @@
 			@apply -mr-4 transition text-2xl;
 			&:nth-of-type(1) {
 				@apply text-orange-400 transition;
-                
 			}
 			&:nth-of-type(2) {
 				@apply text-orange-600 transition;
