@@ -167,10 +167,10 @@
 		<h2 class="uppercase  text-emerald-200 mt-9">Selected Projects</h2>
 		<div class="projects md:grid w-full flex flex-col mb-12">
 			{#each projects as project}
-				<a href={`/${project.url}`} class="no-underline flex">
+				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="card bg-sky-500 bg-opacity-25 my-3 md:mx-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
+						class="project-card card bg-sky-500 bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="flex flex-col">
 							<h2 class="text-2xl font-extrabold">{project.name}</h2>
@@ -301,6 +301,22 @@
 			}
 		}
 	}
+    // .projects {
+    //     &:first-child {
+    //         margin-left: 0;
+    //     }
+    //     &:last-child {
+    //         margin-right: 0;
+    //     }
+    // }
+    .project-card-link {
+        &:first-of-type {
+            margin-left: 0;
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
 
 	ol {
 		// font-family: 'Merriweather', serif;
