@@ -105,7 +105,11 @@
 				</li>
 			</ol>
 		</div>
-        <div class="separator mt-9  h-6 rounded-xl bg-gradient-to-tl from-fuchsia-700 to-emerald-500 w-full mr-3"></div>
+
+        <!-- SEPARATOR -->
+        <div class="separator mt-9  h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"></div>
+        <!-- SEPARATOR -->
+
 		<div class="posts-panel flex flex-col self-center mt-9">
 			<div class="post w-full">
 				<h2 class="uppercase -mt-2 mb-3 text-emerald-200">Recent posts</h2>
@@ -135,16 +139,27 @@
 			</span>
 		</div>
 	</section>
+
+    
+        <!-- SEPARATOR -->
+        <div class="separator mt-9  h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"></div>
+        <!-- SEPARATOR -->
+        
 	<section
 		class="statement flex flex-col w-full self-center text-center items-center justify-center"
 	>
 		<p
-			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-auto lg:w-2/3 self-center py-12 border-t-2 border-b-2 border-sky-500"
+			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-auto lg:w-2/3 self-center py-12 "
 		>
 			&ldquo;Truth, freedom, health, wisdom, goodness: I'm dedicated to these things, and actively
 			trying to contribute to a society that embodies them more fully.&rdquo;
 		</p>
 	</section>
+
+            <!-- SEPARATOR -->
+            <div class="separator m-0  h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"></div>
+            <!-- SEPARATOR -->
+            
 	<section class="projects-group flex flex-col w-full justify-center ">
 		<h2 class="uppercase ml-3 text-emerald-200">Selected Projects</h2>
 		<div class="projects md:grid w-full flex flex-col">

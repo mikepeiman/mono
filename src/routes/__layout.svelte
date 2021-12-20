@@ -7,7 +7,7 @@
 
 <div id="app-layout" class="grid w-auto h-screen bg-black">
 	<Nav>
-		<slot class="header" />
+		<slot />
 	</Nav>
 	<!-- <SideNav class="sidebar">
 		<slot class="sidebar" />
