@@ -106,17 +106,17 @@
 
 		<!-- SEPARATOR -->
 		<div
-			class="separator mt-9  h-6 rounded-xl md:hidden bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"
+			class="separator mt-9  h-6 rounded-xl md:hidden bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
 		/>
 		<!-- SEPARATOR -->
 
-		<div class="posts-panel flex flex-col self-center mt-9 md:mt-0 md:w-2/5">
+		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0 md:w-2/5">
 			<div class="post w-full">
 				<h2 class="uppercase -mt-2 mb-3 text-emerald-200">Recent posts</h2>
 				{#each selectedPosts as post}
 					<a href={`/posts/${post.slug}`} class="no-underline">
 						<div
-							class="transition-all post-card card bg-sky-500 bg-opacity-25 mb-4 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2"
+							class="transition-all post-card card bg-sky-500 bg-opacity-25 my-6 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2"
 						>
 							<div class="article-date p-0 m-0 text-sm font-light">
 								<Time timestamp={post.date} />
@@ -164,13 +164,13 @@
                 class="separator m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
             />
             <!-- SEPARATOR -->
-		<h2 class="uppercase ml-3 text-emerald-200">Selected Projects</h2>
+		<h2 class="uppercase  text-emerald-200 mt-9">Selected Projects</h2>
 		<div class="projects md:grid w-full flex flex-col">
 			{#each projects as project}
-				<a href={`/${project.url}`} class="no-underline">
+				<a href={`/${project.url}`} class="no-underline flex">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="card p-6 bg-sky-500 bg-opacity-25 m-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body rounded-md hover:bg-sky-900 hover:-translate-y-2"
+						class="card bg-sky-500 bg-opacity-25 my-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="flex flex-col">
 							<h2 class="text-2xl font-extrabold">{project.name}</h2>
