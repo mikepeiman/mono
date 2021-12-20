@@ -16,7 +16,7 @@
 	import Time from 'svelte-time';
 	import IconAccountBox from '~icons/mdi/account-box';
 	import IconChevronRight from '~icons/mdi/chevron-right';
-	import { collections } from '@iconify/collections';
+	// import { collections } from '@iconify/collections.json';
 	// console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections);
 
 	import { page } from '$app/stores';
