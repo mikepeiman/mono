@@ -62,7 +62,7 @@ module.exports = {
           'neutral-focus': '#2a2e37',     /* Neutral color - focused */
           'neutral-content': '#ffffff',   /* Foreground content color to use on neutral color */
 
-          'base-100': '#112233',          /* Base color of page, used for blank backgrounds */
+          'base-100': '#000000',          /* Base color of page, used for blank backgrounds */
           'base-200': '#051122',          /* Base color, a little darker */
           'base-300': '#020511',          /* Base color, even more darker */
           'base-content': '#cfeff7',      /* Foreground content color to use on base color */

@@ -62,7 +62,7 @@
 <main
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
 >
-	<section class="articles md:grid md:articles-change w-full px-8 self-center  p-3">
+	<section class="articles md:grid md:articles-change w-full px-2 md:px-4 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-lg xl:text-xl font-thin">
@@ -139,13 +139,13 @@
 			>
 				<a href="/posts" class="view-more-link offset-4 no-underline ">View more articles </a>
 
-				<div class="icon-wrapper">
+				<div class="icon-wrapper -top-1px xl:top-1px">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper">
+				<div class="icon-wrapper -top-1px xl:top-1px">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper">
+				<div class="icon-wrapper -top-1px xl:top-1px">
 					<IconChevronRight class="icon-chevron" />
 				</div>
 			</div>
@@ -168,7 +168,7 @@
 		</p>
 	</section>
 
-	<section class="projects flex flex-col w-full justify-center px-8">
+	<section class="projects flex flex-col w-full justify-center px-2 md:px-4 lg:px-0">
 		<!-- SEPARATOR -->
 		<div
 			class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
@@ -182,13 +182,13 @@
 				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end hover:decoration-2 hover:decoration-orange-200 text-orange-200 hover:text-white hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
 			>
 				<a href="/creative" class="view-more-link offset-4 pr-2 no-underline ">View more projects</a>
-				<div class="icon-wrapper">
+				<div class="icon-wrapper -top-1px xl:top-1px">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper">
+				<div class="icon-wrapper -top-1px xl:top-1px">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper">
+				<div class="icon-wrapper -top-1px xl:top-1px">
 					<IconChevronRight class="icon-chevron" />
 				</div>
 			</h2>
@@ -305,8 +305,6 @@
 
 	.icon-wrapper {
         position: absolute;
-        top: 2px;
-        right: 0px;
         // padding-top: 2px;
 		@apply -mr-4 transition right-0 text-2xl;
 		&:nth-of-type(1) {
