@@ -116,12 +116,12 @@
 				{#each selectedPosts as post}
 					<a href={`/posts/${post.slug}`} class="no-underline">
 						<div
-							class="transition-all post-card card bg-sky-500 bg-opacity-25 my-6 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2"
+							class="post-card transition card card-body p-6 lg:p-9 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2"
 						>
-							<div class="article-date p-0 m-0 text-sm font-light">
+							<div class="article-date p-0 m-0 text-xs font-light">
 								<Time timestamp={post.date} />
 							</div>
-							<h3 class="text-xl mb-3 -mt-1 font-bold text-white text-3xl">{post.title}</h3>
+							<h3 class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-3 -mt-1 font-bold text-white">{post.title}</h3>
 							<p class="text-sm font-light">{post.excerpt}</p>
 						</div>
 					</a>
@@ -170,7 +170,7 @@
 				<a href={`/${project.url}`} class="no-underline flex">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="card bg-sky-500 bg-opacity-25 my-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
+						class="card bg-sky-500 bg-opacity-25 my-3 md:mx-3 rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="flex flex-col">
 							<h2 class="text-2xl font-extrabold">{project.name}</h2>
@@ -271,17 +271,13 @@
 	}
 
 	a {
-		@apply underline underline-offset-4  decoration-sky-500;
+		// @apply underline underline-offset-4  decoration-sky-500;
 	}
     .posts-panel {
         grid-area: posts;
     }
 
 	.post-card {
-		h3 {
-			color: white;
-			font-size: 1.5rem;
-		}
 		position: relative;
 		transition: 0.3s;
 		&:after {

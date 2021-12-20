@@ -13,6 +13,7 @@
     .articles-change {
         grid-template-areas: 'intro posts'
             'separator separator';
+            grid-template-columns: 3fr 2fr;
     }
 }
 
