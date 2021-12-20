@@ -29,12 +29,27 @@
     .delay-450 {
         delay: 0.45s;
     }
+    .pb-1px {
+        padding-bottom: 1px;
+    }
+    .pb-2px {
+        padding-bottom: 2px;
+    }
+    .pb-3px {
+        padding-bottom: 3px;
+    }
+    .pb-4px {
+        padding-bottom: 4px;
+    }
+    .pb-5px {
+        padding-bottom: 5px;
+    }
 }
 
-html {
-    max-width    : 100vw;
-    // overflow-x: hidden;
-}
+// html {
+//     max-width    : 100vw;
+//     // overflow-x: hidden;
+// }
 
 body {
     // background: rgba(14,20,35,1);

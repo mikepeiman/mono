@@ -63,9 +63,9 @@
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
 >
 	<section class="articles md:grid md:articles-change w-full px-8 self-center  p-3">
-		<div class="intro flex flex-col md:pr-12 lg:pr-18 xl:pr-24">
+		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
-			<p class="intro-body text-lg font-thin">
+			<p class="intro-body text-lg xl:text-xl font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps
 				realize human potential. I follow a <span class="text-highlight">first-principles</span>
@@ -113,7 +113,9 @@
 
 		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
 			<div class="post w-full">
-				<h2 class="uppercase -mt-2 mb-3 text-sky-300">Recent posts</h2>
+				<h2 class="recent-label uppercase -mt-2 -mb-4 text-sky-300 text-md lg:text-lg">
+					Recent posts
+				</h2>
 				{#each selectedPosts as post}
 					<a href={`/posts/${post.slug}`} class="no-underline">
 						<div
@@ -133,8 +135,9 @@
 				{/each}
 			</div>
 			<div
-				class="view-more text-right pr-4 relative flex flex-row justify-end hover:decoration-2 hover:decoration-sky-500 text-sky-300 hover:text-sky-300 hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
-				><a href="/posts" class="view-more-link offset-4 no-underline ">View more articles </a>
+				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2  hover:-translate-x-2 transition"
+			>
+				<a href="/posts" class="view-more-link offset-4 no-underline ">View more articles </a>
 
 				<div class="icon-wrapper">
 					<IconChevronRight class="icon-chevron" />
@@ -158,7 +161,7 @@
 		class="statement flex flex-col w-full self-center text-center items-center justify-center px-8"
 	>
 		<p
-			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-auto lg:w-2/3 self-center py-12 "
+			class="text-white text-2xl font-light italic text-center p-6 rounded-lg w-auto xl:w-4/5 lg:text-3xl 2xl:w-2/3 2xl:text-4xl self-center py-12 "
 		>
 			&ldquo;Truth, freedom, health, wisdom, goodness: I'm dedicated to these things, and actively
 			trying to contribute to a society that embodies them more fully.&rdquo;
@@ -172,21 +175,24 @@
 		/>
 		<!-- SEPARATOR -->
 		<div class="flex flex-row items-end justify-between">
-            <h2 class="uppercase  text-orange-200 mt-9 mb-2">Selected Projects</h2>
-            <h2
-                class="view-more text-right pr-4 relative flex flex-row justify-end hover:decoration-2 hover:decoration-orange-200 text-orange-200 hover:text-white hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
-                ><a href="/posts" class="view-more-link offset-4 no-underline ">View more projects</a>
-                <div class="icon-wrapper">
-                    <IconChevronRight class="icon-chevron" />
-                </div>
-                <div class="icon-wrapper">
-                    <IconChevronRight class="icon-chevron" />
-                </div>
-                <div class="icon-wrapper">
-                    <IconChevronRight class="icon-chevron" />
-                </div>
-            </h2>
-        </div>
+			<h2 class="recent-label uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2">
+				Selected Projects
+			</h2>
+			<h2
+				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end hover:decoration-2 hover:decoration-orange-200 text-orange-200 hover:text-white hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
+			>
+				<a href="/creative" class="view-more-link offset-4 pr-2 no-underline ">View more projects</a>
+				<div class="icon-wrapper">
+					<IconChevronRight class="icon-chevron" />
+				</div>
+				<div class="icon-wrapper">
+					<IconChevronRight class="icon-chevron" />
+				</div>
+				<div class="icon-wrapper">
+					<IconChevronRight class="icon-chevron" />
+				</div>
+			</h2>
+		</div>
 		<div class="projects-group md:grid w-full flex flex-col mb-12">
 			{#each projects as project}
 				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
@@ -298,18 +304,26 @@
 	}
 
 	.icon-wrapper {
-		@apply -mr-4 transition text-2xl;
+        position: absolute;
+        top: 2px;
+        right: 0px;
+        // padding-top: 2px;
+		@apply -mr-4 transition right-0 text-2xl;
 		&:nth-of-type(1) {
-			@apply text-blue-400 transition;
+			@apply text-blue-400 right-6 transition;
 		}
 		&:nth-of-type(2) {
-			@apply text-blue-600 transition;
+			@apply text-blue-600 right-4 transition;
 		}
 		&:nth-of-type(3) {
-			@apply text-blue-800 transition;
+			@apply text-blue-800 right-2 transition;
 		}
 	}
 	.view-more {
+        .view-more-link {
+            @apply pr-4 pb-2;
+        }
+        // padding-bottom: 1px;
 		transition: all 0.3s;
 		&:hover {
 			.icon-wrapper {
@@ -325,36 +339,37 @@
 			}
 		}
 	}
-    .projects {
-        .icon-wrapper {
-		@apply -mr-4 transition text-2xl;
-		&:nth-of-type(1) {
-			@apply text-orange-400 transition;
+	.projects {
+		.icon-wrapper {
+			@apply -mr-4 transition text-2xl;
+			&:nth-of-type(1) {
+				@apply text-orange-400 transition;
+                
+			}
+			&:nth-of-type(2) {
+				@apply text-orange-600 transition;
+			}
+			&:nth-of-type(3) {
+				@apply text-orange-800 transition;
+			}
 		}
-		&:nth-of-type(2) {
-			@apply text-orange-600 transition;
-		}
-		&:nth-of-type(3) {
-			@apply text-orange-800 transition;
-		}
-	}
-	.view-more {
-		transition: all 0.3s;
-		&:hover {
-			.icon-wrapper {
-				&:nth-of-type(1) {
-					@apply text-orange-200 transition delay-100;
-				}
-				&:nth-of-type(2) {
-					@apply text-orange-400 transition delay-200;
-				}
-				&:nth-of-type(3) {
-					@apply text-orange-600 transition delay-300;
+		.view-more {
+			transition: all 0.3s;
+			&:hover {
+				.icon-wrapper {
+					&:nth-of-type(1) {
+						@apply text-orange-200 transition delay-100;
+					}
+					&:nth-of-type(2) {
+						@apply text-orange-400 transition delay-200;
+					}
+					&:nth-of-type(3) {
+						@apply text-orange-600 transition delay-300;
+					}
 				}
 			}
 		}
 	}
-    }
 
 	.posts-panel {
 		grid-area: posts;
