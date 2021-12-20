@@ -62,7 +62,7 @@
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
-			<p class="intro-body text-lg xl:text-xl font-thin">
+			<p class="intro-body text-xl xl:text-2xl font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps
 				realize human potential. I follow a <span class="text-highlight text-cyan-400">first-principles</span>
@@ -72,7 +72,7 @@
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
 					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Never deny the user basic options.</h2>
-					<p class="li-snippet">
+					<p class="li-snippet text-base lg:text-lg">
 						Users should be provided the means to <span class="italic text-fuchsia-400 font-medium"
 							>customize the user interface</span
 						> as much as possible.
@@ -80,7 +80,7 @@
 				</li>
 				<li class="mt-4">
 					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Minimize barriers to action.</h2>
-					<p class="li-snippet">
+					<p class="li-snippet text-base lg:text-lg">
 						The app (or website) is <span class="italic text-cyan-400 font-medium"
 							>for something</span
 						>. Make it as
@@ -90,7 +90,7 @@
 				</li>
 				<li class="mt-4">
 					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Leverage visual intelligence.</h2>
-					<p class="li-snippet">
+					<p class="li-snippet text-base lg:text-lg">
 						Augment words and iconography with <span class="italic text-fuchsia-400 font-medium"
 							>color</span
 						>
