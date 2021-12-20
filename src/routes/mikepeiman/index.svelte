@@ -61,8 +61,8 @@
 <main
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
 >
-	<section class="articles flex flex-col w-full px-8 self-center md:flex-row p-3">
-		<div class="intro flex flex-col md:w-3/5 md:pr-12 lg:pr-18 xl:pr-24">
+	<section class="articles md:grid md:articles-change w-full px-8 self-center  p-3">
+		<div class="intro flex flex-col md:pr-12 lg:pr-18 xl:pr-24">
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-lg font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
@@ -106,11 +106,11 @@
 
 		<!-- SEPARATOR -->
 		<div
-			class="separator mt-9  h-6 rounded-xl md:hidden bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+			class="separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
 		/>
 		<!-- SEPARATOR -->
 
-		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0 md:w-2/5">
+		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
 			<div class="post w-full">
 				<h2 class="uppercase -mt-2 mb-3 text-emerald-200">Recent posts</h2>
 				{#each selectedPosts as post}
@@ -140,7 +140,7 @@
 		</div>
         <!-- SEPARATOR -->
         <div
-            class="separator mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+            class="separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
         />
         <!-- SEPARATOR -->
 	</section>
@@ -161,7 +161,7 @@
         
             <!-- SEPARATOR -->
             <div
-                class="separator m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+                class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
             />
             <!-- SEPARATOR -->
 		<h2 class="uppercase  text-emerald-200 mt-9">Selected Projects</h2>
@@ -206,6 +206,11 @@
 		// font-family: 'Vollkorn', serif;
 	}
 
+    .articles-change {
+        grid-template-areas: 'intro posts'
+        'separator separator';
+    }
+
 	.icon-img {
 		color: var(--color-fuchsia-300);
 		@apply emerald-500;
@@ -217,8 +222,12 @@
 		// @apply lg:text-xl xl:text-2xl 2xl:text-4xl 3xl:text-6xl;
 		// these media queries do not work with @apply, need another strategy
 	}
+    .separator-2 {
+        grid-area: separator;
+    }
 
 	.intro {
+        grid-area: intro;
 		// font-family: 'Be Vietnam Pro', sans-serif;
 		// font-family: 'Montserrat', sans-serif;
 		font-family: 'Nunito', sans-serif;
@@ -264,6 +273,9 @@
 	a {
 		@apply underline underline-offset-4  decoration-sky-500;
 	}
+    .posts-panel {
+        grid-area: posts;
+    }
 
 	.post-card {
 		h3 {
