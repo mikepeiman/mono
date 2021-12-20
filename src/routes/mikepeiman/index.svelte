@@ -165,7 +165,7 @@
             />
             <!-- SEPARATOR -->
 		<h2 class="uppercase  text-emerald-200 mt-9">Selected Projects</h2>
-		<div class="projects md:grid w-full flex flex-col">
+		<div class="projects md:grid w-full flex flex-col mb-12">
 			{#each projects as project}
 				<a href={`/${project.url}`} class="no-underline flex">
 					<!-- make a 'projects' directory for these -->

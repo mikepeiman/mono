@@ -49,7 +49,7 @@
 			// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 44 ~ onMount ~ c[i].attributes.style.width`, c[i].attributes.style.width)
 			// c[i].attributes.style.height = `height:${w}px;`
 			// c[i].attributes.style.height = `height:${w}px;`
-            console.log(`🚀 ~ file: index.svelte ~ line 50 ~ resetCanvasSizes ~ c[i]`, c[i])
+            // console.log(`🚀 ~ file: index.svelte ~ line 50 ~ resetCanvasSizes ~ c[i]`, c[i])
 		}
 	}
 </script>
