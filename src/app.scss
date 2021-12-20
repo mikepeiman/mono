@@ -16,6 +16,20 @@
             grid-template-columns: 3fr 2fr;
     }
 }
+@layer utilities {
+    .delay-100 {
+        delay: 0.1s;
+    }
+    .delay-200 {
+        delay: 0.2s;
+    }
+    .delay-300 {
+        delay: 0.3s;
+    }
+    .delay-450 {
+        delay: 0.45s;
+    }
+}
 
 html {
     max-width    : 100vw;

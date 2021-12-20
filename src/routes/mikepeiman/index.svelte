@@ -15,6 +15,7 @@
 <script>
 	import Time from 'svelte-time';
 	import IconAccountBox from '~icons/mdi/account-box';
+	import IconChevronRight from '~icons/mdi/chevron-right';
 	import Icon from '@iconify/svelte'; // this is the online component
 	// import Icon, { addIcon } from '@iconify/svelte/dist/offline'; // this is the offline component
 	// import bellFill from '@iconify-icons/bi/bell-fill'; // this is the specific offline icon import
@@ -51,7 +52,7 @@
 </script>
 
 <!-- <div class="flex flex-row mt-12">
-    <IconAccountBox style="font-size: 2em; color: red"/>
+    
     <Icon icon="mdi-light:home" width="4rem" />
     <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
     <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  text-blue-400" width="4rem" />
@@ -112,7 +113,7 @@
 
 		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
 			<div class="post w-full">
-				<h2 class="uppercase -mt-2 mb-3 text-emerald-200">Recent posts</h2>
+				<h2 class="uppercase -mt-2 mb-3 text-sky-300">Recent posts</h2>
 				{#each selectedPosts as post}
 					<a href={`/posts/${post.slug}`} class="no-underline">
 						<div
@@ -121,30 +122,37 @@
 							<div class="article-date p-0 m-0 text-xs font-light">
 								<Time timestamp={post.date} />
 							</div>
-							<h3 class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-3 -mt-1 font-bold text-white">{post.title}</h3>
+							<h3
+								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-3 -mt-1 font-bold text-white"
+							>
+								{post.title}
+							</h3>
 							<p class="text-sm font-light">{post.excerpt}</p>
 						</div>
 					</a>
 				{/each}
 			</div>
-			<span class="view-more text-right  pr-4 "
-				><a
-					href="/posts"
-					class="view-more-link offset-4 no-underline hover:decoration-2 hover:decoration-sky-500 text-sky-500 hover:text-cyan-300 hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition-all"
-					>View more articles
-				</a>
-				<span class="text-sky-700 font-bold m-0 p-0">&#62</span>
-				<span class="text-sky-500 font-bold -ml-2 p-0">&#62</span>
-				<span class="text-sky-700 font-bold -ml-2 p-0">&#62</span>
-			</span>
-		</div>
-        <!-- SEPARATOR -->
-        <div
-            class="separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
-        />
-        <!-- SEPARATOR -->
-	</section>
+			<div
+				class="view-more text-right pr-4 relative flex flex-row justify-end hover:decoration-2 hover:decoration-sky-500 text-sky-300 hover:text-sky-300 hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
+				><a href="/posts" class="view-more-link offset-4 no-underline ">View more articles </a>
 
+				<div class="icon-wrapper">
+					<IconChevronRight class="icon-chevron" />
+				</div>
+				<div class="icon-wrapper">
+					<IconChevronRight class="icon-chevron" />
+				</div>
+				<div class="icon-wrapper">
+					<IconChevronRight class="icon-chevron" />
+				</div>
+			</div>
+		</div>
+		<!-- SEPARATOR -->
+		<div
+			class="separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+		/>
+		<!-- SEPARATOR -->
+	</section>
 
 	<section
 		class="statement flex flex-col w-full self-center text-center items-center justify-center px-8"
@@ -156,21 +164,35 @@
 			trying to contribute to a society that embodies them more fully.&rdquo;
 		</p>
 	</section>
-    
-	<section class="projects-group flex flex-col w-full justify-center px-8">
-        
-            <!-- SEPARATOR -->
-            <div
-                class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
-            />
-            <!-- SEPARATOR -->
-		<h2 class="uppercase  text-emerald-200 mt-9">Selected Projects</h2>
-		<div class="projects md:grid w-full flex flex-col mb-12">
+
+	<section class="projects flex flex-col w-full justify-center px-8">
+		<!-- SEPARATOR -->
+		<div
+			class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+		/>
+		<!-- SEPARATOR -->
+		<div class="flex flex-row items-end justify-between">
+            <h2 class="uppercase  text-orange-200 mt-9 mb-2">Selected Projects</h2>
+            <h2
+                class="view-more text-right pr-4 relative flex flex-row justify-end hover:decoration-2 hover:decoration-orange-200 text-orange-200 hover:text-white hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
+                ><a href="/posts" class="view-more-link offset-4 no-underline ">View more projects</a>
+                <div class="icon-wrapper">
+                    <IconChevronRight class="icon-chevron" />
+                </div>
+                <div class="icon-wrapper">
+                    <IconChevronRight class="icon-chevron" />
+                </div>
+                <div class="icon-wrapper">
+                    <IconChevronRight class="icon-chevron" />
+                </div>
+            </h2>
+        </div>
+		<div class="projects-group md:grid w-full flex flex-col mb-12">
 			{#each projects as project}
 				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="project-card card bg-sky-500 bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
+						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="flex flex-col">
 							<h2 class="text-2xl font-extrabold">{project.name}</h2>
@@ -206,10 +228,11 @@
 		// font-family: 'Vollkorn', serif;
 	}
 
-    .articles-change {
-        grid-template-areas: 'intro posts'
-        'separator separator';
-    }
+	.articles-change {
+		grid-template-areas:
+			'intro posts'
+			'separator separator';
+	}
 
 	.icon-img {
 		color: var(--color-fuchsia-300);
@@ -222,12 +245,12 @@
 		// @apply lg:text-xl xl:text-2xl 2xl:text-4xl 3xl:text-6xl;
 		// these media queries do not work with @apply, need another strategy
 	}
-    .separator-2 {
-        grid-area: separator;
-    }
+	.separator-2 {
+		grid-area: separator;
+	}
 
 	.intro {
-        grid-area: intro;
+		grid-area: intro;
 		// font-family: 'Be Vietnam Pro', sans-serif;
 		// font-family: 'Montserrat', sans-serif;
 		font-family: 'Nunito', sans-serif;
@@ -273,50 +296,103 @@
 	a {
 		// @apply underline underline-offset-4  decoration-sky-500;
 	}
-    .posts-panel {
-        grid-area: posts;
+
+	.icon-wrapper {
+		@apply -mr-4 transition text-2xl;
+		&:nth-of-type(1) {
+			@apply text-blue-400 transition;
+		}
+		&:nth-of-type(2) {
+			@apply text-blue-600 transition;
+		}
+		&:nth-of-type(3) {
+			@apply text-blue-800 transition;
+		}
+	}
+	.view-more {
+		transition: all 0.3s;
+		&:hover {
+			.icon-wrapper {
+				&:nth-of-type(1) {
+					@apply text-blue-200 transition delay-100;
+				}
+				&:nth-of-type(2) {
+					@apply text-blue-400 transition delay-200;
+				}
+				&:nth-of-type(3) {
+					@apply text-blue-600 transition delay-300;
+				}
+			}
+		}
+	}
+    .projects {
+        .icon-wrapper {
+		@apply -mr-4 transition text-2xl;
+		&:nth-of-type(1) {
+			@apply text-orange-400 transition;
+		}
+		&:nth-of-type(2) {
+			@apply text-orange-600 transition;
+		}
+		&:nth-of-type(3) {
+			@apply text-orange-800 transition;
+		}
+	}
+	.view-more {
+		transition: all 0.3s;
+		&:hover {
+			.icon-wrapper {
+				&:nth-of-type(1) {
+					@apply text-orange-200 transition delay-100;
+				}
+				&:nth-of-type(2) {
+					@apply text-orange-400 transition delay-200;
+				}
+				&:nth-of-type(3) {
+					@apply text-orange-600 transition delay-300;
+				}
+			}
+		}
+	}
     }
+
+	.posts-panel {
+		grid-area: posts;
+	}
 
 	.post-card {
 		position: relative;
 		transition: 0.3s;
-		&:after {
-			content: 'Read this...';
-			position: absolute;
-			opacity: 0;
-			bottom: 0;
-			right: 0;
-			transition: 0.3s;
-			padding: 0.5rem;
+		// &:after {
+		// 	content: 'Read this...';
+		// 	position: absolute;
+		// 	opacity: 0;
+		// 	bottom: 0;
+		// 	right: 0;
+		// 	transition: 0.3s;
+		// 	padding: 0.5rem;
+		// }
+		// &:hover {
+		// 	&:after {
+		// 		content: 'Read this...';
+		// 		position: absolute;
+		// 		opacity: 1;
+		// 		bottom: 0;
+		// 		right: 0;
+		// 		transition: 0.3s;
+		// 		@apply text-sky-400;
+		// 	}
+		// }
+	}
+
+	.project-card-link {
+		&:first-of-type {
+			margin-left: 0;
 		}
-		&:hover {
-			&:after {
-				content: 'Read this...';
-				position: absolute;
-				opacity: 1;
-				bottom: 0;
-				right: 0;
-				transition: 0.3s;
-				@apply text-cyan-400;
-			}
+		&:last-of-type {
+			margin-right: 0;
 		}
 	}
-    // .projects {
-    //     &:first-child {
-    //         margin-left: 0;
-    //     }
-    //     &:last-child {
-    //         margin-right: 0;
-    //     }
-    // }
-    .project-card-link {
-        &:first-of-type {
-            margin-left: 0;
-        }
-        &:last-of-type {
-            margin-right: 0;
-        }
-    }
 
 	ol {
 		// font-family: 'Merriweather', serif;
@@ -364,10 +440,8 @@
 	.article-date {
 		font-family: monospace;
 	}
+
 	.projects-group {
-		// font-family: 'Montserrat', sans-serif;
-	}
-	.projects {
 		grid-template-columns: repeat(3, 1fr);
 	}
 

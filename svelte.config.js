@@ -3,6 +3,7 @@ import path from 'path'
 import { normalizePath } from 'vite'
 import vercel from '@sveltejs/adapter-vercel';
 import Icons from 'unplugin-icons/vite'
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	root: normalizePath(path.resolve('./')),
