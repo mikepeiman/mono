@@ -1,7 +1,7 @@
 <script>
-    import { fly, scale } from 'svelte/transition';
-    import { quadOut } from 'svelte/easing';
-    export let open;
+	import { fly, scale } from 'svelte/transition';
+	import { quadOut } from 'svelte/easing';
+	export let open;
 	import { page } from '$app/stores';
 	$: path = $page.path;
 
@@ -13,22 +13,18 @@
 		{ title: 'Todos', url: '/todos' },
 		{ title: 'Quotes', url: '/quotes' },
 		{ title: 'Creative', url: '/creative' },
-		{ title: 'Mike', url: '/mikepeiman' },
+		{ title: 'Mike', url: '/mikepeiman' }
 	];
-
 </script>
 
 <div class="header sticky top-0 z-50 w-auto bg-black  border-b-2 border-sky-900 flex items-center">
 	<nav class="w-auto h-full flex flex-col justify-center items-center">
 		{#each links as link, i}
 			<a
-				rel="prefetch"
-				transition:fly={{ y: -15, delay: 50 + i}}
-				sveltekit:prefetch
+				transition:fly={{ y: -15, delay: 50 + i }}
 				href={link.url}
 				class="nav-link tracking-widest w-full px-6 py-4 hover:text-cyan-500 hover:bg-gray-900"
-				class:active={link.url === path}
-				>{link.title}</a
+				class:active={link.url === path}>{link.title}</a
 			>
 		{/each}
 	</nav>
@@ -60,6 +56,4 @@
 	// :global(nav a.active) {
 	// 	@apply text-cyan-500 decoration-current underline underline-offset-4 decoration-cyan-500 transition-all;
 	// }
-
-
 </style>

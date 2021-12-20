@@ -1,4 +1,4 @@
-<main class="homepage bg-black flex flex-col justify-items-center items-center">
+<main class="flex flex-col">
     <slot />
 </main>
 

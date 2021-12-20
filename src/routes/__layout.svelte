@@ -5,16 +5,16 @@
 	import Nav from '../components/Nav.svelte';
 </script>
 
-<div id="app-layout" class="grid w-auto h-screen bg-black">
+<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black">
 	<Nav>
 		<slot />
 	</Nav>
 	<!-- <SideNav class="sidebar">
 		<slot class="sidebar" />
 	</SideNav> -->
-	<!-- <div class="main flex flex-col items-center jutify-center"> -->
+	<div class="main flex flex-col items-center jutify-center">
 		<slot />
-	<!-- </div> -->
+	</div>
 	<Footer />
 </div>
 

@@ -59,12 +59,10 @@
     <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
 </div> -->
 <main
-	class="homepage flex flex-col self-center w-screen lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-24"
+	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
 >
-	<section
-		class="articles flex flex-col w-full px-8 self-center md:flex-row p-3"
-	>
-		<div class="intro flex flex-col lg:w-3/5 md:pr-12 lg:pr-18 xl:pr-24">
+	<section class="articles flex flex-col w-full px-8 self-center md:flex-row p-3">
+		<div class="intro flex flex-col md:w-3/5 md:pr-12 lg:pr-18 xl:pr-24">
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-lg font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
@@ -106,11 +104,13 @@
 			</ol>
 		</div>
 
-        <!-- SEPARATOR -->
-        <div class="separator mt-9  h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"></div>
-        <!-- SEPARATOR -->
+		<!-- SEPARATOR -->
+		<div
+			class="separator mt-9  h-6 rounded-xl md:hidden bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"
+		/>
+		<!-- SEPARATOR -->
 
-		<div class="posts-panel flex flex-col self-center mt-9">
+		<div class="posts-panel flex flex-col self-center mt-9 md:mt-0 md:w-2/5">
 			<div class="post w-full">
 				<h2 class="uppercase -mt-2 mb-3 text-emerald-200">Recent posts</h2>
 				{#each selectedPosts as post}
@@ -138,15 +138,16 @@
 				<span class="text-sky-700 font-bold -ml-2 p-0">&#62</span>
 			</span>
 		</div>
+        <!-- SEPARATOR -->
+        <div
+            class="separator mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+        />
+        <!-- SEPARATOR -->
 	</section>
 
-    
-        <!-- SEPARATOR -->
-        <div class="separator mt-9  h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"></div>
-        <!-- SEPARATOR -->
-        
+
 	<section
-		class="statement flex flex-col w-full self-center text-center items-center justify-center"
+		class="statement flex flex-col w-full self-center text-center items-center justify-center px-8"
 	>
 		<p
 			class="text-white text-3xl font-light italic text-center p-6 rounded-lg w-auto lg:w-2/3 self-center py-12 "
@@ -155,12 +156,14 @@
 			trying to contribute to a society that embodies them more fully.&rdquo;
 		</p>
 	</section>
-
+    
+	<section class="projects-group flex flex-col w-full justify-center px-8">
+        
             <!-- SEPARATOR -->
-            <div class="separator m-0  h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full mr-3"></div>
+            <div
+                class="separator m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+            />
             <!-- SEPARATOR -->
-            
-	<section class="projects-group flex flex-col w-full justify-center ">
 		<h2 class="uppercase ml-3 text-emerald-200">Selected Projects</h2>
 		<div class="projects md:grid w-full flex flex-col">
 			{#each projects as project}
@@ -296,7 +299,7 @@
 		--list-counter-size: 1.5rem;
 		counter-reset: intro-counter;
 		list-style: none;
-        position: relative;
+		position: relative;
 		li {
 			counter-increment: intro-counter;
 			position: relative;
@@ -311,8 +314,8 @@
 			}
 			.li-heading {
 				// font-family: 'Montserrat', sans-serif;
-                position: relative;
-                left: .75rem;
+				position: relative;
+				left: 0.75rem;
 				@apply font-extrabold italic text-xl  text-emerald-200 leading-none;
 			}
 			.li-snippet {
