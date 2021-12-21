@@ -63,7 +63,7 @@ module.exports = {
           800: "#171b39",
           900: "#0b0e1d"
         },
-        PrussianBlue: {
+        prussianblue: {
           100: "#ccd7e0",
           200: "#99aec2",
           300: "#6686a3",
@@ -74,7 +74,7 @@ module.exports = {
           800: "#001529",
           900: "#000b14"
         },
-        CeruleanBlue: {
+        ceruleanblue: {
           100: "#ccdcf8",
           200: "#99b9f1",
           300: "#6696e9",
@@ -85,7 +85,7 @@ module.exports = {
           800: "#002058",
           900: "#00102c"
         },
-        BlueCrayola: {
+        bluecrayola: {
           100: "#dee6fd",
           200: "#bdcdfc",
           300: "#9bb3fa",
@@ -96,7 +96,7 @@ module.exports = {
           800: "#243463",
           900: "#121a31"
         },
-        OrangeYellow: {
+        orangeyellow: {
           100: "#fbf1cc",
           200: "#f7e399",
           300: "#f3d466",
@@ -107,7 +107,7 @@ module.exports = {
           800: "#5e4a00",
           900: "#2f2500"
         },
-        Carnelian: {
+        carnelian: {
           100: "#efccce",
           200: "#de999e",
           300: "#ce666d",
@@ -129,7 +129,7 @@ module.exports = {
           800: "#001e0e",
           900: "#000f07"
 },
-        LincolnGreen: {
+        lincolngreen: {
           100: "#ccdecd",
           200: "#99be9b",
           300: "#669d6a",
@@ -140,7 +140,7 @@ module.exports = {
           800: "#002502",
           900: "#001201"
         },
-        LimeGreen: {
+        limegreen: {
           100: "#ccf7cf",
           200: "#99ef9f",
           300: "#66e66e",
@@ -151,7 +151,7 @@ module.exports = {
           800: "#005606",
           900: "#002b03"
         },
-        ElectricIndigo: {
+        electricindigo: {
           100: "#e4ccfa",
           200: "#c999f5",
           300: "#ad66f0",
@@ -162,7 +162,7 @@ module.exports = {
           800: "#30005c",
           900: "#18002e"
         },
-        ElectricViolet: {
+        electricviolet: {
           100: "#eacffc",
           200: "#d59efa",
           300: "#c06ef7",
@@ -173,7 +173,7 @@ module.exports = {
           800: "#3c0561",
           900: "#1e0330"
         },
-        ElectricPurple: {
+        electricpurple: {
           100: "#f1d8fd",
           200: "#e4b1fb",
           300: "#d68bf9",

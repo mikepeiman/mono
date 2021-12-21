@@ -51,10 +51,10 @@
 <!-- <div class="flex flex-row mt-12">
     
     <Icon icon="mdi-light:home" width="4rem" />
-    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-greenge-300" width="4rem" />
+    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-blue-400" width="4rem" />
     <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  text-blue-400" width="4rem" />
-    <Icon icon="fa:wrench" inline={true} class="icon-img  text-stgreenge-300" width="4rem" />
-    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-greenge-300" width="4rem" />
+    <Icon icon="fa:wrench" inline={true} class="icon-img  text-stblue-400" width="4rem" />
+    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-blue-400" width="4rem" />
 </div> -->
 <main
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
@@ -66,15 +66,15 @@
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="text-highlight text-warm2-400">user experience</span> and design that helps
 				realize human potential. I follow a
-				<span class="text-highlight text-cool3-200">first-principles</span>
+				<span class="text-highlight text-electricindigo-300">first-principles</span>
 				approach in my life and my work. Here are a few of my
-				<span class="text-cool1-400 font-bold">design principles</span>:
+				<span class="text-electricindigo-300 font-bold">design principles</span>:
 			</p>
 
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  text-greenge-300 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading font-extrabold italic text-xl  text-blue-400 leading-none md:text-2xl xl:text-3xl"
 					>
 						Never deny the user basic options.
 					</h2>
@@ -86,21 +86,21 @@
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  text-greenge-300 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading font-extrabold italic text-xl  text-blue-400 leading-none md:text-2xl xl:text-3xl"
 					>
 						Minimize barriers to action.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						The app (or website) is <span class="italic text-cool3-200 font-medium"
+						The app (or website) is <span class="italic text-electricindigo-300 font-medium"
 							>for something</span
 						>. Make it as
 						<span class="italic text-warm2-400 font-medium">intuitive and efficient</span>
-						as possible to <span class="italic text-cool3-200 font-medium">do that thing.</span>
+						as possible to <span class="italic text-electricindigo-300 font-medium">do that thing.</span>
 					</p>
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  text-greenge-300 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading font-extrabold italic text-xl  text-blue-400 leading-none md:text-2xl xl:text-3xl"
 					>
 						Leverage visual intelligence.
 					</h2>
@@ -108,7 +108,7 @@
 						Augment words and iconography with <span class="italic text-warm2-400 font-medium"
 							>color</span
 						>
-						and structure - <span class="italic text-cool3-200 font-medium">draw the eye</span> to key
+						and structure - <span class="italic text-electricindigo-300 font-medium">draw the eye</span> to key
 						points and relationships. Effectively use negative space, layout and structure, diagrams
 						and images to communicate beyond mere words.
 					</p>
@@ -117,9 +117,9 @@
 		</div>
 
 		<!-- SEPARATOR -->
-		<div
-			class="separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-l from-greenge-300 via-cool3-200 to-greenge-300 w-full"
-		/>
+		<!-- <div
+			class="separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-l from-blue-400 via-electricindigo-300 to-blue-400 w-full"
+		/> -->
 		<!-- SEPARATOR -->
 
 		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
@@ -276,7 +276,7 @@
 	}
 
 	.separator {
-		@apply bg-gradient-to-l from-greenge-300 via-cool3-200 to-greenge-300;
+		@apply bg-gradient-to-l from-blue-400 via-electricindigo-300 to-blue-400;
 	}
 	.separator-2 {
 		grid-area: separator;
