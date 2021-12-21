@@ -51,64 +51,64 @@
 <!-- <div class="flex flex-row mt-12">
     
     <Icon icon="mdi-light:home" width="4rem" />
-    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-blue-400" width="4rem" />
-    <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  text-blue-400" width="4rem" />
+    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  color-3" width="4rem" />
+    <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  color-3" width="4rem" />
     <Icon icon="fa:wrench" inline={true} class="icon-img  text-stblue-400" width="4rem" />
-    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-blue-400" width="4rem" />
+    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  color-3" width="4rem" />
 </div> -->
 <main
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
-			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
+			<h1 class="font-regular text-3xl lg:text-5xl ">Hi, I'm Mike.</h1>
 			<p class="intro-body text-xl xl:text-2xl font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
-				<span class="text-highlight text-warm2-400">user experience</span> and design that helps
+				<span class="text-highlight color-1">user experience</span> and design that helps
 				realize human potential. I follow a
-				<span class="text-highlight text-electricindigo-300">first-principles</span>
+				<span class="text-highlight color-2">first-principles</span>
 				approach in my life and my work. Here are a few of my
-				<span class="text-electricindigo-300 font-bold">design principles</span>:
+				<span class="color-3 text-highlight">design principles</span>:
 			</p>
 
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  text-blue-400 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading font-extrabold italic text-xl  color-3 leading-none md:text-2xl xl:text-3xl"
 					>
 						Never deny the user basic options.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						Users should be provided the means to <span class="italic text-warm2-400 font-medium"
+						Users should be provided the means to <span class="italic color-1 font-medium"
 							>customize the user interface</span
 						> as much as possible.
 					</p>
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  text-blue-400 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading font-extrabold italic text-xl  color-3 leading-none md:text-2xl xl:text-3xl"
 					>
 						Minimize barriers to action.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						The app (or website) is <span class="italic text-electricindigo-300 font-medium"
+						The app (or website) is <span class="italic color-2 font-medium"
 							>for something</span
 						>. Make it as
-						<span class="italic text-warm2-400 font-medium">intuitive and efficient</span>
-						as possible to <span class="italic text-electricindigo-300 font-medium">do that thing.</span>
+						<span class="italic color-1 font-medium">intuitive and efficient</span>
+						as possible to <span class="italic color-2 font-medium">do that thing.</span>
 					</p>
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  text-blue-400 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading font-extrabold italic text-xl  color-3 leading-none md:text-2xl xl:text-3xl"
 					>
 						Leverage visual intelligence.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						Augment words and iconography with <span class="italic text-warm2-400 font-medium"
+						Augment words and iconography with <span class="italic color-1 font-medium"
 							>color</span
 						>
-						and structure - <span class="italic text-electricindigo-300 font-medium">draw the eye</span> to key
+						and structure - <span class="italic color-2 font-medium">draw the eye</span> to key
 						points and relationships. Effectively use negative space, layout and structure, diagrams
 						and images to communicate beyond mere words.
 					</p>
@@ -245,6 +245,18 @@
 
 <style lang="scss">
 	// @import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0, 100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
+
+.color-1 {
+	// color: var(--color-deepreds-900);
+	@apply text-amber-300;
+}
+.color-2 {
+	color: var(--color-limegreens-700);
+}
+.color-3 {
+	color: var(--color-winterblues-600);
+}
+// 100,200,300,400,500,600,700,800,900
 
 	.homepage {
 		// font-family: 'Be Vietnam Pro', sans-serif;
