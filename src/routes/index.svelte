@@ -34,7 +34,7 @@
 			desc: 'This project will burn your socks off'
 		},
 		{
-			name: 'Project Two',
+			name: 'Project cool1',
 			url: './creative/sketch02',
 			tags: ['mysterious', 'fun', 'cool'],
 			desc: 'This project will cool your noggin'
@@ -51,10 +51,10 @@
 <!-- <div class="flex flex-row mt-12">
     
     <Icon icon="mdi-light:home" width="4rem" />
-    <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
+    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-greenge-300" width="4rem" />
     <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  text-blue-400" width="4rem" />
-    <Icon icon="fa:wrench" inline={true} class="icon-img  text-stone-400" width="4rem" />
-    <Icon icon="line-md:image-twotone" inline={true} class="icon-img  text-green-400" width="4rem" />
+    <Icon icon="fa:wrench" inline={true} class="icon-img  text-stgreenge-300" width="4rem" />
+    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  text-greenge-300" width="4rem" />
 </div> -->
 <main
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
@@ -64,38 +64,52 @@
 			<h1 class="font-regular text-3xl lg:text-5xl">Hi, I'm Mike.</h1>
 			<p class="intro-body text-xl xl:text-2xl font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
-				<span class="text-highlight text-fuchsia-400">user experience</span> and design that helps
-				realize human potential. I follow a <span class="text-highlight text-cyan-400">first-principles</span>
+				<span class="text-highlight text-warm2-400">user experience</span> and design that helps
+				realize human potential. I follow a
+				<span class="text-highlight text-cool3-200">first-principles</span>
 				approach in my life and my work. Here are a few of my
-				<span class="text-lime-400 font-bold">design principles</span>:
+				<span class="text-cool1-400 font-bold">design principles</span>:
 			</p>
+
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
-					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Never deny the user basic options.</h2>
+					<h2
+						class="li-heading font-extrabold italic text-xl  text-greenge-300 leading-none md:text-2xl xl:text-3xl"
+					>
+						Never deny the user basic options.
+					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						Users should be provided the means to <span class="italic text-fuchsia-400 font-medium"
+						Users should be provided the means to <span class="italic text-warm2-400 font-medium"
 							>customize the user interface</span
 						> as much as possible.
 					</p>
 				</li>
 				<li class="mt-4">
-					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Minimize barriers to action.</h2>
+					<h2
+						class="li-heading font-extrabold italic text-xl  text-greenge-300 leading-none md:text-2xl xl:text-3xl"
+					>
+						Minimize barriers to action.
+					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						The app (or website) is <span class="italic text-cyan-400 font-medium"
+						The app (or website) is <span class="italic text-cool3-200 font-medium"
 							>for something</span
 						>. Make it as
-						<span class="italic text-fuchsia-400 font-medium">intuitive and efficient</span>
-						as possible to <span class="italic text-cyan-400 font-medium">do that thing.</span>
+						<span class="italic text-warm2-400 font-medium">intuitive and efficient</span>
+						as possible to <span class="italic text-cool3-200 font-medium">do that thing.</span>
 					</p>
 				</li>
 				<li class="mt-4">
-					<h2 class="li-heading font-extrabold italic text-xl  text-lime-400 leading-none md:text-2xl xl:text-3xl">Leverage visual intelligence.</h2>
+					<h2
+						class="li-heading font-extrabold italic text-xl  text-greenge-300 leading-none md:text-2xl xl:text-3xl"
+					>
+						Leverage visual intelligence.
+					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						Augment words and iconography with <span class="italic text-fuchsia-400 font-medium"
+						Augment words and iconography with <span class="italic text-warm2-400 font-medium"
 							>color</span
 						>
-						and structure - <span class="italic text-cyan-400 font-medium">draw the eye</span> to
-						key points and relationships. Effectively use negative space, layout and structure, diagrams
+						and structure - <span class="italic text-cool3-200 font-medium">draw the eye</span> to key
+						points and relationships. Effectively use negative space, layout and structure, diagrams
 						and images to communicate beyond mere words.
 					</p>
 				</li>
@@ -104,7 +118,7 @@
 
 		<!-- SEPARATOR -->
 		<div
-			class="separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-l from-lime-400 via-cyan-400 to-lime-400 w-full"
+			class="separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-l from-greenge-300 via-cool3-200 to-greenge-300 w-full"
 		/>
 		<!-- SEPARATOR -->
 
@@ -118,7 +132,9 @@
 						<div
 							class="post-card transition card card-body p-6 lg:p-9 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2"
 						>
-							<div class="article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200">
+							<div
+								class="article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200"
+							>
 								<Time timestamp={post.date} />
 							</div>
 							<h1
@@ -126,48 +142,51 @@
 							>
 								{post.title}
 							</h1>
-							<p class="text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200">{post.excerpt}</p>
+							<p class="text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200">
+								{post.excerpt}
+							</p>
 						</div>
 					</a>
 				{/each}
 			</div>
 			<div
-				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2  hover:-translate-x-2 transition"
+				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2  transition"
 			>
 				<a href="/posts" class="view-more-link offset-4 no-underline ">View more articles </a>
 
-				<div class="icon-wrapper -top-1px xl:top-1px">
+				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-1px xl:top-1px">
+				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-1px xl:top-1px">
+				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
 			</div>
 		</div>
 		<!-- SEPARATOR -->
 		<!-- <div
-			class="separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+			class="separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cool3-500 to-emerald-500 w-full"
 		/> -->
 		<!-- SEPARATOR -->
 	</section>
 
-	<section
-		class="flex flex-col w-full self-center text-center items-center justify-center px-8"
-	>
+	<section class="flex flex-col w-full self-center text-center items-center justify-center px-8">
 		<p
 			class="statement text-2xl font-light italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 lg:text-3xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
 		>
-			<span class="text-amber-300 font-medium">&ldquo;If a system is to serve the creative spirit, it must be entirely comprehensible to a single individual.&rdquo;</span> <br><span class="font-light text-stone-500">Daniel H. H. Ingalls</span>
+			<span class="text-amber-300 font-medium"
+				>&ldquo;If a system is to serve the creative spirit, it must be entirely comprehensible to a
+				single individual.&rdquo;</span
+			> <br /><span class="font-light text-stone-500">Daniel H. H. Ingalls</span>
 		</p>
 	</section>
 
 	<section class="projects flex flex-col w-full justify-center px-4 md:px-6 lg:px-0">
 		<!-- SEPARATOR -->
 		<!-- <div
-			class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"
+			class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cool3-500 to-emerald-500 w-full"
 		/> -->
 		<!-- SEPARATOR -->
 		<div class="flex flex-row items-end justify-between">
@@ -181,13 +200,13 @@
 			>
 				<a href="/creative" class="view-more-link offset-4 pr-2 no-underline ">View more projects</a
 				>
-				<div class="icon-wrapper -top-1px xl:top-1px">
+				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-1px xl:top-1px">
+				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-1px xl:top-1px">
+				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
 			</h2>
@@ -200,8 +219,14 @@
 						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="flex flex-col">
-							<h1 class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white">{project.name}</h1>
-							<p class="mt-2 text-sm md:text-base xl:text-lg tracking-wider  font-light">{project.desc}</p>
+							<h1
+								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white"
+							>
+								{project.name}
+							</h1>
+							<p class="mt-2 text-sm md:text-base xl:text-lg tracking-wider  font-light">
+								{project.desc}
+							</p>
 							<div class="mt-4 flex flex-row">
 								{#each project.tags as tag}
 									<span
@@ -240,7 +265,7 @@
 	}
 
 	.icon-img {
-		color: var(--color-fuchsia-300);
+		color: var(--color-warm2-300);
 		@apply emerald-500;
 		color: blue;
 		background: red;
@@ -251,7 +276,7 @@
 	}
 
 	.separator {
-		@apply  bg-gradient-to-l from-lime-400 via-cyan-400 to-lime-400;
+		@apply bg-gradient-to-l from-greenge-300 via-cool3-200 to-greenge-300;
 	}
 	.separator-2 {
 		grid-area: separator;
@@ -310,22 +335,23 @@
 		// padding-top: 2px;
 		@apply -mr-4 transition right-0 text-2xl;
 		&:nth-of-type(1) {
-			@apply text-blue-400 right-6 transition;
+			@apply text-blue-400 right-6 transition delay-300;
 		}
 		&:nth-of-type(2) {
-			@apply text-blue-600 right-4 transition;
+			@apply text-blue-600 right-4 transition delay-200;
 		}
 		&:nth-of-type(3) {
-			@apply text-blue-800 right-2 transition;
+			@apply text-blue-800 right-2 transition delay-100;
 		}
 	}
 	.view-more {
 		.view-more-link {
 			@apply pr-4 pb-2;
 		}
-		// padding-bottom: 1px;
-		transition: all 0.3s;
+		transition: all 0;
+		transition-delay: 0.4s;
 		&:hover {
+			transition-delay: 0s;
 			.icon-wrapper {
 				&:nth-of-type(1) {
 					@apply text-blue-200 transition delay-100;
@@ -343,18 +369,20 @@
 		.icon-wrapper {
 			@apply -mr-4 transition text-2xl;
 			&:nth-of-type(1) {
-				@apply text-orange-400 transition  delay-100;
+				@apply text-orange-400 transition  delay-300;
 			}
 			&:nth-of-type(2) {
 				@apply text-orange-600 transition  delay-200;
 			}
 			&:nth-of-type(3) {
-				@apply text-orange-800 transition  delay-300;
+				@apply text-orange-800 transition  delay-100;
 			}
 		}
 		.view-more {
-			transition: all 0.3s;
+			transition: all 0;
+			transition-delay: 0.4s;
 			&:hover {
+				transition-delay: 0s;
 				.icon-wrapper {
 					&:nth-of-type(1) {
 						@apply text-orange-200 transition delay-100;
@@ -419,7 +447,7 @@
 			position: relative;
 			&::marker {
 				content: counter(intro-counter) '. ';
-				color: var(--color-sky-500);
+				color: var(--color-sky-300);
 				font-weight: 700;
 				position: absolute;
 				top: 0;
@@ -450,7 +478,7 @@
 		// font-family: 'Outfit', sans-serif;
 		// font-family: 'Overlock', cursive;
 		// font-family: 'Staatliches', cursive;
-				// font-family: 'Be Vietnam Pro', sans-serif;
+		// font-family: 'Be Vietnam Pro', sans-serif;
 		// font-family: 'Montserrat', sans-serif;
 		// font-family: 'Nunito', sans-serif;
 		// font-family: 'Sarabun', sans-serif;
