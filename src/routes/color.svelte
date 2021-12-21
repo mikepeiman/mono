@@ -12,25 +12,25 @@ console.log(`🚀 ~ file: color.svelte ~ line 8 ~ generate`, generate)
 const params = {
   specs: {
     // Number of colors
-    steps: 11,
+    steps: 10,
     // Hue Start Value (0 - 359)
-    hue_start: 40,
+    hue_start: 140,
     // Hue End Value (0 - 359)
     hue_end: 240,
     // Hue Curve (See Curves Section)
     hue_curve: "easeInQuad",
     // Saturation Start Value (0 - 100)
-    sat_start: 4,
+    sat_start: 10,
     // Saturation End Value (0 - 100)
-    sat_end: 90,
+    sat_end: 100,
     // Saturation Curve (See Curves Section)
     sat_curve: "easeOutQuad",
     // Saturation Rate (0 - 200)
-    sat_rate: 130,
+    sat_rate: 200,
     // Luminosity Start Value (0 - 100)
     lum_start: 100,
     // Luminosity End Value (0 - 100)
-    lum_end: 53,
+    lum_end: 100,
     // Luminosity Curve (See Curves Section)
     lum_curve: "easeOutQuad",
     // Modifier Scale
@@ -43,11 +43,29 @@ const params = {
   }
 };
 
+
+let hexarray_deepReds = ["03071e","370617","6a040f","9d0208","d00000","dc2f02","e85d04","f48c06","faa307","ffba08"]
+let hexarray_winterBlues = ["03045e","023e8a","0077b6","0096c7","00b4d8","48cae4","90e0ef","ade8f4","caf0f8"]
+let hexarray_limeGreens = ["004b23","006400","007200","008000","38b000","70e000","9ef01a","ccff33"]
+
+let processedArray_reds = []
+let processedArray_blues = []
+let processedArray_greens = []
+
+let allColors = [hexarray_deepReds, hexarray_winterBlues, hexarray_limeGreens]
+allColors = allColors.map(arr => arr.map(color => `#${color}`))
+
 let opts = {
     provideInverted: true
 }
 let colors = generate(params);
+colors = colors.map(c => c.hex)
+allColors.push(colors)
+console.log(`🚀 ~ file: color.svelte ~ line 64 ~ allColors`, allColors)
 console.log(`🚀 ~ file: color.svelte ~ line 24 ~ colors `, colors )
+
+
+
 </script>
 
 <svelte:head>
@@ -65,6 +83,18 @@ console.log(`🚀 ~ file: color.svelte ~ line 24 ~ colors `, colors )
 <div class="grid">{#each colors as color}
     <div class="card w-12 h-12" style="background: {color.hex}"></div>
 {/each}</div>
+
+<div class="grid flow-y">
+    {#each allColors as colorsArray}
+<div class="flex">
+    
+        {#each colorsArray as color}
+            <div class="card w-12 h-12 p-12 rounded-none" style="background: {color};"></div>
+        {/each}
+</div>
+
+    {/each}
+</div>
 
 <style>
 
