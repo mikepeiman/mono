@@ -27,6 +27,7 @@
 	let links = [
 		{ title: 'Home', url: '/' },
 		{ title: 'About', url: '/about' },
+		{ title: 'Color', url: '/color' },
 		{ title: 'Blog', url: '/posts' },
 		{ title: 'Posts endpoint', url: '/posts.json' },
 		{ title: 'Todos', url: '/todos' },

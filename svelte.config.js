@@ -33,9 +33,11 @@ const config = {
 			},
 			optimizeDeps: {
 				exclude: ['@urql/svelte'],
+				exclude: ['@k-vyn/coloralgorithm	'],
 			},
 			ssr: {
-				noExternal: ['@urql/svelte'] // does this need the @ symbol?
+				noExternal: ['@urql/svelte'], // does this need the @ symbol?
+				noExternal: ['@k-vyn/coloralgorithm'], // does this need the @ symbol?
 			},
 			plugins: [
 				Icons({
