@@ -12,19 +12,24 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	import random from 'canvas-sketch-util/random.js';
 	import math from 'canvas-sketch-util/math.js';
 	import Color from 'canvas-sketch-util/color.js';
-	import CanvasSketch from '$components/CanvasSketch.svelte';
 	import { onMount } from 'svelte';
 
 	let width = 800;
 	let height = 800;
-	let context
-	let canvas
-	$: canvas ? context = canvas.getContext('2d') : context
+	let context;
+	let canvas;
+	let viewport
+    $: console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 22 ~ viewport`, viewport?.style)
+	$: viewport ? width = viewport.offsetWidth : width
+    $: console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 24 ~ width`, width)
+	$: canvas ? (context = canvas.getContext('2d')) : context;
+	import { page } from '$app/stores';
+	$: path = $page.path;
 	onMount(() => {
 		let canvas = document.getElementsByTagName('canvas')[0];
 		context = canvas.getContext('2d');
 		console.log(`🚀 ~ file: sketch03.svelte ~ line 25 ~ onMount ~ context`, context);
-		// sketch({ context, width, height });
+		sketch({ context, width, height });
 		// animate()
 	});
 	// ========================================================================
@@ -183,6 +188,9 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 			}
 		}
 	};
+
+
+
 	const sketch = () => {
 		// requestAnimationFrame(sketch({ context, width, height }));
 
@@ -234,26 +242,94 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	//
 </script>
 
-<CanvasSketchEditor {sketch} {settings} {data} {hidePanel}>
-	<Slider label="Range" bind:value={data.range} min="10" max="500" step="10" />
-	<Slider
-		label="Number of nodes"
-		bind:value={data.numNodes}
-		on:message={constructNodes(width, height)}
-		min="10"
-		max="1000"
-		step="10"
-	/>
-	<OptionSelect items={data.lineCaps} bind:selected={data.lineCap} />
-	<OptionSelect items={data.nodeTypes} bind:selected={data.nodeType} />
-	<Checkbox label="Show nodes" bind:checked={data.showNodes} />
-	<Checkbox label="Show lines" bind:checked={data.showLines} />
-	<!-- lineCap: 'butt',
-	showNode: false,
-	showLines: true,
-	nodeType: 'hex',
-	lineWidthMax: 5,
-	radiusMin: 10,
-	radiusMax: 30,
-	animate: true -->
-</CanvasSketchEditor>
+<main class="sketch" class:preview={'/creative' === path}>
+	{#if '/creative' === path}
+		<div class="title flex items-center justify-center flex w-full self-center">
+			<h1 class="text-2xl text-center text-sky-200 mt-6 w-full self-center">{data.TITLE}</h1>
+		</div>
+	{/if}
+	<div class="viewport" bind:this={viewport}>
+		<canvas />
+	</div>
+
+	{#if !hidePanel}
+		<div class="panel">
+			<Slider label="Range" bind:value={data.range} min="10" max="500" step="10" />
+			<Slider
+				label="Number of nodes"
+				bind:value={data.numNodes}
+				on:message={constructNodes(width, height)}
+				min="10"
+				max="1000"
+				step="10"
+			/>
+			<OptionSelect items={data.lineCaps} bind:selected={data.lineCap} />
+			<OptionSelect items={data.nodeTypes} bind:selected={data.nodeType} />
+			<Checkbox label="Show nodes" bind:checked={data.showNodes} />
+			<Checkbox label="Show lines" bind:checked={data.showLines} />
+		</div>
+	{/if}
+</main>
+
+<style lang="scss">
+
+main {
+		// ORIGINAL STYLES
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		// ADDED
+		grid-area: main;
+		&.preview {
+			grid-area: none;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			grid-template-rows: 3rem 16rem;
+			grid-template-areas:
+				'sketch-title'
+				'sketch-canvas';
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+		}
+	}
+	.viewport {
+		grid-area: sketch-canvas;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		flex-basis: 60%;
+		min-width: 200px;
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+	.panel {
+		padding: 20px;
+		box-sizing: border-box;
+		flex-basis: 300px;
+		min-width: 200px;
+		max-width: 400px;
+		flex-grow: 1;
+		flex-shrink: 1;
+		height: 100%;
+		background: hsl(0, 0%, 95%);
+		border-left: 1px solid hsl(0, 0%, 90%);
+		overflow-y: scroll;
+	}
+
+	canvas {
+		margin: auto;
+		display: block;
+		box-shadow: 0px 2px 12px -2px rgba(0, 0, 0, 0.15);
+		width: 100%;
+		/* width: inherit; */
+		/* min-width: inherit; */
+		height: auto;
+	}
+</style>
