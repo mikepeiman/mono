@@ -3,7 +3,7 @@ https://svelte.dev/repl/5ab538b7182941f789908a660e9bd25c?version=3.12.1
 
 Leaving his example as the first sketch here in honor of his work and amazing contributions -->
 <script>
-	export let hidePanel = false;
+	export let hidePanel = true;
 	import CanvasSketchEditor from '$components/CanvasSketchEditor.svelte';
 	import Slider from '$components/Slider.svelte';
 	import OptionSelect from '$components/OptionSelect.svelte';
@@ -19,9 +19,11 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	let height = 800;
 	let context
 	let canvas
+
 	$: canvas ? context = canvas.getContext('2d') : context
 	onMount(() => {
 		let canvas = document.getElementsByTagName('canvas')[0];
+        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas`, canvas)
 		context = canvas.getContext('2d');
 		console.log(`🚀 ~ file: sketch03.svelte ~ line 25 ~ onMount ~ context`, context);
 		// sketch({ context, width, height });
@@ -61,7 +63,11 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	};
 	$: data;
 	const settings = {
-		dimensions: [width, height]
+		dimensions: [width, height],
+		// scaleToView: true,
+		// scaleToFit: true,
+		// resizeCanvas: false,
+		// scaleContext: true,
 	};
 
 	class Vector {

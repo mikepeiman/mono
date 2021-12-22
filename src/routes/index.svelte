@@ -23,7 +23,7 @@
 	$: path = $page.path;
 	$: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path);
 	import Posts from '$components/Posts.svelte';
-import Sketch03Preview from './creative/sketch03-preview.svelte';
+	import Sketch03Preview from './creative/sketch03-preview.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
 	console.log(`🚀 ~ file: index.svelte ~ line 4 ~ posts`, posts);
@@ -217,9 +217,9 @@ import Sketch03Preview from './creative/sketch03-preview.svelte';
 				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 card-body  p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
+						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 grid p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
-						<div class="flex flex-col">
+						<div class="project-details flex flex-col">
 							<h1
 								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white"
 							>
@@ -237,8 +237,10 @@ import Sketch03Preview from './creative/sketch03-preview.svelte';
 								{/each}
 							</div>
 						</div>
+						<div class="sketch rounded-lg">
+							<svelte:component this={project.component} />
+						</div>
 					</div>
-					<svelte:component this={project.component} />
 				</a>
 			{/each}
 		</div>
@@ -439,6 +441,18 @@ import Sketch03Preview from './creative/sketch03-preview.svelte';
 		// 		@apply text-sky-400;
 		// 	}
 		// }
+	}
+	.project-card {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: 'details sketch';
+		.project-details {
+			grid-area: details;
+		}
+		.sketch {
+			grid-area: sketch;
+		}
 	}
 
 	.project-card-link {

@@ -6,7 +6,7 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	let canvas;
-	let width = 500;
+	let width = 200;
 	let canvasLoaded = false;
 
 	export let settings = {
