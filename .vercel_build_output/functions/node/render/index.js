@@ -17443,7 +17443,7 @@ thought." -
   }
 });
 
-// .svelte-kit/output/server/chunks/index-00c1c3bd.js
+// .svelte-kit/output/server/chunks/index-70572d78.js
 function writable(value, start = noop) {
   let stop;
   const subscribers = new Set();
@@ -17486,10 +17486,10 @@ function writable(value, start = noop) {
   return { set, update, subscribe: subscribe2 };
 }
 var subscriber_queue;
-var init_index_00c1c3bd = __esm({
-  ".svelte-kit/output/server/chunks/index-00c1c3bd.js"() {
+var init_index_70572d78 = __esm({
+  ".svelte-kit/output/server/chunks/index-70572d78.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     subscriber_queue = [];
   }
 });
@@ -31021,7 +31021,7 @@ var require_css = __commonJS({
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.css = void 0;
     var utils_1 = require_utils();
-    function css12(prop, val) {
+    function css13(prop, val) {
       if (prop != null && val != null || typeof prop === "object" && !Array.isArray(prop)) {
         return utils_1.domEach(this, function(el, i2) {
           if (utils_1.isTag(el)) {
@@ -31031,7 +31031,7 @@ var require_css = __commonJS({
       }
       return getCss(this[0], prop);
     }
-    exports.css = css12;
+    exports.css = css13;
     function setCss(el, prop, value, idx) {
       if (typeof prop === "string") {
         var styles = getCss(el);
@@ -31263,9 +31263,9 @@ var require_lib14 = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/parseFile-e74b16d5.js
-var parseFile_e74b16d5_exports = {};
-__export(parseFile_e74b16d5_exports, {
+// .svelte-kit/output/server/chunks/parseFile-08537941.js
+var parseFile_08537941_exports = {};
+__export(parseFile_08537941_exports, {
   parseFile: () => parseFile
 });
 function isolateQuotationBlocks(divs2) {
@@ -31294,12 +31294,12 @@ function stringifyArray(item) {
   }
 }
 var quotesArray, storedQuotesArray, cheerio, htmlparser2, quotes2, quotesArrays, filePath, parseFile;
-var init_parseFile_e74b16d5 = __esm({
-  ".svelte-kit/output/server/chunks/parseFile-e74b16d5.js"() {
+var init_parseFile_08537941 = __esm({
+  ".svelte-kit/output/server/chunks/parseFile-08537941.js"() {
     init_shims();
     init_parseQuotes_f1406a23();
-    init_index_00c1c3bd();
-    init_app_4f5bfc20();
+    init_index_70572d78();
+    init_app_12c600a3();
     quotesArray = writable([]);
     storedQuotesArray = {
       subscribe: quotesArray.subscribe,
@@ -31608,12 +31608,12 @@ var init_id_347e0604 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/stores-f73f64f7.js
+// .svelte-kit/output/server/chunks/stores-91a6db03.js
 var getStores, page;
-var init_stores_f73f64f7 = __esm({
-  ".svelte-kit/output/server/chunks/stores-f73f64f7.js"() {
+var init_stores_91a6db03 = __esm({
+  ".svelte-kit/output/server/chunks/stores-91a6db03.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     getStores = () => {
       const stores = getContext("__svelte__");
       return {
@@ -31641,17 +31641,17 @@ var init_stores_f73f64f7 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-d26c52dd.js
-var layout_d26c52dd_exports = {};
-__export(layout_d26c52dd_exports, {
+// .svelte-kit/output/server/chunks/__layout-67abaedd.js
+var layout_67abaedd_exports = {};
+__export(layout_67abaedd_exports, {
   default: () => _layout
 });
 var css$3, Footer, Hamburger, css$2, delayFactor, HamburgerMenu, css$1, Nav, css, _layout;
-var init_layout_d26c52dd = __esm({
-  ".svelte-kit/output/server/chunks/__layout-d26c52dd.js"() {
+var init_layout_67abaedd = __esm({
+  ".svelte-kit/output/server/chunks/__layout-67abaedd.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_stores_f73f64f7();
+    init_app_12c600a3();
+    init_stores_91a6db03();
     css$3 = {
       code: '.footer{grid-area:footer;display:grid;grid-template-areas:"logo social end";grid-template-columns:1fr 10fr 1fr}.logo.svelte-j39445{grid-area:logo}nav.svelte-j39445{grid-area:social}',
       map: null
@@ -31723,6 +31723,7 @@ var init_layout_d26c52dd = __esm({
       let links = [
         { title: "Home", url: "/" },
         { title: "About", url: "/about" },
+        { title: "Color", url: "/color" },
         { title: "Blog", url: "/posts" },
         {
           title: "Posts endpoint",
@@ -31779,18 +31780,19 @@ ${open ? `
       $$unsubscribe_page();
       return `<div id="${"app-layout"}" class="${"grid w-auto min-h-screen max-h-full bg-black transition"}">${path != "/" ? `${validate_component(Nav, "Nav").$$render($$result, {}, {}, {
         default: () => `${slots.default ? slots.default({}) : ``}`
-      })}` : ``}
+      })}
+	<div class="${"main flex flex-col items-center jutify-center svelte-179r1ul"}">${slots.default ? slots.default({}) : ``}</div>` : `<div class="${"main flex flex-col items-center -mt-12 jutify-center svelte-179r1ul"}">${slots.default ? slots.default({}) : ``}</div>`}
 
-	<div class="${"main flex flex-col items-center jutify-center svelte-179r1ul"}">${slots.default ? slots.default({}) : ``}</div>
+
 	${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}
 </div>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/error-77b0fb01.js
-var error_77b0fb01_exports = {};
-__export(error_77b0fb01_exports, {
+// .svelte-kit/output/server/chunks/error-a21c7579.js
+var error_a21c7579_exports = {};
+__export(error_a21c7579_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -31798,10 +31800,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_77b0fb01 = __esm({
-  ".svelte-kit/output/server/chunks/error-77b0fb01.js"() {
+var init_error_a21c7579 = __esm({
+  ".svelte-kit/output/server/chunks/error-a21c7579.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
       let { error: error2 } = $$props;
@@ -31821,18 +31823,18 @@ ${error2.stack ? `<pre>${escape(error2.stack)}</pre>` : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/index-252d6305.js
-var index_252d6305_exports = {};
-__export(index_252d6305_exports, {
+// .svelte-kit/output/server/chunks/index-ab73bdd3.js
+var index_ab73bdd3_exports = {};
+__export(index_ab73bdd3_exports, {
   default: () => Routes,
   load: () => load2
 });
 var SECONDS_A_MINUTE, SECONDS_A_HOUR, SECONDS_A_DAY, SECONDS_A_WEEK, MILLISECONDS_A_SECOND, MILLISECONDS_A_MINUTE, MILLISECONDS_A_HOUR, MILLISECONDS_A_DAY, MILLISECONDS_A_WEEK, MS, S, MIN, H, D, W, M, Q, Y, DATE, FORMAT_DEFAULT, INVALID_DATE_STRING, REGEX_PARSE, REGEX_FORMAT, en, padStart, padZoneStr, monthDiff, absFloor, prettyUnit, isUndefined, U, L, Ls, isDayjs, parseLocale, dayjs, wrapper, Utils, parseDate, Dayjs, proto, relativeTime, Time, Chevron_right, css2, load2, Routes;
-var init_index_252d6305 = __esm({
-  ".svelte-kit/output/server/chunks/index-252d6305.js"() {
+var init_index_ab73bdd3 = __esm({
+  ".svelte-kit/output/server/chunks/index-ab73bdd3.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_stores_f73f64f7();
+    init_app_12c600a3();
+    init_stores_91a6db03();
     SECONDS_A_MINUTE = 60;
     SECONDS_A_HOUR = SECONDS_A_MINUTE * 60;
     SECONDS_A_DAY = SECONDS_A_HOUR * 24;
@@ -32388,7 +32390,7 @@ var init_index_252d6305 = __esm({
       ])}><!-- HTML_TAG_START -->${`<path d="M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.42z" fill="currentColor"/>`}<!-- HTML_TAG_END --></svg>`;
     });
     css2 = {
-      code: '.homepage.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{font-family:"Sarabun", sans-serif}h1.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{font-family:"Newsreader", serif}.separator-2.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{grid-area:separator}.intro.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{grid-area:intro;font-family:"Nunito", sans-serif}.intro.svelte-1vnp1sh h1.svelte-1vnp1sh.svelte-1vnp1sh{font-family:"Newsreader", serif;font-weight:900}.intro-body.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{line-height:1.4;@apply mt-3 font-light;}.text-highlight.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{@apply mt-4 font-bold text-sky-500 italic;}.icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{position:absolute;@apply -mr-4 transition right-0 text-2xl;}.icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(1){@apply text-blue-400 right-6 transition;}.icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(2){@apply text-blue-600 right-4 transition;}.icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(3){@apply text-blue-800 right-2 transition;}.view-more.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{transition:all 0.3s}.view-more.svelte-1vnp1sh .view-more-link.svelte-1vnp1sh.svelte-1vnp1sh{@apply pr-4 pb-2;}.view-more.svelte-1vnp1sh:hover .icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(1){@apply text-blue-200 transition delay-100;}.view-more.svelte-1vnp1sh:hover .icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(2){@apply text-blue-400 transition delay-200;}.view-more.svelte-1vnp1sh:hover .icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(3){@apply text-blue-600 transition delay-300;}.projects.svelte-1vnp1sh .icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh{@apply -mr-4 transition text-2xl;}.projects.svelte-1vnp1sh .icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(1){@apply text-orange-400 transition;}.projects.svelte-1vnp1sh .icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(2){@apply text-orange-600 transition;}.projects.svelte-1vnp1sh .icon-wrapper.svelte-1vnp1sh.svelte-1vnp1sh:nth-of-type(3){@apply text-orange-800 transition;}.projects.svelte-1vnp1sh .view-more.svelte-1vnp1sh.svelte-1vnp1sh{transition:all 0.3s}.projects.svelte-1vnp1sh .view-more.svelte-1vnp1sh:hover .icon-wrapper.svelte-1vnp1sh:nth-of-type(1){@apply text-orange-200 transition delay-100;}.projects.svelte-1vnp1sh .view-more.svelte-1vnp1sh:hover .icon-wrapper.svelte-1vnp1sh:nth-of-type(2){@apply text-orange-400 transition delay-200;}.projects.svelte-1vnp1sh .view-more.svelte-1vnp1sh:hover .icon-wrapper.svelte-1vnp1sh:nth-of-type(3){@apply text-orange-600 transition delay-300;}.posts-panel.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{grid-area:posts}.post-card.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{position:relative;transition:0.3s}.project-card-link.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh:first-of-type{margin-left:0}.project-card-link.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh:last-of-type{margin-right:0}ol.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{--list-counter-size:1.5rem;counter-reset:intro-counter;list-style:none;position:relative}ol.svelte-1vnp1sh li.svelte-1vnp1sh.svelte-1vnp1sh{counter-increment:intro-counter;position:relative}ol.svelte-1vnp1sh li.svelte-1vnp1sh.svelte-1vnp1sh::marker{content:counter(intro-counter) ". ";color:var(--color-sky-500);font-weight:700;position:absolute;top:0;left:calc(-1 * var(--list-counter-size) - 2rem);font-size:var(--list-counter-size)}ol.svelte-1vnp1sh li .li-heading.svelte-1vnp1sh.svelte-1vnp1sh{position:relative;left:0.75rem;@apply font-extrabold italic text-xl  text-emerald-200 leading-none;}ol.svelte-1vnp1sh li .li-snippet.svelte-1vnp1sh.svelte-1vnp1sh{font-family:"Montserrat", sans-serif;@apply mt-3 font-light ml-3;}.statement.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{font-family:"Karla", sans-serif}.article-date.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{font-family:monospace}.projects-group.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{grid-template-columns:repeat(3, 1fr)}.project-tag.svelte-1vnp1sh.svelte-1vnp1sh.svelte-1vnp1sh{font-family:monospace}',
+      code: '.color-1.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{@apply text-amber-300;}.color-2.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{color:var(--color-limegreens-700)}.color-3.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{color:var(--color-winterblues-600)}.homepage.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:"Sarabun", sans-serif}h1.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:"Newsreader", serif}.intro.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{grid-area:intro;font-family:"Nunito", sans-serif}.intro.svelte-1f389g6 h1.svelte-1f389g6.svelte-1f389g6{font-family:"Newsreader", serif;font-weight:900}.intro-body.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{line-height:1.4;@apply mt-3 font-light;}.text-highlight.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{@apply font-bold italic;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{position:absolute;@apply -mr-4 transition right-0 text-2xl;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:nth-of-type(1){@apply text-blue-400 right-6 transition delay-300;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:nth-of-type(2){@apply text-blue-600 right-4 transition delay-200;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:nth-of-type(3){@apply text-blue-800 right-2 transition delay-100;}.view-more.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{transition:all 0;transition-delay:0.4s}.view-more.svelte-1f389g6 .view-more-link.svelte-1f389g6.svelte-1f389g6{@apply pr-4 pb-2;}.view-more.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:hover{transition-delay:0s}.view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(1){@apply text-blue-200 transition delay-100;}.view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(2){@apply text-blue-400 transition delay-200;}.view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(3){@apply text-blue-600 transition delay-300;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6{@apply -mr-4 transition text-2xl;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(1){@apply text-orange-400 transition  delay-300;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(2){@apply text-orange-600 transition  delay-200;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(3){@apply text-orange-800 transition  delay-100;}.projects.svelte-1f389g6 .view-more.svelte-1f389g6.svelte-1f389g6{transition:all 0;transition-delay:0.4s}.projects.svelte-1f389g6 .view-more.svelte-1f389g6.svelte-1f389g6:hover{transition-delay:0s}.projects.svelte-1f389g6 .view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6:nth-of-type(1){@apply text-orange-200 transition delay-100;}.projects.svelte-1f389g6 .view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6:nth-of-type(2){@apply text-orange-400 transition delay-200;}.projects.svelte-1f389g6 .view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6:nth-of-type(3){@apply text-orange-600 transition delay-300;}.posts-panel.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{grid-area:posts}.post-card.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{position:relative;transition:0.3s}.project-card-link.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:first-of-type{margin-left:0}.project-card-link.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:last-of-type{margin-right:0}ol.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{--list-counter-size:1.5rem;counter-reset:intro-counter;list-style:none;position:relative}ol.svelte-1f389g6 li.svelte-1f389g6.svelte-1f389g6{counter-increment:intro-counter;position:relative}ol.svelte-1f389g6 li.svelte-1f389g6.svelte-1f389g6::marker{content:counter(intro-counter) ". ";color:var(--color-sky-300);font-weight:700;position:absolute;top:0;left:calc(-1 * var(--list-counter-size) - 2rem);font-size:var(--list-counter-size)}ol.svelte-1f389g6 li .li-heading.svelte-1f389g6.svelte-1f389g6{position:relative;left:0.75rem}ol.svelte-1f389g6 li .li-snippet.svelte-1f389g6.svelte-1f389g6{font-family:"Montserrat", sans-serif;@apply mt-3 font-light ml-3;}.statement.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:"Montserrat", sans-serif;font-weight:300;color:var(--color-winterblues-400);color:white;line-height:1.25em;background:linear-gradient(black, black) padding-box, linear-gradient(120deg, #833ab4 10%, #2faeb1 22%, #fd1d1d 50%, #bffc37 72%, #fcb045 90%) border-box;border-radius:1rem;border:10px solid transparent}.statement.svelte-1f389g6 .author.svelte-1f389g6.svelte-1f389g6{color:var(--color-gray-300)}.article-date.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:monospace}.projects-group.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{grid-template-columns:repeat(3, 1fr)}.project-tag.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:monospace}',
       map: null
     };
     load2 = async ({ fetch: fetch2 }) => {
@@ -32413,7 +32415,7 @@ var init_index_252d6305 = __esm({
           desc: "This project will burn your socks off"
         },
         {
-          name: "Project Two",
+          name: "Project cool1",
           url: "./creative/sketch02",
           tags: ["mysterious", "fun", "cool"],
           desc: "This project will cool your noggin"
@@ -32434,63 +32436,69 @@ var init_index_252d6305 = __esm({
       }
       $$unsubscribe_page();
       return `
-<main class="${"homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8 svelte-1vnp1sh"}"><section class="${"articles md:grid md:articles-change w-full px-2 md:px-4 lg:px-0 self-center p-3"}"><div class="${"intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl svelte-1vnp1sh"}"><h1 class="${"font-regular text-3xl lg:text-5xl svelte-1vnp1sh"}">Hi, I&#39;m Mike.</h1>
-			<p class="${"intro-body text-lg xl:text-xl font-thin svelte-1vnp1sh"}">I&#39;m a creative software developer, and this is my professional blog. I love
-				<span class="${"text-highlight text-fuchsia-400 svelte-1vnp1sh"}">user experience</span> and design that helps
-				realize human potential. I follow a <span class="${"text-highlight svelte-1vnp1sh"}">first-principles</span>
+<main class="${"homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8 svelte-1f389g6"}"><section class="${"articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center p-3"}"><div class="${"intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl svelte-1f389g6"}"><h1 class="${"font-regular text-3xl lg:text-5xl  svelte-1f389g6"}">Hi, I&#39;m Mike.</h1>
+			<p class="${"intro-body text-xl xl:text-2xl font-thin svelte-1f389g6"}">I&#39;m a creative software developer, and this is my professional blog. I love
+				<span class="${"text-highlight color-1 svelte-1f389g6"}">user experience</span> and design that helps realize
+				human potential. I follow a
+				<span class="${"text-highlight color-2 svelte-1f389g6"}">first-principles</span>
 				approach in my life and my work. Here are a few of my
-				<span class="${"text-emerald-200 font-bold"}">design principles</span>:
+				<span class="${"color-3 text-highlight svelte-1f389g6"}">design principles</span>:
 			</p>
-			<ol class="${"pl-7 mt-6 svelte-1vnp1sh"}"><li class="${"mt-4 svelte-1vnp1sh"}"><span class="${"li-heading svelte-1vnp1sh"}">Never deny the user basic options.</span>
-					<p class="${"li-snippet svelte-1vnp1sh"}">Users should be provided the means to <span class="${"italic text-fuchsia-400 font-medium"}">customize the user interface</span> as much as possible.
+
+			<ol class="${"pl-7 mt-6 svelte-1f389g6"}"><li class="${"mt-4 svelte-1f389g6"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-1f389g6"}">Never deny the user basic options.
+					</h2>
+					<p class="${"li-snippet text-base lg:text-lg svelte-1f389g6"}">Users should be provided the means to <span class="${"italic color-1 font-medium svelte-1f389g6"}">customize the user interface</span> as much as possible.
 					</p></li>
-				<li class="${"mt-4 svelte-1vnp1sh"}"><span class="${"li-heading svelte-1vnp1sh"}">Minimize barriers to action.</span>
-					<p class="${"li-snippet svelte-1vnp1sh"}">The app (or website) is <span class="${"italic text-sky-400 font-medium"}">for something</span>. Make it as
-						<span class="${"italic text-fuchsia-400 font-medium"}">intuitive and efficient</span>
-						as possible to <span class="${"italic text-sky-400 font-medium"}">do that thing.</span></p></li>
-				<li class="${"mt-4 svelte-1vnp1sh"}"><span class="${"li-heading svelte-1vnp1sh"}">Leverage visual intelligence.</span>
-					<p class="${"li-snippet svelte-1vnp1sh"}">Augment words and iconography with <span class="${"italic text-fuchsia-400 font-medium"}">color</span>
-						and structure - <span class="${"italic text-fuchsia-400 font-medium"}">draw the eye</span> to
-						key points and relationships. Effectively use negative space, layout and structure, diagrams
-						and images to communicate beyond mere words.
+				<li class="${"mt-4 svelte-1f389g6"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-1f389g6"}">Minimize barriers to action.
+					</h2>
+					<p class="${"li-snippet text-base lg:text-lg svelte-1f389g6"}">The app (or website) is <span class="${"italic color-2 font-medium svelte-1f389g6"}">for something</span>.
+						Make it as
+						<span class="${"italic color-1 font-medium svelte-1f389g6"}">intuitive and efficient</span>
+						as possible to <span class="${"italic color-2 font-medium svelte-1f389g6"}">do that thing.</span></p></li>
+				<li class="${"mt-4 svelte-1f389g6"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-1f389g6"}">Leverage visual intelligence.
+					</h2>
+					<p class="${"li-snippet text-base lg:text-lg svelte-1f389g6"}">Augment words and iconography with <span class="${"italic color-1 font-medium svelte-1f389g6"}">color</span>
+						and structure - <span class="${"italic color-2 font-medium svelte-1f389g6"}">draw the eye</span> to key points
+						and relationships. Effectively use negative space, layout and structure, diagrams and images
+						to communicate beyond mere words.
 					</p></li></ol></div>
 
 		
-		<div class="${"separator seprator-1 mt-9 h-6 rounded-xl md:hidden bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"}"></div>
+		
 		
 
-		<div class="${"posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0 svelte-1vnp1sh"}"><div class="${"post w-full"}"><h2 class="${"recent-label uppercase -mt-2 -mb-4 text-sky-300 text-md lg:text-lg"}">Recent posts
+		<div class="${"posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0 svelte-1f389g6"}"><div class="${"post w-full"}"><h2 class="${"recent-label uppercase -mt-2 -mb-4 text-sky-300 text-md lg:text-lg"}">Recent posts
 				</h2>
-				${each(selectedPosts, (post) => `<a${add_attribute("href", `/posts/${post.slug}`, 0)} class="${"no-underline"}"><div class="${"post-card transition card card-body p-6 lg:p-9 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2 svelte-1vnp1sh"}"><div class="${"article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200 svelte-1vnp1sh"}">${validate_component(Time, "Time").$$render($$result, { timestamp: post.date }, {}, {})}</div>
-							<h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white svelte-1vnp1sh"}">${escape(post.title)}</h1>
-							<p class="${"text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200"}">${escape(post.excerpt)}</p></div>
+				${each(selectedPosts, (post) => `<a${add_attribute("href", `/posts/${post.slug}`, 0)} class="${"no-underline"}"><div class="${"post-card transition card card-body p-6 lg:p-9 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2 svelte-1f389g6"}"><div class="${"article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200 svelte-1f389g6"}">${validate_component(Time, "Time").$$render($$result, { timestamp: post.date }, {}, {})}</div>
+							<h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white svelte-1f389g6"}">${escape(post.title)}</h1>
+							<p class="${"text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200"}">${escape(post.excerpt)}
+							</p></div>
 					</a>`)}</div>
-			<div class="${"view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2 hover:-translate-x-2 transition svelte-1vnp1sh"}"><a href="${"/posts"}" class="${"view-more-link offset-4 no-underline  svelte-1vnp1sh"}">View more articles </a>
+			<div class="${"view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2 transition svelte-1f389g6"}"><a href="${"/posts"}" class="${"view-more-link offset-4 no-underline  svelte-1f389g6"}">View more articles </a>
 
-				<div class="${"icon-wrapper -top-1px xl:top-1px svelte-1vnp1sh"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-1px xl:top-1px svelte-1vnp1sh"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-1px xl:top-1px svelte-1vnp1sh"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></div></div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></div></div>
 		
-		<div class="${"separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full svelte-1vnp1sh"}"></div>
+		
 		</section>
 
-	<section class="${"statement flex flex-col w-full self-center text-center items-center justify-center px-8 svelte-1vnp1sh"}"><p class="${"text-white text-2xl font-light italic text-center p-6 rounded-lg w-auto xl:w-4/5 lg:text-3xl 2xl:w-2/3 2xl:text-4xl self-center py-12 "}">\u201CTruth, freedom, health, wisdom, goodness: I&#39;m dedicated to these things, and actively
-			trying to contribute to a society that embodies them more fully.\u201D
-		</p></section>
+	<section class="${"flex flex-col w-full self-center text-center items-center justify-center px-8"}"><p class="${"statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12  svelte-1f389g6"}"><span class="${"font-medium"}">\u201CIf a system is to serve the creative spirit, it must be entirely comprehensible to a
+				single individual.\u201D</span> <br><span class="${"font-bold text-lg author uppercase  svelte-1f389g6"}">Daniel H. H. Ingalls</span></p></section>
 
-	<section class="${"projects flex flex-col w-full justify-center px-2 md:px-4 lg:px-0 svelte-1vnp1sh"}">
-		<div class="${"separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cyan-500 to-emerald-500 w-full"}"></div>
+	<section class="${"projects flex flex-col w-full justify-center px-4 md:px-6 lg:px-0 svelte-1f389g6"}">
+		
 		
 		<div class="${"flex flex-row items-end justify-between"}"><h2 class="${"recent-label uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2"}">Selected Projects
 			</h2>
-			<h2 class="${"view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end hover:decoration-2 hover:decoration-orange-200 text-orange-200 hover:text-white hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition svelte-1vnp1sh"}"><a href="${"/creative"}" class="${"view-more-link offset-4 pr-2 no-underline  svelte-1vnp1sh"}">View more projects</a>
-				<div class="${"icon-wrapper -top-1px xl:top-1px svelte-1vnp1sh"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-1px xl:top-1px svelte-1vnp1sh"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-1px xl:top-1px svelte-1vnp1sh"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></h2></div>
-		<div class="${"projects-group md:grid w-full flex flex-col mb-12 svelte-1vnp1sh"}">${each(projects, (project) => `<a${add_attribute("href", `/${project.url}`, 0)} class="${"project-card-link no-underline flex my-3 md:mx-3 svelte-1vnp1sh"}">
-					<div class="${"project-card card bg-opacity-25 rounded-md transition-all bg-sky-500 bg-opacity-25 card-body p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"}"><div class="${"flex flex-col"}"><h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white svelte-1vnp1sh"}">${escape(project.name)}</h1>
+			<h2 class="${"view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end transition text-orange-200 hover:text-white svelte-1f389g6"}"><a href="${"/creative"}" class="${"view-more-link offset-4 pr-2 no-underline  svelte-1f389g6"}">View more projects</a>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></h2></div>
+		<div class="${"projects-group md:grid w-full flex flex-col mb-12 svelte-1f389g6"}">${each(projects, (project) => `<a${add_attribute("href", `/${project.url}`, 0)} class="${"project-card-link no-underline flex my-3 md:mx-3 svelte-1f389g6"}">
+					<div class="${"project-card card bg-opacity-25 rounded-md transition-all bg-sky-500 bg-opacity-25 card-body p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"}"><div class="${"flex flex-col"}"><h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white svelte-1f389g6"}">${escape(project.name)}</h1>
 							<p class="${"mt-2 text-sm md:text-base xl:text-lg tracking-wider font-light"}">${escape(project.desc)}</p>
-							<div class="${"mt-4 flex flex-row"}">${each(project.tags, (tag) => `<span class="${"project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2 svelte-1vnp1sh"}">${escape(tag)}</span>`)}</div>
+							<div class="${"mt-4 flex flex-row"}">${each(project.tags, (tag) => `<span class="${"project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2 svelte-1f389g6"}">${escape(tag)}</span>`)}</div>
 						</div></div>
 				</a>`)}</div></section>
 </main>`;
@@ -32498,16 +32506,16 @@ var init_index_252d6305 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-1c501c72.js
-var layout_1c501c72_exports = {};
-__export(layout_1c501c72_exports, {
+// .svelte-kit/output/server/chunks/__layout-be4e94d3.js
+var layout_be4e94d3_exports = {};
+__export(layout_be4e94d3_exports, {
   default: () => _layout2
 });
 var _layout2;
-var init_layout_1c501c72 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-1c501c72.js"() {
+var init_layout_be4e94d3 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-be4e94d3.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     _layout2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<main class="${"flex flex-col"}">${slots.default ? slots.default({}) : ``}
 </main>`;
@@ -32515,16 +32523,16 @@ var init_layout_1c501c72 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-4a42ac69.js
-var layout_4a42ac69_exports = {};
-__export(layout_4a42ac69_exports, {
+// .svelte-kit/output/server/chunks/__layout-e915660d.js
+var layout_e915660d_exports = {};
+__export(layout_e915660d_exports, {
   default: () => _layout3
 });
 var css$12, numSketches, SideNav, css3, _layout3;
-var init_layout_4a42ac69 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-4a42ac69.js"() {
+var init_layout_e915660d = __esm({
+  ".svelte-kit/output/server/chunks/__layout-e915660d.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     css$12 = {
       code: '.sidebar{grid-area:sidebar;width:fit-content}#sideNav.svelte-95shmb.svelte-95shmb{display:flex;flex-direction:column;justify-content:start;align-items:flex-start;font-family:"Montserrat", sans-serif}#sideNav.svelte-95shmb a.svelte-95shmb{margin:1em;text-decoration:none;font-weight:500}#sideNav.svelte-95shmb nav.svelte-95shmb{display:flex;flex-direction:column}#sideNav.svelte-95shmb nav a.svelte-95shmb{@apply rounded-lg p-4;}',
       map: null
@@ -34752,14 +34760,14 @@ var require_canvas_sketch_umd = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-b4cea429.js
+// .svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-29490692.js
 var import_canvas_sketch, css$13, CanvasSketch, css4, CanvasSketchEditor;
-var init_Checkbox_svelte_svelte_type_style_lang_b4cea429 = __esm({
-  ".svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-b4cea429.js"() {
+var init_Checkbox_svelte_svelte_type_style_lang_29490692 = __esm({
+  ".svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-29490692.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     import_canvas_sketch = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     css$13 = {
       code: "canvas.svelte-ffp5du{margin:auto;display:block;box-shadow:0px 2px 12px -2px rgba(0, 0, 0, 0.15);width:100%;height:auto}",
       map: null
@@ -35404,7 +35412,7 @@ var require_color = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/Checkbox-c912fd86.js
+// .svelte-kit/output/server/chunks/Checkbox-ae6eacfc.js
 function sineInOut(t2) {
   return -0.5 * (Math.cos(Math.PI * t2) - 1);
 }
@@ -35505,13 +35513,13 @@ function tweened(value, defaults = {}) {
   };
 }
 var import_color, css$32, Param, css$22, Slider, css$14, ColorInput, createStyle, css5, Checkbox, Checkbox_1;
-var init_Checkbox_c912fd86 = __esm({
-  ".svelte-kit/output/server/chunks/Checkbox-c912fd86.js"() {
+var init_Checkbox_ae6eacfc = __esm({
+  ".svelte-kit/output/server/chunks/Checkbox-ae6eacfc.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
     import_color = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     css$32 = {
       code: ".param.svelte-1cduqyw{box-sizing:border-box;display:flex;justify-content:flex-start;align-items:center;width:100%}div.svelte-1cduqyw:first-child{margin-top:0}.param-wrapper.svelte-1cduqyw{display:flex;justify-content:flex-start;align-items:center;flex-shrink:1;flex-grow:1;flex-basis:60%;box-sizing:border-box}label.svelte-1cduqyw{font-size:12px;flex-shrink:1;flex-grow:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:black;padding-right:10px;flex-basis:40%;box-sizing:border-box}",
       map: null
@@ -36714,9 +36722,9 @@ var require_random = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch02-b0002e38.js
-var sketch02_b0002e38_exports = {};
-__export(sketch02_b0002e38_exports, {
+// .svelte-kit/output/server/chunks/sketch02-f7a88a87.js
+var sketch02_f7a88a87_exports = {};
+__export(sketch02_f7a88a87_exports, {
   default: () => Sketch02
 });
 function isOutOfViewport(parent, container) {
@@ -36765,17 +36773,17 @@ function convertStringItemsToObjects(_items) {
   });
 }
 var import_random, import_color2, import_canvas_sketch2, css$7, Item, css$6, List, css$5, Selection, css$4, MultiSelection, css$33, VirtualList, ClearIcon, Object_1, css$23, Select, css$15, OptionSelect, css6, Sketch02;
-var init_sketch02_b0002e38 = __esm({
-  ".svelte-kit/output/server/chunks/sketch02-b0002e38.js"() {
+var init_sketch02_f7a88a87 = __esm({
+  ".svelte-kit/output/server/chunks/sketch02-f7a88a87.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_random = __toModule(require_random());
     import_color2 = __toModule(require_color());
     import_canvas_sketch2 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
-    init_index_00c1c3bd();
+    init_stores_91a6db03();
+    init_index_70572d78();
     css$7 = {
       code: ".item.svelte-3e0qet{cursor:default;height:var(--height, 42px);line-height:var(--height, 42px);padding:var(--itemPadding, 0 20px);color:var(--itemColor, inherit);text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.groupHeader.svelte-3e0qet{text-transform:var(--groupTitleTextTransform, uppercase)}.groupItem.svelte-3e0qet{padding-left:var(--groupItemPaddingLeft, 40px)}.item.svelte-3e0qet:active{background:var(--itemActiveBackground, #b9daff)}.item.active.svelte-3e0qet{background:var(--itemIsActiveBG, #007aff);color:var(--itemIsActiveColor, #fff)}.item.notSelectable.svelte-3e0qet{color:var(--itemIsNotSelectableColor, #999)}.item.first.svelte-3e0qet{border-radius:var(--itemFirstBorderRadius, 4px 4px 0 0)}.item.hover.svelte-3e0qet:not(.active){background:var(--itemHoverBG, #e7f2ff);color:var(--itemHoverColor, inherit)}",
       map: null
@@ -38019,22 +38027,22 @@ var init_sketch02_b0002e38 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch03-30ad8850.js
-var sketch03_30ad8850_exports = {};
-__export(sketch03_30ad8850_exports, {
+// .svelte-kit/output/server/chunks/sketch03-2bcb385a.js
+var sketch03_2bcb385a_exports = {};
+__export(sketch03_2bcb385a_exports, {
   default: () => Sketch03
 });
 var import_canvas_sketch3, import_color3, Sketch03;
-var init_sketch03_30ad8850 = __esm({
-  ".svelte-kit/output/server/chunks/sketch03-30ad8850.js"() {
+var init_sketch03_2bcb385a = __esm({
+  ".svelte-kit/output/server/chunks/sketch03-2bcb385a.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch3 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color3 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch03 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -38147,22 +38155,22 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch04-7ce27f11.js
-var sketch04_7ce27f11_exports = {};
-__export(sketch04_7ce27f11_exports, {
+// .svelte-kit/output/server/chunks/sketch04-d962f87e.js
+var sketch04_d962f87e_exports = {};
+__export(sketch04_d962f87e_exports, {
   default: () => Sketch04
 });
 var import_canvas_sketch4, import_color4, Sketch04;
-var init_sketch04_7ce27f11 = __esm({
-  ".svelte-kit/output/server/chunks/sketch04-7ce27f11.js"() {
+var init_sketch04_d962f87e = __esm({
+  ".svelte-kit/output/server/chunks/sketch04-d962f87e.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch4 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color4 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch04 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -38274,22 +38282,22 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch01-a5f12064.js
-var sketch01_a5f12064_exports = {};
-__export(sketch01_a5f12064_exports, {
+// .svelte-kit/output/server/chunks/sketch01-0f0310b7.js
+var sketch01_0f0310b7_exports = {};
+__export(sketch01_0f0310b7_exports, {
   default: () => Sketch01
 });
 var import_canvas_sketch5, import_color5, Sketch01;
-var init_sketch01_a5f12064 = __esm({
-  ".svelte-kit/output/server/chunks/sketch01-a5f12064.js"() {
+var init_sketch01_0f0310b7 = __esm({
+  ".svelte-kit/output/server/chunks/sketch01-0f0310b7.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch5 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color5 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch01 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -38417,22 +38425,22 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch05-019fea94.js
-var sketch05_019fea94_exports = {};
-__export(sketch05_019fea94_exports, {
+// .svelte-kit/output/server/chunks/sketch05-c0a651be.js
+var sketch05_c0a651be_exports = {};
+__export(sketch05_c0a651be_exports, {
   default: () => Sketch05
 });
 var import_canvas_sketch6, import_color6, Sketch05;
-var init_sketch05_019fea94 = __esm({
-  ".svelte-kit/output/server/chunks/sketch05-019fea94.js"() {
+var init_sketch05_c0a651be = __esm({
+  ".svelte-kit/output/server/chunks/sketch05-c0a651be.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch6 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color6 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch05 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -38544,22 +38552,22 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch06-cfb6f76d.js
-var sketch06_cfb6f76d_exports = {};
-__export(sketch06_cfb6f76d_exports, {
+// .svelte-kit/output/server/chunks/sketch06-2e15cc79.js
+var sketch06_2e15cc79_exports = {};
+__export(sketch06_2e15cc79_exports, {
   default: () => Sketch06
 });
 var import_canvas_sketch7, import_color7, Sketch06;
-var init_sketch06_cfb6f76d = __esm({
-  ".svelte-kit/output/server/chunks/sketch06-cfb6f76d.js"() {
+var init_sketch06_2e15cc79 = __esm({
+  ".svelte-kit/output/server/chunks/sketch06-2e15cc79.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch7 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color7 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch06 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -38670,22 +38678,22 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch07-25730e04.js
-var sketch07_25730e04_exports = {};
-__export(sketch07_25730e04_exports, {
+// .svelte-kit/output/server/chunks/sketch07-21c3e00d.js
+var sketch07_21c3e00d_exports = {};
+__export(sketch07_21c3e00d_exports, {
   default: () => Sketch07
 });
 var import_canvas_sketch8, import_color8, Sketch07;
-var init_sketch07_25730e04 = __esm({
-  ".svelte-kit/output/server/chunks/sketch07-25730e04.js"() {
+var init_sketch07_21c3e00d = __esm({
+  ".svelte-kit/output/server/chunks/sketch07-21c3e00d.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch8 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color8 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch07 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -38796,22 +38804,22 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch08-be9f2d79.js
-var sketch08_be9f2d79_exports = {};
-__export(sketch08_be9f2d79_exports, {
+// .svelte-kit/output/server/chunks/sketch08-b8bb4119.js
+var sketch08_b8bb4119_exports = {};
+__export(sketch08_b8bb4119_exports, {
   default: () => Sketch08
 });
 var import_canvas_sketch9, import_color9, Sketch08;
-var init_sketch08_be9f2d79 = __esm({
-  ".svelte-kit/output/server/chunks/sketch08-be9f2d79.js"() {
+var init_sketch08_b8bb4119 = __esm({
+  ".svelte-kit/output/server/chunks/sketch08-b8bb4119.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch9 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color9 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch08 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -38922,22 +38930,22 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch09-2c62fd2a.js
-var sketch09_2c62fd2a_exports = {};
-__export(sketch09_2c62fd2a_exports, {
+// .svelte-kit/output/server/chunks/sketch09-88a8fb7c.js
+var sketch09_88a8fb7c_exports = {};
+__export(sketch09_88a8fb7c_exports, {
   default: () => Sketch09
 });
 var import_canvas_sketch10, import_color10, Sketch09;
-var init_sketch09_2c62fd2a = __esm({
-  ".svelte-kit/output/server/chunks/sketch09-2c62fd2a.js"() {
+var init_sketch09_88a8fb7c = __esm({
+  ".svelte-kit/output/server/chunks/sketch09-88a8fb7c.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
-    init_Checkbox_c912fd86();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
+    init_Checkbox_ae6eacfc();
     import_canvas_sketch10 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     import_color10 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     Sketch09 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -39048,31 +39056,31 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/index-190db8ed.js
-var index_190db8ed_exports = {};
-__export(index_190db8ed_exports, {
+// .svelte-kit/output/server/chunks/index-a080afc0.js
+var index_a080afc0_exports = {};
+__export(index_a080afc0_exports, {
   default: () => Creative
 });
 var import_canvas_sketch11, import_color11, import_random2, css7, Creative;
-var init_index_190db8ed = __esm({
-  ".svelte-kit/output/server/chunks/index-190db8ed.js"() {
+var init_index_a080afc0 = __esm({
+  ".svelte-kit/output/server/chunks/index-a080afc0.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_sketch02_b0002e38();
-    init_sketch03_30ad8850();
-    init_sketch04_7ce27f11();
-    init_sketch01_a5f12064();
-    init_sketch05_019fea94();
-    init_sketch06_cfb6f76d();
-    init_sketch07_25730e04();
-    init_sketch08_be9f2d79();
-    init_sketch09_2c62fd2a();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
+    init_app_12c600a3();
+    init_sketch02_f7a88a87();
+    init_sketch03_2bcb385a();
+    init_sketch04_d962f87e();
+    init_sketch01_0f0310b7();
+    init_sketch05_c0a651be();
+    init_sketch06_2e15cc79();
+    init_sketch07_21c3e00d();
+    init_sketch08_b8bb4119();
+    init_sketch09_88a8fb7c();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
     import_canvas_sketch11 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
-    init_Checkbox_c912fd86();
+    init_stores_91a6db03();
+    init_Checkbox_ae6eacfc();
     import_color11 = __toModule(require_color());
-    init_index_00c1c3bd();
+    init_index_70572d78();
     import_random2 = __toModule(require_random());
     css7 = {
       code: ".main.svelte-wk9h2l.svelte-wk9h2l{grid-area:main;display:grid;max-width:100%;grid-template-columns:repeat(auto-fit, minmax(16rem, 1fr))}.main.svelte-wk9h2l a.svelte-wk9h2l{align-self:flex-start}h1.svelte-wk9h2l.svelte-wk9h2l{font-size:3rem;font-weight:800}",
@@ -39103,20 +39111,20 @@ var init_index_190db8ed = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-36b3434d.js
-var noPanel_36b3434d_exports = {};
-__export(noPanel_36b3434d_exports, {
+// .svelte-kit/output/server/chunks/noPanel-3be47453.js
+var noPanel_3be47453_exports = {};
+__export(noPanel_3be47453_exports, {
   default: () => NoPanel
 });
 var import_color12, import_canvas_sketch12, NoPanel;
-var init_noPanel_36b3434d = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-36b3434d.js"() {
+var init_noPanel_3be47453 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-3be47453.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_Checkbox_svelte_svelte_type_style_lang_b4cea429();
+    init_app_12c600a3();
+    init_Checkbox_svelte_svelte_type_style_lang_29490692();
     import_color12 = __toModule(require_color());
     import_canvas_sketch12 = __toModule(require_canvas_sketch_umd());
-    init_stores_f73f64f7();
+    init_stores_91a6db03();
     NoPanel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -39162,137 +39170,137 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-919b111b.js
-var noPanel_919b111b_exports = {};
-__export(noPanel_919b111b_exports, {
+// .svelte-kit/output/server/chunks/noPanel-2ddeb9a5.js
+var noPanel_2ddeb9a5_exports = {};
+__export(noPanel_2ddeb9a5_exports, {
   default: () => NoPanel2
 });
 var NoPanel2;
-var init_noPanel_919b111b = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-919b111b.js"() {
+var init_noPanel_2ddeb9a5 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-2ddeb9a5.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-d138218b.js
-var noPanel_d138218b_exports = {};
-__export(noPanel_d138218b_exports, {
+// .svelte-kit/output/server/chunks/noPanel-cb571cbe.js
+var noPanel_cb571cbe_exports = {};
+__export(noPanel_cb571cbe_exports, {
   default: () => NoPanel3
 });
 var NoPanel3;
-var init_noPanel_d138218b = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-d138218b.js"() {
+var init_noPanel_cb571cbe = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-cb571cbe.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel3 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-4f5ac554.js
-var noPanel_4f5ac554_exports = {};
-__export(noPanel_4f5ac554_exports, {
+// .svelte-kit/output/server/chunks/noPanel-d58fc1df.js
+var noPanel_d58fc1df_exports = {};
+__export(noPanel_d58fc1df_exports, {
   default: () => NoPanel4
 });
 var NoPanel4;
-var init_noPanel_4f5ac554 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-4f5ac554.js"() {
+var init_noPanel_d58fc1df = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-d58fc1df.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel4 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-b316687d.js
-var noPanel_b316687d_exports = {};
-__export(noPanel_b316687d_exports, {
+// .svelte-kit/output/server/chunks/noPanel-9fdc7d8a.js
+var noPanel_9fdc7d8a_exports = {};
+__export(noPanel_9fdc7d8a_exports, {
   default: () => NoPanel5
 });
 var NoPanel5;
-var init_noPanel_b316687d = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-b316687d.js"() {
+var init_noPanel_9fdc7d8a = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-9fdc7d8a.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel5 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-2e04a096.js
-var noPanel_2e04a096_exports = {};
-__export(noPanel_2e04a096_exports, {
+// .svelte-kit/output/server/chunks/noPanel-ac271066.js
+var noPanel_ac271066_exports = {};
+__export(noPanel_ac271066_exports, {
   default: () => NoPanel6
 });
 var NoPanel6;
-var init_noPanel_2e04a096 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-2e04a096.js"() {
+var init_noPanel_ac271066 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-ac271066.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel6 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-0a64f7ee.js
-var noPanel_0a64f7ee_exports = {};
-__export(noPanel_0a64f7ee_exports, {
+// .svelte-kit/output/server/chunks/noPanel-5015e240.js
+var noPanel_5015e240_exports = {};
+__export(noPanel_5015e240_exports, {
   default: () => NoPanel7
 });
 var NoPanel7;
-var init_noPanel_0a64f7ee = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-0a64f7ee.js"() {
+var init_noPanel_5015e240 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-5015e240.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel7 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-904f8d03.js
-var noPanel_904f8d03_exports = {};
-__export(noPanel_904f8d03_exports, {
+// .svelte-kit/output/server/chunks/noPanel-7018f2b9.js
+var noPanel_7018f2b9_exports = {};
+__export(noPanel_7018f2b9_exports, {
   default: () => NoPanel8
 });
 var NoPanel8;
-var init_noPanel_904f8d03 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-904f8d03.js"() {
+var init_noPanel_7018f2b9 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-7018f2b9.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel8 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-93f97b43.js
-var noPanel_93f97b43_exports = {};
-__export(noPanel_93f97b43_exports, {
+// .svelte-kit/output/server/chunks/noPanel-85264e7c.js
+var noPanel_85264e7c_exports = {};
+__export(noPanel_85264e7c_exports, {
   default: () => NoPanel9
 });
 var NoPanel9;
-var init_noPanel_93f97b43 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-93f97b43.js"() {
+var init_noPanel_85264e7c = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-85264e7c.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     NoPanel9 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/_id_-c1343be4.js
-var id_c1343be4_exports = {};
-__export(id_c1343be4_exports, {
+// .svelte-kit/output/server/chunks/_id_-aa7fe276.js
+var id_aa7fe276_exports = {};
+__export(id_aa7fe276_exports, {
   default: () => U5Bidu5D,
   load: () => load3
 });
@@ -39304,10 +39312,10 @@ async function load3({ page: page2 }) {
   return { props: { pokeman } };
 }
 var U5Bidu5D;
-var init_id_c1343be4 = __esm({
-  ".svelte-kit/output/server/chunks/_id_-c1343be4.js"() {
+var init_id_aa7fe276 = __esm({
+  ".svelte-kit/output/server/chunks/_id_-aa7fe276.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { pokeman } = $$props;
       if ($$props.pokeman === void 0 && $$bindings.pokeman && pokeman !== void 0)
@@ -39325,9 +39333,9 @@ var init_id_c1343be4 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/pokemon-1f94f1eb.js
-var pokemon_1f94f1eb_exports = {};
-__export(pokemon_1f94f1eb_exports, {
+// .svelte-kit/output/server/chunks/pokemon-eaa84bf9.js
+var pokemon_eaa84bf9_exports = {};
+__export(pokemon_eaa84bf9_exports, {
   default: () => Pokemon,
   load: () => load4
 });
@@ -39346,10 +39354,10 @@ async function load4({ page: page2 }) {
   return { props: { pokemon: loadedPokemon } };
 }
 var css$16, PokemonCard, css8, Pokemon;
-var init_pokemon_1f94f1eb = __esm({
-  ".svelte-kit/output/server/chunks/pokemon-1f94f1eb.js"() {
+var init_pokemon_eaa84bf9 = __esm({
+  ".svelte-kit/output/server/chunks/pokemon-eaa84bf9.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     css$16 = {
       code: ".pokemon.svelte-4j24xz{margin:0.5rem;padding:0.5rem;background:rgba(0, 0, 0, 0.1)}",
       map: null
@@ -39391,16 +39399,16 @@ var init_pokemon_1f94f1eb = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/parseQuotes-cd5a2adf.js
-var parseQuotes_cd5a2adf_exports = {};
-__export(parseQuotes_cd5a2adf_exports, {
+// .svelte-kit/output/server/chunks/parseQuotes-719ce0e0.js
+var parseQuotes_719ce0e0_exports = {};
+__export(parseQuotes_719ce0e0_exports, {
   default: () => ParseQuotes
 });
 var css9, ParseQuotes;
-var init_parseQuotes_cd5a2adf = __esm({
-  ".svelte-kit/output/server/chunks/parseQuotes-cd5a2adf.js"() {
+var init_parseQuotes_719ce0e0 = __esm({
+  ".svelte-kit/output/server/chunks/parseQuotes-719ce0e0.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     init_parseQuotes_f1406a23();
     css9 = {
       code: '@import url("https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0,300;1,300&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap");.quotes-wrapper.svelte-ad6nk5.svelte-ad6nk5{background:#122334}input#fileInput.svelte-ad6nk5.svelte-ad6nk5{position:relative;padding:2.9rem 0 0 0;height:0px;overflow:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background:url("https://cdn1.iconfinder.com/data/icons/hawcons/32/698394-icon-130-cloud-upload-256.png") center center no-repeat;border-radius:0.5rem;background-size:3rem;cursor:pointer}.quotes.svelte-ad6nk5.svelte-ad6nk5{font-family:"Merriweather", serif;font-weight:300}.quote-author.svelte-ad6nk5.svelte-ad6nk5{color:#64c8ff}.quote-mark.svelte-ad6nk5.svelte-ad6nk5{font-family:"Montserrat", serif;font-size:125%;font-weight:300;font-weight:100;font-family:"Coda", cursive}.badge.svelte-ad6nk5.svelte-ad6nk5{font-family:"Montserrat", sans-serif;font-weight:normal}.input-group.svelte-ad6nk5>span.svelte-ad6nk5{border-radius:0}',
@@ -39455,18 +39463,18 @@ var init_parseQuotes_cd5a2adf = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-7dac3a3b.js
-var index_7dac3a3b_exports = {};
-__export(index_7dac3a3b_exports, {
+// .svelte-kit/output/server/chunks/index-3224a7e0.js
+var index_3224a7e0_exports = {};
+__export(index_3224a7e0_exports, {
   default: () => Quotes_1,
   load: () => load5
 });
 var load5, Quotes_1;
-var init_index_7dac3a3b = __esm({
-  ".svelte-kit/output/server/chunks/index-7dac3a3b.js"() {
+var init_index_3224a7e0 = __esm({
+  ".svelte-kit/output/server/chunks/index-3224a7e0.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_parseQuotes_cd5a2adf();
+    init_app_12c600a3();
+    init_parseQuotes_719ce0e0();
     init_parseQuotes_f1406a23();
     load5 = async ({ fetch: fetch2 }) => {
       const res = await fetch2("/quotes.json");
@@ -39486,16 +39494,16 @@ var init_index_7dac3a3b = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/AddQuote-314a9128.js
-var AddQuote_314a9128_exports = {};
-__export(AddQuote_314a9128_exports, {
+// .svelte-kit/output/server/chunks/AddQuote-4b5f5a5b.js
+var AddQuote_4b5f5a5b_exports = {};
+__export(AddQuote_4b5f5a5b_exports, {
   default: () => AddQuote
 });
 var AddQuote;
-var init_AddQuote_314a9128 = __esm({
-  ".svelte-kit/output/server/chunks/AddQuote-314a9128.js"() {
+var init_AddQuote_4b5f5a5b = __esm({
+  ".svelte-kit/output/server/chunks/AddQuote-4b5f5a5b.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     AddQuote = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<div class="${"p-10 card bg-base-200 w-1/4"}"><div class="${"form-control flex"}"><label class="${"label max-w-xs"}"><span>Quote</span></label> 
       <input type="${"text"}" placeholder="${"Quote"}" class="${"input input-group max-w-xs"}">
@@ -39511,18 +39519,18 @@ var init_AddQuote_314a9128 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/upload-f1b47aa7.js
-var upload_f1b47aa7_exports = {};
-__export(upload_f1b47aa7_exports, {
+// .svelte-kit/output/server/chunks/upload-ecdd4845.js
+var upload_ecdd4845_exports = {};
+__export(upload_ecdd4845_exports, {
   default: () => Upload,
   load: () => load6
 });
 var load6, Upload;
-var init_upload_f1b47aa7 = __esm({
-  ".svelte-kit/output/server/chunks/upload-f1b47aa7.js"() {
+var init_upload_ecdd4845 = __esm({
+  ".svelte-kit/output/server/chunks/upload-ecdd4845.js"() {
     init_shims();
-    init_app_4f5bfc20();
-    init_parseQuotes_cd5a2adf();
+    init_app_12c600a3();
+    init_parseQuotes_719ce0e0();
     init_parseQuotes_f1406a23();
     load6 = async ({ fetch: fetch2 }) => {
       const res = await fetch2("/todos.json");
@@ -43313,9 +43321,9 @@ var init_urql_core = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-55846a90.js
-var index_55846a90_exports = {};
-__export(index_55846a90_exports, {
+// .svelte-kit/output/server/chunks/index-0d09db3b.js
+var index_0d09db3b_exports = {};
+__export(index_0d09db3b_exports, {
   default: () => Upload2
 });
 function l3(a2, b) {
@@ -43697,13 +43705,13 @@ function mutation(t2) {
   };
 }
 var import_graphql_request8, v, y, g, Upload2;
-var init_index_55846a90 = __esm({
-  ".svelte-kit/output/server/chunks/index-55846a90.js"() {
+var init_index_0d09db3b = __esm({
+  ".svelte-kit/output/server/chunks/index-0d09db3b.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     init_parseQuotes_f1406a23();
     init_urql_core();
-    init_index_00c1c3bd();
+    init_index_70572d78();
     import_graphql_request8 = __toModule(require_dist());
     v = [];
     typeof Symbol == "function" ? Symbol.observable || (Symbol.observable = Symbol("observable")) : "@@observable";
@@ -43794,16 +43802,16 @@ var init_index_55846a90 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/about-f65d0975.js
-var about_f65d0975_exports = {};
-__export(about_f65d0975_exports, {
+// .svelte-kit/output/server/chunks/about-45f6f71a.js
+var about_45f6f71a_exports = {};
+__export(about_45f6f71a_exports, {
   default: () => About
 });
 var css10, About;
-var init_about_f65d0975 = __esm({
-  ".svelte-kit/output/server/chunks/about-f65d0975.js"() {
+var init_about_45f6f71a = __esm({
+  ".svelte-kit/output/server/chunks/about-45f6f71a.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     css10 = {
       code: "@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');.main.svelte-we0f1c{display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:'Montserrat', sans-serif;margin-top:5rem}h1.svelte-we0f1c{font-size:3rem;font-weight:900;background:-webkit-linear-gradient(0deg, rgba(72,0,36,1) 0%,rgba(9,121,121,1) 25%, rgba(56,121,255,1) 50%, rgba(121,9,121,1) 75%, rgba(2,0,76,1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}",
       map: null
@@ -43819,17 +43827,2849 @@ var init_about_f65d0975 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-57a19f8b.js
-var index_57a19f8b_exports = {};
-__export(index_57a19f8b_exports, {
+// node_modules/chroma-js/chroma.js
+var require_chroma = __commonJS({
+  "node_modules/chroma-js/chroma.js"(exports, module2) {
+    init_shims();
+    (function() {
+      var Color2, DEG2RAD, LAB_CONSTANTS, PI, PITHIRD, RAD2DEG, TWOPI, _average_lrgb, _guess_formats, _guess_formats_sorted, _input, _interpolators, abs, atan2, bezier2, blend, blend_f, brewer, burn, chroma2, clip_rgb, cmyk2rgb, colors, cos, css2rgb, darken, dodge, each2, floor, hcg2rgb, hex2rgb, hsi2rgb, hsl2css, hsl2rgb, hsv2rgb, interpolate, interpolate_hsx, interpolate_lab, interpolate_lrgb, interpolate_num, interpolate_rgb, lab2lch, lab2rgb, lab_xyz, lch2lab, lch2rgb, lighten, limit, log, luminance_x, m3, max, multiply, normal, num2rgb, overlay, pow, rgb2cmyk, rgb2css, rgb2hcg, rgb2hex, rgb2hsi, rgb2hsl, rgb2hsv, rgb2lab, rgb2lch, rgb2luminance, rgb2num, rgb2temperature, rgb2xyz, rgb_xyz, rnd, root, round, screen, sin, sqrt, temperature2rgb, type, unpack, w3cx11, xyz_lab, xyz_rgb, slice = [].slice;
+      type = function() {
+        var classToType, len, name, o, ref;
+        classToType = {};
+        ref = "Boolean Number String Function Array Date RegExp Undefined Null".split(" ");
+        for (o = 0, len = ref.length; o < len; o++) {
+          name = ref[o];
+          classToType["[object " + name + "]"] = name.toLowerCase();
+        }
+        return function(obj) {
+          var strType;
+          strType = Object.prototype.toString.call(obj);
+          return classToType[strType] || "object";
+        };
+      }();
+      limit = function(x2, min, max2) {
+        if (min == null) {
+          min = 0;
+        }
+        if (max2 == null) {
+          max2 = 1;
+        }
+        if (x2 < min) {
+          x2 = min;
+        }
+        if (x2 > max2) {
+          x2 = max2;
+        }
+        return x2;
+      };
+      unpack = function(args) {
+        if (args.length >= 3) {
+          return Array.prototype.slice.call(args);
+        } else {
+          return args[0];
+        }
+      };
+      clip_rgb = function(rgb) {
+        var i2, o;
+        rgb._clipped = false;
+        rgb._unclipped = rgb.slice(0);
+        for (i2 = o = 0; o < 3; i2 = ++o) {
+          if (i2 < 3) {
+            if (rgb[i2] < 0 || rgb[i2] > 255) {
+              rgb._clipped = true;
+            }
+            if (rgb[i2] < 0) {
+              rgb[i2] = 0;
+            }
+            if (rgb[i2] > 255) {
+              rgb[i2] = 255;
+            }
+          } else if (i2 === 3) {
+            if (rgb[i2] < 0) {
+              rgb[i2] = 0;
+            }
+            if (rgb[i2] > 1) {
+              rgb[i2] = 1;
+            }
+          }
+        }
+        if (!rgb._clipped) {
+          delete rgb._unclipped;
+        }
+        return rgb;
+      };
+      PI = Math.PI, round = Math.round, cos = Math.cos, floor = Math.floor, pow = Math.pow, log = Math.log, sin = Math.sin, sqrt = Math.sqrt, atan2 = Math.atan2, max = Math.max, abs = Math.abs;
+      TWOPI = PI * 2;
+      PITHIRD = PI / 3;
+      DEG2RAD = PI / 180;
+      RAD2DEG = 180 / PI;
+      chroma2 = function() {
+        if (arguments[0] instanceof Color2) {
+          return arguments[0];
+        }
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, arguments, function() {
+        });
+      };
+      chroma2["default"] = chroma2;
+      _interpolators = [];
+      if (typeof module2 !== "undefined" && module2 !== null && module2.exports != null) {
+        module2.exports = chroma2;
+      }
+      if (typeof define === "function" && define.amd) {
+        define([], function() {
+          return chroma2;
+        });
+      } else {
+        root = typeof exports !== "undefined" && exports !== null ? exports : this;
+        root.chroma = chroma2;
+      }
+      chroma2.version = "1.4.1";
+      _input = {};
+      _guess_formats = [];
+      _guess_formats_sorted = false;
+      Color2 = function() {
+        function Color3() {
+          var arg, args, chk, len, len1, me, mode, o, w;
+          me = this;
+          args = [];
+          for (o = 0, len = arguments.length; o < len; o++) {
+            arg = arguments[o];
+            if (arg != null) {
+              args.push(arg);
+            }
+          }
+          if (args.length > 1) {
+            mode = args[args.length - 1];
+          }
+          if (_input[mode] != null) {
+            me._rgb = clip_rgb(_input[mode](unpack(args.slice(0, -1))));
+          } else {
+            if (!_guess_formats_sorted) {
+              _guess_formats = _guess_formats.sort(function(a2, b) {
+                return b.p - a2.p;
+              });
+              _guess_formats_sorted = true;
+            }
+            for (w = 0, len1 = _guess_formats.length; w < len1; w++) {
+              chk = _guess_formats[w];
+              mode = chk.test.apply(chk, args);
+              if (mode) {
+                break;
+              }
+            }
+            if (mode) {
+              me._rgb = clip_rgb(_input[mode].apply(_input, args));
+            }
+          }
+          if (me._rgb == null) {
+            console.warn("unknown format: " + args);
+          }
+          if (me._rgb == null) {
+            me._rgb = [0, 0, 0];
+          }
+          if (me._rgb.length === 3) {
+            me._rgb.push(1);
+          }
+        }
+        Color3.prototype.toString = function() {
+          return this.hex();
+        };
+        return Color3;
+      }();
+      chroma2._input = _input;
+      chroma2.brewer = brewer = {
+        OrRd: ["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"],
+        PuBu: ["#fff7fb", "#ece7f2", "#d0d1e6", "#a6bddb", "#74a9cf", "#3690c0", "#0570b0", "#045a8d", "#023858"],
+        BuPu: ["#f7fcfd", "#e0ecf4", "#bfd3e6", "#9ebcda", "#8c96c6", "#8c6bb1", "#88419d", "#810f7c", "#4d004b"],
+        Oranges: ["#fff5eb", "#fee6ce", "#fdd0a2", "#fdae6b", "#fd8d3c", "#f16913", "#d94801", "#a63603", "#7f2704"],
+        BuGn: ["#f7fcfd", "#e5f5f9", "#ccece6", "#99d8c9", "#66c2a4", "#41ae76", "#238b45", "#006d2c", "#00441b"],
+        YlOrBr: ["#ffffe5", "#fff7bc", "#fee391", "#fec44f", "#fe9929", "#ec7014", "#cc4c02", "#993404", "#662506"],
+        YlGn: ["#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"],
+        Reds: ["#fff5f0", "#fee0d2", "#fcbba1", "#fc9272", "#fb6a4a", "#ef3b2c", "#cb181d", "#a50f15", "#67000d"],
+        RdPu: ["#fff7f3", "#fde0dd", "#fcc5c0", "#fa9fb5", "#f768a1", "#dd3497", "#ae017e", "#7a0177", "#49006a"],
+        Greens: ["#f7fcf5", "#e5f5e0", "#c7e9c0", "#a1d99b", "#74c476", "#41ab5d", "#238b45", "#006d2c", "#00441b"],
+        YlGnBu: ["#ffffd9", "#edf8b1", "#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494", "#081d58"],
+        Purples: ["#fcfbfd", "#efedf5", "#dadaeb", "#bcbddc", "#9e9ac8", "#807dba", "#6a51a3", "#54278f", "#3f007d"],
+        GnBu: ["#f7fcf0", "#e0f3db", "#ccebc5", "#a8ddb5", "#7bccc4", "#4eb3d3", "#2b8cbe", "#0868ac", "#084081"],
+        Greys: ["#ffffff", "#f0f0f0", "#d9d9d9", "#bdbdbd", "#969696", "#737373", "#525252", "#252525", "#000000"],
+        YlOrRd: ["#ffffcc", "#ffeda0", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"],
+        PuRd: ["#f7f4f9", "#e7e1ef", "#d4b9da", "#c994c7", "#df65b0", "#e7298a", "#ce1256", "#980043", "#67001f"],
+        Blues: ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#08519c", "#08306b"],
+        PuBuGn: ["#fff7fb", "#ece2f0", "#d0d1e6", "#a6bddb", "#67a9cf", "#3690c0", "#02818a", "#016c59", "#014636"],
+        Viridis: ["#440154", "#482777", "#3f4a8a", "#31678e", "#26838f", "#1f9d8a", "#6cce5a", "#b6de2b", "#fee825"],
+        Spectral: ["#9e0142", "#d53e4f", "#f46d43", "#fdae61", "#fee08b", "#ffffbf", "#e6f598", "#abdda4", "#66c2a5", "#3288bd", "#5e4fa2"],
+        RdYlGn: ["#a50026", "#d73027", "#f46d43", "#fdae61", "#fee08b", "#ffffbf", "#d9ef8b", "#a6d96a", "#66bd63", "#1a9850", "#006837"],
+        RdBu: ["#67001f", "#b2182b", "#d6604d", "#f4a582", "#fddbc7", "#f7f7f7", "#d1e5f0", "#92c5de", "#4393c3", "#2166ac", "#053061"],
+        PiYG: ["#8e0152", "#c51b7d", "#de77ae", "#f1b6da", "#fde0ef", "#f7f7f7", "#e6f5d0", "#b8e186", "#7fbc41", "#4d9221", "#276419"],
+        PRGn: ["#40004b", "#762a83", "#9970ab", "#c2a5cf", "#e7d4e8", "#f7f7f7", "#d9f0d3", "#a6dba0", "#5aae61", "#1b7837", "#00441b"],
+        RdYlBu: ["#a50026", "#d73027", "#f46d43", "#fdae61", "#fee090", "#ffffbf", "#e0f3f8", "#abd9e9", "#74add1", "#4575b4", "#313695"],
+        BrBG: ["#543005", "#8c510a", "#bf812d", "#dfc27d", "#f6e8c3", "#f5f5f5", "#c7eae5", "#80cdc1", "#35978f", "#01665e", "#003c30"],
+        RdGy: ["#67001f", "#b2182b", "#d6604d", "#f4a582", "#fddbc7", "#ffffff", "#e0e0e0", "#bababa", "#878787", "#4d4d4d", "#1a1a1a"],
+        PuOr: ["#7f3b08", "#b35806", "#e08214", "#fdb863", "#fee0b6", "#f7f7f7", "#d8daeb", "#b2abd2", "#8073ac", "#542788", "#2d004b"],
+        Set2: ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f", "#e5c494", "#b3b3b3"],
+        Accent: ["#7fc97f", "#beaed4", "#fdc086", "#ffff99", "#386cb0", "#f0027f", "#bf5b17", "#666666"],
+        Set1: ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628", "#f781bf", "#999999"],
+        Set3: ["#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd", "#ccebc5", "#ffed6f"],
+        Dark2: ["#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d", "#666666"],
+        Paired: ["#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#ffff99", "#b15928"],
+        Pastel2: ["#b3e2cd", "#fdcdac", "#cbd5e8", "#f4cae4", "#e6f5c9", "#fff2ae", "#f1e2cc", "#cccccc"],
+        Pastel1: ["#fbb4ae", "#b3cde3", "#ccebc5", "#decbe4", "#fed9a6", "#ffffcc", "#e5d8bd", "#fddaec", "#f2f2f2"]
+      };
+      (function() {
+        var key, results;
+        results = [];
+        for (key in brewer) {
+          results.push(brewer[key.toLowerCase()] = brewer[key]);
+        }
+        return results;
+      })();
+      w3cx11 = {
+        aliceblue: "#f0f8ff",
+        antiquewhite: "#faebd7",
+        aqua: "#00ffff",
+        aquamarine: "#7fffd4",
+        azure: "#f0ffff",
+        beige: "#f5f5dc",
+        bisque: "#ffe4c4",
+        black: "#000000",
+        blanchedalmond: "#ffebcd",
+        blue: "#0000ff",
+        blueviolet: "#8a2be2",
+        brown: "#a52a2a",
+        burlywood: "#deb887",
+        cadetblue: "#5f9ea0",
+        chartreuse: "#7fff00",
+        chocolate: "#d2691e",
+        coral: "#ff7f50",
+        cornflower: "#6495ed",
+        cornflowerblue: "#6495ed",
+        cornsilk: "#fff8dc",
+        crimson: "#dc143c",
+        cyan: "#00ffff",
+        darkblue: "#00008b",
+        darkcyan: "#008b8b",
+        darkgoldenrod: "#b8860b",
+        darkgray: "#a9a9a9",
+        darkgreen: "#006400",
+        darkgrey: "#a9a9a9",
+        darkkhaki: "#bdb76b",
+        darkmagenta: "#8b008b",
+        darkolivegreen: "#556b2f",
+        darkorange: "#ff8c00",
+        darkorchid: "#9932cc",
+        darkred: "#8b0000",
+        darksalmon: "#e9967a",
+        darkseagreen: "#8fbc8f",
+        darkslateblue: "#483d8b",
+        darkslategray: "#2f4f4f",
+        darkslategrey: "#2f4f4f",
+        darkturquoise: "#00ced1",
+        darkviolet: "#9400d3",
+        deeppink: "#ff1493",
+        deepskyblue: "#00bfff",
+        dimgray: "#696969",
+        dimgrey: "#696969",
+        dodgerblue: "#1e90ff",
+        firebrick: "#b22222",
+        floralwhite: "#fffaf0",
+        forestgreen: "#228b22",
+        fuchsia: "#ff00ff",
+        gainsboro: "#dcdcdc",
+        ghostwhite: "#f8f8ff",
+        gold: "#ffd700",
+        goldenrod: "#daa520",
+        gray: "#808080",
+        green: "#008000",
+        greenyellow: "#adff2f",
+        grey: "#808080",
+        honeydew: "#f0fff0",
+        hotpink: "#ff69b4",
+        indianred: "#cd5c5c",
+        indigo: "#4b0082",
+        ivory: "#fffff0",
+        khaki: "#f0e68c",
+        laserlemon: "#ffff54",
+        lavender: "#e6e6fa",
+        lavenderblush: "#fff0f5",
+        lawngreen: "#7cfc00",
+        lemonchiffon: "#fffacd",
+        lightblue: "#add8e6",
+        lightcoral: "#f08080",
+        lightcyan: "#e0ffff",
+        lightgoldenrod: "#fafad2",
+        lightgoldenrodyellow: "#fafad2",
+        lightgray: "#d3d3d3",
+        lightgreen: "#90ee90",
+        lightgrey: "#d3d3d3",
+        lightpink: "#ffb6c1",
+        lightsalmon: "#ffa07a",
+        lightseagreen: "#20b2aa",
+        lightskyblue: "#87cefa",
+        lightslategray: "#778899",
+        lightslategrey: "#778899",
+        lightsteelblue: "#b0c4de",
+        lightyellow: "#ffffe0",
+        lime: "#00ff00",
+        limegreen: "#32cd32",
+        linen: "#faf0e6",
+        magenta: "#ff00ff",
+        maroon: "#800000",
+        maroon2: "#7f0000",
+        maroon3: "#b03060",
+        mediumaquamarine: "#66cdaa",
+        mediumblue: "#0000cd",
+        mediumorchid: "#ba55d3",
+        mediumpurple: "#9370db",
+        mediumseagreen: "#3cb371",
+        mediumslateblue: "#7b68ee",
+        mediumspringgreen: "#00fa9a",
+        mediumturquoise: "#48d1cc",
+        mediumvioletred: "#c71585",
+        midnightblue: "#191970",
+        mintcream: "#f5fffa",
+        mistyrose: "#ffe4e1",
+        moccasin: "#ffe4b5",
+        navajowhite: "#ffdead",
+        navy: "#000080",
+        oldlace: "#fdf5e6",
+        olive: "#808000",
+        olivedrab: "#6b8e23",
+        orange: "#ffa500",
+        orangered: "#ff4500",
+        orchid: "#da70d6",
+        palegoldenrod: "#eee8aa",
+        palegreen: "#98fb98",
+        paleturquoise: "#afeeee",
+        palevioletred: "#db7093",
+        papayawhip: "#ffefd5",
+        peachpuff: "#ffdab9",
+        peru: "#cd853f",
+        pink: "#ffc0cb",
+        plum: "#dda0dd",
+        powderblue: "#b0e0e6",
+        purple: "#800080",
+        purple2: "#7f007f",
+        purple3: "#a020f0",
+        rebeccapurple: "#663399",
+        red: "#ff0000",
+        rosybrown: "#bc8f8f",
+        royalblue: "#4169e1",
+        saddlebrown: "#8b4513",
+        salmon: "#fa8072",
+        sandybrown: "#f4a460",
+        seagreen: "#2e8b57",
+        seashell: "#fff5ee",
+        sienna: "#a0522d",
+        silver: "#c0c0c0",
+        skyblue: "#87ceeb",
+        slateblue: "#6a5acd",
+        slategray: "#708090",
+        slategrey: "#708090",
+        snow: "#fffafa",
+        springgreen: "#00ff7f",
+        steelblue: "#4682b4",
+        tan: "#d2b48c",
+        teal: "#008080",
+        thistle: "#d8bfd8",
+        tomato: "#ff6347",
+        turquoise: "#40e0d0",
+        violet: "#ee82ee",
+        wheat: "#f5deb3",
+        white: "#ffffff",
+        whitesmoke: "#f5f5f5",
+        yellow: "#ffff00",
+        yellowgreen: "#9acd32"
+      };
+      chroma2.colors = colors = w3cx11;
+      lab2rgb = function() {
+        var a2, args, b, g2, l4, r3, x2, y2, z2;
+        args = unpack(arguments);
+        l4 = args[0], a2 = args[1], b = args[2];
+        y2 = (l4 + 16) / 116;
+        x2 = isNaN(a2) ? y2 : y2 + a2 / 500;
+        z2 = isNaN(b) ? y2 : y2 - b / 200;
+        y2 = LAB_CONSTANTS.Yn * lab_xyz(y2);
+        x2 = LAB_CONSTANTS.Xn * lab_xyz(x2);
+        z2 = LAB_CONSTANTS.Zn * lab_xyz(z2);
+        r3 = xyz_rgb(3.2404542 * x2 - 1.5371385 * y2 - 0.4985314 * z2);
+        g2 = xyz_rgb(-0.969266 * x2 + 1.8760108 * y2 + 0.041556 * z2);
+        b = xyz_rgb(0.0556434 * x2 - 0.2040259 * y2 + 1.0572252 * z2);
+        return [r3, g2, b, args.length > 3 ? args[3] : 1];
+      };
+      xyz_rgb = function(r3) {
+        return 255 * (r3 <= 304e-5 ? 12.92 * r3 : 1.055 * pow(r3, 1 / 2.4) - 0.055);
+      };
+      lab_xyz = function(t2) {
+        if (t2 > LAB_CONSTANTS.t1) {
+          return t2 * t2 * t2;
+        } else {
+          return LAB_CONSTANTS.t2 * (t2 - LAB_CONSTANTS.t0);
+        }
+      };
+      LAB_CONSTANTS = {
+        Kn: 18,
+        Xn: 0.95047,
+        Yn: 1,
+        Zn: 1.08883,
+        t0: 0.137931034,
+        t1: 0.206896552,
+        t2: 0.12841855,
+        t3: 8856452e-9
+      };
+      rgb2lab = function() {
+        var b, g2, r3, ref, ref1, x2, y2, z2;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        ref1 = rgb2xyz(r3, g2, b), x2 = ref1[0], y2 = ref1[1], z2 = ref1[2];
+        return [116 * y2 - 16, 500 * (x2 - y2), 200 * (y2 - z2)];
+      };
+      rgb_xyz = function(r3) {
+        if ((r3 /= 255) <= 0.04045) {
+          return r3 / 12.92;
+        } else {
+          return pow((r3 + 0.055) / 1.055, 2.4);
+        }
+      };
+      xyz_lab = function(t2) {
+        if (t2 > LAB_CONSTANTS.t3) {
+          return pow(t2, 1 / 3);
+        } else {
+          return t2 / LAB_CONSTANTS.t2 + LAB_CONSTANTS.t0;
+        }
+      };
+      rgb2xyz = function() {
+        var b, g2, r3, ref, x2, y2, z2;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        r3 = rgb_xyz(r3);
+        g2 = rgb_xyz(g2);
+        b = rgb_xyz(b);
+        x2 = xyz_lab((0.4124564 * r3 + 0.3575761 * g2 + 0.1804375 * b) / LAB_CONSTANTS.Xn);
+        y2 = xyz_lab((0.2126729 * r3 + 0.7151522 * g2 + 0.072175 * b) / LAB_CONSTANTS.Yn);
+        z2 = xyz_lab((0.0193339 * r3 + 0.119192 * g2 + 0.9503041 * b) / LAB_CONSTANTS.Zn);
+        return [x2, y2, z2];
+      };
+      chroma2.lab = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["lab"]), function() {
+        });
+      };
+      _input.lab = lab2rgb;
+      Color2.prototype.lab = function() {
+        return rgb2lab(this._rgb);
+      };
+      bezier2 = function(colors2) {
+        var I, I0, I1, c2, lab0, lab1, lab2, lab3, ref, ref1, ref2;
+        colors2 = function() {
+          var len, o, results;
+          results = [];
+          for (o = 0, len = colors2.length; o < len; o++) {
+            c2 = colors2[o];
+            results.push(chroma2(c2));
+          }
+          return results;
+        }();
+        if (colors2.length === 2) {
+          ref = function() {
+            var len, o, results;
+            results = [];
+            for (o = 0, len = colors2.length; o < len; o++) {
+              c2 = colors2[o];
+              results.push(c2.lab());
+            }
+            return results;
+          }(), lab0 = ref[0], lab1 = ref[1];
+          I = function(t2) {
+            var i2, lab;
+            lab = function() {
+              var o, results;
+              results = [];
+              for (i2 = o = 0; o <= 2; i2 = ++o) {
+                results.push(lab0[i2] + t2 * (lab1[i2] - lab0[i2]));
+              }
+              return results;
+            }();
+            return chroma2.lab.apply(chroma2, lab);
+          };
+        } else if (colors2.length === 3) {
+          ref1 = function() {
+            var len, o, results;
+            results = [];
+            for (o = 0, len = colors2.length; o < len; o++) {
+              c2 = colors2[o];
+              results.push(c2.lab());
+            }
+            return results;
+          }(), lab0 = ref1[0], lab1 = ref1[1], lab2 = ref1[2];
+          I = function(t2) {
+            var i2, lab;
+            lab = function() {
+              var o, results;
+              results = [];
+              for (i2 = o = 0; o <= 2; i2 = ++o) {
+                results.push((1 - t2) * (1 - t2) * lab0[i2] + 2 * (1 - t2) * t2 * lab1[i2] + t2 * t2 * lab2[i2]);
+              }
+              return results;
+            }();
+            return chroma2.lab.apply(chroma2, lab);
+          };
+        } else if (colors2.length === 4) {
+          ref2 = function() {
+            var len, o, results;
+            results = [];
+            for (o = 0, len = colors2.length; o < len; o++) {
+              c2 = colors2[o];
+              results.push(c2.lab());
+            }
+            return results;
+          }(), lab0 = ref2[0], lab1 = ref2[1], lab2 = ref2[2], lab3 = ref2[3];
+          I = function(t2) {
+            var i2, lab;
+            lab = function() {
+              var o, results;
+              results = [];
+              for (i2 = o = 0; o <= 2; i2 = ++o) {
+                results.push((1 - t2) * (1 - t2) * (1 - t2) * lab0[i2] + 3 * (1 - t2) * (1 - t2) * t2 * lab1[i2] + 3 * (1 - t2) * t2 * t2 * lab2[i2] + t2 * t2 * t2 * lab3[i2]);
+              }
+              return results;
+            }();
+            return chroma2.lab.apply(chroma2, lab);
+          };
+        } else if (colors2.length === 5) {
+          I0 = bezier2(colors2.slice(0, 3));
+          I1 = bezier2(colors2.slice(2, 5));
+          I = function(t2) {
+            if (t2 < 0.5) {
+              return I0(t2 * 2);
+            } else {
+              return I1((t2 - 0.5) * 2);
+            }
+          };
+        }
+        return I;
+      };
+      chroma2.bezier = function(colors2) {
+        var f2;
+        f2 = bezier2(colors2);
+        f2.scale = function() {
+          return chroma2.scale(f2);
+        };
+        return f2;
+      };
+      chroma2.cubehelix = function(start, rotations, hue, gamma, lightness) {
+        var dh, dl, f2;
+        if (start == null) {
+          start = 300;
+        }
+        if (rotations == null) {
+          rotations = -1.5;
+        }
+        if (hue == null) {
+          hue = 1;
+        }
+        if (gamma == null) {
+          gamma = 1;
+        }
+        if (lightness == null) {
+          lightness = [0, 1];
+        }
+        dh = 0;
+        if (type(lightness) === "array") {
+          dl = lightness[1] - lightness[0];
+        } else {
+          dl = 0;
+          lightness = [lightness, lightness];
+        }
+        f2 = function(fract) {
+          var a2, amp, b, cos_a, g2, h2, l4, r3, sin_a;
+          a2 = TWOPI * ((start + 120) / 360 + rotations * fract);
+          l4 = pow(lightness[0] + dl * fract, gamma);
+          h2 = dh !== 0 ? hue[0] + fract * dh : hue;
+          amp = h2 * l4 * (1 - l4) / 2;
+          cos_a = cos(a2);
+          sin_a = sin(a2);
+          r3 = l4 + amp * (-0.14861 * cos_a + 1.78277 * sin_a);
+          g2 = l4 + amp * (-0.29227 * cos_a - 0.90649 * sin_a);
+          b = l4 + amp * (1.97294 * cos_a);
+          return chroma2(clip_rgb([r3 * 255, g2 * 255, b * 255, 1]));
+        };
+        f2.start = function(s3) {
+          if (s3 == null) {
+            return start;
+          }
+          start = s3;
+          return f2;
+        };
+        f2.rotations = function(r3) {
+          if (r3 == null) {
+            return rotations;
+          }
+          rotations = r3;
+          return f2;
+        };
+        f2.gamma = function(g2) {
+          if (g2 == null) {
+            return gamma;
+          }
+          gamma = g2;
+          return f2;
+        };
+        f2.hue = function(h2) {
+          if (h2 == null) {
+            return hue;
+          }
+          hue = h2;
+          if (type(hue) === "array") {
+            dh = hue[1] - hue[0];
+            if (dh === 0) {
+              hue = hue[1];
+            }
+          } else {
+            dh = 0;
+          }
+          return f2;
+        };
+        f2.lightness = function(h2) {
+          if (h2 == null) {
+            return lightness;
+          }
+          if (type(h2) === "array") {
+            lightness = h2;
+            dl = h2[1] - h2[0];
+          } else {
+            lightness = [h2, h2];
+            dl = 0;
+          }
+          return f2;
+        };
+        f2.scale = function() {
+          return chroma2.scale(f2);
+        };
+        f2.hue(hue);
+        return f2;
+      };
+      chroma2.random = function() {
+        var code, digits, i2, o;
+        digits = "0123456789abcdef";
+        code = "#";
+        for (i2 = o = 0; o < 6; i2 = ++o) {
+          code += digits.charAt(floor(Math.random() * 16));
+        }
+        return new Color2(code);
+      };
+      _interpolators = [];
+      interpolate = function(col1, col2, f2, m4) {
+        var interpol, len, o, res;
+        if (f2 == null) {
+          f2 = 0.5;
+        }
+        if (m4 == null) {
+          m4 = "rgb";
+        }
+        if (type(col1) !== "object") {
+          col1 = chroma2(col1);
+        }
+        if (type(col2) !== "object") {
+          col2 = chroma2(col2);
+        }
+        for (o = 0, len = _interpolators.length; o < len; o++) {
+          interpol = _interpolators[o];
+          if (m4 === interpol[0]) {
+            res = interpol[1](col1, col2, f2, m4);
+            break;
+          }
+        }
+        if (res == null) {
+          throw "color mode " + m4 + " is not supported";
+        }
+        return res.alpha(col1.alpha() + f2 * (col2.alpha() - col1.alpha()));
+      };
+      chroma2.interpolate = interpolate;
+      Color2.prototype.interpolate = function(col2, f2, m4) {
+        return interpolate(this, col2, f2, m4);
+      };
+      chroma2.mix = interpolate;
+      Color2.prototype.mix = Color2.prototype.interpolate;
+      _input.rgb = function() {
+        var k, ref, results, v2;
+        ref = unpack(arguments);
+        results = [];
+        for (k in ref) {
+          v2 = ref[k];
+          results.push(v2);
+        }
+        return results;
+      };
+      chroma2.rgb = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["rgb"]), function() {
+        });
+      };
+      Color2.prototype.rgb = function(round2) {
+        if (round2 == null) {
+          round2 = true;
+        }
+        if (round2) {
+          return this._rgb.map(Math.round).slice(0, 3);
+        } else {
+          return this._rgb.slice(0, 3);
+        }
+      };
+      Color2.prototype.rgba = function(round2) {
+        if (round2 == null) {
+          round2 = true;
+        }
+        if (!round2) {
+          return this._rgb.slice(0);
+        }
+        return [Math.round(this._rgb[0]), Math.round(this._rgb[1]), Math.round(this._rgb[2]), this._rgb[3]];
+      };
+      _guess_formats.push({
+        p: 3,
+        test: function(n) {
+          var a2;
+          a2 = unpack(arguments);
+          if (type(a2) === "array" && a2.length === 3) {
+            return "rgb";
+          }
+          if (a2.length === 4 && type(a2[3]) === "number" && a2[3] >= 0 && a2[3] <= 1) {
+            return "rgb";
+          }
+        }
+      });
+      _input.lrgb = _input.rgb;
+      interpolate_lrgb = function(col1, col2, f2, m4) {
+        var xyz0, xyz1;
+        xyz0 = col1._rgb;
+        xyz1 = col2._rgb;
+        return new Color2(sqrt(pow(xyz0[0], 2) * (1 - f2) + pow(xyz1[0], 2) * f2), sqrt(pow(xyz0[1], 2) * (1 - f2) + pow(xyz1[1], 2) * f2), sqrt(pow(xyz0[2], 2) * (1 - f2) + pow(xyz1[2], 2) * f2), m4);
+      };
+      _average_lrgb = function(colors2) {
+        var col, f2, len, o, rgb, xyz;
+        f2 = 1 / colors2.length;
+        xyz = [0, 0, 0, 0];
+        for (o = 0, len = colors2.length; o < len; o++) {
+          col = colors2[o];
+          rgb = col._rgb;
+          xyz[0] += pow(rgb[0], 2) * f2;
+          xyz[1] += pow(rgb[1], 2) * f2;
+          xyz[2] += pow(rgb[2], 2) * f2;
+          xyz[3] += rgb[3] * f2;
+        }
+        xyz[0] = sqrt(xyz[0]);
+        xyz[1] = sqrt(xyz[1]);
+        xyz[2] = sqrt(xyz[2]);
+        if (xyz[3] > 1) {
+          xyz[3] = 1;
+        }
+        return new Color2(clip_rgb(xyz));
+      };
+      _interpolators.push(["lrgb", interpolate_lrgb]);
+      chroma2.average = function(colors2, mode) {
+        var A, alpha, c2, cnt, dx, dy, first, i2, l4, len, o, xyz, xyz2;
+        if (mode == null) {
+          mode = "rgb";
+        }
+        l4 = colors2.length;
+        colors2 = colors2.map(function(c3) {
+          return chroma2(c3);
+        });
+        first = colors2.splice(0, 1)[0];
+        if (mode === "lrgb") {
+          return _average_lrgb(colors2);
+        }
+        xyz = first.get(mode);
+        cnt = [];
+        dx = 0;
+        dy = 0;
+        for (i2 in xyz) {
+          xyz[i2] = xyz[i2] || 0;
+          cnt.push(isNaN(xyz[i2]) ? 0 : 1);
+          if (mode.charAt(i2) === "h" && !isNaN(xyz[i2])) {
+            A = xyz[i2] / 180 * PI;
+            dx += cos(A);
+            dy += sin(A);
+          }
+        }
+        alpha = first.alpha();
+        for (o = 0, len = colors2.length; o < len; o++) {
+          c2 = colors2[o];
+          xyz2 = c2.get(mode);
+          alpha += c2.alpha();
+          for (i2 in xyz) {
+            if (!isNaN(xyz2[i2])) {
+              cnt[i2] += 1;
+              if (mode.charAt(i2) === "h") {
+                A = xyz2[i2] / 180 * PI;
+                dx += cos(A);
+                dy += sin(A);
+              } else {
+                xyz[i2] += xyz2[i2];
+              }
+            }
+          }
+        }
+        for (i2 in xyz) {
+          if (mode.charAt(i2) === "h") {
+            A = atan2(dy / cnt[i2], dx / cnt[i2]) / PI * 180;
+            while (A < 0) {
+              A += 360;
+            }
+            while (A >= 360) {
+              A -= 360;
+            }
+            xyz[i2] = A;
+          } else {
+            xyz[i2] = xyz[i2] / cnt[i2];
+          }
+        }
+        return chroma2(xyz, mode).alpha(alpha / l4);
+      };
+      hex2rgb = function(hex) {
+        var a2, b, g2, r3, rgb, u4;
+        if (hex.match(/^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)) {
+          if (hex.length === 4 || hex.length === 7) {
+            hex = hex.substr(1);
+          }
+          if (hex.length === 3) {
+            hex = hex.split("");
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+          }
+          u4 = parseInt(hex, 16);
+          r3 = u4 >> 16;
+          g2 = u4 >> 8 & 255;
+          b = u4 & 255;
+          return [r3, g2, b, 1];
+        }
+        if (hex.match(/^#?([A-Fa-f0-9]{8})$/)) {
+          if (hex.length === 9) {
+            hex = hex.substr(1);
+          }
+          u4 = parseInt(hex, 16);
+          r3 = u4 >> 24 & 255;
+          g2 = u4 >> 16 & 255;
+          b = u4 >> 8 & 255;
+          a2 = round((u4 & 255) / 255 * 100) / 100;
+          return [r3, g2, b, a2];
+        }
+        if (_input.css != null && (rgb = _input.css(hex))) {
+          return rgb;
+        }
+        throw "unknown color: " + hex;
+      };
+      rgb2hex = function(channels, mode) {
+        var a2, b, g2, hxa, r3, str, u4;
+        if (mode == null) {
+          mode = "auto";
+        }
+        r3 = channels[0], g2 = channels[1], b = channels[2], a2 = channels[3];
+        if (mode === "auto") {
+          mode = a2 < 1 ? "rgba" : "rgb";
+        }
+        r3 = Math.round(r3);
+        g2 = Math.round(g2);
+        b = Math.round(b);
+        u4 = r3 << 16 | g2 << 8 | b;
+        str = "000000" + u4.toString(16);
+        str = str.substr(str.length - 6);
+        hxa = "0" + round(a2 * 255).toString(16);
+        hxa = hxa.substr(hxa.length - 2);
+        return "#" + function() {
+          switch (mode.toLowerCase()) {
+            case "rgba":
+              return str + hxa;
+            case "argb":
+              return hxa + str;
+            default:
+              return str;
+          }
+        }();
+      };
+      _input.hex = function(h2) {
+        return hex2rgb(h2);
+      };
+      chroma2.hex = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["hex"]), function() {
+        });
+      };
+      Color2.prototype.hex = function(mode) {
+        if (mode == null) {
+          mode = "auto";
+        }
+        return rgb2hex(this._rgb, mode);
+      };
+      _guess_formats.push({
+        p: 4,
+        test: function(n) {
+          if (arguments.length === 1 && type(n) === "string") {
+            return "hex";
+          }
+        }
+      });
+      hsl2rgb = function() {
+        var args, b, c2, g2, h2, i2, l4, o, r3, ref, s3, t1, t2, t3;
+        args = unpack(arguments);
+        h2 = args[0], s3 = args[1], l4 = args[2];
+        if (s3 === 0) {
+          r3 = g2 = b = l4 * 255;
+        } else {
+          t3 = [0, 0, 0];
+          c2 = [0, 0, 0];
+          t2 = l4 < 0.5 ? l4 * (1 + s3) : l4 + s3 - l4 * s3;
+          t1 = 2 * l4 - t2;
+          h2 /= 360;
+          t3[0] = h2 + 1 / 3;
+          t3[1] = h2;
+          t3[2] = h2 - 1 / 3;
+          for (i2 = o = 0; o <= 2; i2 = ++o) {
+            if (t3[i2] < 0) {
+              t3[i2] += 1;
+            }
+            if (t3[i2] > 1) {
+              t3[i2] -= 1;
+            }
+            if (6 * t3[i2] < 1) {
+              c2[i2] = t1 + (t2 - t1) * 6 * t3[i2];
+            } else if (2 * t3[i2] < 1) {
+              c2[i2] = t2;
+            } else if (3 * t3[i2] < 2) {
+              c2[i2] = t1 + (t2 - t1) * (2 / 3 - t3[i2]) * 6;
+            } else {
+              c2[i2] = t1;
+            }
+          }
+          ref = [round(c2[0] * 255), round(c2[1] * 255), round(c2[2] * 255)], r3 = ref[0], g2 = ref[1], b = ref[2];
+        }
+        if (args.length > 3) {
+          return [r3, g2, b, args[3]];
+        } else {
+          return [r3, g2, b];
+        }
+      };
+      rgb2hsl = function(r3, g2, b) {
+        var h2, l4, min, ref, s3;
+        if (r3 !== void 0 && r3.length >= 3) {
+          ref = r3, r3 = ref[0], g2 = ref[1], b = ref[2];
+        }
+        r3 /= 255;
+        g2 /= 255;
+        b /= 255;
+        min = Math.min(r3, g2, b);
+        max = Math.max(r3, g2, b);
+        l4 = (max + min) / 2;
+        if (max === min) {
+          s3 = 0;
+          h2 = Number.NaN;
+        } else {
+          s3 = l4 < 0.5 ? (max - min) / (max + min) : (max - min) / (2 - max - min);
+        }
+        if (r3 === max) {
+          h2 = (g2 - b) / (max - min);
+        } else if (g2 === max) {
+          h2 = 2 + (b - r3) / (max - min);
+        } else if (b === max) {
+          h2 = 4 + (r3 - g2) / (max - min);
+        }
+        h2 *= 60;
+        if (h2 < 0) {
+          h2 += 360;
+        }
+        return [h2, s3, l4];
+      };
+      chroma2.hsl = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["hsl"]), function() {
+        });
+      };
+      _input.hsl = hsl2rgb;
+      Color2.prototype.hsl = function() {
+        return rgb2hsl(this._rgb);
+      };
+      hsv2rgb = function() {
+        var args, b, f2, g2, h2, i2, p3, q, r3, ref, ref1, ref2, ref3, ref4, ref5, s3, t2, v2;
+        args = unpack(arguments);
+        h2 = args[0], s3 = args[1], v2 = args[2];
+        v2 *= 255;
+        if (s3 === 0) {
+          r3 = g2 = b = v2;
+        } else {
+          if (h2 === 360) {
+            h2 = 0;
+          }
+          if (h2 > 360) {
+            h2 -= 360;
+          }
+          if (h2 < 0) {
+            h2 += 360;
+          }
+          h2 /= 60;
+          i2 = floor(h2);
+          f2 = h2 - i2;
+          p3 = v2 * (1 - s3);
+          q = v2 * (1 - s3 * f2);
+          t2 = v2 * (1 - s3 * (1 - f2));
+          switch (i2) {
+            case 0:
+              ref = [v2, t2, p3], r3 = ref[0], g2 = ref[1], b = ref[2];
+              break;
+            case 1:
+              ref1 = [q, v2, p3], r3 = ref1[0], g2 = ref1[1], b = ref1[2];
+              break;
+            case 2:
+              ref2 = [p3, v2, t2], r3 = ref2[0], g2 = ref2[1], b = ref2[2];
+              break;
+            case 3:
+              ref3 = [p3, q, v2], r3 = ref3[0], g2 = ref3[1], b = ref3[2];
+              break;
+            case 4:
+              ref4 = [t2, p3, v2], r3 = ref4[0], g2 = ref4[1], b = ref4[2];
+              break;
+            case 5:
+              ref5 = [v2, p3, q], r3 = ref5[0], g2 = ref5[1], b = ref5[2];
+          }
+        }
+        return [r3, g2, b, args.length > 3 ? args[3] : 1];
+      };
+      rgb2hsv = function() {
+        var b, delta, g2, h2, min, r3, ref, s3, v2;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        min = Math.min(r3, g2, b);
+        max = Math.max(r3, g2, b);
+        delta = max - min;
+        v2 = max / 255;
+        if (max === 0) {
+          h2 = Number.NaN;
+          s3 = 0;
+        } else {
+          s3 = delta / max;
+          if (r3 === max) {
+            h2 = (g2 - b) / delta;
+          }
+          if (g2 === max) {
+            h2 = 2 + (b - r3) / delta;
+          }
+          if (b === max) {
+            h2 = 4 + (r3 - g2) / delta;
+          }
+          h2 *= 60;
+          if (h2 < 0) {
+            h2 += 360;
+          }
+        }
+        return [h2, s3, v2];
+      };
+      chroma2.hsv = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["hsv"]), function() {
+        });
+      };
+      _input.hsv = hsv2rgb;
+      Color2.prototype.hsv = function() {
+        return rgb2hsv(this._rgb);
+      };
+      num2rgb = function(num) {
+        var b, g2, r3;
+        if (type(num) === "number" && num >= 0 && num <= 16777215) {
+          r3 = num >> 16;
+          g2 = num >> 8 & 255;
+          b = num & 255;
+          return [r3, g2, b, 1];
+        }
+        console.warn("unknown num color: " + num);
+        return [0, 0, 0, 1];
+      };
+      rgb2num = function() {
+        var b, g2, r3, ref;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        return (r3 << 16) + (g2 << 8) + b;
+      };
+      chroma2.num = function(num) {
+        return new Color2(num, "num");
+      };
+      Color2.prototype.num = function(mode) {
+        if (mode == null) {
+          mode = "rgb";
+        }
+        return rgb2num(this._rgb, mode);
+      };
+      _input.num = num2rgb;
+      _guess_formats.push({
+        p: 1,
+        test: function(n) {
+          if (arguments.length === 1 && type(n) === "number" && n >= 0 && n <= 16777215) {
+            return "num";
+          }
+        }
+      });
+      hcg2rgb = function() {
+        var _c, _g, args, b, c2, f2, g2, h2, i2, p3, q, r3, ref, ref1, ref2, ref3, ref4, ref5, t2, v2;
+        args = unpack(arguments);
+        h2 = args[0], c2 = args[1], _g = args[2];
+        c2 = c2 / 100;
+        g2 = g2 / 100 * 255;
+        _c = c2 * 255;
+        if (c2 === 0) {
+          r3 = g2 = b = _g;
+        } else {
+          if (h2 === 360) {
+            h2 = 0;
+          }
+          if (h2 > 360) {
+            h2 -= 360;
+          }
+          if (h2 < 0) {
+            h2 += 360;
+          }
+          h2 /= 60;
+          i2 = floor(h2);
+          f2 = h2 - i2;
+          p3 = _g * (1 - c2);
+          q = p3 + _c * (1 - f2);
+          t2 = p3 + _c * f2;
+          v2 = p3 + _c;
+          switch (i2) {
+            case 0:
+              ref = [v2, t2, p3], r3 = ref[0], g2 = ref[1], b = ref[2];
+              break;
+            case 1:
+              ref1 = [q, v2, p3], r3 = ref1[0], g2 = ref1[1], b = ref1[2];
+              break;
+            case 2:
+              ref2 = [p3, v2, t2], r3 = ref2[0], g2 = ref2[1], b = ref2[2];
+              break;
+            case 3:
+              ref3 = [p3, q, v2], r3 = ref3[0], g2 = ref3[1], b = ref3[2];
+              break;
+            case 4:
+              ref4 = [t2, p3, v2], r3 = ref4[0], g2 = ref4[1], b = ref4[2];
+              break;
+            case 5:
+              ref5 = [v2, p3, q], r3 = ref5[0], g2 = ref5[1], b = ref5[2];
+          }
+        }
+        return [r3, g2, b, args.length > 3 ? args[3] : 1];
+      };
+      rgb2hcg = function() {
+        var _g, b, c2, delta, g2, h2, min, r3, ref;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        min = Math.min(r3, g2, b);
+        max = Math.max(r3, g2, b);
+        delta = max - min;
+        c2 = delta * 100 / 255;
+        _g = min / (255 - delta) * 100;
+        if (delta === 0) {
+          h2 = Number.NaN;
+        } else {
+          if (r3 === max) {
+            h2 = (g2 - b) / delta;
+          }
+          if (g2 === max) {
+            h2 = 2 + (b - r3) / delta;
+          }
+          if (b === max) {
+            h2 = 4 + (r3 - g2) / delta;
+          }
+          h2 *= 60;
+          if (h2 < 0) {
+            h2 += 360;
+          }
+        }
+        return [h2, c2, _g];
+      };
+      chroma2.hcg = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["hcg"]), function() {
+        });
+      };
+      _input.hcg = hcg2rgb;
+      Color2.prototype.hcg = function() {
+        return rgb2hcg(this._rgb);
+      };
+      css2rgb = function(css13) {
+        var aa, ab, hsl, i2, m4, o, rgb, w;
+        css13 = css13.toLowerCase();
+        if (chroma2.colors != null && chroma2.colors[css13]) {
+          return hex2rgb(chroma2.colors[css13]);
+        }
+        if (m4 = css13.match(/rgb\(\s*(\-?\d+),\s*(\-?\d+)\s*,\s*(\-?\d+)\s*\)/)) {
+          rgb = m4.slice(1, 4);
+          for (i2 = o = 0; o <= 2; i2 = ++o) {
+            rgb[i2] = +rgb[i2];
+          }
+          rgb[3] = 1;
+        } else if (m4 = css13.match(/rgba\(\s*(\-?\d+),\s*(\-?\d+)\s*,\s*(\-?\d+)\s*,\s*([01]|[01]?\.\d+)\)/)) {
+          rgb = m4.slice(1, 5);
+          for (i2 = w = 0; w <= 3; i2 = ++w) {
+            rgb[i2] = +rgb[i2];
+          }
+        } else if (m4 = css13.match(/rgb\(\s*(\-?\d+(?:\.\d+)?)%,\s*(\-?\d+(?:\.\d+)?)%\s*,\s*(\-?\d+(?:\.\d+)?)%\s*\)/)) {
+          rgb = m4.slice(1, 4);
+          for (i2 = aa = 0; aa <= 2; i2 = ++aa) {
+            rgb[i2] = round(rgb[i2] * 2.55);
+          }
+          rgb[3] = 1;
+        } else if (m4 = css13.match(/rgba\(\s*(\-?\d+(?:\.\d+)?)%,\s*(\-?\d+(?:\.\d+)?)%\s*,\s*(\-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)/)) {
+          rgb = m4.slice(1, 5);
+          for (i2 = ab = 0; ab <= 2; i2 = ++ab) {
+            rgb[i2] = round(rgb[i2] * 2.55);
+          }
+          rgb[3] = +rgb[3];
+        } else if (m4 = css13.match(/hsl\(\s*(\-?\d+(?:\.\d+)?),\s*(\-?\d+(?:\.\d+)?)%\s*,\s*(\-?\d+(?:\.\d+)?)%\s*\)/)) {
+          hsl = m4.slice(1, 4);
+          hsl[1] *= 0.01;
+          hsl[2] *= 0.01;
+          rgb = hsl2rgb(hsl);
+          rgb[3] = 1;
+        } else if (m4 = css13.match(/hsla\(\s*(\-?\d+(?:\.\d+)?),\s*(\-?\d+(?:\.\d+)?)%\s*,\s*(\-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)/)) {
+          hsl = m4.slice(1, 4);
+          hsl[1] *= 0.01;
+          hsl[2] *= 0.01;
+          rgb = hsl2rgb(hsl);
+          rgb[3] = +m4[4];
+        }
+        return rgb;
+      };
+      rgb2css = function(rgba) {
+        var mode;
+        mode = rgba[3] < 1 ? "rgba" : "rgb";
+        if (mode === "rgb") {
+          return mode + "(" + rgba.slice(0, 3).map(round).join(",") + ")";
+        } else if (mode === "rgba") {
+          return mode + "(" + rgba.slice(0, 3).map(round).join(",") + "," + rgba[3] + ")";
+        } else {
+        }
+      };
+      rnd = function(a2) {
+        return round(a2 * 100) / 100;
+      };
+      hsl2css = function(hsl, alpha) {
+        var mode;
+        mode = alpha < 1 ? "hsla" : "hsl";
+        hsl[0] = rnd(hsl[0] || 0);
+        hsl[1] = rnd(hsl[1] * 100) + "%";
+        hsl[2] = rnd(hsl[2] * 100) + "%";
+        if (mode === "hsla") {
+          hsl[3] = alpha;
+        }
+        return mode + "(" + hsl.join(",") + ")";
+      };
+      _input.css = function(h2) {
+        return css2rgb(h2);
+      };
+      chroma2.css = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["css"]), function() {
+        });
+      };
+      Color2.prototype.css = function(mode) {
+        if (mode == null) {
+          mode = "rgb";
+        }
+        if (mode.slice(0, 3) === "rgb") {
+          return rgb2css(this._rgb);
+        } else if (mode.slice(0, 3) === "hsl") {
+          return hsl2css(this.hsl(), this.alpha());
+        }
+      };
+      _input.named = function(name) {
+        return hex2rgb(w3cx11[name]);
+      };
+      _guess_formats.push({
+        p: 5,
+        test: function(n) {
+          if (arguments.length === 1 && w3cx11[n] != null) {
+            return "named";
+          }
+        }
+      });
+      Color2.prototype.name = function(n) {
+        var h2, k;
+        if (arguments.length) {
+          if (w3cx11[n]) {
+            this._rgb = hex2rgb(w3cx11[n]);
+          }
+          this._rgb[3] = 1;
+          this;
+        }
+        h2 = this.hex("rgb");
+        for (k in w3cx11) {
+          if (h2 === w3cx11[k]) {
+            return k;
+          }
+        }
+        return h2;
+      };
+      lch2lab = function() {
+        var c2, h2, l4, ref;
+        ref = unpack(arguments), l4 = ref[0], c2 = ref[1], h2 = ref[2];
+        h2 = h2 * DEG2RAD;
+        return [l4, cos(h2) * c2, sin(h2) * c2];
+      };
+      lch2rgb = function() {
+        var L3, a2, args, b, c2, g2, h2, l4, r3, ref, ref1;
+        args = unpack(arguments);
+        l4 = args[0], c2 = args[1], h2 = args[2];
+        ref = lch2lab(l4, c2, h2), L3 = ref[0], a2 = ref[1], b = ref[2];
+        ref1 = lab2rgb(L3, a2, b), r3 = ref1[0], g2 = ref1[1], b = ref1[2];
+        return [r3, g2, b, args.length > 3 ? args[3] : 1];
+      };
+      lab2lch = function() {
+        var a2, b, c2, h2, l4, ref;
+        ref = unpack(arguments), l4 = ref[0], a2 = ref[1], b = ref[2];
+        c2 = sqrt(a2 * a2 + b * b);
+        h2 = (atan2(b, a2) * RAD2DEG + 360) % 360;
+        if (round(c2 * 1e4) === 0) {
+          h2 = Number.NaN;
+        }
+        return [l4, c2, h2];
+      };
+      rgb2lch = function() {
+        var a2, b, g2, l4, r3, ref, ref1;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        ref1 = rgb2lab(r3, g2, b), l4 = ref1[0], a2 = ref1[1], b = ref1[2];
+        return lab2lch(l4, a2, b);
+      };
+      chroma2.lch = function() {
+        var args;
+        args = unpack(arguments);
+        return new Color2(args, "lch");
+      };
+      chroma2.hcl = function() {
+        var args;
+        args = unpack(arguments);
+        return new Color2(args, "hcl");
+      };
+      _input.lch = lch2rgb;
+      _input.hcl = function() {
+        var c2, h2, l4, ref;
+        ref = unpack(arguments), h2 = ref[0], c2 = ref[1], l4 = ref[2];
+        return lch2rgb([l4, c2, h2]);
+      };
+      Color2.prototype.lch = function() {
+        return rgb2lch(this._rgb);
+      };
+      Color2.prototype.hcl = function() {
+        return rgb2lch(this._rgb).reverse();
+      };
+      rgb2cmyk = function(mode) {
+        var b, c2, f2, g2, k, m4, r3, ref, y2;
+        if (mode == null) {
+          mode = "rgb";
+        }
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        r3 = r3 / 255;
+        g2 = g2 / 255;
+        b = b / 255;
+        k = 1 - Math.max(r3, Math.max(g2, b));
+        f2 = k < 1 ? 1 / (1 - k) : 0;
+        c2 = (1 - r3 - k) * f2;
+        m4 = (1 - g2 - k) * f2;
+        y2 = (1 - b - k) * f2;
+        return [c2, m4, y2, k];
+      };
+      cmyk2rgb = function() {
+        var alpha, args, b, c2, g2, k, m4, r3, y2;
+        args = unpack(arguments);
+        c2 = args[0], m4 = args[1], y2 = args[2], k = args[3];
+        alpha = args.length > 4 ? args[4] : 1;
+        if (k === 1) {
+          return [0, 0, 0, alpha];
+        }
+        r3 = c2 >= 1 ? 0 : 255 * (1 - c2) * (1 - k);
+        g2 = m4 >= 1 ? 0 : 255 * (1 - m4) * (1 - k);
+        b = y2 >= 1 ? 0 : 255 * (1 - y2) * (1 - k);
+        return [r3, g2, b, alpha];
+      };
+      _input.cmyk = function() {
+        return cmyk2rgb(unpack(arguments));
+      };
+      chroma2.cmyk = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["cmyk"]), function() {
+        });
+      };
+      Color2.prototype.cmyk = function() {
+        return rgb2cmyk(this._rgb);
+      };
+      _input.gl = function() {
+        var i2, k, o, rgb, v2;
+        rgb = function() {
+          var ref, results;
+          ref = unpack(arguments);
+          results = [];
+          for (k in ref) {
+            v2 = ref[k];
+            results.push(v2);
+          }
+          return results;
+        }.apply(this, arguments);
+        for (i2 = o = 0; o <= 2; i2 = ++o) {
+          rgb[i2] *= 255;
+        }
+        return rgb;
+      };
+      chroma2.gl = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["gl"]), function() {
+        });
+      };
+      Color2.prototype.gl = function() {
+        var rgb;
+        rgb = this._rgb;
+        return [rgb[0] / 255, rgb[1] / 255, rgb[2] / 255, rgb[3]];
+      };
+      rgb2luminance = function(r3, g2, b) {
+        var ref;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        r3 = luminance_x(r3);
+        g2 = luminance_x(g2);
+        b = luminance_x(b);
+        return 0.2126 * r3 + 0.7152 * g2 + 0.0722 * b;
+      };
+      luminance_x = function(x2) {
+        x2 /= 255;
+        if (x2 <= 0.03928) {
+          return x2 / 12.92;
+        } else {
+          return pow((x2 + 0.055) / 1.055, 2.4);
+        }
+      };
+      interpolate_rgb = function(col1, col2, f2, m4) {
+        var xyz0, xyz1;
+        xyz0 = col1._rgb;
+        xyz1 = col2._rgb;
+        return new Color2(xyz0[0] + f2 * (xyz1[0] - xyz0[0]), xyz0[1] + f2 * (xyz1[1] - xyz0[1]), xyz0[2] + f2 * (xyz1[2] - xyz0[2]), m4);
+      };
+      _interpolators.push(["rgb", interpolate_rgb]);
+      Color2.prototype.luminance = function(lum, mode) {
+        var cur_lum, eps, max_iter, rgba, test;
+        if (mode == null) {
+          mode = "rgb";
+        }
+        if (!arguments.length) {
+          return rgb2luminance(this._rgb);
+        }
+        rgba = this._rgb;
+        if (lum === 0) {
+          rgba = [0, 0, 0, this._rgb[3]];
+        } else if (lum === 1) {
+          rgba = [255, 255, 255, this[3]];
+        } else {
+          cur_lum = rgb2luminance(this._rgb);
+          eps = 1e-7;
+          max_iter = 20;
+          test = function(l4, h2) {
+            var lm, m4;
+            m4 = l4.interpolate(h2, 0.5, mode);
+            lm = m4.luminance();
+            if (Math.abs(lum - lm) < eps || !max_iter--) {
+              return m4;
+            }
+            if (lm > lum) {
+              return test(l4, m4);
+            }
+            return test(m4, h2);
+          };
+          if (cur_lum > lum) {
+            rgba = test(chroma2("black"), this).rgba();
+          } else {
+            rgba = test(this, chroma2("white")).rgba();
+          }
+        }
+        return chroma2(rgba).alpha(this.alpha());
+      };
+      temperature2rgb = function(kelvin) {
+        var b, g2, r3, temp;
+        temp = kelvin / 100;
+        if (temp < 66) {
+          r3 = 255;
+          g2 = -155.25485562709179 - 0.44596950469579133 * (g2 = temp - 2) + 104.49216199393888 * log(g2);
+          b = temp < 20 ? 0 : -254.76935184120902 + 0.8274096064007395 * (b = temp - 10) + 115.67994401066147 * log(b);
+        } else {
+          r3 = 351.97690566805693 + 0.114206453784165 * (r3 = temp - 55) - 40.25366309332127 * log(r3);
+          g2 = 325.4494125711974 + 0.07943456536662342 * (g2 = temp - 50) - 28.0852963507957 * log(g2);
+          b = 255;
+        }
+        return [r3, g2, b];
+      };
+      rgb2temperature = function() {
+        var b, eps, g2, maxTemp, minTemp, r3, ref, rgb, temp;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        minTemp = 1e3;
+        maxTemp = 4e4;
+        eps = 0.4;
+        while (maxTemp - minTemp > eps) {
+          temp = (maxTemp + minTemp) * 0.5;
+          rgb = temperature2rgb(temp);
+          if (rgb[2] / rgb[0] >= b / r3) {
+            maxTemp = temp;
+          } else {
+            minTemp = temp;
+          }
+        }
+        return round(temp);
+      };
+      chroma2.temperature = chroma2.kelvin = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["temperature"]), function() {
+        });
+      };
+      _input.temperature = _input.kelvin = _input.K = temperature2rgb;
+      Color2.prototype.temperature = function() {
+        return rgb2temperature(this._rgb);
+      };
+      Color2.prototype.kelvin = Color2.prototype.temperature;
+      chroma2.contrast = function(a2, b) {
+        var l1, l22, ref, ref1;
+        if ((ref = type(a2)) === "string" || ref === "number") {
+          a2 = new Color2(a2);
+        }
+        if ((ref1 = type(b)) === "string" || ref1 === "number") {
+          b = new Color2(b);
+        }
+        l1 = a2.luminance();
+        l22 = b.luminance();
+        if (l1 > l22) {
+          return (l1 + 0.05) / (l22 + 0.05);
+        } else {
+          return (l22 + 0.05) / (l1 + 0.05);
+        }
+      };
+      chroma2.distance = function(a2, b, mode) {
+        var d2, i2, l1, l22, ref, ref1, sum_sq;
+        if (mode == null) {
+          mode = "lab";
+        }
+        if ((ref = type(a2)) === "string" || ref === "number") {
+          a2 = new Color2(a2);
+        }
+        if ((ref1 = type(b)) === "string" || ref1 === "number") {
+          b = new Color2(b);
+        }
+        l1 = a2.get(mode);
+        l22 = b.get(mode);
+        sum_sq = 0;
+        for (i2 in l1) {
+          d2 = (l1[i2] || 0) - (l22[i2] || 0);
+          sum_sq += d2 * d2;
+        }
+        return Math.sqrt(sum_sq);
+      };
+      chroma2.deltaE = function(a2, b, L3, C2) {
+        var L1, L22, a1, a22, b1, b2, c1, c2, c4, dH2, delA, delB, delC, delL, f2, h1, ref, ref1, ref2, ref3, sc, sh, sl, t2, v1, v2, v3;
+        if (L3 == null) {
+          L3 = 1;
+        }
+        if (C2 == null) {
+          C2 = 1;
+        }
+        if ((ref = type(a2)) === "string" || ref === "number") {
+          a2 = new Color2(a2);
+        }
+        if ((ref1 = type(b)) === "string" || ref1 === "number") {
+          b = new Color2(b);
+        }
+        ref2 = a2.lab(), L1 = ref2[0], a1 = ref2[1], b1 = ref2[2];
+        ref3 = b.lab(), L22 = ref3[0], a22 = ref3[1], b2 = ref3[2];
+        c1 = sqrt(a1 * a1 + b1 * b1);
+        c2 = sqrt(a22 * a22 + b2 * b2);
+        sl = L1 < 16 ? 0.511 : 0.040975 * L1 / (1 + 0.01765 * L1);
+        sc = 0.0638 * c1 / (1 + 0.0131 * c1) + 0.638;
+        h1 = c1 < 1e-6 ? 0 : atan2(b1, a1) * 180 / PI;
+        while (h1 < 0) {
+          h1 += 360;
+        }
+        while (h1 >= 360) {
+          h1 -= 360;
+        }
+        t2 = h1 >= 164 && h1 <= 345 ? 0.56 + abs(0.2 * cos(PI * (h1 + 168) / 180)) : 0.36 + abs(0.4 * cos(PI * (h1 + 35) / 180));
+        c4 = c1 * c1 * c1 * c1;
+        f2 = sqrt(c4 / (c4 + 1900));
+        sh = sc * (f2 * t2 + 1 - f2);
+        delL = L1 - L22;
+        delC = c1 - c2;
+        delA = a1 - a22;
+        delB = b1 - b2;
+        dH2 = delA * delA + delB * delB - delC * delC;
+        v1 = delL / (L3 * sl);
+        v2 = delC / (C2 * sc);
+        v3 = sh;
+        return sqrt(v1 * v1 + v2 * v2 + dH2 / (v3 * v3));
+      };
+      Color2.prototype.get = function(modechan) {
+        var channel, i2, me, mode, ref, src2;
+        me = this;
+        ref = modechan.split("."), mode = ref[0], channel = ref[1];
+        src2 = me[mode]();
+        if (channel) {
+          i2 = mode.indexOf(channel);
+          if (i2 > -1) {
+            return src2[i2];
+          } else {
+            return console.warn("unknown channel " + channel + " in mode " + mode);
+          }
+        } else {
+          return src2;
+        }
+      };
+      Color2.prototype.set = function(modechan, value) {
+        var channel, i2, me, mode, ref, src2;
+        me = this;
+        ref = modechan.split("."), mode = ref[0], channel = ref[1];
+        if (channel) {
+          src2 = me[mode]();
+          i2 = mode.indexOf(channel);
+          if (i2 > -1) {
+            if (type(value) === "string") {
+              switch (value.charAt(0)) {
+                case "+":
+                  src2[i2] += +value;
+                  break;
+                case "-":
+                  src2[i2] += +value;
+                  break;
+                case "*":
+                  src2[i2] *= +value.substr(1);
+                  break;
+                case "/":
+                  src2[i2] /= +value.substr(1);
+                  break;
+                default:
+                  src2[i2] = +value;
+              }
+            } else {
+              src2[i2] = value;
+            }
+          } else {
+            console.warn("unknown channel " + channel + " in mode " + mode);
+          }
+        } else {
+          src2 = value;
+        }
+        return chroma2(src2, mode).alpha(me.alpha());
+      };
+      Color2.prototype.clipped = function() {
+        return this._rgb._clipped || false;
+      };
+      Color2.prototype.alpha = function(a2) {
+        if (arguments.length) {
+          return chroma2.rgb([this._rgb[0], this._rgb[1], this._rgb[2], a2]);
+        }
+        return this._rgb[3];
+      };
+      Color2.prototype.darken = function(amount) {
+        var lab, me;
+        if (amount == null) {
+          amount = 1;
+        }
+        me = this;
+        lab = me.lab();
+        lab[0] -= LAB_CONSTANTS.Kn * amount;
+        return chroma2.lab(lab).alpha(me.alpha());
+      };
+      Color2.prototype.brighten = function(amount) {
+        if (amount == null) {
+          amount = 1;
+        }
+        return this.darken(-amount);
+      };
+      Color2.prototype.darker = Color2.prototype.darken;
+      Color2.prototype.brighter = Color2.prototype.brighten;
+      Color2.prototype.saturate = function(amount) {
+        var lch, me;
+        if (amount == null) {
+          amount = 1;
+        }
+        me = this;
+        lch = me.lch();
+        lch[1] += amount * LAB_CONSTANTS.Kn;
+        if (lch[1] < 0) {
+          lch[1] = 0;
+        }
+        return chroma2.lch(lch).alpha(me.alpha());
+      };
+      Color2.prototype.desaturate = function(amount) {
+        if (amount == null) {
+          amount = 1;
+        }
+        return this.saturate(-amount);
+      };
+      Color2.prototype.premultiply = function() {
+        var a2, rgb;
+        rgb = this.rgb();
+        a2 = this.alpha();
+        return chroma2(rgb[0] * a2, rgb[1] * a2, rgb[2] * a2, a2);
+      };
+      blend = function(bottom, top, mode) {
+        if (!blend[mode]) {
+          throw "unknown blend mode " + mode;
+        }
+        return blend[mode](bottom, top);
+      };
+      blend_f = function(f2) {
+        return function(bottom, top) {
+          var c0, c1;
+          c0 = chroma2(top).rgb();
+          c1 = chroma2(bottom).rgb();
+          return chroma2(f2(c0, c1), "rgb");
+        };
+      };
+      each2 = function(f2) {
+        return function(c0, c1) {
+          var i2, o, out;
+          out = [];
+          for (i2 = o = 0; o <= 3; i2 = ++o) {
+            out[i2] = f2(c0[i2], c1[i2]);
+          }
+          return out;
+        };
+      };
+      normal = function(a2, b) {
+        return a2;
+      };
+      multiply = function(a2, b) {
+        return a2 * b / 255;
+      };
+      darken = function(a2, b) {
+        if (a2 > b) {
+          return b;
+        } else {
+          return a2;
+        }
+      };
+      lighten = function(a2, b) {
+        if (a2 > b) {
+          return a2;
+        } else {
+          return b;
+        }
+      };
+      screen = function(a2, b) {
+        return 255 * (1 - (1 - a2 / 255) * (1 - b / 255));
+      };
+      overlay = function(a2, b) {
+        if (b < 128) {
+          return 2 * a2 * b / 255;
+        } else {
+          return 255 * (1 - 2 * (1 - a2 / 255) * (1 - b / 255));
+        }
+      };
+      burn = function(a2, b) {
+        return 255 * (1 - (1 - b / 255) / (a2 / 255));
+      };
+      dodge = function(a2, b) {
+        if (a2 === 255) {
+          return 255;
+        }
+        a2 = 255 * (b / 255) / (1 - a2 / 255);
+        if (a2 > 255) {
+          return 255;
+        } else {
+          return a2;
+        }
+      };
+      blend.normal = blend_f(each2(normal));
+      blend.multiply = blend_f(each2(multiply));
+      blend.screen = blend_f(each2(screen));
+      blend.overlay = blend_f(each2(overlay));
+      blend.darken = blend_f(each2(darken));
+      blend.lighten = blend_f(each2(lighten));
+      blend.dodge = blend_f(each2(dodge));
+      blend.burn = blend_f(each2(burn));
+      chroma2.blend = blend;
+      chroma2.analyze = function(data) {
+        var len, o, r3, val;
+        r3 = {
+          min: Number.MAX_VALUE,
+          max: Number.MAX_VALUE * -1,
+          sum: 0,
+          values: [],
+          count: 0
+        };
+        for (o = 0, len = data.length; o < len; o++) {
+          val = data[o];
+          if (val != null && !isNaN(val)) {
+            r3.values.push(val);
+            r3.sum += val;
+            if (val < r3.min) {
+              r3.min = val;
+            }
+            if (val > r3.max) {
+              r3.max = val;
+            }
+            r3.count += 1;
+          }
+        }
+        r3.domain = [r3.min, r3.max];
+        r3.limits = function(mode, num) {
+          return chroma2.limits(r3, mode, num);
+        };
+        return r3;
+      };
+      chroma2.scale = function(colors2, positions) {
+        var _classes, _colorCache, _colors, _correctLightness, _domain, _fixed, _gamma, _max, _min, _mode, _nacol, _out, _padding, _pos, _spread, _useCache, classifyValue, f2, getClass, getColor, resetCache, setColors, tmap;
+        _mode = "rgb";
+        _nacol = chroma2("#ccc");
+        _spread = 0;
+        _fixed = false;
+        _domain = [0, 1];
+        _pos = [];
+        _padding = [0, 0];
+        _classes = false;
+        _colors = [];
+        _out = false;
+        _min = 0;
+        _max = 1;
+        _correctLightness = false;
+        _colorCache = {};
+        _useCache = true;
+        _gamma = 1;
+        setColors = function(colors3) {
+          var c2, col, o, ref, ref1, w;
+          if (colors3 == null) {
+            colors3 = ["#fff", "#000"];
+          }
+          if (colors3 != null && type(colors3) === "string" && chroma2.brewer != null) {
+            colors3 = chroma2.brewer[colors3] || chroma2.brewer[colors3.toLowerCase()] || colors3;
+          }
+          if (type(colors3) === "array") {
+            if (colors3.length === 1) {
+              colors3 = [colors3[0], colors3[0]];
+            }
+            colors3 = colors3.slice(0);
+            for (c2 = o = 0, ref = colors3.length - 1; 0 <= ref ? o <= ref : o >= ref; c2 = 0 <= ref ? ++o : --o) {
+              col = colors3[c2];
+              if (type(col) === "string") {
+                colors3[c2] = chroma2(col);
+              }
+            }
+            _pos.length = 0;
+            for (c2 = w = 0, ref1 = colors3.length - 1; 0 <= ref1 ? w <= ref1 : w >= ref1; c2 = 0 <= ref1 ? ++w : --w) {
+              _pos.push(c2 / (colors3.length - 1));
+            }
+          }
+          resetCache();
+          return _colors = colors3;
+        };
+        getClass = function(value) {
+          var i2, n;
+          if (_classes != null) {
+            n = _classes.length - 1;
+            i2 = 0;
+            while (i2 < n && value >= _classes[i2]) {
+              i2++;
+            }
+            return i2 - 1;
+          }
+          return 0;
+        };
+        tmap = function(t2) {
+          return t2;
+        };
+        classifyValue = function(value) {
+          var i2, maxc, minc, n, val;
+          val = value;
+          if (_classes.length > 2) {
+            n = _classes.length - 1;
+            i2 = getClass(value);
+            minc = _classes[0] + (_classes[1] - _classes[0]) * (0 + _spread * 0.5);
+            maxc = _classes[n - 1] + (_classes[n] - _classes[n - 1]) * (1 - _spread * 0.5);
+            val = _min + (_classes[i2] + (_classes[i2 + 1] - _classes[i2]) * 0.5 - minc) / (maxc - minc) * (_max - _min);
+          }
+          return val;
+        };
+        getColor = function(val, bypassMap) {
+          var c2, col, i2, k, o, p3, ref, t2;
+          if (bypassMap == null) {
+            bypassMap = false;
+          }
+          if (isNaN(val) || val === null) {
+            return _nacol;
+          }
+          if (!bypassMap) {
+            if (_classes && _classes.length > 2) {
+              c2 = getClass(val);
+              t2 = c2 / (_classes.length - 2);
+            } else if (_max !== _min) {
+              t2 = (val - _min) / (_max - _min);
+            } else {
+              t2 = 1;
+            }
+          } else {
+            t2 = val;
+          }
+          if (!bypassMap) {
+            t2 = tmap(t2);
+          }
+          if (_gamma !== 1) {
+            t2 = pow(t2, _gamma);
+          }
+          t2 = _padding[0] + t2 * (1 - _padding[0] - _padding[1]);
+          t2 = Math.min(1, Math.max(0, t2));
+          k = Math.floor(t2 * 1e4);
+          if (_useCache && _colorCache[k]) {
+            col = _colorCache[k];
+          } else {
+            if (type(_colors) === "array") {
+              for (i2 = o = 0, ref = _pos.length - 1; 0 <= ref ? o <= ref : o >= ref; i2 = 0 <= ref ? ++o : --o) {
+                p3 = _pos[i2];
+                if (t2 <= p3) {
+                  col = _colors[i2];
+                  break;
+                }
+                if (t2 >= p3 && i2 === _pos.length - 1) {
+                  col = _colors[i2];
+                  break;
+                }
+                if (t2 > p3 && t2 < _pos[i2 + 1]) {
+                  t2 = (t2 - p3) / (_pos[i2 + 1] - p3);
+                  col = chroma2.interpolate(_colors[i2], _colors[i2 + 1], t2, _mode);
+                  break;
+                }
+              }
+            } else if (type(_colors) === "function") {
+              col = _colors(t2);
+            }
+            if (_useCache) {
+              _colorCache[k] = col;
+            }
+          }
+          return col;
+        };
+        resetCache = function() {
+          return _colorCache = {};
+        };
+        setColors(colors2);
+        f2 = function(v2) {
+          var c2;
+          c2 = chroma2(getColor(v2));
+          if (_out && c2[_out]) {
+            return c2[_out]();
+          } else {
+            return c2;
+          }
+        };
+        f2.classes = function(classes) {
+          var d2;
+          if (classes != null) {
+            if (type(classes) === "array") {
+              _classes = classes;
+              _domain = [classes[0], classes[classes.length - 1]];
+            } else {
+              d2 = chroma2.analyze(_domain);
+              if (classes === 0) {
+                _classes = [d2.min, d2.max];
+              } else {
+                _classes = chroma2.limits(d2, "e", classes);
+              }
+            }
+            return f2;
+          }
+          return _classes;
+        };
+        f2.domain = function(domain) {
+          var c2, d2, k, len, o, ref, w;
+          if (!arguments.length) {
+            return _domain;
+          }
+          _min = domain[0];
+          _max = domain[domain.length - 1];
+          _pos = [];
+          k = _colors.length;
+          if (domain.length === k && _min !== _max) {
+            for (o = 0, len = domain.length; o < len; o++) {
+              d2 = domain[o];
+              _pos.push((d2 - _min) / (_max - _min));
+            }
+          } else {
+            for (c2 = w = 0, ref = k - 1; 0 <= ref ? w <= ref : w >= ref; c2 = 0 <= ref ? ++w : --w) {
+              _pos.push(c2 / (k - 1));
+            }
+          }
+          _domain = [_min, _max];
+          return f2;
+        };
+        f2.mode = function(_m) {
+          if (!arguments.length) {
+            return _mode;
+          }
+          _mode = _m;
+          resetCache();
+          return f2;
+        };
+        f2.range = function(colors3, _pos2) {
+          setColors(colors3, _pos2);
+          return f2;
+        };
+        f2.out = function(_o) {
+          _out = _o;
+          return f2;
+        };
+        f2.spread = function(val) {
+          if (!arguments.length) {
+            return _spread;
+          }
+          _spread = val;
+          return f2;
+        };
+        f2.correctLightness = function(v2) {
+          if (v2 == null) {
+            v2 = true;
+          }
+          _correctLightness = v2;
+          resetCache();
+          if (_correctLightness) {
+            tmap = function(t2) {
+              var L0, L1, L_actual, L_diff, L_ideal, max_iter, pol, t0, t1;
+              L0 = getColor(0, true).lab()[0];
+              L1 = getColor(1, true).lab()[0];
+              pol = L0 > L1;
+              L_actual = getColor(t2, true).lab()[0];
+              L_ideal = L0 + (L1 - L0) * t2;
+              L_diff = L_actual - L_ideal;
+              t0 = 0;
+              t1 = 1;
+              max_iter = 20;
+              while (Math.abs(L_diff) > 0.01 && max_iter-- > 0) {
+                (function() {
+                  if (pol) {
+                    L_diff *= -1;
+                  }
+                  if (L_diff < 0) {
+                    t0 = t2;
+                    t2 += (t1 - t2) * 0.5;
+                  } else {
+                    t1 = t2;
+                    t2 += (t0 - t2) * 0.5;
+                  }
+                  L_actual = getColor(t2, true).lab()[0];
+                  return L_diff = L_actual - L_ideal;
+                })();
+              }
+              return t2;
+            };
+          } else {
+            tmap = function(t2) {
+              return t2;
+            };
+          }
+          return f2;
+        };
+        f2.padding = function(p3) {
+          if (p3 != null) {
+            if (type(p3) === "number") {
+              p3 = [p3, p3];
+            }
+            _padding = p3;
+            return f2;
+          } else {
+            return _padding;
+          }
+        };
+        f2.colors = function(numColors2, out) {
+          var dd, dm, i2, o, ref, result2, results, samples, w;
+          if (arguments.length < 2) {
+            out = "hex";
+          }
+          result2 = [];
+          if (arguments.length === 0) {
+            result2 = _colors.slice(0);
+          } else if (numColors2 === 1) {
+            result2 = [f2(0.5)];
+          } else if (numColors2 > 1) {
+            dm = _domain[0];
+            dd = _domain[1] - dm;
+            result2 = function() {
+              results = [];
+              for (var o2 = 0; 0 <= numColors2 ? o2 < numColors2 : o2 > numColors2; 0 <= numColors2 ? o2++ : o2--) {
+                results.push(o2);
+              }
+              return results;
+            }.apply(this).map(function(i3) {
+              return f2(dm + i3 / (numColors2 - 1) * dd);
+            });
+          } else {
+            colors2 = [];
+            samples = [];
+            if (_classes && _classes.length > 2) {
+              for (i2 = w = 1, ref = _classes.length; 1 <= ref ? w < ref : w > ref; i2 = 1 <= ref ? ++w : --w) {
+                samples.push((_classes[i2 - 1] + _classes[i2]) * 0.5);
+              }
+            } else {
+              samples = _domain;
+            }
+            result2 = samples.map(function(v2) {
+              return f2(v2);
+            });
+          }
+          if (chroma2[out]) {
+            result2 = result2.map(function(c2) {
+              return c2[out]();
+            });
+          }
+          return result2;
+        };
+        f2.cache = function(c2) {
+          if (c2 != null) {
+            _useCache = c2;
+            return f2;
+          } else {
+            return _useCache;
+          }
+        };
+        f2.gamma = function(g2) {
+          if (g2 != null) {
+            _gamma = g2;
+            return f2;
+          } else {
+            return _gamma;
+          }
+        };
+        f2.nodata = function(d2) {
+          if (d2 != null) {
+            _nacol = chroma2(d2);
+            return f2;
+          } else {
+            return _nacol;
+          }
+        };
+        return f2;
+      };
+      if (chroma2.scales == null) {
+        chroma2.scales = {};
+      }
+      chroma2.scales.cool = function() {
+        return chroma2.scale([chroma2.hsl(180, 1, 0.9), chroma2.hsl(250, 0.7, 0.4)]);
+      };
+      chroma2.scales.hot = function() {
+        return chroma2.scale(["#000", "#f00", "#ff0", "#fff"], [0, 0.25, 0.75, 1]).mode("rgb");
+      };
+      chroma2.analyze = function(data, key, filter) {
+        var add, k, len, o, r3, val, visit2;
+        r3 = {
+          min: Number.MAX_VALUE,
+          max: Number.MAX_VALUE * -1,
+          sum: 0,
+          values: [],
+          count: 0
+        };
+        if (filter == null) {
+          filter = function() {
+            return true;
+          };
+        }
+        add = function(val2) {
+          if (val2 != null && !isNaN(val2)) {
+            r3.values.push(val2);
+            r3.sum += val2;
+            if (val2 < r3.min) {
+              r3.min = val2;
+            }
+            if (val2 > r3.max) {
+              r3.max = val2;
+            }
+            r3.count += 1;
+          }
+        };
+        visit2 = function(val2, k2) {
+          if (filter(val2, k2)) {
+            if (key != null && type(key) === "function") {
+              return add(key(val2));
+            } else if (key != null && type(key) === "string" || type(key) === "number") {
+              return add(val2[key]);
+            } else {
+              return add(val2);
+            }
+          }
+        };
+        if (type(data) === "array") {
+          for (o = 0, len = data.length; o < len; o++) {
+            val = data[o];
+            visit2(val);
+          }
+        } else {
+          for (k in data) {
+            val = data[k];
+            visit2(val, k);
+          }
+        }
+        r3.domain = [r3.min, r3.max];
+        r3.limits = function(mode, num) {
+          return chroma2.limits(r3, mode, num);
+        };
+        return r3;
+      };
+      chroma2.limits = function(data, mode, num) {
+        var aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, assignments, best, centroids, cluster, clusterSizes, dist, i2, j, kClusters, limits, max_log, min, min_log, mindist, n, nb_iters, newCentroids, o, p3, pb, pr, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, repeat, sum, tmpKMeansBreaks, v2, value, values, w;
+        if (mode == null) {
+          mode = "equal";
+        }
+        if (num == null) {
+          num = 7;
+        }
+        if (type(data) === "array") {
+          data = chroma2.analyze(data);
+        }
+        min = data.min;
+        max = data.max;
+        sum = data.sum;
+        values = data.values.sort(function(a2, b) {
+          return a2 - b;
+        });
+        if (num === 1) {
+          return [min, max];
+        }
+        limits = [];
+        if (mode.substr(0, 1) === "c") {
+          limits.push(min);
+          limits.push(max);
+        }
+        if (mode.substr(0, 1) === "e") {
+          limits.push(min);
+          for (i2 = o = 1, ref = num - 1; 1 <= ref ? o <= ref : o >= ref; i2 = 1 <= ref ? ++o : --o) {
+            limits.push(min + i2 / num * (max - min));
+          }
+          limits.push(max);
+        } else if (mode.substr(0, 1) === "l") {
+          if (min <= 0) {
+            throw "Logarithmic scales are only possible for values > 0";
+          }
+          min_log = Math.LOG10E * log(min);
+          max_log = Math.LOG10E * log(max);
+          limits.push(min);
+          for (i2 = w = 1, ref1 = num - 1; 1 <= ref1 ? w <= ref1 : w >= ref1; i2 = 1 <= ref1 ? ++w : --w) {
+            limits.push(pow(10, min_log + i2 / num * (max_log - min_log)));
+          }
+          limits.push(max);
+        } else if (mode.substr(0, 1) === "q") {
+          limits.push(min);
+          for (i2 = aa = 1, ref2 = num - 1; 1 <= ref2 ? aa <= ref2 : aa >= ref2; i2 = 1 <= ref2 ? ++aa : --aa) {
+            p3 = (values.length - 1) * i2 / num;
+            pb = floor(p3);
+            if (pb === p3) {
+              limits.push(values[pb]);
+            } else {
+              pr = p3 - pb;
+              limits.push(values[pb] * (1 - pr) + values[pb + 1] * pr);
+            }
+          }
+          limits.push(max);
+        } else if (mode.substr(0, 1) === "k") {
+          n = values.length;
+          assignments = new Array(n);
+          clusterSizes = new Array(num);
+          repeat = true;
+          nb_iters = 0;
+          centroids = null;
+          centroids = [];
+          centroids.push(min);
+          for (i2 = ab = 1, ref3 = num - 1; 1 <= ref3 ? ab <= ref3 : ab >= ref3; i2 = 1 <= ref3 ? ++ab : --ab) {
+            centroids.push(min + i2 / num * (max - min));
+          }
+          centroids.push(max);
+          while (repeat) {
+            for (j = ac = 0, ref4 = num - 1; 0 <= ref4 ? ac <= ref4 : ac >= ref4; j = 0 <= ref4 ? ++ac : --ac) {
+              clusterSizes[j] = 0;
+            }
+            for (i2 = ad = 0, ref5 = n - 1; 0 <= ref5 ? ad <= ref5 : ad >= ref5; i2 = 0 <= ref5 ? ++ad : --ad) {
+              value = values[i2];
+              mindist = Number.MAX_VALUE;
+              for (j = ae = 0, ref6 = num - 1; 0 <= ref6 ? ae <= ref6 : ae >= ref6; j = 0 <= ref6 ? ++ae : --ae) {
+                dist = abs(centroids[j] - value);
+                if (dist < mindist) {
+                  mindist = dist;
+                  best = j;
+                }
+              }
+              clusterSizes[best]++;
+              assignments[i2] = best;
+            }
+            newCentroids = new Array(num);
+            for (j = af = 0, ref7 = num - 1; 0 <= ref7 ? af <= ref7 : af >= ref7; j = 0 <= ref7 ? ++af : --af) {
+              newCentroids[j] = null;
+            }
+            for (i2 = ag = 0, ref8 = n - 1; 0 <= ref8 ? ag <= ref8 : ag >= ref8; i2 = 0 <= ref8 ? ++ag : --ag) {
+              cluster = assignments[i2];
+              if (newCentroids[cluster] === null) {
+                newCentroids[cluster] = values[i2];
+              } else {
+                newCentroids[cluster] += values[i2];
+              }
+            }
+            for (j = ah = 0, ref9 = num - 1; 0 <= ref9 ? ah <= ref9 : ah >= ref9; j = 0 <= ref9 ? ++ah : --ah) {
+              newCentroids[j] *= 1 / clusterSizes[j];
+            }
+            repeat = false;
+            for (j = ai = 0, ref10 = num - 1; 0 <= ref10 ? ai <= ref10 : ai >= ref10; j = 0 <= ref10 ? ++ai : --ai) {
+              if (newCentroids[j] !== centroids[i2]) {
+                repeat = true;
+                break;
+              }
+            }
+            centroids = newCentroids;
+            nb_iters++;
+            if (nb_iters > 200) {
+              repeat = false;
+            }
+          }
+          kClusters = {};
+          for (j = aj = 0, ref11 = num - 1; 0 <= ref11 ? aj <= ref11 : aj >= ref11; j = 0 <= ref11 ? ++aj : --aj) {
+            kClusters[j] = [];
+          }
+          for (i2 = ak = 0, ref12 = n - 1; 0 <= ref12 ? ak <= ref12 : ak >= ref12; i2 = 0 <= ref12 ? ++ak : --ak) {
+            cluster = assignments[i2];
+            kClusters[cluster].push(values[i2]);
+          }
+          tmpKMeansBreaks = [];
+          for (j = al = 0, ref13 = num - 1; 0 <= ref13 ? al <= ref13 : al >= ref13; j = 0 <= ref13 ? ++al : --al) {
+            tmpKMeansBreaks.push(kClusters[j][0]);
+            tmpKMeansBreaks.push(kClusters[j][kClusters[j].length - 1]);
+          }
+          tmpKMeansBreaks = tmpKMeansBreaks.sort(function(a2, b) {
+            return a2 - b;
+          });
+          limits.push(tmpKMeansBreaks[0]);
+          for (i2 = am = 1, ref14 = tmpKMeansBreaks.length - 1; am <= ref14; i2 = am += 2) {
+            v2 = tmpKMeansBreaks[i2];
+            if (!isNaN(v2) && limits.indexOf(v2) === -1) {
+              limits.push(v2);
+            }
+          }
+        }
+        return limits;
+      };
+      hsi2rgb = function(h2, s3, i2) {
+        var args, b, g2, r3;
+        args = unpack(arguments);
+        h2 = args[0], s3 = args[1], i2 = args[2];
+        if (isNaN(h2)) {
+          h2 = 0;
+        }
+        h2 /= 360;
+        if (h2 < 1 / 3) {
+          b = (1 - s3) / 3;
+          r3 = (1 + s3 * cos(TWOPI * h2) / cos(PITHIRD - TWOPI * h2)) / 3;
+          g2 = 1 - (b + r3);
+        } else if (h2 < 2 / 3) {
+          h2 -= 1 / 3;
+          r3 = (1 - s3) / 3;
+          g2 = (1 + s3 * cos(TWOPI * h2) / cos(PITHIRD - TWOPI * h2)) / 3;
+          b = 1 - (r3 + g2);
+        } else {
+          h2 -= 2 / 3;
+          g2 = (1 - s3) / 3;
+          b = (1 + s3 * cos(TWOPI * h2) / cos(PITHIRD - TWOPI * h2)) / 3;
+          r3 = 1 - (g2 + b);
+        }
+        r3 = limit(i2 * r3 * 3);
+        g2 = limit(i2 * g2 * 3);
+        b = limit(i2 * b * 3);
+        return [r3 * 255, g2 * 255, b * 255, args.length > 3 ? args[3] : 1];
+      };
+      rgb2hsi = function() {
+        var b, g2, h2, i2, min, r3, ref, s3;
+        ref = unpack(arguments), r3 = ref[0], g2 = ref[1], b = ref[2];
+        TWOPI = Math.PI * 2;
+        r3 /= 255;
+        g2 /= 255;
+        b /= 255;
+        min = Math.min(r3, g2, b);
+        i2 = (r3 + g2 + b) / 3;
+        s3 = 1 - min / i2;
+        if (s3 === 0) {
+          h2 = 0;
+        } else {
+          h2 = (r3 - g2 + (r3 - b)) / 2;
+          h2 /= Math.sqrt((r3 - g2) * (r3 - g2) + (r3 - b) * (g2 - b));
+          h2 = Math.acos(h2);
+          if (b > g2) {
+            h2 = TWOPI - h2;
+          }
+          h2 /= TWOPI;
+        }
+        return [h2 * 360, s3, i2];
+      };
+      chroma2.hsi = function() {
+        return function(func, args, ctor) {
+          ctor.prototype = func.prototype;
+          var child = new ctor(), result2 = func.apply(child, args);
+          return Object(result2) === result2 ? result2 : child;
+        }(Color2, slice.call(arguments).concat(["hsi"]), function() {
+        });
+      };
+      _input.hsi = hsi2rgb;
+      Color2.prototype.hsi = function() {
+        return rgb2hsi(this._rgb);
+      };
+      interpolate_hsx = function(col1, col2, f2, m4) {
+        var dh, hue, hue0, hue1, lbv, lbv0, lbv1, res, sat, sat0, sat1, xyz0, xyz1;
+        if (m4 === "hsl") {
+          xyz0 = col1.hsl();
+          xyz1 = col2.hsl();
+        } else if (m4 === "hsv") {
+          xyz0 = col1.hsv();
+          xyz1 = col2.hsv();
+        } else if (m4 === "hcg") {
+          xyz0 = col1.hcg();
+          xyz1 = col2.hcg();
+        } else if (m4 === "hsi") {
+          xyz0 = col1.hsi();
+          xyz1 = col2.hsi();
+        } else if (m4 === "lch" || m4 === "hcl") {
+          m4 = "hcl";
+          xyz0 = col1.hcl();
+          xyz1 = col2.hcl();
+        }
+        if (m4.substr(0, 1) === "h") {
+          hue0 = xyz0[0], sat0 = xyz0[1], lbv0 = xyz0[2];
+          hue1 = xyz1[0], sat1 = xyz1[1], lbv1 = xyz1[2];
+        }
+        if (!isNaN(hue0) && !isNaN(hue1)) {
+          if (hue1 > hue0 && hue1 - hue0 > 180) {
+            dh = hue1 - (hue0 + 360);
+          } else if (hue1 < hue0 && hue0 - hue1 > 180) {
+            dh = hue1 + 360 - hue0;
+          } else {
+            dh = hue1 - hue0;
+          }
+          hue = hue0 + f2 * dh;
+        } else if (!isNaN(hue0)) {
+          hue = hue0;
+          if ((lbv1 === 1 || lbv1 === 0) && m4 !== "hsv") {
+            sat = sat0;
+          }
+        } else if (!isNaN(hue1)) {
+          hue = hue1;
+          if ((lbv0 === 1 || lbv0 === 0) && m4 !== "hsv") {
+            sat = sat1;
+          }
+        } else {
+          hue = Number.NaN;
+        }
+        if (sat == null) {
+          sat = sat0 + f2 * (sat1 - sat0);
+        }
+        lbv = lbv0 + f2 * (lbv1 - lbv0);
+        return res = chroma2[m4](hue, sat, lbv);
+      };
+      _interpolators = _interpolators.concat(function() {
+        var len, o, ref, results;
+        ref = ["hsv", "hsl", "hsi", "hcl", "lch", "hcg"];
+        results = [];
+        for (o = 0, len = ref.length; o < len; o++) {
+          m3 = ref[o];
+          results.push([m3, interpolate_hsx]);
+        }
+        return results;
+      }());
+      interpolate_num = function(col1, col2, f2, m4) {
+        var n1, n2;
+        n1 = col1.num();
+        n2 = col2.num();
+        return chroma2.num(n1 + (n2 - n1) * f2, "num");
+      };
+      _interpolators.push(["num", interpolate_num]);
+      interpolate_lab = function(col1, col2, f2, m4) {
+        var res, xyz0, xyz1;
+        xyz0 = col1.lab();
+        xyz1 = col2.lab();
+        return res = new Color2(xyz0[0] + f2 * (xyz1[0] - xyz0[0]), xyz0[1] + f2 * (xyz1[1] - xyz0[1]), xyz0[2] + f2 * (xyz1[2] - xyz0[2]), m4);
+      };
+      _interpolators.push(["lab", interpolate_lab]);
+    }).call(exports);
+  }
+});
+
+// node_modules/bezier-easing/src/index.js
+var require_src = __commonJS({
+  "node_modules/bezier-easing/src/index.js"(exports, module2) {
+    init_shims();
+    var NEWTON_ITERATIONS = 4;
+    var NEWTON_MIN_SLOPE = 1e-3;
+    var SUBDIVISION_PRECISION = 1e-7;
+    var SUBDIVISION_MAX_ITERATIONS = 10;
+    var kSplineTableSize = 11;
+    var kSampleStepSize = 1 / (kSplineTableSize - 1);
+    var float32ArraySupported = typeof Float32Array === "function";
+    function A(aA1, aA2) {
+      return 1 - 3 * aA2 + 3 * aA1;
+    }
+    function B2(aA1, aA2) {
+      return 3 * aA2 - 6 * aA1;
+    }
+    function C2(aA1) {
+      return 3 * aA1;
+    }
+    function calcBezier(aT, aA1, aA2) {
+      return ((A(aA1, aA2) * aT + B2(aA1, aA2)) * aT + C2(aA1)) * aT;
+    }
+    function getSlope(aT, aA1, aA2) {
+      return 3 * A(aA1, aA2) * aT * aT + 2 * B2(aA1, aA2) * aT + C2(aA1);
+    }
+    function binarySubdivide(aX, aA, aB, mX1, mX2) {
+      var currentX, currentT, i2 = 0;
+      do {
+        currentT = aA + (aB - aA) / 2;
+        currentX = calcBezier(currentT, mX1, mX2) - aX;
+        if (currentX > 0) {
+          aB = currentT;
+        } else {
+          aA = currentT;
+        }
+      } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i2 < SUBDIVISION_MAX_ITERATIONS);
+      return currentT;
+    }
+    function newtonRaphsonIterate(aX, aGuessT, mX1, mX2) {
+      for (var i2 = 0; i2 < NEWTON_ITERATIONS; ++i2) {
+        var currentSlope = getSlope(aGuessT, mX1, mX2);
+        if (currentSlope === 0) {
+          return aGuessT;
+        }
+        var currentX = calcBezier(aGuessT, mX1, mX2) - aX;
+        aGuessT -= currentX / currentSlope;
+      }
+      return aGuessT;
+    }
+    function LinearEasing(x2) {
+      return x2;
+    }
+    module2.exports = function bezier2(mX1, mY1, mX2, mY2) {
+      if (!(0 <= mX1 && mX1 <= 1 && 0 <= mX2 && mX2 <= 1)) {
+        throw new Error("bezier x values must be in [0, 1] range");
+      }
+      if (mX1 === mY1 && mX2 === mY2) {
+        return LinearEasing;
+      }
+      var sampleValues = float32ArraySupported ? new Float32Array(kSplineTableSize) : new Array(kSplineTableSize);
+      for (var i2 = 0; i2 < kSplineTableSize; ++i2) {
+        sampleValues[i2] = calcBezier(i2 * kSampleStepSize, mX1, mX2);
+      }
+      function getTForX(aX) {
+        var intervalStart = 0;
+        var currentSample = 1;
+        var lastSample = kSplineTableSize - 1;
+        for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {
+          intervalStart += kSampleStepSize;
+        }
+        --currentSample;
+        var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);
+        var guessForT = intervalStart + dist * kSampleStepSize;
+        var initialSlope = getSlope(guessForT, mX1, mX2);
+        if (initialSlope >= NEWTON_MIN_SLOPE) {
+          return newtonRaphsonIterate(aX, guessForT, mX1, mX2);
+        } else if (initialSlope === 0) {
+          return guessForT;
+        } else {
+          return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2);
+        }
+      }
+      return function BezierEasing(x2) {
+        if (x2 === 0) {
+          return 0;
+        }
+        if (x2 === 1) {
+          return 1;
+        }
+        return calcBezier(getTForX(x2), mY1, mY2);
+      };
+    };
+  }
+});
+
+// .svelte-kit/output/server/chunks/color-3a6c0e97.js
+var color_3a6c0e97_exports = {};
+__export(color_3a6c0e97_exports, {
+  default: () => Color
+});
+function distribute(value, rangeA, rangeB) {
+  const [fromLow, fromHigh] = Array.from(rangeA);
+  const [toLow, toHigh] = Array.from(rangeB);
+  const result2 = toLow + (value - fromLow) / (fromHigh - fromLow) * (toHigh - toLow);
+  if (toLow < toHigh) {
+    if (result2 < toLow) {
+      return toLow;
+    }
+    if (result2 > toHigh) {
+      return toHigh;
+    }
+  } else {
+    if (result2 > toLow) {
+      return toLow;
+    }
+    if (result2 < toHigh) {
+      return toHigh;
+    }
+  }
+  return result2;
+}
+function generate({ specs }) {
+  function generateNumberOfSteps(curve, steps) {
+    var array = [];
+    for (var step in Array.from(Array(steps).keys())) {
+      const value = curve(step / (steps - 1));
+      array.push(value);
+    }
+    array.reverse();
+    return array;
+  }
+  var lum_array = generateNumberOfSteps(Curves[specs.lum_curve], specs.steps);
+  var sat_array = generateNumberOfSteps(Curves[specs.sat_curve], specs.steps);
+  var hue_array = generateNumberOfSteps(Curves[specs.hue_curve], specs.steps);
+  var lum_array_adjusted = [];
+  var sat_array_adjusted = [];
+  var hue_array_adjusted = [];
+  for (var index in lum_array) {
+    const step = lum_array[index];
+    lum_array_adjusted.push(distribute(step, [0, 1], [specs.lum_end * 0.01, specs.lum_start * 0.01]));
+  }
+  for (var index in sat_array) {
+    const step = sat_array[index];
+    var sat_step = distribute(step, [0, 1], [specs.sat_start * 0.01, specs.sat_end * 0.01]);
+    sat_step = sat_step * (specs.sat_rate * 0.01);
+    sat_array_adjusted.push(sat_step);
+  }
+  for (var index in hue_array) {
+    const step = hue_array[index];
+    hue_array_adjusted.push(distribute(step, [0, 1], [specs.hue_start, specs.hue_end]));
+  }
+  sat_array_adjusted.reverse();
+  hue_array_adjusted.reverse();
+  lum_array = lum_array_adjusted;
+  sat_array = sat_array_adjusted;
+  hue_array = hue_array_adjusted;
+  var colorMap = [];
+  for (var index in lum_array) {
+    lum_array[index];
+    var params = {
+      hue: hue_array[index],
+      saturation: sat_array[index],
+      luminosity: lum_array[index]
+    };
+    if (params.saturation > 1) {
+      params.saturation = 1;
+    }
+    var hex = (0, import_chroma_js.default)(import_chroma_js.default.hsv([params.hue, params.saturation, params.luminosity]));
+    (0, import_chroma_js.default)(import_chroma_js.default.hsv([params.hue, params.saturation, params.luminosity])).rgb();
+    const contrastWhite = import_chroma_js.default.contrast(hex, "white").toFixed(2);
+    const contrastBlack = import_chroma_js.default.contrast(hex, "black").toFixed(2);
+    var displayColor = "";
+    if (contrastWhite >= 4.5) {
+      displayColor = "white";
+    } else {
+      displayColor = "black";
+    }
+    var colorObj = {
+      hex: (0, import_chroma_js.default)(hex).hex(),
+      hue: (0, import_chroma_js.default)(hex).hsv()[0],
+      sat: (0, import_chroma_js.default)(hex).hsv()[1],
+      lum: (0, import_chroma_js.default)(hex).hsv()[2],
+      hsv: (0, import_chroma_js.default)(hex).hsv(),
+      hsl: (0, import_chroma_js.default)(hex).hsl(),
+      rgb: (0, import_chroma_js.default)(hex).rgb(),
+      hueRange: [specs.hue_start, specs.hue_end],
+      steps: specs.steps,
+      label: specs.modifier * index,
+      contrastBlack,
+      contrastWhite,
+      displayColor
+    };
+    colorMap.push(colorObj);
+  }
+  return colorMap;
+}
+var import_chroma_js, import_bezier_easing, linear, easeInCubic, easeOutCubic, easeInOutCubic, easeInSine, easeOutSine, easeInOutSine, easeInQuad, easeOutQuad, easeInOutQuad, easeInQuart, easeOutQuart, easeInOutQuart, easeInCirc, easeOutCirc, easeInOutCirc, easeInQuint, easeOutQuint, easeInOutQuint, easeInExpo, easeOutExpo, easeInOutExpo, easeInBack, easeOutBack, easeInOutBack, Curves, css11, numColors, Color;
+var init_color_3a6c0e97 = __esm({
+  ".svelte-kit/output/server/chunks/color-3a6c0e97.js"() {
+    init_shims();
+    init_app_12c600a3();
+    import_chroma_js = __toModule(require_chroma());
+    import_bezier_easing = __toModule(require_src());
+    linear = (0, import_bezier_easing.default)(0.5, 0.5, 0.5, 0.5);
+    easeInCubic = (0, import_bezier_easing.default)(0.55, 0.055, 0.675, 0.19);
+    easeOutCubic = (0, import_bezier_easing.default)(0.215, 0.61, 0.355, 1);
+    easeInOutCubic = (0, import_bezier_easing.default)(0.645, 0.045, 0.355, 1);
+    easeInSine = (0, import_bezier_easing.default)(0.47, 0, 0.745, 0.715);
+    easeOutSine = (0, import_bezier_easing.default)(0.39, 0.575, 0.565, 1);
+    easeInOutSine = (0, import_bezier_easing.default)(0.445, 0.05, 0.55, 0.95);
+    easeInQuad = (0, import_bezier_easing.default)(0.55, 0.085, 0.68, 0.53);
+    easeOutQuad = (0, import_bezier_easing.default)(0.25, 0.46, 0.45, 0.94);
+    easeInOutQuad = (0, import_bezier_easing.default)(0.455, 0.03, 0.515, 0.955);
+    easeInQuart = (0, import_bezier_easing.default)(0.895, 0.03, 0.685, 0.22);
+    easeOutQuart = (0, import_bezier_easing.default)(0.165, 0.84, 0.44, 1);
+    easeInOutQuart = (0, import_bezier_easing.default)(0.77, 0, 0.175, 1);
+    easeInCirc = (0, import_bezier_easing.default)(0.6, 0.04, 0.98, 0.335);
+    easeOutCirc = (0, import_bezier_easing.default)(0.075, 0.82, 0.165, 1);
+    easeInOutCirc = (0, import_bezier_easing.default)(0.785, 0.135, 0.15, 0.86);
+    easeInQuint = (0, import_bezier_easing.default)(0.755, 0.05, 0.855, 0.06);
+    easeOutQuint = (0, import_bezier_easing.default)(0.23, 1, 0.32, 1);
+    easeInOutQuint = (0, import_bezier_easing.default)(0.86, 0, 0.07, 1);
+    easeInExpo = (0, import_bezier_easing.default)(0.95, 0.05, 0.795, 0.035);
+    easeOutExpo = (0, import_bezier_easing.default)(0.19, 1, 0.22, 1);
+    easeInOutExpo = (0, import_bezier_easing.default)(1, 0, 0, 1);
+    easeInBack = (0, import_bezier_easing.default)(0.6, -0.28, 0.735, 0.045);
+    easeOutBack = (0, import_bezier_easing.default)(0.175, 0.885, 0.32, 1.275);
+    easeInOutBack = (0, import_bezier_easing.default)(0.68, -0.55, 0.265, 1.55);
+    Curves = /* @__PURE__ */ Object.freeze({
+      __proto__: null,
+      [Symbol.toStringTag]: "Module",
+      linear,
+      easeInCubic,
+      easeOutCubic,
+      easeInOutCubic,
+      easeInSine,
+      easeOutSine,
+      easeInOutSine,
+      easeInQuad,
+      easeOutQuad,
+      easeInOutQuad,
+      easeInQuart,
+      easeOutQuart,
+      easeInOutQuart,
+      easeInCirc,
+      easeOutCirc,
+      easeInOutCirc,
+      easeInQuint,
+      easeOutQuint,
+      easeInOutQuint,
+      easeInExpo,
+      easeOutExpo,
+      easeInOutExpo,
+      easeInBack,
+      easeOutBack,
+      easeInOutBack
+    });
+    css11 = {
+      code: ":root{--grid-tracks:24;--min-w:calc(90vw / var(--grid-tracks));--min-h:calc(90vh / var(--grid-tracks))}.grid-col.svelte-1g200cd{grid-template-columns:repeat(var(--grid-tracks), minmax(var(--min-h), 1fr))}.grid-row.svelte-1g200cd{grid-template-rows:repeat(var(--grid-tracks), minmax(3rem, 1fr))}",
+      map: null
+    };
+    numColors = 36;
+    Color = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let i2 = 0;
+      let hueInc = 360 / numColors;
+      let params = {
+        specs: {
+          steps: 10,
+          hue_start: hueInc * i2,
+          hue_end: hueInc * 1,
+          hue_curve: "easeInQuad",
+          sat_start: 10,
+          sat_end: 100,
+          sat_curve: "easeOutQuad",
+          sat_rate: 100,
+          lum_start: 100,
+          lum_end: 10,
+          lum_curve: "easeOutQuad",
+          modifier: 10
+        }
+      };
+      let hexarray_deepReds = [
+        "370617",
+        "6a040f",
+        "9d0208",
+        "d00000",
+        "dc2f02",
+        "e85d04",
+        "f48c06",
+        "faa307",
+        "ffba08"
+      ];
+      let hexarray_winterBlues = [
+        "03045e",
+        "023e8a",
+        "0077b6",
+        "0096c7",
+        "00b4d8",
+        "48cae4",
+        "90e0ef",
+        "ade8f4",
+        "caf0f8"
+      ];
+      let hexarray_limeGreens = [
+        "002411",
+        "004b23",
+        "006400",
+        "007200",
+        "008000",
+        "38b000",
+        "70e000",
+        "9ef01a",
+        "ccff33"
+      ];
+      function outputTailwindColorObjects() {
+        let outputArray = [];
+        for (let j = 0; j < colorSets.length; j++) {
+          const set = colorSets[j];
+          let obj = {};
+          for (let z2 = 0; z2 < 9; z2++) {
+            obj[`${(z2 + 1) * 100}`] = set[z2];
+          }
+          outputArray.push(obj);
+        }
+        console.log(`\u{1F680} ~ file: color.svelte ~ line 83 ~ outputTailwindColorObjects ~ outputArray`, outputArray);
+      }
+      let colorSets = [];
+      colorSets = [hexarray_deepReds, hexarray_winterBlues, hexarray_limeGreens];
+      colorSets = colorSets.map((arr) => arr.map((color) => `#${color}`));
+      let colors = generate(params);
+      colors = colors.map((c2) => c2.hex);
+      colorSets.push(colors);
+      console.log(`\u{1F680} ~ file: color.svelte ~ line 64 ~ colorSets`, colorSets);
+      console.log(`\u{1F680} ~ file: color.svelte ~ line 24 ~ colors `, colors);
+      outputTailwindColorObjects();
+      $$result.css.add(css11);
+      return `${$$result.head += `${$$result.title = `<title>Color Palette Generator</title>`, ""}`, ""}
+
+<div class="${"grid grid-row svelte-1g200cd"}">${each(colorSets, (colorsArray) => `<div class="${"grid grid-col svelte-1g200cd"}">${each(colorsArray, (color) => `<div class="${"grid-item p-1 w-auto h-auto rounded-none"}" style="${"background: " + escape(color) + ";"}"></div>`)}
+		</div>`)}
+</div>`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/index-05cb62f5.js
+var index_05cb62f5_exports = {};
+__export(index_05cb62f5_exports, {
   default: () => Posts_1,
   load: () => load7
 });
 var Posts, load7, Posts_1;
-var init_index_57a19f8b = __esm({
-  ".svelte-kit/output/server/chunks/index-57a19f8b.js"() {
+var init_index_05cb62f5 = __esm({
+  ".svelte-kit/output/server/chunks/index-05cb62f5.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     Posts = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { posts } = $$props;
       if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
@@ -43864,17 +46704,17 @@ ${each(posts, ({ title, slug, excerpt, coverImage, date, tags }) => `<main class
   }
 });
 
-// .svelte-kit/output/server/chunks/_slug_-71cf7509.js
-var slug_71cf7509_exports = {};
-__export(slug_71cf7509_exports, {
+// .svelte-kit/output/server/chunks/_slug_-a7bc7264.js
+var slug_a7bc7264_exports = {};
+__export(slug_a7bc7264_exports, {
   default: () => U5Bslugu5D,
   load: () => load8
 });
 var load8, U5Bslugu5D;
-var init_slug_71cf7509 = __esm({
-  ".svelte-kit/output/server/chunks/_slug_-71cf7509.js"() {
+var init_slug_a7bc7264 = __esm({
+  ".svelte-kit/output/server/chunks/_slug_-a7bc7264.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     load8 = async ({ fetch: fetch2, page: { params } }) => {
       const { slug } = params;
       const res = await fetch2(`/posts/${slug}.json`);
@@ -43904,17 +46744,17 @@ var init_slug_71cf7509 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-435cb181.js
-var index_435cb181_exports = {};
-__export(index_435cb181_exports, {
+// .svelte-kit/output/server/chunks/index-321dd373.js
+var index_321dd373_exports = {};
+__export(index_321dd373_exports, {
   default: () => Todos_1,
   load: () => load9
 });
 var Todos, load9, Todos_1;
-var init_index_435cb181 = __esm({
-  ".svelte-kit/output/server/chunks/index-435cb181.js"() {
+var init_index_321dd373 = __esm({
+  ".svelte-kit/output/server/chunks/index-321dd373.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     Todos = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { todos: todos2 } = $$props;
       console.log(`\u{1F680} ~ file: Todos.svelte ~ line 13 ~ todos`, todos2);
@@ -43950,23 +46790,23 @@ ${each(todos2, ({ author, tags, quoteBody }) => `<main class="${"container max-w
   }
 });
 
-// .svelte-kit/output/server/chunks/index-7aa655c1.js
-var index_7aa655c1_exports = {};
-__export(index_7aa655c1_exports, {
+// .svelte-kit/output/server/chunks/index-5eb59206.js
+var index_5eb59206_exports = {};
+__export(index_5eb59206_exports, {
   default: () => U5Bfallbacku5D
 });
 var U5Bfallbacku5D;
-var init_index_7aa655c1 = __esm({
-  ".svelte-kit/output/server/chunks/index-7aa655c1.js"() {
+var init_index_5eb59206 = __esm({
+  ".svelte-kit/output/server/chunks/index-5eb59206.js"() {
     init_shims();
-    init_app_4f5bfc20();
+    init_app_12c600a3();
     U5Bfallbacku5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `You found the fallback page for unknown routes.`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/app-4f5bfc20.js
+// .svelte-kit/output/server/chunks/app-12c600a3.js
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -45350,9 +48190,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-d55b4fca.js",
+      file: assets + "/_app/start-24bd6dcd.js",
       css: [assets + "/_app/assets/start-d5b4de3e.css", assets + "/_app/assets/vendor-51630b1e.css"],
-      js: [assets + "/_app/start-d55b4fca.js", assets + "/_app/chunks/vendor-c9952951.js"]
+      js: [assets + "/_app/start-24bd6dcd.js", assets + "/_app/chunks/vendor-8f8468c1.js"]
     },
     fetched: void 0,
     floc: false,
@@ -45395,9 +48235,9 @@ function render(request, {
   const host = request.headers["host"];
   return respond({ ...request, host }, options, { prerender });
 }
-var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue2, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s2, absolute, ReadOnlyFormData, identity, is_client, now, raf, tasks, current_component, globals, boolean_attributes, invalid_attribute_name_character, escaped, missing_component, on_destroy, css11, Root, base, assets, user_hooks, template, options, default_settings, d, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_4f5bfc20 = __esm({
-  ".svelte-kit/output/server/chunks/app-4f5bfc20.js"() {
+var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue2, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s2, absolute, ReadOnlyFormData, identity, is_client, now, raf, tasks, current_component, globals, boolean_attributes, invalid_attribute_name_character, escaped, missing_component, on_destroy, css12, Root, base, assets, user_hooks, template, options, default_settings, d, empty, manifest, get_hooks, module_lookup, metadata_lookup;
+var init_app_12c600a3 = __esm({
+  ".svelte-kit/output/server/chunks/app-12c600a3.js"() {
     init_shims();
     __accessCheck = (obj, member, msg) => {
       if (!member.has(obj))
@@ -45546,7 +48386,7 @@ var init_app_4f5bfc20 = __esm({
     missing_component = {
       $$render: () => ""
     };
-    css11 = {
+    css12 = {
       code: "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}",
       map: null
     };
@@ -45574,7 +48414,7 @@ var init_app_4f5bfc20 = __esm({
         $$bindings.props_2(props_2);
       if ($$props.props_3 === void 0 && $$bindings.props_3 && props_3 !== void 0)
         $$bindings.props_3(props_3);
-      $$result.css.add(css11);
+      $$result.css.add(css12);
       {
         stores.page.set(page2);
       }
@@ -45797,7 +48637,7 @@ ${``}`;
           type: "endpoint",
           pattern: /^\/quotes\/parseFile\/?$/,
           params: empty,
-          load: () => Promise.resolve().then(() => (init_parseFile_e74b16d5(), parseFile_e74b16d5_exports))
+          load: () => Promise.resolve().then(() => (init_parseFile_08537941(), parseFile_08537941_exports))
         },
         {
           type: "page",
@@ -45831,6 +48671,13 @@ ${``}`;
           pattern: /^\/about\/?$/,
           params: empty,
           a: ["src/routes/__layout.svelte", "src/routes/about.svelte"],
+          b: [".svelte-kit/build/components/error.svelte"]
+        },
+        {
+          type: "page",
+          pattern: /^\/color\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/color.svelte"],
           b: [".svelte-kit/build/components/error.svelte"]
         },
         {
@@ -45906,44 +48753,45 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_d26c52dd(), layout_d26c52dd_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_77b0fb01(), error_77b0fb01_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_252d6305(), index_252d6305_exports)),
-      "src/routes/mikepeiman/__layout.svelte": () => Promise.resolve().then(() => (init_layout_1c501c72(), layout_1c501c72_exports)),
-      "src/routes/creative/__layout.svelte": () => Promise.resolve().then(() => (init_layout_4a42ac69(), layout_4a42ac69_exports)),
-      "src/routes/creative/index.svelte": () => Promise.resolve().then(() => (init_index_190db8ed(), index_190db8ed_exports)),
-      "src/routes/creative/sketch01/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_36b3434d(), noPanel_36b3434d_exports)),
-      "src/routes/creative/sketch01.svelte": () => Promise.resolve().then(() => (init_sketch01_a5f12064(), sketch01_a5f12064_exports)),
-      "src/routes/creative/sketch02/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_919b111b(), noPanel_919b111b_exports)),
-      "src/routes/creative/sketch02.svelte": () => Promise.resolve().then(() => (init_sketch02_b0002e38(), sketch02_b0002e38_exports)),
-      "src/routes/creative/sketch03/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_d138218b(), noPanel_d138218b_exports)),
-      "src/routes/creative/sketch03.svelte": () => Promise.resolve().then(() => (init_sketch03_30ad8850(), sketch03_30ad8850_exports)),
-      "src/routes/creative/sketch04/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_4f5ac554(), noPanel_4f5ac554_exports)),
-      "src/routes/creative/sketch04.svelte": () => Promise.resolve().then(() => (init_sketch04_7ce27f11(), sketch04_7ce27f11_exports)),
-      "src/routes/creative/sketch05/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_b316687d(), noPanel_b316687d_exports)),
-      "src/routes/creative/sketch05.svelte": () => Promise.resolve().then(() => (init_sketch05_019fea94(), sketch05_019fea94_exports)),
-      "src/routes/creative/sketch06/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_2e04a096(), noPanel_2e04a096_exports)),
-      "src/routes/creative/sketch06.svelte": () => Promise.resolve().then(() => (init_sketch06_cfb6f76d(), sketch06_cfb6f76d_exports)),
-      "src/routes/creative/sketch07/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_0a64f7ee(), noPanel_0a64f7ee_exports)),
-      "src/routes/creative/sketch07.svelte": () => Promise.resolve().then(() => (init_sketch07_25730e04(), sketch07_25730e04_exports)),
-      "src/routes/creative/sketch08/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_904f8d03(), noPanel_904f8d03_exports)),
-      "src/routes/creative/sketch08.svelte": () => Promise.resolve().then(() => (init_sketch08_be9f2d79(), sketch08_be9f2d79_exports)),
-      "src/routes/creative/sketch09/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_93f97b43(), noPanel_93f97b43_exports)),
-      "src/routes/creative/sketch09.svelte": () => Promise.resolve().then(() => (init_sketch09_2c62fd2a(), sketch09_2c62fd2a_exports)),
-      "src/routes/pokemon/[id].svelte": () => Promise.resolve().then(() => (init_id_c1343be4(), id_c1343be4_exports)),
-      "src/routes/pokemon.svelte": () => Promise.resolve().then(() => (init_pokemon_1f94f1eb(), pokemon_1f94f1eb_exports)),
-      "src/routes/quotes/index.svelte": () => Promise.resolve().then(() => (init_index_7dac3a3b(), index_7dac3a3b_exports)),
-      "src/routes/quotes/parseQuotes.svelte": () => Promise.resolve().then(() => (init_parseQuotes_cd5a2adf(), parseQuotes_cd5a2adf_exports)),
-      "src/routes/quotes/AddQuote.svelte": () => Promise.resolve().then(() => (init_AddQuote_314a9128(), AddQuote_314a9128_exports)),
-      "src/routes/quotes/upload.svelte": () => Promise.resolve().then(() => (init_upload_f1b47aa7(), upload_f1b47aa7_exports)),
-      "src/routes/upload/index.svelte": () => Promise.resolve().then(() => (init_index_55846a90(), index_55846a90_exports)),
-      "src/routes/about.svelte": () => Promise.resolve().then(() => (init_about_f65d0975(), about_f65d0975_exports)),
-      "src/routes/posts/index.svelte": () => Promise.resolve().then(() => (init_index_57a19f8b(), index_57a19f8b_exports)),
-      "src/routes/posts/[slug].svelte": () => Promise.resolve().then(() => (init_slug_71cf7509(), slug_71cf7509_exports)),
-      "src/routes/todos/index.svelte": () => Promise.resolve().then(() => (init_index_435cb181(), index_435cb181_exports)),
-      "src/routes/[fallback]/index.svelte": () => Promise.resolve().then(() => (init_index_7aa655c1(), index_7aa655c1_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_67abaedd(), layout_67abaedd_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_a21c7579(), error_a21c7579_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_ab73bdd3(), index_ab73bdd3_exports)),
+      "src/routes/mikepeiman/__layout.svelte": () => Promise.resolve().then(() => (init_layout_be4e94d3(), layout_be4e94d3_exports)),
+      "src/routes/creative/__layout.svelte": () => Promise.resolve().then(() => (init_layout_e915660d(), layout_e915660d_exports)),
+      "src/routes/creative/index.svelte": () => Promise.resolve().then(() => (init_index_a080afc0(), index_a080afc0_exports)),
+      "src/routes/creative/sketch01/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_3be47453(), noPanel_3be47453_exports)),
+      "src/routes/creative/sketch01.svelte": () => Promise.resolve().then(() => (init_sketch01_0f0310b7(), sketch01_0f0310b7_exports)),
+      "src/routes/creative/sketch02/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_2ddeb9a5(), noPanel_2ddeb9a5_exports)),
+      "src/routes/creative/sketch02.svelte": () => Promise.resolve().then(() => (init_sketch02_f7a88a87(), sketch02_f7a88a87_exports)),
+      "src/routes/creative/sketch03/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_cb571cbe(), noPanel_cb571cbe_exports)),
+      "src/routes/creative/sketch03.svelte": () => Promise.resolve().then(() => (init_sketch03_2bcb385a(), sketch03_2bcb385a_exports)),
+      "src/routes/creative/sketch04/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_d58fc1df(), noPanel_d58fc1df_exports)),
+      "src/routes/creative/sketch04.svelte": () => Promise.resolve().then(() => (init_sketch04_d962f87e(), sketch04_d962f87e_exports)),
+      "src/routes/creative/sketch05/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_9fdc7d8a(), noPanel_9fdc7d8a_exports)),
+      "src/routes/creative/sketch05.svelte": () => Promise.resolve().then(() => (init_sketch05_c0a651be(), sketch05_c0a651be_exports)),
+      "src/routes/creative/sketch06/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_ac271066(), noPanel_ac271066_exports)),
+      "src/routes/creative/sketch06.svelte": () => Promise.resolve().then(() => (init_sketch06_2e15cc79(), sketch06_2e15cc79_exports)),
+      "src/routes/creative/sketch07/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_5015e240(), noPanel_5015e240_exports)),
+      "src/routes/creative/sketch07.svelte": () => Promise.resolve().then(() => (init_sketch07_21c3e00d(), sketch07_21c3e00d_exports)),
+      "src/routes/creative/sketch08/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_7018f2b9(), noPanel_7018f2b9_exports)),
+      "src/routes/creative/sketch08.svelte": () => Promise.resolve().then(() => (init_sketch08_b8bb4119(), sketch08_b8bb4119_exports)),
+      "src/routes/creative/sketch09/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_85264e7c(), noPanel_85264e7c_exports)),
+      "src/routes/creative/sketch09.svelte": () => Promise.resolve().then(() => (init_sketch09_88a8fb7c(), sketch09_88a8fb7c_exports)),
+      "src/routes/pokemon/[id].svelte": () => Promise.resolve().then(() => (init_id_aa7fe276(), id_aa7fe276_exports)),
+      "src/routes/pokemon.svelte": () => Promise.resolve().then(() => (init_pokemon_eaa84bf9(), pokemon_eaa84bf9_exports)),
+      "src/routes/quotes/index.svelte": () => Promise.resolve().then(() => (init_index_3224a7e0(), index_3224a7e0_exports)),
+      "src/routes/quotes/parseQuotes.svelte": () => Promise.resolve().then(() => (init_parseQuotes_719ce0e0(), parseQuotes_719ce0e0_exports)),
+      "src/routes/quotes/AddQuote.svelte": () => Promise.resolve().then(() => (init_AddQuote_4b5f5a5b(), AddQuote_4b5f5a5b_exports)),
+      "src/routes/quotes/upload.svelte": () => Promise.resolve().then(() => (init_upload_ecdd4845(), upload_ecdd4845_exports)),
+      "src/routes/upload/index.svelte": () => Promise.resolve().then(() => (init_index_0d09db3b(), index_0d09db3b_exports)),
+      "src/routes/about.svelte": () => Promise.resolve().then(() => (init_about_45f6f71a(), about_45f6f71a_exports)),
+      "src/routes/color.svelte": () => Promise.resolve().then(() => (init_color_3a6c0e97(), color_3a6c0e97_exports)),
+      "src/routes/posts/index.svelte": () => Promise.resolve().then(() => (init_index_05cb62f5(), index_05cb62f5_exports)),
+      "src/routes/posts/[slug].svelte": () => Promise.resolve().then(() => (init_slug_a7bc7264(), slug_a7bc7264_exports)),
+      "src/routes/todos/index.svelte": () => Promise.resolve().then(() => (init_index_321dd373(), index_321dd373_exports)),
+      "src/routes/[fallback]/index.svelte": () => Promise.resolve().then(() => (init_index_5eb59206(), index_5eb59206_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-15234cf2.js", "css": ["assets/pages/__layout.svelte-e7b2859d.css", "assets/Nav.svelte_svelte_type_style_lang-2982350d.css", "assets/vendor-51630b1e.css"], "js": ["pages/__layout.svelte-15234cf2.js", "chunks/vendor-c9952951.js", "chunks/stores-9805f8af.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-f3467fa3.js", "css": ["assets/vendor-51630b1e.css"], "js": ["error.svelte-f3467fa3.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-b190634e.js", "css": ["assets/pages/index.svelte-43eabd2c.css", "assets/vendor-51630b1e.css"], "js": ["pages/index.svelte-b190634e.js", "chunks/vendor-c9952951.js", "chunks/stores-9805f8af.js"], "styles": [] }, "src/routes/mikepeiman/__layout.svelte": { "entry": "pages/mikepeiman/__layout.svelte-a57989ef.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/mikepeiman/__layout.svelte-a57989ef.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/__layout.svelte": { "entry": "pages/creative/__layout.svelte-b4529c99.js", "css": ["assets/pages/creative/__layout.svelte-94979803.css", "assets/Nav.svelte_svelte_type_style_lang-2982350d.css", "assets/vendor-51630b1e.css"], "js": ["pages/creative/__layout.svelte-b4529c99.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/index.svelte": { "entry": "pages/creative/index.svelte-40b1e856.js", "css": ["assets/pages/creative/index.svelte-72d16f9b.css", "assets/vendor-51630b1e.css", "assets/pages/creative/sketch02.svelte-ad8d43a6.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/index.svelte-40b1e856.js", "chunks/vendor-c9952951.js", "pages/creative/sketch02.svelte-a8a55a05.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js", "pages/creative/sketch03.svelte-941d4414.js", "pages/creative/sketch04.svelte-e909d7ed.js", "pages/creative/sketch01.svelte-581e6930.js", "pages/creative/sketch05.svelte-93796a45.js", "pages/creative/sketch06.svelte-5a705bea.js", "pages/creative/sketch07.svelte-bfaf0a0d.js", "pages/creative/sketch08.svelte-ecd132a6.js", "pages/creative/sketch09.svelte-f6391113.js"], "styles": [] }, "src/routes/creative/sketch01/noPanel.svelte": { "entry": "pages/creative/sketch01/noPanel.svelte-ff744b16.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch01/noPanel.svelte-ff744b16.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js"], "styles": [] }, "src/routes/creative/sketch01.svelte": { "entry": "pages/creative/sketch01.svelte-581e6930.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch01.svelte-581e6930.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch02/noPanel.svelte": { "entry": "pages/creative/sketch02/noPanel.svelte-119f392c.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch02/noPanel.svelte-119f392c.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch02.svelte": { "entry": "pages/creative/sketch02.svelte-a8a55a05.js", "css": ["assets/pages/creative/sketch02.svelte-ad8d43a6.css", "assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch02.svelte-a8a55a05.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch03/noPanel.svelte": { "entry": "pages/creative/sketch03/noPanel.svelte-d873602a.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch03/noPanel.svelte-d873602a.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch03.svelte": { "entry": "pages/creative/sketch03.svelte-941d4414.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch03.svelte-941d4414.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch04/noPanel.svelte": { "entry": "pages/creative/sketch04/noPanel.svelte-16a97dd7.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch04/noPanel.svelte-16a97dd7.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch04.svelte": { "entry": "pages/creative/sketch04.svelte-e909d7ed.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch04.svelte-e909d7ed.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch05/noPanel.svelte": { "entry": "pages/creative/sketch05/noPanel.svelte-7ad7bd5e.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch05/noPanel.svelte-7ad7bd5e.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch05.svelte": { "entry": "pages/creative/sketch05.svelte-93796a45.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch05.svelte-93796a45.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch06/noPanel.svelte": { "entry": "pages/creative/sketch06/noPanel.svelte-93475788.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch06/noPanel.svelte-93475788.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch06.svelte": { "entry": "pages/creative/sketch06.svelte-5a705bea.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch06.svelte-5a705bea.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch07/noPanel.svelte": { "entry": "pages/creative/sketch07/noPanel.svelte-7269de40.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch07/noPanel.svelte-7269de40.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch07.svelte": { "entry": "pages/creative/sketch07.svelte-bfaf0a0d.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch07.svelte-bfaf0a0d.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch08/noPanel.svelte": { "entry": "pages/creative/sketch08/noPanel.svelte-10e50e0a.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch08/noPanel.svelte-10e50e0a.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch08.svelte": { "entry": "pages/creative/sketch08.svelte-ecd132a6.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch08.svelte-ecd132a6.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/creative/sketch09/noPanel.svelte": { "entry": "pages/creative/sketch09/noPanel.svelte-bd93acfc.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch09/noPanel.svelte-bd93acfc.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/creative/sketch09.svelte": { "entry": "pages/creative/sketch09.svelte-f6391113.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch09.svelte-f6391113.js", "chunks/vendor-c9952951.js", "chunks/ColorInput.svelte_svelte_type_style_lang-983f22d5.js", "chunks/stores-9805f8af.js", "chunks/Checkbox-b974a731.js"], "styles": [] }, "src/routes/pokemon/[id].svelte": { "entry": "pages/pokemon/_id_.svelte-d2a8bc88.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/pokemon/_id_.svelte-d2a8bc88.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/pokemon.svelte": { "entry": "pages/pokemon.svelte-4150f241.js", "css": ["assets/pages/pokemon.svelte-a2cfab55.css", "assets/vendor-51630b1e.css"], "js": ["pages/pokemon.svelte-4150f241.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/quotes/index.svelte": { "entry": "pages/quotes/index.svelte-0728e0c2.js", "css": ["assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/quotes/index.svelte-0728e0c2.js", "chunks/vendor-c9952951.js", "pages/quotes/parseQuotes.svelte-1683084d.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-85db4e5f.js"], "styles": [] }, "src/routes/quotes/parseQuotes.svelte": { "entry": "pages/quotes/parseQuotes.svelte-1683084d.js", "css": ["assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/quotes/parseQuotes.svelte-1683084d.js", "chunks/vendor-c9952951.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-85db4e5f.js"], "styles": [] }, "src/routes/quotes/AddQuote.svelte": { "entry": "pages/quotes/AddQuote.svelte-59d5ca76.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/quotes/AddQuote.svelte-59d5ca76.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/quotes/upload.svelte": { "entry": "pages/quotes/upload.svelte-16a40a86.js", "css": ["assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/quotes/upload.svelte-16a40a86.js", "chunks/vendor-c9952951.js", "pages/quotes/parseQuotes.svelte-1683084d.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-85db4e5f.js"], "styles": [] }, "src/routes/upload/index.svelte": { "entry": "pages/upload/index.svelte-5ef71d02.js", "css": ["assets/about.svelte_svelte_type_style_lang-af077310.css", "assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/upload/index.svelte-5ef71d02.js", "chunks/vendor-c9952951.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-85db4e5f.js"], "styles": [] }, "src/routes/about.svelte": { "entry": "pages/about.svelte-40aff0c5.js", "css": ["assets/about.svelte_svelte_type_style_lang-af077310.css", "assets/vendor-51630b1e.css"], "js": ["pages/about.svelte-40aff0c5.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/posts/index.svelte": { "entry": "pages/posts/index.svelte-6e3761d0.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/posts/index.svelte-6e3761d0.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/posts/[slug].svelte": { "entry": "pages/posts/_slug_.svelte-b554ad79.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/posts/_slug_.svelte-b554ad79.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/todos/index.svelte": { "entry": "pages/todos/index.svelte-8df9bd09.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/todos/index.svelte-8df9bd09.js", "chunks/vendor-c9952951.js"], "styles": [] }, "src/routes/[fallback]/index.svelte": { "entry": "pages/_fallback_/index.svelte-5060ce82.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/_fallback_/index.svelte-5060ce82.js", "chunks/vendor-c9952951.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-f2390274.js", "css": ["assets/pages/__layout.svelte-e7b2859d.css", "assets/Nav.svelte_svelte_type_style_lang-556e898e.css", "assets/vendor-51630b1e.css"], "js": ["pages/__layout.svelte-f2390274.js", "chunks/vendor-8f8468c1.js", "chunks/stores-647d0335.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-71d30e3f.js", "css": ["assets/vendor-51630b1e.css"], "js": ["error.svelte-71d30e3f.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-4aee37f1.js", "css": ["assets/pages/index.svelte-3992dfb4.css", "assets/vendor-51630b1e.css"], "js": ["pages/index.svelte-4aee37f1.js", "chunks/vendor-8f8468c1.js", "chunks/stores-647d0335.js"], "styles": [] }, "src/routes/mikepeiman/__layout.svelte": { "entry": "pages/mikepeiman/__layout.svelte-d1523690.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/mikepeiman/__layout.svelte-d1523690.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/__layout.svelte": { "entry": "pages/creative/__layout.svelte-d9cdf943.js", "css": ["assets/pages/creative/__layout.svelte-94979803.css", "assets/Nav.svelte_svelte_type_style_lang-556e898e.css", "assets/vendor-51630b1e.css"], "js": ["pages/creative/__layout.svelte-d9cdf943.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/index.svelte": { "entry": "pages/creative/index.svelte-ff03b448.js", "css": ["assets/pages/creative/index.svelte-72d16f9b.css", "assets/vendor-51630b1e.css", "assets/pages/creative/sketch02.svelte-ad8d43a6.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/index.svelte-ff03b448.js", "chunks/vendor-8f8468c1.js", "pages/creative/sketch02.svelte-31f2cf21.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js", "pages/creative/sketch03.svelte-24861f65.js", "pages/creative/sketch04.svelte-7738551e.js", "pages/creative/sketch01.svelte-fe788763.js", "pages/creative/sketch05.svelte-ceeb30c3.js", "pages/creative/sketch06.svelte-4bb97488.js", "pages/creative/sketch07.svelte-0d69d046.js", "pages/creative/sketch08.svelte-01e11ca8.js", "pages/creative/sketch09.svelte-c71fb0f3.js"], "styles": [] }, "src/routes/creative/sketch01/noPanel.svelte": { "entry": "pages/creative/sketch01/noPanel.svelte-9129eb34.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch01/noPanel.svelte-9129eb34.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js"], "styles": [] }, "src/routes/creative/sketch01.svelte": { "entry": "pages/creative/sketch01.svelte-fe788763.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch01.svelte-fe788763.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch02/noPanel.svelte": { "entry": "pages/creative/sketch02/noPanel.svelte-89e3b640.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch02/noPanel.svelte-89e3b640.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch02.svelte": { "entry": "pages/creative/sketch02.svelte-31f2cf21.js", "css": ["assets/pages/creative/sketch02.svelte-ad8d43a6.css", "assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch02.svelte-31f2cf21.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch03/noPanel.svelte": { "entry": "pages/creative/sketch03/noPanel.svelte-0fa98b99.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch03/noPanel.svelte-0fa98b99.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch03.svelte": { "entry": "pages/creative/sketch03.svelte-24861f65.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch03.svelte-24861f65.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch04/noPanel.svelte": { "entry": "pages/creative/sketch04/noPanel.svelte-f4ed36b8.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch04/noPanel.svelte-f4ed36b8.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch04.svelte": { "entry": "pages/creative/sketch04.svelte-7738551e.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch04.svelte-7738551e.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch05/noPanel.svelte": { "entry": "pages/creative/sketch05/noPanel.svelte-ec701146.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch05/noPanel.svelte-ec701146.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch05.svelte": { "entry": "pages/creative/sketch05.svelte-ceeb30c3.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch05.svelte-ceeb30c3.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch06/noPanel.svelte": { "entry": "pages/creative/sketch06/noPanel.svelte-be57ddf3.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch06/noPanel.svelte-be57ddf3.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch06.svelte": { "entry": "pages/creative/sketch06.svelte-4bb97488.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch06.svelte-4bb97488.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch07/noPanel.svelte": { "entry": "pages/creative/sketch07/noPanel.svelte-1d7b553f.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch07/noPanel.svelte-1d7b553f.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch07.svelte": { "entry": "pages/creative/sketch07.svelte-0d69d046.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch07.svelte-0d69d046.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch08/noPanel.svelte": { "entry": "pages/creative/sketch08/noPanel.svelte-95755842.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch08/noPanel.svelte-95755842.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch08.svelte": { "entry": "pages/creative/sketch08.svelte-01e11ca8.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch08.svelte-01e11ca8.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/creative/sketch09/noPanel.svelte": { "entry": "pages/creative/sketch09/noPanel.svelte-bac6e2b9.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/creative/sketch09/noPanel.svelte-bac6e2b9.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/creative/sketch09.svelte": { "entry": "pages/creative/sketch09.svelte-c71fb0f3.js", "css": ["assets/vendor-51630b1e.css", "assets/ColorInput.svelte_svelte_type_style_lang-adfa767a.css"], "js": ["pages/creative/sketch09.svelte-c71fb0f3.js", "chunks/vendor-8f8468c1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-bbb8b91c.js", "chunks/stores-647d0335.js", "chunks/Checkbox-970a98b3.js"], "styles": [] }, "src/routes/pokemon/[id].svelte": { "entry": "pages/pokemon/_id_.svelte-b1373331.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/pokemon/_id_.svelte-b1373331.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/pokemon.svelte": { "entry": "pages/pokemon.svelte-b0941c7c.js", "css": ["assets/pages/pokemon.svelte-a2cfab55.css", "assets/vendor-51630b1e.css"], "js": ["pages/pokemon.svelte-b0941c7c.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/quotes/index.svelte": { "entry": "pages/quotes/index.svelte-68b204b1.js", "css": ["assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/quotes/index.svelte-68b204b1.js", "chunks/vendor-8f8468c1.js", "pages/quotes/parseQuotes.svelte-61314491.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-db351ead.js"], "styles": [] }, "src/routes/quotes/parseQuotes.svelte": { "entry": "pages/quotes/parseQuotes.svelte-61314491.js", "css": ["assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/quotes/parseQuotes.svelte-61314491.js", "chunks/vendor-8f8468c1.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-db351ead.js"], "styles": [] }, "src/routes/quotes/AddQuote.svelte": { "entry": "pages/quotes/AddQuote.svelte-06b7221e.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/quotes/AddQuote.svelte-06b7221e.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/quotes/upload.svelte": { "entry": "pages/quotes/upload.svelte-70c8fa2a.js", "css": ["assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/quotes/upload.svelte-70c8fa2a.js", "chunks/vendor-8f8468c1.js", "pages/quotes/parseQuotes.svelte-61314491.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-db351ead.js"], "styles": [] }, "src/routes/upload/index.svelte": { "entry": "pages/upload/index.svelte-a4eba7df.js", "css": ["assets/about.svelte_svelte_type_style_lang-af077310.css", "assets/vendor-51630b1e.css", "assets/parseQuotes.svelte_svelte_type_style_lang-d256a8a3.css"], "js": ["pages/upload/index.svelte-a4eba7df.js", "chunks/vendor-8f8468c1.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-db351ead.js"], "styles": [] }, "src/routes/about.svelte": { "entry": "pages/about.svelte-ca189caa.js", "css": ["assets/about.svelte_svelte_type_style_lang-af077310.css", "assets/vendor-51630b1e.css"], "js": ["pages/about.svelte-ca189caa.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/color.svelte": { "entry": "pages/color.svelte-4c3b7eb0.js", "css": ["assets/pages/color.svelte-b033c319.css", "assets/vendor-51630b1e.css"], "js": ["pages/color.svelte-4c3b7eb0.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/posts/index.svelte": { "entry": "pages/posts/index.svelte-d44c4fb1.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/posts/index.svelte-d44c4fb1.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/posts/[slug].svelte": { "entry": "pages/posts/_slug_.svelte-1526f8d8.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/posts/_slug_.svelte-1526f8d8.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/todos/index.svelte": { "entry": "pages/todos/index.svelte-6fa6593c.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/todos/index.svelte-6fa6593c.js", "chunks/vendor-8f8468c1.js"], "styles": [] }, "src/routes/[fallback]/index.svelte": { "entry": "pages/_fallback_/index.svelte-ac336a53.js", "css": ["assets/vendor-51630b1e.css"], "js": ["pages/_fallback_/index.svelte-ac336a53.js", "chunks/vendor-8f8468c1.js"], "styles": [] } };
   }
 });
 
@@ -45996,7 +48844,7 @@ function getRawBody(req) {
 
 // .svelte-kit/output/server/app.js
 init_shims();
-init_app_4f5bfc20();
+init_app_12c600a3();
 
 // .svelte-kit/vercel/entry.js
 init();
@@ -46061,3 +48909,54 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 /*! fetch-blob. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
+/**
+	ColorBrewer colors for chroma.js
+
+	Copyright (c) 2002 Cynthia Brewer, Mark Harrower, and The 
+	Pennsylvania State University.
+
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at	
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software distributed
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+	CONDITIONS OF ANY KIND, either express or implied. See the License for the
+	specific language governing permissions and limitations under the License.
+
+    @preserve
+ */
+/**
+ * @license
+ *
+ * chroma.js - JavaScript library for color conversions
+ * 
+ * Copyright (c) 2011-2017, Gregor Aisch
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ * 
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ * 
+ * 3. The name Gregor Aisch may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL GREGOR AISCH OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */

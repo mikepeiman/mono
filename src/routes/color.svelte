@@ -5,7 +5,6 @@
 
 <script>
 	import generate from '$lib/generate.js';
-import { first } from 'cheerio/lib/api/traversing';
     import chroma from 'chroma-js'
 
 	let i = 0;
