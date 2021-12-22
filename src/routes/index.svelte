@@ -64,8 +64,8 @@
 			<h1 class="font-regular text-3xl lg:text-5xl ">Hi, I'm Mike.</h1>
 			<p class="intro-body text-xl xl:text-2xl font-thin">
 				I'm a creative software developer, and this is my professional blog. I love
-				<span class="text-highlight color-1">user experience</span> and design that helps
-				realize human potential. I follow a
+				<span class="text-highlight color-1">user experience</span> and design that helps realize
+				human potential. I follow a
 				<span class="text-highlight color-2">first-principles</span>
 				approach in my life and my work. Here are a few of my
 				<span class="color-3 text-highlight">design principles</span>:
@@ -91,9 +91,8 @@
 						Minimize barriers to action.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						The app (or website) is <span class="italic color-2 font-medium"
-							>for something</span
-						>. Make it as
+						The app (or website) is <span class="italic color-2 font-medium">for something</span>.
+						Make it as
 						<span class="italic color-1 font-medium">intuitive and efficient</span>
 						as possible to <span class="italic color-2 font-medium">do that thing.</span>
 					</p>
@@ -105,12 +104,10 @@
 						Leverage visual intelligence.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
-						Augment words and iconography with <span class="italic color-1 font-medium"
-							>color</span
-						>
-						and structure - <span class="italic color-2 font-medium">draw the eye</span> to key
-						points and relationships. Effectively use negative space, layout and structure, diagrams
-						and images to communicate beyond mere words.
+						Augment words and iconography with <span class="italic color-1 font-medium">color</span>
+						and structure - <span class="italic color-2 font-medium">draw the eye</span> to key points
+						and relationships. Effectively use negative space, layout and structure, diagrams and images
+						to communicate beyond mere words.
 					</p>
 				</li>
 			</ol>
@@ -174,12 +171,12 @@
 
 	<section class="flex flex-col w-full self-center text-center items-center justify-center px-8">
 		<p
-			class="statement text-2xl font-light italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 lg:text-3xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
+			class="statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
 		>
-			<span class="text-amber-300 font-medium"
+			<span class=" font-medium"
 				>&ldquo;If a system is to serve the creative spirit, it must be entirely comprehensible to a
 				single individual.&rdquo;</span
-			> <br /><span class="font-light text-stone-500">Daniel H. H. Ingalls</span>
+			> <br /><span class="font-bold text-lg xl:text-xl author uppercase ">- Daniel H. H. Ingalls</span>
 		</p>
 	</section>
 
@@ -246,17 +243,17 @@
 <style lang="scss">
 	// @import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0, 100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
 
-.color-1 {
-	// color: var(--color-deepreds-900);
-	@apply text-amber-300;
-}
-.color-2 {
-	color: var(--color-limegreens-700);
-}
-.color-3 {
-	color: var(--color-winterblues-600);
-}
-// 100,200,300,400,500,600,700,800,900
+	.color-1 {
+		// color: var(--color-deepreds-900);
+		@apply text-amber-300;
+	}
+	.color-2 {
+		color: var(--color-limegreens-700);
+	}
+	.color-3 {
+		color: var(--color-winterblues-600);
+	}
+	// 100,200,300,400,500,600,700,800,900
 
 	.homepage {
 		// font-family: 'Be Vietnam Pro', sans-serif;
@@ -507,6 +504,25 @@
 		// font-weight: 500;
 		// font-weight: 700;
 		// font-weight: 900;
+		color: var(--color-winterblues-400);
+		color: white;
+		line-height: 1.25em;
+		background: linear-gradient(black, black) padding-box,
+			linear-gradient(
+					120deg,
+					rgba(131, 58, 180, 1) 10%,
+					rgba(47, 174, 177, 1) 22%,
+					rgba(253, 29, 29, 1) 50%,
+					rgba(191, 252, 55, 1) 72%,
+					rgba(252, 176, 69, 1) 90%
+				)
+				border-box;
+		// linear-gradient(to right, var(--color-winterblues-600), var(--color-deepreds-900)) border-box;
+		border-radius: 1rem;
+		border: 10px solid transparent;
+		.author {
+			color: var(--color-gray-300);
+		}
 	}
 	.article-date {
 		font-family: monospace;
