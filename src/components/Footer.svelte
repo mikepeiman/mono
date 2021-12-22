@@ -5,10 +5,10 @@
 
 </script>
 
-<div class="footer grid bg-gradient-to-r from-slate-700 to-indigo-500 flex align-middle items-center justify-between">
-    <button class="logo btn btn-outline place-content-center mx-5 p-5 rounded-lg bg-blue-700">Footer</button>
+<div class="footer grid  bg-slate-900  flex align-middle items-center justify-between">
+    <!-- <button class="logo btn btn-outline place-content-center mx-5 p-5 rounded-lg bg-blue-700">Footer</button> -->
     <nav class="social w-full flex items-center justify-center xl:pl-24">
-        <p>This is the footer text. Made by Mike Peiman.</p>
+        <p>Made with <span class="text-rose-500 text-lg px-1">♥</span> by Mike Peiman.</p>
         <!-- <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/creative">Creative</a> -->
