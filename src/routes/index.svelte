@@ -23,6 +23,7 @@
 	$: path = $page.path;
 	$: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path);
 	import Posts from '$components/Posts.svelte';
+import Sketch03Preview from './creative/sketch03-preview.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
 	console.log(`🚀 ~ file: index.svelte ~ line 4 ~ posts`, posts);
@@ -31,19 +32,22 @@
 			name: 'Project One',
 			url: './creative/sketch01',
 			tags: ['awesome', 'sauce', 'hot'],
-			desc: 'This project will burn your socks off'
+			desc: 'This project will burn your socks off',
+			component: false
 		},
 		{
-			name: 'Project cool1',
+			name: 'Project Two',
 			url: './creative/sketch02',
 			tags: ['mysterious', 'fun', 'cool'],
-			desc: 'This project will cool your noggin'
+			desc: 'This project will cool your noggin',
+			component: false
 		},
 		{
 			name: 'Project Three',
 			url: './creative/sketch03',
 			tags: ['scary', 'epic', 'twisted'],
-			desc: 'This project will twist your knickers'
+			desc: 'This project will twist your knickers',
+			component: Sketch03Preview
 		}
 	];
 </script>
@@ -234,10 +238,10 @@
 							</div>
 						</div>
 					</div>
+					<svelte:component this={project.component} />
 				</a>
 			{/each}
 		</div>
-		<Sketch02Preview />
 	</section>
 </main>
 
