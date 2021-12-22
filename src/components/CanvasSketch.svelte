@@ -35,14 +35,16 @@
 
 	});
 
-	$: {
+	$: {	
 		if(opt.parent?.offsetWidth > 0){
 			width = opt.parent?.offsetWidth
             console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 39 ~ width`, width)
 		}
 	}
 	
-	
+	$: console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 46 ~ settings`, settings)
+	$: console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 46 ~ settings`, settings.animate)
+	$: (settings) => delete settings.animate
 	// handle sketch destroy
 	// onDestroy(() => {
 	// 	loader.then(m => m.destroy());
@@ -52,6 +54,7 @@
 
 	// update settings and data
 	$: manager && manager.update(settings);
+	// $: loader && loader.update(settings)
 	$: dataChanged(data);
 	// $: console.log(this)
 	// $: console.log(canvas)

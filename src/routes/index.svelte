@@ -14,8 +14,8 @@
 
 <script>
 	import Time from 'svelte-time';
-	import IconAccountBox from '~icons/mdi/account-box';
 	import IconChevronRight from '~icons/mdi/chevron-right';
+	import Sketch02Preview from './creative/sketch02-preview.svelte';
 	// import { collections } from '@iconify/collections.json';
 	// console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections);
 
@@ -237,6 +237,7 @@
 				</a>
 			{/each}
 		</div>
+		<Sketch02Preview />
 	</section>
 </main>
 
