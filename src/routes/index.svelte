@@ -176,7 +176,7 @@
 			<span class=" font-medium"
 				>&ldquo;If a system is to serve the creative spirit, it must be entirely comprehensible to a
 				single individual.&rdquo;</span
-			> <br /><span class="font-bold text-lg xl:text-xl author uppercase ">- Daniel H. H. Ingalls</span>
+			> <br /><span class="font-bold text-lg author uppercase ">Daniel H. H. Ingalls</span>
 		</p>
 	</section>
 
@@ -193,7 +193,7 @@
 				Selected Projects
 			</h2>
 			<h2
-				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end hover:decoration-2 hover:decoration-orange-200 text-orange-200 hover:text-white hover:decoration-2 hover:decoration-white hover:-translate-x-2 transition"
+				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end transition text-orange-200 hover:text-white"
 			>
 				<a href="/creative" class="view-more-link offset-4 pr-2 no-underline ">View more projects</a
 				>
