@@ -6,11 +6,11 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	let canvas;
-	let width = 200;
+	let width, height
 	let canvasLoaded = false;
 
 	export let settings = {
-		dimensions: undefined
+		dimensions: [250, 205]
 	};
 
 	export let data = {};
@@ -26,6 +26,9 @@
 			parent: canvas.parentElement,
 			data
 		};
+		console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 26 ~ onMount ~ canvas`, canvas)
+		console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 27 ~ onMount ~ parent`, parent)
+		console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 29 ~ onMount ~ settings`, settings.dimensions);
 		canvasLoaded = true;
 		// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt`, opt)
 		// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt.parent`, opt.parent)
@@ -41,9 +44,11 @@
 		}
 	}
 
-	$: console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 46 ~ settings`, settings);
-	$: console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 46 ~ settings`, settings.animate);
-	$: (settings) => delete settings.animate;
+	$: console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 46 ~ reactive settings`, settings.dimensions);
+	$: width = settings.dimensions[0]
+	$: height = settings.dimensions[1]
+	// $: console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 46 ~ settings`, settings.animate);
+	// $: (settings) => delete settings.animate;
 	// handle sketch destroy
 	// onDestroy(() => {
 	// 	loader.then(m => m.destroy());
@@ -59,6 +64,7 @@
 	// $: console.log(canvas)
 
 	function dataChanged(data) {
+        console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 65 ~ dataChanged ~ data`, data)
 		if (manager) {
 			Object.assign(manager.props.data, data);
 			manager.render();
@@ -66,20 +72,16 @@
 	}
 </script>
 
-<!-- {#await opt} -->
-	<!-- {#if !settings.canvas} -->
-		<canvas bind:this={canvas} />
-	<!-- {/if} -->
-<!-- {/await} -->
+<canvas bind:this={canvas} />
 
 <style>
 	/* Optionally style the canvas here */
 	canvas {
-		margin: auto;
+		margin: 0;
 		display: block;
 		box-shadow: 0px 2px 12px -2px rgba(0, 0, 0, 0.15);
-		/* width: 100%; */
-		width: inherit;
+		width: 100%;
+		/* width: inherit; */
 		/* min-width: inherit; */
 		height: auto;
 	}

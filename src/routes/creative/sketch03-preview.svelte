@@ -15,19 +15,21 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	import CanvasSketch from '$components/CanvasSketch.svelte';
 	import { onMount } from 'svelte';
 
-	let width = 300;
-	let height = 150;
+	let width;
+	let height;
 	let context;
 	let canvases, canvas, thisCanvas, w, h;
+	let mounted = false;
 
 	$: canvas ? (context = canvas.getContext('2d')) : context;
+	$: canvas ? canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`) : canvas
 	onMount(() => {
 		let canvases = document.getElementsByTagName('canvas');
-		let mains = document.getElementsByTagName('canvas');
 		thisCanvas = document.getElementById(data.TITLE);
 		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 28 ~ onMount ~ thisCanvas`, thisCanvas);
 		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvases`, canvases);
 		canvas = canvases[0];
+		thisCanvas = canvases[0];
 		if (canvases.length > 1) {
 			console.log(
 				`🚀 ~ file: sketch03-preview.svelte ~ line 33 ~ onMount ~ canvases[1]`,
@@ -40,17 +42,37 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 			canvases[1].parentNode.parentNode.parentNode.removeChild(canvases[1].parentNode.parentNode);
 		}
 		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas`, canvas);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas.style`, canvas.style);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas.style[0]`, canvas.style[0]);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas.style[1]`, canvas.style[1]);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas.style.value`, canvas.style.value);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas.style.cssText`, canvas.style.cssText);
 		context = thisCanvas.getContext('2d');
 		console.log(`🚀 ~ file: sketch03.svelte ~ line 25 ~ onMount ~ context`, context);
 		let parent = thisCanvas.parentElement;
 		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 30 ~ onMount ~ parent`, parent);
 		let w = parent.offsetWidth;
 		let h = parent.offsetHeight;
+		width = parent.offsetWidth;
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 50 ~ onMount ~ width`, width);
+		height = parent.offsetHeight;
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 52 ~ onMount ~ height`, height);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 50 ~ onMount ~ h`, h);
 		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 32 ~ onMount ~ w`, w);
 		// canvas.removeAttribute("style")
-		// canvas.setAttribute('style', `width: ${w}px;`)
+		canvas.style.value = ""
+		canvas.style.cssText = ""
+		canvas.style.removeProperty('width')
+		canvas.style.removeProperty('cssText')
+		canvas.style.removeProperty('style')
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 64 ~ onMount ~ canvas.style`, canvas.style);
+		canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`)
 		// sketch({ context, width, height });
 		// animate()
+		settings;
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 63 ~ onMount ~ settings`, settings);
+		mounted = true;
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 63 ~ onMount ~ settings`, settings);
 	});
 	// ========================================================================
 	// basic animation example below; canvas-sketch 'animate' setting calls this on main return function
@@ -61,7 +83,6 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 
 	let agents = [];
 	let hexes = [];
-
 	const data = {
 		TITLE: 'Sketch03-preview',
 		numNodes: 50,
@@ -86,18 +107,21 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	};
 	$: data;
 	const settings = {
-		dimensions: [w, h],
-		canvas: thisCanvas ? thisCanvas : canvas,
-		fps: 24
+		dimensions: [width, height],
+		// canvas: thisCanvas ? thisCanvas : canvas,
+		fps: 60,
 		// canvasWidth: w,
 		// canvasHeight: h,
-		// styleWidth: w,
-		// styleHeight: h,
+		// styleWidth: width,
+		// styleHeight: height,
 		// scaleToView: true,
 		// scaleToFit: true,
 		// resizeCanvas: true,
 		// scaleContext: true,
 	};
+	$: width, height;
+	$: settings.dimensions[0] = width;
+	$: settings.dimensions[1] = height;
 
 	class Vector {
 		constructor(x, y) {
@@ -249,7 +273,9 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 			context.fillRect(0, 0, width, height);
 			if (data.numNodes != hexes.length) {
 			}
+			// width, height
 
+			// console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 276 ~ return ~ width, height`, width, height)
 			hexes.forEach((hex) => {
 				hex.update();
 				if (data.showNodes) {
@@ -270,8 +296,10 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	//
 </script>
 
-<canvas id={data.TITLE} style="width: {w}px; height: {w}px;" class="rounded-lg" />
+<!-- <canvas id={data.TITLE} style="width: {w}px; height: {w}px;" class="rounded-lg" /> -->
 <!-- {#if canvas?.offsetWidth} -->
 <!-- <h1>canvas loaded</h1> -->
+<!-- {#if mounted} -->
+<!-- <div class="rounded-lg w-24"></div> -->
 <CanvasSketchEditor {sketch} {settings} {data} {hidePanel} />
 <!-- {/if} -->

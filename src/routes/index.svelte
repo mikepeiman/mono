@@ -44,10 +44,10 @@
 			component: false
 		},
 		{
-			name: 'Project Three',
+			name: 'Creative Coding',
 			url: './creative/sketch03',
-			tags: ['scary', 'epic', 'twisted'],
-			desc: 'This project will twist your knickers',
+			tags: ['creative coding', 'generative art', 'javascript'],
+			desc: 'Fulfilling a lifelong passion for beauty, and exploring the relationships between form, movement and number.',
 			component: Sketch03Preview
 		}
 	];
@@ -229,14 +229,14 @@
 							<p class="mt-2 text-sm md:text-base xl:text-lg tracking-wider  font-light">
 								{project.desc}
 							</p>
-							<div class="mt-4 flex flex-row">
-								{#each project.tags as tag}
-									<span
-										class="project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2"
-										>{tag}</span
-									>
-								{/each}
-							</div>
+						</div>
+						<div class="-mt-4 text-xs mb-4 flex flex-row items-start justify-items-start project-tags">
+							{#each project.tags as tag}
+								<span
+									class="project-tag -ml-2 mr-4 bg-winterblues-300 bg-opacity-30 rounded-md text-xs font-thin p-1"
+									>{tag}</span
+								>
+							{/each}
 						</div>
 						<div class="sketch rounded-lg">
 							<svelte:component this={project.component} />
@@ -445,9 +445,11 @@
 	}
 	.project-card {
 		display: grid;
-		grid-template-columns: 3fr 2fr;
+		grid-template-columns: 3fr minmax(40%, 2fr);
 		grid-template-rows: 1fr;
-		grid-template-areas: 'details sketch';
+		grid-template-areas: 	'tags tags'
+		'details sketch'
+	;
 		.project-details {
 			grid-area: details;
 		}
@@ -551,8 +553,12 @@
 	.projects-group {
 		grid-template-columns: repeat(3, 1fr);
 	}
+	.project-tags {
+		grid-area: tags;
+	}
 
 	.project-tag {
 		font-family: monospace;
+
 	}
 </style>
