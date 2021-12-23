@@ -8,8 +8,6 @@
 		}
 	};
 
-	// import { icons } from '@iconify-json/mdi-light'
-	// console.log(`🚀 ~ file: index.svelte ~ line 13 ~ icons `, icons )
 </script>
 
 <script>
@@ -20,7 +18,7 @@
 	import Sketch03Preview from './creative/sketch03-preview.svelte';
 	import { onMount } from 'svelte';
 	onMount(() => {
-		resizeCanvases();
+		// resizeCanvases();
 	});
 	// import { collections } from '@iconify/collections.json';
 	// console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections);
@@ -57,7 +55,7 @@
 	];
 
 	let windowInnerWidth;
-	$: windowInnerWidth && resizeCanvases();
+	// $: windowInnerWidth && resizeCanvases();
 	function resizeCanvases() {
 		let canvases = document.getElementsByTagName('canvas');
 		console.log(`🚀 ~ file: index.svelte ~ line 58 ~ resizeCanvases ~ canvases`, canvases);
@@ -82,14 +80,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowInnerWidth} />
-<!-- <div class="flex flex-row mt-12">
-    
-    <Icon icon="mdi-light:home" width="4rem" />
-    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  color-3" width="4rem" />
-    <Icon icon="eva:droplet-off-outline" inline={true} class="icon-img  color-3" width="4rem" />
-    <Icon icon="fa:wrench" inline={true} class="icon-img  text-stblue-400" width="4rem" />
-    <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  color-3" width="4rem" />
-</div> -->
+
 <main
 	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:px-12 xl:px-24 2xl:w-4/5 2xl:px-12 3xl:w-3/4 3xl:px-36 mt-8"
 >
@@ -203,7 +194,7 @@
 		<!-- SEPARATOR -->
 	</section>
 
-	<section class="flex flex-col w-full self-center text-center items-center justify-center px-8">
+	<section class="flex flex-col w-full self-center text-center items-center justify-center  px-8 lg:px-0">
 		<p
 			class="statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
 		>

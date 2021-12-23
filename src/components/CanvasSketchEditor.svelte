@@ -5,6 +5,7 @@
 	export let data = {};
 	export let sketch = () => {};
 	export let hidePanel = false;
+	let viewportW, viewportH
 	let localStorageSupported = (() => {
 		try {
 			return typeof window.localStorage !== 'undefined';
@@ -40,7 +41,9 @@
 			}
 		}
 	}
-
+$: settings.dimensions[0] = viewportW
+$: settings.dimensions[1] = viewportH
+$: console.log(`🚀 ~ file: CanvasSketchEditor.svelte ~ line 45 ~ viewportW`, viewportW)
 
 </script>
 
@@ -50,7 +53,7 @@
 			<h1 class="text-2xl text-center text-sky-200 mt-6 w-full self-center">{data.TITLE}</h1>
 		</div>
 	{/if}
-	<div class="viewport rounded-lg">
+	<div class="viewport rounded-lg" bind:offsetWidth={viewportW} bind:offsetHeight={viewportH}>
 		<CanvasSketch {data} {settings} {sketch} />
 	</div>
 
