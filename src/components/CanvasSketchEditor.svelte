@@ -44,13 +44,13 @@
 
 </script>
 
-<main class="sketch w-80" class:preview={'/creative' === path}>
+<main class="sketch rounded-lg" class:preview={'/creative' === path}>
 	{#if '/creative' === path}
 		<div class="title flex items-center justify-center flex w-full self-center">
 			<h1 class="text-2xl text-center text-sky-200 mt-6 w-full self-center">{data.TITLE}</h1>
 		</div>
 	{/if}
-	<div class="viewport">
+	<div class="viewport rounded-lg">
 		<CanvasSketch {data} {settings} {sketch} />
 	</div>
 
@@ -66,6 +66,7 @@
 		margin: 0;
 		padding: 0;
 	} */
+
 
 	main {
 		// ORIGINAL STYLES

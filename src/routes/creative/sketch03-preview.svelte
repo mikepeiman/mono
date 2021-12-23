@@ -23,6 +23,8 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 
 	$: canvas ? (context = canvas.getContext('2d')) : context;
 	$: canvas ? canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`) : canvas
+	$: canvas ? canvas.style.width = `${width}px` : canvas
+	$: canvas ? canvas.style.height = `${height}px` : canvas
 	onMount(() => {
 		let canvases = document.getElementsByTagName('canvas');
 		thisCanvas = document.getElementById(data.TITLE);
@@ -112,14 +114,16 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 		fps: 60,
 		// canvasWidth: w,
 		// canvasHeight: h,
-		// styleWidth: width,
-		// styleHeight: height,
+		// styleWidth: true,
+		// styleHeight: true,
+		styleCanvas: true,
 		// scaleToView: true,
 		// scaleToFit: true,
 		// resizeCanvas: true,
 		// scaleContext: true,
 	};
-	$: width, height;
+	// $: width, height;
+    $: console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 126 ~ width, height`, width, height)
 	$: settings.dimensions[0] = width;
 	$: settings.dimensions[1] = height;
 
