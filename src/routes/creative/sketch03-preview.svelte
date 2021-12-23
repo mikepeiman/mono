@@ -18,14 +18,31 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	let width = 800;
 	let height = 800;
 	let context
-	let canvas
+	let canvases, canvas, thisCanvas, w, h
 
 	$: canvas ? context = canvas.getContext('2d') : context
 	onMount(() => {
-		let canvas = document.getElementsByTagName('canvas')[0];
+		let canvases = document.getElementsByTagName('canvas')
+		let mains = document.getElementsByTagName('canvas')
+		thisCanvas = document.getElementById(data.TITLE)
+        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 28 ~ onMount ~ thisCanvas`, thisCanvas)
+        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvases`, canvases)
+		canvas = canvases[0]
+		if(canvases.length > 1){
+            console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 33 ~ onMount ~ canvases[1]`, canvases[1])
+            console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 34 ~ onMount ~ canvases[1].parentNode`, canvases[1].parentNode)
+			canvases[1].parentNode.parentNode.removeChild(canvases[1].parentNode)
+		}
         console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas`, canvas)
-		context = canvas.getContext('2d');
+		context = thisCanvas.getContext('2d');
 		console.log(`🚀 ~ file: sketch03.svelte ~ line 25 ~ onMount ~ context`, context);
+		let parent = thisCanvas.parentElement
+        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 30 ~ onMount ~ parent`, parent)
+		let w = parent.offsetWidth
+		let h = parent.offsetHeight
+        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 32 ~ onMount ~ w`, w)
+		// canvas.removeAttribute("style")
+		// canvas.setAttribute('style', `width: ${w}px;`) 
 		// sketch({ context, width, height });
 		// animate()
 	});
@@ -63,10 +80,11 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	};
 	$: data;
 	const settings = {
-		dimensions: [width, height],
+		dimensions: [w, h],
+		canvas: thisCanvas ? thisCanvas : canvas,
 		// scaleToView: true,
 		// scaleToFit: true,
-		// resizeCanvas: false,
+		resizeCanvas: true,
 		// scaleContext: true,
 	};
 
@@ -232,14 +250,18 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 		};
 	};
 	// let counter = 0
-	const animate = () => {
-		console.log(`Mike animate ${counter++}`);
-		sketch({ context, width, height });
-		requestAnimationFrame(animate);
-	};
+	// const animate = () => {
+	// 	console.log(`Mike animate ${counter++}`);
+	// 	sketch({ context, width, height });
+	// 	requestAnimationFrame(animate);
+	// };
 	//
 </script>
 
+<canvas id="{data.TITLE}" style="width: {w}px; height: {w}px;" />
+<!-- {#if canvas?.offsetWidth} -->
+<!-- <h1>canvas loaded</h1> -->
 <CanvasSketchEditor {sketch} {settings} {data} {hidePanel}>
 
 </CanvasSketchEditor>
+<!-- {/if} -->

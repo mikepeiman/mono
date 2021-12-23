@@ -66,7 +66,11 @@
 	}
 </script>
 
-<canvas bind:this={canvas} style={`width: ${width}px`} />
+<!-- {#await opt} -->
+	<!-- {#if !settings.canvas} -->
+		<canvas bind:this={canvas} />
+	<!-- {/if} -->
+<!-- {/await} -->
 
 <style>
 	/* Optionally style the canvas here */
@@ -74,8 +78,8 @@
 		margin: auto;
 		display: block;
 		box-shadow: 0px 2px 12px -2px rgba(0, 0, 0, 0.15);
-		width: 100%;
-		/* width: inherit; */
+		/* width: 100%; */
+		width: inherit;
 		/* min-width: inherit; */
 		height: auto;
 	}
