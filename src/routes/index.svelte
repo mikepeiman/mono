@@ -18,6 +18,10 @@
 	import Sketch01 from './creative/sketch01.svelte';
 	import Sketch02Preview from './creative/sketch02-preview.svelte';
 	import Sketch03Preview from './creative/sketch03-preview.svelte';
+	import {onMount} from 'svelte'
+	onMount(() => {
+		resizeCanvases() 
+	});
 	// import { collections } from '@iconify/collections.json';
 	// console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections);
 
@@ -51,6 +55,27 @@
 			component: Sketch03Preview
 		}
 	];
+
+
+	function resizeCanvases() {
+		let canvases = document.getElementsByTagName('canvas')
+        console.log(`🚀 ~ file: index.svelte ~ line 58 ~ resizeCanvases ~ canvases`, canvases)
+
+		let len = canvases.length
+        console.log(`🚀 ~ file: index.svelte ~ line 65 ~ resizeCanvases ~ len`, len)
+		for (let i = 0; i < len; i++) {
+			const canvas = canvases[i]
+            console.log(`🚀 ~ file: index.svelte ~ line 68 ~ resizeCanvases ~ canvas `, canvas )
+			let parent = canvas.parentElement
+            console.log(`🚀 ~ file: index.svelte ~ line 70 ~ resizeCanvases ~ parent`, parent)
+			let width = parent.offsetWidth
+            console.log(`🚀 ~ file: index.svelte ~ line 72 ~ resizeCanvases ~ width`, width)
+			let height = parent.offsetHeight
+            console.log(`🚀 ~ file: index.svelte ~ line 74 ~ resizeCanvases ~ height`, height)
+			canvas.removeAttribute('style')
+			canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`)
+		}
+	}
 </script>
 
 <!-- <div class="flex flex-row mt-12">
