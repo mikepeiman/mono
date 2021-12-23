@@ -15,7 +15,9 @@
 <script>
 	import Time from 'svelte-time';
 	import IconChevronRight from '~icons/mdi/chevron-right';
+	import Sketch01 from './creative/sketch01.svelte';
 	import Sketch02Preview from './creative/sketch02-preview.svelte';
+	import Sketch03Preview from './creative/sketch03-preview.svelte';
 	// import { collections } from '@iconify/collections.json';
 	// console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections);
 
@@ -23,7 +25,6 @@
 	$: path = $page.path;
 	$: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path);
 	import Posts from '$components/Posts.svelte';
-	import Sketch03Preview from './creative/sketch03-preview.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
 	console.log(`🚀 ~ file: index.svelte ~ line 4 ~ posts`, posts);
@@ -61,7 +62,7 @@
     <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  color-3" width="4rem" />
 </div> -->
 <main
-	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8"
+	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:px-12  xl:w-4/5 2xl:w-3/4 3xl:w-3/5 mt-8"
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">

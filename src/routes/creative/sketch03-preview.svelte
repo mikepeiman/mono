@@ -15,34 +15,40 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	import CanvasSketch from '$components/CanvasSketch.svelte';
 	import { onMount } from 'svelte';
 
-	let width = 800;
-	let height = 800;
-	let context
-	let canvases, canvas, thisCanvas, w, h
+	let width = 300;
+	let height = 150;
+	let context;
+	let canvases, canvas, thisCanvas, w, h;
 
-	$: canvas ? context = canvas.getContext('2d') : context
+	$: canvas ? (context = canvas.getContext('2d')) : context;
 	onMount(() => {
-		let canvases = document.getElementsByTagName('canvas')
-		let mains = document.getElementsByTagName('canvas')
-		thisCanvas = document.getElementById(data.TITLE)
-        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 28 ~ onMount ~ thisCanvas`, thisCanvas)
-        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvases`, canvases)
-		canvas = canvases[0]
-		if(canvases.length > 1){
-            console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 33 ~ onMount ~ canvases[1]`, canvases[1])
-            console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 34 ~ onMount ~ canvases[1].parentNode`, canvases[1].parentNode)
-			canvases[1].parentNode.parentNode.removeChild(canvases[1].parentNode)
+		let canvases = document.getElementsByTagName('canvas');
+		let mains = document.getElementsByTagName('canvas');
+		thisCanvas = document.getElementById(data.TITLE);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 28 ~ onMount ~ thisCanvas`, thisCanvas);
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvases`, canvases);
+		canvas = canvases[0];
+		if (canvases.length > 1) {
+			console.log(
+				`🚀 ~ file: sketch03-preview.svelte ~ line 33 ~ onMount ~ canvases[1]`,
+				canvases[1]
+			);
+			console.log(
+				`🚀 ~ file: sketch03-preview.svelte ~ line 34 ~ onMount ~ canvases[1].parentNode`,
+				canvases[1].parentNode
+			);
+			canvases[1].parentNode.parentNode.parentNode.removeChild(canvases[1].parentNode.parentNode);
 		}
-        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas`, canvas)
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 26 ~ onMount ~ canvas`, canvas);
 		context = thisCanvas.getContext('2d');
 		console.log(`🚀 ~ file: sketch03.svelte ~ line 25 ~ onMount ~ context`, context);
-		let parent = thisCanvas.parentElement
-        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 30 ~ onMount ~ parent`, parent)
-		let w = parent.offsetWidth
-		let h = parent.offsetHeight
-        console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 32 ~ onMount ~ w`, w)
+		let parent = thisCanvas.parentElement;
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 30 ~ onMount ~ parent`, parent);
+		let w = parent.offsetWidth;
+		let h = parent.offsetHeight;
+		console.log(`🚀 ~ file: sketch03-preview.svelte ~ line 32 ~ onMount ~ w`, w);
 		// canvas.removeAttribute("style")
-		// canvas.setAttribute('style', `width: ${w}px;`) 
+		// canvas.setAttribute('style', `width: ${w}px;`)
 		// sketch({ context, width, height });
 		// animate()
 	});
@@ -58,8 +64,8 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 
 	const data = {
 		TITLE: 'Sketch03-preview',
-		numNodes: 100,
-		range: 140,
+		numNodes: 50,
+		range: 50,
 		lineCap: 'butt',
 		lineCaps: [
 			{ value: 'butt', label: 'butt' },
@@ -72,8 +78,8 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 			{ value: 'hex', label: 'hex' },
 			{ value: 'circle', label: 'circle' }
 		],
-		lineWidth: 2,
-		lineWidthMax: 5,
+		lineWidth: 1,
+		lineWidthMax: 3,
 		radiusMin: 10,
 		radiusMax: 30,
 		animate: true
@@ -82,9 +88,14 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	const settings = {
 		dimensions: [w, h],
 		canvas: thisCanvas ? thisCanvas : canvas,
+		fps: 24
+		// canvasWidth: w,
+		// canvasHeight: h,
+		// styleWidth: w,
+		// styleHeight: h,
 		// scaleToView: true,
 		// scaleToFit: true,
-		resizeCanvas: true,
+		// resizeCanvas: true,
 		// scaleContext: true,
 	};
 
@@ -108,8 +119,8 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 			this.radius = random.range(data.radiusMin, data.radiusMax);
 		}
 		update() {
-			this.pos.x += this.vel.x;
-			this.pos.y += this.vel.y;
+			this.pos.x += this.vel.x * 0.2;
+			this.pos.y += this.vel.y * 0.2;
 		}
 
 		bounce(width, height) {
@@ -244,7 +255,8 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 				if (data.showNodes) {
 					data.nodeType == 'hex' ? hex.drawHex(context) : hex.drawCircle(context);
 				}
-				hex.wrap(width, height);
+				// hex.wrap(width, height);
+				hex.bounce(width, height);
 			});
 			requestAnimationFrame(sketch());
 		};
@@ -258,10 +270,8 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	//
 </script>
 
-<canvas id="{data.TITLE}" style="width: {w}px; height: {w}px;" />
+<canvas id={data.TITLE} style="width: {w}px; height: {w}px;" class="rounded-lg" />
 <!-- {#if canvas?.offsetWidth} -->
 <!-- <h1>canvas loaded</h1> -->
-<CanvasSketchEditor {sketch} {settings} {data} {hidePanel}>
-
-</CanvasSketchEditor>
+<CanvasSketchEditor {sketch} {settings} {data} {hidePanel} />
 <!-- {/if} -->
