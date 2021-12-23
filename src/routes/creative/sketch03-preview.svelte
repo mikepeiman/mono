@@ -295,8 +295,9 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	// };
 	//
 </script>
-
-<!-- <canvas id={data.TITLE} style="width: {w}px; height: {w}px;" class="rounded-lg" /> -->
+<!-- <div class="w-full h-full"> -->
+	<canvas id={data.TITLE} style="width: {width}px; height: {height}px;" class="rounded-lg" />
+<!-- </div> -->
 <!-- {#if canvas?.offsetWidth} -->
 <!-- <h1>canvas loaded</h1> -->
 <!-- {#if mounted} -->
