@@ -18,9 +18,9 @@
 	import Sketch01 from './creative/sketch01.svelte';
 	import Sketch02Preview from './creative/sketch02-preview.svelte';
 	import Sketch03Preview from './creative/sketch03-preview.svelte';
-	import {onMount} from 'svelte'
+	import { onMount } from 'svelte';
 	onMount(() => {
-		resizeCanvases() 
+		resizeCanvases();
 	});
 	// import { collections } from '@iconify/collections.json';
 	// console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections);
@@ -56,28 +56,32 @@
 		}
 	];
 
-
+	let windowInnerWidth;
+	$: windowInnerWidth && resizeCanvases();
 	function resizeCanvases() {
-		let canvases = document.getElementsByTagName('canvas')
-        console.log(`🚀 ~ file: index.svelte ~ line 58 ~ resizeCanvases ~ canvases`, canvases)
+		let canvases = document.getElementsByTagName('canvas');
+		console.log(`🚀 ~ file: index.svelte ~ line 58 ~ resizeCanvases ~ canvases`, canvases);
 
-		let len = canvases.length
-        console.log(`🚀 ~ file: index.svelte ~ line 65 ~ resizeCanvases ~ len`, len)
+		let len = canvases.length;
+		console.log(`🚀 ~ file: index.svelte ~ line 65 ~ resizeCanvases ~ len`, len);
 		for (let i = 0; i < len; i++) {
-			const canvas = canvases[i]
-            console.log(`🚀 ~ file: index.svelte ~ line 68 ~ resizeCanvases ~ canvas `, canvas )
-			let parent = canvas.parentElement
-            console.log(`🚀 ~ file: index.svelte ~ line 70 ~ resizeCanvases ~ parent`, parent)
-			let width = parent.offsetWidth
-            console.log(`🚀 ~ file: index.svelte ~ line 72 ~ resizeCanvases ~ width`, width)
-			let height = parent.offsetHeight
-            console.log(`🚀 ~ file: index.svelte ~ line 74 ~ resizeCanvases ~ height`, height)
-			canvas.removeAttribute('style')
-			canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`)
+			const canvas = canvases[i];
+			console.log(`🚀 ~ file: index.svelte ~ line 68 ~ resizeCanvases ~ canvas `, canvas);
+			let parent = canvas.parentElement;
+			console.log(`🚀 ~ file: index.svelte ~ line 70 ~ resizeCanvases ~ parent`, parent);
+			let width = parent.offsetWidth;
+			console.log(`🚀 ~ file: index.svelte ~ line 72 ~ resizeCanvases ~ width`, width);
+			let height = parent.offsetHeight;
+			console.log(`🚀 ~ file: index.svelte ~ line 74 ~ resizeCanvases ~ height`, height);
+			canvas.removeAttribute('style');
+			canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`);
+			canvas.style.width = width;
+			canvas.style.height = height;
 		}
 	}
 </script>
 
+<svelte:window bind:innerWidth={windowInnerWidth} />
 <!-- <div class="flex flex-row mt-12">
     
     <Icon icon="mdi-light:home" width="4rem" />
@@ -87,7 +91,7 @@
     <Icon icon="line-md:image-cool1tone" inline={true} class="icon-img  color-3" width="4rem" />
 </div> -->
 <main
-	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:px-12  xl:w-4/5 2xl:w-3/4 3xl:w-3/5 mt-8"
+	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:px-12 xl:px-24 2xl:w-4/5 2xl:px-12 3xl:w-3/4 3xl:px-36 mt-8"
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
@@ -255,7 +259,9 @@
 								{project.desc}
 							</p>
 						</div>
-						<div class="-mt-4 text-xs mb-4 flex flex-row items-start justify-items-start project-tags">
+						<div
+							class="-mt-4 text-xs mb-4 flex flex-row items-start justify-items-start project-tags"
+						>
 							{#each project.tags as tag}
 								<span
 									class="project-tag -ml-2 mr-4 bg-winterblues-300 bg-opacity-30 rounded-md text-xs font-thin p-1"
@@ -470,11 +476,11 @@
 	}
 	.project-card {
 		display: grid;
-		grid-template-columns: 3fr minmax(40%, 2fr);
+		grid-template-columns: 3fr minmax(50%, 2fr);
 		grid-template-rows: 1fr;
-		grid-template-areas: 	'tags tags'
-		'details sketch'
-	;
+		grid-template-areas:
+			'tags tags'
+			'details sketch';
 		.project-details {
 			grid-area: details;
 		}
@@ -584,6 +590,5 @@
 
 	.project-tag {
 		font-family: monospace;
-
 	}
 </style>

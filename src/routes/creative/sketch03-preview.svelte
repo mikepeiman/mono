@@ -22,9 +22,9 @@ Leaving his example as the first sketch here in honor of his work and amazing co
 	let mounted = false;
 
 	$: canvas ? (context = canvas.getContext('2d')) : context;
-	$: canvas ? canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`) : canvas
-	$: canvas ? canvas.style.width = `${width}px` : canvas
-	$: canvas ? canvas.style.height = `${height}px` : canvas
+	// $: canvas ? canvas.setAttribute('style', `width: ${width}px; height: ${height}px;`) : canvas
+	// $: canvas ? canvas.style.width = `${width}px` : canvas
+	// $: canvas ? canvas.style.height = `${height}px` : canvas
 	onMount(() => {
 		let canvases = document.getElementsByTagName('canvas');
 		thisCanvas = document.getElementById(data.TITLE);

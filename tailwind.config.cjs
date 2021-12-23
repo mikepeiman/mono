@@ -236,8 +236,8 @@ module.exports = {
       'md': '800px',
       'lg': '1200px',
       'xl': '1600px',
-      '2xl': '2200px',
-      '3xl': '2800px',
+      '2xl': '2000px',
+      '3xl': '2400px',
     }
   },
   variants: {},
