@@ -13,11 +13,11 @@
 	<Nav>
 		<slot />
 	</Nav>
-	<div class="main flex flex-col items-center jutify-center">
+	<div class="layout-main flex flex-col items-center jutify-center">
 		<slot />
 	</div>
 	{:else}
-	<div class="main flex flex-col items-center -mt-12 jutify-center">
+	<div class="layout-main flex flex-col items-center -mt-12 jutify-center">
 		<slot />
 	</div>
 	{/if}
@@ -34,11 +34,11 @@
 		grid-template-columns: auto;
 		grid-template-areas:
 			' header '
-			' main '
+			' layout-main '
 			' footer ';
 	}
-	.main {
-		grid-area: main;
+	.layout-main {
+		grid-area: layout-main;
 		// display: flex;
 		// flex-direction: column;
 		justify-content: center;

@@ -33,7 +33,8 @@
 		{ title: 'Todos', url: '/todos' },
 		{ title: 'Quotes', url: '/quotes' },
 		{ title: 'Creative', url: '/creative' },
-		{ title: 'Mike', url: '/mikepeiman' }
+		{ title: 'MetaBrain', url: '/metabrain' },
+		{ title: 'Discord', url: '/egghead-discord' },
 	];
 
 	function respondToCloseClick() {
