@@ -7,7 +7,6 @@
 			return { props: { posts } };
 		}
 	};
-
 </script>
 
 <script>
@@ -152,7 +151,7 @@
 				{#each selectedPosts as post}
 					<a href={`/posts/${post.slug}`} class="no-underline">
 						<div
-							class="post-card transition card card-body p-6 lg:p-9 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2"
+							class="post-card transition card card-body p-5 lg:p-7 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2"
 						>
 							<div
 								class="article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200"
@@ -194,7 +193,9 @@
 		<!-- SEPARATOR -->
 	</section>
 
-	<section class="flex flex-col w-full self-center text-center items-center justify-center  px-8 lg:px-0">
+	<section
+		class="flex flex-col w-full self-center text-center items-center justify-center  px-8 lg:px-0"
+	>
 		<p
 			class="statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
 		>
@@ -238,9 +239,17 @@
 				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 grid p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
+						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 flex flex-col  md:flex-col-reverse md:justify-between lg:flex-col lg:justify-start p-5 lg:p-7 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
-						<div class="project-details flex flex-col justify-items-start">
+						<div class="text-xs ml-1 flex flex-row project-tags">
+							{#each project.tags as tag}
+								<span
+									class="project-tag -ml-2 mr-4 mb-4 bg-winterblues-300 bg-opacity-30 rounded-md text-xs font-thin p-1"
+									>{tag}</span
+								>
+							{/each}
+						</div>
+						<div class="project-details flex flex-col ">
 							<h1
 								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white"
 							>
@@ -250,19 +259,9 @@
 								{project.desc}
 							</p>
 						</div>
-						<div
-							class="-mt-4 text-xs ml-1 flex flex-row items-start justify-items-start project-tags"
-						>
-							{#each project.tags as tag}
-								<span
-									class="project-tag -ml-2 mr-4 bg-winterblues-300 bg-opacity-30 rounded-md text-xs font-thin p-1"
-									>{tag}</span
-								>
-							{/each}
-						</div>
-						<div class="sketch rounded-lg pl-2">
+						<!-- <div class="sketch rounded-lg pl-2">
 							<svelte:component this={project.component} />
-						</div>
+						</div> -->
 					</div>
 				</a>
 			{/each}
@@ -466,16 +465,15 @@
 		// }
 	}
 	.project-card {
-		display: grid;
-		grid-template-columns: 3fr minmax(45%, 2fr);
+		display: flex;
+		// grid-template-columns: 3fr minmax(45%, 2fr);
 		grid-template-rows: 1.75rem 1fr;
 		grid-template-areas:
-			'tags tags'
-			'details sketch';
+			'tags'
+			'details';
 		.project-details {
 			grid-area: details;
 			display: flex;
-
 		}
 		.sketch {
 			grid-area: sketch;
