@@ -13,7 +13,7 @@
 <script>
 	import Time from 'svelte-time';
 	import IconChevronRight from '~icons/mdi/chevron-right';
-	import Sketch01 from './creative/sketch01.svelte';
+	import Sketch01Preview from './creative/sketch01-preview.svelte';
 	import Sketch02Preview from './creative/sketch02-preview.svelte';
 	import Sketch03Preview from './creative/sketch03-preview.svelte';
 	import { onMount } from 'svelte';
@@ -32,17 +32,17 @@
 	console.log(`🚀 ~ file: index.svelte ~ line 4 ~ posts`, posts);
 	let projects = [
 		{
-			name: 'Project One',
+			name: 'MetaBrain.io',
 			url: './creative/sketch01',
-			tags: ['awesome', 'sauce', 'hot'],
-			desc: 'This project will burn your socks off',
+			tags: ['knowledge management app', 'GraphQL/DB', 'LMS'],
+			desc: 'A knowledge tracking platform for life. Research, track, organize, curate, plan, analyze, schedule, do. One app to rule them all.',
 			component: false
 		},
 		{
-			name: 'Project Two',
+			name: 'Super Tic-Tac-Toe',
 			url: './creative/sketch02',
-			tags: ['mysterious', 'fun', 'cool'],
-			desc: 'This project will cool your noggin',
+			tags: ['Svelte/Sapper', 'game', '(S)CSS'],
+			desc: 'Inspired by pen-and-paper with my daughter. Tic-Tac-Toe on steroids. Choose an emoji, configure your gameboard and rules, and have at it with up to 8 players.',
 			component: false
 		},
 		{
@@ -240,7 +240,7 @@
 					<div
 						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 grid p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
-						<div class="project-details flex flex-col">
+						<div class="project-details flex flex-col justify-items-start">
 							<h1
 								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white"
 							>
@@ -251,7 +251,7 @@
 							</p>
 						</div>
 						<div
-							class="-mt-4 text-xs mb-4 flex flex-row items-start justify-items-start project-tags"
+							class="-mt-4 text-xs ml-1 flex flex-row items-start justify-items-start project-tags"
 						>
 							{#each project.tags as tag}
 								<span
@@ -260,7 +260,7 @@
 								>
 							{/each}
 						</div>
-						<div class="sketch rounded-lg">
+						<div class="sketch rounded-lg pl-2">
 							<svelte:component this={project.component} />
 						</div>
 					</div>
@@ -467,13 +467,15 @@
 	}
 	.project-card {
 		display: grid;
-		grid-template-columns: 3fr minmax(50%, 2fr);
-		grid-template-rows: 1fr;
+		grid-template-columns: 3fr minmax(45%, 2fr);
+		grid-template-rows: 1.75rem 1fr;
 		grid-template-areas:
 			'tags tags'
 			'details sketch';
 		.project-details {
 			grid-area: details;
+			display: flex;
+
 		}
 		.sketch {
 			grid-area: sketch;

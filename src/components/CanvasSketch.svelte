@@ -37,10 +37,13 @@
 		// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt`, opt)
 		// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 24 ~ onMount ~ opt.parent`, opt.parent)
 		// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 26 ~ onMount ~ parent`, parent)
+		let canvases = document.getElementsByTagName('canvas')
+        console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 41 ~ onMount ~ canvases`, canvases)
 		loader = await canvasSketch(sketch, opt);
 		manager = await loader;
 		let loadedCanvas = await manager._settings.canvas;
 		parent = canvas.parentElement;
+        console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 46 ~ onMount ~ canvas`, canvas)
 		pw = parent.offsetWidth;
 		ph = parent.offsetHeight;
 		console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 44 ~ onMount ~ parent`, parent);
@@ -50,6 +53,7 @@
 		// console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 40 ~ onMount ~ loadedCanvas`, loadedCanvas);
 	});
 
+	// THIS LINE BREAKS a multi-sketch page, like creative/index.svelte. It works for ONE sketch preview at a time
 	$: fullyLoaded && windowInnerW ? resizeCanvas() : false;
 	$: console.log(`🚀 ~ file: CanvasSketch.svelte ~ line 53 ~ windowInnerW width`, windowInnerW);
 
