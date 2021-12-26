@@ -5,7 +5,16 @@ module.exports = {
   mode: 'jit',
   content: ['./src/**/*.svelte'],
   theme: {
-    // extend: {
+    fontFamily: {
+      'sans': 'Montserrat',
+      'serif': 'Newsreader',
+      'mono': 'Inconsolata',
+      'display': 'Vollkorn',
+      'body': '"Open Sans"',
+
+    },
+    extend: {
+
       colors: {
         ...colors,
         warm1: {
@@ -230,7 +239,7 @@ module.exports = {
         },
  
       },
-    // },
+    },
     screens: {
       'sm': '500px',
       'md': '800px',

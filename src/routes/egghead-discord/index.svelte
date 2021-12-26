@@ -45,7 +45,7 @@
 <div class="flex flex-row text-white h-screen w-full">
 	<div class="bg-gray-800 p-3 space-y-2  overflow-y-scroll">
 		{#each servers as serverId}
-			<div class="bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center">
+			<div class="bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center font-mono">
 				{serverId}
 			</div>
 		{/each}
@@ -60,10 +60,10 @@
 		</div>
 	</div>
 	<div class="flex flex-1 flex-col">
-		<div class="p-3 h-12shadow-md bg-electricindigo-800 flex">Main</div>
-		<div class="p-3 bg-electricindigo-700 flex-1 space-y-4 overflow-y-scroll">
+		<div class="p-3 h-12 shadow-md bg-electricindigo-800 flex">Main</div>
+		<div class="p-3 bg-electricindigo-700  flex-1 space-y-4 overflow-y-scroll">
 			{#each messages as message}
-			<p class="w-full font-family text-2xl">{message}</p>
+			<p class="w-full font-body text-2xl">{message}</p>
 			{/each}
 		</div>
 	</div>
@@ -71,13 +71,15 @@
 
 <style lang="scss">
 	.font-family {
-		font-weight: 500;
-		font-family: 'Montserrat';
-		font-family: 'Josefin';
-		font-family: 'Merriweather';
-		font-family: 'Cairo';
-		font-family: 'Vollkorn';
-		font-family: 'Open Sans';
-
+		// font-weight: 500;
+		// font-family: 'Josefin';
+		// font-family: 'Merriweather';
+		// font-family: 'Cairo';
+		font-family: 'Inconsolata';
+		// font-family: 'Fira Sans';
+		// font-family: 'Vollkorn';
+		// font-family: 'Montserrat';
+		// font-family:  'Newsreader', 'Vollkorn';
 	}
+
 </style>
