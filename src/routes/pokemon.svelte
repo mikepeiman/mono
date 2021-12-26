@@ -37,7 +37,7 @@
 </script>
 
 <svelte:head>
-	<title>MetaBrain: Your Life OS</title>
+	<title>Pokemon are cool</title>
 </svelte:head>
 <div class="main">
 	<h1>Pokedex Listing</h1>
