@@ -1,16 +1,16 @@
 const colors = require('tailwindcss/colors')
-
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   important: false,
   mode: 'jit',
   content: ['./src/**/*.svelte'],
   theme: {
     fontFamily: {
-      'sans': 'Montserrat',
-      'serif': 'Newsreader',
-      'mono': 'Inconsolata',
-      'display': 'Vollkorn',
-      'body': '"Open Sans"',
+      'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
+      'serif': ['Newsreader', ...defaultTheme.fontFamily.serif],
+      'mono': ['Inconsolata', ...defaultTheme.fontFamily.mono],
+      'display': ['Vollkorn', ...defaultTheme.fontFamily.sans],
+      'body': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
 
     },
     extend: {
