@@ -55,7 +55,7 @@
         </a>
 
 		{#each servers as serverId}
-		<a href="/egghead-discord/servers/{serverId}" class="bg-gray-600 text-gray-100 w-12 h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 rounded-3xl hover:rounded-2xl hover:transition-all">
+		<a href="/egghead-discord/servers/{serverId}" class="{path === `/egghead-discord/servers/${serverId}` ? "bg-blue-500 text-white rounded-2xl" : "text-gray-100 rounded-3xl bg-gray-600 hover:bg-blue-500 hover:text-white transition-all duration-200 rounded-3xl hover:rounded-2xl"} w-12 h-12 flex items-center justify-center ">
 			{serverId}
 		</a>
 		{/each}
