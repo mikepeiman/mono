@@ -77,6 +77,7 @@
 		font-family: 'Merriweather';
 		font-family: 'Cairo';
 		font-family: 'Vollkorn';
+		font-family: 'Open Sans';
 
 	}
 </style>
