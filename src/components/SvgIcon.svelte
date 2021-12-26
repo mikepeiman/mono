@@ -1,4 +1,5 @@
 <script>
+    //  from https://stackoverflow.com/questions/66069647/best-way-to-import-svg-icons-into-a-svelte-app
     export let name;
     export let width = "1rem";
     export let height = "1rem";
