@@ -48,13 +48,11 @@
 		<div class="bg-gray-600 text-gray-100 w-12 h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 rounded-3xl hover:rounded-2xl hover:transition-all">
 			<Discord class="w-7 h-5 " />
 		</div>
-		<div class="bg-gray-600 text-gray-100 w-12 h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 rounded-3xl hover:rounded-2xl hover:transition-all">
-			S1
-		</div>
+
 		{#each servers as serverId}
-			<div class="bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center">
-				{serverId}
-			</div>
+		<a href="/egghead-discord/servers/{serverId}" class="bg-gray-600 text-gray-100 w-12 h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 rounded-3xl hover:rounded-2xl hover:transition-all">
+			{serverId}
+		</a>
 		{/each}
 	</div>
 	<div class="bg-winterblues-100 w-60 flex flex-col">

@@ -32,6 +32,7 @@
 		{ title: 'Posts endpoint', url: '/posts.json' },
 		{ title: 'Todos', url: '/todos' },
 		{ title: 'Quotes', url: '/quotes' },
+		{ title: 'Pokemon', url: '/pokemon' },
 		{ title: 'Creative', url: '/creative' },
 		{ title: 'MetaBrain', url: '/metabrain' },
 		{ title: 'Discord', url: '/egghead-discord' },
