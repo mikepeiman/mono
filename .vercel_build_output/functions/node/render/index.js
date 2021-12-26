@@ -19478,7 +19478,7 @@ thought." -
   }
 });
 
-// .svelte-kit/output/server/chunks/index-0f9f8f58.js
+// .svelte-kit/output/server/chunks/index-101a7283.js
 function writable2(value, start = noop3) {
   let stop;
   const subscribers = new Set();
@@ -19521,10 +19521,10 @@ function writable2(value, start = noop3) {
   return { set, update, subscribe: subscribe2 };
 }
 var subscriber_queue2;
-var init_index_0f9f8f58 = __esm({
-  ".svelte-kit/output/server/chunks/index-0f9f8f58.js"() {
+var init_index_101a7283 = __esm({
+  ".svelte-kit/output/server/chunks/index-101a7283.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     subscriber_queue2 = [];
   }
 });
@@ -33298,9 +33298,9 @@ var require_lib14 = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/parseFile-23230fe0.js
-var parseFile_23230fe0_exports = {};
-__export(parseFile_23230fe0_exports, {
+// .svelte-kit/output/server/chunks/parseFile-e6b84cba.js
+var parseFile_e6b84cba_exports = {};
+__export(parseFile_e6b84cba_exports, {
   parseFile: () => parseFile
 });
 function isolateQuotationBlocks(divs2) {
@@ -33329,12 +33329,12 @@ function stringifyArray(item) {
   }
 }
 var quotesArray, storedQuotesArray, cheerio, htmlparser2, quotes2, quotesArrays, filePath, parseFile;
-var init_parseFile_23230fe0 = __esm({
-  ".svelte-kit/output/server/chunks/parseFile-23230fe0.js"() {
+var init_parseFile_e6b84cba = __esm({
+  ".svelte-kit/output/server/chunks/parseFile-e6b84cba.js"() {
     init_shims();
     init_parseQuotes_f1406a23();
-    init_index_0f9f8f58();
-    init_app_e8a54830();
+    init_index_101a7283();
+    init_app_d1ce00fb();
     init_ssr();
     quotesArray = writable2([]);
     storedQuotesArray = {
@@ -33644,12 +33644,12 @@ var init_id_347e0604 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/stores-8da0d5a6.js
+// .svelte-kit/output/server/chunks/stores-95385b68.js
 var getStores, page;
-var init_stores_8da0d5a6 = __esm({
-  ".svelte-kit/output/server/chunks/stores-8da0d5a6.js"() {
+var init_stores_95385b68 = __esm({
+  ".svelte-kit/output/server/chunks/stores-95385b68.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     getStores = () => {
       const stores = getContext("__svelte__");
       return {
@@ -33677,17 +33677,17 @@ var init_stores_8da0d5a6 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-79f0fb1e.js
-var layout_79f0fb1e_exports = {};
-__export(layout_79f0fb1e_exports, {
+// .svelte-kit/output/server/chunks/__layout-5894d4a2.js
+var layout_5894d4a2_exports = {};
+__export(layout_5894d4a2_exports, {
   default: () => _layout
 });
 var css$3, Footer, Hamburger, css$2, delayFactor, HamburgerMenu, css$1, Nav, css, _layout;
-var init_layout_79f0fb1e = __esm({
-  ".svelte-kit/output/server/chunks/__layout-79f0fb1e.js"() {
+var init_layout_5894d4a2 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-5894d4a2.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_stores_8da0d5a6();
+    init_app_d1ce00fb();
+    init_stores_95385b68();
     init_ssr();
     css$3 = {
       code: '.footer{grid-area:footer;display:grid;grid-template-areas:"logo social end";grid-template-columns:1fr 10fr 1fr}nav.svelte-j39445{grid-area:social}',
@@ -33769,7 +33769,11 @@ var init_layout_79f0fb1e = __esm({
         { title: "Todos", url: "/todos" },
         { title: "Quotes", url: "/quotes" },
         { title: "Creative", url: "/creative" },
-        { title: "Mike", url: "/mikepeiman" }
+        { title: "MetaBrain", url: "/metabrain" },
+        {
+          title: "Discord",
+          url: "/egghead-discord"
+        }
       ];
       $$result.css.add(css$1);
       let $$settled;
@@ -33802,7 +33806,7 @@ ${open ? `
       return $$rendered;
     });
     css = {
-      code: '#app-layout{grid-template-rows:5rem auto 80px;grid-template-columns:auto;grid-template-areas:" header " " main " " footer "}.main.svelte-179r1ul{grid-area:main;justify-content:center;align-items:center}',
+      code: '#app-layout{grid-template-rows:5rem auto 80px;grid-template-columns:auto;grid-template-areas:" header " " layout-main " " footer "}.layout-main.svelte-1lbyfs6{grid-area:layout-main;justify-content:center;align-items:center}',
       map: null
     };
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -33818,7 +33822,7 @@ ${open ? `
       return `<div id="${"app-layout"}" class="${"grid w-auto min-h-screen max-h-full bg-black transition"}">${path != "/" ? `${validate_component(Nav, "Nav").$$render($$result, {}, {}, {
         default: () => `${slots.default ? slots.default({}) : ``}`
       })}
-	<div class="${"main flex flex-col items-center jutify-center svelte-179r1ul"}">${slots.default ? slots.default({}) : ``}</div>` : `<div class="${"main flex flex-col items-center -mt-12 jutify-center svelte-179r1ul"}">${slots.default ? slots.default({}) : ``}</div>`}
+	<div class="${"layout-main flex flex-col items-center jutify-center svelte-1lbyfs6"}">${slots.default ? slots.default({}) : ``}</div>` : `<div class="${"layout-main flex flex-col items-center -mt-12 jutify-center svelte-1lbyfs6"}">${slots.default ? slots.default({}) : ``}</div>`}
 
 
 	${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}
@@ -33827,9 +33831,9 @@ ${open ? `
   }
 });
 
-// .svelte-kit/output/server/chunks/error-1a44e793.js
-var error_1a44e793_exports = {};
-__export(error_1a44e793_exports, {
+// .svelte-kit/output/server/chunks/error-564446b4.js
+var error_564446b4_exports = {};
+__export(error_564446b4_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -33837,10 +33841,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_1a44e793 = __esm({
-  ".svelte-kit/output/server/chunks/error-1a44e793.js"() {
+var init_error_564446b4 = __esm({
+  ".svelte-kit/output/server/chunks/error-564446b4.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
@@ -36053,26 +36057,38 @@ var require_canvas_sketch_umd = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-082d5f8d.js
+// .svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-5f08647c.js
 var import_canvas_sketch, css$12, CanvasSketch, css2, CanvasSketchEditor;
-var init_Checkbox_svelte_svelte_type_style_lang_082d5f8d = __esm({
-  ".svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-082d5f8d.js"() {
+var init_Checkbox_svelte_svelte_type_style_lang_5f08647c = __esm({
+  ".svelte-kit/output/server/chunks/Checkbox.svelte_svelte_type_style_lang-5f08647c.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     import_canvas_sketch = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
+    init_stores_95385b68();
     css$12 = {
-      code: "canvas.svelte-hwn2pq{margin:auto;display:block;box-shadow:0px 2px 12px -2px rgba(0, 0, 0, 0.15);width:100%;height:auto}",
+      code: "canvas.svelte-t8neft{margin:0;display:block;box-shadow:0px 2px 12px -2px rgba(0, 0, 0, 0.15);width:100%;height:auto}",
       map: null
     };
     CanvasSketch = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let canvas;
-      let width2 = 500;
-      let { settings = { dimensions: void 0 } } = $$props;
+      let { settings = { dimensions: [250, 205] } } = $$props;
       let { data = {} } = $$props;
-      let opt = {};
       let { sketch = () => {
       } } = $$props;
+      let loader, manager, windowInnerW;
+      onDestroy(() => {
+        console.log(`\u{1F680} ~ file: CanvasSketch.svelte ~ line 68 ~ onDestroy ~ loader`, loader);
+        loader = null;
+        manager = null;
+      });
+      console.log(`\u{1F680} ~ file: CanvasSketch.svelte ~ line 65 ~ manager`, manager);
+      function dataChanged(data2) {
+        console.log(`\u{1F680} ~ file: CanvasSketch.svelte ~ line 65 ~ dataChanged ~ data`, data2);
+        if (manager) {
+          Object.assign(manager.props.data, data2);
+          manager.render();
+        }
+      }
       if ($$props.settings === void 0 && $$bindings.settings && settings !== void 0)
         $$bindings.settings(settings);
       if ($$props.data === void 0 && $$bindings.data && data !== void 0)
@@ -36081,23 +36097,19 @@ var init_Checkbox_svelte_svelte_type_style_lang_082d5f8d = __esm({
         $$bindings.sketch(sketch);
       $$result.css.add(css$12);
       {
-        {
-          if (opt.parent?.offsetWidth > 0) {
-            width2 = opt.parent?.offsetWidth;
-            console.log(`\u{1F680} ~ file: CanvasSketch.svelte ~ line 39 ~ width`, width2);
-          }
-        }
+        console.log(`\u{1F680} ~ file: CanvasSketch.svelte ~ line 53 ~ windowInnerW width`, windowInnerW);
       }
+      settings.dimensions[0];
+      settings.dimensions[1];
+      manager && manager.update(settings);
       {
-        console.log(`\u{1F680} ~ file: CanvasSketch.svelte ~ line 46 ~ settings`, settings);
+        dataChanged(data);
       }
-      {
-        console.log(`\u{1F680} ~ file: CanvasSketch.svelte ~ line 46 ~ settings`, settings.animate);
-      }
-      return `<canvas${add_attribute("style", `width: ${width2}px`, 0)} class="${"svelte-hwn2pq"}"${add_attribute("this", canvas, 0)}></canvas>`;
+      return `
+<canvas class="${"rounded-lg svelte-t8neft"}"${add_attribute("this", canvas, 0)}></canvas>`;
     });
     css2 = {
-      code: 'main.svelte-12buka7{width:100%;height:100%;display:flex;justify-content:center;align-items:center;flex-direction:row;grid-area:main}main.preview.svelte-12buka7{grid-area:none;width:100%;height:100%;display:grid;grid-template-rows:3rem 16rem;grid-template-areas:"sketch-title" "sketch-canvas";justify-content:center;align-items:center;flex-direction:row}.title.svelte-12buka7{grid-area:sketch-title}.viewport.svelte-12buka7{grid-area:sketch-canvas;display:flex;justify-content:center;align-items:center;flex-direction:column;height:100%;flex-basis:60%;min-width:200px;flex-grow:1;flex-shrink:1}.panel.svelte-12buka7{padding:20px;box-sizing:border-box;flex-basis:300px;min-width:200px;max-width:400px;flex-grow:1;flex-shrink:1;height:100%;background:#f2f2f2;border-left:1px solid #e6e6e6;overflow-y:scroll}',
+      code: 'main.svelte-69dtcj{width:auto;height:100%;display:flex;justify-content:center;align-items:center;flex-direction:row;grid-area:main}main.preview.svelte-69dtcj{grid-area:none;width:100%;height:100%;display:grid;grid-template-rows:3rem 16rem;grid-template-areas:"sketch-title" "sketch-canvas";justify-content:center;align-items:center;flex-direction:row}.title.svelte-69dtcj{grid-area:sketch-title}.viewport.svelte-69dtcj{grid-area:sketch-canvas;display:flex;justify-content:center;align-items:flex-start;flex-direction:column;width:100%;height:100%;flex-basis:60%;flex-grow:1;flex-shrink:1}.panel.svelte-69dtcj{padding:20px;box-sizing:border-box;flex-basis:300px;min-width:200px;max-width:400px;flex-grow:1;flex-shrink:1;height:100%;background:#f2f2f2;border-left:1px solid #e6e6e6;overflow-y:scroll}',
       map: null
     };
     CanvasSketchEditor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -36109,6 +36121,7 @@ var init_Checkbox_svelte_svelte_type_style_lang_082d5f8d = __esm({
       let { sketch = () => {
       } } = $$props;
       let { hidePanel = false } = $$props;
+      let viewportW, viewportH;
       let localStorageSupported = (() => {
         try {
           return typeof window.localStorage !== "undefined";
@@ -36145,14 +36158,19 @@ var init_Checkbox_svelte_svelte_type_style_lang_082d5f8d = __esm({
         $$bindings.hidePanel(hidePanel);
       $$result.css.add(css2);
       path = $page.path;
+      settings.dimensions[0] = viewportW;
+      settings.dimensions[1] = viewportH;
       {
         saveData(settings, data);
       }
+      {
+        console.log(`\u{1F680} ~ file: CanvasSketchEditor.svelte ~ line 45 ~ viewportW`, viewportW);
+      }
       $$unsubscribe_page();
-      return `<main class="${["sketch svelte-12buka7", path === "/creative" ? "preview" : ""].join(" ").trim()}">${path === "/creative" ? `<div class="${"title flex items-center justify-center flex w-full self-center svelte-12buka7"}"><h1 class="${"text-2xl text-center text-sky-200 mt-6 w-full self-center"}">${escape2(data.TITLE)}</h1></div>` : ``}
-	<div class="${"viewport svelte-12buka7"}">${validate_component(CanvasSketch, "CanvasSketch").$$render($$result, { data, settings, sketch }, {}, {})}</div>
+      return `<main class="${["sketch rounded-lg svelte-69dtcj", path === "/creative" ? "preview" : ""].join(" ").trim()}">${path === "/creative" ? `<div class="${"title flex items-center justify-center flex w-full self-center svelte-69dtcj"}"><h1 class="${"text-2xl text-center text-sky-200 mt-6 w-full self-center"}">${escape2(data.TITLE)}</h1></div>` : ``}
+	<div class="${"viewport rounded-lg svelte-69dtcj"}">${validate_component(CanvasSketch, "CanvasSketch").$$render($$result, { data, settings, sketch }, {}, {})}</div>
 
-	${!hidePanel ? `<div class="${"panel svelte-12buka7"}">${slots.default ? slots.default({}) : ``}</div>` : ``}
+	${!hidePanel ? `<div class="${"panel svelte-69dtcj"}">${slots.default ? slots.default({}) : ``}</div>` : ``}
 </main>`;
     });
   }
@@ -36832,15 +36850,15 @@ var require_simplex_noise = __commonJS({
       var F4 = (Math.sqrt(5) - 1) / 4;
       var G4 = (5 - Math.sqrt(5)) / 20;
       function SimplexNoise(randomOrSeed) {
-        var random4;
+        var random6;
         if (typeof randomOrSeed == "function") {
-          random4 = randomOrSeed;
+          random6 = randomOrSeed;
         } else if (randomOrSeed) {
-          random4 = alea(randomOrSeed);
+          random6 = alea(randomOrSeed);
         } else {
-          random4 = Math.random;
+          random6 = Math.random;
         }
-        this.p = buildPermutationTable(random4);
+        this.p = buildPermutationTable(random6);
         this.perm = new Uint8Array(512);
         this.permMod12 = new Uint8Array(512);
         for (var i3 = 0; i3 < 512; i3++) {
@@ -37301,14 +37319,14 @@ var require_simplex_noise = __commonJS({
           return 27 * (n0 + n1 + n2 + n3 + n4);
         }
       };
-      function buildPermutationTable(random4) {
+      function buildPermutationTable(random6) {
         var i3;
         var p3 = new Uint8Array(256);
         for (i3 = 0; i3 < 256; i3++) {
           p3[i3] = i3;
         }
         for (i3 = 0; i3 < 255; i3++) {
-          var r4 = i3 + ~~(random4() * (256 - i3));
+          var r4 = i3 + ~~(random6() * (256 - i3));
           var aux = p3[i3];
           p3[i3] = p3[r4];
           p3[r4] = aux;
@@ -37653,12 +37671,12 @@ var require_random = __commonJS({
         }
         if (totalWeight <= 0)
           throw new Error("Weights must sum to > 0");
-        var random4 = value() * totalWeight;
+        var random6 = value() * totalWeight;
         for (i3 = 0; i3 < weights.length; i3++) {
-          if (random4 < weights[i3]) {
+          if (random6 < weights[i3]) {
             return i3;
           }
-          random4 -= weights[i3];
+          random6 -= weights[i3];
         }
         return 0;
       }
@@ -37690,162 +37708,402 @@ var require_random = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch02-preview-b1293953.js
-var sketch02_preview_b1293953_exports = {};
-__export(sketch02_preview_b1293953_exports, {
-  default: () => Sketch02_preview
-});
-var import_color, import_random, import_canvas_sketch2, Sketch02_preview;
-var init_sketch02_preview_b1293953 = __esm({
-  ".svelte-kit/output/server/chunks/sketch02-preview-b1293953.js"() {
+// node_modules/canvas-sketch-util/math.js
+var require_math = __commonJS({
+  "node_modules/canvas-sketch-util/math.js"(exports, module2) {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    import_color = __toModule(require_color());
-    import_random = __toModule(require_random());
-    init_ssr();
-    import_canvas_sketch2 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    Sketch02_preview = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { hidePanel = true } = $$props;
-      const data = {
-        TITLE: "Sketch02",
-        itemHeight: 25,
-        itemWidth: 25,
-        itemScaleX: 1,
-        itemScaleY: 1,
-        width: 1e3,
-        height: 1e3,
-        gap: 15,
-        itemsPerColumn: 25,
-        itemsPerRow: 25,
-        originX: 0,
-        originY: 0,
-        totalItems: false,
-        remainingWidth: 1080,
-        remainingHeight: 1080,
-        margin: 100,
-        offset: 0,
-        randomFactor: 0.5,
-        opacityMedian: 0.5,
-        opacityVariance: 0.25,
-        randomStroke: true,
-        randomFill: true,
-        fill: "hsla(180,50%,50%,0.5)",
-        fillHSLA: "hsla(180,50%,50%,0.5)",
-        fillOpacity: ".25",
-        stroke: "#ffffffaa",
-        strokeHSLA: "hsla(60,50%,50%,0.5)",
-        strokeOpacity: ".25",
-        strokeRandom: "#0033cff",
-        strokeRandomHSLA: "hsla(320,50%,50%,0.5)",
-        strokeRandomOpacity: ".25",
-        background: "00000000",
-        outline: true,
-        fitToCanvas: true,
-        shapes: [{ value: "square", label: "square" }, { value: "circle", label: "circle" }],
-        shape: "square",
-        startAngle: 0,
-        endAngle: 7,
-        arclen: 0.5,
-        angle: 0,
-        radius: 0.33,
-        lineWidth: 2,
-        lineWidthRandom: 5
-      };
-      let fill, stroke;
-      const settings = {
-        scaleToView: true,
-        dimensions: [1280, 1280]
-      };
-      const sketch = ({ context, width: width2, height: height2 }) => {
-        data.width = width2;
-        data.height = height2;
-        data.remainingWidth = width2 - data.itemsPerRow * data.gap;
-        data.remainingHeight = height2 - data.itemsPerColumn * data.gap;
-        data.itemWidth = data.remainingWidth / data.itemsPerRow;
-        data.itemHeight = data.remainingHeight / data.itemsPerColumn;
-        return ({ context: context2, width: width22, height: height22 }) => {
-          context2.clearRect(0, 0, width22, height22);
-          context2.fillStyle = data.background;
-          context2.fillRect(0, 0, width22, height22);
-          drawGrid(context2);
-        };
-      };
-      function drawGrid(context, width2, height2) {
-        for (let j = 0; j < data.itemsPerColumn; j++) {
-          for (let i3 = 0; i3 < data.itemsPerRow; i3++) {
-            let x3 = (data.itemWidth + data.gap) * i3;
-            let y2 = (data.itemHeight + data.gap) * j;
-            stroke = data.strokeHSLA;
-            if (data.shape == "square") {
-              drawRect(context, x3 + data.margin / 2 + data.gap / 2, y2 + data.margin / 2 + data.gap / 2, data.itemWidth, data.itemHeight, data.fillHSLA, stroke, data.lineWidth);
-            } else {
-              drawArc(context, x3 + data.margin / 2 + data.gap / 2, y2 + data.margin / 2 + data.gap / 2, Math.abs(data.itemWidth), data.startAngle, data.endAngle, data.fillHSLA, stroke, data.lineWidth);
-            }
-            if (Math.random() < data.randomFactor) {
-              data.randomStroke ? stroke = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : stroke = data.strokeRandomHSLA;
-              data.randomFill ? fill = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : fill = data.fillRandomHSLA;
-              if (data.shape == "square") {
-                drawRect(context, x3 + data.margin / 2 + data.gap / 2 + data.offset, y2 + data.margin / 2 + data.gap / 2 + data.offset, data.itemWidth, data.itemHeight, fill, stroke, data.lineWidthRandom);
-              } else {
-                drawArc(context, x3 + data.margin / 2 + data.gap / 2 + data.offset, y2 + data.margin / 2 + data.gap / 2 + data.offset, Math.abs(data.itemWidth), data.startAngle, data.endAngle, fill, stroke, data.lineWidthRandom);
-              }
-            }
+    var defined = require_defined();
+    var wrap2 = require_wrap();
+    var EPSILON = Number.EPSILON;
+    function clamp(value, min, max) {
+      return min < max ? value < min ? min : value > max ? max : value : value < max ? max : value > min ? min : value;
+    }
+    function clamp01(v2) {
+      return clamp(v2, 0, 1);
+    }
+    function lerp(min, max, t3) {
+      return min * (1 - t3) + max * t3;
+    }
+    function inverseLerp(min, max, t3) {
+      if (Math.abs(min - max) < EPSILON)
+        return 0;
+      else
+        return (t3 - min) / (max - min);
+    }
+    function smoothstep(min, max, t3) {
+      var x3 = clamp(inverseLerp(min, max, t3), 0, 1);
+      return x3 * x3 * (3 - 2 * x3);
+    }
+    function toFinite(n, defaultValue) {
+      defaultValue = defined(defaultValue, 0);
+      return typeof n === "number" && isFinite(n) ? n : defaultValue;
+    }
+    function expandVector(dims) {
+      if (typeof dims !== "number")
+        throw new TypeError("Expected dims argument");
+      return function(p3, defaultValue) {
+        defaultValue = defined(defaultValue, 0);
+        var scalar;
+        if (p3 == null) {
+          scalar = defaultValue;
+        } else if (typeof p3 === "number" && isFinite(p3)) {
+          scalar = p3;
+        }
+        var out = [];
+        var i3;
+        if (scalar == null) {
+          for (i3 = 0; i3 < dims; i3++) {
+            out[i3] = toFinite(p3[i3], defaultValue);
+          }
+        } else {
+          for (i3 = 0; i3 < dims; i3++) {
+            out[i3] = scalar;
           }
         }
+        return out;
+      };
+    }
+    function lerpArray(min, max, t3, out) {
+      out = out || [];
+      if (min.length !== max.length) {
+        throw new TypeError("min and max array are expected to have the same length");
       }
-      const drawRect = (context, originX, originY, width2, height2, fill2, stroke2, lineWidth) => {
-        context.strokeStyle = stroke2;
-        context.beginPath();
-        context.rect(originX, originY, width2 * data.itemScaleX, height2 * data.itemScaleY);
-        context.lineWidth = lineWidth;
-        context.stroke();
-        context.fillStyle = fill2;
-        context.fill();
+      for (var i3 = 0; i3 < min.length; i3++) {
+        out[i3] = lerp(min[i3], max[i3], t3);
+      }
+      return out;
+    }
+    function newArray(n, initialValue) {
+      n = defined(n, 0);
+      if (typeof n !== "number")
+        throw new TypeError("Expected n argument to be a number");
+      var out = [];
+      for (var i3 = 0; i3 < n; i3++)
+        out.push(initialValue);
+      return out;
+    }
+    function linspace(n, opts) {
+      n = defined(n, 0);
+      if (typeof n !== "number")
+        throw new TypeError("Expected n argument to be a number");
+      opts = opts || {};
+      if (typeof opts === "boolean") {
+        opts = { endpoint: true };
+      }
+      var offset = defined(opts.offset, 0);
+      if (opts.endpoint) {
+        return newArray(n).map(function(_, i3) {
+          return n <= 1 ? 0 : (i3 + offset) / (n - 1);
+        });
+      } else {
+        return newArray(n).map(function(_, i3) {
+          return (i3 + offset) / n;
+        });
+      }
+    }
+    function lerpFrames(values, t3, out) {
+      t3 = clamp(t3, 0, 1);
+      var len = values.length - 1;
+      var whole = t3 * len;
+      var frame = Math.floor(whole);
+      var fract2 = whole - frame;
+      var nextFrame = Math.min(frame + 1, len);
+      var a2 = values[frame % values.length];
+      var b = values[nextFrame % values.length];
+      if (typeof a2 === "number" && typeof b === "number") {
+        return lerp(a2, b, fract2);
+      } else if (Array.isArray(a2) && Array.isArray(b)) {
+        return lerpArray(a2, b, fract2, out);
+      } else {
+        throw new TypeError("Mismatch in value type of two array elements: " + frame + " and " + nextFrame);
+      }
+    }
+    function mod(a2, b) {
+      return (a2 % b + b) % b;
+    }
+    function degToRad(n) {
+      return n * Math.PI / 180;
+    }
+    function radToDeg(n) {
+      return n * 180 / Math.PI;
+    }
+    function fract(n) {
+      return n - Math.floor(n);
+    }
+    function sign(n) {
+      if (n > 0)
+        return 1;
+      else if (n < 0)
+        return -1;
+      else
+        return 0;
+    }
+    function pingPong(t3, length) {
+      t3 = mod(t3, length * 2);
+      return length - Math.abs(t3 - length);
+    }
+    function damp(a2, b, lambda, dt) {
+      return lerp(a2, b, 1 - Math.exp(-lambda * dt));
+    }
+    function dampArray(a2, b, lambda, dt, out) {
+      out = out || [];
+      for (var i3 = 0; i3 < a2.length; i3++) {
+        out[i3] = damp(a2[i3], b[i3], lambda, dt);
+      }
+      return out;
+    }
+    function mapRange(value, inputMin, inputMax, outputMin, outputMax, clamp2) {
+      if (Math.abs(inputMin - inputMax) < EPSILON) {
+        return outputMin;
+      } else {
+        var outVal = (value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin;
+        if (clamp2) {
+          if (outputMax < outputMin) {
+            if (outVal < outputMax)
+              outVal = outputMax;
+            else if (outVal > outputMin)
+              outVal = outputMin;
+          } else {
+            if (outVal > outputMax)
+              outVal = outputMax;
+            else if (outVal < outputMin)
+              outVal = outputMin;
+          }
+        }
+        return outVal;
+      }
+    }
+    module2.exports = {
+      mod,
+      fract,
+      sign,
+      degToRad,
+      radToDeg,
+      wrap: wrap2,
+      pingPong,
+      linspace,
+      lerp,
+      lerpArray,
+      inverseLerp,
+      lerpFrames,
+      clamp,
+      clamp01,
+      smoothstep,
+      damp,
+      dampArray,
+      mapRange,
+      expand2D: expandVector(2),
+      expand3D: expandVector(3),
+      expand4D: expandVector(4)
+    };
+  }
+});
+
+// .svelte-kit/output/server/chunks/sketch03-preview-aefb8855.js
+var sketch03_preview_aefb8855_exports = {};
+__export(sketch03_preview_aefb8855_exports, {
+  default: () => Sketch03_preview
+});
+var import_color, import_random, import_math, import_canvas_sketch2, Sketch03_preview;
+var init_sketch03_preview_aefb8855 = __esm({
+  ".svelte-kit/output/server/chunks/sketch03-preview-aefb8855.js"() {
+    init_shims();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    import_color = __toModule(require_color());
+    import_random = __toModule(require_random());
+    import_math = __toModule(require_math());
+    import_canvas_sketch2 = __toModule(require_canvas_sketch_umd());
+    init_ssr();
+    init_stores_95385b68();
+    Sketch03_preview = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { hidePanel = true } = $$props;
+      let width2;
+      let height2;
+      let context;
+      let hexes = [];
+      const data = {
+        TITLE: "Sketch03-preview",
+        numNodes: 50,
+        range: 50,
+        lineCap: "butt",
+        lineCaps: [{ value: "butt", label: "butt" }, { value: "round", label: "round" }],
+        showNodes: false,
+        showLines: true,
+        nodeType: "hex",
+        nodeTypes: [{ value: "hex", label: "hex" }, { value: "circle", label: "circle" }],
+        lineWidth: 1,
+        lineWidthMax: 3,
+        radiusMin: 10,
+        radiusMax: 30,
+        animate: true
       };
-      const drawArc = (context, originX, originY, radius, startAngle, endAngle, fill2, stroke2, lineWidth) => {
-        context.strokeStyle = stroke2;
-        context.beginPath();
-        context.arc(originX, originY, radius, startAngle, endAngle);
-        context.lineWidth = lineWidth;
-        context.stroke();
-        context.fillStyle = fill2;
-        context.fill();
+      const settings = {
+        dimensions: [width2, height2],
+        fps: 60,
+        scaleContext: true
       };
-      const setItemColor = (i3, j, totalItems) => {
-        let hueOffset = 30;
-        let variance = Math.random() * 5;
-        let currentFactor = (i3 + variance) * (j - variance) * (variance * totalItems);
-        let hue = currentFactor + hueOffset;
-        return hue;
+      class Vector {
+        constructor(x3, y2) {
+          this.x = x3;
+          this.y = y2;
+        }
+        getDistance(v2) {
+          const dx = this.x - v2.x;
+          const dy = this.y - v2.y;
+          return Math.sqrt(dx * dx + dy * dy);
+        }
+      }
+      class Agent {
+        constructor(x3, y2) {
+          this.pos = new Vector(x3, y2);
+          this.vel = new Vector(import_random.default.range(-1, 1), import_random.default.range(-1, 1));
+          this.radius = import_random.default.range(data.radiusMin, data.radiusMax);
+        }
+        update() {
+          this.pos.x += this.vel.x * 0.2;
+          this.pos.y += this.vel.y * 0.2;
+        }
+        bounce(width22, height22) {
+          if (this.pos.x <= 0 || this.pos.x >= width22) {
+            this.vel.x *= -1;
+          }
+          if (this.pos.y <= 0 || this.pos.y >= height22) {
+            this.vel.y *= -1;
+          }
+        }
+        wrap(width22, height22) {
+          this.pos.x = (this.pos.x + width22) % width22;
+          this.pos.y = (this.pos.y + height22) % height22;
+        }
+        drawCircle(context2) {
+          context2.save();
+          context2.translate(this.pos.x, this.pos.y);
+          context2.beginPath();
+          context2.arc(0, 0, this.radius, 0, Math.PI * 2);
+          context2.fill();
+          context2.lineWidth = 4;
+          context2.strokeStyle = this.color;
+          context2.stroke();
+          context2.restore();
+        }
+      }
+      class Hex extends Agent {
+        constructor(x3, y2, numOfSides = 6, positiveVelSum = 0, color = "hsla(180,50%,50%,1)") {
+          super(x3, y2);
+          this.numOfSides = numOfSides;
+          this.positiveVelSum = parseFloat(makePositive(this.vel.x).toFixed(3) + makePositive(this.vel.y).toFixed(3));
+          this.color = hsla(this.positiveVelSum * 360 % 360, 50, 50, 1);
+        }
+        drawHex(context2) {
+          context2.save();
+          context2.beginPath();
+          context2.moveTo(this.pos.x + this.radius * Math.cos(0), this.pos.y + this.radius * Math.sin(0));
+          for (let i3 = 0; i3 < this.numOfSides; i3++) {
+            let xCoord = this.pos.x + this.radius * Math.cos(i3 * 2 * Math.PI / this.numOfSides);
+            let yCoord = this.pos.y + this.radius * Math.sin(i3 * 2 * Math.PI / this.numOfSides);
+            context2.lineTo(xCoord, yCoord);
+            context2.fillStyle = this.color;
+          }
+          context2.fill();
+          context2.restore();
+        }
+      }
+      const makePositive = (value) => {
+        if (value < 0)
+          return value * -1;
+        return value;
+      };
+      const hsla = (h3, s4, l4, a2) => {
+        let color = `hsla(${h3},${s4}%,${l4}%,${a2})`;
+        return color;
+      };
+      const rangeAlpha = (range, dist) => {
+        return import_math.default.mapRange(dist, 0, range, 1, 0, true);
+      };
+      const constructNodes = (width22, height22) => {
+        if (data.numNodes > hexes.length) {
+          for (let i3 = 0; i3 < data.numNodes - hexes.length; i3++) {
+            let x3 = import_random.default.range(0, width22);
+            let y2 = import_random.default.range(0, height22);
+            let hex = new Hex(x3, y2);
+            hexes.push(hex);
+          }
+        } else {
+          for (let i3 = 0; i3 < hexes.length - data.numNodes; i3++) {
+            hexes.pop();
+          }
+        }
+      };
+      const sketch = () => {
+        constructNodes(width2, height2);
+        for (let i3 = 0; i3 < hexes.length; i3++) {
+          const hex = hexes[i3];
+          for (let j = i3 + 1; j < hexes.length; j++) {
+            const other = hexes[j];
+            const dist = hex.pos.getDistance(other.pos);
+            if (dist > data.range)
+              continue;
+            context.lineWidth = import_math.default.mapRange(dist, 0, data.range, data.lineWidthMax, 1);
+            context.beginPath();
+            context.moveTo(hex.pos.x, hex.pos.y);
+            data.showLines ? context.lineTo(other.pos.x, other.pos.y) : 0;
+            let a2 = rangeAlpha(data.range, dist);
+            let h3 = import_color.default.parse(hex.color).hsla[0];
+            let s4 = import_color.default.parse(hex.color).hsla[1];
+            let l4 = import_color.default.parse(hex.color).hsla[2];
+            context.strokeStyle = hsla(h3, s4, l4, a2);
+            context.lineCap = data.lineCap;
+            context.stroke();
+          }
+        }
+        return () => {
+          context.fillStyle = "black";
+          context.fillRect(0, 0, width2, height2);
+          if (data.numNodes != hexes.length)
+            ;
+          hexes.forEach((hex) => {
+            hex.update();
+            if (data.showNodes) {
+              data.nodeType == "hex" ? hex.drawHex(context) : hex.drawCircle(context);
+            }
+            hex.bounce(width2, height2);
+          });
+          requestAnimationFrame(sketch());
+        };
       };
       if ($$props.hidePanel === void 0 && $$bindings.hidePanel && hidePanel !== void 0)
         $$bindings.hidePanel(hidePanel);
-      data.totalItems = data.itemsPerColumn * data.itemsPerRow;
-      return `${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result, { sketch, settings, data, hidePanel }, {}, {})}`;
+      settings.dimensions[0] = width2;
+      settings.dimensions[1] = height2;
+      return `
+
+
+
+${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result, { sketch, settings, data, hidePanel }, {}, {})}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/index-44f22b95.js
-var index_44f22b95_exports = {};
-__export(index_44f22b95_exports, {
+// .svelte-kit/output/server/chunks/index-016abd84.js
+var index_016abd84_exports = {};
+__export(index_016abd84_exports, {
   default: () => Routes,
   load: () => load2
 });
-var import_canvas_sketch3, import_color2, import_random2, SECONDS_A_MINUTE, SECONDS_A_HOUR, SECONDS_A_DAY, SECONDS_A_WEEK, MILLISECONDS_A_SECOND, MILLISECONDS_A_MINUTE, MILLISECONDS_A_HOUR, MILLISECONDS_A_DAY, MILLISECONDS_A_WEEK, MS, S2, MIN, H, D, W, M, Q, Y, DATE, FORMAT_DEFAULT, INVALID_DATE_STRING, REGEX_PARSE, REGEX_FORMAT, en, padStart, padZoneStr, monthDiff, absFloor, prettyUnit, isUndefined, U, L, Ls, isDayjs, parseLocale, dayjs, wrapper, Utils, parseDate, Dayjs, proto, relativeTime, Time, Chevron_right, css3, load2, Routes;
-var init_index_44f22b95 = __esm({
-  ".svelte-kit/output/server/chunks/index-44f22b95.js"() {
+var import_canvas_sketch3, import_color2, import_random2, import_math2, SECONDS_A_MINUTE, SECONDS_A_HOUR, SECONDS_A_DAY, SECONDS_A_WEEK, MILLISECONDS_A_SECOND, MILLISECONDS_A_MINUTE, MILLISECONDS_A_HOUR, MILLISECONDS_A_DAY, MILLISECONDS_A_WEEK, MS, S2, MIN, H, D, W, M, Q, Y, DATE, FORMAT_DEFAULT, INVALID_DATE_STRING, REGEX_PARSE, REGEX_FORMAT, en, padStart, padZoneStr, monthDiff, absFloor, prettyUnit, isUndefined, U, L, Ls, isDayjs, parseLocale, dayjs, wrapper, Utils, parseDate, Dayjs, proto, relativeTime, Time, Chevron_right, css3, load2, Routes;
+var init_index_016abd84 = __esm({
+  ".svelte-kit/output/server/chunks/index-016abd84.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_sketch02_preview_b1293953();
-    init_stores_8da0d5a6();
-    init_ssr();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
+    init_app_d1ce00fb();
     import_canvas_sketch3 = __toModule(require_canvas_sketch_umd());
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_stores_95385b68();
     import_color2 = __toModule(require_color());
     import_random2 = __toModule(require_random());
+    init_sketch03_preview_aefb8855();
+    init_ssr();
+    import_math2 = __toModule(require_math());
     SECONDS_A_MINUTE = 60;
     SECONDS_A_HOUR = SECONDS_A_MINUTE * 60;
     SECONDS_A_DAY = SECONDS_A_HOUR * 24;
@@ -38401,7 +38659,7 @@ var init_index_44f22b95 = __esm({
       ])}><!-- HTML_TAG_START -->${`<path d="M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.42z" fill="currentColor"/>`}<!-- HTML_TAG_END --></svg>`;
     });
     css3 = {
-      code: '.color-1.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{@apply text-amber-300;}.color-2.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{color:var(--color-limegreens-700)}.color-3.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{color:var(--color-winterblues-600)}.homepage.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:"Sarabun", sans-serif}h1.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:"Newsreader", serif}.intro.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{grid-area:intro;font-family:"Nunito", sans-serif}.intro.svelte-1f389g6 h1.svelte-1f389g6.svelte-1f389g6{font-family:"Newsreader", serif;font-weight:900}.intro-body.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{line-height:1.4;@apply mt-3 font-light;}.text-highlight.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{@apply font-bold italic;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{position:absolute;@apply -mr-4 transition right-0 text-2xl;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:nth-of-type(1){@apply text-blue-400 right-6 transition delay-300;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:nth-of-type(2){@apply text-blue-600 right-4 transition delay-200;}.icon-wrapper.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:nth-of-type(3){@apply text-blue-800 right-2 transition delay-100;}.view-more.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{transition:all 0;transition-delay:0.4s}.view-more.svelte-1f389g6 .view-more-link.svelte-1f389g6.svelte-1f389g6{@apply pr-4 pb-2;}.view-more.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:hover{transition-delay:0s}.view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(1){@apply text-blue-200 transition delay-100;}.view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(2){@apply text-blue-400 transition delay-200;}.view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(3){@apply text-blue-600 transition delay-300;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6{@apply -mr-4 transition text-2xl;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(1){@apply text-orange-400 transition  delay-300;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(2){@apply text-orange-600 transition  delay-200;}.projects.svelte-1f389g6 .icon-wrapper.svelte-1f389g6.svelte-1f389g6:nth-of-type(3){@apply text-orange-800 transition  delay-100;}.projects.svelte-1f389g6 .view-more.svelte-1f389g6.svelte-1f389g6{transition:all 0;transition-delay:0.4s}.projects.svelte-1f389g6 .view-more.svelte-1f389g6.svelte-1f389g6:hover{transition-delay:0s}.projects.svelte-1f389g6 .view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6:nth-of-type(1){@apply text-orange-200 transition delay-100;}.projects.svelte-1f389g6 .view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6:nth-of-type(2){@apply text-orange-400 transition delay-200;}.projects.svelte-1f389g6 .view-more.svelte-1f389g6:hover .icon-wrapper.svelte-1f389g6:nth-of-type(3){@apply text-orange-600 transition delay-300;}.posts-panel.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{grid-area:posts}.post-card.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{position:relative;transition:0.3s}.project-card-link.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:first-of-type{margin-left:0}.project-card-link.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6:last-of-type{margin-right:0}ol.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{--list-counter-size:1.5rem;counter-reset:intro-counter;list-style:none;position:relative}ol.svelte-1f389g6 li.svelte-1f389g6.svelte-1f389g6{counter-increment:intro-counter;position:relative}ol.svelte-1f389g6 li.svelte-1f389g6.svelte-1f389g6::marker{content:counter(intro-counter) ". ";color:var(--color-sky-300);font-weight:700;position:absolute;top:0;left:calc(-1 * var(--list-counter-size) - 2rem);font-size:var(--list-counter-size)}ol.svelte-1f389g6 li .li-heading.svelte-1f389g6.svelte-1f389g6{position:relative;left:0.75rem}ol.svelte-1f389g6 li .li-snippet.svelte-1f389g6.svelte-1f389g6{font-family:"Montserrat", sans-serif;@apply mt-3 font-light ml-3;}.statement.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:"Montserrat", sans-serif;font-weight:300;color:var(--color-winterblues-400);color:white;line-height:1.25em;background:linear-gradient(black, black) padding-box, linear-gradient(120deg, #833ab4 10%, #2faeb1 22%, #fd1d1d 50%, #bffc37 72%, #fcb045 90%) border-box;border-radius:1rem;border:10px solid transparent}.statement.svelte-1f389g6 .author.svelte-1f389g6.svelte-1f389g6{color:var(--color-gray-300)}.article-date.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:monospace}.projects-group.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{grid-template-columns:repeat(3, 1fr)}.project-tag.svelte-1f389g6.svelte-1f389g6.svelte-1f389g6{font-family:monospace}',
+      code: '.color-1.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{@apply text-amber-300;}.color-2.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{color:var(--color-limegreens-700)}.color-3.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{color:var(--color-winterblues-600)}.homepage.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{font-family:"Sarabun", sans-serif}h1.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{font-family:"Newsreader", serif}.intro.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{grid-area:intro;font-family:"Nunito", sans-serif}.intro.svelte-7dh29d h1.svelte-7dh29d.svelte-7dh29d{font-family:"Newsreader", serif;font-weight:900}.intro-body.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{line-height:1.4;@apply mt-3 font-light;}.text-highlight.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{@apply font-bold italic;}.icon-wrapper.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{position:absolute;@apply -mr-4 transition right-0 text-2xl;}.icon-wrapper.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d:nth-of-type(1){@apply text-blue-400 right-6 transition delay-300;}.icon-wrapper.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d:nth-of-type(2){@apply text-blue-600 right-4 transition delay-200;}.icon-wrapper.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d:nth-of-type(3){@apply text-blue-800 right-2 transition delay-100;}.view-more.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{transition:all 0;transition-delay:0.4s}.view-more.svelte-7dh29d .view-more-link.svelte-7dh29d.svelte-7dh29d{@apply pr-4 pb-2;}.view-more.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d:hover{transition-delay:0s}.view-more.svelte-7dh29d:hover .icon-wrapper.svelte-7dh29d.svelte-7dh29d:nth-of-type(1){@apply text-blue-200 transition delay-100;}.view-more.svelte-7dh29d:hover .icon-wrapper.svelte-7dh29d.svelte-7dh29d:nth-of-type(2){@apply text-blue-400 transition delay-200;}.view-more.svelte-7dh29d:hover .icon-wrapper.svelte-7dh29d.svelte-7dh29d:nth-of-type(3){@apply text-blue-600 transition delay-300;}.projects.svelte-7dh29d .icon-wrapper.svelte-7dh29d.svelte-7dh29d{@apply -mr-4 transition text-2xl;}.projects.svelte-7dh29d .icon-wrapper.svelte-7dh29d.svelte-7dh29d:nth-of-type(1){@apply text-orange-400 transition  delay-300;}.projects.svelte-7dh29d .icon-wrapper.svelte-7dh29d.svelte-7dh29d:nth-of-type(2){@apply text-orange-600 transition  delay-200;}.projects.svelte-7dh29d .icon-wrapper.svelte-7dh29d.svelte-7dh29d:nth-of-type(3){@apply text-orange-800 transition  delay-100;}.projects.svelte-7dh29d .view-more.svelte-7dh29d.svelte-7dh29d{transition:all 0;transition-delay:0.4s}.projects.svelte-7dh29d .view-more.svelte-7dh29d.svelte-7dh29d:hover{transition-delay:0s}.projects.svelte-7dh29d .view-more.svelte-7dh29d:hover .icon-wrapper.svelte-7dh29d:nth-of-type(1){@apply text-orange-200 transition delay-100;}.projects.svelte-7dh29d .view-more.svelte-7dh29d:hover .icon-wrapper.svelte-7dh29d:nth-of-type(2){@apply text-orange-400 transition delay-200;}.projects.svelte-7dh29d .view-more.svelte-7dh29d:hover .icon-wrapper.svelte-7dh29d:nth-of-type(3){@apply text-orange-600 transition delay-300;}.posts-panel.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{grid-area:posts}.post-card.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{position:relative;transition:0.3s}.project-card.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{display:flex;grid-template-rows:1.75rem 1fr;grid-template-areas:"tags" "details"}.project-card.svelte-7dh29d .project-details.svelte-7dh29d.svelte-7dh29d{grid-area:details;display:flex}.project-card-link.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d:first-of-type{margin-left:0}.project-card-link.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d:last-of-type{margin-right:0}ol.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{--list-counter-size:1.5rem;counter-reset:intro-counter;list-style:none;position:relative}ol.svelte-7dh29d li.svelte-7dh29d.svelte-7dh29d{counter-increment:intro-counter;position:relative}ol.svelte-7dh29d li.svelte-7dh29d.svelte-7dh29d::marker{content:counter(intro-counter) ". ";color:var(--color-sky-300);font-weight:700;position:absolute;top:0;left:calc(-1 * var(--list-counter-size) - 2rem);font-size:var(--list-counter-size)}ol.svelte-7dh29d li .li-heading.svelte-7dh29d.svelte-7dh29d{position:relative;left:0.75rem}ol.svelte-7dh29d li .li-snippet.svelte-7dh29d.svelte-7dh29d{font-family:"Montserrat", sans-serif;@apply mt-3 font-light ml-3;}.statement.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{font-family:"Montserrat", sans-serif;font-weight:300;color:var(--color-winterblues-400);color:white;line-height:1.25em;background:linear-gradient(black, black) padding-box, linear-gradient(120deg, #833ab4 10%, #2faeb1 22%, #fd1d1d 50%, #bffc37 72%, #fcb045 90%) border-box;border-radius:1rem;border:10px solid transparent}.statement.svelte-7dh29d .author.svelte-7dh29d.svelte-7dh29d{color:var(--color-gray-300)}.article-date.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{font-family:monospace}.projects-group.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{grid-template-columns:repeat(3, 1fr)}.project-tags.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{grid-area:tags}.project-tag.svelte-7dh29d.svelte-7dh29d.svelte-7dh29d{font-family:monospace}',
       map: null
     };
     load2 = async ({ fetch: fetch2 }) => {
@@ -38420,22 +38678,25 @@ var init_index_44f22b95 = __esm({
       console.log(`\u{1F680} ~ file: index.svelte ~ line 4 ~ posts`, posts);
       let projects = [
         {
-          name: "Project One",
+          name: "MetaBrain.io",
           url: "./creative/sketch01",
-          tags: ["awesome", "sauce", "hot"],
-          desc: "This project will burn your socks off"
+          tags: ["knowledge management app", "GraphQL/DB", "LMS"],
+          desc: "A knowledge tracking platform for life. Research, track, organize, curate, plan, analyze, schedule, do. One app to rule them all.",
+          component: false
         },
         {
-          name: "Project cool1",
+          name: "Super Tic-Tac-Toe",
           url: "./creative/sketch02",
-          tags: ["mysterious", "fun", "cool"],
-          desc: "This project will cool your noggin"
+          tags: ["Svelte/Sapper", "game", "(S)CSS"],
+          desc: "Inspired by pen-and-paper with my daughter. Tic-Tac-Toe on steroids. Choose an emoji, configure your gameboard and rules, and have at it with up to 8 players.",
+          component: false
         },
         {
-          name: "Project Three",
+          name: "Creative Coding",
           url: "./creative/sketch03",
-          tags: ["scary", "epic", "twisted"],
-          desc: "This project will twist your knickers"
+          tags: ["creative coding", "generative art", "javascript"],
+          desc: "Fulfilling a lifelong passion for beauty, and exploring the relationships between form, movement and number.",
+          component: Sketch03_preview
         }
       ];
       if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
@@ -38447,29 +38708,30 @@ var init_index_44f22b95 = __esm({
       }
       $$unsubscribe_page();
       return `
-<main class="${"homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:mx-12 lg:w-4/5 xl:w-3/4 2xl:w-3/5 3xl:w-1/2 mt-8 svelte-1f389g6"}"><section class="${"articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center p-3"}"><div class="${"intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl svelte-1f389g6"}"><h1 class="${"font-regular text-3xl lg:text-5xl  svelte-1f389g6"}">Hi, I&#39;m Mike.</h1>
-			<p class="${"intro-body text-xl xl:text-2xl font-thin svelte-1f389g6"}">I&#39;m a creative software developer, and this is my professional blog. I love
-				<span class="${"text-highlight color-1 svelte-1f389g6"}">user experience</span> and design that helps realize
+
+<main class="${"homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:px-12 xl:px-24 2xl:w-4/5 2xl:px-12 3xl:w-3/4 3xl:px-36 mt-8 svelte-7dh29d"}"><section class="${"articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center p-3"}"><div class="${"intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl svelte-7dh29d"}"><h1 class="${"font-regular text-3xl lg:text-5xl  svelte-7dh29d"}">Hi, I&#39;m Mike.</h1>
+			<p class="${"intro-body text-xl xl:text-2xl font-thin svelte-7dh29d"}">I&#39;m a creative software developer, and this is my professional blog. I love
+				<span class="${"text-highlight color-1 svelte-7dh29d"}">user experience</span> and design that helps realize
 				human potential. I follow a
-				<span class="${"text-highlight color-2 svelte-1f389g6"}">first-principles</span>
+				<span class="${"text-highlight color-2 svelte-7dh29d"}">first-principles</span>
 				approach in my life and my work. Here are a few of my
-				<span class="${"color-3 text-highlight svelte-1f389g6"}">design principles</span>:
+				<span class="${"color-3 text-highlight svelte-7dh29d"}">design principles</span>:
 			</p>
 
-			<ol class="${"pl-7 mt-6 svelte-1f389g6"}"><li class="${"mt-4 svelte-1f389g6"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-1f389g6"}">Never deny the user basic options.
+			<ol class="${"pl-7 mt-6 svelte-7dh29d"}"><li class="${"mt-4 svelte-7dh29d"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-7dh29d"}">Never deny the user basic options.
 					</h2>
-					<p class="${"li-snippet text-base lg:text-lg svelte-1f389g6"}">Users should be provided the means to <span class="${"italic color-1 font-medium svelte-1f389g6"}">customize the user interface</span> as much as possible.
+					<p class="${"li-snippet text-base lg:text-lg svelte-7dh29d"}">Users should be provided the means to <span class="${"italic color-1 font-medium svelte-7dh29d"}">customize the user interface</span> as much as possible.
 					</p></li>
-				<li class="${"mt-4 svelte-1f389g6"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-1f389g6"}">Minimize barriers to action.
+				<li class="${"mt-4 svelte-7dh29d"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-7dh29d"}">Minimize barriers to action.
 					</h2>
-					<p class="${"li-snippet text-base lg:text-lg svelte-1f389g6"}">The app (or website) is <span class="${"italic color-2 font-medium svelte-1f389g6"}">for something</span>.
+					<p class="${"li-snippet text-base lg:text-lg svelte-7dh29d"}">The app (or website) is <span class="${"italic color-2 font-medium svelte-7dh29d"}">for something</span>.
 						Make it as
-						<span class="${"italic color-1 font-medium svelte-1f389g6"}">intuitive and efficient</span>
-						as possible to <span class="${"italic color-2 font-medium svelte-1f389g6"}">do that thing.</span></p></li>
-				<li class="${"mt-4 svelte-1f389g6"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-1f389g6"}">Leverage visual intelligence.
+						<span class="${"italic color-1 font-medium svelte-7dh29d"}">intuitive and efficient</span>
+						as possible to <span class="${"italic color-2 font-medium svelte-7dh29d"}">do that thing.</span></p></li>
+				<li class="${"mt-4 svelte-7dh29d"}"><h2 class="${"li-heading font-extrabold italic text-xl color-3 leading-none md:text-2xl xl:text-3xl svelte-7dh29d"}">Leverage visual intelligence.
 					</h2>
-					<p class="${"li-snippet text-base lg:text-lg svelte-1f389g6"}">Augment words and iconography with <span class="${"italic color-1 font-medium svelte-1f389g6"}">color</span>
-						and structure - <span class="${"italic color-2 font-medium svelte-1f389g6"}">draw the eye</span> to key points
+					<p class="${"li-snippet text-base lg:text-lg svelte-7dh29d"}">Augment words and iconography with <span class="${"italic color-1 font-medium svelte-7dh29d"}">color</span>
+						and structure - <span class="${"italic color-2 font-medium svelte-7dh29d"}">draw the eye</span> to key points
 						and relationships. Effectively use negative space, layout and structure, diagrams and images
 						to communicate beyond mere words.
 					</p></li></ol></div>
@@ -38478,56 +38740,729 @@ var init_index_44f22b95 = __esm({
 		
 		
 
-		<div class="${"posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0 svelte-1f389g6"}"><div class="${"post w-full"}"><h2 class="${"recent-label uppercase -mt-2 -mb-4 text-sky-300 text-md lg:text-lg"}">Recent posts
+		<div class="${"posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0 svelte-7dh29d"}"><div class="${"post w-full"}"><h2 class="${"recent-label uppercase -mt-2 -mb-4 text-sky-300 text-md lg:text-lg"}">Recent posts
 				</h2>
-				${each(selectedPosts, (post) => `<a${add_attribute("href", `/posts/${post.slug}`, 0)} class="${"no-underline"}"><div class="${"post-card transition card card-body p-6 lg:p-9 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2 svelte-1f389g6"}"><div class="${"article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200 svelte-1f389g6"}">${validate_component(Time, "Time").$$render($$result, { timestamp: post.date }, {}, {})}</div>
-							<h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white svelte-1f389g6"}">${escape2(post.title)}</h1>
+				${each(selectedPosts, (post) => `<a${add_attribute("href", `/posts/${post.slug}`, 0)} class="${"no-underline"}"><div class="${"post-card transition card card-body p-5 lg:p-7 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2 svelte-7dh29d"}"><div class="${"article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200 svelte-7dh29d"}">${validate_component(Time, "Time").$$render($$result, { timestamp: post.date }, {}, {})}</div>
+							<h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white svelte-7dh29d"}">${escape2(post.title)}</h1>
 							<p class="${"text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200"}">${escape2(post.excerpt)}
 							</p></div>
 					</a>`)}</div>
-			<div class="${"view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2 transition svelte-1f389g6"}"><a href="${"/posts"}" class="${"view-more-link offset-4 no-underline  svelte-1f389g6"}">View more articles </a>
+			<div class="${"view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2 transition svelte-7dh29d"}"><a href="${"/posts"}" class="${"view-more-link offset-4 no-underline  svelte-7dh29d"}">View more articles </a>
 
-				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></div></div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-7dh29d"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-7dh29d"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-7dh29d"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></div></div>
 		
 		
 		</section>
 
-	<section class="${"flex flex-col w-full self-center text-center items-center justify-center px-8"}"><p class="${"statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12  svelte-1f389g6"}"><span class="${"font-medium"}">\u201CIf a system is to serve the creative spirit, it must be entirely comprehensible to a
-				single individual.\u201D</span> <br><span class="${"font-bold text-lg author uppercase  svelte-1f389g6"}">Daniel H. H. Ingalls</span></p></section>
+	<section class="${"flex flex-col w-full self-center text-center items-center justify-center px-8 lg:px-0"}"><p class="${"statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12  svelte-7dh29d"}"><span class="${"font-medium"}">\u201CIf a system is to serve the creative spirit, it must be entirely comprehensible to a
+				single individual.\u201D</span> <br><span class="${"font-bold text-lg author uppercase  svelte-7dh29d"}">Daniel H. H. Ingalls</span></p></section>
 
-	<section class="${"projects flex flex-col w-full justify-center px-4 md:px-6 lg:px-0 svelte-1f389g6"}">
+	<section class="${"projects flex flex-col w-full justify-center px-4 md:px-6 lg:px-0 svelte-7dh29d"}">
 		
 		
 		<div class="${"flex flex-row items-end justify-between"}"><h2 class="${"recent-label uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2"}">Selected Projects
 			</h2>
-			<h2 class="${"view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end transition text-orange-200 hover:text-white svelte-1f389g6"}"><a href="${"/creative"}" class="${"view-more-link offset-4 pr-2 no-underline  svelte-1f389g6"}">View more projects</a>
-				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
-				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-1f389g6"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></h2></div>
-		<div class="${"projects-group md:grid w-full flex flex-col mb-12 svelte-1f389g6"}">${each(projects, (project) => `<a${add_attribute("href", `/${project.url}`, 0)} class="${"project-card-link no-underline flex my-3 md:mx-3 svelte-1f389g6"}">
-					<div class="${"project-card card bg-opacity-25 rounded-md transition-all bg-sky-500 bg-opacity-25 card-body p-6 lg:p-9 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"}"><div class="${"flex flex-col"}"><h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white svelte-1f389g6"}">${escape2(project.name)}</h1>
-							<p class="${"mt-2 text-sm md:text-base xl:text-lg tracking-wider font-light"}">${escape2(project.desc)}</p>
-							<div class="${"mt-4 flex flex-row"}">${each(project.tags, (tag) => `<span class="${"project-tag -ml-2 mr-4 bg-slate-900 rounded-md text-sm font-thin py-1 px-2 svelte-1f389g6"}">${escape2(tag)}</span>`)}</div>
-						</div></div>
-				</a>`)}</div>
-		${validate_component(Sketch02_preview, "Sketch02Preview").$$render($$result, {}, {}, {})}</section>
+			<h2 class="${"view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end transition text-orange-200 hover:text-white svelte-7dh29d"}"><a href="${"/creative"}" class="${"view-more-link offset-4 pr-2 no-underline  svelte-7dh29d"}">View more projects</a>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-7dh29d"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-7dh29d"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div>
+				<div class="${"icon-wrapper -top-[1px] xl:top-[1px] svelte-7dh29d"}">${validate_component(Chevron_right, "IconChevronRight").$$render($$result, { class: "icon-chevron" }, {}, {})}</div></h2></div>
+		<div class="${"projects-group md:grid w-full flex flex-col mb-12 svelte-7dh29d"}">${each(projects, (project) => `<a${add_attribute("href", `/${project.url}`, 0)} class="${"project-card-link no-underline flex my-3 md:mx-3 svelte-7dh29d"}">
+					<div class="${"project-card card bg-opacity-25 rounded-md transition-all bg-sky-500 bg-opacity-25 flex flex-col md:flex-col-reverse md:justify-between lg:flex-col lg:justify-start p-5 lg:p-7 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0 svelte-7dh29d"}"><div class="${"text-xs ml-1 flex flex-row project-tags svelte-7dh29d"}">${each(project.tags, (tag) => `<span class="${"project-tag -ml-2 mr-4 mb-4 bg-winterblues-300 bg-opacity-30 rounded-md text-xs font-thin p-1 svelte-7dh29d"}">${escape2(tag)}</span>`)}</div>
+						<div class="${"project-details flex flex-col  svelte-7dh29d"}"><h1 class="${"text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white svelte-7dh29d"}">${escape2(project.name)}</h1>
+							<p class="${"mt-2 text-sm md:text-base xl:text-lg tracking-wider font-light"}">${escape2(project.desc)}
+							</p></div>
+						</div>
+				</a>`)}</div></section>
 </main>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-1a21a681.js
-var layout_1a21a681_exports = {};
-__export(layout_1a21a681_exports, {
+// node_modules/lorem-ipsum/dist/constants/formats.js
+var require_formats = __commonJS({
+  "node_modules/lorem-ipsum/dist/constants/formats.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.FORMATS = exports.FORMAT_PLAIN = exports.FORMAT_HTML = void 0;
+    var FORMAT_HTML = "html";
+    exports.FORMAT_HTML = FORMAT_HTML;
+    var FORMAT_PLAIN = "plain";
+    exports.FORMAT_PLAIN = FORMAT_PLAIN;
+    var FORMATS = [FORMAT_HTML, FORMAT_PLAIN];
+    exports.FORMATS = FORMATS;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/constants/units.js
+var require_units = __commonJS({
+  "node_modules/lorem-ipsum/dist/constants/units.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.UNITS = exports.UNIT_PARAGRAPH = exports.UNIT_PARAGRAPHS = exports.UNIT_SENTENCE = exports.UNIT_SENTENCES = exports.UNIT_WORD = exports.UNIT_WORDS = void 0;
+    var UNIT_WORDS = "words";
+    exports.UNIT_WORDS = UNIT_WORDS;
+    var UNIT_WORD = "word";
+    exports.UNIT_WORD = UNIT_WORD;
+    var UNIT_SENTENCES = "sentences";
+    exports.UNIT_SENTENCES = UNIT_SENTENCES;
+    var UNIT_SENTENCE = "sentence";
+    exports.UNIT_SENTENCE = UNIT_SENTENCE;
+    var UNIT_PARAGRAPHS = "paragraphs";
+    exports.UNIT_PARAGRAPHS = UNIT_PARAGRAPHS;
+    var UNIT_PARAGRAPH = "paragraph";
+    exports.UNIT_PARAGRAPH = UNIT_PARAGRAPH;
+    var UNITS = [UNIT_WORDS, UNIT_WORD, UNIT_SENTENCES, UNIT_SENTENCE, UNIT_PARAGRAPHS, UNIT_PARAGRAPH];
+    exports.UNITS = UNITS;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/constants/words.js
+var require_words = __commonJS({
+  "node_modules/lorem-ipsum/dist/constants/words.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.WORDS = void 0;
+    var WORDS = ["ad", "adipisicing", "aliqua", "aliquip", "amet", "anim", "aute", "cillum", "commodo", "consectetur", "consequat", "culpa", "cupidatat", "deserunt", "do", "dolor", "dolore", "duis", "ea", "eiusmod", "elit", "enim", "esse", "est", "et", "eu", "ex", "excepteur", "exercitation", "fugiat", "id", "in", "incididunt", "ipsum", "irure", "labore", "laboris", "laborum", "Lorem", "magna", "minim", "mollit", "nisi", "non", "nostrud", "nulla", "occaecat", "officia", "pariatur", "proident", "qui", "quis", "reprehenderit", "sint", "sit", "sunt", "tempor", "ullamco", "ut", "velit", "veniam", "voluptate"];
+    exports.WORDS = WORDS;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/constants/lineEndings.js
+var require_lineEndings = __commonJS({
+  "node_modules/lorem-ipsum/dist/constants/lineEndings.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.LINE_ENDINGS = void 0;
+    var LINE_ENDINGS = {
+      POSIX: "\n",
+      WIN32: "\r\n"
+    };
+    exports.LINE_ENDINGS = LINE_ENDINGS;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/util/capitalize.js
+var require_capitalize = __commonJS({
+  "node_modules/lorem-ipsum/dist/util/capitalize.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var capitalize = function capitalize2(str) {
+      var trimmed = str.trim();
+      return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
+    };
+    var _default = capitalize;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/util/isNode.js
+var require_isNode = __commonJS({
+  "node_modules/lorem-ipsum/dist/util/isNode.js"(exports, module2) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var isNode2 = function isNode3() {
+      return typeof module2 !== "undefined" && !!module2.exports;
+    };
+    var _default = isNode2;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/util/isReactNative.js
+var require_isReactNative = __commonJS({
+  "node_modules/lorem-ipsum/dist/util/isReactNative.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var isReactNative = function isReactNative2() {
+      var isReactNativeResult = false;
+      try {
+        isReactNativeResult = navigator.product === "ReactNative";
+      } catch (e2) {
+        isReactNativeResult = false;
+      }
+      return isReactNativeResult;
+    };
+    var _default = isReactNative;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/constants/platforms.js
+var require_platforms = __commonJS({
+  "node_modules/lorem-ipsum/dist/constants/platforms.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.SUPPORTED_PLATFORMS = void 0;
+    var SUPPORTED_PLATFORMS = {
+      DARWIN: "darwin",
+      LINUX: "linux",
+      WIN32: "win32"
+    };
+    exports.SUPPORTED_PLATFORMS = SUPPORTED_PLATFORMS;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/util/isWindows.js
+var require_isWindows = __commonJS({
+  "node_modules/lorem-ipsum/dist/util/isWindows.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var _platforms = require_platforms();
+    var isWindows = function isWindows2() {
+      var isWindowsResult = false;
+      try {
+        isWindowsResult = process.platform === _platforms.SUPPORTED_PLATFORMS.WIN32;
+      } catch (e2) {
+        isWindowsResult = false;
+      }
+      return isWindowsResult;
+    };
+    var _default = isWindows;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/util/makeArrayOfLength.js
+var require_makeArrayOfLength = __commonJS({
+  "node_modules/lorem-ipsum/dist/util/makeArrayOfLength.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var makeArrayOfLength = function makeArrayOfLength2() {
+      var length = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 0;
+      return Array.apply(null, Array(length)).map(function(item, index) {
+        return index;
+      });
+    };
+    var _default = makeArrayOfLength;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/util/makeArrayOfStrings.js
+var require_makeArrayOfStrings = __commonJS({
+  "node_modules/lorem-ipsum/dist/util/makeArrayOfStrings.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var _ = require_util();
+    var makeArrayOfStrings = function makeArrayOfStrings2(length, makeString) {
+      var arr = (0, _.makeArrayOfLength)(length);
+      return arr.map(function() {
+        return makeString();
+      });
+    };
+    var _default = makeArrayOfStrings;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/util/index.js
+var require_util = __commonJS({
+  "node_modules/lorem-ipsum/dist/util/index.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    Object.defineProperty(exports, "capitalize", {
+      enumerable: true,
+      get: function get9() {
+        return _capitalize["default"];
+      }
+    });
+    Object.defineProperty(exports, "isNode", {
+      enumerable: true,
+      get: function get9() {
+        return _isNode["default"];
+      }
+    });
+    Object.defineProperty(exports, "isReactNative", {
+      enumerable: true,
+      get: function get9() {
+        return _isReactNative["default"];
+      }
+    });
+    Object.defineProperty(exports, "isWindows", {
+      enumerable: true,
+      get: function get9() {
+        return _isWindows["default"];
+      }
+    });
+    Object.defineProperty(exports, "makeArrayOfLength", {
+      enumerable: true,
+      get: function get9() {
+        return _makeArrayOfLength["default"];
+      }
+    });
+    Object.defineProperty(exports, "makeArrayOfStrings", {
+      enumerable: true,
+      get: function get9() {
+        return _makeArrayOfStrings["default"];
+      }
+    });
+    var _capitalize = _interopRequireDefault(require_capitalize());
+    var _isNode = _interopRequireDefault(require_isNode());
+    var _isReactNative = _interopRequireDefault(require_isReactNative());
+    var _isWindows = _interopRequireDefault(require_isWindows());
+    var _makeArrayOfLength = _interopRequireDefault(require_makeArrayOfLength());
+    var _makeArrayOfStrings = _interopRequireDefault(require_makeArrayOfStrings());
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : { "default": obj };
+    }
+  }
+});
+
+// node_modules/lorem-ipsum/dist/lib/generator.js
+var require_generator = __commonJS({
+  "node_modules/lorem-ipsum/dist/lib/generator.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var _words = require_words();
+    var _util = require_util();
+    function _classCallCheck(instance, Constructor) {
+      if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+      }
+    }
+    function _defineProperties(target, props) {
+      for (var i3 = 0; i3 < props.length; i3++) {
+        var descriptor = props[i3];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor)
+          descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+    function _createClass(Constructor, protoProps, staticProps) {
+      if (protoProps)
+        _defineProperties(Constructor.prototype, protoProps);
+      if (staticProps)
+        _defineProperties(Constructor, staticProps);
+      return Constructor;
+    }
+    function _defineProperty(obj, key, value) {
+      if (key in obj) {
+        Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+      } else {
+        obj[key] = value;
+      }
+      return obj;
+    }
+    var Generator = /* @__PURE__ */ function() {
+      function Generator2() {
+        var _ref = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, _ref$sentencesPerPara = _ref.sentencesPerParagraph, sentencesPerParagraph = _ref$sentencesPerPara === void 0 ? {
+          max: 7,
+          min: 3
+        } : _ref$sentencesPerPara, _ref$wordsPerSentence = _ref.wordsPerSentence, wordsPerSentence = _ref$wordsPerSentence === void 0 ? {
+          max: 15,
+          min: 5
+        } : _ref$wordsPerSentence, random6 = _ref.random, seed = _ref.seed, _ref$words = _ref.words, words = _ref$words === void 0 ? _words.WORDS : _ref$words;
+        _classCallCheck(this, Generator2);
+        _defineProperty(this, "sentencesPerParagraph", void 0);
+        _defineProperty(this, "wordsPerSentence", void 0);
+        _defineProperty(this, "random", void 0);
+        _defineProperty(this, "words", void 0);
+        if (sentencesPerParagraph.min > sentencesPerParagraph.max) {
+          throw new Error("Minimum number of sentences per paragraph (".concat(sentencesPerParagraph.min, ") cannot exceed maximum (").concat(sentencesPerParagraph.max, ")."));
+        }
+        if (wordsPerSentence.min > wordsPerSentence.max) {
+          throw new Error("Minimum number of words per sentence (".concat(wordsPerSentence.min, ") cannot exceed maximum (").concat(wordsPerSentence.max, ")."));
+        }
+        this.sentencesPerParagraph = sentencesPerParagraph;
+        this.words = words;
+        this.wordsPerSentence = wordsPerSentence;
+        this.random = random6 || Math.random;
+      }
+      _createClass(Generator2, [{
+        key: "generateRandomInteger",
+        value: function generateRandomInteger(min, max) {
+          return Math.floor(this.random() * (max - min + 1) + min);
+        }
+      }, {
+        key: "generateRandomWords",
+        value: function generateRandomWords(num) {
+          var _this = this;
+          var _this$wordsPerSentenc = this.wordsPerSentence, min = _this$wordsPerSentenc.min, max = _this$wordsPerSentenc.max;
+          var length = num || this.generateRandomInteger(min, max);
+          return (0, _util.makeArrayOfLength)(length).reduce(function(accumulator, index) {
+            return "".concat(_this.pluckRandomWord(), " ").concat(accumulator);
+          }, "").trim();
+        }
+      }, {
+        key: "generateRandomSentence",
+        value: function generateRandomSentence(num) {
+          return "".concat((0, _util.capitalize)(this.generateRandomWords(num)), ".");
+        }
+      }, {
+        key: "generateRandomParagraph",
+        value: function generateRandomParagraph(num) {
+          var _this2 = this;
+          var _this$sentencesPerPar = this.sentencesPerParagraph, min = _this$sentencesPerPar.min, max = _this$sentencesPerPar.max;
+          var length = num || this.generateRandomInteger(min, max);
+          return (0, _util.makeArrayOfLength)(length).reduce(function(accumulator, index) {
+            return "".concat(_this2.generateRandomSentence(), " ").concat(accumulator);
+          }, "").trim();
+        }
+      }, {
+        key: "pluckRandomWord",
+        value: function pluckRandomWord() {
+          var min = 0;
+          var max = this.words.length - 1;
+          var index = this.generateRandomInteger(min, max);
+          return this.words[index];
+        }
+      }]);
+      return Generator2;
+    }();
+    var _default = Generator;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/lib/LoremIpsum.js
+var require_LoremIpsum = __commonJS({
+  "node_modules/lorem-ipsum/dist/lib/LoremIpsum.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports["default"] = void 0;
+    var _formats = require_formats();
+    var _lineEndings = require_lineEndings();
+    var _generator = _interopRequireDefault(require_generator());
+    var _util = require_util();
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : { "default": obj };
+    }
+    function _classCallCheck(instance, Constructor) {
+      if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+      }
+    }
+    function _defineProperties(target, props) {
+      for (var i3 = 0; i3 < props.length; i3++) {
+        var descriptor = props[i3];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor)
+          descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+    function _createClass(Constructor, protoProps, staticProps) {
+      if (protoProps)
+        _defineProperties(Constructor.prototype, protoProps);
+      if (staticProps)
+        _defineProperties(Constructor, staticProps);
+      return Constructor;
+    }
+    function _defineProperty(obj, key, value) {
+      if (key in obj) {
+        Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+      } else {
+        obj[key] = value;
+      }
+      return obj;
+    }
+    var LoremIpsum2 = /* @__PURE__ */ function() {
+      function LoremIpsum3() {
+        var options2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+        var format2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : _formats.FORMAT_PLAIN;
+        var suffix = arguments.length > 2 ? arguments[2] : void 0;
+        _classCallCheck(this, LoremIpsum3);
+        this.format = format2;
+        this.suffix = suffix;
+        _defineProperty(this, "generator", void 0);
+        if (_formats.FORMATS.indexOf(format2.toLowerCase()) === -1) {
+          throw new Error("".concat(format2, " is an invalid format. Please use ").concat(_formats.FORMATS.join(" or "), "."));
+        }
+        this.generator = new _generator["default"](options2);
+      }
+      _createClass(LoremIpsum3, [{
+        key: "getLineEnding",
+        value: function getLineEnding() {
+          if (this.suffix) {
+            return this.suffix;
+          }
+          if (!(0, _util.isReactNative)() && (0, _util.isNode)() && (0, _util.isWindows)()) {
+            return _lineEndings.LINE_ENDINGS.WIN32;
+          }
+          return _lineEndings.LINE_ENDINGS.POSIX;
+        }
+      }, {
+        key: "formatString",
+        value: function formatString(str) {
+          if (this.format === _formats.FORMAT_HTML) {
+            return "<p>".concat(str, "</p>");
+          }
+          return str;
+        }
+      }, {
+        key: "formatStrings",
+        value: function formatStrings(strings) {
+          var _this = this;
+          return strings.map(function(str) {
+            return _this.formatString(str);
+          });
+        }
+      }, {
+        key: "generateWords",
+        value: function generateWords(num) {
+          return this.formatString(this.generator.generateRandomWords(num));
+        }
+      }, {
+        key: "generateSentences",
+        value: function generateSentences(num) {
+          return this.formatString(this.generator.generateRandomParagraph(num));
+        }
+      }, {
+        key: "generateParagraphs",
+        value: function generateParagraphs(num) {
+          var makeString = this.generator.generateRandomParagraph.bind(this.generator);
+          return this.formatStrings((0, _util.makeArrayOfStrings)(num, makeString)).join(this.getLineEnding());
+        }
+      }]);
+      return LoremIpsum3;
+    }();
+    var _default = LoremIpsum2;
+    exports["default"] = _default;
+  }
+});
+
+// node_modules/lorem-ipsum/dist/index.js
+var require_dist2 = __commonJS({
+  "node_modules/lorem-ipsum/dist/index.js"(exports) {
+    init_shims();
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    Object.defineProperty(exports, "LoremIpsum", {
+      enumerable: true,
+      get: function get9() {
+        return _LoremIpsum["default"];
+      }
+    });
+    exports.loremIpsum = void 0;
+    var _formats = require_formats();
+    var _units = require_units();
+    var _words = require_words();
+    var _LoremIpsum = _interopRequireDefault(require_LoremIpsum());
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : { "default": obj };
+    }
+    var loremIpsum = function loremIpsum2() {
+      var _ref = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, _ref$count = _ref.count, count = _ref$count === void 0 ? 1 : _ref$count, _ref$format = _ref.format, format2 = _ref$format === void 0 ? _formats.FORMAT_PLAIN : _ref$format, _ref$paragraphLowerBo = _ref.paragraphLowerBound, paragraphLowerBound = _ref$paragraphLowerBo === void 0 ? 3 : _ref$paragraphLowerBo, _ref$paragraphUpperBo = _ref.paragraphUpperBound, paragraphUpperBound = _ref$paragraphUpperBo === void 0 ? 7 : _ref$paragraphUpperBo, random6 = _ref.random, _ref$sentenceLowerBou = _ref.sentenceLowerBound, sentenceLowerBound = _ref$sentenceLowerBou === void 0 ? 5 : _ref$sentenceLowerBou, _ref$sentenceUpperBou = _ref.sentenceUpperBound, sentenceUpperBound = _ref$sentenceUpperBou === void 0 ? 15 : _ref$sentenceUpperBou, _ref$units = _ref.units, units = _ref$units === void 0 ? _units.UNIT_SENTENCES : _ref$units, _ref$words = _ref.words, words = _ref$words === void 0 ? _words.WORDS : _ref$words, _ref$suffix = _ref.suffix, suffix = _ref$suffix === void 0 ? "" : _ref$suffix;
+      var options2 = {
+        random: random6,
+        sentencesPerParagraph: {
+          max: paragraphUpperBound,
+          min: paragraphLowerBound
+        },
+        words,
+        wordsPerSentence: {
+          max: sentenceUpperBound,
+          min: sentenceLowerBound
+        }
+      };
+      var lorem = new _LoremIpsum["default"](options2, format2, suffix);
+      switch (units) {
+        case _units.UNIT_PARAGRAPHS:
+        case _units.UNIT_PARAGRAPH:
+          return lorem.generateParagraphs(count);
+        case _units.UNIT_SENTENCES:
+        case _units.UNIT_SENTENCE:
+          return lorem.generateSentences(count);
+        case _units.UNIT_WORDS:
+        case _units.UNIT_WORD:
+          return lorem.generateWords(count);
+        default:
+          return "";
+      }
+    };
+    exports.loremIpsum = loremIpsum;
+  }
+});
+
+// .svelte-kit/output/server/chunks/index-d5db39a5.js
+var index_d5db39a5_exports = {};
+__export(index_d5db39a5_exports, {
+  default: () => Egghead_discord
+});
+function makeid(length) {
+  var result2 = "";
+  var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i3 = 0; i3 < length; i3++) {
+    result2 += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result2;
+}
+var import_random3, import_math3, import_color3, import_lorem_ipsum, SvgIcon, discord_src, Egghead_discord;
+var init_index_d5db39a5 = __esm({
+  ".svelte-kit/output/server/chunks/index-d5db39a5.js"() {
+    init_shims();
+    init_app_d1ce00fb();
+    import_random3 = __toModule(require_random());
+    import_math3 = __toModule(require_math());
+    import_color3 = __toModule(require_color());
+    import_lorem_ipsum = __toModule(require_dist2());
+    init_ssr();
+    SvgIcon = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { name } = $$props;
+      let { width: width2 = "1rem" } = $$props;
+      let { height: height2 = "1rem" } = $$props;
+      let { focusable = false } = $$props;
+      let icons = [
+        {
+          box: 24,
+          name: "save",
+          svg: `<g stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/></g>`
+        },
+        {
+          box: 32,
+          name: "trash",
+          svg: `<path d="M12 12h2v12h-2z" /><path d="M18 12h2v12h-2z" /><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" /><path d="M12 2h8v2h-8z" />`
+        }
+      ];
+      let displayIcon = icons.find((e2) => e2.name === name);
+      if ($$props.name === void 0 && $$bindings.name && name !== void 0)
+        $$bindings.name(name);
+      if ($$props.width === void 0 && $$bindings.width && width2 !== void 0)
+        $$bindings.width(width2);
+      if ($$props.height === void 0 && $$bindings.height && height2 !== void 0)
+        $$bindings.height(height2);
+      if ($$props.focusable === void 0 && $$bindings.focusable && focusable !== void 0)
+        $$bindings.focusable(focusable);
+      return `<svg${add_attribute("class", $$props.class, 0)}${add_attribute("focusable", focusable, 0)}${add_attribute("width", width2, 0)}${add_attribute("height", height2, 0)} viewBox="${"0 0 " + escape2(displayIcon.box) + " " + escape2(displayIcon.box)}"><!-- HTML_TAG_START -->${displayIcon.svg}<!-- HTML_TAG_END --></svg>`;
+    });
+    discord_src = "~/static/svg/discord.svg";
+    Egghead_discord = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      const lorem = new import_lorem_ipsum.LoremIpsum({
+        sentencesPerParagraph: { min: 1, max: 8 },
+        wordsPerSentence: { min: 4, max: 16 }
+      });
+      let discord = `<svg class="homeIcon-AaowEC" aria-hidden="false" width="28" height="20" viewBox="0 0 28 20"><path fill="currentColor" d="M23.0212 1.67671C21.3107 0.879656 19.5079 0.318797 17.6584 0C17.4062 0.461742 17.1749 0.934541 16.9708 1.4184C15.003 1.12145 12.9974 1.12145 11.0283 1.4184C10.819 0.934541 10.589 0.461744 10.3368 0.00546311C8.48074 0.324393 6.67795 0.885118 4.96746 1.68231C1.56727 6.77853 0.649666 11.7538 1.11108 16.652C3.10102 18.1418 5.3262 19.2743 7.69177 20C8.22338 19.2743 8.69519 18.4993 9.09812 17.691C8.32996 17.3997 7.58522 17.0424 6.87684 16.6135C7.06531 16.4762 7.24726 16.3387 7.42403 16.1847C11.5911 18.1749 16.408 18.1749 20.5763 16.1847C20.7531 16.3332 20.9351 16.4762 21.1171 16.6135C20.41 17.0369 19.6639 17.3997 18.897 17.691C19.3052 18.4993 19.7718 19.2689 20.3021 19.9945C22.6677 19.2689 24.8929 18.1364 26.8828 16.6466H26.8893C27.43 10.9731 25.9665 6.04728 23.0212 1.67671ZM9.68041 13.6383C8.39754 13.6383 7.34085 12.4453 7.34085 10.994C7.34085 9.54272 8.37155 8.34973 9.68041 8.34973C10.9893 8.34973 12.0395 9.54272 12.0187 10.994C12.0187 12.4453 10.9828 13.6383 9.68041 13.6383ZM18.3161 13.6383C17.0332 13.6383 15.9765 12.4453 15.9765 10.994C15.9765 9.54272 17.0124 8.34973 18.3161 8.34973C19.6184 8.34973 20.6751 9.54272 20.6543 10.994C20.6543 12.4453 19.6184 13.6383 18.3161 13.6383Z"></path></svg>`;
+      let servers = [];
+      let channels = [];
+      let messages = [];
+      [...Array(40)].map((_, i3) => {
+        let server = makeid(2);
+        let channel = makeid(import_random3.default.range(6, 18));
+        let message = lorem.generateSentences(Math.floor(import_random3.default.range(1, 8)));
+        servers.push(server);
+        channels.push(channel);
+        messages.push(message);
+      });
+      return `
+
+<div class="${"flex flex-row text-white h-screen w-full"}"><div class="${"bg-gray-800 p-3 space-y-2 overflow-y-scroll"}">${validate_component(SvgIcon, "SvgIcon").$$render($$result, { name: "trash" }, {}, {})}
+		<!-- HTML_TAG_START -->${discord}<!-- HTML_TAG_END -->
+		<img${add_attribute("src", discord_src, 0)}>
+		${each(servers, (serverId) => `<div class="${"bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center"}">${escape2(serverId)}
+			</div>`)}</div>
+	<div class="${"bg-winterblues-100 w-60 flex flex-col"}"><div class="${"px-3 h-12 shadow-md flex flex-shrink-0 items-center font-fira"}">Header</div>
+		<div class="${"flex flex-col overflow-y-scroll"}">${each(channels, (item) => `
+				<div class="${"bg-blue-900 p-3 flex-1"}">${escape2(item)}</div>`)}</div></div>
+	<div class="${"flex flex-1 flex-col"}"><div class="${"p-3 h-12 shadow-md bg-electricindigo-800 flex font-fira"}">Main</div>
+		<div class="${"p-3 bg-electricindigo-700 flex-1 space-y-4 overflow-y-scroll"}">${each(messages, (message) => `<p class="${"w-full text-2xl"}">${escape2(message)}</p>`)}</div></div>
+</div>`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/message-ee52fa68.js
+var message_ee52fa68_exports = {};
+__export(message_ee52fa68_exports, {
+  default: () => Message
+});
+var Message;
+var init_message_ee52fa68 = __esm({
+  ".svelte-kit/output/server/chunks/message-ee52fa68.js"() {
+    init_shims();
+    init_app_d1ce00fb();
+    init_ssr();
+    Message = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `
+<div class="${"bg-electricindigo-500 bg-opacity-10 min-h-full min-w-full flex items-center justify-center"}"><div class="${"max-w-lg"}">
+		<div class="${"flex hover:bg-gray-700 hover:bg-opacity-30 px-4 py-1"}"><img class="${"w-10 h-10 rounded-full mr-4"}" src="${"https://loremflickr.com/100/100"}" alt="${""}">
+			<div><p class="${"flex items-baseline"}"><span class="${"text-electricindigo-400 mr-2 text-sm font-medium"}">mikepeiman</span>
+					<span class="${"text-sm text-gray-500"}">12/24/2021</span></p>
+				<p class="${"text-gray-300"}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates hic cupiditate
+					accusantium eos tempora fuga et eveniet explicabo iure cum voluptas, rem non expedita
+					cumque atque esse nulla fugiat sunt nostrum vel reprehenderit sit quae corporis quo? Minus
+					laboriosam placeat assumenda veniam est debitis dolor sapiente voluptate, aut, corporis
+					magnam.
+				</p></div></div>
+		<div class="${"flex mt-2 hover:bg-gray-700 hover:bg-opacity-30 px-4 py-1"}"><p class="${"text-gray-300 pl-14"}">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, sed ex animi
+				neque laborum qui consectetur vitae atque? Soluta pariatur omnis, quidem praesentium laborum
+				quasi rem expedita est at.
+			</p></div>
+		<div class="${"flex mt-2 hover:bg-gray-700 hover:bg-opacity-30 px-4 py-1"}"><p class="${"text-gray-300 pl-14"}">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam distinctio, sed ex animi
+				neque laborum qui consectetur vitae atque? Soluta pariatur omnis, quidem praesentium laborum
+				quasi rem expedita est at.
+			</p></div></div>
+</div>`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/__layout-8c8d7468.js
+var layout_8c8d7468_exports = {};
+__export(layout_8c8d7468_exports, {
   default: () => _layout2
 });
 var _layout2;
-var init_layout_1a21a681 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-1a21a681.js"() {
+var init_layout_8c8d7468 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-8c8d7468.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     _layout2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<main class="${"flex flex-col"}">${slots.default ? slots.default({}) : ``}
@@ -38536,16 +39471,34 @@ var init_layout_1a21a681 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-8f822241.js
-var layout_8f822241_exports = {};
-__export(layout_8f822241_exports, {
+// .svelte-kit/output/server/chunks/index-22763c78.js
+var index_22763c78_exports = {};
+__export(index_22763c78_exports, {
+  default: () => Metabrain
+});
+var Metabrain;
+var init_index_22763c78 = __esm({
+  ".svelte-kit/output/server/chunks/index-22763c78.js"() {
+    init_shims();
+    init_app_d1ce00fb();
+    init_ssr();
+    Metabrain = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `<div class="${"bg-electricindigo-500 bg-opacity-10 min-h-full min-w-full flex items-center justify-center"}"><div class="${"min-h-full "}">MetaBrain.io</div>
+</div>`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/__layout-064b8bd5.js
+var layout_064b8bd5_exports = {};
+__export(layout_064b8bd5_exports, {
   default: () => _layout3
 });
 var css$13, numSketches, SideNav, css4, _layout3;
-var init_layout_8f822241 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-8f822241.js"() {
+var init_layout_064b8bd5 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-064b8bd5.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     css$13 = {
       code: '.sidebar{grid-area:sidebar;width:fit-content}#sideNav.svelte-95shmb.svelte-95shmb{display:flex;flex-direction:column;justify-content:start;align-items:flex-start;font-family:"Montserrat", sans-serif}#sideNav.svelte-95shmb a.svelte-95shmb{margin:1em;text-decoration:none;font-weight:500}#sideNav.svelte-95shmb nav.svelte-95shmb{display:flex;flex-direction:column}#sideNav.svelte-95shmb nav a.svelte-95shmb{@apply rounded-lg p-4;}',
@@ -38581,7 +39534,7 @@ var init_layout_8f822241 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Checkbox-12c241ac.js
+// .svelte-kit/output/server/chunks/Checkbox-610d309a.js
 function sineInOut(t3) {
   return -0.5 * (Math.cos(Math.PI * t3) - 1);
 }
@@ -38682,12 +39635,12 @@ function tweened(value, defaults = {}) {
   };
 }
 var css$22, Param, css$14, Slider, createStyle, css5, Checkbox, Checkbox_1;
-var init_Checkbox_12c241ac = __esm({
-  ".svelte-kit/output/server/chunks/Checkbox-12c241ac.js"() {
+var init_Checkbox_610d309a = __esm({
+  ".svelte-kit/output/server/chunks/Checkbox-610d309a.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_index_0f9f8f58();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_index_101a7283();
     css$22 = {
       code: ".param.svelte-1cduqyw{box-sizing:border-box;display:flex;justify-content:flex-start;align-items:center;width:100%}div.svelte-1cduqyw:first-child{margin-top:0}.param-wrapper.svelte-1cduqyw{display:flex;justify-content:flex-start;align-items:center;flex-shrink:1;flex-grow:1;flex-basis:60%;box-sizing:border-box}label.svelte-1cduqyw{font-size:12px;flex-shrink:1;flex-grow:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:black;padding-right:10px;flex-basis:40%;box-sizing:border-box}",
       map: null
@@ -38888,15 +39841,15 @@ var init_Checkbox_12c241ac = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/ColorInput-5e87ba75.js
-var import_color3, css6, ColorInput;
-var init_ColorInput_5e87ba75 = __esm({
-  ".svelte-kit/output/server/chunks/ColorInput-5e87ba75.js"() {
+// .svelte-kit/output/server/chunks/ColorInput-8dd3e23d.js
+var import_color4, css6, ColorInput;
+var init_ColorInput_8dd3e23d = __esm({
+  ".svelte-kit/output/server/chunks/ColorInput-8dd3e23d.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_12c241ac();
-    import_color3 = __toModule(require_color());
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
+    init_app_d1ce00fb();
+    init_Checkbox_610d309a();
+    import_color4 = __toModule(require_color());
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
     css6 = {
       code: "input.svelte-13o5b0t{cursor:pointer;-webkit-appearance:none;border:none;background:none;border-radius:5px;padding:0;overflow:hidden;width:50px;height:25px;outline:0;box-sizing:border-box;border:1px solid #dcdcdc;padding:0;margin:0}input[type='color'].svelte-13o5b0t::-webkit-color-swatch-wrapper{border:0;padding:0}input[type='color'].svelte-13o5b0t::-webkit-color-swatch{border:none;border:2px solid white;border-radius:5px}",
       map: null
@@ -38923,7 +39876,7 @@ var init_ColorInput_5e87ba75 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/OptionSelect-d7048b01.js
+// .svelte-kit/output/server/chunks/OptionSelect-4147b55a.js
 function isOutOfViewport(parent, container) {
   const parentBounding = parent.getBoundingClientRect();
   const boundingContainer = container.getBoundingClientRect();
@@ -38970,12 +39923,12 @@ function convertStringItemsToObjects(_items) {
   });
 }
 var css$6, Item, css$5, List, css$4, Selection, css$32, MultiSelection, css$23, VirtualList, ClearIcon, Object_1, css$15, Select, css7, OptionSelect;
-var init_OptionSelect_d7048b01 = __esm({
-  ".svelte-kit/output/server/chunks/OptionSelect-d7048b01.js"() {
+var init_OptionSelect_4147b55a = __esm({
+  ".svelte-kit/output/server/chunks/OptionSelect-4147b55a.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_12c241ac();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
+    init_app_d1ce00fb();
+    init_Checkbox_610d309a();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
     css$6 = {
       code: ".item.svelte-3e0qet{cursor:default;height:var(--height, 42px);line-height:var(--height, 42px);padding:var(--itemPadding, 0 20px);color:var(--itemColor, inherit);text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.groupHeader.svelte-3e0qet{text-transform:var(--groupTitleTextTransform, uppercase)}.groupItem.svelte-3e0qet{padding-left:var(--groupItemPaddingLeft, 40px)}.item.svelte-3e0qet:active{background:var(--itemActiveBackground, #b9daff)}.item.active.svelte-3e0qet{background:var(--itemIsActiveBG, #007aff);color:var(--itemIsActiveColor, #fff)}.item.notSelectable.svelte-3e0qet{color:var(--itemIsNotSelectableColor, #999)}.item.first.svelte-3e0qet{border-radius:var(--itemFirstBorderRadius, 4px 4px 0 0)}.item.hover.svelte-3e0qet:not(.active){background:var(--itemHoverBG, #e7f2ff);color:var(--itemHoverColor, inherit)}",
       map: null
@@ -39838,26 +40791,26 @@ var init_OptionSelect_d7048b01 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch02-5081cfbf.js
-var sketch02_5081cfbf_exports = {};
-__export(sketch02_5081cfbf_exports, {
+// .svelte-kit/output/server/chunks/sketch02-60dae7db.js
+var sketch02_60dae7db_exports = {};
+__export(sketch02_60dae7db_exports, {
   default: () => Sketch02
 });
-var import_random3, import_color4, import_canvas_sketch4, css8, Sketch02;
-var init_sketch02_5081cfbf = __esm({
-  ".svelte-kit/output/server/chunks/sketch02-5081cfbf.js"() {
+var import_random4, import_color5, import_canvas_sketch4, css8, Sketch02;
+var init_sketch02_60dae7db = __esm({
+  ".svelte-kit/output/server/chunks/sketch02-60dae7db.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
-    init_OptionSelect_d7048b01();
-    import_random3 = __toModule(require_random());
-    import_color4 = __toModule(require_color());
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
+    init_OptionSelect_4147b55a();
+    import_random4 = __toModule(require_random());
+    import_color5 = __toModule(require_color());
     init_ssr();
     import_canvas_sketch4 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
+    init_stores_95385b68();
+    init_index_101a7283();
     css8 = {
       code: ".input-group-wrapper.svelte-1d7ksxj{@apply flex flex-col items-start justify-center m-0 bg-sky-200 p-3 my-1 rounded-lg;}",
       map: null
@@ -39940,8 +40893,8 @@ var init_sketch02_5081cfbf = __esm({
               drawArc(context, x3 + data.margin / 2 + data.gap / 2, y2 + data.margin / 2 + data.gap / 2, Math.abs(data.itemWidth), data.startAngle, data.endAngle, data.fillHSLA, stroke, data.lineWidth);
             }
             if (Math.random() < data.randomFactor) {
-              data.randomStroke ? stroke = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random3.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : stroke = data.strokeRandomHSLA;
-              data.randomFill ? fill = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random3.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : fill = data.fillRandomHSLA;
+              data.randomStroke ? stroke = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random4.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : stroke = data.strokeRandomHSLA;
+              data.randomFill ? fill = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random4.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : fill = data.fillRandomHSLA;
               if (data.shape == "square") {
                 drawRect(context, x3 + data.margin / 2 + data.gap / 2 + data.offset, y2 + data.margin / 2 + data.gap / 2 + data.offset, data.itemWidth, data.itemHeight, fill, stroke, data.lineWidthRandom);
               } else {
@@ -40242,221 +41195,31 @@ var init_sketch02_5081cfbf = __esm({
   }
 });
 
-// node_modules/canvas-sketch-util/math.js
-var require_math = __commonJS({
-  "node_modules/canvas-sketch-util/math.js"(exports, module2) {
-    init_shims();
-    var defined = require_defined();
-    var wrap2 = require_wrap();
-    var EPSILON = Number.EPSILON;
-    function clamp(value, min, max) {
-      return min < max ? value < min ? min : value > max ? max : value : value < max ? max : value > min ? min : value;
-    }
-    function clamp01(v2) {
-      return clamp(v2, 0, 1);
-    }
-    function lerp(min, max, t3) {
-      return min * (1 - t3) + max * t3;
-    }
-    function inverseLerp(min, max, t3) {
-      if (Math.abs(min - max) < EPSILON)
-        return 0;
-      else
-        return (t3 - min) / (max - min);
-    }
-    function smoothstep(min, max, t3) {
-      var x3 = clamp(inverseLerp(min, max, t3), 0, 1);
-      return x3 * x3 * (3 - 2 * x3);
-    }
-    function toFinite(n, defaultValue) {
-      defaultValue = defined(defaultValue, 0);
-      return typeof n === "number" && isFinite(n) ? n : defaultValue;
-    }
-    function expandVector(dims) {
-      if (typeof dims !== "number")
-        throw new TypeError("Expected dims argument");
-      return function(p3, defaultValue) {
-        defaultValue = defined(defaultValue, 0);
-        var scalar;
-        if (p3 == null) {
-          scalar = defaultValue;
-        } else if (typeof p3 === "number" && isFinite(p3)) {
-          scalar = p3;
-        }
-        var out = [];
-        var i3;
-        if (scalar == null) {
-          for (i3 = 0; i3 < dims; i3++) {
-            out[i3] = toFinite(p3[i3], defaultValue);
-          }
-        } else {
-          for (i3 = 0; i3 < dims; i3++) {
-            out[i3] = scalar;
-          }
-        }
-        return out;
-      };
-    }
-    function lerpArray(min, max, t3, out) {
-      out = out || [];
-      if (min.length !== max.length) {
-        throw new TypeError("min and max array are expected to have the same length");
-      }
-      for (var i3 = 0; i3 < min.length; i3++) {
-        out[i3] = lerp(min[i3], max[i3], t3);
-      }
-      return out;
-    }
-    function newArray(n, initialValue) {
-      n = defined(n, 0);
-      if (typeof n !== "number")
-        throw new TypeError("Expected n argument to be a number");
-      var out = [];
-      for (var i3 = 0; i3 < n; i3++)
-        out.push(initialValue);
-      return out;
-    }
-    function linspace(n, opts) {
-      n = defined(n, 0);
-      if (typeof n !== "number")
-        throw new TypeError("Expected n argument to be a number");
-      opts = opts || {};
-      if (typeof opts === "boolean") {
-        opts = { endpoint: true };
-      }
-      var offset = defined(opts.offset, 0);
-      if (opts.endpoint) {
-        return newArray(n).map(function(_, i3) {
-          return n <= 1 ? 0 : (i3 + offset) / (n - 1);
-        });
-      } else {
-        return newArray(n).map(function(_, i3) {
-          return (i3 + offset) / n;
-        });
-      }
-    }
-    function lerpFrames(values, t3, out) {
-      t3 = clamp(t3, 0, 1);
-      var len = values.length - 1;
-      var whole = t3 * len;
-      var frame = Math.floor(whole);
-      var fract2 = whole - frame;
-      var nextFrame = Math.min(frame + 1, len);
-      var a2 = values[frame % values.length];
-      var b = values[nextFrame % values.length];
-      if (typeof a2 === "number" && typeof b === "number") {
-        return lerp(a2, b, fract2);
-      } else if (Array.isArray(a2) && Array.isArray(b)) {
-        return lerpArray(a2, b, fract2, out);
-      } else {
-        throw new TypeError("Mismatch in value type of two array elements: " + frame + " and " + nextFrame);
-      }
-    }
-    function mod(a2, b) {
-      return (a2 % b + b) % b;
-    }
-    function degToRad(n) {
-      return n * Math.PI / 180;
-    }
-    function radToDeg(n) {
-      return n * 180 / Math.PI;
-    }
-    function fract(n) {
-      return n - Math.floor(n);
-    }
-    function sign(n) {
-      if (n > 0)
-        return 1;
-      else if (n < 0)
-        return -1;
-      else
-        return 0;
-    }
-    function pingPong(t3, length) {
-      t3 = mod(t3, length * 2);
-      return length - Math.abs(t3 - length);
-    }
-    function damp(a2, b, lambda, dt) {
-      return lerp(a2, b, 1 - Math.exp(-lambda * dt));
-    }
-    function dampArray(a2, b, lambda, dt, out) {
-      out = out || [];
-      for (var i3 = 0; i3 < a2.length; i3++) {
-        out[i3] = damp(a2[i3], b[i3], lambda, dt);
-      }
-      return out;
-    }
-    function mapRange(value, inputMin, inputMax, outputMin, outputMax, clamp2) {
-      if (Math.abs(inputMin - inputMax) < EPSILON) {
-        return outputMin;
-      } else {
-        var outVal = (value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin;
-        if (clamp2) {
-          if (outputMax < outputMin) {
-            if (outVal < outputMax)
-              outVal = outputMax;
-            else if (outVal > outputMin)
-              outVal = outputMin;
-          } else {
-            if (outVal > outputMax)
-              outVal = outputMax;
-            else if (outVal < outputMin)
-              outVal = outputMin;
-          }
-        }
-        return outVal;
-      }
-    }
-    module2.exports = {
-      mod,
-      fract,
-      sign,
-      degToRad,
-      radToDeg,
-      wrap: wrap2,
-      pingPong,
-      linspace,
-      lerp,
-      lerpArray,
-      inverseLerp,
-      lerpFrames,
-      clamp,
-      clamp01,
-      smoothstep,
-      damp,
-      dampArray,
-      mapRange,
-      expand2D: expandVector(2),
-      expand3D: expandVector(3),
-      expand4D: expandVector(4)
-    };
-  }
-});
-
-// .svelte-kit/output/server/chunks/sketch03-2bdf5979.js
-var sketch03_2bdf5979_exports = {};
-__export(sketch03_2bdf5979_exports, {
+// .svelte-kit/output/server/chunks/sketch03-56d12917.js
+var sketch03_56d12917_exports = {};
+__export(sketch03_56d12917_exports, {
   default: () => Sketch03
 });
-var import_color5, import_random4, import_math, import_canvas_sketch5, width, height, Sketch03;
-var init_sketch03_2bdf5979 = __esm({
-  ".svelte-kit/output/server/chunks/sketch03-2bdf5979.js"() {
+var import_color6, import_random5, import_math4, import_canvas_sketch5, width, height, Sketch03;
+var init_sketch03_56d12917 = __esm({
+  ".svelte-kit/output/server/chunks/sketch03-56d12917.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_OptionSelect_d7048b01();
-    import_color5 = __toModule(require_color());
-    import_random4 = __toModule(require_random());
-    import_math = __toModule(require_math());
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_OptionSelect_4147b55a();
+    import_color6 = __toModule(require_color());
+    import_random5 = __toModule(require_random());
+    import_math4 = __toModule(require_math());
     import_canvas_sketch5 = __toModule(require_canvas_sketch_umd());
     init_ssr();
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    width = 2048;
-    height = 2048;
+    init_stores_95385b68();
+    init_index_101a7283();
+    width = 800;
+    height = 800;
     Sketch03 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
+      let context;
       let hexes = [];
       const data = {
         TITLE: "Sketch03",
@@ -40464,68 +41227,17 @@ var init_sketch03_2bdf5979 = __esm({
         range: 200,
         lineCap: "butt",
         lineCaps: [{ value: "butt", label: "butt" }, { value: "round", label: "round" }],
-        showNodes: false,
+        showNodes: true,
         showLines: true,
         nodeType: "hex",
         nodeTypes: [{ value: "hex", label: "hex" }, { value: "circle", label: "circle" }],
+        lineWidth: 2,
         lineWidthMax: 5,
         radiusMin: 10,
         radiusMax: 30,
         animate: true
       };
       const settings = { dimensions: [width, height] };
-      const constructNodes = (width2, height2) => {
-        if (data.numNodes > hexes.length) {
-          for (let i3 = 0; i3 < data.numNodes - hexes.length; i3++) {
-            let x3 = import_random4.default.range(0, width2);
-            let y2 = import_random4.default.range(0, height2);
-            let hex = new Hex(x3, y2);
-            hexes = [...hexes, hex];
-          }
-        } else {
-          for (let i3 = 0; i3 < hexes.length - data.numNodes; i3++) {
-            hexes.pop();
-          }
-        }
-      };
-      const sketch = ({ context, width: width2, height: height2 }) => {
-        let pen = context;
-        constructNodes(width2, height2);
-        for (let i3 = 0; i3 < hexes.length; i3++) {
-          const hex = hexes[i3];
-          for (let j = i3 + 1; j < hexes.length; j++) {
-            const other = hexes[j];
-            const dist = hex.pos.getDistance(other.pos);
-            if (dist > data.range)
-              continue;
-            pen.lineWidth = import_math.default.mapRange(dist, 0, data.range, data.lineWidthMax, 1);
-            pen.beginPath();
-            pen.moveTo(hex.pos.x, hex.pos.y);
-            data.showLines ? pen.lineTo(other.pos.x, other.pos.y) : 0;
-            let a2 = rangeAlpha(data.range, dist);
-            let h3 = import_color5.default.parse(hex.color).hsla[0];
-            let s4 = import_color5.default.parse(hex.color).hsla[1];
-            let l4 = import_color5.default.parse(hex.color).hsla[2];
-            pen.strokeStyle = hsla(h3, s4, l4, a2);
-            pen.lineCap = data.lineCap;
-            pen.stroke();
-          }
-        }
-        return ({ context: context2, width: width3, height: height3 }) => {
-          let pen2 = context2;
-          pen2.fillStyle = "black";
-          pen2.fillRect(0, 0, width3, height3);
-          if (data.numNodes != hexes.length)
-            ;
-          hexes.forEach((hex) => {
-            hex.update();
-            if (data.showNodes) {
-              data.nodeType == "hex" ? hex.drawHex(pen2) : hex.drawCircle(pen2);
-            }
-            hex.wrap(width3, height3);
-          });
-        };
-      };
       class Vector {
         constructor(x3, y2) {
           this.x = x3;
@@ -40540,8 +41252,8 @@ var init_sketch03_2bdf5979 = __esm({
       class Agent {
         constructor(x3, y2) {
           this.pos = new Vector(x3, y2);
-          this.vel = new Vector(import_random4.default.range(-1, 1), import_random4.default.range(-1, 1));
-          this.radius = import_random4.default.range(data.radiusMin, data.radiusMax);
+          this.vel = new Vector(import_random5.default.range(-1, 1), import_random5.default.range(-1, 1));
+          this.radius = import_random5.default.range(data.radiusMin, data.radiusMax);
         }
         update() {
           this.pos.x += this.vel.x;
@@ -40559,16 +41271,16 @@ var init_sketch03_2bdf5979 = __esm({
           this.pos.x = (this.pos.x + width2) % width2;
           this.pos.y = (this.pos.y + height2) % height2;
         }
-        drawCircle(pen) {
-          pen.save();
-          pen.translate(this.pos.x, this.pos.y);
-          pen.beginPath();
-          pen.arc(0, 0, this.radius, 0, Math.PI * 2);
-          pen.fill();
-          pen.lineWidth = 4;
-          pen.strokeStyle = this.color;
-          pen.stroke();
-          pen.restore();
+        drawCircle(context2) {
+          context2.save();
+          context2.translate(this.pos.x, this.pos.y);
+          context2.beginPath();
+          context2.arc(0, 0, this.radius, 0, Math.PI * 2);
+          context2.fill();
+          context2.lineWidth = 4;
+          context2.strokeStyle = this.color;
+          context2.stroke();
+          context2.restore();
         }
       }
       class Hex extends Agent {
@@ -40578,18 +41290,18 @@ var init_sketch03_2bdf5979 = __esm({
           this.positiveVelSum = parseFloat(makePositive(this.vel.x).toFixed(3) + makePositive(this.vel.y).toFixed(3));
           this.color = hsla(this.positiveVelSum * 360 % 360, 50, 50, 1);
         }
-        drawHex(pen) {
-          pen.save();
-          pen.beginPath();
-          pen.moveTo(this.pos.x + this.radius * Math.cos(0), this.pos.y + this.radius * Math.sin(0));
+        drawHex(context2) {
+          context2.save();
+          context2.beginPath();
+          context2.moveTo(this.pos.x + this.radius * Math.cos(0), this.pos.y + this.radius * Math.sin(0));
           for (let i3 = 0; i3 < this.numOfSides; i3++) {
             let xCoord = this.pos.x + this.radius * Math.cos(i3 * 2 * Math.PI / this.numOfSides);
             let yCoord = this.pos.y + this.radius * Math.sin(i3 * 2 * Math.PI / this.numOfSides);
-            pen.lineTo(xCoord, yCoord);
-            pen.fillStyle = this.color;
+            context2.lineTo(xCoord, yCoord);
+            context2.fillStyle = this.color;
           }
-          pen.fill();
-          pen.restore();
+          context2.fill();
+          context2.restore();
         }
       }
       const makePositive = (value) => {
@@ -40602,7 +41314,58 @@ var init_sketch03_2bdf5979 = __esm({
         return color;
       };
       const rangeAlpha = (range, dist) => {
-        return import_math.default.mapRange(dist, 0, range, 1, 0, true);
+        return import_math4.default.mapRange(dist, 0, range, 1, 0, true);
+      };
+      const constructNodes = (width2, height2) => {
+        if (data.numNodes > hexes.length) {
+          for (let i3 = 0; i3 < data.numNodes - hexes.length; i3++) {
+            let x3 = import_random5.default.range(0, width2);
+            let y2 = import_random5.default.range(0, height2);
+            let hex = new Hex(x3, y2);
+            hexes.push(hex);
+          }
+        } else {
+          for (let i3 = 0; i3 < hexes.length - data.numNodes; i3++) {
+            hexes.pop();
+          }
+        }
+      };
+      const sketch = () => {
+        constructNodes(width, height);
+        for (let i3 = 0; i3 < hexes.length; i3++) {
+          const hex = hexes[i3];
+          for (let j = i3 + 1; j < hexes.length; j++) {
+            const other = hexes[j];
+            const dist = hex.pos.getDistance(other.pos);
+            if (dist > data.range)
+              continue;
+            context.lineWidth = import_math4.default.mapRange(dist, 0, data.range, data.lineWidthMax, 1);
+            context.beginPath();
+            context.moveTo(hex.pos.x, hex.pos.y);
+            data.showLines ? context.lineTo(other.pos.x, other.pos.y) : 0;
+            let a2 = rangeAlpha(data.range, dist);
+            let h3 = import_color6.default.parse(hex.color).hsla[0];
+            let s4 = import_color6.default.parse(hex.color).hsla[1];
+            let l4 = import_color6.default.parse(hex.color).hsla[2];
+            context.strokeStyle = hsla(h3, s4, l4, a2);
+            context.lineCap = data.lineCap;
+            context.stroke();
+          }
+        }
+        return () => {
+          context.fillStyle = "black";
+          context.fillRect(0, 0, width, height);
+          if (data.numNodes != hexes.length)
+            ;
+          hexes.forEach((hex) => {
+            hex.update();
+            if (data.showNodes) {
+              data.nodeType == "hex" ? hex.drawHex(context) : hex.drawCircle(context);
+            }
+            hex.wrap(width, height);
+          });
+          requestAnimationFrame(sketch());
+        };
       };
       if ($$props.hidePanel === void 0 && $$bindings.hidePanel && hidePanel !== void 0)
         $$bindings.hidePanel(hidePanel);
@@ -40682,24 +41445,24 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch04-4ed7044a.js
-var sketch04_4ed7044a_exports = {};
-__export(sketch04_4ed7044a_exports, {
+// .svelte-kit/output/server/chunks/sketch04-06752394.js
+var sketch04_06752394_exports = {};
+__export(sketch04_06752394_exports, {
   default: () => Sketch04
 });
-var import_canvas_sketch6, import_color6, Sketch04;
-var init_sketch04_4ed7044a = __esm({
-  ".svelte-kit/output/server/chunks/sketch04-4ed7044a.js"() {
+var import_canvas_sketch6, import_color7, Sketch04;
+var init_sketch04_06752394 = __esm({
+  ".svelte-kit/output/server/chunks/sketch04-06752394.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
     init_ssr();
     import_canvas_sketch6 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    import_color6 = __toModule(require_color());
+    init_stores_95385b68();
+    init_index_101a7283();
+    import_color7 = __toModule(require_color());
     Sketch04 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -40811,24 +41574,24 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch01-c64c2fc5.js
-var sketch01_c64c2fc5_exports = {};
-__export(sketch01_c64c2fc5_exports, {
+// .svelte-kit/output/server/chunks/sketch01-ff976633.js
+var sketch01_ff976633_exports = {};
+__export(sketch01_ff976633_exports, {
   default: () => Sketch01
 });
-var import_canvas_sketch7, import_color7, Sketch01;
-var init_sketch01_c64c2fc5 = __esm({
-  ".svelte-kit/output/server/chunks/sketch01-c64c2fc5.js"() {
+var import_canvas_sketch7, import_color8, Sketch01;
+var init_sketch01_ff976633 = __esm({
+  ".svelte-kit/output/server/chunks/sketch01-ff976633.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
     init_ssr();
     import_canvas_sketch7 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    import_color7 = __toModule(require_color());
+    init_stores_95385b68();
+    init_index_101a7283();
+    import_color8 = __toModule(require_color());
     Sketch01 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -40956,24 +41719,24 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch05-4aff421e.js
-var sketch05_4aff421e_exports = {};
-__export(sketch05_4aff421e_exports, {
+// .svelte-kit/output/server/chunks/sketch05-f4722769.js
+var sketch05_f4722769_exports = {};
+__export(sketch05_f4722769_exports, {
   default: () => Sketch05
 });
-var import_canvas_sketch8, import_color8, Sketch05;
-var init_sketch05_4aff421e = __esm({
-  ".svelte-kit/output/server/chunks/sketch05-4aff421e.js"() {
+var import_canvas_sketch8, import_color9, Sketch05;
+var init_sketch05_f4722769 = __esm({
+  ".svelte-kit/output/server/chunks/sketch05-f4722769.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
     init_ssr();
     import_canvas_sketch8 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    import_color8 = __toModule(require_color());
+    init_stores_95385b68();
+    init_index_101a7283();
+    import_color9 = __toModule(require_color());
     Sketch05 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -41085,24 +41848,24 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch06-9701c000.js
-var sketch06_9701c000_exports = {};
-__export(sketch06_9701c000_exports, {
+// .svelte-kit/output/server/chunks/sketch06-350202e2.js
+var sketch06_350202e2_exports = {};
+__export(sketch06_350202e2_exports, {
   default: () => Sketch06
 });
-var import_canvas_sketch9, import_color9, Sketch06;
-var init_sketch06_9701c000 = __esm({
-  ".svelte-kit/output/server/chunks/sketch06-9701c000.js"() {
+var import_canvas_sketch9, import_color10, Sketch06;
+var init_sketch06_350202e2 = __esm({
+  ".svelte-kit/output/server/chunks/sketch06-350202e2.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
     init_ssr();
     import_canvas_sketch9 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    import_color9 = __toModule(require_color());
+    init_stores_95385b68();
+    init_index_101a7283();
+    import_color10 = __toModule(require_color());
     Sketch06 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -41213,24 +41976,24 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch07-fafc8432.js
-var sketch07_fafc8432_exports = {};
-__export(sketch07_fafc8432_exports, {
+// .svelte-kit/output/server/chunks/sketch07-e98b7c25.js
+var sketch07_e98b7c25_exports = {};
+__export(sketch07_e98b7c25_exports, {
   default: () => Sketch07
 });
-var import_canvas_sketch10, import_color10, Sketch07;
-var init_sketch07_fafc8432 = __esm({
-  ".svelte-kit/output/server/chunks/sketch07-fafc8432.js"() {
+var import_canvas_sketch10, import_color11, Sketch07;
+var init_sketch07_e98b7c25 = __esm({
+  ".svelte-kit/output/server/chunks/sketch07-e98b7c25.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
     init_ssr();
     import_canvas_sketch10 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    import_color10 = __toModule(require_color());
+    init_stores_95385b68();
+    init_index_101a7283();
+    import_color11 = __toModule(require_color());
     Sketch07 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -41341,24 +42104,24 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch08-474e344f.js
-var sketch08_474e344f_exports = {};
-__export(sketch08_474e344f_exports, {
+// .svelte-kit/output/server/chunks/sketch08-2dc6b8f9.js
+var sketch08_2dc6b8f9_exports = {};
+__export(sketch08_2dc6b8f9_exports, {
   default: () => Sketch08
 });
-var import_canvas_sketch11, import_color11, Sketch08;
-var init_sketch08_474e344f = __esm({
-  ".svelte-kit/output/server/chunks/sketch08-474e344f.js"() {
+var import_canvas_sketch11, import_color12, Sketch08;
+var init_sketch08_2dc6b8f9 = __esm({
+  ".svelte-kit/output/server/chunks/sketch08-2dc6b8f9.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
     init_ssr();
     import_canvas_sketch11 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    import_color11 = __toModule(require_color());
+    init_stores_95385b68();
+    init_index_101a7283();
+    import_color12 = __toModule(require_color());
     Sketch08 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -41469,24 +42232,24 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/sketch09-708baad7.js
-var sketch09_708baad7_exports = {};
-__export(sketch09_708baad7_exports, {
+// .svelte-kit/output/server/chunks/sketch09-fc63a0c4.js
+var sketch09_fc63a0c4_exports = {};
+__export(sketch09_fc63a0c4_exports, {
   default: () => Sketch09
 });
-var import_canvas_sketch12, import_color12, Sketch09;
-var init_sketch09_708baad7 = __esm({
-  ".svelte-kit/output/server/chunks/sketch09-708baad7.js"() {
+var import_canvas_sketch12, import_color13, Sketch09;
+var init_sketch09_fc63a0c4 = __esm({
+  ".svelte-kit/output/server/chunks/sketch09-fc63a0c4.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    init_Checkbox_12c241ac();
-    init_ColorInput_5e87ba75();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    init_Checkbox_610d309a();
+    init_ColorInput_8dd3e23d();
     init_ssr();
     import_canvas_sketch12 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_index_0f9f8f58();
-    import_color12 = __toModule(require_color());
+    init_stores_95385b68();
+    init_index_101a7283();
+    import_color13 = __toModule(require_color());
     Sketch09 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -41597,36 +42360,36 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/index-c845f4a6.js
-var index_c845f4a6_exports = {};
-__export(index_c845f4a6_exports, {
+// .svelte-kit/output/server/chunks/index-6a728cf8.js
+var index_6a728cf8_exports = {};
+__export(index_6a728cf8_exports, {
   default: () => Creative
 });
-var import_canvas_sketch13, import_color13, import_random5, import_math2, css9, Creative;
-var init_index_c845f4a6 = __esm({
-  ".svelte-kit/output/server/chunks/index-c845f4a6.js"() {
+var import_canvas_sketch13, import_color14, import_random6, import_math5, css9, Creative;
+var init_index_6a728cf8 = __esm({
+  ".svelte-kit/output/server/chunks/index-6a728cf8.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_sketch02_5081cfbf();
-    init_sketch03_2bdf5979();
-    init_sketch04_4ed7044a();
-    init_sketch01_c64c2fc5();
-    init_sketch05_4aff421e();
-    init_sketch06_9701c000();
-    init_sketch07_fafc8432();
-    init_sketch08_474e344f();
-    init_sketch09_708baad7();
+    init_app_d1ce00fb();
+    init_sketch02_60dae7db();
+    init_sketch03_56d12917();
+    init_sketch04_06752394();
+    init_sketch01_ff976633();
+    init_sketch05_f4722769();
+    init_sketch06_350202e2();
+    init_sketch07_e98b7c25();
+    init_sketch08_2dc6b8f9();
+    init_sketch09_fc63a0c4();
     init_ssr();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
     import_canvas_sketch13 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
-    init_Checkbox_12c241ac();
-    init_index_0f9f8f58();
-    init_ColorInput_5e87ba75();
-    import_color13 = __toModule(require_color());
-    init_OptionSelect_d7048b01();
-    import_random5 = __toModule(require_random());
-    import_math2 = __toModule(require_math());
+    init_stores_95385b68();
+    init_Checkbox_610d309a();
+    init_index_101a7283();
+    init_ColorInput_8dd3e23d();
+    import_color14 = __toModule(require_color());
+    init_OptionSelect_4147b55a();
+    import_random6 = __toModule(require_random());
+    import_math5 = __toModule(require_math());
     css9 = {
       code: ".main.svelte-wk9h2l.svelte-wk9h2l{grid-area:main;display:grid;max-width:100%;grid-template-columns:repeat(auto-fit, minmax(16rem, 1fr))}.main.svelte-wk9h2l a.svelte-wk9h2l{align-self:flex-start}h1.svelte-wk9h2l.svelte-wk9h2l{font-size:3rem;font-weight:800}",
       map: null
@@ -41656,21 +42419,223 @@ var init_index_c845f4a6 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-d3eef09e.js
-var noPanel_d3eef09e_exports = {};
-__export(noPanel_d3eef09e_exports, {
-  default: () => NoPanel
+// .svelte-kit/output/server/chunks/sketch01-preview-a97a968a.js
+var sketch01_preview_a97a968a_exports = {};
+__export(sketch01_preview_a97a968a_exports, {
+  default: () => Sketch01_preview
 });
-var import_color14, import_canvas_sketch14, NoPanel;
-var init_noPanel_d3eef09e = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-d3eef09e.js"() {
+var import_color15, import_canvas_sketch14, Sketch01_preview;
+var init_sketch01_preview_a97a968a = __esm({
+  ".svelte-kit/output/server/chunks/sketch01-preview-a97a968a.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_Checkbox_svelte_svelte_type_style_lang_082d5f8d();
-    import_color14 = __toModule(require_color());
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    import_color15 = __toModule(require_color());
     init_ssr();
     import_canvas_sketch14 = __toModule(require_canvas_sketch_umd());
-    init_stores_8da0d5a6();
+    init_stores_95385b68();
+    Sketch01_preview = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { hidePanel = true } = $$props;
+      const data = {
+        TITLE: "Sketch01",
+        outline: true,
+        arclen: 0.5,
+        angle: 0,
+        radius: 0.33,
+        background: "#527A9B",
+        foreground: "#F4B9A7",
+        lineWidth: 20
+      };
+      const settings = {
+        scaleToView: true,
+        scaleToFit: true,
+        resizeCanvas: true,
+        scaleContext: true,
+        dimensions: [1280, 1280]
+      };
+      const sketch = ({}) => {
+        return ({ context, width: width2, height: height2 }) => {
+          const { background, foreground, radius, arclen, angle, lineWidth, outline, stroke } = data;
+          context.clearRect(0, 0, width2, height2);
+          context.fillStyle = background;
+          context.fillRect(0, 0, width2, height2);
+          const minDim = Math.min(width2, height2);
+          context.beginPath();
+          context.arc(width2 / 2, height2 / 2, minDim * radius, angle, Math.PI * 2 * arclen + angle);
+          context.fillStyle = foreground;
+          context.strokeStyle = foreground;
+          context.lineWidth = lineWidth;
+          if (outline)
+            context.stroke();
+          else
+            context.fill();
+        };
+      };
+      if ($$props.hidePanel === void 0 && $$bindings.hidePanel && hidePanel !== void 0)
+        $$bindings.hidePanel(hidePanel);
+      return `
+
+
+
+
+${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result, { sketch, settings, data, hidePanel }, {}, {})}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/sketch02-preview-c5bace4b.js
+var sketch02_preview_c5bace4b_exports = {};
+__export(sketch02_preview_c5bace4b_exports, {
+  default: () => Sketch02_preview
+});
+var import_color16, import_random7, import_canvas_sketch15, Sketch02_preview;
+var init_sketch02_preview_c5bace4b = __esm({
+  ".svelte-kit/output/server/chunks/sketch02-preview-c5bace4b.js"() {
+    init_shims();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    import_color16 = __toModule(require_color());
+    import_random7 = __toModule(require_random());
+    init_ssr();
+    import_canvas_sketch15 = __toModule(require_canvas_sketch_umd());
+    init_stores_95385b68();
+    Sketch02_preview = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { hidePanel = true } = $$props;
+      const data = {
+        TITLE: "Sketch02",
+        itemHeight: 25,
+        itemWidth: 25,
+        itemScaleX: 1,
+        itemScaleY: 1,
+        width: 1e3,
+        height: 1e3,
+        gap: 15,
+        itemsPerColumn: 25,
+        itemsPerRow: 25,
+        originX: 0,
+        originY: 0,
+        totalItems: false,
+        remainingWidth: 1080,
+        remainingHeight: 1080,
+        margin: 100,
+        offset: 0,
+        randomFactor: 0.5,
+        opacityMedian: 0.5,
+        opacityVariance: 0.25,
+        randomStroke: true,
+        randomFill: true,
+        fill: "hsla(180,50%,50%,0.5)",
+        fillHSLA: "hsla(180,50%,50%,0.5)",
+        fillOpacity: ".25",
+        stroke: "#ffffffaa",
+        strokeHSLA: "hsla(60,50%,50%,0.5)",
+        strokeOpacity: ".25",
+        strokeRandom: "#0033cff",
+        strokeRandomHSLA: "hsla(320,50%,50%,0.5)",
+        strokeRandomOpacity: ".25",
+        background: "00000000",
+        outline: true,
+        fitToCanvas: true,
+        shapes: [{ value: "square", label: "square" }, { value: "circle", label: "circle" }],
+        shape: "square",
+        startAngle: 0,
+        endAngle: 7,
+        arclen: 0.5,
+        angle: 0,
+        radius: 0.33,
+        lineWidth: 2,
+        lineWidthRandom: 5
+      };
+      let fill, stroke;
+      const settings = {
+        scaleToView: true,
+        dimensions: [1280, 1280]
+      };
+      const sketch = ({ context, width: width2, height: height2 }) => {
+        data.width = width2;
+        data.height = height2;
+        data.remainingWidth = width2 - data.itemsPerRow * data.gap;
+        data.remainingHeight = height2 - data.itemsPerColumn * data.gap;
+        data.itemWidth = data.remainingWidth / data.itemsPerRow;
+        data.itemHeight = data.remainingHeight / data.itemsPerColumn;
+        return ({ context: context2, width: width22, height: height22 }) => {
+          context2.clearRect(0, 0, width22, height22);
+          context2.fillStyle = data.background;
+          context2.fillRect(0, 0, width22, height22);
+          drawGrid(context2);
+        };
+      };
+      function drawGrid(context, width2, height2) {
+        for (let j = 0; j < data.itemsPerColumn; j++) {
+          for (let i3 = 0; i3 < data.itemsPerRow; i3++) {
+            let x3 = (data.itemWidth + data.gap) * i3;
+            let y2 = (data.itemHeight + data.gap) * j;
+            stroke = data.strokeHSLA;
+            if (data.shape == "square") {
+              drawRect(context, x3 + data.margin / 2 + data.gap / 2, y2 + data.margin / 2 + data.gap / 2, data.itemWidth, data.itemHeight, data.fillHSLA, stroke, data.lineWidth);
+            } else {
+              drawArc(context, x3 + data.margin / 2 + data.gap / 2, y2 + data.margin / 2 + data.gap / 2, Math.abs(data.itemWidth), data.startAngle, data.endAngle, data.fillHSLA, stroke, data.lineWidth);
+            }
+            if (Math.random() < data.randomFactor) {
+              data.randomStroke ? stroke = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random7.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : stroke = data.strokeRandomHSLA;
+              data.randomFill ? fill = `hsla(${setItemColor(i3, j, data.totalItems * 0.3)}, 90%, 50%, ${import_random7.default.range(data.opacityMedian - data.opacityVariance, data.opacityMedian + data.opacityVariance)})` : fill = data.fillRandomHSLA;
+              if (data.shape == "square") {
+                drawRect(context, x3 + data.margin / 2 + data.gap / 2 + data.offset, y2 + data.margin / 2 + data.gap / 2 + data.offset, data.itemWidth, data.itemHeight, fill, stroke, data.lineWidthRandom);
+              } else {
+                drawArc(context, x3 + data.margin / 2 + data.gap / 2 + data.offset, y2 + data.margin / 2 + data.gap / 2 + data.offset, Math.abs(data.itemWidth), data.startAngle, data.endAngle, fill, stroke, data.lineWidthRandom);
+              }
+            }
+          }
+        }
+      }
+      const drawRect = (context, originX, originY, width2, height2, fill2, stroke2, lineWidth) => {
+        context.strokeStyle = stroke2;
+        context.beginPath();
+        context.rect(originX, originY, width2 * data.itemScaleX, height2 * data.itemScaleY);
+        context.lineWidth = lineWidth;
+        context.stroke();
+        context.fillStyle = fill2;
+        context.fill();
+      };
+      const drawArc = (context, originX, originY, radius, startAngle, endAngle, fill2, stroke2, lineWidth) => {
+        context.strokeStyle = stroke2;
+        context.beginPath();
+        context.arc(originX, originY, radius, startAngle, endAngle);
+        context.lineWidth = lineWidth;
+        context.stroke();
+        context.fillStyle = fill2;
+        context.fill();
+      };
+      const setItemColor = (i3, j, totalItems) => {
+        let hueOffset = 30;
+        let variance = Math.random() * 5;
+        let currentFactor = (i3 + variance) * (j - variance) * (variance * totalItems);
+        let hue = currentFactor + hueOffset;
+        return hue;
+      };
+      if ($$props.hidePanel === void 0 && $$bindings.hidePanel && hidePanel !== void 0)
+        $$bindings.hidePanel(hidePanel);
+      data.totalItems = data.itemsPerColumn * data.itemsPerRow;
+      return `${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result, { sketch, settings, data, hidePanel }, {}, {})}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/noPanel-c8cb46d2.js
+var noPanel_c8cb46d2_exports = {};
+__export(noPanel_c8cb46d2_exports, {
+  default: () => NoPanel
+});
+var import_color17, import_canvas_sketch16, NoPanel;
+var init_noPanel_c8cb46d2 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-c8cb46d2.js"() {
+    init_shims();
+    init_app_d1ce00fb();
+    init_Checkbox_svelte_svelte_type_style_lang_5f08647c();
+    import_color17 = __toModule(require_color());
+    init_ssr();
+    import_canvas_sketch16 = __toModule(require_canvas_sketch_umd());
+    init_stores_95385b68();
     NoPanel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { hidePanel = false } = $$props;
       const data = {
@@ -41716,16 +42681,16 @@ ${validate_component(CanvasSketchEditor, "CanvasSketchEditor").$$render($$result
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-a31fb059.js
-var noPanel_a31fb059_exports = {};
-__export(noPanel_a31fb059_exports, {
+// .svelte-kit/output/server/chunks/noPanel-28634725.js
+var noPanel_28634725_exports = {};
+__export(noPanel_28634725_exports, {
   default: () => NoPanel2
 });
 var NoPanel2;
-var init_noPanel_a31fb059 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-a31fb059.js"() {
+var init_noPanel_28634725 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-28634725.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41733,16 +42698,16 @@ var init_noPanel_a31fb059 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-fda4b8c0.js
-var noPanel_fda4b8c0_exports = {};
-__export(noPanel_fda4b8c0_exports, {
+// .svelte-kit/output/server/chunks/noPanel-ad6f8ab8.js
+var noPanel_ad6f8ab8_exports = {};
+__export(noPanel_ad6f8ab8_exports, {
   default: () => NoPanel3
 });
 var NoPanel3;
-var init_noPanel_fda4b8c0 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-fda4b8c0.js"() {
+var init_noPanel_ad6f8ab8 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-ad6f8ab8.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel3 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41750,16 +42715,16 @@ var init_noPanel_fda4b8c0 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-39c1c8d9.js
-var noPanel_39c1c8d9_exports = {};
-__export(noPanel_39c1c8d9_exports, {
+// .svelte-kit/output/server/chunks/noPanel-67891fec.js
+var noPanel_67891fec_exports = {};
+__export(noPanel_67891fec_exports, {
   default: () => NoPanel4
 });
 var NoPanel4;
-var init_noPanel_39c1c8d9 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-39c1c8d9.js"() {
+var init_noPanel_67891fec = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-67891fec.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel4 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41767,16 +42732,16 @@ var init_noPanel_39c1c8d9 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-a0c5a6e8.js
-var noPanel_a0c5a6e8_exports = {};
-__export(noPanel_a0c5a6e8_exports, {
+// .svelte-kit/output/server/chunks/noPanel-01ed4e94.js
+var noPanel_01ed4e94_exports = {};
+__export(noPanel_01ed4e94_exports, {
   default: () => NoPanel5
 });
 var NoPanel5;
-var init_noPanel_a0c5a6e8 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-a0c5a6e8.js"() {
+var init_noPanel_01ed4e94 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-01ed4e94.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel5 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41784,16 +42749,16 @@ var init_noPanel_a0c5a6e8 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-6d261e04.js
-var noPanel_6d261e04_exports = {};
-__export(noPanel_6d261e04_exports, {
+// .svelte-kit/output/server/chunks/noPanel-63985209.js
+var noPanel_63985209_exports = {};
+__export(noPanel_63985209_exports, {
   default: () => NoPanel6
 });
 var NoPanel6;
-var init_noPanel_6d261e04 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-6d261e04.js"() {
+var init_noPanel_63985209 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-63985209.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel6 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41801,16 +42766,16 @@ var init_noPanel_6d261e04 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-4d4cf439.js
-var noPanel_4d4cf439_exports = {};
-__export(noPanel_4d4cf439_exports, {
+// .svelte-kit/output/server/chunks/noPanel-8f4337a3.js
+var noPanel_8f4337a3_exports = {};
+__export(noPanel_8f4337a3_exports, {
   default: () => NoPanel7
 });
 var NoPanel7;
-var init_noPanel_4d4cf439 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-4d4cf439.js"() {
+var init_noPanel_8f4337a3 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-8f4337a3.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel7 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41818,16 +42783,16 @@ var init_noPanel_4d4cf439 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-5ddc86d6.js
-var noPanel_5ddc86d6_exports = {};
-__export(noPanel_5ddc86d6_exports, {
+// .svelte-kit/output/server/chunks/noPanel-61173c04.js
+var noPanel_61173c04_exports = {};
+__export(noPanel_61173c04_exports, {
   default: () => NoPanel8
 });
 var NoPanel8;
-var init_noPanel_5ddc86d6 = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-5ddc86d6.js"() {
+var init_noPanel_61173c04 = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-61173c04.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel8 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41835,16 +42800,16 @@ var init_noPanel_5ddc86d6 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/noPanel-d25be29f.js
-var noPanel_d25be29f_exports = {};
-__export(noPanel_d25be29f_exports, {
+// .svelte-kit/output/server/chunks/noPanel-41422e9a.js
+var noPanel_41422e9a_exports = {};
+__export(noPanel_41422e9a_exports, {
   default: () => NoPanel9
 });
 var NoPanel9;
-var init_noPanel_d25be29f = __esm({
-  ".svelte-kit/output/server/chunks/noPanel-d25be29f.js"() {
+var init_noPanel_41422e9a = __esm({
+  ".svelte-kit/output/server/chunks/noPanel-41422e9a.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     NoPanel9 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return ``;
@@ -41852,9 +42817,9 @@ var init_noPanel_d25be29f = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/_id_-8b587978.js
-var id_8b587978_exports = {};
-__export(id_8b587978_exports, {
+// .svelte-kit/output/server/chunks/_id_-d506b246.js
+var id_d506b246_exports = {};
+__export(id_d506b246_exports, {
   default: () => U5Bidu5D,
   load: () => load3
 });
@@ -41866,10 +42831,10 @@ async function load3({ page: page2 }) {
   return { props: { pokeman } };
 }
 var U5Bidu5D;
-var init_id_8b587978 = __esm({
-  ".svelte-kit/output/server/chunks/_id_-8b587978.js"() {
+var init_id_d506b246 = __esm({
+  ".svelte-kit/output/server/chunks/_id_-d506b246.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { pokeman } = $$props;
@@ -41888,9 +42853,9 @@ var init_id_8b587978 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/pokemon-a9a130f6.js
-var pokemon_a9a130f6_exports = {};
-__export(pokemon_a9a130f6_exports, {
+// .svelte-kit/output/server/chunks/pokemon-1f0cc675.js
+var pokemon_1f0cc675_exports = {};
+__export(pokemon_1f0cc675_exports, {
   default: () => Pokemon,
   load: () => load4
 });
@@ -41909,10 +42874,10 @@ async function load4({ page: page2 }) {
   return { props: { pokemon: loadedPokemon } };
 }
 var css$16, PokemonCard, css10, Pokemon;
-var init_pokemon_a9a130f6 = __esm({
-  ".svelte-kit/output/server/chunks/pokemon-a9a130f6.js"() {
+var init_pokemon_1f0cc675 = __esm({
+  ".svelte-kit/output/server/chunks/pokemon-1f0cc675.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     css$16 = {
       code: ".pokemon.svelte-4j24xz{margin:0.5rem;padding:0.5rem;background:rgba(0, 0, 0, 0.1)}",
@@ -41955,16 +42920,16 @@ var init_pokemon_a9a130f6 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/parseQuotes-1ced6f1a.js
-var parseQuotes_1ced6f1a_exports = {};
-__export(parseQuotes_1ced6f1a_exports, {
+// .svelte-kit/output/server/chunks/parseQuotes-c2307b26.js
+var parseQuotes_c2307b26_exports = {};
+__export(parseQuotes_c2307b26_exports, {
   default: () => ParseQuotes
 });
 var css11, ParseQuotes;
-var init_parseQuotes_1ced6f1a = __esm({
-  ".svelte-kit/output/server/chunks/parseQuotes-1ced6f1a.js"() {
+var init_parseQuotes_c2307b26 = __esm({
+  ".svelte-kit/output/server/chunks/parseQuotes-c2307b26.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_parseQuotes_f1406a23();
     init_ssr();
     css11 = {
@@ -42020,18 +42985,18 @@ var init_parseQuotes_1ced6f1a = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-ab79549d.js
-var index_ab79549d_exports = {};
-__export(index_ab79549d_exports, {
+// .svelte-kit/output/server/chunks/index-47fcca14.js
+var index_47fcca14_exports = {};
+__export(index_47fcca14_exports, {
   default: () => Quotes_1,
   load: () => load5
 });
 var load5, Quotes_1;
-var init_index_ab79549d = __esm({
-  ".svelte-kit/output/server/chunks/index-ab79549d.js"() {
+var init_index_47fcca14 = __esm({
+  ".svelte-kit/output/server/chunks/index-47fcca14.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_parseQuotes_1ced6f1a();
+    init_app_d1ce00fb();
+    init_parseQuotes_c2307b26();
     init_ssr();
     init_parseQuotes_f1406a23();
     load5 = async ({ fetch: fetch2 }) => {
@@ -42052,16 +43017,16 @@ var init_index_ab79549d = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/AddQuote-a87233b1.js
-var AddQuote_a87233b1_exports = {};
-__export(AddQuote_a87233b1_exports, {
+// .svelte-kit/output/server/chunks/AddQuote-d67b5c5e.js
+var AddQuote_d67b5c5e_exports = {};
+__export(AddQuote_d67b5c5e_exports, {
   default: () => AddQuote
 });
 var AddQuote;
-var init_AddQuote_a87233b1 = __esm({
-  ".svelte-kit/output/server/chunks/AddQuote-a87233b1.js"() {
+var init_AddQuote_d67b5c5e = __esm({
+  ".svelte-kit/output/server/chunks/AddQuote-d67b5c5e.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     AddQuote = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<div class="${"p-10 card bg-base-200 w-1/4"}"><div class="${"form-control flex"}"><label class="${"label max-w-xs"}"><span>Quote</span></label> 
@@ -42078,18 +43043,18 @@ var init_AddQuote_a87233b1 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/upload-5db1b5e9.js
-var upload_5db1b5e9_exports = {};
-__export(upload_5db1b5e9_exports, {
+// .svelte-kit/output/server/chunks/upload-76ab5263.js
+var upload_76ab5263_exports = {};
+__export(upload_76ab5263_exports, {
   default: () => Upload,
   load: () => load6
 });
 var load6, Upload;
-var init_upload_5db1b5e9 = __esm({
-  ".svelte-kit/output/server/chunks/upload-5db1b5e9.js"() {
+var init_upload_76ab5263 = __esm({
+  ".svelte-kit/output/server/chunks/upload-76ab5263.js"() {
     init_shims();
-    init_app_e8a54830();
-    init_parseQuotes_1ced6f1a();
+    init_app_d1ce00fb();
+    init_parseQuotes_c2307b26();
     init_ssr();
     init_parseQuotes_f1406a23();
     load6 = async ({ fetch: fetch2 }) => {
@@ -45869,9 +46834,9 @@ var init_urql_core = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-5d7f26cc.js
-var index_5d7f26cc_exports = {};
-__export(index_5d7f26cc_exports, {
+// .svelte-kit/output/server/chunks/index-5e7fe869.js
+var index_5e7fe869_exports = {};
+__export(index_5e7fe869_exports, {
   default: () => Upload2
 });
 function l3(a2, b) {
@@ -46253,13 +47218,13 @@ function mutation(t3) {
   };
 }
 var import_graphql_request8, v, y, g, Upload2;
-var init_index_5d7f26cc = __esm({
-  ".svelte-kit/output/server/chunks/index-5d7f26cc.js"() {
+var init_index_5e7fe869 = __esm({
+  ".svelte-kit/output/server/chunks/index-5e7fe869.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_parseQuotes_f1406a23();
     init_urql_core();
-    init_index_0f9f8f58();
+    init_index_101a7283();
     import_graphql_request8 = __toModule(require_dist());
     init_ssr();
     v = [];
@@ -46351,25 +47316,25 @@ var init_index_5d7f26cc = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/about-de46418b.js
-var about_de46418b_exports = {};
-__export(about_de46418b_exports, {
+// .svelte-kit/output/server/chunks/about-12bea57c.js
+var about_12bea57c_exports = {};
+__export(about_12bea57c_exports, {
   default: () => About
 });
 var css12, About;
-var init_about_de46418b = __esm({
-  ".svelte-kit/output/server/chunks/about-de46418b.js"() {
+var init_about_12bea57c = __esm({
+  ".svelte-kit/output/server/chunks/about-12bea57c.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     css12 = {
-      code: "@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');.main.svelte-we0f1c{display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:'Montserrat', sans-serif;margin-top:5rem}h1.svelte-we0f1c{font-size:3rem;font-weight:900;background:-webkit-linear-gradient(0deg, rgba(72,0,36,1) 0%,rgba(9,121,121,1) 25%, rgba(56,121,255,1) 50%, rgba(121,9,121,1) 75%, rgba(2,0,76,1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}",
+      code: ".main.svelte-1lfi820{display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:'Montserrat', sans-serif;margin-top:5rem}h1.svelte-1lfi820{font-size:3rem;font-weight:900;background:-webkit-linear-gradient(0deg, rgba(72,0,36,1) 0%,rgba(9,121,121,1) 25%, rgba(56,121,255,1) 50%, rgba(121,9,121,1) 75%, rgba(2,0,76,1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}",
       map: null
     };
     About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       $$result.css.add(css12);
       return `${$$result.head += `${$$result.title = `<title>About MetaBrain</title>`, ""}`, ""}
-<div class="${"main p-12 inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl svelte-we0f1c"}"><h1 class="${"svelte-we0f1c"}">About Me</h1>
+<div class="${"main p-12 inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl svelte-1lfi820"}"><h1 class="${"svelte-1lfi820"}">About Me</h1>
     <h2 class="${"cyan-500 text-3xl"}">I&#39;m colorful</h2></div>
 <div class="${"flex flex-col pt-10"}"><h2>There are links to click. If you want.</h2>
 </div>`;
@@ -46382,7 +47347,7 @@ var require_chroma = __commonJS({
   "node_modules/chroma-js/chroma.js"(exports, module2) {
     init_shims();
     (function() {
-      var Color3, DEG2RAD, LAB_CONSTANTS, PI, PITHIRD, RAD2DEG, TWOPI, _average_lrgb, _guess_formats, _guess_formats_sorted, _input, _interpolators, abs, atan2, bezier2, blend, blend_f, brewer, burn, chroma2, clip_rgb, cmyk2rgb, colors, cos, css2rgb, darken, dodge, each2, floor, hcg2rgb, hex2rgb, hsi2rgb, hsl2css, hsl2rgb, hsv2rgb, interpolate, interpolate_hsx, interpolate_lab, interpolate_lrgb, interpolate_num, interpolate_rgb, lab2lch, lab2rgb, lab_xyz, lch2lab, lch2rgb, lighten, limit, log, luminance_x, m4, max, multiply, normal, num2rgb, overlay, pow, rgb2cmyk, rgb2css, rgb2hcg, rgb2hex, rgb2hsi, rgb2hsl, rgb2hsv, rgb2lab, rgb2lch, rgb2luminance, rgb2num, rgb2temperature, rgb2xyz, rgb_xyz, rnd, root, round, screen, sin, sqrt, temperature2rgb, type, unpack, w3cx11, xyz_lab, xyz_rgb, slice = [].slice;
+      var Color4, DEG2RAD, LAB_CONSTANTS, PI, PITHIRD, RAD2DEG, TWOPI, _average_lrgb, _guess_formats, _guess_formats_sorted, _input, _interpolators, abs, atan2, bezier2, blend, blend_f, brewer, burn, chroma2, clip_rgb, cmyk2rgb, colors, cos, css2rgb, darken, dodge, each2, floor, hcg2rgb, hex2rgb, hsi2rgb, hsl2css, hsl2rgb, hsv2rgb, interpolate, interpolate_hsx, interpolate_lab, interpolate_lrgb, interpolate_num, interpolate_rgb, lab2lch, lab2rgb, lab_xyz, lch2lab, lch2rgb, lighten, limit, log, luminance_x, m4, max, multiply, normal, num2rgb, overlay, pow, rgb2cmyk, rgb2css, rgb2hcg, rgb2hex, rgb2hsi, rgb2hsl, rgb2hsv, rgb2lab, rgb2lch, rgb2luminance, rgb2num, rgb2temperature, rgb2xyz, rgb_xyz, rnd, root, round, screen, sin, sqrt, temperature2rgb, type, unpack, w3cx11, xyz_lab, xyz_rgb, slice = [].slice;
       type = function() {
         var classToType, len, name, o, ref;
         classToType = {};
@@ -46454,14 +47419,14 @@ var require_chroma = __commonJS({
       DEG2RAD = PI / 180;
       RAD2DEG = 180 / PI;
       chroma2 = function() {
-        if (arguments[0] instanceof Color3) {
+        if (arguments[0] instanceof Color4) {
           return arguments[0];
         }
         return function(func, args, ctor) {
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, arguments, function() {
+        }(Color4, arguments, function() {
         });
       };
       chroma2["default"] = chroma2;
@@ -46481,8 +47446,8 @@ var require_chroma = __commonJS({
       _input = {};
       _guess_formats = [];
       _guess_formats_sorted = false;
-      Color3 = function() {
-        function Color4() {
+      Color4 = function() {
+        function Color5() {
           var arg, args, chk, len, len1, me, mode, o, w;
           me = this;
           args = [];
@@ -46525,10 +47490,10 @@ var require_chroma = __commonJS({
             me._rgb.push(1);
           }
         }
-        Color4.prototype.toString = function() {
+        Color5.prototype.toString = function() {
           return this.hex();
         };
-        return Color4;
+        return Color5;
       }();
       chroma2._input = _input;
       chroma2.brewer = brewer = {
@@ -46806,11 +47771,11 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["lab"]), function() {
+        }(Color4, slice.call(arguments).concat(["lab"]), function() {
         });
       };
       _input.lab = lab2rgb;
-      Color3.prototype.lab = function() {
+      Color4.prototype.lab = function() {
         return rgb2lab(this._rgb);
       };
       bezier2 = function(colors2) {
@@ -47010,7 +47975,7 @@ var require_chroma = __commonJS({
         for (i3 = o = 0; o < 6; i3 = ++o) {
           code += digits.charAt(floor(Math.random() * 16));
         }
-        return new Color3(code);
+        return new Color4(code);
       };
       _interpolators = [];
       interpolate = function(col1, col2, f4, m5) {
@@ -47040,11 +48005,11 @@ var require_chroma = __commonJS({
         return res.alpha(col1.alpha() + f4 * (col2.alpha() - col1.alpha()));
       };
       chroma2.interpolate = interpolate;
-      Color3.prototype.interpolate = function(col2, f4, m5) {
+      Color4.prototype.interpolate = function(col2, f4, m5) {
         return interpolate(this, col2, f4, m5);
       };
       chroma2.mix = interpolate;
-      Color3.prototype.mix = Color3.prototype.interpolate;
+      Color4.prototype.mix = Color4.prototype.interpolate;
       _input.rgb = function() {
         var k, ref, results, v2;
         ref = unpack(arguments);
@@ -47060,10 +48025,10 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["rgb"]), function() {
+        }(Color4, slice.call(arguments).concat(["rgb"]), function() {
         });
       };
-      Color3.prototype.rgb = function(round2) {
+      Color4.prototype.rgb = function(round2) {
         if (round2 == null) {
           round2 = true;
         }
@@ -47073,7 +48038,7 @@ var require_chroma = __commonJS({
           return this._rgb.slice(0, 3);
         }
       };
-      Color3.prototype.rgba = function(round2) {
+      Color4.prototype.rgba = function(round2) {
         if (round2 == null) {
           round2 = true;
         }
@@ -47100,7 +48065,7 @@ var require_chroma = __commonJS({
         var xyz0, xyz1;
         xyz0 = col1._rgb;
         xyz1 = col2._rgb;
-        return new Color3(sqrt(pow(xyz0[0], 2) * (1 - f4) + pow(xyz1[0], 2) * f4), sqrt(pow(xyz0[1], 2) * (1 - f4) + pow(xyz1[1], 2) * f4), sqrt(pow(xyz0[2], 2) * (1 - f4) + pow(xyz1[2], 2) * f4), m5);
+        return new Color4(sqrt(pow(xyz0[0], 2) * (1 - f4) + pow(xyz1[0], 2) * f4), sqrt(pow(xyz0[1], 2) * (1 - f4) + pow(xyz1[1], 2) * f4), sqrt(pow(xyz0[2], 2) * (1 - f4) + pow(xyz1[2], 2) * f4), m5);
       };
       _average_lrgb = function(colors2) {
         var col, f4, len, o, rgb, xyz;
@@ -47120,7 +48085,7 @@ var require_chroma = __commonJS({
         if (xyz[3] > 1) {
           xyz[3] = 1;
         }
-        return new Color3(clip_rgb(xyz));
+        return new Color4(clip_rgb(xyz));
       };
       _interpolators.push(["lrgb", interpolate_lrgb]);
       chroma2.average = function(colors2, mode) {
@@ -47251,10 +48216,10 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["hex"]), function() {
+        }(Color4, slice.call(arguments).concat(["hex"]), function() {
         });
       };
-      Color3.prototype.hex = function(mode) {
+      Color4.prototype.hex = function(mode) {
         if (mode == null) {
           mode = "auto";
         }
@@ -47343,11 +48308,11 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["hsl"]), function() {
+        }(Color4, slice.call(arguments).concat(["hsl"]), function() {
         });
       };
       _input.hsl = hsl2rgb;
-      Color3.prototype.hsl = function() {
+      Color4.prototype.hsl = function() {
         return rgb2hsl(this._rgb);
       };
       hsv2rgb = function() {
@@ -47428,11 +48393,11 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["hsv"]), function() {
+        }(Color4, slice.call(arguments).concat(["hsv"]), function() {
         });
       };
       _input.hsv = hsv2rgb;
-      Color3.prototype.hsv = function() {
+      Color4.prototype.hsv = function() {
         return rgb2hsv(this._rgb);
       };
       num2rgb = function(num) {
@@ -47452,9 +48417,9 @@ var require_chroma = __commonJS({
         return (r4 << 16) + (g2 << 8) + b;
       };
       chroma2.num = function(num) {
-        return new Color3(num, "num");
+        return new Color4(num, "num");
       };
-      Color3.prototype.num = function(mode) {
+      Color4.prototype.num = function(mode) {
         if (mode == null) {
           mode = "rgb";
         }
@@ -47549,11 +48514,11 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["hcg"]), function() {
+        }(Color4, slice.call(arguments).concat(["hcg"]), function() {
         });
       };
       _input.hcg = hcg2rgb;
-      Color3.prototype.hcg = function() {
+      Color4.prototype.hcg = function() {
         return rgb2hcg(this._rgb);
       };
       css2rgb = function(css15) {
@@ -47632,10 +48597,10 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["css"]), function() {
+        }(Color4, slice.call(arguments).concat(["css"]), function() {
         });
       };
-      Color3.prototype.css = function(mode) {
+      Color4.prototype.css = function(mode) {
         if (mode == null) {
           mode = "rgb";
         }
@@ -47656,7 +48621,7 @@ var require_chroma = __commonJS({
           }
         }
       });
-      Color3.prototype.name = function(n) {
+      Color4.prototype.name = function(n) {
         var h3, k;
         if (arguments.length) {
           if (w3cx11[n]) {
@@ -47706,12 +48671,12 @@ var require_chroma = __commonJS({
       chroma2.lch = function() {
         var args;
         args = unpack(arguments);
-        return new Color3(args, "lch");
+        return new Color4(args, "lch");
       };
       chroma2.hcl = function() {
         var args;
         args = unpack(arguments);
-        return new Color3(args, "hcl");
+        return new Color4(args, "hcl");
       };
       _input.lch = lch2rgb;
       _input.hcl = function() {
@@ -47719,10 +48684,10 @@ var require_chroma = __commonJS({
         ref = unpack(arguments), h3 = ref[0], c2 = ref[1], l4 = ref[2];
         return lch2rgb([l4, c2, h3]);
       };
-      Color3.prototype.lch = function() {
+      Color4.prototype.lch = function() {
         return rgb2lch(this._rgb);
       };
-      Color3.prototype.hcl = function() {
+      Color4.prototype.hcl = function() {
         return rgb2lch(this._rgb).reverse();
       };
       rgb2cmyk = function(mode) {
@@ -47762,10 +48727,10 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["cmyk"]), function() {
+        }(Color4, slice.call(arguments).concat(["cmyk"]), function() {
         });
       };
-      Color3.prototype.cmyk = function() {
+      Color4.prototype.cmyk = function() {
         return rgb2cmyk(this._rgb);
       };
       _input.gl = function() {
@@ -47790,10 +48755,10 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["gl"]), function() {
+        }(Color4, slice.call(arguments).concat(["gl"]), function() {
         });
       };
-      Color3.prototype.gl = function() {
+      Color4.prototype.gl = function() {
         var rgb;
         rgb = this._rgb;
         return [rgb[0] / 255, rgb[1] / 255, rgb[2] / 255, rgb[3]];
@@ -47818,10 +48783,10 @@ var require_chroma = __commonJS({
         var xyz0, xyz1;
         xyz0 = col1._rgb;
         xyz1 = col2._rgb;
-        return new Color3(xyz0[0] + f4 * (xyz1[0] - xyz0[0]), xyz0[1] + f4 * (xyz1[1] - xyz0[1]), xyz0[2] + f4 * (xyz1[2] - xyz0[2]), m5);
+        return new Color4(xyz0[0] + f4 * (xyz1[0] - xyz0[0]), xyz0[1] + f4 * (xyz1[1] - xyz0[1]), xyz0[2] + f4 * (xyz1[2] - xyz0[2]), m5);
       };
       _interpolators.push(["rgb", interpolate_rgb]);
-      Color3.prototype.luminance = function(lum, mode) {
+      Color4.prototype.luminance = function(lum, mode) {
         var cur_lum, eps, max_iter, rgba, test;
         if (mode == null) {
           mode = "rgb";
@@ -47894,21 +48859,21 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["temperature"]), function() {
+        }(Color4, slice.call(arguments).concat(["temperature"]), function() {
         });
       };
       _input.temperature = _input.kelvin = _input.K = temperature2rgb;
-      Color3.prototype.temperature = function() {
+      Color4.prototype.temperature = function() {
         return rgb2temperature(this._rgb);
       };
-      Color3.prototype.kelvin = Color3.prototype.temperature;
+      Color4.prototype.kelvin = Color4.prototype.temperature;
       chroma2.contrast = function(a2, b) {
         var l1, l22, ref, ref1;
         if ((ref = type(a2)) === "string" || ref === "number") {
-          a2 = new Color3(a2);
+          a2 = new Color4(a2);
         }
         if ((ref1 = type(b)) === "string" || ref1 === "number") {
-          b = new Color3(b);
+          b = new Color4(b);
         }
         l1 = a2.luminance();
         l22 = b.luminance();
@@ -47924,10 +48889,10 @@ var require_chroma = __commonJS({
           mode = "lab";
         }
         if ((ref = type(a2)) === "string" || ref === "number") {
-          a2 = new Color3(a2);
+          a2 = new Color4(a2);
         }
         if ((ref1 = type(b)) === "string" || ref1 === "number") {
-          b = new Color3(b);
+          b = new Color4(b);
         }
         l1 = a2.get(mode);
         l22 = b.get(mode);
@@ -47947,10 +48912,10 @@ var require_chroma = __commonJS({
           C2 = 1;
         }
         if ((ref = type(a2)) === "string" || ref === "number") {
-          a2 = new Color3(a2);
+          a2 = new Color4(a2);
         }
         if ((ref1 = type(b)) === "string" || ref1 === "number") {
-          b = new Color3(b);
+          b = new Color4(b);
         }
         ref2 = a2.lab(), L1 = ref2[0], a1 = ref2[1], b1 = ref2[2];
         ref3 = b.lab(), L22 = ref3[0], a22 = ref3[1], b2 = ref3[2];
@@ -47979,7 +48944,7 @@ var require_chroma = __commonJS({
         v3 = sh;
         return sqrt(v1 * v1 + v2 * v2 + dH2 / (v3 * v3));
       };
-      Color3.prototype.get = function(modechan) {
+      Color4.prototype.get = function(modechan) {
         var channel, i3, me, mode, ref, src;
         me = this;
         ref = modechan.split("."), mode = ref[0], channel = ref[1];
@@ -47995,7 +48960,7 @@ var require_chroma = __commonJS({
           return src;
         }
       };
-      Color3.prototype.set = function(modechan, value) {
+      Color4.prototype.set = function(modechan, value) {
         var channel, i3, me, mode, ref, src;
         me = this;
         ref = modechan.split("."), mode = ref[0], channel = ref[1];
@@ -48031,16 +48996,16 @@ var require_chroma = __commonJS({
         }
         return chroma2(src, mode).alpha(me.alpha());
       };
-      Color3.prototype.clipped = function() {
+      Color4.prototype.clipped = function() {
         return this._rgb._clipped || false;
       };
-      Color3.prototype.alpha = function(a2) {
+      Color4.prototype.alpha = function(a2) {
         if (arguments.length) {
           return chroma2.rgb([this._rgb[0], this._rgb[1], this._rgb[2], a2]);
         }
         return this._rgb[3];
       };
-      Color3.prototype.darken = function(amount) {
+      Color4.prototype.darken = function(amount) {
         var lab, me;
         if (amount == null) {
           amount = 1;
@@ -48050,15 +49015,15 @@ var require_chroma = __commonJS({
         lab[0] -= LAB_CONSTANTS.Kn * amount;
         return chroma2.lab(lab).alpha(me.alpha());
       };
-      Color3.prototype.brighten = function(amount) {
+      Color4.prototype.brighten = function(amount) {
         if (amount == null) {
           amount = 1;
         }
         return this.darken(-amount);
       };
-      Color3.prototype.darker = Color3.prototype.darken;
-      Color3.prototype.brighter = Color3.prototype.brighten;
-      Color3.prototype.saturate = function(amount) {
+      Color4.prototype.darker = Color4.prototype.darken;
+      Color4.prototype.brighter = Color4.prototype.brighten;
+      Color4.prototype.saturate = function(amount) {
         var lch, me;
         if (amount == null) {
           amount = 1;
@@ -48071,13 +49036,13 @@ var require_chroma = __commonJS({
         }
         return chroma2.lch(lch).alpha(me.alpha());
       };
-      Color3.prototype.desaturate = function(amount) {
+      Color4.prototype.desaturate = function(amount) {
         if (amount == null) {
           amount = 1;
         }
         return this.saturate(-amount);
       };
-      Color3.prototype.premultiply = function() {
+      Color4.prototype.premultiply = function() {
         var a2, rgb;
         rgb = this.rgb();
         a2 = this.alpha();
@@ -48777,11 +49742,11 @@ var require_chroma = __commonJS({
           ctor.prototype = func.prototype;
           var child = new ctor(), result2 = func.apply(child, args);
           return Object(result2) === result2 ? result2 : child;
-        }(Color3, slice.call(arguments).concat(["hsi"]), function() {
+        }(Color4, slice.call(arguments).concat(["hsi"]), function() {
         });
       };
       _input.hsi = hsi2rgb;
-      Color3.prototype.hsi = function() {
+      Color4.prototype.hsi = function() {
         return rgb2hsi(this._rgb);
       };
       interpolate_hsx = function(col1, col2, f4, m5) {
@@ -48856,7 +49821,7 @@ var require_chroma = __commonJS({
         var res, xyz0, xyz1;
         xyz0 = col1.lab();
         xyz1 = col2.lab();
-        return res = new Color3(xyz0[0] + f4 * (xyz1[0] - xyz0[0]), xyz0[1] + f4 * (xyz1[1] - xyz0[1]), xyz0[2] + f4 * (xyz1[2] - xyz0[2]), m5);
+        return res = new Color4(xyz0[0] + f4 * (xyz1[0] - xyz0[0]), xyz0[1] + f4 * (xyz1[1] - xyz0[1]), xyz0[2] + f4 * (xyz1[2] - xyz0[2]), m5);
       };
       _interpolators.push(["lab", interpolate_lab]);
     }).call(exports);
@@ -48959,10 +49924,10 @@ var require_src = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/color-a27ea981.js
-var color_a27ea981_exports = {};
-__export(color_a27ea981_exports, {
-  default: () => Color2
+// .svelte-kit/output/server/chunks/color-66b5eb11.js
+var color_66b5eb11_exports = {};
+__export(color_66b5eb11_exports, {
+  default: () => Color3
 });
 function distribute(value, rangeA, rangeB) {
   const [fromLow, fromHigh] = Array.from(rangeA);
@@ -49060,11 +50025,11 @@ function generate({ specs }) {
   }
   return colorMap;
 }
-var import_chroma_js, import_bezier_easing, linear, easeInCubic, easeOutCubic, easeInOutCubic, easeInSine, easeOutSine, easeInOutSine, easeInQuad, easeOutQuad, easeInOutQuad, easeInQuart, easeOutQuart, easeInOutQuart, easeInCirc, easeOutCirc, easeInOutCirc, easeInQuint, easeOutQuint, easeInOutQuint, easeInExpo, easeOutExpo, easeInOutExpo, easeInBack, easeOutBack, easeInOutBack, Curves, css13, numColors, Color2;
-var init_color_a27ea981 = __esm({
-  ".svelte-kit/output/server/chunks/color-a27ea981.js"() {
+var import_chroma_js, import_bezier_easing, linear, easeInCubic, easeOutCubic, easeInOutCubic, easeInSine, easeOutSine, easeInOutSine, easeInQuad, easeOutQuad, easeInOutQuad, easeInQuart, easeOutQuart, easeInOutQuart, easeInCirc, easeOutCirc, easeInOutCirc, easeInQuint, easeOutQuint, easeInOutQuint, easeInExpo, easeOutExpo, easeInOutExpo, easeInBack, easeOutBack, easeInOutBack, Curves, css13, numColors, Color3;
+var init_color_66b5eb11 = __esm({
+  ".svelte-kit/output/server/chunks/color-66b5eb11.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     import_chroma_js = __toModule(require_chroma());
     import_bezier_easing = __toModule(require_src());
     init_ssr();
@@ -49127,7 +50092,7 @@ var init_color_a27ea981 = __esm({
       map: null
     };
     numColors = 36;
-    Color2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+    Color3 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let i3 = 0;
       let hueInc = 360 / numColors;
       let params = {
@@ -49210,17 +50175,17 @@ var init_color_a27ea981 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-06e4e04c.js
-var index_06e4e04c_exports = {};
-__export(index_06e4e04c_exports, {
+// .svelte-kit/output/server/chunks/index-61d19889.js
+var index_61d19889_exports = {};
+__export(index_61d19889_exports, {
   default: () => Posts_1,
   load: () => load7
 });
 var Posts, load7, Posts_1;
-var init_index_06e4e04c = __esm({
-  ".svelte-kit/output/server/chunks/index-06e4e04c.js"() {
+var init_index_61d19889 = __esm({
+  ".svelte-kit/output/server/chunks/index-61d19889.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     Posts = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { posts } = $$props;
@@ -49256,17 +50221,17 @@ ${each(posts, ({ title, slug, excerpt, coverImage, date, tags }) => `<main class
   }
 });
 
-// .svelte-kit/output/server/chunks/_slug_-5f086147.js
-var slug_5f086147_exports = {};
-__export(slug_5f086147_exports, {
+// .svelte-kit/output/server/chunks/_slug_-dda83434.js
+var slug_dda83434_exports = {};
+__export(slug_dda83434_exports, {
   default: () => U5Bslugu5D,
   load: () => load8
 });
 var load8, U5Bslugu5D;
-var init_slug_5f086147 = __esm({
-  ".svelte-kit/output/server/chunks/_slug_-5f086147.js"() {
+var init_slug_dda83434 = __esm({
+  ".svelte-kit/output/server/chunks/_slug_-dda83434.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     load8 = async ({ fetch: fetch2, page: { params } }) => {
       const { slug } = params;
@@ -49297,17 +50262,17 @@ var init_slug_5f086147 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-4a16d08e.js
-var index_4a16d08e_exports = {};
-__export(index_4a16d08e_exports, {
+// .svelte-kit/output/server/chunks/index-ff9e804b.js
+var index_ff9e804b_exports = {};
+__export(index_ff9e804b_exports, {
   default: () => Todos_1,
   load: () => load9
 });
 var Todos, load9, Todos_1;
-var init_index_4a16d08e = __esm({
-  ".svelte-kit/output/server/chunks/index-4a16d08e.js"() {
+var init_index_ff9e804b = __esm({
+  ".svelte-kit/output/server/chunks/index-ff9e804b.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     Todos = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { todos: todos2 } = $$props;
@@ -49344,16 +50309,16 @@ ${each(todos2, ({ author, tags, quoteBody }) => `<main class="${"container max-w
   }
 });
 
-// .svelte-kit/output/server/chunks/index-2832e7d1.js
-var index_2832e7d1_exports = {};
-__export(index_2832e7d1_exports, {
+// .svelte-kit/output/server/chunks/index-cb1693b4.js
+var index_cb1693b4_exports = {};
+__export(index_cb1693b4_exports, {
   default: () => U5Bfallbacku5D
 });
 var U5Bfallbacku5D;
-var init_index_2832e7d1 = __esm({
-  ".svelte-kit/output/server/chunks/index-2832e7d1.js"() {
+var init_index_cb1693b4 = __esm({
+  ".svelte-kit/output/server/chunks/index-cb1693b4.js"() {
     init_shims();
-    init_app_e8a54830();
+    init_app_d1ce00fb();
     init_ssr();
     U5Bfallbacku5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `You found the fallback page for unknown routes.`;
@@ -49361,7 +50326,7 @@ var init_index_2832e7d1 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/app-e8a54830.js
+// .svelte-kit/output/server/chunks/app-d1ce00fb.js
 function noop3() {
 }
 function assign(tar, src) {
@@ -49561,9 +50526,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-70aec339.js",
-      css: [assets + "/_app/assets/start-d5b4de3e.css", assets + "/_app/assets/vendor-e3c3bbbc.css"],
-      js: [assets + "/_app/start-70aec339.js", assets + "/_app/chunks/vendor-51fd7836.js"]
+      file: assets + "/_app/start-5a70344f.js",
+      css: [assets + "/_app/assets/start-d5b4de3e.css", assets + "/_app/assets/vendor-e0d31265.css"],
+      js: [assets + "/_app/start-5a70344f.js", assets + "/_app/chunks/vendor-e089f027.js"]
     },
     fetched: void 0,
     floc: false,
@@ -49607,8 +50572,8 @@ function render(request, {
   return respond({ ...request, host }, options, { prerender });
 }
 var identity, is_client, now, raf, tasks, current_component, globals, boolean_attributes, invalid_attribute_name_character, escaped2, missing_component, on_destroy, css14, Root, base, assets, user_hooks, template, options, default_settings, d, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_e8a54830 = __esm({
-  ".svelte-kit/output/server/chunks/app-e8a54830.js"() {
+var init_app_d1ce00fb = __esm({
+  ".svelte-kit/output/server/chunks/app-d1ce00fb.js"() {
     init_shims();
     init_ssr();
     identity = (x3) => x3;
@@ -49712,7 +50677,7 @@ ${``}`;
     d = (s4) => s4.replace(/%23/g, "#").replace(/%3[Bb]/g, ";").replace(/%2[Cc]/g, ",").replace(/%2[Ff]/g, "/").replace(/%3[Ff]/g, "?").replace(/%3[Aa]/g, ":").replace(/%40/g, "@").replace(/%26/g, "&").replace(/%3[Dd]/g, "=").replace(/%2[Bb]/g, "+").replace(/%24/g, "$");
     empty = () => ({});
     manifest = {
-      assets: [{ "file": "1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg", "size": 197134, "type": "image/jpeg" }, { "file": "1200px-Paracas_National_Reserve._Ica,_Peru.jpg", "size": 302474, "type": "image/jpeg" }, { "file": "1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg", "size": 393882, "type": "image/jpeg" }, { "file": "20211101_151335.jpg", "size": 5917601, "type": "image/jpeg" }, { "file": "20211106_151003.jpg", "size": 8742648, "type": "image/jpeg" }, { "file": "20211110_125044.jpg", "size": 7270045, "type": "image/jpeg" }, { "file": "20211110_125818_HDR.jpg", "size": 5694264, "type": "image/jpeg" }, { "file": "6bc3782329c30397e0679ed81b807bd8.jpg", "size": 628442, "type": "image/jpeg" }, { "file": "70.jpg", "size": 117280, "type": "image/jpeg" }, { "file": "8040ebabaa90d7ac5908a1a50e7b7b40.jpg", "size": 113649, "type": "image/jpeg" }, { "file": "8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg", "size": 476980, "type": "image/jpeg" }, { "file": "A69F230D-437F-426F-9D97-0011DADF82C8.jpg", "size": 532956, "type": "image/jpeg" }, { "file": "Bay.of.Kotor.original.15947.jpg", "size": 1269474, "type": "image/jpeg" }, { "file": "d70b5760ef44f6214a9a8c2283170e281d871273.jpg", "size": 172298, "type": "image/jpeg" }, { "file": "download-11.jfif", "size": 510910, "type": null }, { "file": "download-12.jfif", "size": 315963, "type": null }, { "file": "download-_11_.jpg", "size": 532599, "type": "image/jpeg" }, { "file": "download-_12_.jpg", "size": 314185, "type": "image/jpeg" }, { "file": "download-_18_.jpg", "size": 262660, "type": "image/jpeg" }, { "file": "download-_19_.jpg", "size": 992306, "type": "image/jpeg" }, { "file": "download-_1_.jpg", "size": 141124, "type": "image/jpeg" }, { "file": "download-_22_.jpg", "size": 92403, "type": "image/jpeg" }, { "file": "download-_8_.jpg", "size": 1898212, "type": "image/jpeg" }, { "file": "download.gif", "size": 79520, "type": "image/gif" }, { "file": "Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg", "size": 268763, "type": "image/jpeg" }, { "file": "favicon.png", "size": 1571, "type": "image/png" }, { "file": "gettyimages-919352240-1024x1024.jpg", "size": 513707, "type": "image/jpeg" }, { "file": "hvalfjorur-fjord.jpg", "size": 200283, "type": "image/jpeg" }, { "file": "image (9).svg", "size": 32177, "type": "image/svg+xml" }, { "file": "Quotes.html", "size": 135611, "type": "text/html" }, { "file": "springbrook national park, australia-2.jpg", "size": 338508, "type": "image/jpeg" }, { "file": "svaneti-georgia-min.jpg", "size": 1794293, "type": "image/jpeg" }, { "file": "Thor-Peak-The-Greatest-Vertical-Drop-on-Earth.jpg", "size": 107114, "type": "image/jpeg" }, { "file": "upload index.json copy.js", "size": 1032, "type": "application/javascript" }, { "file": "upload index.json from dgraph code.js", "size": 1449, "type": "application/javascript" }, { "file": "vinicunza peru.jpg", "size": 1230886, "type": "image/jpeg" }],
+      assets: [{ "file": "1024px-Martin,_John_-_The_Seventh_Plague_-_1823.jpg", "size": 197134, "type": "image/jpeg" }, { "file": "1200px-Paracas_National_Reserve._Ica,_Peru.jpg", "size": 302474, "type": "image/jpeg" }, { "file": "1600-Iguazu-Falls-Argentina-shutterstock_172190801.jpg", "size": 393882, "type": "image/jpeg" }, { "file": "20211101_151335.jpg", "size": 5917601, "type": "image/jpeg" }, { "file": "20211106_151003.jpg", "size": 8742648, "type": "image/jpeg" }, { "file": "20211110_125044.jpg", "size": 7270045, "type": "image/jpeg" }, { "file": "20211110_125818_HDR.jpg", "size": 5694264, "type": "image/jpeg" }, { "file": "6bc3782329c30397e0679ed81b807bd8.jpg", "size": 628442, "type": "image/jpeg" }, { "file": "70.jpg", "size": 117280, "type": "image/jpeg" }, { "file": "8040ebabaa90d7ac5908a1a50e7b7b40.jpg", "size": 113649, "type": "image/jpeg" }, { "file": "8DCBD365-843F-48BE-A9CE-A058C8BA8A52.jpg", "size": 476980, "type": "image/jpeg" }, { "file": "A69F230D-437F-426F-9D97-0011DADF82C8.jpg", "size": 532956, "type": "image/jpeg" }, { "file": "Bay.of.Kotor.original.15947.jpg", "size": 1269474, "type": "image/jpeg" }, { "file": "d70b5760ef44f6214a9a8c2283170e281d871273.jpg", "size": 172298, "type": "image/jpeg" }, { "file": "download-11.jfif", "size": 510910, "type": null }, { "file": "download-12.jfif", "size": 315963, "type": null }, { "file": "download-_11_.jpg", "size": 532599, "type": "image/jpeg" }, { "file": "download-_12_.jpg", "size": 314185, "type": "image/jpeg" }, { "file": "download-_18_.jpg", "size": 262660, "type": "image/jpeg" }, { "file": "download-_19_.jpg", "size": 992306, "type": "image/jpeg" }, { "file": "download-_1_.jpg", "size": 141124, "type": "image/jpeg" }, { "file": "download-_22_.jpg", "size": 92403, "type": "image/jpeg" }, { "file": "download-_8_.jpg", "size": 1898212, "type": "image/jpeg" }, { "file": "download.gif", "size": 79520, "type": "image/gif" }, { "file": "Evening-light-on-Mount-Thor-in-Auyuittuq-National-Park-Nunavut-Baffin-Island.jpg", "size": 268763, "type": "image/jpeg" }, { "file": "favicon.png", "size": 1571, "type": "image/png" }, { "file": "fonts/Cairo/Cairo-VariableFont_wght.ttf", "size": 182804, "type": "font/ttf" }, { "file": "fonts/Cairo/OFL.txt", "size": 4473, "type": "text/plain" }, { "file": "fonts/Cairo/README.txt", "size": 2222, "type": "text/plain" }, { "file": "fonts/Cairo/static/Cairo-Black.ttf", "size": 93404, "type": "font/ttf" }, { "file": "fonts/Cairo/static/Cairo-Bold.ttf", "size": 93352, "type": "font/ttf" }, { "file": "fonts/Cairo/static/Cairo-ExtraBold.ttf", "size": 93432, "type": "font/ttf" }, { "file": "fonts/Cairo/static/Cairo-ExtraLight.ttf", "size": 93196, "type": "font/ttf" }, { "file": "fonts/Cairo/static/Cairo-Light.ttf", "size": 93260, "type": "font/ttf" }, { "file": "fonts/Cairo/static/Cairo-Medium.ttf", "size": 93404, "type": "font/ttf" }, { "file": "fonts/Cairo/static/Cairo-Regular.ttf", "size": 93212, "type": "font/ttf" }, { "file": "fonts/Cairo/static/Cairo-SemiBold.ttf", "size": 93444, "type": "font/ttf" }, { "file": "fonts/cairo.scss", "size": 1816, "type": "text/x-scss" }, { "file": "fonts/eczar/Eczar-Bold.ttf", "size": 315252, "type": "font/ttf" }, { "file": "fonts/eczar/Eczar-ExtraBold.ttf", "size": 316228, "type": "font/ttf" }, { "file": "fonts/eczar/Eczar-Medium.ttf", "size": 313872, "type": "font/ttf" }, { "file": "fonts/eczar/Eczar-Regular.ttf", "size": 306416, "type": "font/ttf" }, { "file": "fonts/eczar/Eczar-SemiBold.ttf", "size": 317524, "type": "font/ttf" }, { "file": "fonts/eczar/OFL.txt", "size": 4490, "type": "text/plain" }, { "file": "fonts/eczar.scss", "size": 1809, "type": "text/x-scss" }, { "file": "fonts/fira-sans.scss", "size": 1821, "type": "text/x-scss" }, { "file": "fonts/fira_sans/FiraSans-Black.ttf", "size": 491084, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-BlackItalic.ttf", "size": 511300, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-Bold.ttf", "size": 473492, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-BoldItalic.ttf", "size": 490668, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-ExtraBold.ttf", "size": 480720, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-ExtraBoldItalic.ttf", "size": 520684, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-ExtraLight.ttf", "size": 430924, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-ExtraLightItalic.ttf", "size": 446596, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-Italic.ttf", "size": 456032, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-Light.ttf", "size": 433436, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-LightItalic.ttf", "size": 447028, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-Medium.ttf", "size": 441e3, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-MediumItalic.ttf", "size": 456472, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-Regular.ttf", "size": 440560, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-SemiBold.ttf", "size": 472768, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-SemiBoldItalic.ttf", "size": 490340, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-Thin.ttf", "size": 426428, "type": "font/ttf" }, { "file": "fonts/fira_sans/FiraSans-ThinItalic.ttf", "size": 441e3, "type": "font/ttf" }, { "file": "fonts/fira_sans/OFL.txt", "size": 4464, "type": "text/plain" }, { "file": "fonts/font-styles.css", "size": 2422, "type": "text/css" }, { "file": "fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf", "size": 343368, "type": "font/ttf" }, { "file": "fonts/Inconsolata/OFL.txt", "size": 4443, "type": "text/plain" }, { "file": "fonts/Inconsolata/README.txt", "size": 6943, "type": "text/plain" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-Black.ttf", "size": 98048, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-Bold.ttf", "size": 98260, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-ExtraBold.ttf", "size": 98268, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-ExtraLight.ttf", "size": 98108, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-Light.ttf", "size": 97956, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-Medium.ttf", "size": 98304, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-Regular.ttf", "size": 97864, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata/Inconsolata-SemiBold.ttf", "size": 98400, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Black.ttf", "size": 98408, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Bold.ttf", "size": 98300, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-ExtraBold.ttf", "size": 98328, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-ExtraLight.ttf", "size": 98128, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Light.ttf", "size": 98184, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Medium.ttf", "size": 98196, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Regular.ttf", "size": 97916, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-SemiBold.ttf", "size": 98268, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Black.ttf", "size": 98796, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Bold.ttf", "size": 98764, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-ExtraBold.ttf", "size": 98772, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-ExtraLight.ttf", "size": 98960, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Light.ttf", "size": 98756, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Medium.ttf", "size": 98832, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Regular.ttf", "size": 98540, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-SemiBold.ttf", "size": 98836, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Black.ttf", "size": 98244, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Bold.ttf", "size": 98104, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-ExtraBold.ttf", "size": 98240, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-ExtraLight.ttf", "size": 98088, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Light.ttf", "size": 98048, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Medium.ttf", "size": 98052, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Regular.ttf", "size": 97840, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-SemiBold.ttf", "size": 98152, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Black.ttf", "size": 99280, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Bold.ttf", "size": 99188, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-ExtraBold.ttf", "size": 99252, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-ExtraLight.ttf", "size": 99444, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Light.ttf", "size": 99280, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Medium.ttf", "size": 99152, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Regular.ttf", "size": 98980, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-SemiBold.ttf", "size": 99244, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Black.ttf", "size": 98440, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Bold.ttf", "size": 98348, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-ExtraBold.ttf", "size": 98516, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-ExtraLight.ttf", "size": 98396, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Light.ttf", "size": 98384, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Medium.ttf", "size": 98252, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Regular.ttf", "size": 98064, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-SemiBold.ttf", "size": 98456, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Black.ttf", "size": 98760, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Bold.ttf", "size": 98740, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-ExtraBold.ttf", "size": 98828, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-ExtraLight.ttf", "size": 98736, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Light.ttf", "size": 98476, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Medium.ttf", "size": 98636, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Regular.ttf", "size": 98292, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-SemiBold.ttf", "size": 98740, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Black.ttf", "size": 97848, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Bold.ttf", "size": 97800, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-ExtraBold.ttf", "size": 97848, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-ExtraLight.ttf", "size": 97944, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Light.ttf", "size": 97840, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Medium.ttf", "size": 97832, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Regular.ttf", "size": 97768, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-SemiBold.ttf", "size": 97848, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Black.ttf", "size": 99436, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Bold.ttf", "size": 99444, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-ExtraBold.ttf", "size": 99484, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-ExtraLight.ttf", "size": 99664, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Light.ttf", "size": 99576, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Medium.ttf", "size": 99500, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Regular.ttf", "size": 99428, "type": "font/ttf" }, { "file": "fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-SemiBold.ttf", "size": 99504, "type": "font/ttf" }, { "file": "fonts/inconsolata.scss", "size": 1807, "type": "text/x-scss" }, { "file": "fonts/inter/install-linux.txt", "size": 1133, "type": "text/plain" }, { "file": "fonts/inter/install-mac.txt", "size": 485, "type": "text/plain" }, { "file": "fonts/inter/install-win.txt", "size": 976, "type": "text/plain" }, { "file": "fonts/inter/Inter Desktop/Inter-Black.otf", "size": 266240, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-BlackItalic.otf", "size": 273196, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-Bold.otf", "size": 271436, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-BoldItalic.otf", "size": 278016, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-ExtraBold.otf", "size": 271868, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-ExtraBoldItalic.otf", "size": 279140, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-ExtraLight.otf", "size": 264196, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-ExtraLightItalic.otf", "size": 275152, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-Italic.otf", "size": 271400, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-Light.otf", "size": 265e3, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-LightItalic.otf", "size": 274996, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-Medium.otf", "size": 269692, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-MediumItalic.otf", "size": 278472, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-Regular.otf", "size": 258992, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-SemiBold.otf", "size": 270760, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-SemiBoldItalic.otf", "size": 279536, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-Thin.otf", "size": 257356, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-ThinItalic.otf", "size": 269448, "type": "font/otf" }, { "file": "fonts/inter/Inter Desktop/Inter-V.ttf", "size": 805396, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/about hinted fonts.txt", "size": 1053, "type": "text/plain" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-Black.ttf", "size": 720988, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-BlackItalic.ttf", "size": 735120, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-Bold.ttf", "size": 715204, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-BoldItalic.ttf", "size": 732964, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-ExtraBold.ttf", "size": 746208, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-ExtraBoldItalic.ttf", "size": 757300, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-ExtraLight.ttf", "size": 671148, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-ExtraLightItalic.ttf", "size": 694724, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-Italic.ttf", "size": 699224, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-Light.ttf", "size": 675196, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-LightItalic.ttf", "size": 698232, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-Medium.ttf", "size": 694512, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-MediumItalic.ttf", "size": 716704, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-Regular.ttf", "size": 680240, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-SemiBold.ttf", "size": 710040, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-SemiBoldItalic.ttf", "size": 729744, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-Thin.ttf", "size": 636620, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Desktop/Inter-ThinItalic.ttf", "size": 658780, "type": "font/ttf" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Black.woff", "size": 260392, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Black.woff2", "size": 178212, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-BlackItalic.woff", "size": 269820, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-BlackItalic.woff2", "size": 182928, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Bold.woff", "size": 261084, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Bold.woff2", "size": 177900, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-BoldItalic.woff", "size": 270928, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-BoldItalic.woff2", "size": 183760, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraBold.woff", "size": 265652, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraBold.woff2", "size": 181316, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraBoldItalic.woff", "size": 274616, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraBoldItalic.woff2", "size": 186564, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraLight.woff", "size": 246476, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraLight.woff2", "size": 167628, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraLightItalic.woff", "size": 259564, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ExtraLightItalic.woff2", "size": 175392, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Italic.woff", "size": 259444, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Italic.woff2", "size": 176020, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Light.woff", "size": 246980, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Light.woff2", "size": 168176, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-LightItalic.woff", "size": 261068, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-LightItalic.woff2", "size": 177e3, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Medium.woff", "size": 256312, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Medium.woff2", "size": 174680, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-MediumItalic.woff", "size": 268684, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-MediumItalic.woff2", "size": 181884, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Regular.woff", "size": 245736, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Regular.woff2", "size": 167924, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-SemiBold.woff", "size": 259404, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-SemiBold.woff2", "size": 177076, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-SemiBoldItalic.woff", "size": 271156, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-SemiBoldItalic.woff2", "size": 184072, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Thin.woff", "size": 234488, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-Thin.woff2", "size": 158580, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ThinItalic.woff", "size": 247608, "type": "font/woff" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/Inter-ThinItalic.woff2", "size": 166728, "type": "font/woff2" }, { "file": "fonts/inter/Inter Hinted for Windows/Web/inter.css", "size": 5303, "type": "text/css" }, { "file": "fonts/inter/Inter Variable/Inter.ttf", "size": 805360, "type": "font/ttf" }, { "file": "fonts/inter/Inter Variable/Single axis/Inter-italic.ttf", "size": 613300, "type": "font/ttf" }, { "file": "fonts/inter/Inter Variable/Single axis/Inter-roman.ttf", "size": 601792, "type": "font/ttf" }, { "file": "fonts/inter/Inter Web/Inter-Black.woff", "size": 138764, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-Black.woff2", "size": 102868, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-BlackItalic.woff", "size": 146824, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-BlackItalic.woff2", "size": 108752, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-Bold.woff", "size": 143208, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-Bold.woff2", "size": 106140, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-BoldItalic.woff", "size": 151052, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-BoldItalic.woff2", "size": 111808, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-ExtraBold.woff", "size": 142920, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-ExtraBold.woff2", "size": 106108, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-ExtraBoldItalic.woff", "size": 150628, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-ExtraBoldItalic.woff2", "size": 111708, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-ExtraLight.woff", "size": 140724, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-ExtraLight.woff2", "size": 104232, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-ExtraLightItalic.woff", "size": 149996, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-ExtraLightItalic.woff2", "size": 111392, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-italic.var.woff2", "size": 245036, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-Italic.woff", "size": 144372, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-Italic.woff2", "size": 106876, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-Light.woff", "size": 140632, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-Light.woff2", "size": 104332, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-LightItalic.woff", "size": 150092, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-LightItalic.woff2", "size": 111332, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-Medium.woff", "size": 142552, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-Medium.woff2", "size": 105924, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-MediumItalic.woff", "size": 150988, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-MediumItalic.woff2", "size": 112184, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-Regular.woff", "size": 133844, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-Regular.woff2", "size": 98868, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-roman.var.woff2", "size": 227180, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-SemiBold.woff", "size": 142932, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-SemiBold.woff2", "size": 105804, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-SemiBoldItalic.woff", "size": 151180, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-SemiBoldItalic.woff2", "size": 112048, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-Thin.woff", "size": 135920, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-Thin.woff2", "size": 99632, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/Inter-ThinItalic.woff", "size": 145480, "type": "font/woff" }, { "file": "fonts/inter/Inter Web/Inter-ThinItalic.woff2", "size": 106496, "type": "font/woff2" }, { "file": "fonts/inter/Inter Web/inter.css", "size": 5303, "type": "text/css" }, { "file": "fonts/inter/Inter Web/Inter.var.woff2", "size": 324864, "type": "font/woff2" }, { "file": "fonts/inter/LICENSE.txt", "size": 4426, "type": "text/plain" }, { "file": "fonts/inter.scss", "size": 1821, "type": "text/x-scss" }, { "file": "fonts/josefin-sans.scss", "size": 1832, "type": "text/x-scss" }, { "file": "fonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf", "size": 125560, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf", "size": 117720, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/OFL.txt", "size": 4542, "type": "text/plain" }, { "file": "fonts/Josefin_Sans/README.txt", "size": 2576, "type": "text/plain" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-Bold.ttf", "size": 59160, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-BoldItalic.ttf", "size": 62796, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-ExtraLight.ttf", "size": 59288, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-ExtraLightItalic.ttf", "size": 62924, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-Italic.ttf", "size": 62884, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-Light.ttf", "size": 59308, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-LightItalic.ttf", "size": 62884, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-Medium.ttf", "size": 59328, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-MediumItalic.ttf", "size": 63036, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-Regular.ttf", "size": 59296, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-SemiBold.ttf", "size": 59324, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-SemiBoldItalic.ttf", "size": 63048, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-Thin.ttf", "size": 59124, "type": "font/ttf" }, { "file": "fonts/Josefin_Sans/static/JosefinSans-ThinItalic.ttf", "size": 62672, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-Black.ttf", "size": 141700, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-BlackItalic.ttf", "size": 142620, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-Bold.ttf", "size": 142040, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-BoldItalic.ttf", "size": 143832, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-Italic.ttf", "size": 142648, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-Light.ttf", "size": 148124, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-LightItalic.ttf", "size": 142056, "type": "font/ttf" }, { "file": "fonts/Merriweather/Merriweather-Regular.ttf", "size": 149120, "type": "font/ttf" }, { "file": "fonts/Merriweather/OFL.txt", "size": 4530, "type": "text/plain" }, { "file": "fonts/merriweather.scss", "size": 1830, "type": "text/x-scss" }, { "file": "fonts/mixin-fontface.scss", "size": 2775, "type": "text/x-scss" }, { "file": "fonts/Montserrat/Montserrat-Black.ttf", "size": 257552, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-BlackItalic.ttf", "size": 261732, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-Bold.ttf", "size": 244468, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-BoldItalic.ttf", "size": 249556, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-ExtraBold.ttf", "size": 244868, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf", "size": 249776, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-ExtraLight.ttf", "size": 242128, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-ExtraLightItalic.ttf", "size": 246176, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-Italic.ttf", "size": 249088, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-Light.ttf", "size": 242068, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-LightItalic.ttf", "size": 246276, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-Medium.ttf", "size": 243180, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-MediumItalic.ttf", "size": 248044, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-Regular.ttf", "size": 245708, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-SemiBold.ttf", "size": 243816, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-SemiBoldItalic.ttf", "size": 249192, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-Thin.ttf", "size": 241436, "type": "font/ttf" }, { "file": "fonts/Montserrat/Montserrat-ThinItalic.ttf", "size": 245372, "type": "font/ttf" }, { "file": "fonts/Montserrat/OFL.txt", "size": 4485, "type": "text/plain" }, { "file": "fonts/montserrat.scss", "size": 1825, "type": "text/x-scss" }, { "file": "fonts/newsreader/Newsreader-Italic-VariableFont_opsz,wght.ttf", "size": 493156, "type": "font/ttf" }, { "file": "fonts/newsreader/Newsreader-VariableFont_opsz,wght.ttf", "size": 449556, "type": "font/ttf" }, { "file": "fonts/newsreader/OFL.txt", "size": 4488, "type": "text/plain" }, { "file": "fonts/newsreader/README.txt", "size": 5812, "type": "text/plain" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-Bold.ttf", "size": 117748, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-BoldItalic.ttf", "size": 130340, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-ExtraBold.ttf", "size": 117804, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-ExtraBoldItalic.ttf", "size": 130252, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-ExtraLight.ttf", "size": 117020, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-ExtraLightItalic.ttf", "size": 130064, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-Italic.ttf", "size": 128240, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-Light.ttf", "size": 117536, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-LightItalic.ttf", "size": 130448, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-Medium.ttf", "size": 117812, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-MediumItalic.ttf", "size": 130248, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-Regular.ttf", "size": 117364, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-SemiBold.ttf", "size": 117904, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader/Newsreader-SemiBoldItalic.ttf", "size": 130308, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-Bold.ttf", "size": 118072, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-BoldItalic.ttf", "size": 130208, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-ExtraBold.ttf", "size": 117812, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-ExtraBoldItalic.ttf", "size": 130140, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-ExtraLight.ttf", "size": 117012, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-ExtraLightItalic.ttf", "size": 130824, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-Italic.ttf", "size": 130236, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-Light.ttf", "size": 117612, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-LightItalic.ttf", "size": 131276, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-Medium.ttf", "size": 118024, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-MediumItalic.ttf", "size": 130368, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-Regular.ttf", "size": 117676, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-SemiBold.ttf", "size": 118052, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_24pt/Newsreader_24pt-SemiBoldItalic.ttf", "size": 130208, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-Bold.ttf", "size": 118020, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-BoldItalic.ttf", "size": 130288, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-ExtraBold.ttf", "size": 117876, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-ExtraBoldItalic.ttf", "size": 130196, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-ExtraLight.ttf", "size": 117272, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-ExtraLightItalic.ttf", "size": 131216, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-Italic.ttf", "size": 130312, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-Light.ttf", "size": 117748, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-LightItalic.ttf", "size": 131384, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-Medium.ttf", "size": 118104, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-MediumItalic.ttf", "size": 130876, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-Regular.ttf", "size": 117756, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-SemiBold.ttf", "size": 118148, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_36pt/Newsreader_36pt-SemiBoldItalic.ttf", "size": 130972, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-Bold.ttf", "size": 118092, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-BoldItalic.ttf", "size": 131052, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-ExtraBold.ttf", "size": 117936, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-ExtraBoldItalic.ttf", "size": 130296, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-ExtraLight.ttf", "size": 117356, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-ExtraLightItalic.ttf", "size": 131404, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-Italic.ttf", "size": 130832, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-Light.ttf", "size": 117828, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-LightItalic.ttf", "size": 131344, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-Medium.ttf", "size": 118008, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-MediumItalic.ttf", "size": 131008, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-Regular.ttf", "size": 117760, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-SemiBold.ttf", "size": 118132, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_60pt/Newsreader_60pt-SemiBoldItalic.ttf", "size": 130656, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-Bold.ttf", "size": 117832, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-BoldItalic.ttf", "size": 130472, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-ExtraBold.ttf", "size": 117908, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-ExtraBoldItalic.ttf", "size": 130368, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-ExtraLight.ttf", "size": 117144, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-ExtraLightItalic.ttf", "size": 130336, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-Italic.ttf", "size": 128288, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-Light.ttf", "size": 117524, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-LightItalic.ttf", "size": 130476, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-Medium.ttf", "size": 117836, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-MediumItalic.ttf", "size": 130304, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-Regular.ttf", "size": 117404, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-SemiBold.ttf", "size": 117824, "type": "font/ttf" }, { "file": "fonts/newsreader/static/Newsreader_9pt/Newsreader_9pt-SemiBoldItalic.ttf", "size": 130496, "type": "font/ttf" }, { "file": "fonts/newsreader.scss", "size": 1842, "type": "text/x-scss" }, { "file": "fonts/noto_sans_display/NotoSansDisplay-Italic-VariableFont_wdth,wght.ttf", "size": 1693248, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/NotoSansDisplay-VariableFont_wdth,wght.ttf", "size": 1537148, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/OFL.txt", "size": 4444, "type": "text/plain" }, { "file": "fonts/noto_sans_display/README.txt", "size": 7508, "type": "text/plain" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-Black.ttf", "size": 360004, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-BlackItalic.ttf", "size": 383360, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-Bold.ttf", "size": 359320, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-BoldItalic.ttf", "size": 382820, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-ExtraBold.ttf", "size": 359960, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-ExtraBoldItalic.ttf", "size": 383548, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-ExtraLight.ttf", "size": 359620, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-ExtraLightItalic.ttf", "size": 384316, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-Italic.ttf", "size": 382580, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-Light.ttf", "size": 359544, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-LightItalic.ttf", "size": 383964, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-Medium.ttf", "size": 359488, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-MediumItalic.ttf", "size": 383184, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-Regular.ttf", "size": 358936, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-SemiBold.ttf", "size": 359848, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-SemiBoldItalic.ttf", "size": 383308, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-Thin.ttf", "size": 359328, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay/NotoSansDisplay-ThinItalic.ttf", "size": 383872, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-Black.ttf", "size": 359744, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-BlackItalic.ttf", "size": 383964, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-Bold.ttf", "size": 359760, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-BoldItalic.ttf", "size": 383468, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-ExtraBold.ttf", "size": 359756, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-ExtraBoldItalic.ttf", "size": 383944, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-ExtraLight.ttf", "size": 359772, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-ExtraLightItalic.ttf", "size": 383612, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-Italic.ttf", "size": 383244, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-Light.ttf", "size": 359652, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-LightItalic.ttf", "size": 383436, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-Medium.ttf", "size": 359608, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-MediumItalic.ttf", "size": 383692, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-Regular.ttf", "size": 358728, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-SemiBold.ttf", "size": 359388, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-SemiBoldItalic.ttf", "size": 383712, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-Thin.ttf", "size": 359440, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_Condensed/NotoSansDisplay_Condensed-ThinItalic.ttf", "size": 382860, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-Black.ttf", "size": 358240, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-BlackItalic.ttf", "size": 382868, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-Bold.ttf", "size": 358408, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-BoldItalic.ttf", "size": 382756, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-ExtraBold.ttf", "size": 358684, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-ExtraBoldItalic.ttf", "size": 383160, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-ExtraLight.ttf", "size": 358352, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-ExtraLightItalic.ttf", "size": 382404, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-Italic.ttf", "size": 382264, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-Light.ttf", "size": 358392, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-LightItalic.ttf", "size": 382520, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-Medium.ttf", "size": 358328, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-MediumItalic.ttf", "size": 382760, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-Regular.ttf", "size": 357944, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-SemiBold.ttf", "size": 358320, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-SemiBoldItalic.ttf", "size": 382816, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-Thin.ttf", "size": 357764, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_ExtraCondensed/NotoSansDisplay_ExtraCondensed-ThinItalic.ttf", "size": 381328, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-Black.ttf", "size": 360192, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-BlackItalic.ttf", "size": 384504, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-Bold.ttf", "size": 360380, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-BoldItalic.ttf", "size": 383972, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-ExtraBold.ttf", "size": 360148, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-ExtraBoldItalic.ttf", "size": 384624, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-ExtraLight.ttf", "size": 360484, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-ExtraLightItalic.ttf", "size": 384204, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-Italic.ttf", "size": 383848, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-Light.ttf", "size": 360100, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-LightItalic.ttf", "size": 384256, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-Medium.ttf", "size": 360016, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-MediumItalic.ttf", "size": 384248, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-Regular.ttf", "size": 359172, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-SemiBold.ttf", "size": 360188, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-SemiBoldItalic.ttf", "size": 384584, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-Thin.ttf", "size": 359968, "type": "font/ttf" }, { "file": "fonts/noto_sans_display/static/NotoSansDisplay_SemiCondensed/NotoSansDisplay_SemiCondensed-ThinItalic.ttf", "size": 383944, "type": "font/ttf" }, { "file": "fonts/Noto_Serif/NotoSerif-Bold.ttf", "size": 395300, "type": "font/ttf" }, { "file": "fonts/Noto_Serif/NotoSerif-BoldItalic.ttf", "size": 360012, "type": "font/ttf" }, { "file": "fonts/Noto_Serif/NotoSerif-Italic.ttf", "size": 349816, "type": "font/ttf" }, { "file": "fonts/Noto_Serif/NotoSerif-Regular.ttf", "size": 375148, "type": "font/ttf" }, { "file": "fonts/Noto_Serif/OFL.txt", "size": 4444, "type": "text/plain" }, { "file": "fonts/open-sans.scss", "size": 1836, "type": "text/x-scss" }, { "file": "fonts/Open_Sans/LICENSE.txt", "size": 11560, "type": "text/plain" }, { "file": "fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf", "size": 580468, "type": "font/ttf" }, { "file": "fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf", "size": 529672, "type": "font/ttf" }, { "file": "fonts/Open_Sans/README.txt", "size": 4139, "type": "text/plain" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-Bold.ttf", "size": 129784, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-BoldItalic.ttf", "size": 135108, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-ExtraBold.ttf", "size": 130180, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-ExtraBoldItalic.ttf", "size": 135688, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-Italic.ttf", "size": 135380, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-Light.ttf", "size": 129756, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-LightItalic.ttf", "size": 135668, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-Medium.ttf", "size": 129948, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-MediumItalic.ttf", "size": 135556, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf", "size": 129796, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf", "size": 129716, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans/OpenSans-SemiBoldItalic.ttf", "size": 135512, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Bold.ttf", "size": 129248, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-BoldItalic.ttf", "size": 134916, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-ExtraBold.ttf", "size": 129716, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-ExtraBoldItalic.ttf", "size": 135364, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Italic.ttf", "size": 135216, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Light.ttf", "size": 129300, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-LightItalic.ttf", "size": 135404, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Medium.ttf", "size": 129396, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-MediumItalic.ttf", "size": 135340, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Regular.ttf", "size": 129328, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-SemiBold.ttf", "size": 129420, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-SemiBoldItalic.ttf", "size": 135476, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Bold.ttf", "size": 130080, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-BoldItalic.ttf", "size": 135844, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-ExtraBold.ttf", "size": 130676, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-ExtraBoldItalic.ttf", "size": 136340, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Italic.ttf", "size": 135720, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Light.ttf", "size": 130060, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-LightItalic.ttf", "size": 135968, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Medium.ttf", "size": 129932, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-MediumItalic.ttf", "size": 135796, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Regular.ttf", "size": 129776, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-SemiBold.ttf", "size": 129820, "type": "font/ttf" }, { "file": "fonts/Open_Sans/static/OpenSans_SemiCondensed/OpenSans_SemiCondensed-SemiBoldItalic.ttf", "size": 135884, "type": "font/ttf" }, { "file": "fonts/Vollkorn/OFL.txt", "size": 4490, "type": "text/plain" }, { "file": "fonts/Vollkorn/README.txt", "size": 2446, "type": "text/plain" }, { "file": "fonts/Vollkorn/static/Vollkorn-Black.ttf", "size": 347060, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-BlackItalic.ttf", "size": 267620, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-Bold.ttf", "size": 347460, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-BoldItalic.ttf", "size": 268124, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-ExtraBold.ttf", "size": 347568, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-ExtraBoldItalic.ttf", "size": 268240, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-Italic.ttf", "size": 266712, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-Medium.ttf", "size": 347720, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-MediumItalic.ttf", "size": 268008, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-Regular.ttf", "size": 346176, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-SemiBold.ttf", "size": 347720, "type": "font/ttf" }, { "file": "fonts/Vollkorn/static/Vollkorn-SemiBoldItalic.ttf", "size": 268056, "type": "font/ttf" }, { "file": "fonts/Vollkorn/Vollkorn-Italic-VariableFont_wght.ttf", "size": 422668, "type": "font/ttf" }, { "file": "fonts/Vollkorn/Vollkorn-VariableFont_wght.ttf", "size": 559084, "type": "font/ttf" }, { "file": "fonts/vollkorn.scss", "size": 1825, "type": "text/x-scss" }, { "file": "gettyimages-919352240-1024x1024.jpg", "size": 513707, "type": "image/jpeg" }, { "file": "hvalfjorur-fjord.jpg", "size": 200283, "type": "image/jpeg" }, { "file": "image (9).svg", "size": 32177, "type": "image/svg+xml" }, { "file": "Quotes.html", "size": 135611, "type": "text/html" }, { "file": "springbrook national park, australia-2.jpg", "size": 338508, "type": "image/jpeg" }, { "file": "svaneti-georgia-min.jpg", "size": 1794293, "type": "image/jpeg" }, { "file": "svg/discord.svg", "size": 1352, "type": "image/svg+xml" }, { "file": "Thor-Peak-The-Greatest-Vertical-Drop-on-Earth.jpg", "size": 107114, "type": "image/jpeg" }, { "file": "upload index.json copy.js", "size": 1032, "type": "application/javascript" }, { "file": "upload index.json from dgraph code.js", "size": 1449, "type": "application/javascript" }, { "file": "vinicunza peru.jpg", "size": 1230886, "type": "image/jpeg" }],
       layout: "src/routes/__layout.svelte",
       error: ".svelte-kit/build/components/error.svelte",
       routes: [
@@ -49725,6 +50690,27 @@ ${``}`;
         },
         {
           type: "page",
+          pattern: /^\/egghead-discord\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/egghead-discord/index.svelte"],
+          b: [".svelte-kit/build/components/error.svelte"]
+        },
+        {
+          type: "page",
+          pattern: /^\/egghead-discord\/message\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/egghead-discord/message.svelte"],
+          b: [".svelte-kit/build/components/error.svelte"]
+        },
+        {
+          type: "page",
+          pattern: /^\/metabrain\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/metabrain/index.svelte"],
+          b: [".svelte-kit/build/components/error.svelte"]
+        },
+        {
+          type: "page",
           pattern: /^\/creative\/?$/,
           params: empty,
           a: ["src/routes/__layout.svelte", "src/routes/creative/__layout.svelte", "src/routes/creative/index.svelte"],
@@ -49732,9 +50718,23 @@ ${``}`;
         },
         {
           type: "page",
+          pattern: /^\/creative\/sketch01-preview\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/creative/__layout.svelte", "src/routes/creative/sketch01-preview.svelte"],
+          b: [".svelte-kit/build/components/error.svelte"]
+        },
+        {
+          type: "page",
           pattern: /^\/creative\/sketch02-preview\/?$/,
           params: empty,
           a: ["src/routes/__layout.svelte", "src/routes/creative/__layout.svelte", "src/routes/creative/sketch02-preview.svelte"],
+          b: [".svelte-kit/build/components/error.svelte"]
+        },
+        {
+          type: "page",
+          pattern: /^\/creative\/sketch03-preview\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/creative/__layout.svelte", "src/routes/creative/sketch03-preview.svelte"],
           b: [".svelte-kit/build/components/error.svelte"]
         },
         {
@@ -49913,7 +50913,7 @@ ${``}`;
           type: "endpoint",
           pattern: /^\/quotes\/parseFile\/?$/,
           params: empty,
-          load: () => Promise.resolve().then(() => (init_parseFile_23230fe0(), parseFile_23230fe0_exports))
+          load: () => Promise.resolve().then(() => (init_parseFile_e6b84cba(), parseFile_e6b84cba_exports))
         },
         {
           type: "page",
@@ -50029,46 +51029,51 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_79f0fb1e(), layout_79f0fb1e_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_1a44e793(), error_1a44e793_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_44f22b95(), index_44f22b95_exports)),
-      "src/routes/mikepeiman/__layout.svelte": () => Promise.resolve().then(() => (init_layout_1a21a681(), layout_1a21a681_exports)),
-      "src/routes/creative/__layout.svelte": () => Promise.resolve().then(() => (init_layout_8f822241(), layout_8f822241_exports)),
-      "src/routes/creative/index.svelte": () => Promise.resolve().then(() => (init_index_c845f4a6(), index_c845f4a6_exports)),
-      "src/routes/creative/sketch02-preview.svelte": () => Promise.resolve().then(() => (init_sketch02_preview_b1293953(), sketch02_preview_b1293953_exports)),
-      "src/routes/creative/sketch01/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_d3eef09e(), noPanel_d3eef09e_exports)),
-      "src/routes/creative/sketch01.svelte": () => Promise.resolve().then(() => (init_sketch01_c64c2fc5(), sketch01_c64c2fc5_exports)),
-      "src/routes/creative/sketch02/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_a31fb059(), noPanel_a31fb059_exports)),
-      "src/routes/creative/sketch02.svelte": () => Promise.resolve().then(() => (init_sketch02_5081cfbf(), sketch02_5081cfbf_exports)),
-      "src/routes/creative/sketch03/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_fda4b8c0(), noPanel_fda4b8c0_exports)),
-      "src/routes/creative/sketch03.svelte": () => Promise.resolve().then(() => (init_sketch03_2bdf5979(), sketch03_2bdf5979_exports)),
-      "src/routes/creative/sketch04/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_39c1c8d9(), noPanel_39c1c8d9_exports)),
-      "src/routes/creative/sketch04.svelte": () => Promise.resolve().then(() => (init_sketch04_4ed7044a(), sketch04_4ed7044a_exports)),
-      "src/routes/creative/sketch05/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_a0c5a6e8(), noPanel_a0c5a6e8_exports)),
-      "src/routes/creative/sketch05.svelte": () => Promise.resolve().then(() => (init_sketch05_4aff421e(), sketch05_4aff421e_exports)),
-      "src/routes/creative/sketch06/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_6d261e04(), noPanel_6d261e04_exports)),
-      "src/routes/creative/sketch06.svelte": () => Promise.resolve().then(() => (init_sketch06_9701c000(), sketch06_9701c000_exports)),
-      "src/routes/creative/sketch07/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_4d4cf439(), noPanel_4d4cf439_exports)),
-      "src/routes/creative/sketch07.svelte": () => Promise.resolve().then(() => (init_sketch07_fafc8432(), sketch07_fafc8432_exports)),
-      "src/routes/creative/sketch08/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_5ddc86d6(), noPanel_5ddc86d6_exports)),
-      "src/routes/creative/sketch08.svelte": () => Promise.resolve().then(() => (init_sketch08_474e344f(), sketch08_474e344f_exports)),
-      "src/routes/creative/sketch09/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_d25be29f(), noPanel_d25be29f_exports)),
-      "src/routes/creative/sketch09.svelte": () => Promise.resolve().then(() => (init_sketch09_708baad7(), sketch09_708baad7_exports)),
-      "src/routes/pokemon/[id].svelte": () => Promise.resolve().then(() => (init_id_8b587978(), id_8b587978_exports)),
-      "src/routes/pokemon.svelte": () => Promise.resolve().then(() => (init_pokemon_a9a130f6(), pokemon_a9a130f6_exports)),
-      "src/routes/quotes/index.svelte": () => Promise.resolve().then(() => (init_index_ab79549d(), index_ab79549d_exports)),
-      "src/routes/quotes/parseQuotes.svelte": () => Promise.resolve().then(() => (init_parseQuotes_1ced6f1a(), parseQuotes_1ced6f1a_exports)),
-      "src/routes/quotes/AddQuote.svelte": () => Promise.resolve().then(() => (init_AddQuote_a87233b1(), AddQuote_a87233b1_exports)),
-      "src/routes/quotes/upload.svelte": () => Promise.resolve().then(() => (init_upload_5db1b5e9(), upload_5db1b5e9_exports)),
-      "src/routes/upload/index.svelte": () => Promise.resolve().then(() => (init_index_5d7f26cc(), index_5d7f26cc_exports)),
-      "src/routes/about.svelte": () => Promise.resolve().then(() => (init_about_de46418b(), about_de46418b_exports)),
-      "src/routes/color.svelte": () => Promise.resolve().then(() => (init_color_a27ea981(), color_a27ea981_exports)),
-      "src/routes/posts/index.svelte": () => Promise.resolve().then(() => (init_index_06e4e04c(), index_06e4e04c_exports)),
-      "src/routes/posts/[slug].svelte": () => Promise.resolve().then(() => (init_slug_5f086147(), slug_5f086147_exports)),
-      "src/routes/todos/index.svelte": () => Promise.resolve().then(() => (init_index_4a16d08e(), index_4a16d08e_exports)),
-      "src/routes/[fallback]/index.svelte": () => Promise.resolve().then(() => (init_index_2832e7d1(), index_2832e7d1_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_5894d4a2(), layout_5894d4a2_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_564446b4(), error_564446b4_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_016abd84(), index_016abd84_exports)),
+      "src/routes/egghead-discord/index.svelte": () => Promise.resolve().then(() => (init_index_d5db39a5(), index_d5db39a5_exports)),
+      "src/routes/egghead-discord/message.svelte": () => Promise.resolve().then(() => (init_message_ee52fa68(), message_ee52fa68_exports)),
+      "src/routes/mikepeiman/__layout.svelte": () => Promise.resolve().then(() => (init_layout_8c8d7468(), layout_8c8d7468_exports)),
+      "src/routes/metabrain/index.svelte": () => Promise.resolve().then(() => (init_index_22763c78(), index_22763c78_exports)),
+      "src/routes/creative/__layout.svelte": () => Promise.resolve().then(() => (init_layout_064b8bd5(), layout_064b8bd5_exports)),
+      "src/routes/creative/index.svelte": () => Promise.resolve().then(() => (init_index_6a728cf8(), index_6a728cf8_exports)),
+      "src/routes/creative/sketch01-preview.svelte": () => Promise.resolve().then(() => (init_sketch01_preview_a97a968a(), sketch01_preview_a97a968a_exports)),
+      "src/routes/creative/sketch02-preview.svelte": () => Promise.resolve().then(() => (init_sketch02_preview_c5bace4b(), sketch02_preview_c5bace4b_exports)),
+      "src/routes/creative/sketch03-preview.svelte": () => Promise.resolve().then(() => (init_sketch03_preview_aefb8855(), sketch03_preview_aefb8855_exports)),
+      "src/routes/creative/sketch01/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_c8cb46d2(), noPanel_c8cb46d2_exports)),
+      "src/routes/creative/sketch01.svelte": () => Promise.resolve().then(() => (init_sketch01_ff976633(), sketch01_ff976633_exports)),
+      "src/routes/creative/sketch02/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_28634725(), noPanel_28634725_exports)),
+      "src/routes/creative/sketch02.svelte": () => Promise.resolve().then(() => (init_sketch02_60dae7db(), sketch02_60dae7db_exports)),
+      "src/routes/creative/sketch03/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_ad6f8ab8(), noPanel_ad6f8ab8_exports)),
+      "src/routes/creative/sketch03.svelte": () => Promise.resolve().then(() => (init_sketch03_56d12917(), sketch03_56d12917_exports)),
+      "src/routes/creative/sketch04/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_67891fec(), noPanel_67891fec_exports)),
+      "src/routes/creative/sketch04.svelte": () => Promise.resolve().then(() => (init_sketch04_06752394(), sketch04_06752394_exports)),
+      "src/routes/creative/sketch05/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_01ed4e94(), noPanel_01ed4e94_exports)),
+      "src/routes/creative/sketch05.svelte": () => Promise.resolve().then(() => (init_sketch05_f4722769(), sketch05_f4722769_exports)),
+      "src/routes/creative/sketch06/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_63985209(), noPanel_63985209_exports)),
+      "src/routes/creative/sketch06.svelte": () => Promise.resolve().then(() => (init_sketch06_350202e2(), sketch06_350202e2_exports)),
+      "src/routes/creative/sketch07/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_8f4337a3(), noPanel_8f4337a3_exports)),
+      "src/routes/creative/sketch07.svelte": () => Promise.resolve().then(() => (init_sketch07_e98b7c25(), sketch07_e98b7c25_exports)),
+      "src/routes/creative/sketch08/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_61173c04(), noPanel_61173c04_exports)),
+      "src/routes/creative/sketch08.svelte": () => Promise.resolve().then(() => (init_sketch08_2dc6b8f9(), sketch08_2dc6b8f9_exports)),
+      "src/routes/creative/sketch09/noPanel.svelte": () => Promise.resolve().then(() => (init_noPanel_41422e9a(), noPanel_41422e9a_exports)),
+      "src/routes/creative/sketch09.svelte": () => Promise.resolve().then(() => (init_sketch09_fc63a0c4(), sketch09_fc63a0c4_exports)),
+      "src/routes/pokemon/[id].svelte": () => Promise.resolve().then(() => (init_id_d506b246(), id_d506b246_exports)),
+      "src/routes/pokemon.svelte": () => Promise.resolve().then(() => (init_pokemon_1f0cc675(), pokemon_1f0cc675_exports)),
+      "src/routes/quotes/index.svelte": () => Promise.resolve().then(() => (init_index_47fcca14(), index_47fcca14_exports)),
+      "src/routes/quotes/parseQuotes.svelte": () => Promise.resolve().then(() => (init_parseQuotes_c2307b26(), parseQuotes_c2307b26_exports)),
+      "src/routes/quotes/AddQuote.svelte": () => Promise.resolve().then(() => (init_AddQuote_d67b5c5e(), AddQuote_d67b5c5e_exports)),
+      "src/routes/quotes/upload.svelte": () => Promise.resolve().then(() => (init_upload_76ab5263(), upload_76ab5263_exports)),
+      "src/routes/upload/index.svelte": () => Promise.resolve().then(() => (init_index_5e7fe869(), index_5e7fe869_exports)),
+      "src/routes/about.svelte": () => Promise.resolve().then(() => (init_about_12bea57c(), about_12bea57c_exports)),
+      "src/routes/color.svelte": () => Promise.resolve().then(() => (init_color_66b5eb11(), color_66b5eb11_exports)),
+      "src/routes/posts/index.svelte": () => Promise.resolve().then(() => (init_index_61d19889(), index_61d19889_exports)),
+      "src/routes/posts/[slug].svelte": () => Promise.resolve().then(() => (init_slug_dda83434(), slug_dda83434_exports)),
+      "src/routes/todos/index.svelte": () => Promise.resolve().then(() => (init_index_ff9e804b(), index_ff9e804b_exports)),
+      "src/routes/[fallback]/index.svelte": () => Promise.resolve().then(() => (init_index_cb1693b4(), index_cb1693b4_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-25c76423.js", "css": ["assets/pages/__layout.svelte-e7b2859d.css", "assets/Nav.svelte_svelte_type_style_lang-b16f7015.css", "assets/vendor-e3c3bbbc.css"], "js": ["pages/__layout.svelte-25c76423.js", "chunks/vendor-51fd7836.js", "chunks/stores-3b6d2ba6.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-2b0495f6.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["error.svelte-2b0495f6.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-2dd813bf.js", "css": ["assets/pages/index.svelte-4764e3e2.css", "assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/index.svelte-2dd813bf.js", "chunks/vendor-51fd7836.js", "pages/creative/sketch02-preview.svelte-eff8a8a1.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js"], "styles": [] }, "src/routes/mikepeiman/__layout.svelte": { "entry": "pages/mikepeiman/__layout.svelte-c61fe778.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/mikepeiman/__layout.svelte-c61fe778.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/__layout.svelte": { "entry": "pages/creative/__layout.svelte-9da626c7.js", "css": ["assets/pages/creative/__layout.svelte-94979803.css", "assets/Nav.svelte_svelte_type_style_lang-b16f7015.css", "assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/__layout.svelte-9da626c7.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/index.svelte": { "entry": "pages/creative/index.svelte-f66929c9.js", "css": ["assets/pages/creative/index.svelte-72d16f9b.css", "assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e3c3bbbc.css", "assets/pages/creative/sketch02.svelte-3be6b96d.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/index.svelte-f66929c9.js", "chunks/vendor-51fd7836.js", "pages/creative/sketch02.svelte-dc9b8dca.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js", "chunks/OptionSelect-3c8b587e.js", "pages/creative/sketch03.svelte-ab56ec87.js", "pages/creative/sketch04.svelte-894ed135.js", "pages/creative/sketch01.svelte-78ead952.js", "pages/creative/sketch05.svelte-8f6ca9e0.js", "pages/creative/sketch06.svelte-abe921c1.js", "pages/creative/sketch07.svelte-e6c40ca5.js", "pages/creative/sketch08.svelte-9b7763c9.js", "pages/creative/sketch09.svelte-424f4a41.js"], "styles": [] }, "src/routes/creative/sketch02-preview.svelte": { "entry": "pages/creative/sketch02-preview.svelte-eff8a8a1.js", "css": ["assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch02-preview.svelte-eff8a8a1.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js"], "styles": [] }, "src/routes/creative/sketch01/noPanel.svelte": { "entry": "pages/creative/sketch01/noPanel.svelte-bedd8d08.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch01/noPanel.svelte-bedd8d08.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js"], "styles": [] }, "src/routes/creative/sketch01.svelte": { "entry": "pages/creative/sketch01.svelte-78ead952.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch01.svelte-78ead952.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js"], "styles": [] }, "src/routes/creative/sketch02/noPanel.svelte": { "entry": "pages/creative/sketch02/noPanel.svelte-7426f891.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch02/noPanel.svelte-7426f891.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch02.svelte": { "entry": "pages/creative/sketch02.svelte-dc9b8dca.js", "css": ["assets/pages/creative/sketch02.svelte-3be6b96d.css", "assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch02.svelte-dc9b8dca.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js", "chunks/OptionSelect-3c8b587e.js"], "styles": [] }, "src/routes/creative/sketch03/noPanel.svelte": { "entry": "pages/creative/sketch03/noPanel.svelte-0e83e989.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch03/noPanel.svelte-0e83e989.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch03.svelte": { "entry": "pages/creative/sketch03.svelte-ab56ec87.js", "css": ["assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch03.svelte-ab56ec87.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/OptionSelect-3c8b587e.js"], "styles": [] }, "src/routes/creative/sketch04/noPanel.svelte": { "entry": "pages/creative/sketch04/noPanel.svelte-f9f40c19.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch04/noPanel.svelte-f9f40c19.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch04.svelte": { "entry": "pages/creative/sketch04.svelte-894ed135.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch04.svelte-894ed135.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js"], "styles": [] }, "src/routes/creative/sketch05/noPanel.svelte": { "entry": "pages/creative/sketch05/noPanel.svelte-5c727067.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch05/noPanel.svelte-5c727067.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch05.svelte": { "entry": "pages/creative/sketch05.svelte-8f6ca9e0.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch05.svelte-8f6ca9e0.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js"], "styles": [] }, "src/routes/creative/sketch06/noPanel.svelte": { "entry": "pages/creative/sketch06/noPanel.svelte-99929cd6.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch06/noPanel.svelte-99929cd6.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch06.svelte": { "entry": "pages/creative/sketch06.svelte-abe921c1.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch06.svelte-abe921c1.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js"], "styles": [] }, "src/routes/creative/sketch07/noPanel.svelte": { "entry": "pages/creative/sketch07/noPanel.svelte-c535f283.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch07/noPanel.svelte-c535f283.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch07.svelte": { "entry": "pages/creative/sketch07.svelte-e6c40ca5.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch07.svelte-e6c40ca5.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js"], "styles": [] }, "src/routes/creative/sketch08/noPanel.svelte": { "entry": "pages/creative/sketch08/noPanel.svelte-ffc420bf.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch08/noPanel.svelte-ffc420bf.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch08.svelte": { "entry": "pages/creative/sketch08.svelte-9b7763c9.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch08.svelte-9b7763c9.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js"], "styles": [] }, "src/routes/creative/sketch09/noPanel.svelte": { "entry": "pages/creative/sketch09/noPanel.svelte-153cd9a4.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/creative/sketch09/noPanel.svelte-153cd9a4.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/creative/sketch09.svelte": { "entry": "pages/creative/sketch09.svelte-424f4a41.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/ColorInput.svelte_svelte_type_style_lang-f982eeed.css"], "js": ["pages/creative/sketch09.svelte-424f4a41.js", "chunks/vendor-51fd7836.js", "chunks/ColorInput.svelte_svelte_type_style_lang-a830da3e.js", "chunks/stores-3b6d2ba6.js", "chunks/Checkbox-f2313987.js", "chunks/ColorInput-43af34b7.js"], "styles": [] }, "src/routes/pokemon/[id].svelte": { "entry": "pages/pokemon/_id_.svelte-8d1a34d7.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/pokemon/_id_.svelte-8d1a34d7.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/pokemon.svelte": { "entry": "pages/pokemon.svelte-b5b61892.js", "css": ["assets/pages/pokemon.svelte-a2cfab55.css", "assets/vendor-e3c3bbbc.css"], "js": ["pages/pokemon.svelte-b5b61892.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/quotes/index.svelte": { "entry": "pages/quotes/index.svelte-a652ed38.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/quotes/index.svelte-a652ed38.js", "chunks/vendor-51fd7836.js", "pages/quotes/parseQuotes.svelte-536c6887.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-d8aaa42a.js"], "styles": [] }, "src/routes/quotes/parseQuotes.svelte": { "entry": "pages/quotes/parseQuotes.svelte-536c6887.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/quotes/parseQuotes.svelte-536c6887.js", "chunks/vendor-51fd7836.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-d8aaa42a.js"], "styles": [] }, "src/routes/quotes/AddQuote.svelte": { "entry": "pages/quotes/AddQuote.svelte-0aa56bdb.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/quotes/AddQuote.svelte-0aa56bdb.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/quotes/upload.svelte": { "entry": "pages/quotes/upload.svelte-6a6408c5.js", "css": ["assets/vendor-e3c3bbbc.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/quotes/upload.svelte-6a6408c5.js", "chunks/vendor-51fd7836.js", "pages/quotes/parseQuotes.svelte-536c6887.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-d8aaa42a.js"], "styles": [] }, "src/routes/upload/index.svelte": { "entry": "pages/upload/index.svelte-602befef.js", "css": ["assets/about.svelte_svelte_type_style_lang-37313173.css", "assets/vendor-e3c3bbbc.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/upload/index.svelte-602befef.js", "chunks/vendor-51fd7836.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-d8aaa42a.js"], "styles": [] }, "src/routes/about.svelte": { "entry": "pages/about.svelte-8ff1b256.js", "css": ["assets/about.svelte_svelte_type_style_lang-37313173.css", "assets/vendor-e3c3bbbc.css"], "js": ["pages/about.svelte-8ff1b256.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/color.svelte": { "entry": "pages/color.svelte-118fa2cb.js", "css": ["assets/pages/color.svelte-b033c319.css", "assets/vendor-e3c3bbbc.css"], "js": ["pages/color.svelte-118fa2cb.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/posts/index.svelte": { "entry": "pages/posts/index.svelte-95f4531b.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/posts/index.svelte-95f4531b.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/posts/[slug].svelte": { "entry": "pages/posts/_slug_.svelte-d0ddcbc2.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/posts/_slug_.svelte-d0ddcbc2.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/todos/index.svelte": { "entry": "pages/todos/index.svelte-5c0b0773.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/todos/index.svelte-5c0b0773.js", "chunks/vendor-51fd7836.js"], "styles": [] }, "src/routes/[fallback]/index.svelte": { "entry": "pages/_fallback_/index.svelte-5dae4a82.js", "css": ["assets/vendor-e3c3bbbc.css"], "js": ["pages/_fallback_/index.svelte-5dae4a82.js", "chunks/vendor-51fd7836.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-069b0caa.js", "css": ["assets/pages/__layout.svelte-d963d045.css", "assets/Nav.svelte_svelte_type_style_lang-439ba1b6.css", "assets/vendor-e0d31265.css"], "js": ["pages/__layout.svelte-069b0caa.js", "chunks/vendor-e089f027.js", "chunks/stores-296d8679.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-e86e22b6.js", "css": ["assets/vendor-e0d31265.css"], "js": ["error.svelte-e86e22b6.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-cd3ca5ee.js", "css": ["assets/pages/index.svelte-65976842.css", "assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/index.svelte-cd3ca5ee.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "pages/creative/sketch03-preview.svelte-252c8fca.js"], "styles": [] }, "src/routes/egghead-discord/index.svelte": { "entry": "pages/egghead-discord/index.svelte-e6a0f4b4.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/egghead-discord/index.svelte-e6a0f4b4.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/egghead-discord/message.svelte": { "entry": "pages/egghead-discord/message.svelte-b89c827c.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/egghead-discord/message.svelte-b89c827c.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/mikepeiman/__layout.svelte": { "entry": "pages/mikepeiman/__layout.svelte-ffd1627c.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/mikepeiman/__layout.svelte-ffd1627c.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/metabrain/index.svelte": { "entry": "pages/metabrain/index.svelte-e6fceb37.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/metabrain/index.svelte-e6fceb37.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/__layout.svelte": { "entry": "pages/creative/__layout.svelte-aa7d4d4c.js", "css": ["assets/pages/creative/__layout.svelte-94979803.css", "assets/Nav.svelte_svelte_type_style_lang-439ba1b6.css", "assets/vendor-e0d31265.css"], "js": ["pages/creative/__layout.svelte-aa7d4d4c.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/index.svelte": { "entry": "pages/creative/index.svelte-93cf2849.js", "css": ["assets/pages/creative/index.svelte-72d16f9b.css", "assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e0d31265.css", "assets/pages/creative/sketch02.svelte-3be6b96d.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/index.svelte-93cf2849.js", "chunks/vendor-e089f027.js", "pages/creative/sketch02.svelte-48babea3.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js", "chunks/OptionSelect-01a5e205.js", "pages/creative/sketch03.svelte-212ffd4a.js", "pages/creative/sketch04.svelte-c8eaeb14.js", "pages/creative/sketch01.svelte-1325bf8a.js", "pages/creative/sketch05.svelte-8fa25d38.js", "pages/creative/sketch06.svelte-e9a732c6.js", "pages/creative/sketch07.svelte-ef29b42b.js", "pages/creative/sketch08.svelte-bd7bc653.js", "pages/creative/sketch09.svelte-ac53e956.js"], "styles": [] }, "src/routes/creative/sketch01-preview.svelte": { "entry": "pages/creative/sketch01-preview.svelte-feb8dd4e.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch01-preview.svelte-feb8dd4e.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js"], "styles": [] }, "src/routes/creative/sketch02-preview.svelte": { "entry": "pages/creative/sketch02-preview.svelte-628a43e0.js", "css": ["assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch02-preview.svelte-628a43e0.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js"], "styles": [] }, "src/routes/creative/sketch03-preview.svelte": { "entry": "pages/creative/sketch03-preview.svelte-252c8fca.js", "css": ["assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch03-preview.svelte-252c8fca.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js"], "styles": [] }, "src/routes/creative/sketch01/noPanel.svelte": { "entry": "pages/creative/sketch01/noPanel.svelte-4a7a9e75.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch01/noPanel.svelte-4a7a9e75.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js"], "styles": [] }, "src/routes/creative/sketch01.svelte": { "entry": "pages/creative/sketch01.svelte-1325bf8a.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch01.svelte-1325bf8a.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js"], "styles": [] }, "src/routes/creative/sketch02/noPanel.svelte": { "entry": "pages/creative/sketch02/noPanel.svelte-449cd7a8.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch02/noPanel.svelte-449cd7a8.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch02.svelte": { "entry": "pages/creative/sketch02.svelte-48babea3.js", "css": ["assets/pages/creative/sketch02.svelte-3be6b96d.css", "assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch02.svelte-48babea3.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js", "chunks/OptionSelect-01a5e205.js"], "styles": [] }, "src/routes/creative/sketch03/noPanel.svelte": { "entry": "pages/creative/sketch03/noPanel.svelte-5d313ced.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch03/noPanel.svelte-5d313ced.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch03.svelte": { "entry": "pages/creative/sketch03.svelte-212ffd4a.js", "css": ["assets/OptionSelect.svelte_svelte_type_style_lang-8c838b6b.css", "assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch03.svelte-212ffd4a.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/OptionSelect-01a5e205.js"], "styles": [] }, "src/routes/creative/sketch04/noPanel.svelte": { "entry": "pages/creative/sketch04/noPanel.svelte-60006a38.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch04/noPanel.svelte-60006a38.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch04.svelte": { "entry": "pages/creative/sketch04.svelte-c8eaeb14.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch04.svelte-c8eaeb14.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js"], "styles": [] }, "src/routes/creative/sketch05/noPanel.svelte": { "entry": "pages/creative/sketch05/noPanel.svelte-4de34938.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch05/noPanel.svelte-4de34938.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch05.svelte": { "entry": "pages/creative/sketch05.svelte-8fa25d38.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch05.svelte-8fa25d38.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js"], "styles": [] }, "src/routes/creative/sketch06/noPanel.svelte": { "entry": "pages/creative/sketch06/noPanel.svelte-4a4c6d2b.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch06/noPanel.svelte-4a4c6d2b.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch06.svelte": { "entry": "pages/creative/sketch06.svelte-e9a732c6.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch06.svelte-e9a732c6.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js"], "styles": [] }, "src/routes/creative/sketch07/noPanel.svelte": { "entry": "pages/creative/sketch07/noPanel.svelte-6c3606b3.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch07/noPanel.svelte-6c3606b3.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch07.svelte": { "entry": "pages/creative/sketch07.svelte-ef29b42b.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch07.svelte-ef29b42b.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js"], "styles": [] }, "src/routes/creative/sketch08/noPanel.svelte": { "entry": "pages/creative/sketch08/noPanel.svelte-6363c143.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch08/noPanel.svelte-6363c143.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch08.svelte": { "entry": "pages/creative/sketch08.svelte-bd7bc653.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch08.svelte-bd7bc653.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js"], "styles": [] }, "src/routes/creative/sketch09/noPanel.svelte": { "entry": "pages/creative/sketch09/noPanel.svelte-4f202e7c.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/creative/sketch09/noPanel.svelte-4f202e7c.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/creative/sketch09.svelte": { "entry": "pages/creative/sketch09.svelte-ac53e956.js", "css": ["assets/vendor-e0d31265.css", "assets/ColorInput.svelte_svelte_type_style_lang-71f5be97.css"], "js": ["pages/creative/sketch09.svelte-ac53e956.js", "chunks/vendor-e089f027.js", "chunks/ColorInput.svelte_svelte_type_style_lang-0e103a27.js", "chunks/stores-296d8679.js", "chunks/Checkbox-655f9ea4.js", "chunks/ColorInput-f523c737.js"], "styles": [] }, "src/routes/pokemon/[id].svelte": { "entry": "pages/pokemon/_id_.svelte-f7f9782d.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/pokemon/_id_.svelte-f7f9782d.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/pokemon.svelte": { "entry": "pages/pokemon.svelte-4dd4ae26.js", "css": ["assets/pages/pokemon.svelte-a2cfab55.css", "assets/vendor-e0d31265.css"], "js": ["pages/pokemon.svelte-4dd4ae26.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/quotes/index.svelte": { "entry": "pages/quotes/index.svelte-78f1a5a3.js", "css": ["assets/vendor-e0d31265.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/quotes/index.svelte-78f1a5a3.js", "chunks/vendor-e089f027.js", "pages/quotes/parseQuotes.svelte-31608bcc.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-9139dfae.js"], "styles": [] }, "src/routes/quotes/parseQuotes.svelte": { "entry": "pages/quotes/parseQuotes.svelte-31608bcc.js", "css": ["assets/vendor-e0d31265.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/quotes/parseQuotes.svelte-31608bcc.js", "chunks/vendor-e089f027.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-9139dfae.js"], "styles": [] }, "src/routes/quotes/AddQuote.svelte": { "entry": "pages/quotes/AddQuote.svelte-2792272f.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/quotes/AddQuote.svelte-2792272f.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/quotes/upload.svelte": { "entry": "pages/quotes/upload.svelte-4a30e1bd.js", "css": ["assets/vendor-e0d31265.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/quotes/upload.svelte-4a30e1bd.js", "chunks/vendor-e089f027.js", "pages/quotes/parseQuotes.svelte-31608bcc.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-9139dfae.js"], "styles": [] }, "src/routes/upload/index.svelte": { "entry": "pages/upload/index.svelte-1def5768.js", "css": ["assets/about.svelte_svelte_type_style_lang-51465bd5.css", "assets/vendor-e0d31265.css", "assets/parseQuotes.svelte_svelte_type_style_lang-20eef4b7.css"], "js": ["pages/upload/index.svelte-1def5768.js", "chunks/vendor-e089f027.js", "chunks/parseQuotes.svelte_svelte_type_style_lang-9139dfae.js"], "styles": [] }, "src/routes/about.svelte": { "entry": "pages/about.svelte-5f6a55f4.js", "css": ["assets/about.svelte_svelte_type_style_lang-51465bd5.css", "assets/vendor-e0d31265.css"], "js": ["pages/about.svelte-5f6a55f4.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/color.svelte": { "entry": "pages/color.svelte-0f345070.js", "css": ["assets/pages/color.svelte-b033c319.css", "assets/vendor-e0d31265.css"], "js": ["pages/color.svelte-0f345070.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/posts/index.svelte": { "entry": "pages/posts/index.svelte-726be634.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/posts/index.svelte-726be634.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/posts/[slug].svelte": { "entry": "pages/posts/_slug_.svelte-2964c101.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/posts/_slug_.svelte-2964c101.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/todos/index.svelte": { "entry": "pages/todos/index.svelte-a2a6a396.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/todos/index.svelte-a2a6a396.js", "chunks/vendor-e089f027.js"], "styles": [] }, "src/routes/[fallback]/index.svelte": { "entry": "pages/_fallback_/index.svelte-2afaaa78.js", "css": ["assets/vendor-e0d31265.css"], "js": ["pages/_fallback_/index.svelte-2afaaa78.js", "chunks/vendor-e089f027.js"], "styles": [] } };
   }
 });
 
@@ -50122,7 +51127,7 @@ function getRawBody(req) {
 // .svelte-kit/output/server/app.js
 init_shims();
 init_ssr();
-init_app_e8a54830();
+init_app_d1ce00fb();
 
 // .svelte-kit/vercel/entry.js
 init();

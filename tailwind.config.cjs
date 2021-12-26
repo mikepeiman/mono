@@ -6,11 +6,13 @@ module.exports = {
   content: ['./src/**/*.svelte'],
   theme: {
     fontFamily: {
-      'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
+      'sans': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
       'serif': ['Newsreader', ...defaultTheme.fontFamily.serif],
       'mono': ['Inconsolata', ...defaultTheme.fontFamily.mono],
       'display': ['Vollkorn', ...defaultTheme.fontFamily.sans],
       'body': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'cairo': ['Cairo', '"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'fira': ['"Fira Sans"', '"Open Sans"', ...defaultTheme.fontFamily.sans],
 
     },
     extend: {
