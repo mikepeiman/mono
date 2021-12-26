@@ -63,11 +63,20 @@
 		<div class="p-3 h-12shadow-md bg-electricindigo-800 flex">Main</div>
 		<div class="p-3 bg-electricindigo-700 flex-1 space-y-4 overflow-y-scroll">
 			{#each messages as message}
-			<p class="w-full">{message}</p>
+			<p class="w-full font-family text-2xl">{message}</p>
 			{/each}
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
+	.font-family {
+		font-weight: 500;
+		font-family: 'Montserrat';
+		font-family: 'Josefin';
+		font-family: 'Merriweather';
+		font-family: 'Cairo';
+		font-family: 'Vollkorn';
+
+	}
 </style>
