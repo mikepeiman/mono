@@ -11,7 +11,9 @@
 <script>
 	export let serverId, servers, channels, messages, path
     console.log(`🚀 ~ file: [serverId].svelte ~ line 13 ~ servers`, servers)
-
+	import {page} from '$app/stores'
+	$: path = $page.path
+    $: console.log(`🚀 ~ file: [serverId].svelte ~ line 16 ~ path`, path)
 	import random from 'canvas-sketch-util/random.js';
 	import math from 'canvas-sketch-util/math.js';
 	import Color from 'canvas-sketch-util/color.js';
