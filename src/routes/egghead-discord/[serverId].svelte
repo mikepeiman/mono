@@ -81,8 +81,7 @@
 		return result;
 	}
 	import MainUi from "./MainUI.svelte";
-	// import { page } from '$app/stores';
-	// const serverId = $page.params.serverId;
+
 </script>
-{serverId}
+
 <MainUi {servers} {channels} {messages} {path} />
