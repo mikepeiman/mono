@@ -8,7 +8,7 @@
 	};
 </script> -->
 <script>
-	import { storedQuotesFile, storedFileContent, storedQuotesArray } from '../../stores/stores.js';
+	import { storedQuotesFile, storedFileContent, storedQuotesArray } from '../../stores/quotes.js';
 	import { onMount } from 'svelte';
 	import { parse } from './parseQuotes.js';
 	// import { saveFile} from '$lib/save-file'

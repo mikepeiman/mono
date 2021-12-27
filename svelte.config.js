@@ -30,6 +30,7 @@ const config = {
 					'$components': path.resolve('./src/components'),
 					'$utils': path.resolve('./src/utils'),
 					'$lib': path.resolve('./src/lib'),
+					'$stores': path.resolve('./src/stores'),
 					'$api': path.resolve('./src/routes/api'),
 					'$static': path.resolve('./static'),
 				}

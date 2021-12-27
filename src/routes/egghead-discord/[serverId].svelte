@@ -1,4 +1,17 @@
+<script context="module">
+	export async function load({page, fetch, session, context}) {
+	    return {
+	        props: {
+	            serverId: page.params.serverId
+	        }
+	    }
+	}
+</script>
+
 <script>
+	export let serverId, servers, channels, messages, path
+    console.log(`🚀 ~ file: [serverId].svelte ~ line 13 ~ servers`, servers)
+
 	import random from 'canvas-sketch-util/random.js';
 	import math from 'canvas-sketch-util/math.js';
 	import Color from 'canvas-sketch-util/color.js';
@@ -16,7 +29,7 @@
 			max: 16
 		}
 	});
-	let servers, channels, messages;
+
 	let serversLS, channelsLS, messagesLS;
 	let existingServerList = false;
 	let mounted = false;
@@ -50,6 +63,9 @@
 			channels = JSON.parse(channelsLS)
 			messages = JSON.parse(messagesLS)
 		}
+		console.log(`🚀 ~ file: [serverId].svelte ~ line 63 ~ onMount ~ servers`, servers)
+		console.log(`🚀 ~ file: [serverId].svelte ~ line 65 ~ onMount ~ channels`, channels)
+		console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages)
 		mounted = true;
 	});
 
@@ -62,30 +78,9 @@
 		}
 		return result;
 	}
-	let discord_src = 'svg/discord.svg';
-	let alpha = 'abcdefghijklmnopqrstuvwxyz';
-	let discordData = {};
-
-	// discordData.servers = servers;
-	// servers.forEach((id) => {
-	// 	discordData[id] = { id, channels: channels };
-	// 	channels.forEach((channel) => {
-	// 		discordData[id].channels[channel] = messages;
-	// 	});
-	// });
-
-	// console.log(`🚀 ~ file: __layout.svelte ~ line 45 ~ servers.forEach ~ discordData`, discordData);
-
-	// $: servers, channels, messages;
-
-	import { page } from '$app/stores';
-	import Server from './Server.svelte';
-	import ServerData from './ServerData.svelte';
-	import MainUi from './MainUI.svelte';
-	$: path = $page.path;
-	$: console.log(`🚀 ~ file: __layout.svelte ~ line 46 ~ path`, path);
+	import MainUi from "./MainUI.svelte";
+	// import { page } from '$app/stores';
+	// const serverId = $page.params.serverId;
 </script>
-
-{#if mounted}
-	<MainUi {servers} {channels} {messages} {path} />
-{/if}
+{serverId}
+<MainUi {servers} {channels} {messages} {path} />

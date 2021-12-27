@@ -1,5 +1,6 @@
 <script>
-	export let serverId, path;
+	export let serverId, servers, channels, messages, path;
+    console.log(`🚀 ~ file: Server.svelte ~ line 3 ~ serverId`, serverId)
 
 </script>
 
