@@ -49,7 +49,7 @@
 			<Discord class="w-7 h-5 " />
 		</a>
 
-		{#each servers as serverId}
+		{#each data.servers as serverId}
 			<Server {serverId} {path} />
 		{/each}
 	</div>

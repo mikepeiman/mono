@@ -4,7 +4,7 @@
 	import Color from 'canvas-sketch-util/color.js';
 	import { LoremIpsum } from 'lorem-ipsum';
 	import SvgIcon from '$components/SvgIcon.svelte';
-	import Discord from '~icons/my-icons/discord';
+
 	const lorem = new LoremIpsum({
 		sentencesPerParagraph: {
 			min: 1,
@@ -39,13 +39,17 @@
 		channels.push(channel);
 		messages.push(message);
 	});
-
+    discordData.servers = servers
 	servers.forEach((id) => {
-		discordData[id] = {id, channels: []}
+		discordData[id] = {id, channels: channels}
+        channels.forEach(channel => {
+            discordData[id].channels[channel] = messages
+        })
 	});
+    
     console.log(`🚀 ~ file: __layout.svelte ~ line 45 ~ servers.forEach ~ discordData`, discordData)
 
-	$: servers, channels;
+	$: servers, channels, discordData;
 
 	import { page } from '$app/stores';
 	import Server from './Server.svelte';
