@@ -60,9 +60,9 @@ function discord() {
         readServers: (data) => readData(data),
         readChannels: (data) => readData(data),
         readMessages: (data) => readData(data),
-        generateServers: () => generateServers(),
+        generateServers: (num) => generateServers(num),
         generateChannels: (serverId) => generateChannels(serverId),
-        generateMessages: () => generateMessages(),
+        generateMessages: (serverId, channelId) => generateMessages(serverId, channelId),
         clearData: () => {
             servers.set({})
         }
@@ -77,11 +77,11 @@ function getServerData(serverId) {
 
 }
 
-function generateServers() {
+function generateServers(num) {
     let s = [];
-    [...Array(40)].map(() => {
-        let id = makeid(2);
-        s.push({id: id, channels: []});
+    [...Array(num)].map(() => {
+        let id = makeid(4);
+        s.push({id: `server-${id}`, channels: []});
     });
     s = [...new Set(s)]
     saveData("discordDummyData", s)
@@ -91,27 +91,36 @@ function generateServers() {
 function generateChannels(serverId) {
     let c = [];
     [...Array(40)].map(() => {
-        let channel = makeid(random.range(6, 18));
-        c.push(channel);
+        let id = makeid(4);
+        c.push({id: `channel-${id}`, messages: []});
     });
+    c = [...new Set(c)]
     let data = readData("discordDummyData")
-    console.log(`🚀 ~ file: discord.js ~ line 97 ~ generateChannels ~ data`, data)
     if(serverId) {
-        console.log(`🚀 ~ file: discord.js ~ line 99 ~ generateChannels ~ serverId`, serverId)
-        let idx = data.map(s => s.id).indexOf(serverId)
         let index = data.findIndex(s => s.id === serverId)
-        console.log(`🚀 ~ file: discord.js ~ line 103 ~ generateChannels ~ index`, index)
-        console.log(`🚀 ~ file: discord.js ~ line 102 ~ generateChannels ~ idx`, idx)
-
-    }
+        data[index].channels = c
+        saveData("discordDummyData", data)
+    }   
     return c;
 }
-function generateMessages() {
+function generateMessages(serverId, channelId) {
     let m = [];
     [...Array(40)].map(() => {
         let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
         m.push(message);
     });
+    let data = readData("discordDummyData")
+    if(serverId) {
+        let serverIndex = data.findIndex(s => s.id === serverId)
+        console.log(`🚀 ~ file: discord.js ~ line 115 ~ generateMessages ~ serverIndex`, serverIndex)
+        let channels = data[serverIndex].channels
+        console.log(`🚀 ~ file: discord.js ~ line 117 ~ generateMessages ~ channels `, channels )
+        let channelIndex = channels.findIndex(c => c.id === channelId)
+        console.log(`🚀 ~ file: discord.js ~ line 119 ~ generateMessages ~ channelIndex`, channelIndex)
+        console.log(`🚀 ~ file: discord.js ~ line 121 ~ generateMessages ~ data[serverIndex][channelIndex]`, data[serverIndex].channels[channelIndex])
+        data[serverIndex].channels[channelIndex].messages = m
+        saveData("discordDummyData", data)
+    }   
     return m;
 }
 

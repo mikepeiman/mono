@@ -60,13 +60,15 @@
 		// console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages)
 		mounted = true;
 
-        let tests = await D.generateServers()
+        let tests = await D.generateServers(5)
         // console.log(`🚀 ~ file: __layout.svelte ~ line 64 ~ onMount ~ tests`, tests)
-        let testc = D.generateChannels(tests[5].id)
-        console.log(`🚀 ~ file: __layout.svelte ~ line 66 ~ onMount ~ tests[5]`, tests[5])
+        let testc = await D.generateChannels(tests[3].id)
+        console.log(`🚀 ~ file: __layout.svelte ~ line 66 ~ onMount ~ tests[3]`, tests[3])
+        tests[3].channels = D.generateChannels(tests[3].id)
+        console.log(`🚀 ~ file: __layout.svelte ~ line 68 ~ onMount ~ tests[3].channels`, tests[3].channels)
         console.log(`🚀 ~ file: __layout.svelte ~ line 66 ~ onMount ~ testc`, testc)
-        // let testm = D.generateMessages()
-        // console.log(`🚀 ~ file: __layout.svelte ~ line 68 ~ onMount ~ testm`, testm)
+        let testm = await D.generateMessages(tests[3].id, tests[3].channels[5].id)
+        console.log(`🚀 ~ file: __layout.svelte ~ line 68 ~ onMount ~ testm`, testm)
         D.readServers("servers")
 	});
 
