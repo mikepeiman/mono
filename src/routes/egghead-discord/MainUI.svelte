@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	$: path = $page.path;
-	export let serverId;
+	export let serverId, channelId
 	import random from 'canvas-sketch-util/random.js';
 	import math from 'canvas-sketch-util/math.js';
 	import Color from 'canvas-sketch-util/color.js';
@@ -56,6 +56,7 @@
 	$: console.log(`🚀 ~ file: MainUI.svelte ~ line 32 ~ servers`, servers);
 	import Discord from '~icons/my-icons/discord';
 	import Server from './Server.svelte';
+import Channel from './Channel.svelte';
 </script>
 
 {#if mounted}
@@ -77,20 +78,21 @@
 				{/each}
 			{/if}
 		</div>
-		<div class="bg-winterblues-100 w-60 flex flex-col">
+		<div class="bg-gray-800 w-60 flex flex-col">
 			<div class="px-3 h-12 shadow-md flex flex-shrink-0 items-center font-fira">Channels</div>
-			<div class="flex flex-col overflow-y-scroll">
+			<div class="flex flex-col overflow-y-scroll ">
 				<!-- {#if channels} -->
 				{#each servers[idx].channels as channel}
 					<!-- content here -->
-					<div class="bg-blue-900 p-3 flex-1">{channel.id}</div>
+                    <Channel {serverId} channelId={channel.id} />
+					<!-- <div class="bg-blue-900 p-3 flex-1">{channel.id}</div> -->
 				{/each}
 				<!-- {/if} -->
 			</div>
 		</div>
 		<div class="flex flex-1 flex-col">
 			<div class="p-3 h-12 shadow-md bg-electricindigo-800 flex font-fira">Messages</div>
-			<div class="p-3 bg-electricindigo-700  flex-1 space-y-4 overflow-y-scroll">
+			<div class="p-3 bg-electricindigo-700  flex-1 space-y-4 overflow-y-scroll h-full">
 				{#if messages}
 					{#each messages as message}
 						<p class="w-full text-2xl">{message}</p>
@@ -100,3 +102,26 @@
 		</div>
 	</div>
 {/if}
+
+<style lang="scss">
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    @apply bg-gray-800
+}
+
+*::-webkit-scrollbar-thumb {
+//   background-color: orange;
+  border-radius: 2rem;
+  @apply border-4 border-sky-800 bg-sky-600;
+//   border: 5px solid teal;
+}
+</style>

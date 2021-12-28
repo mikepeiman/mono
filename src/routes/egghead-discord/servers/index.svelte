@@ -1,1 +1,0 @@
-<h1>servers index</h1>
