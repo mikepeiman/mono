@@ -17,6 +17,7 @@
 		}
 	});
 	let servers, channels, messages;
+	let serverId = "home"
 	let serversLS, channelsLS, messagesLS;
 	let existingServerList = false;
 	let mounted = false;
@@ -87,5 +88,5 @@
 </script>
 
 {#if mounted}
-	<MainUi  {path} />
+	<MainUi  {serverId} />
 {/if}

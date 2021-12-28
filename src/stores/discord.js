@@ -84,15 +84,16 @@ function generateServers(num) {
         s.push({id: `${id}`, channels: []});
     });
     s = [...new Set(s)]
+    s = [{id: "home", channels: []}, ...s]
     saveData("discordDummyData", s)
     return s;
 }
 
 function generateChannels(serverId) {
     let c = [];
-    [...Array(40)].map(() => {
+    [...Array(12)].map(() => {
         let id = makeid(4);
-        c.push({id: `C#${id}`, messages: []});
+        c.push({id: `${serverId}-${id}`, messages: []});
     });
     c = [...new Set(c)]
     let data = readData("discordDummyData")
@@ -105,19 +106,19 @@ function generateChannels(serverId) {
 }
 function generateMessages(serverId, channelId) {
     let m = [];
-    [...Array(40)].map(() => {
+    [...Array(24)].map(() => {
         let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
         m.push(message);
     });
     let data = readData("discordDummyData")
     if(serverId) {
         let serverIndex = data.findIndex(s => s.id === serverId)
-        console.log(`🚀 ~ file: discord.js ~ line 115 ~ generateMessages ~ serverIndex`, serverIndex)
+        // console.log(`🚀 ~ file: discord.js ~ line 115 ~ generateMessages ~ serverIndex`, serverIndex)
         let channels = data[serverIndex].channels
-        console.log(`🚀 ~ file: discord.js ~ line 117 ~ generateMessages ~ channels `, channels )
+        // console.log(`🚀 ~ file: discord.js ~ line 117 ~ generateMessages ~ channels `, channels )
         let channelIndex = channels.findIndex(c => c.id === channelId)
-        console.log(`🚀 ~ file: discord.js ~ line 119 ~ generateMessages ~ channelIndex`, channelIndex)
-        console.log(`🚀 ~ file: discord.js ~ line 121 ~ generateMessages ~ data[serverIndex][channelIndex]`, data[serverIndex].channels[channelIndex])
+        // console.log(`🚀 ~ file: discord.js ~ line 119 ~ generateMessages ~ channelIndex`, channelIndex)
+        // console.log(`🚀 ~ file: discord.js ~ line 121 ~ generateMessages ~ data[serverIndex].channels[channelIndex]`, data[serverIndex].channels[channelIndex])
         data[serverIndex].channels[channelIndex].messages = m
         saveData("discordDummyData", data)
     }   
@@ -151,14 +152,13 @@ function saveData(key, data) {
 }
 
 function readData(key) {
-    console.log(`🚀 ~ file: discord.js ~ line 134 ~ readData ~ key`, key)
     if (localStorageSupported) {
         try {
             const prev = window.localStorage.getItem(key);
-            console.log(`🚀 ~ file: discord.js ~ line 141 ~ readData ~ prev`, prev)
+            // console.log(`🚀 ~ file: discord.js ~ line 157 ~ readData ~ prev`, prev)
             if (!prev) return false;
             const newData = JSON.parse(prev);
-            console.log(`🚀 ~ file: discord.js ~ line 144 ~ readData ~ newData`, newData)
+            // console.log(`🚀 ~ file: discord.js ~ line 160 ~ readData ~ newData`, newData)
             // Object.assign(data, newData);
             return newData
         } catch (err) {
