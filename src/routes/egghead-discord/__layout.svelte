@@ -1,6 +1,5 @@
 <script>
-	export let serverId, servers, channels, messages, path
-    console.log(`🚀 ~ file: [serverId].svelte ~ line 13 ~ servers`, servers)
+	export let servers, channels, messages, path;
 
 	import random from 'canvas-sketch-util/random.js';
 	import math from 'canvas-sketch-util/math.js';
@@ -9,6 +8,9 @@
 	import SvgIcon from '$components/SvgIcon.svelte';
 	import { onMount } from 'svelte';
 	import { serversStore, channelsStore, messagesStore } from '$stores/discord.js';
+	import { D } from '$stores/discord.js';
+	import MainUi from './MainUI.svelte';
+
 	const lorem = new LoremIpsum({
 		sentencesPerParagraph: {
 			min: 1,
@@ -49,14 +51,17 @@
 			channelsStore.set(channels);
 			messagesStore.set(messages);
 		} else {
-			servers = JSON.parse(serversLS)
-			channels = JSON.parse(channelsLS)
-			messages = JSON.parse(messagesLS)
+			servers = JSON.parse(serversLS);
+			channels = JSON.parse(channelsLS);
+			messages = JSON.parse(messagesLS);
 		}
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 63 ~ onMount ~ servers`, servers)
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 65 ~ onMount ~ channels`, channels)
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages)
+		// console.log(`🚀 ~ file: [serverId].svelte ~ line 63 ~ onMount ~ servers`, servers)
+		// console.log(`🚀 ~ file: [serverId].svelte ~ line 65 ~ onMount ~ channels`, channels)
+		// console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages)
 		mounted = true;
+
+        let test = D.generateServers()
+        console.log(`🚀 ~ file: __layout.svelte ~ line 64 ~ onMount ~ test `, test )
 	});
 
 	function makeid(length) {
@@ -69,7 +74,10 @@
 		return result;
 	}
 
-	// import { page } from '$app/stores';
-	// const serverId = $page.params.serverId;
+	import { page } from '$app/stores';
+	$: path = $page.path;
+	$: console.log(`🚀 ~ file: __layout.svelte ~ line 74 ~ path`, path);
 </script>
+
+<MainUi />
 <slot />

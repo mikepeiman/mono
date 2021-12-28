@@ -1,6 +1,5 @@
 <script>
 	export let serverId, servers, channels, messages, path;
-	console.log(`🚀 ~ file: [serverId].svelte ~ line 13 ~ servers`, servers);
 
 	import random from 'canvas-sketch-util/random.js';
 	import math from 'canvas-sketch-util/math.js';
@@ -53,9 +52,7 @@
 			channels = JSON.parse(channelsLS);
 			messages = JSON.parse(messagesLS);
 		}
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 63 ~ onMount ~ servers`, servers);
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 65 ~ onMount ~ channels`, channels);
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages);
+
 		mounted = true;
 	});
 

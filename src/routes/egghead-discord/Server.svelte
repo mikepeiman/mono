@@ -1,6 +1,11 @@
+
+
 <script>
 	export let serverId, servers, channels, messages, path;
-	console.log(`🚀 ~ file: Server.svelte ~ line 3 ~ serverId`, serverId);
+	
+	import { page } from '$app/stores';
+	$: path = $page.path
+    $: console.log(`🚀 ~ file: Server.svelte ~ line 8 ~ path`, path)
 </script>
 
 <a href="/egghead-discord/{serverId}" class="relative space-y-2 block group">

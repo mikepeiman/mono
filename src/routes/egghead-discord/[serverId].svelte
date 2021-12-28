@@ -10,7 +10,6 @@
 
 <script>
 	export let serverId, servers, channels, messages, path
-    console.log(`🚀 ~ file: [serverId].svelte ~ line 13 ~ servers`, servers)
 	import {page} from '$app/stores'
 	$: path = $page.path
     $: console.log(`🚀 ~ file: [serverId].svelte ~ line 16 ~ path`, path)
@@ -65,10 +64,8 @@
 			channels = JSON.parse(channelsLS)
 			messages = JSON.parse(messagesLS)
 		}
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 63 ~ onMount ~ servers`, servers)
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 65 ~ onMount ~ channels`, channels)
-		console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages)
 		mounted = true;
+		console.log(`🚀 ~ file: [serverId].svelte ~ line 64 ~ onMount ~ servers`, servers)
 	});
 
 	function makeid(length) {
