@@ -37,6 +37,7 @@
 		}
 		// let serverIdInPath = path.split('/')[2];
 		if (serverId !== "home") {
+            console.log(`🚀 ~ file: MainUI.svelte ~ line 40 ~ onMount ~ serverId`, serverId)
 			let idx = servers.findIndex((s) => s.id === serverId);
 			console.log(`🚀 ~ file: MainUI.svelte ~ line 37 ~ onMount ~ idx @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ `, idx);
 			channels = servers[idx].channels;

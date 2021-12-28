@@ -12,7 +12,7 @@
 	<div class="relative" role="listitem">
 		<div class="relative px-2 ml-2 rounded-sm flex align-center group-hover:bg-sky-900 group-active:bg-sky-800">
 			<a
-				href="{path}/{channelId}"
+				href="/egghead-discord/{serverId}/{channelId}"
 				role="link"
 				class="flex-1 py-[6px] cursor-pointer"
 				data-list-item-id="channels___819723698415599626"

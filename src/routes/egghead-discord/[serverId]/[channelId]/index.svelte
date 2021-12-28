@@ -1,9 +1,11 @@
 <script context="module">
 	export const load = async ({ fetch, page: { params } }) => {
-		const { channelId } = params;
+    console.log(`🚀 ~ file: index.svelte ~ line 3 ~ load ~ page`, page)
+    console.log(`🚀 ~ file: index.svelte ~ line 3 ~ load ~ params`, params)
+		const { serverId, channelId } = params;
 		console.log(`🚀 ~ file: [channelId].svelte ~ line 4 ~ load ~ channelId`, channelId);
 		console.log(`🚀 ~ file: [channelId].svelte ~ line 4 ~ load ~ params`, params);
-		return { props: { channelId } };
+		return { props: { serverId, channelId } };
 	};
 </script>
 
