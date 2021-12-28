@@ -1,4 +1,18 @@
 import { writable } from "svelte/store";
+import random from 'canvas-sketch-util/random.js';
+import { LoremIpsum } from 'lorem-ipsum';
+
+const lorem = new LoremIpsum({
+    sentencesPerParagraph: {
+        min: 1,
+        max: 8
+    },
+    wordsPerSentence: {
+        min: 4,
+        max: 16
+    }
+});
+
 
 const servers = writable({})
 const channels = writable({})
@@ -44,20 +58,20 @@ function generateDiscordDummyData() {
     return {
         subscribe,
         generateServers: () => generateServers(),
-        generateChannels: () => {},
-        generateMessages: () => {},
-    }
-}
-
-function getServerData() {
-    const { subscribe, set, update } = writable(0)
-    return {
-        subscribe,
-
+        generateChannels: () => generateChannels(),
+        generateMessages: () => generateMessages(),
         clearData: () => {
             set({})
         }
     }
+}
+
+function getServerData(serverId) {
+    const { subscribe, set, update } = writable(0)
+    return {
+        subscribe,
+    }
+
 }
 
 function resetDiscordData() {
@@ -73,6 +87,23 @@ function generateServers() {
     });
     return s;
 }
+function generateChannels() {
+    let c = [];
+    [...Array(40)].map(() => {
+        let channel = makeid(random.range(6, 18));
+        c.push(channel);
+    });
+    return c;
+}
+function generateMessages() {
+    let m = [];
+    [...Array(40)].map(() => {
+        let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
+        m.push(message);
+    });
+    return m;
+}
+
 
 function makeid(length) {
     var result = '';
@@ -91,5 +122,25 @@ let localStorageSupported = (() => {
         return false;
     }
 })();
+
+
+function saveData(data) {
+    if (localStorageSupported) {
+        window.localStorage.setItem(`${data}`, JSON.stringify(data));
+    }
+}
+
+function readData(data) {
+    if (localStorageSupported) {
+        try {
+            const prev = window.localStorage.getItem(`${data}`);
+            if (!prev) return;
+            const newData = JSON.parse(prev);
+            Object.assign(data, newData);
+        } catch (err) {
+            console.warn(err);
+        }
+    }
+}
 
 export const D = generateDiscordDummyData()

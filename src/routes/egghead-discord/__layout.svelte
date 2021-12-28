@@ -60,8 +60,12 @@
 		// console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages)
 		mounted = true;
 
-        let test = D.generateServers()
-        console.log(`🚀 ~ file: __layout.svelte ~ line 64 ~ onMount ~ test `, test )
+        let tests = D.generateServers()
+        console.log(`🚀 ~ file: __layout.svelte ~ line 64 ~ onMount ~ tests`, tests)
+        let testc = D.generateChannels()
+        console.log(`🚀 ~ file: __layout.svelte ~ line 66 ~ onMount ~ testc`, testc)
+        let testm = D.generateMessages()
+        console.log(`🚀 ~ file: __layout.svelte ~ line 68 ~ onMount ~ testm`, testm)
 	});
 
 	function makeid(length) {
