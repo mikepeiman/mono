@@ -92,8 +92,8 @@ import Channel from './Channel.svelte';
 			</div>
 		</div>
 		<div class="flex flex-1 flex-col">
-			<div class="p-3 h-12 shadow-md bg-electricindigo-800 flex font-fira">Messages</div>
-			<div class="p-3 bg-electricindigo-700  flex-1 space-y-4 overflow-y-scroll h-full">
+			<div class="p-3 h-12 shadow-md bg-gray-800 flex font-fira">Messages</div>
+			<div class="p-3 bg-gray-700 bg-opacity-80 flex-1 space-y-4 overflow-y-scroll h-full">
 				{#if messages}
 					{#each messages as message}
 						<p class="w-full text-2xl">{message}</p>

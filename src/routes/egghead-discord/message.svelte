@@ -4,7 +4,7 @@
 
 <!-- Beginning to work through https://egghead.io/lessons/tailwind-intro-to-styling-custom-uis-with-tailwind-utility-classes -->
 <div
-	class="bg-electricindigo-500 bg-opacity-10 min-h-full min-w-full flex items-center justify-center"
+	class="bg-gray-700 bg-opacity-10 min-h-full min-w-full flex items-center justify-center"
 >
 	<div class="max-w-lg">
 		<!-- <img src="https://via.placeholder.com/150.jpg" alt=""> -->

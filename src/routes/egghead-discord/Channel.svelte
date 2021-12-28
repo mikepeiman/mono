@@ -10,7 +10,11 @@
 
 <div class="relative bg-gray-800 group" data-dnd-name="svelte-kit">
 	<div class="relative" role="listitem">
-		<div class="relative px-2 ml-2 rounded-sm flex align-center group-hover:bg-sky-900 group-active:bg-sky-800">
+		<div class="
+        {path === `/egghead-discord/${serverId}/${channelId}` 
+        ? 'bg-sky-600' 
+        : 'group-hover:bg-sky-800'} 
+         transition-all duration-200 bg-gray-800 text-white rounded-r relative px-2 ml-2 rounded-sm flex align-center group-active:bg-sky-800">
 			<a
 				href="/egghead-discord/{serverId}/{channelId}"
 				role="link"
@@ -21,7 +25,7 @@
 				><div aria-label="Text (Active Threads)" class="iconContainer-1BBaeJ">
 <!-- channel indicator icon -->
 				</div>
-				<div class="name-23GUGE overflow-WK9Ogt" aria-hidden="true">
+				<div class="flex align-center" aria-hidden="true">
 					<div class="channelName-2YrOjO">{channelId}</div>
 				</div></a
 			>
