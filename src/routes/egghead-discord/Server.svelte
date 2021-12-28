@@ -31,6 +31,7 @@
 		
 	</div>
 </a>
+<hr class="border-b-2 border-b-white opacity-[0.06] rounded mx-2">
 
 {:else}
 <a href="/egghead-discord/{serverId}" class="relative space-y-2 block group">

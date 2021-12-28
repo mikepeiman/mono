@@ -78,7 +78,7 @@
 			{/if}
 		</div>
 		<div class="bg-winterblues-100 w-60 flex flex-col">
-			<div class="px-3 h-12 shadow-md flex flex-shrink-0 items-center font-fira">Header</div>
+			<div class="px-3 h-12 shadow-md flex flex-shrink-0 items-center font-fira">Channels</div>
 			<div class="flex flex-col overflow-y-scroll">
 				<!-- {#if channels} -->
 				{#each servers[idx].channels as channel}
@@ -89,7 +89,7 @@
 			</div>
 		</div>
 		<div class="flex flex-1 flex-col">
-			<div class="p-3 h-12 shadow-md bg-electricindigo-800 flex font-fira">Main</div>
+			<div class="p-3 h-12 shadow-md bg-electricindigo-800 flex font-fira">Messages</div>
 			<div class="p-3 bg-electricindigo-700  flex-1 space-y-4 overflow-y-scroll">
 				{#if messages}
 					{#each messages as message}
