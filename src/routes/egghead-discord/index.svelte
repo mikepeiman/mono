@@ -87,5 +87,5 @@
 </script>
 
 {#if mounted}
-	<MainUi {servers} {channels} {messages} {path} />
+	<MainUi  {path} />
 {/if}

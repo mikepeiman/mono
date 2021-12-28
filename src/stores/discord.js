@@ -80,8 +80,8 @@ function getServerData(serverId) {
 function generateServers(num) {
     let s = [];
     [...Array(num)].map(() => {
-        let id = makeid(4);
-        s.push({id: `server-${id}`, channels: []});
+        let id = makeid(2);
+        s.push({id: `${id}`, channels: []});
     });
     s = [...new Set(s)]
     saveData("discordDummyData", s)
@@ -92,7 +92,7 @@ function generateChannels(serverId) {
     let c = [];
     [...Array(40)].map(() => {
         let id = makeid(4);
-        c.push({id: `channel-${id}`, messages: []});
+        c.push({id: `C#${id}`, messages: []});
     });
     c = [...new Set(c)]
     let data = readData("discordDummyData")
@@ -156,7 +156,7 @@ function readData(key) {
         try {
             const prev = window.localStorage.getItem(key);
             console.log(`🚀 ~ file: discord.js ~ line 141 ~ readData ~ prev`, prev)
-            if (!prev) return;
+            if (!prev) return false;
             const newData = JSON.parse(prev);
             console.log(`🚀 ~ file: discord.js ~ line 144 ~ readData ~ newData`, newData)
             // Object.assign(data, newData);

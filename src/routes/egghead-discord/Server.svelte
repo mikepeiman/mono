@@ -1,7 +1,8 @@
 
 
 <script>
-	export let serverId, servers, channels, messages, path;
+	export let serverId, path;
+    console.log(`🚀 ~ file: Server.svelte ~ line 5 ~ serverId`, serverId)
 	
 	import { page } from '$app/stores';
 	$: path = $page.path
