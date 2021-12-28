@@ -28,7 +28,7 @@
 	$: if (serversLS) {
 		existingServerList = true;
 	}
-	onMount(() => {
+	onMount(async () => {
 		serversLS = localStorage.getItem('servers');
 		channelsLS = localStorage.getItem('channels');
 		messagesLS = localStorage.getItem('messages');
@@ -60,12 +60,14 @@
 		// console.log(`🚀 ~ file: [serverId].svelte ~ line 67 ~ onMount ~ messages`, messages)
 		mounted = true;
 
-        let tests = D.generateServers()
-        console.log(`🚀 ~ file: __layout.svelte ~ line 64 ~ onMount ~ tests`, tests)
-        let testc = D.generateChannels()
+        let tests = await D.generateServers()
+        // console.log(`🚀 ~ file: __layout.svelte ~ line 64 ~ onMount ~ tests`, tests)
+        let testc = D.generateChannels(tests[5].id)
+        console.log(`🚀 ~ file: __layout.svelte ~ line 66 ~ onMount ~ tests[5]`, tests[5])
         console.log(`🚀 ~ file: __layout.svelte ~ line 66 ~ onMount ~ testc`, testc)
-        let testm = D.generateMessages()
-        console.log(`🚀 ~ file: __layout.svelte ~ line 68 ~ onMount ~ testm`, testm)
+        // let testm = D.generateMessages()
+        // console.log(`🚀 ~ file: __layout.svelte ~ line 68 ~ onMount ~ testm`, testm)
+        D.readServers("servers")
 	});
 
 	function makeid(length) {

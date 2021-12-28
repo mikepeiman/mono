@@ -16,9 +16,9 @@ const lorem = new LoremIpsum({
 
 const servers = writable({})
 const channels = writable({})
-const discord = writable({})
+// const discord = writable({})
 const messages = writable([])
-const discordData = writable({})
+// const discordData = writable({})
 
 
 export const serversStore = {
@@ -45,23 +45,26 @@ export const messagesStore = {
     }
 };
 
-export const discordStore = {
-    subscribe: discord.subscribe,
-    set: val => {
-        discord.set(val);
-        localStorage.setItem("discord", JSON.stringify(val));
-    }
-};
+// export const discordStore = {
+//     subscribe: discord.subscribe,
+//     set: val => {
+//         discord.set(val);
+//         localStorage.setItem("discord", JSON.stringify(val));
+//     }
+// };
 
-function generateDiscordDummyData() {
+function discord() {
     const { subscribe, set, update } = writable(0)
     return {
         subscribe,
+        readServers: (data) => readData(data),
+        readChannels: (data) => readData(data),
+        readMessages: (data) => readData(data),
         generateServers: () => generateServers(),
-        generateChannels: () => generateChannels(),
+        generateChannels: (serverId) => generateChannels(serverId),
         generateMessages: () => generateMessages(),
         clearData: () => {
-            set({})
+            servers.set({})
         }
     }
 }
@@ -74,25 +77,33 @@ function getServerData(serverId) {
 
 }
 
-function resetDiscordData() {
-    const { subscribe, set, update } = writable(0)
-
-}
-
 function generateServers() {
     let s = [];
     [...Array(40)].map(() => {
         let id = makeid(2);
-        s.push(id);
+        s.push({id: id, channels: []});
     });
+    s = [...new Set(s)]
+    saveData("discordDummyData", s)
     return s;
 }
-function generateChannels() {
+
+function generateChannels(serverId) {
     let c = [];
     [...Array(40)].map(() => {
         let channel = makeid(random.range(6, 18));
         c.push(channel);
     });
+    let data = readData("discordDummyData")
+    console.log(`🚀 ~ file: discord.js ~ line 97 ~ generateChannels ~ data`, data)
+    if(serverId) {
+        console.log(`🚀 ~ file: discord.js ~ line 99 ~ generateChannels ~ serverId`, serverId)
+        let idx = data.map(s => s.id).indexOf(serverId)
+        let index = data.findIndex(s => s.id === serverId)
+        console.log(`🚀 ~ file: discord.js ~ line 103 ~ generateChannels ~ index`, index)
+        console.log(`🚀 ~ file: discord.js ~ line 102 ~ generateChannels ~ idx`, idx)
+
+    }
     return c;
 }
 function generateMessages() {
@@ -124,23 +135,27 @@ let localStorageSupported = (() => {
 })();
 
 
-function saveData(data) {
+function saveData(key, data) {
     if (localStorageSupported) {
-        window.localStorage.setItem(`${data}`, JSON.stringify(data));
+        window.localStorage.setItem(key, JSON.stringify(data));
     }
 }
 
-function readData(data) {
+function readData(key) {
+    console.log(`🚀 ~ file: discord.js ~ line 134 ~ readData ~ key`, key)
     if (localStorageSupported) {
         try {
-            const prev = window.localStorage.getItem(`${data}`);
+            const prev = window.localStorage.getItem(key);
+            console.log(`🚀 ~ file: discord.js ~ line 141 ~ readData ~ prev`, prev)
             if (!prev) return;
             const newData = JSON.parse(prev);
-            Object.assign(data, newData);
+            console.log(`🚀 ~ file: discord.js ~ line 144 ~ readData ~ newData`, newData)
+            // Object.assign(data, newData);
+            return newData
         } catch (err) {
             console.warn(err);
         }
     }
 }
 
-export const D = generateDiscordDummyData()
+export const D = discord()
