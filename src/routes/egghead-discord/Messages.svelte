@@ -1,8 +1,15 @@
 <script>
-    export let servers, channels, serverIndex, channelIndex
+    export let servers, serverIndex,channels, channelIndex, messages
+    $: console.log(`🚀 ~ file: Messages.svelte ~ line 3 ~ channelIndex`, channelIndex)
+    $: console.log(`🚀 ~ file: Messages.svelte ~ line 3 ~ serverIndex`, serverIndex)
     import { D } from '$stores/discord.js';
-    let messages = false
-    $: serverIndex ? messages = D.generateMessages(serverIndex, channelIndex) : false
+    // let messages = false
+    let server, channel
+    $: server = servers[serverIndex]
+    $: console.log(`🚀 ~ file: Messages.svelte ~ line 9 ~ server`, server)
+    $: channel = channels[channelIndex]
+    $: console.log(`🚀 ~ file: Messages.svelte ~ line 11 ~ channel`, channel)
+    $: channel ? messages = channel.messages : false
     $: console.log(`🚀 ~ file: Messages.svelte ~ line 6 ~ messages`, messages)
 </script>
 

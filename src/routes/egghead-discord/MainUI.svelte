@@ -24,11 +24,12 @@
 	let channelIndex;
 	$: console.log(`🚀 ~ file: MainUI.svelte ~ line 34 ~ channelIndex`, channelIndex);
 	$: channels ? (channelIndex = channels.findIndex((c) => c.id === channelId)) : false;
+	$: console.log(`🚀 ~ file: MainUI.svelte ~ line 28 ~ messages`, messages);
 	onMount(async () => {
 		servers = await D.readServers('discordDummyData');
 		console.log(`🚀 ~ file: MainUI.svelte ~ line 22 ~ onMount ~ servers`, servers);
 		if (!servers) {
-			servers = await D.generateServers(15);
+			servers = await D.generateServers(30);
 		}
 		// let serverIdInPath = path.split('/')[2];
 		if (serverId !== 'home') {
@@ -43,16 +44,26 @@
 			channels = servers[0].channels;
 		}
 		servers.forEach(async (serv) => {
-			// console.log(`🚀 ~ file: MainUI.svelte ~ line 28 ~ onMount ~ serv`, serv)
-			if (serv.channels.length < 1 && serverIndex) {
-				channels = await D.generateChannels(serverIndex);
+			// console.log(`🚀 ~ file: MainUI.svelte ~ line 28 ~ onMount ~ serv`, serv);
+			// console.log(
+			// 	`🚀 ~ file: MainUI.svelte ~ line 49 ~ servers.forEach ~ serverIndex`,
+			// 	serverIndex
+			// );
+			// console.log(
+			// 	`🚀 ~ file: MainUI.svelte ~ line 50 ~ servers.forEach ~ serverIndex !== "undefined"`,
+			// 	serverIndex !== undefined
+			// );
+			if (serv.channels.length < 1 && serv.id) {
+				channels = await D.generateChannels(serv.id);
+				console.log(`🚀 ~ file: MainUI.svelte ~ line 50 ~ servers.forEach ~ channels`, channels);
 			}
 		});
-		// channels.forEach(async (chan) => {
-		// 	if (chan.messages.length < 1 && channelIndex) {
-		// 		messages = await D.generateMessages(serverIndex, channelIndex);
-		// 	}
-		// });
+		channels.forEach((chan) => {
+            console.log(`🚀 ~ file: MainUI.svelte ~ line 66 ~ channels.forEach ~ chan`, chan)
+			if (chan.messages.length < 1) {
+				messages = D.generateMessages(serverId, chan.id);
+			} 
+		});
 		mounted = true;
 	});
 
@@ -78,7 +89,9 @@
 			<Channels {servers} {serverIndex} />
 		</div>
 		<div class="flex flex-1 flex-col">
-			<Messages {serverIndex} {channelIndex} />
+
+			<Messages {servers} {serverIndex} {channels} {channelIndex} />
+
 			<!--  messages={channels[channelIndex].messages} -->
 		</div>
 	</div>
