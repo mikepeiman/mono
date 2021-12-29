@@ -1,12 +1,30 @@
 <script>
 	import Channel from './Channel.svelte';
+	import IconBadgeCheck from '~icons/bx/bxs-badge-check';
+	import IconChevronDown from '~icons/mdi/chevron-down';
 
 	export let servers, serverIndex;
-    console.log(`🚀 ~ file: Channels.svelte ~ line 5 ~ servers`, servers)
+
+	let server;
+	$: servers ? (server = servers[serverIndex].id) : false;
+	console.log(`🚀 ~ file: Channels.svelte ~ line 5 ~ servers`, servers);
 </script>
 
-<div class="px-3 h-12 shadow-sm z-10 shadow-gray-900 flex flex-shrink-0 items-center font-fira">
-	Channels
+<div class="bg-gray-800  shadow-sm z-10 shadow-gray-900 hover:bg-gray-700/[0.16]">
+	<div
+		class="px-3 h-12 flex flex-shrink-0 items-center font-fira "
+	>
+		<div class="icon-badge-check text-gray-600 relative flex items-center">
+			<div class="bg-white absolute w-3 h-3 rounded-xl -z-10 left-[3px]" />
+			<div class="mr-[2px]">
+				<IconBadgeCheck />
+			</div>
+		</div>
+		{server}
+		<div class="ml-auto opacity-80">
+			<IconChevronDown />
+		</div>
+	</div>
 </div>
 <div class="flex flex-col overflow-y-scroll h-full">
 	<!-- {#if channels} -->
@@ -19,8 +37,9 @@
 	<!-- {/if} -->
 </div>
 
-
 <style lang="scss">
+	.icon-badge-check {
+	}
 	* {
 		scrollbar-width: thin;
 		scrollbar-color: blue orange;

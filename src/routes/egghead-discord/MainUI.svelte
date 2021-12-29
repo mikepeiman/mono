@@ -86,7 +86,7 @@
 			{/if}
 		</div>
 		<div class="bg-gray-800 w-60 flex flex-col">
-			<Channels {servers} {serverIndex} />
+			<Channels {servers} {serverIndex}  />
 		</div>
 		<div class="flex flex-1 flex-col">
 

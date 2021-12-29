@@ -18,9 +18,9 @@
 		<div
 			class="
         {path === `/egghead-discord/${serverId}/${channelId}`
-				? 'bg-sky-600'
-				: 'group-hover:bg-sky-800'} 
-         transition-all duration-200 bg-gray-800 text-white rounded-r relative px-2 ml-2 rounded-sm flex align-center group-active:bg-sky-800"
+				? 'bg-sky-600/[0.32]'
+				: 'group-hover:bg-sky-800/[0.16]'} 
+         transition-all duration-200 bg-gray-800 text-white rounded-r relative px-2 ml-2 rounded-sm flex align-center group-active:bg-sky-800/[0.32]"
 		>
 			<a
 				href="/egghead-discord/{serverId}/{channelId}"
