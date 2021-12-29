@@ -43,7 +43,7 @@
                     flex align-center absolute top-0 right-0 mt-[10px] mr-2"
 					>
 						<IconPersonPlus
-							class="text-blue-300 opacity-1 w-4 h-4 group-hover:opacity-1 transition-all"
+							class="text-sky-300  hover:text-sky-400 opacity-1 w-4 h-4 group-hover:opacity-1 transition-all"
 						/>
 					</div>
 				</div></a

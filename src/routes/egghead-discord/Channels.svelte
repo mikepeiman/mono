@@ -1,16 +1,32 @@
 <script>
+	export let servers, serverIndex;
 	import Channel from './Channel.svelte';
 	import IconBadgeCheck from '~icons/bx/bxs-badge-check';
 	import IconChevronDown from '~icons/mdi/chevron-down';
 	import IconPlaylistCheck from '~icons/gg/play-list-check'; //gg:play-list-check
 	import IconBookBookmark from '~icons/bx/bx-book-bookmark';
 	import IconBullhorn from '~icons/whh/bullhorn';
-    import IconPersonPlus from '~icons/bi/person-plus-fill';
-	export let servers, serverIndex;
-
+	import IconPersonPlus from '~icons/bi/person-plus-fill';
+	import tooltip from '$utils/tooltip.js';
+	import { onMount } from 'svelte';
+	// console.log(`🚀 ~ file: Channels.svelte ~ line 11 ~ tooltip`, tooltip);
+	// import tippy from 'tippy.js';
+	// import 'tippy.js/dist/tippy.css';
 	let server;
 	$: servers ? (server = servers[serverIndex].id) : false;
 	console.log(`🚀 ~ file: Channels.svelte ~ line 5 ~ servers`, servers);
+
+	import tippy, { animateFill } from 'tippy.js';
+	import 'tippy.js/dist/backdrop.css';
+	import 'tippy.js/animations/shift-away.css';
+	let targets;
+	onMount(() => {
+		targets = document.getElementsByClassName('tooltip');
+		// tippy(document.querySelectorAll('.tooltip'), {
+		// 	animateFill: true,
+		// 	plugins: [animateFill]
+		// });
+	});
 </script>
 
 <div class="bg-gray-800  shadow-sm z-10 shadow-gray-900 hover:bg-gray-700/[0.16]">
@@ -29,31 +45,37 @@
 </div>
 <div class="flex flex-col overflow-y-scroll h-full">
 	<div class="header-icons mt-3">
-		<div class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l">
+		<div
+			class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l"
+		>
 			<IconBookBookmark class="w-5 h-5" />
 			<div class="pl-2 font-bold font-cairo">welcome</div>
-            <div class="opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2" >
-                <IconPersonPlus
-                class="text-blue-300 opacity-1 w-4 h-4"
-                        />
-            </div>
+			<div
+				class="opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
+			>
+				<IconPersonPlus class="text-sky-300 opacity-1 w-4 h-4" />
+			</div>
 		</div>
-		<div class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l">
+		<div
+			class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l"
+		>
 			<IconBullhorn class="w-5 h-5" />
 			<div class="pl-2 font-bold font-cairo">announcements</div>
-            <div class="opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2" >
-                <IconPersonPlus
-                class="text-blue-300 opacity-1 w-4 h-4"
-                        />
-            </div>
+			<div
+				class="tooltip fill-gray-300 opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
+				use:tooltip
+				theme="tomato"
+				title="Tooltip here"
+			>
+				<IconPersonPlus class="text-sky-300 hover:text-sky-400 hover:opacity-100 w-4 h-4" />
+			</div>
 		</div>
-
 	</div>
 	<!-- {#if channels} -->
 	{#each servers[serverIndex].channels as channel}
 		<!-- content here -->
 		<Channel serverId={servers[serverIndex].id} channelId={channel.id} />
-		<!-- <div class="bg-blue-900 p-3 flex-1">{channel.id}</div> -->
+		<!-- <div class="bg-sky-900 p-3 flex-1">{channel.id}</div> -->
 	{/each}
 	<!-- {/if} -->
 </div>
@@ -61,6 +83,60 @@
 <style lang="scss">
 	.icon-badge-check {
 	}
+
+	// .tippy-tooltip.tomato-theme {
+	// 	background-color: tomato;
+	// 	color: yellow;
+	// }
+	// .tippy {
+	// 	background-color: tomato;
+	// 	color: yellow;
+	// }
+	// .tippy-box {
+	// 	background: white;
+	// 	fill: green;
+	// }
+	:global(.tippy-box) {
+		background-color: black;
+		// background: black !important;
+		// fill: black !important;
+		// color: white !important;
+		// opacity: 1;
+	}
+	:global(.tippy-backdrop) {
+		background-color: rgba(0, 0, 0, 0);
+		opacity: 0;
+		z-index: -1;
+		&:after {
+			opacity: 0;
+		}
+		&:before {
+			opacity: 0;
+		}
+	}
+	:global(.tippy-box > .tippy-arrow:before) {
+		border-top-color: var(--color-deepreds-900); /* set your color here and use the !important property */
+	}
+	// :global(.tippy-svg-arrow) {
+	// 	background-color: black !important;
+	// 	background: black !important;
+	// 	fill: black !important;
+	// 	color: white !important;
+	// 	// opacity: 0;
+	//     // z-index: -1;
+	// }
+	:global(.tippy-arrow) {
+		color: var(--color-deepreds-900);
+	}
+	:global(.tippy-backdrop:after) {
+		background-color: red !important;
+		background: red !important;
+		fill: red !important;
+		color: white !important;
+		z-index: -1;
+		opacity: 0;
+	}
+
 	* {
 		scrollbar-width: thin;
 		scrollbar-color: blue orange;

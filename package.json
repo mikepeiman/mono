@@ -49,6 +49,7 @@
 		"svelte-color-picker": "^1.0.7",
 		"svelte-select": "^4.4.6",
 		"svelte-time": "^0.6.1",
+		"tippy.js": "^6.3.7",
 		"tweakpane": "^3.0.7"
 	}
 }
