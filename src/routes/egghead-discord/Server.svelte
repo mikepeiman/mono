@@ -4,10 +4,8 @@
 	export let serverId;
 	import { page } from '$app/stores';
 	import Discord from '~icons/my-icons/discord';
-	$: serverId === "home"
-    console.log(`🚀 ~ file: Server.svelte ~ line 7 ~ serverId === "home"`, serverId === "home")
 	$: path = $page.path
-    $: console.log(`🚀 ~ file: Server.svelte ~ line 8 ~ path`, path)
+
 </script>
 
 {#if serverId === "home"}
