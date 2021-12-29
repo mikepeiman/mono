@@ -9,7 +9,7 @@
 </script>
 
 <div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
-	{#if path != '/'}
+	{#if path !== '/' && !path.includes('egghead-discord')}
 	<Nav>
 		<slot />
 	</Nav>
@@ -17,7 +17,7 @@
 		<slot />
 	</div>
 	{:else}
-	<div class="layout-main flex flex-col items-center -mt-12 jutify-center">
+	<div class="layout-main flex flex-col items-center -mt-20 jutify-center">
 		<slot />
 	</div>
 	{/if}
