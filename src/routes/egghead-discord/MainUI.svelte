@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	$: path = $page.path;
-	export let serverId, channelId
+	export let serverId, channelId;
 	import random from 'canvas-sketch-util/random.js';
 	import math from 'canvas-sketch-util/math.js';
 	import Color from 'canvas-sketch-util/color.js';
@@ -27,8 +27,8 @@
 		`🚀 ~ file: MainUI.svelte ~ line 28 ~ serverId *********************************************`,
 		serverId
 	);
-    let idx
-    $: servers ? idx = servers.findIndex((s) => s.id === serverId) : false
+	let serverIndex;
+	$: servers ? (serverIndex = servers.findIndex((s) => s.id === serverId)) : false;
 	onMount(async () => {
 		servers = await D.readServers('discordDummyData');
 		console.log(`🚀 ~ file: MainUI.svelte ~ line 22 ~ onMount ~ servers`, servers);
@@ -36,11 +36,14 @@
 			servers = await D.generateServers(15);
 		}
 		// let serverIdInPath = path.split('/')[2];
-		if (serverId !== "home") {
-            console.log(`🚀 ~ file: MainUI.svelte ~ line 40 ~ onMount ~ serverId`, serverId)
-			let idx = servers.findIndex((s) => s.id === serverId);
-			console.log(`🚀 ~ file: MainUI.svelte ~ line 37 ~ onMount ~ idx @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ `, idx);
-			channels = servers[idx].channels;
+		if (serverId !== 'home') {
+			console.log(`🚀 ~ file: MainUI.svelte ~ line 40 ~ onMount ~ serverId`, serverId);
+			let serverIndex = servers.findIndex((s) => s.id === serverId);
+			console.log(
+				`🚀 ~ file: MainUI.svelte ~ line 37 ~ onMount ~ serverIndex @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ `,
+				serverIndex
+			);
+			channels = servers[serverIndex].channels;
 		} else {
 			channels = servers[0].channels;
 		}
@@ -57,7 +60,8 @@
 	$: console.log(`🚀 ~ file: MainUI.svelte ~ line 32 ~ servers`, servers);
 	import Discord from '~icons/my-icons/discord';
 	import Server from './Server.svelte';
-import Channel from './Channel.svelte';
+	import Channel from './Channel.svelte';
+	import Channels from './Channels.svelte';
 </script>
 
 {#if mounted}
@@ -72,7 +76,6 @@ import Channel from './Channel.svelte';
 				<Discord class="w-7 h-5 " />
 			</a> -->
 
-
 			{#if servers}
 				{#each servers as s}
 					<Server serverId={s.id} />
@@ -80,16 +83,7 @@ import Channel from './Channel.svelte';
 			{/if}
 		</div>
 		<div class="bg-gray-800 w-60 flex flex-col">
-			<div class="px-3 h-12 shadow-sm z-10 shadow-gray-900 flex flex-shrink-0 items-center font-fira">Channels</div>
-			<div class="flex flex-col overflow-y-scroll ">
-				<!-- {#if channels} -->
-				{#each servers[idx].channels as channel}
-					<!-- content here -->
-                    <Channel {serverId} channelId={channel.id} />
-					<!-- <div class="bg-blue-900 p-3 flex-1">{channel.id}</div> -->
-				{/each}
-				<!-- {/if} -->
-			</div>
+			<Channels {servers} {serverIndex} />
 		</div>
 		<div class="flex flex-1 flex-col">
 			<div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-750 flex font-fira">Messages</div>
@@ -105,24 +99,24 @@ import Channel from './Channel.svelte';
 {/if}
 
 <style lang="scss">
-* {
-  scrollbar-width: thin;
-  scrollbar-color: blue orange;
-}
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: blue orange;
+	}
 
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 6px;
-}
+	/* Works on Chrome, Edge, and Safari */
+	*::-webkit-scrollbar {
+		width: 6px;
+	}
 
-*::-webkit-scrollbar-track {
-    @apply bg-gray-800
-}
+	*::-webkit-scrollbar-track {
+		@apply bg-gray-800;
+	}
 
-*::-webkit-scrollbar-thumb {
-//   background-color: orange;
-  border-radius: 2rem;
-  @apply border-4 border-sky-800 bg-sky-600;
-//   border: 5px solid teal;
-}
+	*::-webkit-scrollbar-thumb {
+		//   background-color: orange;
+		border-radius: 2rem;
+		@apply border-4 border-sky-800 bg-sky-600;
+		//   border: 5px solid teal;
+	}
 </style>
