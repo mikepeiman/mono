@@ -103,6 +103,14 @@
 		// color: white !important;
 		// opacity: 1;
 	}
+	:global(.tooltip.tooltip-open:after) {
+		display: none;
+		opacity: 0;
+		// background: black !important;
+		// fill: black !important;
+		// color: white !important;
+		// opacity: 1;
+	}
 	:global(.tippy-backdrop) {
 		background-color: rgba(0, 0, 0, 0);
 		opacity: 0;
@@ -115,7 +123,9 @@
 		}
 	}
 	:global(.tippy-box > .tippy-arrow:before) {
-		border-top-color: var(--color-deepreds-900); /* set your color here and use the !important property */
+		border-top-color: var(
+			--color-deepreds-900
+		); /* set your color here and use the !important property */
 	}
 	// :global(.tippy-svg-arrow) {
 	// 	background-color: black !important;
@@ -127,6 +137,7 @@
 	// }
 	:global(.tippy-arrow) {
 		color: var(--color-deepreds-900);
+		color: black;
 	}
 	:global(.tippy-backdrop:after) {
 		background-color: red !important;
@@ -137,6 +148,10 @@
 		opacity: 0;
 	}
 
+	:global(.tooltip.tooltip-open:after, .tooltip.tooltip-open:before, .tooltip:hover:after, .tooltip:hover:before) {
+		opacity: 0;
+		transition-delay: 0;
+	}
 	* {
 		scrollbar-width: thin;
 		scrollbar-color: blue orange;
