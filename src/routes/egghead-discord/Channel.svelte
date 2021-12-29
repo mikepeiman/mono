@@ -12,7 +12,7 @@
 
 <div class="relative bg-gray-800 group" data-dnd-name="svelte-kit">
 	<div class="relative" role="listitem">
-        <!-- {#if path === `/egghead-discord/${serverId}/${channelId}`}
+		<!-- {#if path === `/egghead-discord/${serverId}/${channelId}`}
              {:else}
         {/if} -->
 		<div
@@ -35,13 +35,14 @@
 				<div class="flex align-center" aria-hidden="true">
 					<IconHashSmall class="mt-1 font-thin text-gray-500" />
 					<div class="text-gray-300">{channelId}</div>
-					<div class="text-fuchsia-300 flex align-center absolute top-0 right-0 mt-[10px] mr-2 text-xs">
+					<div class="
+                    {path === `/egghead-discord/${serverId}/${channelId}`
+							? 'opacity-1'
+							: 'opacity-0 group-hover:opacity-50'} 
+                    text-fuchsia-300 flex align-center absolute top-0 right-0 mt-[12px] mr-2 text-[10px]"
+					>
 						<IconPersonPlus
-							class="
-                            {path === `/egghead-discord/${serverId}/${channelId}`
-                            ? 'opacity-1'
-                            : 'opacity-0'} 
-                            text-blue-300  group-hover:text-fuchsia-400  group-hover:opacity-1"
+							class="text-blue-300 opacity-1  group-hover:opacity-1 transition-all"
 						/>
 					</div>
 				</div></a

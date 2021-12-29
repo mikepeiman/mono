@@ -80,7 +80,7 @@ import Channel from './Channel.svelte';
 			{/if}
 		</div>
 		<div class="bg-gray-800 w-60 flex flex-col">
-			<div class="px-3 h-12 shadow-md flex flex-shrink-0 items-center font-fira">Channels</div>
+			<div class="px-3 h-12 shadow-sm z-10 shadow-gray-900 flex flex-shrink-0 items-center font-fira">Channels</div>
 			<div class="flex flex-col overflow-y-scroll ">
 				<!-- {#if channels} -->
 				{#each servers[idx].channels as channel}
@@ -92,8 +92,8 @@ import Channel from './Channel.svelte';
 			</div>
 		</div>
 		<div class="flex flex-1 flex-col">
-			<div class="p-3 h-12 shadow-md bg-gray-800 flex font-fira">Messages</div>
-			<div class="p-3 bg-gray-700 bg-opacity-80 flex-1 space-y-4 overflow-y-scroll h-full">
+			<div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-750 flex font-fira">Messages</div>
+			<div class="p-3 bg-gray-750  flex-1 space-y-4 overflow-y-scroll h-full">
 				{#if messages}
 					{#each messages as message}
 						<p class="w-full text-2xl">{message}</p>
