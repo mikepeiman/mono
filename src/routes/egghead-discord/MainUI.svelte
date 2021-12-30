@@ -60,7 +60,7 @@
 		});
 		channels.forEach((chan) => {
             console.log(`🚀 ~ file: MainUI.svelte ~ line 66 ~ channels.forEach ~ chan`, chan)
-			if (chan.messages.length < 1) {
+			if (chan.group[0].messages.length < 1) {
 				messages = D.generateMessages(serverId, chan.id);
 			} 
 		});

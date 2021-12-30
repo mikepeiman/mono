@@ -98,20 +98,33 @@ function generateServers(num) {
 
 function generateChannels(serverId) {
     let c = [];
-    [...Array(30)].map(() => {
+    [...Array(5)].map(() => {
         let id = makeid(4);
-        let channelName = generateSlug(2, {
+        let channelGroupName = generateSlug(2, {
             format: 'title',
-            partsOfSpeech: ["adjective", "noun"],
+            partsOfSpeech: ["noun", "noun"],
             categories: {
-                adjective: ["color", "appearance"],
-                noun: ["people", "animals"]
+                // adjective: ["color", "appearance"],
+                noun: ["profession", "technology" | "thing"]
             }
         })
-        console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
-        c.push({ id: `${serverId}-${id}`, name: channelName, messages: [] });
+        console.log(`🚀 ~ file: discord.js ~ line 111 ~ [...Array ~ channelGroupName`, channelGroupName)
+        let channelSubGroup = [];
+        [...Array(5)].map((_, i) => {
+            let channelName = generateSlug(2, {
+                format: 'title',
+                partsOfSpeech: ["adjective", "noun"],
+                categories: {
+                    adjective: ["color", "appearance"],
+                    noun: ["people", "animals"]
+                }
+            })
+            console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
+            channelSubGroup.push({id: `${serverId}-${id}-${i}}`, name: channelName, messages: []})
+        });
+        c.push({ name: channelGroupName, group: channelSubGroup });
     });
-    c = [...new Set(c)]
+    // c = [...new Set(c)]
     let data = readData("discordDummyData")
     if (serverId) {
         let index = data.findIndex(s => s.id === serverId)
