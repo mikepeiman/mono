@@ -1,6 +1,7 @@
 import { writable } from "svelte/store";
 import random from 'canvas-sketch-util/random.js';
 import { LoremIpsum } from 'lorem-ipsum';
+import { generateSlug } from "random-word-slugs";
 
 const lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -14,36 +15,34 @@ const lorem = new LoremIpsum({
 });
 
 
-const servers = writable({})
-const channels = writable({})
-// const discord = writable({})
-const messages = writable([])
-// const discordData = writable({})
+// const servers = writable({})
+// const channels = writable({})
+// const messages = writable([])
 
 
-export const serversStore = {
-    subscribe: servers.subscribe,
-    set: val => {
-        servers.set(val);
-        localStorage.setItem("servers", JSON.stringify(val));
-    }
-};
+// export const serversStore = {
+//     subscribe: servers.subscribe,
+//     set: val => {
+//         servers.set(val);
+//         localStorage.setItem("servers", JSON.stringify(val));
+//     }
+// };
 
-export const channelsStore = {
-    subscribe: channels.subscribe,
-    set: val => {
-        channels.set(val);
-        localStorage.setItem("channels", JSON.stringify(val));
-    }
-};
+// export const channelsStore = {
+//     subscribe: channels.subscribe,
+//     set: val => {
+//         channels.set(val);
+//         localStorage.setItem("channels", JSON.stringify(val));
+//     }
+// };
 
-export const messagesStore = {
-    subscribe: messages.subscribe,
-    set: val => {
-        messages.set(val);
-        localStorage.setItem("messages", JSON.stringify(val));
-    }
-};
+// export const messagesStore = {
+//     subscribe: messages.subscribe,
+//     set: val => {
+//         messages.set(val);
+//         localStorage.setItem("messages", JSON.stringify(val));
+//     }
+// };
 
 // export const discordStore = {
 //     subscribe: discord.subscribe,
@@ -93,7 +92,16 @@ function generateChannels(serverId) {
     let c = [];
     [...Array(30)].map(() => {
         let id = makeid(4);
-        c.push({ id: `${serverId}-${id}`, messages: [] });
+        let channelName = generateSlug(2, {
+            format: 'title',
+            partsOfSpeech: ["adjective", "noun"],
+            categories: {
+                adjective: ["color", "appearance"],
+                noun: ["people", "animals"]
+            }
+        })
+        console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
+        c.push({ id: `${serverId}-${id}`, label: channelName, messages: [] });
     });
     c = [...new Set(c)]
     let data = readData("discordDummyData")
@@ -117,17 +125,17 @@ function generateMessages(serverId, channelId) {
     });
     let data = readData("discordDummyData")
     console.log(`🚀 ~ file: discord.js ~ line 116 ~ generateMessages ~ data`, data)
-    if(serverId) {
-    let serverIndex = data.findIndex(s => s.id === serverId)
-    console.log(`🚀 ~ file: discord.js ~ line 115 ~ generateMessages ~ serverIndex`, serverIndex)
-    let channels = data[serverIndex].channels
-    console.log(`🚀 ~ file: discord.js ~ line 117 ~ generateMessages ~ channels `, channels )
-    let channelIndex = channels.findIndex(c => c.id === channelId)
-    // console.log(`🚀 ~ file: discord.js ~ line 119 ~ generateMessages ~ channelIndex`, channelIndex)
-    // console.log(`🚀 ~ file: discord.js ~ line 121 ~ generateMessages ~ data[serverIndex].channels[channelIndex]`, data[serverIndex].channels[channelIndex])
-    data[serverIndex].channels[channelIndex].messages = m
-    saveData("discordDummyData", data)
-    }   
+    if (serverId) {
+        let serverIndex = data.findIndex(s => s.id === serverId)
+        console.log(`🚀 ~ file: discord.js ~ line 115 ~ generateMessages ~ serverIndex`, serverIndex)
+        let channels = data[serverIndex].channels
+        console.log(`🚀 ~ file: discord.js ~ line 117 ~ generateMessages ~ channels `, channels)
+        let channelIndex = channels.findIndex(c => c.id === channelId)
+        // console.log(`🚀 ~ file: discord.js ~ line 119 ~ generateMessages ~ channelIndex`, channelIndex)
+        // console.log(`🚀 ~ file: discord.js ~ line 121 ~ generateMessages ~ data[serverIndex].channels[channelIndex]`, data[serverIndex].channels[channelIndex])
+        data[serverIndex].channels[channelIndex].messages = m
+        saveData("discordDummyData", data)
+    }
     return m;
 }
 

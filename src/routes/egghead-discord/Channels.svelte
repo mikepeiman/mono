@@ -3,8 +3,14 @@
 	import Channel from './Channel.svelte';
 	import IconBadgeCheck from '~icons/bx/bxs-badge-check';
 	import IconChevronDown from '~icons/mdi/chevron-down';
+	import IconChevronDownBx from '~icons/bx/bx-chevron-down';
+	import IconChevronDownBxs from '~icons/bx/bxs-chevron-down';
+	import IconChevronRightBxs from '~icons/bx/bxs-chevron-right';
+	import IconChevronDownAkar from '~icons/akar-icons/chevron-down';
+	import IconChevronRight from '~icons/mdi/chevron-right';
 	import IconPlaylistCheck from '~icons/gg/play-list-check'; //gg:play-list-check
 	import IconBookBookmark from '~icons/bx/bx-book-bookmark';
+	import IconCalendarEvent from '~icons/bx/bxs-calendar-event';
 	import IconBullhorn from '~icons/whh/bullhorn';
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
 	import tooltip from '$utils/tooltip.js';
@@ -48,6 +54,17 @@
 		<div
 			class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l"
 		>
+			<IconCalendarEvent class="w-5 h-5" />
+			<div class="pl-2 font-bold font-cairo">events</div>
+			<div
+				class="opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
+			>
+				<IconPersonPlus class="text-sky-300 opacity-1 w-4 h-4" />
+			</div>
+		</div>
+		<div
+			class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l"
+		>
 			<IconBookBookmark class="w-5 h-5" />
 			<div class="pl-2 font-bold font-cairo">welcome</div>
 			<div
@@ -71,10 +88,17 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="mt-[21px] mb-1">
+		<button class="flex items-center px-0 5 text-xs uppercase  font-bold text-gray-500">
+			<IconChevronDownBxs class="w-3 h-3 ml-[2px] mr-0.5" />
+			<div class="font-body tracking-wide">TailwindCSS</div>
+		</button>
+	</div>
 	<!-- {#if channels} -->
 	{#each servers[serverIndex].channels as channel}
 		<!-- content here -->
-		<Channel serverId={servers[serverIndex].id} channelId={channel.id} />
+		<Channel serverId={servers[serverIndex].id} channelId={channel.id} channelName={channel.label} />
 		<!-- <div class="bg-sky-900 p-3 flex-1">{channel.id}</div> -->
 	{/each}
 	<!-- {/if} -->

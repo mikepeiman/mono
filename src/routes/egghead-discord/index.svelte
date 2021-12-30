@@ -5,7 +5,7 @@
 	import { LoremIpsum } from 'lorem-ipsum';
 	import SvgIcon from '$components/SvgIcon.svelte';
 	import { onMount } from 'svelte';
-	import { serversStore, channelsStore, messagesStore } from '$stores/discord.js';
+	// import { serversStore, channelsStore, messagesStore } from '$stores/discord.js';
 	const lorem = new LoremIpsum({
 		sentencesPerParagraph: {
 			min: 1,

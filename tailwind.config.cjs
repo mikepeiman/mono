@@ -11,8 +11,14 @@ module.exports = {
       'mono': ['Inconsolata', ...defaultTheme.fontFamily.mono],
       'display': ['Vollkorn', ...defaultTheme.fontFamily.sans],
       'body': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'open': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
       'cairo': ['Cairo', '"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'merriweather': ['Merriweather', '"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'eczar': ['Eczar', '"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'vollkorn': ['Vollkorn',  ...defaultTheme.fontFamily.serif],
+      'newsreader': ['Newsreader', ...defaultTheme.fontFamily.serif],
       'fira': ['"Fira Sans"', '"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'josefin': ['"Josefin Sans"', '"Open Sans"', ...defaultTheme.fontFamily.sans],
 
     },
     extend: {

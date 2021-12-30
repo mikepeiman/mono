@@ -1,5 +1,5 @@
 <script>
-	export let serverId, channelId;
+	export let serverId, channelId, channelName;
 	import { page } from '$app/stores';
 	import Discord from '~icons/my-icons/discord';
 	$: channelId === 'home';
@@ -34,7 +34,7 @@
 				</div>
 				<div class="flex align-center" aria-hidden="true">
 					<IconHashSmall class="mt-1 font-thin text-gray-500" />
-					<div class="text-gray-300 pl-2">{channelId}</div>
+					<div class="text-gray-300 pl-2">{channelName}</div>
 					<div
 						class="
                     {path === `/egghead-discord/${serverId}/${channelId}`
