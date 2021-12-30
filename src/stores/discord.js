@@ -80,10 +80,18 @@ function generateServers(num) {
     let s = [];
     [...Array(num)].map(() => {
         let id = makeid(2);
-        s.push({ id: `${id}`, channels: [] });
+        let serverName = generateSlug(2, {
+            format: 'title',
+            partsOfSpeech: ["adjective", "noun"],
+            categories: {
+                adjective: ["color", "appearance"],
+                noun: ["people", "animals"]
+            }
+        })
+        s.push({ id: `${id}`, name: serverName, channels: [] });
     });
     s = [...new Set(s)]
-    s = [{ id: "home", channels: [] }, ...s]
+    s = [{ id: "home", name: "My Discord", channels: [] }, ...s]
     saveData("discordDummyData", s)
     return s;
 }
@@ -101,7 +109,7 @@ function generateChannels(serverId) {
             }
         })
         console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
-        c.push({ id: `${serverId}-${id}`, label: channelName, messages: [] });
+        c.push({ id: `${serverId}-${id}`, name: channelName, messages: [] });
     });
     c = [...new Set(c)]
     let data = readData("discordDummyData")

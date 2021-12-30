@@ -19,7 +19,7 @@
 	// import tippy from 'tippy.js';
 	// import 'tippy.js/dist/tippy.css';
 	let server;
-	$: servers ? (server = servers[serverIndex].id) : false;
+	$: servers ? (server = servers[serverIndex].name) : false;
 	console.log(`🚀 ~ file: Channels.svelte ~ line 5 ~ servers`, servers);
 
 	import tippy, { animateFill } from 'tippy.js';
@@ -98,7 +98,7 @@
 	<!-- {#if channels} -->
 	{#each servers[serverIndex].channels as channel}
 		<!-- content here -->
-		<Channel serverId={servers[serverIndex].id} channelId={channel.id} channelName={channel.label} />
+		<Channel serverId={servers[serverIndex].id} channelId={channel.id} channelName={channel.name} />
 		<!-- <div class="bg-sky-900 p-3 flex-1">{channel.id}</div> -->
 	{/each}
 	<!-- {/if} -->

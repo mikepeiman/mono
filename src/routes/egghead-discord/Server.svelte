@@ -1,7 +1,7 @@
 
 
 <script>
-	export let serverId;
+	export let serverId, serverName;
 	import { page } from '$app/stores';
 	import Discord from '~icons/my-icons/discord';
 	$: path = $page.path

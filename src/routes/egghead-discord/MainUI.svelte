@@ -81,7 +81,7 @@
 		<div class="bg-gray-800 p-3 space-y-2 overflow-y-scroll">
 			{#if servers}
 				{#each servers as s}
-					<Server serverId={s.id} />
+					<Server serverId={s.id} serverName={s.name} />
 				{/each}
 			{/if}
 		</div>
