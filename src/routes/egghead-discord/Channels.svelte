@@ -81,35 +81,12 @@
 </div>
 
 <style lang="scss">
-	.icon-badge-check {
-	}
-
-	// .tippy-tooltip.tomato-theme {
-	// 	background-color: tomato;
-	// 	color: yellow;
-	// }
-	// .tippy {
-	// 	background-color: tomato;
-	// 	color: yellow;
-	// }
-	// .tippy-box {
-	// 	background: white;
-	// 	fill: green;
-	// }
 	:global(.tippy-box) {
 		background-color: black;
-		// background: black !important;
-		// fill: black !important;
-		// color: white !important;
-		// opacity: 1;
 	}
 	:global(.tooltip.tooltip-open:after) {
 		display: none;
 		opacity: 0;
-		// background: black !important;
-		// fill: black !important;
-		// color: white !important;
-		// opacity: 1;
 	}
 	:global(.tippy-backdrop) {
 		background-color: rgba(0, 0, 0, 0);
@@ -123,35 +100,19 @@
 		}
 	}
 	:global(.tippy-box > .tippy-arrow:before) {
-		border-top-color: var(
-			--color-deepreds-900
-		); /* set your color here and use the !important property */
+		border-top-color: black;
 	}
-	// :global(.tippy-svg-arrow) {
-	// 	background-color: black !important;
-	// 	background: black !important;
-	// 	fill: black !important;
-	// 	color: white !important;
-	// 	// opacity: 0;
-	//     // z-index: -1;
-	// }
 	:global(.tippy-arrow) {
 		color: var(--color-deepreds-900);
 		color: black;
-	}
-	:global(.tippy-backdrop:after) {
-		background-color: red !important;
-		background: red !important;
-		fill: red !important;
-		color: white !important;
-		z-index: -1;
-		opacity: 0;
 	}
 
 	:global(.tooltip.tooltip-open:after, .tooltip.tooltip-open:before, .tooltip:hover:after, .tooltip:hover:before) {
 		opacity: 0;
 		transition-delay: 0;
 	}
+
+    // scrollbar styles
 	* {
 		scrollbar-width: thin;
 		scrollbar-color: blue orange;
