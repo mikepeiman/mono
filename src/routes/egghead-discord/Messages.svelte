@@ -42,7 +42,7 @@
 <div class="p-3 bg-gray-750  flex-1 space-y-4 overflow-y-scroll h-full">
 	{#if messages}
 		{#each messages as message}
-			<p class="w-full text-2xl">{message}</p>
+			<p class="w-full text-xl">{message}</p>
 		{/each}
 	{/if}
 </div>

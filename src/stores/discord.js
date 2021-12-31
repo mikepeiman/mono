@@ -120,7 +120,7 @@ function generateChannels(serverId) {
                 }
             })
             console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
-            channelSubGroup.push({id: `${serverId}-${id}-${i}`, subGroupId: `${serverId}-${id}`, name: channelName, messages: []})
+            channelSubGroup.push({id: `${serverId}-${id}-${i}`, subGroupId: `${serverId}-${id}`, icon: '', name: channelName, messages: []})
         });
         c.push({ id: `${serverId}-${id}`, name: channelGroupName, channels: channelSubGroup });
     });

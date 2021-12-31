@@ -15,6 +15,8 @@
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
 	import tooltip from '$utils/tooltip.js';
 	import { onMount } from 'svelte';
+	import icons from '$lib/icons.js'
+    console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ icons`, icons)
 	// console.log(`🚀 ~ file: Channels.svelte ~ line 11 ~ tooltip`, tooltip);
 	// import tippy from 'tippy.js';
 	// import 'tippy.js/dist/tippy.css';
