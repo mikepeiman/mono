@@ -1,7 +1,8 @@
 <script>
-	export let serverId, channelId, channelName;
+	export let serverId, channelId, channel, channelName;
 	import { page } from '$app/stores';
 	import Discord from '~icons/my-icons/discord';
+	import Icon from '@iconify/svelte';
 	$: channelId === 'home';
 	console.log(`🚀 ~ file: Server.svelte ~ line 7 ~ channelId === "home"`, channelId === 'home');
 	$: path = $page.path;
@@ -33,7 +34,8 @@
 					<!-- channel indicator icon -->
 				</div>
 				<div class="flex align-center" aria-hidden="true">
-					<IconHashSmall class="mt-1 font-thin text-gray-500" />
+					<Icon class="mt-0.5 font-thin h-5 w-5 text-gray-500" icon={channel.icon} />
+					<!-- <IconHashSmall class="mt-1 font-thin text-gray-500" /> -->
 					<div class="text-gray-300 pl-2">{channelName}</div>
 					<div
 						class="

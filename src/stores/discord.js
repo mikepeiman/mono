@@ -108,7 +108,7 @@ function generateChannels(serverId) {
                 noun: ["profession", "technology" | "thing"]
             }
         })
-        console.log(`🚀 ~ file: discord.js ~ line 111 ~ [...Array ~ channelGroupName`, channelGroupName)
+        // console.log(`🚀 ~ file: discord.js ~ line 111 ~ [...Array ~ channelGroupName`, channelGroupName)
         let channelSubGroup = [];
         [...Array(5)].map((_, i) => {
             let channelName = generateSlug(2, {
@@ -119,8 +119,26 @@ function generateChannels(serverId) {
                     noun: ["people", "animals"]
                 }
             })
-            console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
-            channelSubGroup.push({id: `${serverId}-${id}-${i}`, subGroupId: `${serverId}-${id}`, icon: '', name: channelName, messages: []})
+            let incidenceRate = 5
+            let icon = 'line-md:hash-small'
+            let channelIcons = ['line-md:hash-small', 'heroicons-solid:chat-alt']
+            let randomStateDecider = Math.floor(Math.random() * incidenceRate)
+            if(randomStateDecider == 0){
+                let random = Math.floor(Math.random() * channelIcons.length)
+                icon = channelIcons[random]
+                console.log(`🚀 ~ file: discord.js ~ line 129 ~ [...Array ~ icon`, icon)
+            }
+            console.log(`🚀 ~ file: discord.js ~ line 124 ~ [...Array ~ randomStateDecider`, randomStateDecider)
+            // console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
+            channelSubGroup.push({ 
+                id: `${serverId}-${id}-${i}`, 
+                subGroupId: `${serverId}-${id}`, 
+                icon: icon,
+                active: true,
+                read: true,
+                name: channelName, 
+                messages: []
+            })
         });
         c.push({ id: `${serverId}-${id}`, name: channelGroupName, channels: channelSubGroup });
     });

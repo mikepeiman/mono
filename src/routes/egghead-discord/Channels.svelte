@@ -103,7 +103,7 @@
 	</div>
 	{#each channelGroup.channels as channel}
 		 <!-- content here -->
-		 <Channel serverId={servers[serverIndex].id} channelId={channel.id} channelName={channel.name} />
+		 <Channel serverId={servers[serverIndex].id} channelId={channel.id} {channel} channelName={channel.name} />
 	{/each}
 		<!-- <div class="bg-sky-900 p-3 flex-1">{channel.id}</div> -->
 	{/each}
