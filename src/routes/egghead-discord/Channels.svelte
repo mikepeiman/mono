@@ -15,8 +15,11 @@
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
 	import tooltip from '$utils/tooltip.js';
 	import { onMount } from 'svelte';
-	import icons from '$lib/icons.js'
-    console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ icons`, icons)
+	import IconSets from '$lib/icons.js'
+	import Icon from '@iconify/svelte';
+    console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ IconSets`, IconSets)
+    console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ BX `, IconSets.bx)
+    // console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ icons`, icons)
 	// console.log(`🚀 ~ file: Channels.svelte ~ line 11 ~ tooltip`, tooltip);
 	// import tippy from 'tippy.js';
 	// import 'tippy.js/dist/tippy.css';
@@ -56,6 +59,7 @@
 		<div
 			class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l"
 		>
+
 			<IconCalendarEvent class="w-5 h-5" />
 			<div class="pl-2 font-bold font-cairo">events</div>
 			<div
@@ -66,7 +70,7 @@
 		</div>
 		<div
 			class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l"
-		>
+		>		<Icon icon="bx:bx-book-bookmark" class="w-5 h-5" />
 			<IconBookBookmark class="w-5 h-5" />
 			<div class="pl-2 font-bold font-cairo">welcome</div>
 			<div

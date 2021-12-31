@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@iconify-json/bx": "^1.0.3",
 		"@iconify-json/mdi-light": "^1.0.1",
 		"@iconify/collections": "^1.0.39",
 		"@iconify/svelte": "^2.1.0",

@@ -19,8 +19,8 @@
 	onMount(() => {
 		// resizeCanvases();
 	});
-	import { collections } from '@iconify/collections';
-	console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections.fa);
+	// import { collections } from '@iconify/collections';
+	// console.log(`🚀 ~ file: index.svelte ~ line 18 ~ collections`, collections.fa);
 
 	import { page } from '$app/stores';
 	$: path = $page.path;
