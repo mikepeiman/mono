@@ -88,17 +88,17 @@
 			</div>
 		</div>
 	</div>
-
+	{#each servers[serverIndex].channels as channelGroup}
 	<div class="mt-[21px] mb-1">
 		<button class="flex items-center px-0 5 text-xs uppercase  font-bold text-gray-500">
 			<IconChevronDownBxs class="w-3 h-3 ml-[2px] mr-0.5" />
-			<div class="font-body tracking-wide">TailwindCSS</div>
+			<div class="font-body tracking-wide">{channelGroup.name}</div>
 		</button>
 	</div>
-	<!-- {#if channels} -->
-	{#each servers[serverIndex].channels as channel}
-		<!-- content here -->
-		<Channel serverId={servers[serverIndex].id} channelId={channel.id} channelName={channel.name} />
+	{#each channelGroup.channels as channel}
+		 <!-- content here -->
+		 <Channel serverId={servers[serverIndex].id} channelId={channel.id} channelName={channel.name} />
+	{/each}
 		<!-- <div class="bg-sky-900 p-3 flex-1">{channel.id}</div> -->
 	{/each}
 	<!-- {/if} -->

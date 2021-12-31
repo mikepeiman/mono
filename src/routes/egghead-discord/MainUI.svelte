@@ -58,12 +58,25 @@
 				console.log(`🚀 ~ file: MainUI.svelte ~ line 50 ~ servers.forEach ~ channels`, channels);
 			}
 		});
-		channels.forEach((chan) => {
-            console.log(`🚀 ~ file: MainUI.svelte ~ line 66 ~ channels.forEach ~ chan`, chan)
-			if (chan.group[0].messages.length < 1) {
-				messages = D.generateMessages(serverId, chan.id);
-			} 
+		channels.forEach(async (chan) => {
+			console.log(`🚀 ~ file: MainUI.svelte ~ line 62 ~ channels.forEach ~ chan!!!!!!!!`, chan);
+			chan['channels'].forEach((subChannel) => {
+				console.log(
+					`🚀 ~ file: MainUI.svelte ~ line 67 ~ chan['groups'].forEach ~ subChannel`,
+					subChannel
+				);
+
+				if (subChannel.messages.length < 1) {
+					console.log(
+						`🚀 ~ file: MainUI.svelte ~ line 67 ~ channels.forEach ~ chan.id, group.id: `,
+						chan.id,
+						subChannel.id
+					);
+					messages = D.generateMessages(serverId, chan.id);
+				}
+			});
 		});
+
 		mounted = true;
 	});
 
@@ -86,10 +99,9 @@
 			{/if}
 		</div>
 		<div class="bg-gray-800 w-60 flex flex-col">
-			<Channels {servers} {serverIndex}  />
+			<Channels {servers} {serverIndex} />
 		</div>
 		<div class="flex flex-1 flex-col">
-
 			<Messages {servers} {serverIndex} {channels} {channelIndex} />
 
 			<!--  messages={channels[channelIndex].messages} -->

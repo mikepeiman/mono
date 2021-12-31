@@ -25,59 +25,8 @@
 		existingServerList = true;
 	}
 	onMount(() => {
-		serversLS = localStorage.getItem('servers');
-		channelsLS = localStorage.getItem('channels');
-		messagesLS = localStorage.getItem('messages');
-		if (serversLS) {
-			existingServerList = true;
-		}
-		if (!existingServerList) {
-			servers = [];
-			channels = [];
-			messages = [];
-			[...Array(40)].map((_, i) => {
-				let id = makeid(2);
-				let channel = makeid(random.range(6, 18));
-				let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
-				servers.push(id);
-				channels.push(channel);
-				messages.push(message);
-			});
-			serversStore.set(servers);
-			channelsStore.set(channels);
-			messagesStore.set(messages);
-		} else {
-			servers = JSON.parse(serversLS)
-			channels = JSON.parse(channelsLS)
-			messages = JSON.parse(messagesLS)
-		}
 		mounted = true;
 	});
-
-	function makeid(length) {
-		var result = '';
-		var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-		var charactersLength = characters.length;
-		for (var i = 0; i < length; i++) {
-			result += characters.charAt(Math.floor(Math.random() * charactersLength));
-		}
-		return result;
-	}
-	let discord_src = 'svg/discord.svg';
-	let alpha = 'abcdefghijklmnopqrstuvwxyz';
-	let discordData = {};
-
-	// discordData.servers = servers;
-	// servers.forEach((id) => {
-	// 	discordData[id] = { id, channels: channels };
-	// 	channels.forEach((channel) => {
-	// 		discordData[id].channels[channel] = messages;
-	// 	});
-	// });
-
-	// console.log(`🚀 ~ file: __layout.svelte ~ line 45 ~ servers.forEach ~ discordData`, discordData);
-
-	// $: servers, channels, messages;
 
 	import { page } from '$app/stores';
 	import Server from './Server.svelte';
