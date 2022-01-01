@@ -9,7 +9,12 @@
 	// $: console.log(`🚀 ~ file: Server.svelte ~ line 8 ~ path`, path)
 	import IconHashSmall from '~icons/line-md/hash-small';
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
-
+	function channelUpdate() {
+		channel
+        console.log(`🚀 ~ file: Channel.svelte ~ line 15 ~ channelUpdate ~ channel`, channel)
+		channel.read = true
+        console.log(`🚀 ~ file: Channel.svelte ~ line 15 ~ channelUpdate ~ channel`, channel)
+	}
 	$: active = path === `/egghead-discord/${serverId}/${channelId}`;
 </script>
 
@@ -26,6 +31,7 @@
 			<a
 				href="/egghead-discord/{serverId}/{channelId}"
 				role="link"
+				on:click={() => channelUpdate()}
 				class="flex-1 py-[6px] cursor-pointer relative"
 				data-list-item-id="channels___819723698415599626"
 				tabindex="-1"
@@ -49,10 +55,10 @@
 						{/if}
 					</div>
 					<div
-						class="{active && channel.read ? 'text-sky-200' : ' active:text-gray-400'}
-						{active && !channel.read ? 'text-sky-200' : ' active:text-gray-400'}
-						{!active && !channel.read ? 'text-white' : ' active:text-gray-400'}
-					 pl-2"
+						class="{active && channel.read ? 'text-sky-200' : 'active:text-gray-400 '}
+						{active && !channel.read ? 'text-sky-200 active:text-white' : ' '}
+						{!active && !channel.read ? 'text-white active:text-sky-200' : ' '}
+						 pl-2"
 					>
 						{channelName.toLowerCase()}
 					</div>
