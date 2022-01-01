@@ -34,9 +34,16 @@
 					<!-- channel indicator icon -->
 				</div>
 				<div class="flex align-center" aria-hidden="true">
-					<Icon class="mt-0.5 font-thin h-5 w-5 text-gray-500" icon={channel.icon} />
-					<!-- <IconHashSmall class="mt-1 font-thin text-gray-500" /> -->
-					<div class="text-gray-300 pl-2">{channelName}</div>
+					<div class="relative w-6 h-6 -mt-[2px]">
+					{#if channel.icon === 'heroicons-solid:chat-alt'}
+							<IconHashSmall class="absolute mt-1 w-6 h-6 font-thin text-gray-500" />
+							<Icon class="absolute mt-0.5 font-thin h-3 w-3  z-10  text-gray-500 left-3 -bottom-[3px] bg-gray-800 rounded-sm" icon={channel.icon} />
+
+					{:else}
+						<Icon class="mt-0.5 font-thin  w-6 h-6 text-gray-500" icon={channel.icon} />
+					{/if}
+				</div>
+					<div class="text-gray-300 pl-2">{channelName.toLowerCase()}</div>
 					<div
 						class="
                     {path === `/egghead-discord/${serverId}/${channelId}`
