@@ -26,24 +26,32 @@
 			<a
 				href="/egghead-discord/{serverId}/{channelId}"
 				role="link"
-				class="flex-1 py-[6px] cursor-pointer"
+				class="flex-1 py-[6px] cursor-pointer relative"
 				data-list-item-id="channels___819723698415599626"
 				tabindex="-1"
 				aria-label="unread, svelte-kit (text channel)"
-				><div aria-label="Text (Active Threads)" class="iconContainer-1BBaeJ">
-					<!-- channel indicator icon -->
+				>
+				{#if !channel.read}
+				<div aria-label="Text (Active Threads)" class="absolute  top-3.5 -left-4 -ml-1">
+					<div class="bg-white w-2 h-2 rounded"></div>
 				</div>
+				{/if}
 				<div class="flex align-center" aria-hidden="true">
 					<div class="relative w-6 h-6 -mt-[2px]">
-					{#if channel.icon === 'heroicons-solid:chat-alt'}
+						{#if channel.icon === 'heroicons-solid:chat-alt'}
 							<IconHashSmall class="absolute mt-1 w-6 h-6 font-thin text-gray-500" />
-							<Icon class="absolute mt-0.5 font-thin h-3 w-3  z-10  text-gray-500 left-3 -bottom-[3px] bg-gray-800 rounded-sm" icon={channel.icon} />
-
-					{:else}
-						<Icon class="mt-0.5 font-thin  w-6 h-6 text-gray-500" icon={channel.icon} />
-					{/if}
-				</div>
-					<div class="text-gray-300 pl-2">{channelName.toLowerCase()}</div>
+							<Icon
+								class="absolute mt-0.5 font-thin h-3 w-3  z-10  text-gray-500 left-3 -bottom-[3px] bg-gray-800 rounded-sm"
+								icon={channel.icon}
+							/>
+						{:else}
+							<Icon class="mt-0.5 font-thin  w-6 h-6 text-gray-500" icon={channel.icon} />
+						{/if}
+					</div>
+					<div class="{channel.read 
+					? "text-gray-300" 
+					: "text-white"}
+					 pl-2">{channelName.toLowerCase()}</div>
 					<div
 						class="
                     {path === `/egghead-discord/${serverId}/${channelId}`

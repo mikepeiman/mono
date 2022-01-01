@@ -116,17 +116,21 @@ function generateChannels(serverId) {
                 partsOfSpeech: ["adjective", "noun"],
                 categories: {
                     adjective: ["color", "appearance"],
-                    noun: ["people", "animals"]
+                    noun: ["things", "animals"]
                 }
             })
             let incidenceRate = 5
             let icon = 'line-md:hash-small'
             let channelIcons = ['line-md:hash-small', 'heroicons-solid:chat-alt']
             let randomStateDecider = Math.floor(Math.random() * incidenceRate)
+            let channelRead = true
             if(randomStateDecider == 0){
                 let random = Math.floor(Math.random() * channelIcons.length)
                 icon = channelIcons[random]
                 console.log(`🚀 ~ file: discord.js ~ line 129 ~ [...Array ~ icon`, icon)
+            }
+            if(randomStateDecider == 0 || randomStateDecider == 2|| randomStateDecider == 4){
+                channelRead = false
             }
             console.log(`🚀 ~ file: discord.js ~ line 124 ~ [...Array ~ randomStateDecider`, randomStateDecider)
             // console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
@@ -134,8 +138,7 @@ function generateChannels(serverId) {
                 id: `${serverId}-${id}-${i}`, 
                 subGroupId: `${serverId}-${id}`, 
                 icon: icon,
-                active: true,
-                read: true,
+                read: channelRead,
                 name: channelName, 
                 messages: []
             })
