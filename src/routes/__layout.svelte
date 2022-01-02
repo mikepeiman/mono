@@ -8,25 +8,35 @@
     $: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path)
 </script>
 
-<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
+
 	{#if path !== '/' && !path.includes('egghead-discord')}
+	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
 	<Nav>
 		<slot />
 	</Nav>
 	<div class="layout-main flex flex-col items-center jutify-center">
 		<slot />
 	</div>
+	<Footer />
+</div>
+	{:else if path === '/'}
+	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
+	<div class="layout-main flex flex-col -mt-20 items-center jutify-center">
+		<slot />
+	</div>
+	<Footer />
+	</div>
 	{:else}
-	<div class="layout-main flex flex-col items-center -mt-20 jutify-center">
+	<div class="layout-main flex flex-col items-center jutify-center">
 		<slot />
 	</div>
 	{/if}
 
-
-	<Footer />
-</div>
-
 <style lang="scss">
+
+	:global(#svelte) {
+		min-height: 100vh;
+	}
 	:global(#app-layout) {
 		// height: 100vh;
 		// width: 100vw;

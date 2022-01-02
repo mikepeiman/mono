@@ -4,25 +4,34 @@
 	import { createEventDispatcher } from 'svelte'
 	const dispatch = createEventDispatcher();
 	import Icon from '@iconify/svelte';
-	$: channelId === 'home';
-	console.log(`🚀 ~ file: Server.svelte ~ line 7 ~ channelId === "home"`, channelId === 'home');
+	// $: channelId === 'home';
+	// console.log(`🚀 ~ file: Server.svelte ~ line 7 ~ channelId === "home"`, channelId === 'home');
 	$: path = $page.path;
-	// $: console.log(`🚀 ~ file: Server.svelte ~ line 8 ~ path`, path)
+	// $: console.log(`🚀 ~ file: Channel.svelte ~ line 8 ~ path`, path)
+	// $: console.log(`🚀 ~ file: Channel.svelte ~ line 8 ~ path`, path.split("/")[3])
 	import IconHashSmall from '~icons/line-md/hash-small';
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
 	
 	function channelUpdate() {
 		channel.read = true;
 		dispatch("dispatch", { channelRead: true })
+		// channelName = channel.name
 	}
+	$: channelId
+    $: console.log(`🚀 ~ file: Channel.svelte ~ line 20 ~ channelId`, channelId)
+    $: console.log(`🚀 ~ file: Channel.svelte ~ line 19 ~ channelName`, channelName)
 	$: active = path === `/egghead-discord/${serverId}/${channelId}`;
+    $: console.log(`🚀 ~ file: Channel.svelte ~ line 24 ~ active`, active, channelName)
+
 </script>
+
+
+<svelte:head>
+	<title>{active ? channelName : ""}</title>
+</svelte:head>
 
 <div class="relative bg-gray-800 group" data-dnd-name="svelte-kit">
 	<div class="relative" role="listitem">
-		<!-- {#if path === `/egghead-discord/${serverId}/${channelId}`}
-             {:else}
-        {/if} -->
 		<div
 			class="
         {active && channel.read ? 'bg-sky-600/[0.32]' : 'group-hover:bg-sky-800/[0.16]'} 
