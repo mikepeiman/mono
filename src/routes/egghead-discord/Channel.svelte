@@ -1,7 +1,8 @@
 <script>
 	export let serverId, channelId, channel, channelName;
 	import { page } from '$app/stores';
-	import Discord from '~icons/my-icons/discord';
+	import { createEventDispatcher } from 'svelte'
+	const dispatch = createEventDispatcher();
 	import Icon from '@iconify/svelte';
 	$: channelId === 'home';
 	console.log(`🚀 ~ file: Server.svelte ~ line 7 ~ channelId === "home"`, channelId === 'home');
@@ -9,11 +10,10 @@
 	// $: console.log(`🚀 ~ file: Server.svelte ~ line 8 ~ path`, path)
 	import IconHashSmall from '~icons/line-md/hash-small';
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
+	
 	function channelUpdate() {
-		channel
-        console.log(`🚀 ~ file: Channel.svelte ~ line 15 ~ channelUpdate ~ channel`, channel)
-		channel.read = true
-        console.log(`🚀 ~ file: Channel.svelte ~ line 15 ~ channelUpdate ~ channel`, channel)
+		channel.read = true;
+		dispatch("dispatch", { channelRead: true })
 	}
 	$: active = path === `/egghead-discord/${serverId}/${channelId}`;
 </script>
@@ -45,13 +45,19 @@
 				<div class="flex align-center text-gray-500" aria-hidden="true">
 					<div class="relative w-6 h-6 -mt-[2px]">
 						{#if channel.icon === 'heroicons-solid:chat-alt'}
-							<IconHashSmall class="absolute mt-1 w-6 h-6 font-thin text-gray-500" />
+							<IconHashSmall class="
+							{active ? "text-sky-400" : ""}
+							absolute mt-1 w-6 h-6 font-thin " />
 							<Icon
-								class="absolute mt-0.5 font-thin h-3 w-3  z-10   left-3 -bottom-[3px] bg-gray-800 rounded-sm"
+								class="
+								{active ? "text-sky-200" : ""}
+								absolute mt-0.5 font-thin h-3 w-3  z-10 left-3 -bottom-[3px] bg-gray-800 rounded-sm"
 								icon={channel.icon}
 							/>
 						{:else}
-							<Icon class="mt-0.5 font-thin  w-6 h-6 text-gray-500" icon={channel.icon} />
+							<Icon class="
+							{active ? "text-sky-400" : ""}
+							mt-0.5 font-thin  w-6 h-6 " icon={channel.icon} />
 						{/if}
 					</div>
 					<div

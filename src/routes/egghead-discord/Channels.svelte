@@ -58,6 +58,23 @@
 		D.update(servers);
 		servers = servers;
 	}
+
+	function receiveChannelDispatch(channelGroup) {
+		channelGroup['channels'].forEach((chan) => {
+			if (channelGroup.open) {
+				if (chan.read) {
+					chan.open = true;
+				}
+			} else {
+				if (chan.read) {
+					chan.open = false;
+				}
+			}
+		});
+
+		D.update(servers);
+		servers = servers;
+	}
 </script>
 
 <div class="bg-gray-800  shadow-sm z-10 shadow-gray-900 hover:bg-gray-700/[0.16]">
@@ -126,7 +143,7 @@
 				<IconChevronDownBxs
 					class="
 			{channelGroup.open === false ? '-rotate-90' : ''}
-			w-3 h-3 ml-[2px] mr-0.5 transition-all"
+			w-3 h-3 ml-[2px] mr-0.5 transition-all duration-200"
 				/>
 				<div class="font-body tracking-wide ">{channelGroup.name}</div>
 			</button>
@@ -139,6 +156,7 @@
 					channelId={channel.id}
 					{channel}
 					channelName={channel.name}
+					on:dispatch={() => receiveChannelDispatch(channelGroup)}
 				/>
 			{/if}
 		{/each}
