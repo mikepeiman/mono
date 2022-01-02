@@ -2,6 +2,8 @@ import { writable } from "svelte/store";
 import random from 'canvas-sketch-util/random.js';
 import { LoremIpsum } from 'lorem-ipsum';
 import { generateSlug } from "random-word-slugs";
+import faker from 'faker'
+
 
 const lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -15,9 +17,6 @@ const lorem = new LoremIpsum({
 });
 
 
-// const servers = writable({})
-// const channels = writable({})
-// const messages = writable([])
 const pageTitle = writable([])
 
 
@@ -28,30 +27,6 @@ export const pageTitleStore = {
         localStorage.setItem("pageTitle", JSON.stringify(val));
     }
 };
-
-// export const channelsStore = {
-//     subscribe: channels.subscribe,
-//     set: val => {
-//         channels.set(val);
-//         localStorage.setItem("channels", JSON.stringify(val));
-//     }
-// };
-
-// export const messagesStore = {
-//     subscribe: messages.subscribe,
-//     set: val => {
-//         messages.set(val);
-//         localStorage.setItem("messages", JSON.stringify(val));
-//     }
-// };
-
-// export const discordStore = {
-//     subscribe: discord.subscribe,
-//     set: val => {
-//         discord.set(val);
-//         localStorage.setItem("discord", JSON.stringify(val));
-//     }
-// };
 
 function discord() {
     const { subscribe, set, update } = writable(0)
@@ -189,7 +164,15 @@ function generateMessages(serverId, channelId) {
             let m = [];
             [...Array(30)].map(() => {
                 let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
-                m.push(message);
+                faker.seed(Math.random())
+                let avatar = faker.image.cats()
+                let username = faker.name.firstName() + faker.name.lastName()
+                let messageObj = {
+                    username: username,
+                    avatar: avatar,
+                    message: message
+                }
+                m = [...m, messageObj]
             });
             subChannel.messages = m
 
