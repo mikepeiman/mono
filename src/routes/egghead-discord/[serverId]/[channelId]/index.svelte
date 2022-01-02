@@ -20,7 +20,6 @@
 		existingServerList = true;
 	}
 	onMount(() => {
-
 	});
 </script>
 

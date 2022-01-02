@@ -17,13 +17,16 @@
 	import { onMount } from 'svelte';
 	import IconSets from '$lib/icons.js';
 	import Icon from '@iconify/svelte';
-	console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ IconSets`, IconSets);
-	console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ BX `, IconSets.bx);
+	// console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ IconSets`, IconSets);
+	// console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ BX `, IconSets.bx);
 	import { D } from '$stores/discord.js';
-	// console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ icons`, icons)
-	// console.log(`🚀 ~ file: Channels.svelte ~ line 11 ~ tooltip`, tooltip);
-	// import tippy from 'tippy.js';
-	// import 'tippy.js/dist/tippy.css';
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+	function channelUpdate() {
+        console.log(`🚀 ~ file: Channels.svelte ~ line 26 ~ channelUpdate ~ dispatch`)
+		dispatch('dispatch', 'channel clicked');
+		// channelName = channel.name
+	}
 	let server;
 	$: servers ? (server = servers[serverIndex].name) : false;
 
@@ -74,6 +77,7 @@
 
 		D.update(servers);
 		servers = servers;
+		channelUpdate()
 	}
 </script>
 
