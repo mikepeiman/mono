@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
+	import { pageTitleStore } from '$stores/discord.js';
 	import Icon from '@iconify/svelte';
 	// $: channelId === 'home';
 	// console.log(`🚀 ~ file: Server.svelte ~ line 7 ~ channelId === "home"`, channelId === 'home');
@@ -15,14 +16,10 @@
 	function channelUpdate() {
 		channel.read = true;
 		dispatch('dispatch', { channelRead: true });
-		// channelName = channel.name
+		pageTitleStore.set(channelName);
 	}
-
-
 	$: active = path === `/egghead-discord/${serverId}/${channelId}`;
-
 </script>
-
 
 <div class="relative bg-gray-800 group" data-dnd-name="svelte-kit">
 	<div class="relative" role="listitem">

@@ -41,40 +41,8 @@
 	import Server from './Server.svelte';
 	import Channels from './Channels.svelte';
 	import Messages from './Messages.svelte';
-	let channelName, title;
-	// $: servers ? (title = locateChannelName()) : 'Discord xx';
-	$: active = path === `/egghead-discord/${serverId}/${channelId}`;
-	$: console.log(`🚀 ~ file: Channel.svelte ~ line 24 ~ active`, active, channelId);
-	// $: title = active ? channelName : 'Discord';
-	$: console.log(`🚀 ~ file: Channel.svelte ~ line 28 ~ title`, title);
 
-	function locateChannelName() {
-		channels.forEach((channelGroup) => {
-			// console.log(`🚀 ~ file: index.svelte ~ line 23 ~ locatechannelGroupName ~ channelGroup`, channelGroup)
-			channelGroup.channels.forEach((channel) => {
-				console.log(
-					`🚀 ~ file: MainUI.svelte ~ line 73 ~ channelGroup.channels.forEach ~ channel`,
-					channel.name
-				);
-				console.log(`🚀 ~ file: MainUI.svelte ~ line 60 ~ channelGroup.channels.forEach ~ channelId`, channelId)
-				console.log(`🚀 ~ file: MainUI.svelte ~ line 61 ~ channelGroup.channels.forEach ~ channel.id`, channel.id)
-				if (channel.id === channelId) {
-                    console.log(`🚀 ~ ***************************************************************** ${channel.name} file: MainUI.svelte ~ line 62 ~ channelGroup.channels.forEach ~ channel.id === channelId`, channel.id === channelId)
-					return title = channel.name;
-				}
-			});
-		});
-	}
-
-	async function registerDispatch(d) {
-		title = await locateChannelName();
-		console.log(`🚀 ~ file: MainUI.svelte ~ line 78 ~ registerDispatch ~ title`, title);
-	}
 </script>
-
-<svelte:head>
-	<title>{title}</title>
-</svelte:head>
 
 {#if mounted}
 	<div class="flex flex-row text-white h-screen w-full">
@@ -86,7 +54,7 @@
 			{/if}
 		</div>
 		<div class="bg-gray-800 w-60 flex flex-col">
-			<Channels {servers} {serverIndex} on:dispatch={registerDispatch} />
+			<Channels {servers} {serverIndex}  />
 		</div>
 		<div class="flex flex-1 flex-col">
 			<Messages {servers} {serverIndex} {channels} {channelIndex} />

@@ -18,15 +18,16 @@ const lorem = new LoremIpsum({
 // const servers = writable({})
 // const channels = writable({})
 // const messages = writable([])
+const pageTitle = writable([])
 
 
-// export const serversStore = {
-//     subscribe: servers.subscribe,
-//     set: val => {
-//         servers.set(val);
-//         localStorage.setItem("servers", JSON.stringify(val));
-//     }
-// };
+export const pageTitleStore = {
+    subscribe: pageTitle.subscribe,
+    set: val => {
+        pageTitle.set(val);
+        localStorage.setItem("pageTitle", JSON.stringify(val));
+    }
+};
 
 // export const channelsStore = {
 //     subscribe: channels.subscribe,

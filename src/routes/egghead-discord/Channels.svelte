@@ -22,15 +22,10 @@
 	import { D } from '$stores/discord.js';
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
-	function channelUpdate() {
-        console.log(`🚀 ~ file: Channels.svelte ~ line 26 ~ channelUpdate ~ dispatch`)
-		dispatch('dispatch', 'channel clicked');
-		// channelName = channel.name
-	}
+
 	let server;
 	$: servers ? (server = servers[serverIndex].name) : false;
 
-	console.log(`🚀 ~ file: Channels.svelte ~ line 5 ~ servers`, servers);
 
 	import tippy, { animateFill } from 'tippy.js';
 	import 'tippy.js/dist/backdrop.css';
@@ -77,7 +72,6 @@
 
 		D.update(servers);
 		servers = servers;
-		channelUpdate()
 	}
 </script>
 
