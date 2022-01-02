@@ -64,8 +64,13 @@ function discord() {
         generateMessages: (serverId, channelId) => generateMessages(serverId, channelId),
         clearData: () => {
             servers.set({})
-        }
+        },
+        update: (data) => updateDiscordStores(data)
     }
+}
+
+function updateDiscordStores(data) {
+    saveData("discordDummyData", data)
 }
 
 function getServerData(serverId) {
@@ -137,13 +142,15 @@ function generateChannels(serverId) {
             channelSubGroup.push({ 
                 id: `${serverId}-${id}-${i}`, 
                 subGroupId: `${serverId}-${id}`, 
+                serverId: `${serverId}`,
+                open: true,
                 icon: icon,
                 read: channelRead,
                 name: channelName, 
                 messages: []
             })
         });
-        c.push({ id: `${serverId}-${id}`, name: channelGroupName, channels: channelSubGroup });
+        c.push({ serverId: `${serverId}`, id: `${serverId}-${id}`, name: channelGroupName, open: true, channels: channelSubGroup });
     });
     // c = [...new Set(c)]
     let data = readData("discordDummyData")
