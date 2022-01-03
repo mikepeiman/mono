@@ -17,34 +17,44 @@
 			}
 		});
 	}
-	let messages, date
-	$: date = new Date()
-    $: console.log(`🚀 ~ file: Messages.svelte ~ line 22 ~ date`, date)
+	let messages, date;
+	$: date = new Date();
+	$: console.log(`🚀 ~ file: Messages.svelte ~ line 22 ~ date`, date);
 	$: console.log(faker.date.recent(parseInt(random.range(0, 30)).toString(), date));
 	$: console.log(`"${parseInt(random.range(0, 30)).toString()}"`);
-	$: console.log(`Date.now()  ---  `,Date.now());
+	$: console.log(`Date.now()  ---  `, Date.now());
 	$: console.log(faker.date.recent());
 	$: server && channelId ? matchChannelGroup() : false;
 	$: server = servers[serverIndex];
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 9 ~ server`, server);
-	$: channel ? (messages = channel[0].messages.sort((a,b )=> new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime() )) : false;
+	$: channel
+		? (messages = channel[0].messages.sort(
+				(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
+		  ))
+		: false;
 </script>
 
 <div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">Messages</div>
 <div class="p-3 bg-gray-750  flex-1 space-y-4 overflow-y-scroll h-full">
 	{#if messages}
 		{#each messages as message}
-			<div class="flex">
+			<div class="flex mb-[17px]">
 				{#if message.avatar}
-					<img src={message.avatar} class="w-10 h-10 rounded-[40px]" />
+					<img src={message.avatar} class="w-10 h-10 rounded-[40px] ml-1 mr-4" />
 				{/if}
-				<p>{message.username}</p>
-				<!-- Date: {new Date(message.datePosted).getTime()} -->
-				{#if message.datePosted}
-				<Time timestamp={message.datePosted} />
-				{/if}
+				<div class="flex flex-col pl-18 -ml-18">
+					<div class="flex">
+						<p class="text-amber-600 font-bold">{message.username}</p>
+						<!-- Date: {new Date(message.datePosted).getTime()} -->
+						{#if message.datePosted}
+							<div class="pl-2 text-gray-500 text-sm font-medium self-center flex ">
+								<Time timestamp={message.datePosted} />
+							</div>
+						{/if}
+					</div>
+					<p class="w-full text-base font-light">{message.message}</p>
+				</div>
 			</div>
-			<p class="w-full text-xl">{message.message}</p>
 		{/each}
 	{/if}
 </div>

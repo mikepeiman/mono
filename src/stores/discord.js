@@ -138,7 +138,6 @@ function generateChannels(serverId) {
     return c;
 }
 function generateMessages(serverId, channelId) {
-    console.log(`🚀 ~ file: discord.js ~ line 108 ~ generateMessages ~ serverId, channelId`, serverId, channelId)
     channelId < 0 ? channelId = 0 : channelId
     // console.log(`🚀 ~ file: discord.js ~ line 108 ~ generateMessages ~ channelIndex`, channelIndex)
     // console.log(`🚀 ~ file: discord.js ~ line 108 ~ generateMessages ~ serverIndex`, serverIndex)
@@ -148,19 +147,12 @@ function generateMessages(serverId, channelId) {
         m.push(message);
     });
     let data = readData("discordDummyData")
-    // console.log(`🚀 ~ file: discord.js ~ line 116 ~ generateMessages ~ data`, data)
     if (serverId) {
         let serverIndex = data.findIndex(s => s.id === serverId)
-        console.log(`🚀 ~ file: discord.js ~ line 115 ~ generateMessages ~ serverIndex`, serverIndex)
         let channels = data[serverIndex].channels
-        console.log(`🚀 ~ file: discord.js ~ line 117 ~ generateMessages ~ channelId, channels @@@###@@@###@@@### `, channelId, channels)
         let channelIndex = channels.findIndex(c => c.id === channelId)
-        console.log(`🚀 ~ file: discord.js ~ line 119 ~ generateMessages ~ channelIndex`, channelIndex)
-        console.log(`🚀 ~ file: discord.js ~ line 121 ~ generateMessages ~ data[serverIndex].channels[channelIndex]`, data[serverIndex].channels[channelIndex])
         let subChannelGroup = data[serverIndex].channels[channelIndex]
-        console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ subChannelGroup`, subChannelGroup)
         subChannelGroup['channels'].forEach(subChannel => {
-            console.log(`🚀 ~ file: discord.js ~ line 162 ~ generateMessages ~ subChannel`, subChannel)
             let m = [];
             [...Array(30)].map(() => {
                 let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
@@ -176,7 +168,6 @@ function generateMessages(serverId, channelId) {
         })
         let date = new Date()
         subChannelGroup['channels'].forEach(subChannel => {
-            console.log(`🚀 ~ file: discord.js ~ line 162 ~ generateMessages ~ subChannel`, subChannel)
             subChannel['messages'].forEach((messageObj) => {
                 let avatar = `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`
                 // let avatar = `${faker.image.nature()}?random=${Math.random() * 10000}`
@@ -185,10 +176,6 @@ function generateMessages(serverId, channelId) {
                 messageObj['avatar'] = avatar
                 messageObj['datePosted'] = faker.date.recent(parseInt(random.range(0, 30)), date)
             })
-        })
-        subChannelGroup['channels'].forEach(subChannel => {
-            console.log(`🚀 ~ file: discord.js ~ line 162 ~ generateMessages ~ subChannel`, subChannel)
-            subChannel['messages'].sort(m, n =>  new Date(m.datePosted).getTime() -  new Date(n.datePosted).getTime())
         })
 
         // data[serverIndex].channels[channelIndex].messages = m
