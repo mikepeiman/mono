@@ -105,24 +105,24 @@ function generateChannels(serverId) {
             let channelIcons = ['line-md:hash-small', 'heroicons-solid:chat-alt']
             let randomStateDecider = Math.floor(Math.random() * incidenceRate)
             let channelRead = true
-            if(randomStateDecider == 0){
+            if (randomStateDecider == 0) {
                 let random = Math.floor(Math.random() * channelIcons.length)
                 icon = channelIcons[random]
                 console.log(`🚀 ~ file: discord.js ~ line 129 ~ [...Array ~ icon`, icon)
             }
-            if(randomStateDecider == 0 || randomStateDecider == 2|| randomStateDecider == 4){
+            if (randomStateDecider == 0 || randomStateDecider == 2 || randomStateDecider == 4) {
                 channelRead = false
             }
             console.log(`🚀 ~ file: discord.js ~ line 124 ~ [...Array ~ randomStateDecider`, randomStateDecider)
             // console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
-            channelSubGroup.push({ 
-                id: `${serverId}-${id}-${i}`, 
-                subGroupId: `${serverId}-${id}`, 
+            channelSubGroup.push({
+                id: `${serverId}-${id}-${i}`,
+                subGroupId: `${serverId}-${id}`,
                 serverId: `${serverId}`,
                 open: true,
                 icon: icon,
                 read: channelRead,
-                name: channelName, 
+                name: channelName,
                 messages: []
             })
         });
@@ -174,17 +174,23 @@ function generateMessages(serverId, channelId) {
             subChannel.messages = m
 
         })
+        let date = new Date()
         subChannelGroup['channels'].forEach(subChannel => {
             console.log(`🚀 ~ file: discord.js ~ line 162 ~ generateMessages ~ subChannel`, subChannel)
-            let m = 
             subChannel['messages'].forEach((messageObj) => {
-                let avatar = `${faker.image.nature()}?random=${Math.random() * 10000}`
+                let avatar = `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`
+                // let avatar = `${faker.image.nature()}?random=${Math.random() * 10000}`
                 let username = faker.name.firstName() + faker.name.lastName()
                 messageObj['username'] = username
-                messageObj['avatar'] =avatar
-
+                messageObj['avatar'] = avatar
+                messageObj['datePosted'] = faker.date.recent(parseInt(random.range(0, 30)), date)
             })
         })
+        subChannelGroup['channels'].forEach(subChannel => {
+            console.log(`🚀 ~ file: discord.js ~ line 162 ~ generateMessages ~ subChannel`, subChannel)
+            subChannel['messages'].sort(m, n =>  new Date(m.datePosted).getTime() -  new Date(n.datePosted).getTime())
+        })
+
         // data[serverIndex].channels[channelIndex].messages = m
         saveData("discordDummyData", data)
     }
