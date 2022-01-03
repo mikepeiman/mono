@@ -164,12 +164,9 @@ function generateMessages(serverId, channelId) {
             let m = [];
             [...Array(30)].map(() => {
                 let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
-                faker.seed(Math.random())
-                let avatar = faker.image.cats()
-                let username = faker.name.firstName() + faker.name.lastName()
                 let messageObj = {
-                    username: username,
-                    avatar: avatar,
+                    username: "username",
+                    avatar: "avatar",
                     message: message
                 }
                 m = [...m, messageObj]
@@ -177,7 +174,18 @@ function generateMessages(serverId, channelId) {
             subChannel.messages = m
 
         })
-        data[serverIndex].channels[channelIndex].messages = m
+        subChannelGroup['channels'].forEach(subChannel => {
+            console.log(`🚀 ~ file: discord.js ~ line 162 ~ generateMessages ~ subChannel`, subChannel)
+            let m = 
+            subChannel['messages'].forEach((messageObj) => {
+                let avatar = `${faker.image.nature()}?random=${Math.random() * 10000}`
+                let username = faker.name.firstName() + faker.name.lastName()
+                messageObj['username'] = username
+                messageObj['avatar'] =avatar
+
+            })
+        })
+        // data[serverIndex].channels[channelIndex].messages = m
         saveData("discordDummyData", data)
     }
     return m;
