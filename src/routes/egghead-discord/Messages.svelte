@@ -27,17 +27,17 @@
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 25 ~ dataNeedsReload`, dataNeedsReload);
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 28 ~ channel`, channel);
 
-	onMount(() => {
-		console.log('%c⧭', 'color: #00a3cc', onMount);
-		discordData = D.load();
-		getThisChannelFromId();
-		dataNeedsReload ? (discordData = D.load()) : false;
-		// channel ? getMessagesFromChannel() : false
-		mounted = true;
-	});
+	// onMount(() => {
+	// 	console.log('%c⧭', 'color: #00a3cc', onMount);
+	// 	discordData = D.load();
+	// 	getThisChannelFromId();
+	// 	dataNeedsReload ? (discordData = D.load()) : false;
+	// 	// channel ? getMessagesFromChannel() : false
+	// 	mounted = true;
+	// });
 
 	afterUpdate(() => {
-		console.log('%c⧭', 'color: #aa00ff', afterUpdate);
+		console.log('%c⧭', 'color: #aa00ff', 'afterUpdate()');
 		discordData = D.load();
 		getThisChannelFromId();
 	});

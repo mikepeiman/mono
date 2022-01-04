@@ -38,26 +38,29 @@
 	async function getThisChannelFromId() {
 		let serverIndex = discordData.findIndex((s) => s.id === serverId);
 		let server = discordData[serverIndex];
-		server.channels.forEach(async (channelGroup) => {
-			// console.log(`🚀 ~ file: index.svelte ~ line 37 ~ onMount ~ channelGroup`, channelGroup)
-			// return channelGroup.channels.filter(c => channel.id === channelId)
-			channelGroup.channels.forEach(async (channel) => {
-				// console.log(`🚀 ~ file: index.svelte ~ line 39 ~ onMount ~ channelId ${channelId} ::: `, channel.name)
-				if (channel.id === channelId) {
-					// console.log(`@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@`, channel);
-					console.log(
-						`%c@@@@@@@@@@@@@@@@ CHANNEL ${channel.name} @@@@@@@@@@@@@@@@@@@`,
-						'color:#aa33cc; font-size: 1rem;',
-						channel
-					);
-					messages = channel.messages;
-					console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
-					if (messages.length < 1) {
-						messages = await D.generateMessages(serverId, channelId);
+		if(server) {
+
+			server.channels.forEach(async (channelGroup) => {
+				// console.log(`🚀 ~ file: index.svelte ~ line 37 ~ onMount ~ channelGroup`, channelGroup)
+				// return channelGroup.channels.filter(c => channel.id === channelId)
+				channelGroup.channels.forEach(async (channel) => {
+					// console.log(`🚀 ~ file: index.svelte ~ line 39 ~ onMount ~ channelId ${channelId} ::: `, channel.name)
+					if (channel.id === channelId) {
+						// console.log(`@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@`, channel);
+						console.log(
+							`%c@@@@@@@@@@@@@@@@ CHANNEL ${channel.name} @@@@@@@@@@@@@@@@@@@`,
+							'color:#aa33cc; font-size: 1rem;',
+							channel
+						);
+						messages = channel.messages;
+						console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
+						if (messages.length < 1) {
+							messages = await D.generateMessages(serverId, channelId);
+						}
 					}
-				}
+				});
 			});
-		});
+		}
 	}
 </script>
 

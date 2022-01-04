@@ -161,14 +161,14 @@ async function generateMessages(serverId, channelId) {
         channelGroup.channels.forEach(async channel => {
             if (channel.id === channelId) {
                 console.log(`🚀 ~ file: discord.js ~ line 164 ~ generateMessages ~ channel`, channel)
-                messages = await generateChannelMessages(discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex])
-                discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex] = messages
+                messages = generateChannelMessages(discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex])
+                discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex] = await messages
                 console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channel.messages`, channel.messages)
             }
         })
     })
-    saveData("discordDummyData", discordData)
     console.log(`%c🚀 ~ file: discord.js ~ line 171 ~ AFTER generateMessages ~ discordData`, 'color: #0099ff',discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex].messages)
+    saveData("discordDummyData", discordData)
 }
  function generateChannelMessages(channel) {
     let messages = [];
