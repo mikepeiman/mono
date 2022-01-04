@@ -26,13 +26,6 @@
 				channels = await D.generateChannels(serv.id);
 			}
 		});
-		channels.forEach(async (chan) => {
-			chan['channels'].forEach((subChannel) => {
-				if (subChannel.messages.length < 1) {
-					messages = D.generateMessages(serverId, chan.id);
-				}
-			});
-		});
 
 		mounted = true;
 	});
