@@ -47,6 +47,7 @@
 		chatAlertMdi: 'mdi:chat-alert',
 		chatBaseline: 'ic:baseline-chat',
 		chatHeroiconsSquares: 'heroicons-solid:chat',
+		chatHeroicons: 'heroicons-solid:chat-alt',
 		lockBx: 'bx:bxs-lock-alt',
 		lockBxOpen: 'bx:bxs-lock-open-alt',
 		lockFaOpen: 'fa-solid:lock-open',
@@ -68,6 +69,8 @@
 		toolsFa: 'fa-solid:tools',
 		people: 'fluent:people-community-16-filled',
 		peopleAdd: 'fluent:people-community-add-20-filled',
+		peopleBaseline: 'ic:baseline-people-alt',
+		peopleBi: 'bi:people-fill',
 		inbox: 'bi:inbox-fill',
 		questionCircle: 'bi:question-circle-fill'
 	};
@@ -110,8 +113,34 @@
 </script>
 
 <div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">
-	<Icon icon={headerIcons.hashtag} class="mt-0.5 h-5 w-5 text-gray-500 mr-1"	/>
+	<Icon icon={headerIcons.hashtag} class="mt-0.5 h-5 w-5 text-sky-700 mr-1" />
 	{thisChannel.name.toLowerCase()}
+	<div class="flex items-center ml-auto">
+		<button class="text-gray-400 hover:text-sky-700">
+			<div class="relative w-6 h-6 -mt-2 mx-2">
+				<Icon icon={headerIcons.hashtag} class="absolute mt-0.5 w-7 h-7 font-thin " />
+				<Icon
+					class="absolute mt-0.5 font-thin h-3.5 w-3.5  z-10 left-3.5 -bottom-[5px] bg-gray-800 rounded-sm"
+					icon={headerIcons.chatHeroicons}
+				/>
+			</div>
+		</button>
+		<button class="text-gray-400 hover:text-sky-700">
+			<Icon icon={headerIcons.bell} class="w-6 h-6 mx-2" />
+		</button>
+		<button class="text-gray-400 hover:text-sky-700">
+			<Icon icon={headerIcons.pin} class="w-6 h-6 mx-2" />
+		</button>
+		<button class="text-gray-400 hover:text-sky-700">
+			<Icon icon={headerIcons.peopleBi} class="w-6 h-6 mx-2" />
+		</button>
+		<button class="text-gray-400 hover:text-sky-700">
+			<Icon icon={headerIcons.inbox} class="w-6 h-6 mx-2" />
+		</button>
+		<button class="text-gray-400 hover:text-sky-700">
+			<Icon icon={headerIcons.questionCircle} class="w-5 h-5 mx-2" />
+		</button>
+	</div>
 </div>
 <div class="p-3 bg-gray-750  flex-1 space-y-4 overflow-y-scroll h-full">
 	{#if messages}
