@@ -14,50 +14,47 @@
 	$: path = $page.path;
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 
-	let discordData, messages, channel;
-	beforeUpdate(() => {
-		discordData = D.load();
-		getThisChannelFromId()
-	});
-	
-	onMount(() => {
-		discordData = D.load();
-		getThisChannelFromId()
-
-	})
-
-	// afterUpdate(() => {
+	let discordData, messages;
+	// beforeUpdate(() => {
 	// 	discordData = D.load();
+	// 	// messages = D.generateMessages(serverId, channelId);
 	// 	getThisChannelFromId();
 	// });
-	$: channel
-		? console.log(`$$$$$$$$$$$$$$$$$$$   ${channel.name}   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$`)
-		: {};
 
-	function getThisChannelFromId() {
+	// onMount(() => {
+	// 	discordData = D.load();
+	// 	getThisChannelFromId()
+
+	// })
+
+	afterUpdate(() => {
+		discordData = D.load();
+		getThisChannelFromId();
+	});
+	// $: channel
+	// 	? console.log(`$$$$$$$$$$$$$$$$$$$   ${channel.name}   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$`)
+	// 	: {};
+
+	async function getThisChannelFromId() {
 		let serverIndex = discordData.findIndex((s) => s.id === serverId);
 		let server = discordData[serverIndex];
-		server.channels.forEach((channelGroup) => {
+		server.channels.forEach(async (channelGroup) => {
 			// console.log(`🚀 ~ file: index.svelte ~ line 37 ~ onMount ~ channelGroup`, channelGroup)
-			// return channelGroup.channels.filter(c => c.id === channelId)
-			channelGroup.channels.forEach(c => {
+			// return channelGroup.channels.filter(c => channel.id === channelId)
+			channelGroup.channels.forEach(async (channel) => {
 				// console.log(`🚀 ~ file: index.svelte ~ line 39 ~ onMount ~ channelId ${channelId} ::: `, channel.name)
-				if (c.id === channelId) {
-					channel = c;
-					console.log(`@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@`, c);
-					console.log(`@@@@@@@@@@@@@@@@   ${c.name}    @@@@@@@@@@@@@@@@@@@`);
-					messages = c.messages;
-					console.log(`?????????????????????? channel.messages ::::   `, c.messages);
+				if (channel.id === channelId) {
+					// console.log(`@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@`, channel);
+					console.log(
+						`%c@@@@@@@@@@@@@@@@ CHANNEL ${channel.name} @@@@@@@@@@@@@@@@@@@`,
+						'color:#aa33cc; font-size: 1rem;',
+						channel
+					);
+					messages = channel.messages;
+					console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
 					if (messages.length < 1) {
-						messages = D.generateMessages(serverId, channelId);
-						console.log(
-							`************************************* after generateMessages,  messages ::::  `,
-							messages
-						);
+						messages = await D.generateMessages(serverId, channelId);
 					}
-					// console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MATCH !!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-					// messages = c.messages
-					// return c.messages
 				}
 			});
 		});
@@ -65,5 +62,5 @@
 </script>
 
 <!-- {#await messages} -->
-<MainUi {serverId} {channelId} {messages} />
+<MainUi {serverId} {channelId} />
 <!-- {/await} -->

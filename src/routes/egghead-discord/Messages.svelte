@@ -1,37 +1,103 @@
 <script>
-	export let serverIndex, channelIndex, servers, channels, messages;
+	export let serverId, channelId;
 	// console.log(`🚀 ~ file: Messages.svelte ~ line 4 ~ messages`, messages)
 	import { page } from '$app/stores';
 	import faker from 'faker';
 	import random from 'canvas-sketch-util/random.js';
 	import Time from 'svelte-time';
 	import { D } from '$stores/discord.js';
-
+	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 	$: params = $page.params;
 	$: channelId = params.channelId;
+	$: serverId = params.serverId;
+	let messages;
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 12 ~ params`, params);
-	let channel;
-	function getMessages() {
-		if (channel[0].messages.length < 1) {
-            console.log(`🚀 ~ file: Messages.svelte ~ line 16 ~ getMessages ~ channel[0].messages`, channel[0].messages)
-			return
+	// $: mounted ? messages = getMessages() : false
+	$: console.log(`🚀 ~ file: Messages.svelte ~ line 17 ~ channel`, channel);
+	let discordData, channel;
+	// beforeUpdate(() => {
+	// 	discordData = D.load();
+	// 	// messages = D.generateMessages(serverId, channelId);
+	// 	getThisChannelFromId()
+	// 	getMessagesFromChannel()
+	// });
+	$: channel ? (messages = channel.messages) : [];
+	let mounted = false;
+	let dataNeedsReload = false;
+	$: console.log(`🚀 ~ file: Messages.svelte ~ line 25 ~ dataNeedsReload`, dataNeedsReload);
+	$: console.log(`🚀 ~ file: Messages.svelte ~ line 28 ~ channel`, channel);
+
+	onMount(() => {
+		console.log('%c⧭', 'color: #00a3cc', onMount);
+		discordData = D.load();
+		getThisChannelFromId();
+		dataNeedsReload ? (discordData = D.load()) : false;
+		// channel ? getMessagesFromChannel() : false
+		mounted = true;
+	});
+
+	afterUpdate(() => {
+		console.log('%c⧭', 'color: #aa00ff', afterUpdate);
+		discordData = D.load();
+		getThisChannelFromId();
+	});
+
+	async function getThisChannelFromId() {
+		let serverIndex = discordData.findIndex((s) => s.id === serverId);
+		let server = discordData[serverIndex];
+		server.channels.forEach(async (channelGroup) => {
+			// console.log(`🚀 ~ file: index.svelte ~ line 37 ~ onMount ~ channelGroup`, channelGroup)
+			// return channelGroup.channels.filter(c => channel.id === channelId)
+			channelGroup.channels.forEach(async (channel) => {
+				// console.log(`🚀 ~ file: index.svelte ~ line 39 ~ onMount ~ channelId ${channelId} ::: `, channel.name)
+				if (channel.id === channelId) {
+					console.log(
+						`%c@@@@@@@@@@@@@@@@ CHANNEL ${channel.name} @@@@@@@@@@@@@@@@@@@`,
+						'color:#0033ff; font-size: 1rem;',
+						channel
+					);
+					messages = channel.messages;
+					console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
+					// if (messages.length < 1) {
+					// 	messages = await D.generateMessages(serverId, channelId);
+					// 	console.log(
+					// 		`************************************* after generateMessages,  messages ::::  `,
+					// 		messages
+					// 	);
+					// }
+					// // console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MATCH !!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+					// messages = channel.messages;
+					// console.log(
+					// 	`************************************* after reassignment,  messages ::::  `,
+					// 	messages
+					// );
+					// return channel.messages
+				}
+			});
+		});
+	}
+
+	function getMessagesFromChannel() {
+		if (channel.messages.length < 1) {
+			discordData = D.load();
+			getThisChannelFromId();
+			console.log(
+				`🚀 ~ file: Messages.svelte ~ line 16 ~ getMessages ~ NO MESSAGES!!! `,
+				channel.messages
+			);
+			return;
 			// D.generateMessages(server.id, channelGroup.id);
 		} else {
-			
+			console.log(
+				`🚀 ~ file: Messages.svelte ~ line 16 ~ getMessages ~ YES MESSAGES!!! `,
+				channel.messages
+			);
+			messages = channel.messages;
 			// channel[0].messages = messages = D.loadMessages()
-            console.log(`🚀 ~ file: Messages.svelte ~ line 22 ~ getMessages ~ channel[0]`, channel[0])
 			// messages.sort(
 			// 	(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
 			// );
 		}
-		// channels.forEach(async (chan) => {
-		// 	chan['channels'].forEach(async (subChannel) => {
-		// 		// console.log(`🚀 ~ file: MainUI.svelte ~ line 31 ~ chan['channels'].forEach ~ subChannel`, subChannel)
-		// 		if (subChannel.messages.length < 1) {
-		// 			messages = await D.generateMessages(server.id, chan.id);
-		// 		}
-		// 	});
-		// });
 	}
 
 	function matchChannelGroup() {

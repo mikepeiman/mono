@@ -117,17 +117,17 @@ function generateChannels(serverId) {
             // console.log(`🚀 ~ file: discord.js ~ line 124 ~ [...Array ~ randomStateDecider`, randomStateDecider)
             // console.log(`🚀 ~ file: discord.js ~ line 103 ~ [...Array ~ channelName`, channelName)
             channelSubGroup.push({
+                name: channelName,
                 id: `${serverId}-${id}-${i}`,
                 subGroupId: `${serverId}-${id}`,
                 serverId: `${serverId}`,
                 open: true,
                 icon: icon,
                 read: channelRead,
-                name: channelName,
                 messages: []
             })
         });
-        c.push({ serverId: `${serverId}`, id: `${serverId}-${id}`, name: channelGroupName, open: true, channels: channelSubGroup });
+        c.push({ name: channelGroupName, serverId: `${serverId}`, id: `${serverId}-${id}`,  open: true, channels: channelSubGroup });
     });
     // c = [...new Set(c)]
     let data = readData("discordDummyData")
@@ -139,25 +139,38 @@ function generateChannels(serverId) {
     return c;
 }
 
- function generateMessages(serverId, channelId) {
+async function generateMessages(serverId, channelId) {
+     let messages = []
     console.log(`🚀 ~ file: discord.js ~ line 143 ~ generateMessages ~ serverId, channelId`, serverId, channelId)
     let discordData = loadDummyData()
+    console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData)
     let serverIndex = discordData.findIndex(s => s.id === serverId)
+    console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData[serverIndex])
+    let server = discordData[serverIndex]
+    
     // console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ serverIndex`, serverIndex)
     let channelGroups = discordData[serverIndex].channels
+    console.log(`🚀 ~ file: discord.js ~ line 151 ~ generateMessages ~ channelGroups`, channelGroups)
+    let channelGroupIndex = server.channels.findIndex(g => channelId.includes(g.id))
+    console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channelGroupIndex`, channelGroupIndex)
+    let channelIndex = channelGroups[channelGroupIndex].channels.findIndex(c => channelId === c.id)
+    console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelIndex`, channelIndex)
     // console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelGroups `, channelGroups)
-    channelGroups.forEach(channelGroup => {
-        channelGroup.channels.forEach(channel => {
+    console.log(`%c🚀 ~ file: discord.js ~ line 159 ~ BEFORE generateMessages ~ discordData`, 'color: #ff0033', discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex].messages)
+    channelGroups.forEach(async channelGroup => {
+        channelGroup.channels.forEach(async channel => {
             if (channel.id === channelId) {
                 console.log(`🚀 ~ file: discord.js ~ line 164 ~ generateMessages ~ channel`, channel)
-                channel.messages =  generateChannelMessages()
+                messages = await generateChannelMessages(discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex])
+                discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex] = messages
                 console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channel.messages`, channel.messages)
             }
         })
     })
     saveData("discordDummyData", discordData)
+    console.log(`%c🚀 ~ file: discord.js ~ line 171 ~ AFTER generateMessages ~ discordData`, 'color: #0099ff',discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex].messages)
 }
- function generateChannelMessages() {
+ function generateChannelMessages(channel) {
     let messages = [];
 
     [...Array(30)].map(() => {
@@ -181,6 +194,7 @@ function generateChannels(serverId) {
         // messages = [...messages, messageObj]
     })
     console.log(`🚀 ~ file: discord.js ~ line 180 ~ messages.forEach ~ messages`, messages)
+    channel.messages = messages
     return messages
 }
 

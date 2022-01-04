@@ -51,7 +51,7 @@
 			<Channels {servers} {serverIndex}  />
 		</div>
 		<div class="flex flex-1 flex-col">
-			<Messages {servers} {serverIndex} {channels} {channelIndex} {messages} />
+			<Messages {servers} {serverIndex} {serverId} {channels} {channelIndex} {channelId} {messages} />
 		</div>
 	</div>
 {/if}
