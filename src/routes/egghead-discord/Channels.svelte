@@ -70,7 +70,7 @@
 			}
 		});
 
-		D.update(servers);
+		D.saveUpdated(servers);
 		servers = servers;
 	}
 </script>

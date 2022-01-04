@@ -39,7 +39,9 @@
 	afterUpdate(() => {
 		console.log('%c⧭', 'color: #aa00ff', 'afterUpdate()');
 		discordData = D.load();
-		getThisChannelFromId();
+		if(channelId){
+			getThisChannelFromId();
+		}
 	});
 
 	async function getThisChannelFromId() {
