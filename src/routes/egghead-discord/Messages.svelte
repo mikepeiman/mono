@@ -112,62 +112,68 @@
 	}
 </script>
 
-<div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">
-	<div class="flex items-center">
-		<Icon icon={headerIcons.hashtag} class="mt-0.5 h-5 w-5 text-sky-700 mr-1" />
-		{thisChannel.name.toLowerCase()}
-		<div class="w-px h-6 mx-2 bg-sky-700"></div>
-	</div>
-	<div class="flex items-center">{thisChannel.description}</div>
-	<div class="flex items-center ml-auto">
-		<button class="text-gray-400 hover:text-sky-700">
-			<div class="relative w-6 h-6 -mt-2 mx-2">
-				<Icon icon={headerIcons.hashtag} class="absolute mt-0.5 w-7 h-7 font-thin " />
-				<Icon
-					class="absolute mt-0.5 font-thin h-3.5 w-3.5  z-10 left-3.5 -bottom-[5px] bg-gray-800 rounded-sm"
-					icon={headerIcons.chatHeroicons}
-				/>
+<div class="flex flex-col flex-1 min-w-0 flex-shrink">
+	<div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex  font-fira ">
+		<div class="flex flex-row">
+			<div class="flex items-center">
+				<Icon icon={headerIcons.hashtag} class="mt-0.5 h-5 w-5 text-sky-700 mr-1" />
+				{thisChannel.name.toLowerCase()}
+				<div class="w-px h-6 mx-2 bg-sky-700" />
 			</div>
-		</button>
-		<button class="text-gray-400 hover:text-sky-700">
-			<Icon icon={headerIcons.bell} class="w-6 h-6 mx-2" />
-		</button>
-		<button class="text-gray-400 hover:text-sky-700">
-			<Icon icon={headerIcons.pin} class="w-6 h-6 mx-2" />
-		</button>
-		<button class="text-gray-400 hover:text-sky-700">
-			<Icon icon={headerIcons.peopleBi} class="w-6 h-6 mx-2" />
-		</button>
-		<button class="text-gray-400 hover:text-sky-700">
-			<Icon icon={headerIcons.inbox} class="w-6 h-6 mx-2" />
-		</button>
-		<button class="text-gray-400 hover:text-sky-700">
-			<Icon icon={headerIcons.questionCircle} class="w-5 h-5 mx-2" />
-		</button>
-	</div>
-</div>
-<div class="p-3 bg-gray-750  flex-1 space-y-4 overflow-y-scroll h-full">
-	{#if messages}
-		{#each messages as message}
-			<a href={message.id}>
-				<div class="flex mb-[17px]">
-					{#if message.avatar}
-						<img src={message.avatar} class="w-10 h-10 rounded-[40px] ml-1 mr-4" />
-					{/if}
-					<div class="flex flex-col pl-18 -ml-18">
-						<div class="flex">
-							<p class="text-amber-600 font-bold">{message.username}</p>
-							<!-- Date: {new Date(message.datePosted).getTime()} -->
-							{#if message.datePosted}
-								<div class="pl-2 text-gray-500 text-sm font-medium self-center flex ">
-									<Time timestamp={message.datePosted} />
-								</div>
-							{/if}
-						</div>
-						<p class="w-full text-base font-light">{message.message}</p>
-					</div>
+			<div class="flex items-center text-sm font-medium whitespace-nowrap overflow-hidden">
+				{thisChannel.description}
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button class="text-gray-400 hover:text-sky-700">
+				<div class="relative w-6 h-6 -mt-2 mx-2">
+					<Icon icon={headerIcons.hashtag} class="absolute mt-0.5 w-7 h-7 font-thin " />
+					<Icon
+						class="absolute mt-0.5 font-thin h-3.5 w-3.5  z-10 left-3.5 -bottom-[5px] bg-gray-800 rounded-sm"
+						icon={headerIcons.chatHeroicons}
+					/>
 				</div>
-			</a>
-		{/each}
-	{/if}
+			</button>
+			<button class="text-gray-400 hover:text-sky-700">
+				<Icon icon={headerIcons.bell} class="w-6 h-6 mx-2" />
+			</button>
+			<button class="text-gray-400 hover:text-sky-700">
+				<Icon icon={headerIcons.pin} class="w-6 h-6 mx-2" />
+			</button>
+			<button class="text-gray-400 hover:text-sky-700">
+				<Icon icon={headerIcons.peopleBi} class="w-6 h-6 mx-2" />
+			</button>
+			<button class="text-gray-400 hover:text-sky-700">
+				<Icon icon={headerIcons.inbox} class="w-6 h-6 mx-2" />
+			</button>
+			<button class="text-gray-400 hover:text-sky-700">
+				<Icon icon={headerIcons.questionCircle} class="w-5 h-5 mx-2" />
+			</button>
+		</div>
+	</div>
+	<div class="p-3 bg-gray-750 flex-col flex-1 space-y-4 overflow-y-scroll h-full">
+		{#if messages}
+			{#each messages as message}
+				<a href={message.id}>
+					<div class="flex mb-[17px]">
+						{#if message.avatar}
+							<img src={message.avatar} class="w-10 h-10 rounded-[40px] ml-1 mr-4" />
+						{/if}
+						<div class="flex flex-col pl-18 -ml-18">
+							<div class="flex">
+								<p class="text-amber-600 font-bold">{message.username}</p>
+								<!-- Date: {new Date(message.datePosted).getTime()} -->
+								{#if message.datePosted}
+									<div class="pl-2 text-gray-500 text-sm font-medium self-center flex ">
+										<Time timestamp={message.datePosted} />
+									</div>
+								{/if}
+							</div>
+							<p class="w-full text-base font-light">{message.message}</p>
+						</div>
+					</div>
+				</a>
+			{/each}
+		{/if}
+	</div>
 </div>
