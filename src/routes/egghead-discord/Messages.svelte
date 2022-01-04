@@ -13,19 +13,20 @@
 	let messages;
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 12 ~ params`, params);
 	// $: mounted ? messages = getMessages() : false
-	$: console.log(`🚀 ~ file: Messages.svelte ~ line 17 ~ channel`, channel);
-	let discordData, channel;
+	let discordData;
+	let thisChannel = {name: "Messages"}
+
 	// beforeUpdate(() => {
 	// 	discordData = D.load();
 	// 	// messages = D.generateMessages(serverId, channelId);
 	// 	getThisChannelFromId()
 	// 	getMessagesFromChannel()
 	// });
-	$: channel ? (messages = channel.messages) : [];
+	$: thisChannel ? (messages = thisChannel.messages) : [];
 	let mounted = false;
 	let dataNeedsReload = false;
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 25 ~ dataNeedsReload`, dataNeedsReload);
-	$: console.log(`🚀 ~ file: Messages.svelte ~ line 28 ~ channel`, channel);
+	$: console.log(`🚀 ~ file: Messages.svelte ~ line 28 ~ thisChannel`, thisChannel);
 
 	// onMount(() => {
 	// 	console.log('%c⧭', 'color: #00a3cc', onMount);
@@ -53,11 +54,13 @@
 			channelGroup.channels.forEach(async (channel) => {
 				// console.log(`🚀 ~ file: index.svelte ~ line 39 ~ onMount ~ channelId ${channelId} ::: `, channel.name)
 				if (channel.id === channelId) {
+                    console.log(`🚀 ~ file: Messages.svelte ~ line 56 ~ channelGroup.channels.forEach ~ channel.id === channelId`, channel.id, channelId)
 					console.log(
 						`%c@@@@@@@@@@@@@@@@ CHANNEL ${channel.name} @@@@@@@@@@@@@@@@@@@`,
 						'color:#0033ff; font-size: 1rem;',
 						channel
 					);
+					thisChannel = channel
 					messages = channel.messages;
 					messages.sort(
 						(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
@@ -71,7 +74,7 @@
 
 </script>
 
-<div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">Messages</div>
+<div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">{thisChannel.name}</div>
 <div class="p-3 bg-gray-750  flex-1 space-y-4 overflow-y-scroll h-full">
 	{#if messages}
 		{#each messages as message}
