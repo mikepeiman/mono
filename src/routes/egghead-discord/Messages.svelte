@@ -16,7 +16,7 @@
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 12 ~ params`, params);
 	// $: mounted ? messages = getMessages() : false
 	let discordData;
-	let thisChannel = { name: 'Messages' };
+	let thisChannel = { name: 'Messages', description: 'This is a cool channel' };
 
 	// beforeUpdate(() => {
 	// 	discordData = D.load();
@@ -113,8 +113,12 @@
 </script>
 
 <div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">
-	<Icon icon={headerIcons.hashtag} class="mt-0.5 h-5 w-5 text-sky-700 mr-1" />
-	{thisChannel.name.toLowerCase()}
+	<div class="flex items-center">
+		<Icon icon={headerIcons.hashtag} class="mt-0.5 h-5 w-5 text-sky-700 mr-1" />
+		{thisChannel.name.toLowerCase()}
+		<div class="w-px h-6 mx-2 bg-sky-700"></div>
+	</div>
+	<div class="flex items-center">{thisChannel.description}</div>
 	<div class="flex items-center ml-auto">
 		<button class="text-gray-400 hover:text-sky-700">
 			<div class="relative w-6 h-6 -mt-2 mx-2">
