@@ -39,7 +39,7 @@
 	afterUpdate(() => {
 		console.log('%c⧭', 'color: #aa00ff', 'afterUpdate()');
 		discordData = D.load();
-		if(channelId){
+		if (channelId) {
 			getThisChannelFromId();
 		}
 	});
@@ -59,71 +59,16 @@
 						channel
 					);
 					messages = channel.messages;
-					console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
-
-				}
-			});
-		});
-		D.saveUpdated(discordData)
-	}
-
-	function getMessagesFromChannel() {
-		if (channel.messages.length < 1) {
-			discordData = D.load();
-			getThisChannelFromId();
-			console.log(
-				`🚀 ~ file: Messages.svelte ~ line 16 ~ getMessages ~ NO MESSAGES!!! `,
-				channel.messages
-			);
-			return;
-			// D.generateMessages(server.id, channelGroup.id);
-		} else {
-			console.log(
-				`🚀 ~ file: Messages.svelte ~ line 16 ~ getMessages ~ YES MESSAGES!!! `,
-				channel.messages
-			);
-			messages = channel.messages;
-			// channel[0].messages = messages = D.loadMessages()
-			// messages.sort(
-			// 	(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
-			// );
-		}
-	}
-
-	function matchChannelGroup() {
-		// console.log(`🚀 ~ file: Messages.svelte ~ line 48 ~ channelId`, channelId)
-		server.channels.forEach((channelGroup) => {
-			// console.log(`🚀 ~ file: Messages.svelte ~ line 26 ~ server.channels.forEach ~ channelGroup`, channelGroup)
-			// console.log(`🚀 ~ file: Messages.svelte ~ line 37 ~ channelGroup.channels.forEach ~ channelGroup.channels`, channelGroup.channels)
-			if (channelId.includes(channelGroup.id)) {
-				channel = channelGroup.channels.filter((c) => c.id === channelId);
-			}
-			// console.log(`🚀 ~ file: Messages.svelte ~ line 26 ~ server.channels.forEach ~ channelGroup`, channelGroup)
-			// console.log(`🚀 ~ file: Messages.svelte ~ line 37 ~ channelGroup.channels.forEach ~ channelGroup.channels`, channelGroup.channels)
-			channelGroup.channels.forEach(async (channel) => {
-				// console.log(`🚀 ~ file: MainUI.svelte ~ line 31 ~ chan['channels'].forEach ~ channel`, channel)
-				if (channel.messages.length < 1) {
-					console.log(
-						`🚀 ~ file: Messages.svelte ~ line 37 ~ channelGroup.channels.forEach ~ channel.messages.length < 1`,
-						channel.messages.length < 1
+					messages.sort(
+						(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
 					);
-					D.generateMessages(server.id, channelGroup.id);
-					// messages = D.loadMessages(server.id, channelGroup.id, channelId)
+					console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
 				}
 			});
 		});
-		// generateMessages();
+		D.saveUpdated(discordData);
 	}
-	// let messages;
-	// $: server = servers[serverIndex];
-	// $: server && channelId ? matchChannelGroup() : false;
-	// $: serverId = server.id
-	// $: console.log(`🚀 ~ file: Messages.svelte ~ line 9 ~ server`, server);
-	// channel;
-	// $: console.log(`🚀 ~ file: Messages.svelte ~ line 25 ~ channel ${new Date().getSeconds()}`, channel);
-	// $: channel ? (messages = getMessages()) : false;
-	// $: messages ? (messages = messages) : false;
-	// $: console.log(`🚀 ~ file: Messages.svelte ~ line 56 ~ messages`, messages);
+
 </script>
 
 <div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">Messages</div>
