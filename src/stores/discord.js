@@ -32,7 +32,7 @@ function discord() {
     const { subscribe, set, update } = writable(0)
     return {
         subscribe,
-        load: (data) => loadDummyData(data),
+        load: () => loadDummyData(),
         readServers: (data) => readData(data),
         readChannels: (data) => readData(data),
         loadMessages: (serverId, channelGroupId, channelId) => loadMessages(serverId, channelGroupId, channelId),
@@ -138,7 +138,55 @@ function generateChannels(serverId) {
     }
     return c;
 }
-async function generateMessages(serverId, channelId) {
+
+ function generateMessages(serverId, channelId) {
+    console.log(`🚀 ~ file: discord.js ~ line 143 ~ generateMessages ~ serverId, channelId`, serverId, channelId)
+    let discordData = loadDummyData()
+    let serverIndex = discordData.findIndex(s => s.id === serverId)
+    // console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ serverIndex`, serverIndex)
+    let channelGroups = discordData[serverIndex].channels
+    // console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelGroups `, channelGroups)
+    channelGroups.forEach(channelGroup => {
+        channelGroup.channels.forEach(channel => {
+            if (channel.id === channelId) {
+                console.log(`🚀 ~ file: discord.js ~ line 164 ~ generateMessages ~ channel`, channel)
+                channel.messages =  generateChannelMessages()
+                console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channel.messages`, channel.messages)
+            }
+        })
+    })
+    saveData("discordDummyData", discordData)
+}
+ function generateChannelMessages() {
+    let messages = [];
+
+    [...Array(30)].map(() => {
+        let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
+        let messageObj = {
+            username: "username",
+            avatar: "avatar",
+            message: message
+        }
+        messages = [...messages, messageObj]
+    });
+    let date = new Date()
+
+    messages.forEach((messageObj) => {
+        let avatar = `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`
+        // let avatar = `${faker.image.nature()}?random=${Math.random() * 10000}`
+        let username = faker.name.firstName() + faker.name.lastName()
+        messageObj['username'] = username
+        messageObj['avatar'] = avatar
+        messageObj['datePosted'] = faker.date.recent(parseInt(random.range(0, 30)), date)
+        // messages = [...messages, messageObj]
+    })
+    console.log(`🚀 ~ file: discord.js ~ line 180 ~ messages.forEach ~ messages`, messages)
+    return messages
+}
+
+
+
+async function oldGenerateMessages(serverId, channelId) {
     console.log(`🚀 ~ file: discord.js ~ line 141 ~ generateMessages ~ serverId, channelId`, serverId, channelId)
     channelId < 0 ? channelId = 0 : channelId
     // console.log(`🚀 ~ file: discord.js ~ line 108 ~ generateMessages ~ channelIndex`, channelIndex)
@@ -148,15 +196,14 @@ async function generateMessages(serverId, channelId) {
         let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
         m.push(message);
     });
-    let data = readData("discordDummyData")
+
+    let C = targetChannelByIds(serverId, channelId, discordData)
+    console.log(`🚀 ~ file: discord.js ~ line 168 ~ generateMessages ~ C`, C)
     if (serverId) {
-        let serverIndex = data.findIndex(s => s.id === serverId)
-        // console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ serverIndex`, serverIndex)
-        let channels = data[serverIndex].channels
-        // console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channels`, channels)
-        let channelIndex = channels.findIndex(c => c.id === channelId)
-        // console.log(`🚀 ~ file: discord.js ~ line 157 ~ generateMessages ~ channelIndex`, channelIndex)
-        let subChannelGroup = data[serverIndex].channels[channelIndex]
+
+        let channelIndex = channelGroups['channels'].findIndex(c => c.id === channelId)
+        console.log(`🚀 ~ file: discord.js ~ line 157 ~ generateMessages ~ channelIndex`, channelIndex)
+        let subChannelGroup = discordData[serverIndex].channels[channelIndex]
         console.log(`🚀 ~ file: discord.js ~ line 159 ~ generateMessages ~ subChannelGroup`, subChannelGroup)
         subChannelGroup['channels'].forEach(subChannel => {
             let m = [];
@@ -177,7 +224,7 @@ async function generateMessages(serverId, channelId) {
         subChannelGroup['channels'].forEach(subChannel => {
             messages = []
             subChannel['messages'].forEach((messageObj) => {
-                let avatar =  `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`
+                let avatar = `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`
                 // let avatar = `${faker.image.nature()}?random=${Math.random() * 10000}`
                 let username = faker.name.firstName() + faker.name.lastName()
                 messageObj['username'] = username
@@ -187,13 +234,12 @@ async function generateMessages(serverId, channelId) {
             })
         })
 
-        // data[serverIndex].channels[channelIndex].messages = m
-        saveData("discordDummyData", data)
+        // discordData[serverIndex].channels[channelIndex].messages = m
+        saveData("discordDummyData", discordData)
         // console.log(`🚀 ~ file: discord.js ~ line 190 ~ generateMessages ~ m`, m)
         // return messages;
     }
 }
-
 
 function makeid(length) {
     var result = '';
@@ -243,15 +289,19 @@ function loadMessages(serverId, channelGroupId, channelId) {
     let serverIndex = data.findIndex((s) => s.id === serverId)
     console.log(`🚀 ~ file: discord.js ~ line 244 ~ loadMessages ~ serverIndex`, serverIndex)
     let server = data[serverIndex]
-    console.log(`🚀 ~ file: discord.js ~ line 246 ~ loadMessages ~ server `, server )
+    console.log(`🚀 ~ file: discord.js ~ line 246 ~ loadMessages ~ server `, server)
     let channelGroupIndex = server.channels.findIndex(g => g.id === channelGroupId)
     console.log(`🚀 ~ file: discord.js ~ line 248 ~ loadMessages ~ channelGroupIndex`, channelGroupIndex)
     let channelGroup = server[channelGroupIndex]
     console.log(`🚀 ~ file: discord.js ~ line 250 ~ loadMessages ~ channelGroup`, channelGroup)
+    if (channelId.includes(channelGroup.id)) {
+        channel = channelGroup.channels.filter((c) => c.id === channelId);
+    }
 }
 
 
-function loadDummyData(key = "discordDummyData") {
+function loadDummyData() {
+    let key = "discordDummyData"
     if (localStorageSupported) {
         try {
             const prev = window.localStorage.getItem(key);

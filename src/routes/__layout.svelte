@@ -5,7 +5,7 @@
 	import Nav from '../components/Nav.svelte';
 	import { page } from '$app/stores';
 	$: path = $page.path;
-    $: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path)
+    // $: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path)
 </script>
 
 

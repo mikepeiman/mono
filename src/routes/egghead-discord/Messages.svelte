@@ -1,5 +1,5 @@
 <script>
-	export let serverIndex, channelIndex, servers, channels;
+	export let serverIndex, channelIndex, servers, channels, messages;
 	// console.log(`🚀 ~ file: Messages.svelte ~ line 4 ~ messages`, messages)
 	import { page } from '$app/stores';
 	import faker from 'faker';
@@ -18,11 +18,11 @@
 			// D.generateMessages(server.id, channelGroup.id);
 		} else {
 			
-			channel[0].messages = messages = D.loadMessages()
+			// channel[0].messages = messages = D.loadMessages()
             console.log(`🚀 ~ file: Messages.svelte ~ line 22 ~ getMessages ~ channel[0]`, channel[0])
-			messages.sort(
-				(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
-			);
+			// messages.sort(
+			// 	(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
+			// );
 		}
 		// channels.forEach(async (chan) => {
 		// 	chan['channels'].forEach(async (subChannel) => {
@@ -58,16 +58,16 @@
 		});
 		// generateMessages();
 	}
-	let messages;
-	$: server = servers[serverIndex];
-	$: server && channelId ? matchChannelGroup() : false;
+	// let messages;
+	// $: server = servers[serverIndex];
+	// $: server && channelId ? matchChannelGroup() : false;
 	// $: serverId = server.id
-	$: console.log(`🚀 ~ file: Messages.svelte ~ line 9 ~ server`, server);
-	channel;
+	// $: console.log(`🚀 ~ file: Messages.svelte ~ line 9 ~ server`, server);
+	// channel;
 	// $: console.log(`🚀 ~ file: Messages.svelte ~ line 25 ~ channel ${new Date().getSeconds()}`, channel);
-	$: channel ? (messages = getMessages()) : false;
-	$: messages ? (messages = messages) : false;
-	$: console.log(`🚀 ~ file: Messages.svelte ~ line 56 ~ messages`, messages);
+	// $: channel ? (messages = getMessages()) : false;
+	// $: messages ? (messages = messages) : false;
+	// $: console.log(`🚀 ~ file: Messages.svelte ~ line 56 ~ messages`, messages);
 </script>
 
 <div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 flex font-fira">Messages</div>
