@@ -53,7 +53,7 @@
 			}
 		});
 
-		D.update(servers);
+		// D.saveUpdated(servers);
 		servers = servers;
 	}
 
@@ -70,7 +70,7 @@
 			}
 		});
 
-		D.update(servers);
+		// D.update(servers);
 		servers = servers;
 	}
 </script>
