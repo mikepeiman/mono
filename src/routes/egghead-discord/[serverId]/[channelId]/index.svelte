@@ -52,10 +52,10 @@
 							'color:#aa33cc; font-size: 1rem;',
 							channel
 						);
-						messages = channel.messages;
+						// messages = channel.messages;
 						console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
-						if (messages.length < 1) {
-							messages = await D.generateMessages(serverId, channelId);
+						if (channel.messages.length < 1) {
+							D.generateMessages(serverId, channelId);
 						}
 					}
 				});

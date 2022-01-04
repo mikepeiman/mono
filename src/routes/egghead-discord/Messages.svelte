@@ -58,23 +58,11 @@
 					);
 					messages = channel.messages;
 					console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
-					// if (messages.length < 1) {
-					// 	messages = await D.generateMessages(serverId, channelId);
-					// 	console.log(
-					// 		`************************************* after generateMessages,  messages ::::  `,
-					// 		messages
-					// 	);
-					// }
-					// // console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MATCH !!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-					// messages = channel.messages;
-					// console.log(
-					// 	`************************************* after reassignment,  messages ::::  `,
-					// 	messages
-					// );
-					// return channel.messages
+
 				}
 			});
 		});
+		D.saveUpdated(discordData)
 	}
 
 	function getMessagesFromChannel() {

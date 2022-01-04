@@ -1,8 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	$: path = $page.path;
-	export let serverId, channelId, messages;
-    console.log(`🚀 ~ file: MainUI.svelte ~ line 5 ~ messages`, messages)
+	export let serverId, channelId;
 	import { onMount } from 'svelte';
 	import { D } from '$stores/discord.js';
 	let servers, channels;
@@ -31,7 +30,7 @@
 		mounted = true;
 	});
 
-	$: servers, channels, messages;
+	$: servers, channels;
 	import Server from './Server.svelte';
 	import Channels from './Channels.svelte';
 	import Messages from './Messages.svelte';
@@ -51,7 +50,7 @@
 			<Channels {servers} {serverIndex}  />
 		</div>
 		<div class="flex flex-1 flex-col">
-			<Messages {servers} {serverIndex} {serverId} {channels} {channelIndex} {channelId} {messages} />
+			<Messages  {serverId} {channelId} />
 		</div>
 	</div>
 {/if}

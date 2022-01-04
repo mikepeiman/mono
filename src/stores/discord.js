@@ -42,7 +42,7 @@ function discord() {
         clearData: () => {
             servers.set({})
         },
-        update: (data) => updateDiscordStores(data)
+        saveUpdated: (data) => saveData("discordDummyData", data)
     }
 }
 
@@ -143,31 +143,36 @@ async function generateMessages(serverId, channelId) {
      let messages = []
     console.log(`🚀 ~ file: discord.js ~ line 143 ~ generateMessages ~ serverId, channelId`, serverId, channelId)
     let discordData = loadDummyData()
-    console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData)
+    // console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData)
     let serverIndex = discordData.findIndex(s => s.id === serverId)
-    console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData[serverIndex])
+    // console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData[serverIndex])
     let server = discordData[serverIndex]
     
     // console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ serverIndex`, serverIndex)
     let channelGroups = discordData[serverIndex].channels
-    console.log(`🚀 ~ file: discord.js ~ line 151 ~ generateMessages ~ channelGroups`, channelGroups)
+    // console.log(`🚀 ~ file: discord.js ~ line 151 ~ generateMessages ~ channelGroups`, channelGroups)
     let channelGroupIndex = server.channels.findIndex(g => channelId.includes(g.id))
-    console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channelGroupIndex`, channelGroupIndex)
+    // console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channelGroupIndex`, channelGroupIndex)
     let channelIndex = channelGroups[channelGroupIndex].channels.findIndex(c => channelId === c.id)
-    console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelIndex`, channelIndex)
+    // console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelIndex`, channelIndex)
+    let channel = discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex]
     // console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelGroups `, channelGroups)
-    console.log(`%c🚀 ~ file: discord.js ~ line 159 ~ BEFORE generateMessages ~ discordData`, 'color: #ff0033', discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex].messages)
-    channelGroups.forEach(async channelGroup => {
-        channelGroup.channels.forEach(async channel => {
-            if (channel.id === channelId) {
-                console.log(`🚀 ~ file: discord.js ~ line 164 ~ generateMessages ~ channel`, channel)
-                messages = generateChannelMessages(discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex])
-                discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex] = await messages
-                console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channel.messages`, channel.messages)
-            }
-        })
-    })
-    console.log(`%c🚀 ~ file: discord.js ~ line 171 ~ AFTER generateMessages ~ discordData`, 'color: #0099ff',discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex].messages)
+    console.log(`%c🚀 ~ file: discord.js ~ line 159 ~ BEFORE generateMessages ~ channel`, 'color: #ff0033', channel)
+    console.log(`%c🚀 ~ file: discord.js ~ line 159 ~ BEFORE generateMessages ~ discordData`, 'color: #ff0033', channel.messages)
+    if(channel.messages.length < 1){
+
+        messages = generateChannelMessages(channel)
+    }
+    // channelGroups.forEach(async channelGroup => {
+    //     channelGroup.channels.forEach(async channel => {
+    //         if (channel.id === channelId) {
+    //             console.log(`🚀 ~ file: discord.js ~ line 164 ~ generateMessages ~ channel`, channel)
+    //             discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex] = await messages
+    //             console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channel.messages`, channel.messages)
+    //         }
+    //     })
+    // })
+    console.log(`%c🚀 ~ file: discord.js ~ line 171 ~ AFTER generateMessages ~ discordData`, 'color: #0099ff',channel.messages)
     saveData("discordDummyData", discordData)
 }
  function generateChannelMessages(channel) {
