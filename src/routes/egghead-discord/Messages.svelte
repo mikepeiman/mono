@@ -170,7 +170,7 @@
 						{#if message.avatar}
 							<img src={message.avatar} class="w-10 h-10 rounded-[40px] ml-1 mr-4" />
 						{/if}
-						<div class="flex flex-col pl-18 -ml-18">
+						<div class="flex flex-col pl-18 pr-16 -ml-18">
 							<div class="flex">
 								<p class="text-amber-600 font-bold">{message.username}</p>
 								<!-- Date: {new Date(message.datePosted).getTime()} -->

@@ -58,7 +58,7 @@
 <style lang="scss">
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: blue orange;
+		scrollbar-color: blue #222;
 	}
 
 	/* Works on Chrome, Edge, and Safari */
