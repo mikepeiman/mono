@@ -174,7 +174,7 @@ function generateChannelMessages(channel) {
         let obj = messages[i]
         console.log(`🚀 ~ file: discord.js ~ line 175 ~ messages.forEach ~ obj `, obj)
         let avatar, username, date
-        let sameUser = Math.floor(random.range(1, 5))
+        let sameUser = Math.floor(random.range(1, 6))
         if ((sameUser === 1 || sameUser == 3) && i > 0) {
             avatar = messages[i-1].avatar
             username = messages[i - 1].username

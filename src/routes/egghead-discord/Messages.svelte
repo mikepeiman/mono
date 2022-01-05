@@ -167,7 +167,7 @@
 	<div class="p-3 bg-gray-750 flex-1 flex-shrink min-w-0  overflow-y-scroll h-full">
 		{#if messages}
 			{#each messages as message, i}
-				<a href={message.id} class="flex shrink flex-shrink min-w-0 hover:bg-sky-900 hover:cursor-pointer hover:rounded">
+				<a href={message.id} class="flex shrink flex-shrink min-w-0 hover:bg-sky-800/[0.32] hover:cursor-pointer hover:rounded">
 					{#if i > 0 && message.username === messages[i - 1].username}
 						<div class="flex w-full pl-[60px] pr-16 py-1">
 							<p class="flex-shrink min-w-0 text-base font-light">{message.message}</p>
