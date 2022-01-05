@@ -72,8 +72,7 @@
 		peopleBaseline: 'ic:baseline-people-alt',
 		peopleBi: 'bi:people-fill',
 		inbox: 'bi:inbox-fill',
-		questionCircle: 'bi:question-circle-fill',
-		search: 'fe:search'
+		questionCircle: 'bi:question-circle-fill'
 	};
 
 	afterUpdate(() => {
@@ -114,18 +113,20 @@
 </script>
 
 <div class="flex flex-col flex-1 shrink min-w-0">
-	<div class="flex items-center min-w-0 h-12 shadow-md p-3  shadow-gray-900 z-10 bg-gray-800 font-fira">
-		<div class="flex items-center min-w-0">
-			<Icon icon={headerIcons.hashtag} class="h-5 w-5 shrink-0 text-sky-700 mr-1" />
-			<span class="whitespace-nowrap ">{thisChannel.name.toLowerCase()}</span>
+	<div class="p-3 h-12 shadow-md shadow-gray-900 z-10 bg-gray-800 relative flex items-center min-w-0 shrink font-fira">
+		<div class="flex flex-row  min-w-0 shrink">
+			<div class="flex items-center min-w-0 shrink-0">
+				<Icon icon={headerIcons.hashtag} class="mt-0.5 h-5 w-5 text-sky-700 mr-1" />
+				{thisChannel.name.toLowerCase()}
+				<div class="w-px h-6 mx-2 bg-sky-700" />
+			</div>
+			<div
+				class=" items-start text-sm font-medium overflow-hidden truncate max-h-6 shrink min-w-0"
+			>
+				{thisChannel.description}
+			</div>
 		</div>
-		<div class="flex items-center justify-center w-4 bg-gray-800">
-			<div class="w-px h-6 z-10 bg-sky-700" />
-		</div>
-		<div class="flex flex-1 items-center -mb-0.5 text-sm font-medium truncate">
-			{thisChannel.description}
-		</div>
-		<div class="flex items-center ml-auto  bg-gray-800">
+		<div class="flex items-center ml-auto  right-0 bg-gray-800 shrink-0">
 			<button class="text-gray-400 hover:text-sky-700">
 				<div class="relative w-6 h-6 -mt-2 mx-2">
 					<Icon icon={headerIcons.hashtag} class="absolute mt-0.5 w-7 h-7 font-thin " />
@@ -144,15 +145,8 @@
 			<button class="text-gray-400 hover:text-sky-700">
 				<Icon icon={headerIcons.peopleBi} class="w-6 h-6 mx-2" />
 			</button>
-			<div class="relative mx-2 w-auto">
-				<input
-					type="text"
-					class="bg-gray-900 border-none rounded-sm h-6 w-36 px-1.5"
-					placeholder="Search"
-				/>
-				<div class="absolute right-0 flex items-center inset-y-0">
-					<Icon icon={headerIcons.search} class="w-4 h-4 mr-1.5 text-gray-500" />
-				</div>
+			<div>
+				<input type="text" class="bg-gray-900 border-none rounded-sm h-6 w-36 mx-1" placeholder="Search">
 			</div>
 			<button class="text-gray-400 hover:text-sky-700">
 				<Icon icon={headerIcons.inbox} class="w-6 h-6 mx-2" />
@@ -190,7 +184,7 @@
 </div>
 
 <style lang="scss">
-	.toolbar {
-		flex: 0 0 auto;
-	}
+.toolbar {
+	flex: 0 0 auto;
+}
 </style>

@@ -263,6 +263,7 @@ module.exports = {
   variants: {},
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
     require('daisyui'),
     function ({ addBase, theme }) {
       function extractColorVars(colorObj, colorGroup = '') {
