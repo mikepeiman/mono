@@ -1,7 +1,9 @@
 import preprocess from 'svelte-preprocess';
 import path from 'path'
 import { normalizePath } from 'vite'
-import vercel from '@sveltejs/adapter-vercel';
+import adaptorVercel from '@sveltejs/adapter-vercel';
+import adaptorNode from '@sveltejs/adapter-node';
+import adaptorStatic from '@sveltejs/adapter-static';
 import Icons from 'unplugin-icons/vite'
 import { promises as fs } from 'fs'
 // loader helpers
@@ -13,7 +15,10 @@ const config = {
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-		adapter: vercel(),
+		adapter: adaptorVercel(),
+		// adapter: adaptorNode({ out: 'public'}),
+		// adapter: adaptorStatic(),
+		(),
 		files: {
 			assets: 'static'
 		},
