@@ -18,7 +18,6 @@ const config = {
 		adapter: adaptorVercel(),
 		// adapter: adaptorNode({ out: 'public'}),
 		// adapter: adaptorStatic(),
-		(),
 		files: {
 			assets: 'static'
 		},
