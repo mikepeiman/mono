@@ -114,7 +114,9 @@
 </script>
 
 <div class="flex flex-col flex-1 shrink min-w-0">
-	<div class="flex items-center min-w-0 h-12 shadow-md p-3  shadow-gray-900 z-10 bg-gray-800 font-fira">
+	<div
+		class="flex items-center min-w-0 h-12 shadow-md p-3  shadow-gray-900 z-10 bg-gray-800 font-fira"
+	>
 		<div class="flex items-center min-w-0">
 			<Icon icon={headerIcons.hashtag} class="h-5 w-5 shrink-0 text-sky-700 mr-1" />
 			<span class="whitespace-nowrap ">{thisChannel.name.toLowerCase()}</span>
@@ -162,27 +164,33 @@
 			</button>
 		</div>
 	</div>
-	<div class="p-3 bg-gray-750 flex-1 flex-shrink min-w-0 space-y-4 overflow-y-scroll h-full">
+	<div class="p-3 bg-gray-750 flex-1 flex-shrink min-w-0  overflow-y-scroll h-full">
 		{#if messages}
-			{#each messages as message}
-				<a href={message.id} class="flex shrink flex-shrink min-w-0">
-					<div class="flex flex-shrink min-w-0">
-						{#if message.avatar}
-							<img src={message.avatar} class="w-10 h-10 rounded-[40px] ml-1 mr-4" />
-						{/if}
-						<div class="flex flex-col pl-18 pr-16 -ml-18">
-							<div class="flex">
-								<p class="text-amber-600 font-bold">{message.username}</p>
-								<!-- Date: {new Date(message.datePosted).getTime()} -->
-								{#if message.datePosted}
-									<div class="pl-2 text-gray-500 text-sm font-medium self-center flex ">
-										<Time timestamp={message.datePosted} />
-									</div>
-								{/if}
-							</div>
+			{#each messages as message, i}
+				<a href={message.id} class="flex shrink flex-shrink min-w-0 hover:bg-sky-900 hover:cursor-pointer hover:rounded">
+					{#if i > 0 && message.username === messages[i - 1].username}
+						<div class="flex w-full pl-[60px] pr-16 py-1">
 							<p class="flex-shrink min-w-0 text-base font-light">{message.message}</p>
 						</div>
-					</div>
+					{:else}
+						<div class="flex flex-shrink min-w-0 py-2">
+							{#if message.avatar}
+								<img src={message.avatar} class="w-10 h-10 rounded-[40px] ml-1 mr-4" />
+							{/if}
+							<div class="flex flex-col pl-18 pr-16 -ml-18">
+								<div class="flex">
+									<p class="text-amber-600 font-bold">{message.username}</p>
+									<!-- Date: {new Date(message.datePosted).getTime()} -->
+									{#if message.datePosted}
+										<div class="pl-2 text-gray-500 text-sm font-medium self-center flex ">
+											<Time timestamp={message.datePosted} />
+										</div>
+									{/if}
+								</div>
+								<p class="flex-shrink min-w-0 text-base font-light">{message.message}</p>
+							</div>
+						</div>
+					{/if}
 				</a>
 			{/each}
 		{/if}

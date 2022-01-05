@@ -11,8 +11,8 @@ const lorem = new LoremIpsum({
         max: 8
     },
     wordsPerSentence: {
-        min: 4,
-        max: 16
+        min: 3,
+        max: 12
     }
 });
 
@@ -128,7 +128,7 @@ function generateChannels(serverId) {
                 messages: []
             })
         });
-        c.push({ name: channelGroupName, serverId: `${serverId}`, id: `${serverId}-${id}`,  open: true, channels: channelSubGroup });
+        c.push({ name: channelGroupName, serverId: `${serverId}`, id: `${serverId}-${id}`, open: true, channels: channelSubGroup });
     });
     // c = [...new Set(c)]
     let data = readData("discordDummyData")
@@ -141,52 +141,54 @@ function generateChannels(serverId) {
 }
 
 async function generateMessages(serverId, channelId) {
-     let messages = []
-    console.log(`🚀 ~ file: discord.js ~ line 143 ~ generateMessages ~ serverId, channelId`, serverId, channelId)
+    let messages = []
     let discordData = loadDummyData()
-    // console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData)
     let serverIndex = discordData.findIndex(s => s.id === serverId)
-    // console.log(`🚀 ~ file: discord.js ~ line 145 ~ generateMessages ~ discordData`, discordData[serverIndex])
     let server = discordData[serverIndex]
-    
-    // console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ serverIndex`, serverIndex)
     let channelGroups = discordData[serverIndex].channels
-    // console.log(`🚀 ~ file: discord.js ~ line 151 ~ generateMessages ~ channelGroups`, channelGroups)
     let channelGroupIndex = server.channels.findIndex(g => channelId.includes(g.id))
-    // console.log(`🚀 ~ file: discord.js ~ line 153 ~ generateMessages ~ channelGroupIndex`, channelGroupIndex)
     let channelIndex = channelGroups[channelGroupIndex].channels.findIndex(c => channelId === c.id)
-    // console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelIndex`, channelIndex)
     let channel = discordData[serverIndex].channels[channelGroupIndex].channels[channelIndex]
-    // console.log(`🚀 ~ file: discord.js ~ line 155 ~ generateMessages ~ channelGroups `, channelGroups)
-    // console.log(`%c🚀 ~ file: discord.js ~ line 159 ~ BEFORE generateMessages ~ channel`, 'color: #ff0033', channel)
-    // console.log(`%c🚀 ~ file: discord.js ~ line 159 ~ BEFORE generateMessages ~ discordData`, 'color: #ff0033', channel.messages)
-    if(channel.messages.length < 1){
-
+    if (channel.messages.length < 1) {
         messages = generateChannelMessages(channel)
     }
     saveData("discordDummyData", discordData)
 }
- function generateChannelMessages(channel) {
+
+function generateChannelMessages(channel) {
     let messages = [];
 
     [...Array(30)].map(() => {
-        let message = lorem.generateSentences(Math.floor(random.range(1, 8)));
+        let message = lorem.generateSentences(Math.floor(random.range(1, 6)));
         let messageObj = {
-            username: "username",
-            avatar: "avatar",
+            username: faker.name.firstName() + faker.name.lastName(),
+            avatar: `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`,
             message: message
         }
         messages = [...messages, messageObj]
     });
     let date = new Date()
 
-    messages.forEach((messageObj) => {
-        let avatar = `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`
-        // let avatar = `${faker.image.nature()}?random=${Math.random() * 10000}`
-        let username = faker.name.firstName() + faker.name.lastName()
+    messages.forEach((messageObj, i) => {
+        console.log(`🚀 ~ file: discord.js ~ line 173 ~ messages.forEach ~ i`, i)
+        let obj = messages[i]
+        console.log(`🚀 ~ file: discord.js ~ line 175 ~ messages.forEach ~ obj `, obj)
+        let avatar, username, date
+        let sameUser = Math.floor(random.range(1, 5))
+        if ((sameUser === 1 || sameUser == 3) && i > 0) {
+            avatar = messages[i-1].avatar
+            username = messages[i - 1].username
+            date = messages[i - 1].datePosted
+
+        } else {
+            avatar = `http://placeimg.com/120/120/nature?random=${Math.random() * 10000}`
+            username = faker.name.firstName() + faker.name.lastName()
+            date = faker.date.recent(parseInt(random.range(0, 30)), date)
+        }
+        console.log(`🚀 ~ file: discord.js ~ line 175 ~ messages.forEach ~ sameUser`, sameUser)
         messageObj['username'] = username
         messageObj['avatar'] = avatar
-        messageObj['datePosted'] = faker.date.recent(parseInt(random.range(0, 30)), date)
+        messageObj['datePosted'] = date
         // messages = [...messages, messageObj]
     })
     console.log(`🚀 ~ file: discord.js ~ line 180 ~ messages.forEach ~ messages`, messages)
