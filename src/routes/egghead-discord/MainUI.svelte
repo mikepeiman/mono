@@ -1,6 +1,4 @@
 <script>
-	import { page } from '$app/stores';
-	$: path = $page.path;
 	export let serverId, channelId;
 	import { onMount } from 'svelte';
 	import { D } from '$stores/discord.js';
@@ -8,8 +6,6 @@
 	let mounted = false;
 	let serverIndex;
 	$: servers ? (serverIndex = servers.findIndex((s) => s.id === serverId)) : false;
-	let channelIndex;
-	$: channels ? (channelIndex = channels.findIndex((c) => c.id === channelId)) : false;
 	onMount(async () => {
 		servers = await D.readServers('discordDummyData');
 		if (!servers) {
@@ -49,16 +45,15 @@
 		<div class="hidden md:flex bg-gray-800 w-60 flex-col shrink-0">
 			<Channels {servers} {serverIndex}  />
 		</div>
-		<!-- <div class="flex flex-1 flex-col"> -->
 			<Messages  {serverId} {channelId} />
-		<!-- </div> -->
 	</div>
 {/if}
 
 <style lang="scss">
+	// scrollbar styles
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: blue #222;
+		scrollbar-color: var(--color-sky-800) var(--color-gray-900);
 	}
 
 	/* Works on Chrome, Edge, and Safari */

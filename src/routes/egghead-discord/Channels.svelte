@@ -3,12 +3,7 @@
 	import Channel from './Channel.svelte';
 	import IconBadgeCheck from '~icons/bx/bxs-badge-check';
 	import IconChevronDown from '~icons/mdi/chevron-down';
-	import IconChevronDownBx from '~icons/bx/bx-chevron-down';
 	import IconChevronDownBxs from '~icons/bx/bxs-chevron-down';
-	import IconChevronRightBxs from '~icons/bx/bxs-chevron-right';
-	import IconChevronDownAkar from '~icons/akar-icons/chevron-down';
-	import IconChevronRight from '~icons/mdi/chevron-right';
-	import IconPlaylistCheck from '~icons/gg/play-list-check'; //gg:play-list-check
 	import IconBookBookmark from '~icons/bx/bx-book-bookmark';
 	import IconCalendarEvent from '~icons/bx/bxs-calendar-event';
 	import IconBullhorn from '~icons/whh/bullhorn';
@@ -97,7 +92,9 @@
 			<IconCalendarEvent class="w-5 h-5" />
 			<div class="pl-2 font-bold font-cairo">events</div>
 			<div
-				class="opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
+				class="tooltip opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
+				use:tooltip
+				title="Events"
 			>
 				<IconPersonPlus class="text-sky-300 opacity-1 w-4 h-4" />
 			</div>
@@ -106,10 +103,11 @@
 			class="flex group relative text-gray-500 items-center py-[6px] px-2 ml-2  hover:bg-gray-500/[0.16] hover:rounded-l"
 		>
 			<Icon icon="bx:bx-book-bookmark" class="w-5 h-5" />
-			<IconBookBookmark class="w-5 h-5" />
 			<div class="pl-2 font-bold font-cairo">welcome</div>
 			<div
-				class="opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
+				class="tooltip opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
+				use:tooltip
+				title="Welcome info"
 			>
 				<IconPersonPlus class="text-sky-300 opacity-1 w-4 h-4" />
 			</div>
@@ -122,8 +120,7 @@
 			<div
 				class="tooltip fill-gray-300 opacity-0 group-hover:opacity-50 flex align-center absolute top-0 right-0 mt-[10px] mr-2"
 				use:tooltip
-				theme="tomato"
-				title="Tooltip here"
+				title="Announcements"
 			>
 				<IconPersonPlus class="text-sky-300 hover:text-sky-400 hover:opacity-100 w-4 h-4" />
 			</div>
@@ -198,7 +195,7 @@
 	// scrollbar styles
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: blue orange;
+		scrollbar-color: var(--color-sky-800) var(--color-gray-900);
 	}
 
 	/* Works on Chrome, Edge, and Safari */

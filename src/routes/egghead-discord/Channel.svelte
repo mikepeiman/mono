@@ -5,11 +5,7 @@
 	const dispatch = createEventDispatcher();
 	import { pageTitleStore } from '$stores/discord.js';
 	import Icon from '@iconify/svelte';
-	// $: channelId === 'home';
-	// console.log(`🚀 ~ file: Server.svelte ~ line 7 ~ channelId === "home"`, channelId === 'home');
 	$: path = $page.path;
-	// $: console.log(`🚀 ~ file: Channel.svelte ~ line 8 ~ path`, path)
-	// $: console.log(`🚀 ~ file: Channel.svelte ~ line 8 ~ path`, path.split("/")[3])
 	import IconHashSmall from '~icons/line-md/hash-small';
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
 
@@ -84,16 +80,6 @@
 					</div>
 				</div></a
 			>
-			<div class="children-3rEycc">
-				<div
-					class="iconItem-F7GRxr iconBase-3LOlfs"
-					aria-label="Create Invite"
-					tabindex="0"
-					role="button"
-				>
-					<!-- action icon -->
-				</div>
-			</div>
 		</div>
 	</div>
 </div>

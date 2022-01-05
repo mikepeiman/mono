@@ -1,41 +1,19 @@
 <script>
 	export let serverId, channelId;
-	// console.log(`🚀 ~ file: Messages.svelte ~ line 4 ~ messages`, messages)
 	import { page } from '$app/stores';
-	import faker from 'faker';
-	import random from 'canvas-sketch-util/random.js';
 	import Icon from '@iconify/svelte';
-	import Discord from '~icons/my-icons/discord';
 	import Time from 'svelte-time';
 	import { D } from '$stores/discord.js';
-	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
+	import { afterUpdate } from 'svelte';
 	$: params = $page.params;
 	$: channelId = params.channelId;
 	$: serverId = params.serverId;
 	let messages;
-	$: console.log(`🚀 ~ file: Messages.svelte ~ line 12 ~ params`, params);
-	// $: mounted ? messages = getMessages() : false
 	let discordData;
 	let thisChannel = { name: 'Messages', description: 'This is a cool channel' };
 
-	// beforeUpdate(() => {
-	// 	discordData = D.load();
-	// 	// messages = D.generateMessages(serverId, channelId);
-	// 	getThisChannelFromId()
-	// 	getMessagesFromChannel()
-	// });
 	$: thisChannel ? (messages = thisChannel.messages) : [];
-	let mounted = false;
 	$: console.log(`🚀 ~ file: Messages.svelte ~ line 28 ~ thisChannel`, thisChannel);
-
-	// onMount(() => {
-	// 	console.log('%c⧭', 'color: #00a3cc', onMount);
-	// 	discordData = D.load();
-	// 	getThisChannelFromId();
-	// 	dataNeedsReload ? (discordData = D.load()) : false;
-	// 	// channel ? getMessagesFromChannel() : false
-	// 	mounted = true;
-	// });
 
 	const headerIcons = {
 		hashtag: 'line-md:hash-small',
@@ -77,7 +55,6 @@
 	};
 
 	afterUpdate(() => {
-		console.log('%c⧭', 'color: #aa00ff', 'afterUpdate()');
 		discordData = D.load();
 		if (channelId) {
 			getThisChannelFromId();
@@ -90,22 +67,11 @@
 		server.channels.forEach(async (channelGroup) => {
 			channelGroup.channels.forEach(async (channel) => {
 				if (channel.id === channelId) {
-					// console.log(
-					// 	`🚀 ~ file: Messages.svelte ~ line 56 ~ channelGroup.channels.forEach ~ channel.id === channelId`,
-					// 	channel.id,
-					// 	channelId
-					// );
-					// console.log(
-					// 	`%c@@@@@@@@@@@@@@@@ CHANNEL ${channel.name} @@@@@@@@@@@@@@@@@@@`,
-					// 	'color:#0033ff; font-size: 1rem;',
-					// 	channel
-					// );
 					thisChannel = channel;
 					messages = channel.messages;
 					messages.sort(
 						(a, b) => new Date(a.datePosted).getTime() - new Date(b.datePosted).getTime()
 					);
-					// console.log(`?????????????????????? channel.messages ::::   `, channel.messages);
 				}
 			});
 		});
@@ -122,7 +88,7 @@
 			<span class="whitespace-nowrap ">{thisChannel.name.toLowerCase()}</span>
 		</div>
 		<div class="flex items-center justify-center w-4 bg-gray-800">
-			<div class="w-px h-6 z-10 bg-sky-700" />
+			<div class="hidden md:block w-px h-6 z-10 bg-sky-700" />
 		</div>
 		<div class="hidden md:flex flex-1 items-center -mb-0.5 text-sm font-medium truncate">
 			{thisChannel.description}
@@ -130,7 +96,7 @@
 
 		<!-- mobile icons -->
 
-		<div class="flex lg:hidden items-center ml-auto  bg-gray-800">
+		<div class="flex md:hidden items-center ml-auto  bg-gray-800">
 			<button class="text-gray-400 hover:text-sky-700">
 				<div class="relative w-6 h-6 -mt-2 mx-2">
 					<Icon icon={headerIcons.hashtag} class="absolute mt-0.5 w-7 h-7 font-thin " />
@@ -143,16 +109,6 @@
 			<button class="text-gray-400 hover:text-sky-700">
 				<Icon icon={headerIcons.peopleBi} class="w-6 h-6 mx-2" />
 			</button>
-			<!-- <div class="relative mx-2 w-auto">
-				<input
-					type="text"
-					class="bg-gray-900 border-none rounded-sm h-6 w-36 px-1.5"
-					placeholder="Search"
-				/>
-				<div class="absolute right-0 flex items-center inset-y-0">
-					<Icon icon={headerIcons.search} class="w-4 h-4 mr-1.5 text-gray-500" />
-				</div>
-			</div> -->
 		</div>
 		<!-- desktop icons -->
 		<div class="hidden md:flex items-center ml-auto  bg-gray-800">
@@ -209,7 +165,7 @@
 							{#if message.avatar}
 								<img src={message.avatar} class="w-10 h-10 rounded-[40px] ml-1 mr-4" />
 							{/if}
-							<div class="flex flex-col pl-18 pr-16 -ml-18">
+							<div class="flex flex-col pl-18 pr-4 md:pr-16 -ml-18">
 								<div class="flex">
 									<p class="text-amber-600 font-bold">{message.username}</p>
 									<!-- Date: {new Date(message.datePosted).getTime()} -->
@@ -230,7 +186,25 @@
 </div>
 
 <style lang="scss">
-	.toolbar {
-		flex: 0 0 auto;
+	// scrollbar styles
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-sky-800) var(--color-gray-900);
+	}
+
+	/* Works on Chrome, Edge, and Safari */
+	*::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	*::-webkit-scrollbar-track {
+		@apply bg-gray-800;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		//   background-color: orange;
+		border-radius: 2rem;
+		@apply border-4 border-sky-800 bg-sky-600;
+		//   border: 5px solid teal;
 	}
 </style>
