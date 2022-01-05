@@ -117,17 +117,45 @@
 	<div
 		class="flex items-center min-w-0 h-12 shadow-md p-3  shadow-gray-900 z-10 bg-gray-800 font-fira"
 	>
-		<div class="flex items-center min-w-0">
-			<Icon icon={headerIcons.hashtag} class="h-5 w-5 shrink-0 text-sky-700 mr-1" />
+		<div class="flex items-center min-w-0 mt-1">
+			<Icon icon={headerIcons.hashtag} class="h-5 w-5 shrink-0 text-sky-700 mr-1 -mt-1" />
 			<span class="whitespace-nowrap ">{thisChannel.name.toLowerCase()}</span>
 		</div>
 		<div class="flex items-center justify-center w-4 bg-gray-800">
 			<div class="w-px h-6 z-10 bg-sky-700" />
 		</div>
-		<div class="flex flex-1 items-center -mb-0.5 text-sm font-medium truncate">
+		<div class="hidden md:flex flex-1 items-center -mb-0.5 text-sm font-medium truncate">
 			{thisChannel.description}
 		</div>
-		<div class="flex items-center ml-auto  bg-gray-800">
+
+		<!-- mobile icons -->
+
+		<div class="flex lg:hidden items-center ml-auto  bg-gray-800">
+			<button class="text-gray-400 hover:text-sky-700">
+				<div class="relative w-6 h-6 -mt-2 mx-2">
+					<Icon icon={headerIcons.hashtag} class="absolute mt-0.5 w-7 h-7 font-thin " />
+					<Icon
+						class="absolute mt-0.5 font-thin h-3.5 w-3.5  z-10 left-3.5 -bottom-[5px] bg-gray-800 rounded-sm "
+						icon={headerIcons.chatHeroicons}
+					/>
+				</div>
+			</button>
+			<button class="text-gray-400 hover:text-sky-700">
+				<Icon icon={headerIcons.peopleBi} class="w-6 h-6 mx-2" />
+			</button>
+			<!-- <div class="relative mx-2 w-auto">
+				<input
+					type="text"
+					class="bg-gray-900 border-none rounded-sm h-6 w-36 px-1.5"
+					placeholder="Search"
+				/>
+				<div class="absolute right-0 flex items-center inset-y-0">
+					<Icon icon={headerIcons.search} class="w-4 h-4 mr-1.5 text-gray-500" />
+				</div>
+			</div> -->
+		</div>
+		<!-- desktop icons -->
+		<div class="hidden md:flex items-center ml-auto  bg-gray-800">
 			<button class="text-gray-400 hover:text-sky-700">
 				<div class="relative w-6 h-6 -mt-2 mx-2">
 					<Icon icon={headerIcons.hashtag} class="absolute mt-0.5 w-7 h-7 font-thin " />
@@ -163,11 +191,15 @@
 				<Icon icon={headerIcons.questionCircle} class="w-5 h-5 mx-2" />
 			</button>
 		</div>
+		<!-- end responsive icons -->
 	</div>
 	<div class="p-3 bg-gray-750 flex-1 flex-shrink min-w-0  overflow-y-scroll h-full">
 		{#if messages}
 			{#each messages as message, i}
-				<a href={message.id} class="flex shrink flex-shrink min-w-0 hover:bg-sky-800/[0.32] hover:cursor-pointer hover:rounded">
+				<a
+					href={message.id}
+					class="flex shrink flex-shrink min-w-0 hover:bg-sky-800/[0.32] hover:cursor-pointer hover:rounded"
+				>
 					{#if i > 0 && message.username === messages[i - 1].username}
 						<div class="flex w-full pl-[60px] pr-16 py-1">
 							<p class="flex-shrink min-w-0 text-base font-light">{message.message}</p>

@@ -76,15 +76,15 @@
 </script>
 
 <div class="bg-gray-800  shadow-sm z-10 shadow-gray-900 hover:bg-gray-700/[0.16]">
-	<div class="px-3 h-12 flex flex-shrink-0 items-center font-fira ">
-		<div class="icon-badge-check text-gray-600 relative flex items-center">
+	<div class="px-3 h-12 flex flex-shrink-0 items-center font-fira  ">
+		<div class="icon-badge-check text-gray-600 relative flex items-center mt-1">
 			<div class="bg-white absolute w-3 h-3 rounded-xl -z-10 left-[3px]" />
 			<div class="mr-[2px]">
 				<IconBadgeCheck />
 			</div>
 		</div>
-		{server}
-		<div class="ml-auto opacity-80">
+		<div class="mt-1">{server}</div>
+		<div class="ml-auto opacity-80 mt-1">
 			<IconChevronDown />
 		</div>
 	</div>
