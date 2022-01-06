@@ -149,21 +149,24 @@
 					Recent posts
 				</h2>
 				{#each selectedPosts as post}
-					<a href={`/posts/${post.slug}`} class="no-underline">
+					<a href={`/blog/${post.slug}`} class="no-underline relative">
 						<div
-							class="post-card transition card card-body p-5 lg:p-7 bg-sky-500 bg-opacity-25 my-6 rounded-md hover:bg-sky-900 hover:-translate-x-2"
+							class="post-card transition card card-body p-5 lg:p-7  rounded-md bg-gray-900/[0.5] my-6 hover:bg-sky-800/[0.5] hover:-translate-x-2"
 						>
+						<!-- <figure class="absolute left-0 top-0 opacity-50">
+							<img class="rounded-xl p-0" src={post.coverImage.url} alt={`Cover image for ${post.title}`} />
+						</figure> -->
 							<div
-								class="article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200"
+								class="z-10 article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200"
 							>
 								<Time timestamp={post.date} />
 							</div>
 							<h1
-								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white"
+								class="z-10 text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white"
 							>
 								{post.title}
 							</h1>
-							<p class="text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200">
+							<p class="z-10 text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200">
 								{post.excerpt}
 							</p>
 						</div>
@@ -239,7 +242,7 @@
 				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="project-card card bg-opacity-25  rounded-md transition-all  bg-sky-500 bg-opacity-25 flex flex-col  md:flex-col-reverse md:justify-between lg:flex-col lg:justify-start p-5 lg:p-7 rounded-md hover:bg-sky-900 hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
+						class="project-card card rounded-md transition-all  bg-gray-900/[0.5] hover:bg-sky-800/[0.5] flex flex-col  md:flex-col-reverse md:justify-between lg:flex-col lg:justify-start p-5 lg:p-7 rounded-md  hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="text-xs ml-1 flex flex-row project-tags">
 							{#each project.tags as tag}
