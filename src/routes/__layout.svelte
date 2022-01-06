@@ -13,9 +13,10 @@
 </script>
 
 {#if path.includes('blog')}
-	<div class="center flex flex-col items-center jutify-center">
+	<div class="flex flex-col items-center jutify-center">
 		<slot />
 	</div>
+	<Footer />
 {:else if path !== '/' && !path.includes('egghead-discord')}
 	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
 		<Nav>

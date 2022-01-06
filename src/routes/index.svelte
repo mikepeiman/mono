@@ -1,6 +1,6 @@
 <script context="module">
 	export const load = async ({ fetch }) => {
-		const res = await fetch('../posts.json');
+		const res = await fetch('../blog.json');
 		// console.log(`🚀 ~ file: posts index.svelte ~ line 4 ~ load ~ res`, res)
 		if (res.ok) {
 			const { posts } = await res.json();
@@ -12,9 +12,9 @@
 <script>
 	import Time from 'svelte-time';
 	import IconChevronRight from '~icons/mdi/chevron-right';
-	import Sketch01Preview from './creative/sketch01-preview.svelte';
-	import Sketch02Preview from './creative/sketch02-preview.svelte';
-	import Sketch03Preview from './creative/sketch03-preview.svelte';
+	// import Sketch01Preview from './creative/sketch01-preview.svelte';
+	// import Sketch02Preview from './creative/sketch02-preview.svelte';
+	// import Sketch03Preview from './creative/sketch03-preview.svelte';
 	import { onMount } from 'svelte';
 	onMount(() => {
 		// resizeCanvases();
@@ -49,7 +49,7 @@
 			url: './creative/sketch03',
 			tags: ['creative coding', 'generative art', 'javascript'],
 			desc: 'Fulfilling a lifelong passion for beauty, and exploring the relationships between form, movement and number.',
-			component: Sketch03Preview
+			// component: Sketch03Preview
 		}
 	];
 
