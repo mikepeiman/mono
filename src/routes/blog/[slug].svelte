@@ -1,7 +1,7 @@
 <script context="module">
 	export const load = async ({ fetch, page: { params } }) => {
 		const { slug } = params;
-		const res = await fetch(`/posts/${slug}.json`);
+		const res = await fetch(`/blog/${slug}.json`);
 		if (res.ok) {
 			const { post } = await res.json();
 			return { props: { post } };
@@ -26,11 +26,11 @@
 	<title>Mike's Blog</title>
 </svelte:head>
 
-<div class="flex flex-col content-center items-center px-48 pb-48">
+<div class="flex flex-col content-start items-center px-9 pb-9 md:px-24 md:pb-24 lg:px-36 lg:pb-36 xl:px-48 xlpb-48">
     <div class="sm:-mx-5 md:-mx-10 lg:-mx-20 xl:-mx-38 mb-5 rounded-xl">
         <img src={post.coverImage.url} alt={`Cover image for ${title}`} />
     </div>
-    <h1 class="text-4xl font-semibold mb-5">
+    <h1 class="text-4xl text-center font-semibold mb-5">
         {title}
         <!-- {author.picture.url} -->
     </h1>

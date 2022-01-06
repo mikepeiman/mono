@@ -5,35 +5,41 @@
 	import Nav from '../components/Nav.svelte';
 	import { page } from '$app/stores';
 	$: path = $page.path;
-    // $: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path)
+	$: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path);
+	$: console.log(
+		`🚀 ~ file: index.svelte ~ line 24 ~ path includes blog : `,
+		path.includes('blog')
+	);
 </script>
 
-
-	{#if path !== '/' && !path.includes('egghead-discord')}
-	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
-	<Nav>
+{#if path.includes('blog')}
+	<div class="center flex flex-col items-center jutify-center">
 		<slot />
-	</Nav>
+	</div>
+{:else if path !== '/' && !path.includes('egghead-discord')}
+	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
+		<Nav>
+			<slot />
+		</Nav>
+		<div class="layout-main flex flex-col items-center jutify-center">
+			<slot />
+		</div>
+		<Footer />
+	</div>
+{:else if path === '/'}
+	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
+		<div class="layout-main flex flex-col -mt-20 items-center jutify-center">
+			<slot />
+		</div>
+		<Footer />
+	</div>
+{:else}
 	<div class="layout-main flex flex-col items-center jutify-center">
 		<slot />
 	</div>
-	<Footer />
-</div>
-	{:else if path === '/'}
-	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
-	<div class="layout-main flex flex-col -mt-20 items-center jutify-center">
-		<slot />
-	</div>
-	<Footer />
-	</div>
-	{:else}
-	<div class="layout-main flex flex-col items-center jutify-center">
-		<slot />
-	</div>
-	{/if}
+{/if}
 
 <style lang="scss">
-
 	:global(#svelte) {
 		min-height: 100vh;
 	}
@@ -61,5 +67,17 @@
 
 	.sidebar {
 		grid-area: sidebar;
+	}
+
+	.center {
+		--gap: 1rem;
+		--mw: 50rem;
+
+		width: 100%;
+		max-width: var(--mw);
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: var(--gap);
+		padding-right: var(--gap);
 	}
 </style>

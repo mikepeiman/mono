@@ -1,6 +1,6 @@
 <script context="module">
 	export const load = async ({ fetch }) => {
-		const res = await fetch('/posts.json');
+		const res = await fetch('/blog.json');
         // console.log(`🚀 ~ file: posts index.svelte ~ line 4 ~ load ~ res`, res)
 		if (res.ok) {
 			const { posts } = await res.json();

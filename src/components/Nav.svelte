@@ -28,7 +28,7 @@
 		{ title: 'Home', url: '/' },
 		{ title: 'About', url: '/about' },
 		{ title: 'Color', url: '/color' },
-		{ title: 'Blog', url: '/posts' },
+		{ title: 'Blog', url: '/blog' },
 		{ title: 'Posts endpoint', url: '/posts.json' },
 		{ title: 'Todos', url: '/todos' },
 		{ title: 'Quotes', url: '/quotes' },
