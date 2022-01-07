@@ -13,11 +13,11 @@
 </script>
 
 {#if path.includes('blog')}
-	<div class="app-layout min-h-screen flex flex-col items-center jutify-center">
+	<div class="min-h-screen height-full flex flex-col items-center jutify-center">
 		<slot />
 	</div>
-	<div class="-mt-20">
-		<Footer />
+	<div class="">
+		<Footer bgColor="bg-winterblues-700" textColor="text-gray-900" />
 	</div>
 {:else if path !== '/' && !path.includes('egghead-discord')}
 	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">
@@ -55,8 +55,9 @@
 			' header '
 			' layout-main '
 			' footer ';
-	}
-	.layout-main {
+		}
+
+		.layout-main {
 		grid-area: layout-main;
 		// display: flex;
 		// flex-direction: column;

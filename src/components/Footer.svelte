@@ -1,11 +1,14 @@
 <script>
+    export let bgColor = 'bg-gray-900'
+    export let textColor = 'text-gray-300'
+    console.log(`🚀 ~ file: Footer.svelte ~ line 3 ~ bgColor`, bgColor)
     let icons = [
         {name: 'Github', src: ''}
     ]
 
 </script>
 
-<div class="footer grid  bg-slate-900  flex align-middle items-center justify-between h-20">
+<div class="footer grid {bgColor} {textColor} font-display text-base flex align-middle items-center justify-between h-20">
     <!-- <button class="logo btn btn-outline place-content-center mx-5 p-5 rounded-lg bg-blue-700">Footer</button> -->
     <nav class="social w-full flex items-center justify-center xl:pl-24">
         <p>Made with <span class="text-rose-500 text-lg px-1">♥</span> by Mike Peiman.</p>
