@@ -4,6 +4,7 @@
         // console.log(`🚀 ~ file: posts index.svelte ~ line 4 ~ load ~ res`, res)
 		if (res.ok) {
 			const { posts } = await res.json();
+            console.log(`🚀 ~ file: index.svelte ~ line 7 ~ load ~ posts`, posts)
 			return { props: { posts } };
 		}
 	};

@@ -8,14 +8,7 @@ export const get = async (req) => {
               title
               date
               tags
-              author {
-                name
-                authorTitle: title
-                picture {
-                  url(transformation: {image: {resize: {fit:clip, height:150,width:150}}})
-                }
-              }
-              content {
+              body {
                 html
               }
               coverImage{
@@ -25,6 +18,7 @@ export const get = async (req) => {
           }`
           const variables = {slug}
         const { post } = await client.request(query, variables)
+        console.log(`🚀 ~ file: [slug].json.js ~ line 21 ~ get ~ post`, post)
         return {
             status: 200,
             body: { post }

@@ -176,7 +176,7 @@
 			<div
 				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2  transition"
 			>
-				<a href="/posts" class="view-more-link offset-4 no-underline ">View more articles </a>
+				<a href="/blog" class="view-more-link offset-4 no-underline ">View more articles </a>
 
 				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
