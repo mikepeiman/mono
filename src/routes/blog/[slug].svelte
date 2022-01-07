@@ -18,7 +18,7 @@
 		title,
 		date,
 		tags,
-		body: { html },
+		article: { html },
 		coverImage
 	} = post;
 	// author: { name, authorTitle, picture },
@@ -33,7 +33,9 @@
 		fire5: 'fa5:fire',
 		fire6: 'fa5:fire-alt',
 		fire7: 'el:fire',
-		fire8: 'eva:fire'
+		fire8: 'eva:fire',
+        arrowCircle1: 'bi:arrow-down-circle-fill',
+        arrowCircle2: 'eva:arrow-circle-down-fill',
 	};
 </script>
 
@@ -44,7 +46,10 @@
 <div
 	class="main center flex flex-col content-start items-center px-3 pb-3 md:px-10 md:pb-10 lg:px-20 lg:pb-20 xl:px-48 xlpb-48"
 >
-	<div class="post-title mt-8">
+<div class="post-title mt-8">
+        <a href="/blog" class="text-sky-500/[0.5] transition-all rounded-xl w-0">
+            <Icon icon={icons.arrowCircle2}  class="w-12 h-12 -ml-2 mb-2 transition:all duration-200 hover:rotate-90 hover:text-sky-500" />
+        </a>
 		<!-- <div class="sm:-mx-5 md:-mx-10 lg:-mx-20 xl:-mx-38 mb-5 rounded-xl">
                 <img src={post.coverImage.url} alt={`Cover image for ${title}`} />
             </div> -->
@@ -57,7 +62,7 @@
 			<!-- {author.picture.url} -->
 		</h1>
 	</div>
-	<!-- <a href="/" class="flex items-center mt-10">
+	 <!-- <a href="/" class="flex items-center mt-10">
         <img
             src={picture.url}
             alt={name}
@@ -67,16 +72,16 @@
             <span class="title-font font-medium">{name}</span>
             <span class="text-secondary text-xs tracking-widest mt-0 5">{authorTitle}</span>
         </span>
-    </a>
+    </a> -->
     {#if tags}
         <div class="mt-5 space-x-2">
             {#each tags as tag}
-                <span class="badge badge-primary">{tag}</span>
+                <span class="px-2 py-1 rounded bg-sky-900/[0.5] text-sky-400/[0.5]">{tag}</span>
             {/each}
         </div>
-    {/if} -->
+    {/if}
 
-	<article class="mt-10 text-winterblues-900 text-xl pb-12">
+	<article class=" text-winterblues-900 text-xl pb-12">
 		{@html html}
 		<!-- {content}  -->
 		<!-- <div class="text-8xl flex items-center justify-center w-full">
@@ -97,12 +102,12 @@
 			<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
 				<linearGradient id="gradient-fire" x2="1" y2="1">
 					<stop offset="0%" stop-color="var(--color-yellow-500)" />
-					<stop offset="15%" stop-color="var(--color-fuchsia-700)" />
+					<stop offset="15%" stop-color="var(--color-warm2-700)" />
 					<stop offset="50%" stop-color="var(--color-amber-400)" />
 					<stop offset="35%" stop-color="var(--color-yellow-500)" />
 					<stop offset="75%" stop-color="var(--color-rose-700)" />
 					<stop offset="80%" stop-color="var(--color-yellow-500)" />
-					<stop offset="100%" stop-color="var(--color-fuchsia-800)" />
+					<stop offset="100%" stop-color="var(--color-warm2-300)" />
 					<!-- <stop offset="25%" stop-color="var(--color-fuchsia-200)" /> -->
 				</linearGradient>
 			</svg>

@@ -12,7 +12,9 @@ export const get = async () => {
               coverImage {
                 url
               }
-              content
+              article {
+                html
+              }
             }
           }`
     const { posts } = await client.request(query)

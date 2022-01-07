@@ -85,20 +85,20 @@
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
-			<h1 class="font-regular text-3xl lg:text-5xl ">Hi, I'm Mike.</h1>
-			<p class="intro-body text-xl xl:text-2xl font-thin">
+			<h1 class="text-3xl lg:text-5xl font-bold font-display">Hi, I'm Mike.</h1>
+			<p class="intro-body mt-3 font-light text-xl xl:text-2xl leading-relaxed font-montserrat">
 				I'm a creative software developer, and this is my professional blog. I love
-				<span class="text-highlight color-1">user experience</span> and design that helps realize
+				<span class="font-bold italic color-1">user experience</span> and design that helps realize
 				human potential. I follow a
-				<span class="text-highlight color-2">first-principles</span>
+				<span class="font-bold italic color-2">first-principles</span>
 				approach in my life and my work. Here are a few of my
-				<span class="color-3 text-highlight">design principles</span>:
+				<span class="color-3 font-bold italic">design principles</span>:
 			</p>
 
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  color-3 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading  color-3 leading-none md:text-2xl xl:text-3xl"
 					>
 						Never deny the user basic options.
 					</h2>
@@ -110,7 +110,7 @@
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  color-3 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading   color-3 leading-none md:text-2xl xl:text-3xl"
 					>
 						Minimize barriers to action.
 					</h2>
@@ -123,7 +123,7 @@
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading font-extrabold italic text-xl  color-3 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading  color-3 leading-none md:text-2xl xl:text-3xl"
 					>
 						Leverage visual intelligence.
 					</h2>
@@ -145,28 +145,28 @@
 
 		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
 			<div class="post w-full">
-				<h2 class="recent-label uppercase -mt-2 -mb-4 text-sky-300 text-md lg:text-lg">
+				<h2 class="recent-label uppercase font-montserrat -mt-2 -mb-4 text-sky-300 text-md lg:text-lg">
 					Recent posts
 				</h2>
 				{#each selectedPosts as post}
 					<a href={`/blog/${post.slug}`} class="no-underline relative">
 						<div
-							class="post-card transition card card-body p-5 lg:p-7  rounded-md bg-gray-900/[0.5] my-6 hover:bg-sky-800/[0.5] hover:-translate-x-2"
+							class="post-card transition duration-300  p-5 lg:p-7  rounded-md bg-gray-900 my-6 hover:bg-sky-800/[0.5] hover:-translate-x-2"
 						>
 						<!-- <figure class="absolute left-0 top-0 opacity-50">
 							<img class="rounded-xl p-0" src={post.coverImage.url} alt={`Cover image for ${post.title}`} />
 						</figure> -->
 							<div
-								class="z-10 article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-light text-sky-200"
+								class="z-10 article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-base font-fira text-amber-200/[0.5]"
 							>
 								<Time timestamp={post.date} />
 							</div>
 							<h1
-								class="z-10 text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-bold text-white"
+								class="font-display font-bold text-sky-100 z-10 text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
 							>
 								{post.title}
 							</h1>
-							<p class="z-10 text-sm md:text-base xl:text-lg tracking-wider font-light text-sky-200">
+							<p class="font-fira font-light text-sky-200 tracking-wider z-10 text-sm md:text-base xl:text-lg">
 								{post.excerpt}
 							</p>
 						</div>
@@ -217,7 +217,7 @@
 		<!-- SEPARATOR -->
 		<div class="flex flex-row items-end justify-between">
 			<h2
-				class="recent-label uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2"
+				class="recent-label font-montserrat uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2"
 			>
 				Selected Projects
 			</h2>
@@ -242,23 +242,30 @@
 				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
 					<!-- make a 'projects' directory for these -->
 					<div
-						class="project-card card rounded-md transition-all  bg-gray-900/[0.5] hover:bg-sky-800/[0.5] flex flex-col  md:flex-col-reverse md:justify-between lg:flex-col lg:justify-start p-5 lg:p-7 rounded-md  hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
+						class="project-card card rounded-md transition-all  bg-gray-900 hover:bg-sky-800/[0.5] flex flex-col  md:flex-col-reverse md:justify-between lg:flex-col lg:justify-start p-5 lg:p-7 rounded-md  hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
 						<div class="text-xs ml-1 flex flex-row project-tags">
-							{#each project.tags as tag}
+							<!-- {#each project.tags as tag}
 								<span
 									class="project-tag -ml-2 mr-4 mb-4 bg-winterblues-300 bg-opacity-30 rounded-md text-xs font-thin p-1"
 									>{tag}</span
 								>
-							{/each}
+							{/each} -->
+							{#if project.tags}
+							<div class="mb-4 -mt-2 lg:mb-4 lg:-mt-2 md:mb-2 md:mt-2 space-x-2">
+								{#each project.tags as tag}
+									<span class="project-tag font-light font-montserrat -ml-2 whitespace-nowrap px-2 py-1 rounded bg-emerald-900/[0.5] text-yellow-300/[0.75]">{tag}</span>
+								{/each}
+							</div>
+						{/if}
 						</div>
 						<div class="project-details flex flex-col ">
 							<h1
-								class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1 font-extrabold text-white"
+								class="font-display font-bold text-sky-100 z-10 text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
 							>
 								{project.name}
 							</h1>
-							<p class="mt-2 text-sm md:text-base xl:text-lg tracking-wider  font-light">
+							<p class="font-fira font-light text-sky-200 tracking-wider mt-2 text-sm md:text-base xl:text-lg ">
 								{project.desc}
 							</p>
 						</div>
@@ -275,15 +282,20 @@
 <style lang="scss">
 	// @import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Coda:wght@400;800&family=Dancing+Script&family=Forum&family=Gideon+Roman&family=Great+Vibes&family=Karla:ital,wght@0,200;0,300;1,200;1,300&family=Lemonada:wght@300;400;500&family=Lobster&family=Merriweather:ital,wght@0, 100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Monoton&family=Montserrat:ital,wght@0,100;0,300;0,500;0,800;1,100;1,300;1,500;1,800&family=Outfit:wght@200;500&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap');
 
+	:root {
+		--color-1: var(--color-fuchsia-300);
+		--color-2: var(--color-emerald-400);
+		--color-3: var(--color-sky-400);
+	}
+
 	.color-1 {
-		// color: var(--color-deepreds-900);
-		@apply text-amber-300;
+		color: var(--color-1);
 	}
 	.color-2 {
-		color: var(--color-limegreens-700);
+		color: var(--color-2);
 	}
 	.color-3 {
-		color: var(--color-winterblues-600);
+		color: var(--color-3);
 	}
 	// 100,200,300,400,500,600,700,800,900
 
@@ -293,7 +305,7 @@
 		// font-family: 'Newsreader', serif;
 		// font-family: 'Noto Sans Display', sans-serif;
 		// font-family: 'Nunito', sans-serif;
-		font-family: 'Sarabun', sans-serif;
+		// font-family: 'Sarabun', sans-serif;
 		// font-family: 'Source Sans 3', sans-serif;
 		// font-family: 'Source Serif 4', sans-serif;
 		// font-family: 'Vollkorn', serif;
@@ -305,17 +317,6 @@
 			'separator separator';
 	}
 
-	.icon-img {
-		color: var(--color-warm2-300);
-		@apply emerald-500;
-		color: blue;
-		background: red;
-	}
-
-	h1 {
-		font-family: 'Newsreader', serif;
-	}
-
 	.separator {
 		@apply bg-gradient-to-l from-blue-400 via-electricindigo-300 to-blue-400;
 	}
@@ -325,46 +326,10 @@
 
 	.intro {
 		grid-area: intro;
-		// font-family: 'Be Vietnam Pro', sans-serif;
-		// font-family: 'Montserrat', sans-serif;
-		font-family: 'Nunito', sans-serif;
-		// font-family: 'Sarabun', sans-serif;
-		// font-family: 'Source Serif 4', sans-serif;
-		// font-family: 'Noto Sans Display', sans-serif;
-		// font-family: 'Source Sans 3', sans-serif;
-		// font-family: 'Karla', sans-serif;
-		// font-family: 'Fira Sans', sans-serif;
-		// font-family: 'Newsreader', serif;
-		// font-family: 'Vollkorn', serif;
-		// font-family: 'Merriweather', serif;
-		//  font-family: 'Overlock', cursive;
-
-		h1 {
-			// font-family: 'Nunito', sans-serif;
-			font-family: 'Newsreader', serif;
-			// font-family: 'Sarabun', sans-serif;
-			// font-family: 'Source Serif 4', sans-serif;
-			// font-family: 'Vollkorn', serif;
-			// font-family: 'Be Vietnam Pro', sans-serif;
-			// font-family: 'Fira Sans', sans-serif;
-			// font-family: 'Noto Sans Display', sans-serif;
-			// font-family: 'Source Sans 3', sans-serif;
-			// font-family: 'Merriweather', serif;
-			// font-family: 'Karla', sans-serif;
-			//  font-family: 'Overlock', cursive;
-			font-weight: 900;
-		}
+		// font-family: 'Nunito', sans-serif;
 	}
 	.intro-body {
-		// font-family: 'Montserrat', sans-serif;
-		// font-family: 'Karla', sans-serif;
-		line-height: 1.4;
-		@apply mt-3 font-light;
-	}
-	.text-highlight {
-		// font-family: 'Montserrat', sans-serif;
-		// font-family: 'Karla', sans-serif;
-		@apply font-bold italic;
+		letter-spacing: 0.01em;
 	}
 
 	a {
@@ -443,30 +408,7 @@
 		grid-area: posts;
 	}
 
-	.post-card {
-		position: relative;
-		transition: 0.3s;
-		// &:after {
-		// 	content: 'Read this...';
-		// 	position: absolute;
-		// 	opacity: 0;
-		// 	bottom: 0;
-		// 	right: 0;
-		// 	transition: 0.3s;
-		// 	padding: 0.5rem;
-		// }
-		// &:hover {
-		// 	&:after {
-		// 		content: 'Read this...';
-		// 		position: absolute;
-		// 		opacity: 1;
-		// 		bottom: 0;
-		// 		right: 0;
-		// 		transition: 0.3s;
-		// 		@apply text-sky-400;
-		// 	}
-		// }
-	}
+
 	.project-card {
 		display: flex;
 		// grid-template-columns: 3fr minmax(45%, 2fr);
@@ -503,18 +445,20 @@
 			position: relative;
 			&::marker {
 				content: counter(intro-counter) '. ';
-				color: var(--color-sky-300);
+				color: var(--color-3);
 				font-weight: 700;
 				position: absolute;
 				top: 0;
 				left: calc(-1 * var(--list-counter-size) - 2rem);
 				font-size: var(--list-counter-size);
+				font-family: 'Newsreader';
 			}
 			.li-heading {
-				// font-family: 'Montserrat', sans-serif;
+				font-family: 'Montserrat', sans-serif;
 				position: relative;
 				left: 0.75rem;
-				// @apply font-extrabold italic text-xl  text-emerald-200 leading-none;
+				color: var(--color-3);
+				@apply font-semibold italic text-xl leading-none ;
 			}
 			.li-snippet {
 				font-family: 'Montserrat', sans-serif;
@@ -547,32 +491,38 @@
 		// font-family: 'Vollkorn', serif;
 		// font-family: 'Merriweather', serif;
 		//  font-family: 'Overlock', cursive;
-		font-weight: 300;
+		font-weight: 600;
 		// font-weight: 500;
 		// font-weight: 700;
 		// font-weight: 900;
-		color: var(--color-winterblues-400);
-		color: white;
+		// color: var(--color-winterblues-400);
+		// color: white;
 		line-height: 1.25em;
 		background: linear-gradient(black, black) padding-box,
 			linear-gradient(
 					120deg,
-					rgba(131, 58, 180, 1) 10%,
-					rgba(47, 174, 177, 1) 22%,
-					rgba(253, 29, 29, 1) 50%,
-					rgba(191, 252, 55, 1) 72%,
-					rgba(252, 176, 69, 1) 90%
+					var(--color-emerald-500) 10%,
+					var(--color-amber-500) 25%,
+					var(--color-rose-500) 50%,
+					var(--color-fuchsia-500) 75%,
+					var(--color-sky-500) 90%,
 				)
 				border-box;
+			// linear-gradient(
+			// 		120deg,
+			// 		rgba(131, 58, 180, 1) 10%,
+			// 		rgba(47, 174, 177, 1) 22%,
+			// 		rgba(253, 29, 29, 1) 50%,
+			// 		rgba(191, 252, 55, 1) 72%,
+			// 		rgba(252, 176, 69, 1) 90%
+			// 	)
+			// 	border-box;
 		// linear-gradient(to right, var(--color-winterblues-600), var(--color-deepreds-900)) border-box;
 		border-radius: 1rem;
 		border: 10px solid transparent;
 		.author {
 			color: var(--color-gray-300);
 		}
-	}
-	.article-date {
-		font-family: monospace;
 	}
 
 	.projects-group {
@@ -582,7 +532,5 @@
 		grid-area: tags;
 	}
 
-	.project-tag {
-		font-family: monospace;
-	}
+
 </style>

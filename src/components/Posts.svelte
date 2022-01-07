@@ -16,29 +16,34 @@
 	<title>Mike's Blog</title>
 </svelte:head>
 
-{#each posts as { title, slug, excerpt, coverImage, date, tags }}
-	<main class="mx-auto px-4 py-8 center">
-		<div class="card text-center shadow-2xl">
-			<figure class="px-10 pt-10 ">
-				<img class="rounded-xl " src={coverImage.url} alt={`Cover image for ${title}`} />
-			</figure>
-			<div class="card-body">
-				<h1 class="title">{title}</h1>
-				<p>{excerpt}</p>
-				<div class="flex justify-center mt-5 space-x-2">
-					{#each tags as tag}
-						<div class="badge badge-primary">{tag}</div>
-					{/each}
-				</div>
-				<div class="justify-center card-actions">
-					<a href={`/blog/${slug}`} class="btn btn-primary btn-outline">Read &rArr</a>
+<div class="flex flex-col items-center">
+	{#each posts as { title, slug, excerpt, coverImage, date, tags }}
+		<a href={`/blog/${slug}`} class="p-1 m-6 w-full bg-winterblues-300/[0.2] hover:bg-winterblues-300/[0.4] rounded">
+			<div class="p-1 shadow-2xl">
+				<!-- <figure class="px-10 pt-10 ">
+					<img class="rounded-xl " src={coverImage.url} alt={`Cover image for ${title}`} />
+				</figure> -->
+				<div class="post-card p-6 shadow-xl">
+					<div class="font-mono">{date}</div>
+					<h1 class="title">{title}</h1>
+					<p>{excerpt}</p>
+					<div class="flex justify-start mt-5 space-x-2">
+						{#if tags}
+						<div class="mt-5 space-x-2">
+							{#each tags as tag}
+								<span class="px-2 py-1 rounded bg-sky-900/[0.5] text-sky-400/[0.5]">{tag}</span>
+							{/each}
+						</div>
+					{/if}
+					</div>
 				</div>
 			</div>
-		</div>
-	</main>
-{/each}
+		</a>
+	{/each}
+</div>
 
 <style lang="scss">
+	@import '../prose.scss';
 	:global(.center > *) {
 		--gap: 1rem;
 		--mw: 50rem;
@@ -56,7 +61,7 @@
 	:global(.center > .exception-2) {
 		// max-width: minmax( 50rem, 100%);
 		// min-width: max( 50rem, 100vw);
-		max-width: min( 100%, 50rem);
+		max-width: min(100%, 50rem);
 		padding-left: 0;
 		padding-right: 0;
 	}

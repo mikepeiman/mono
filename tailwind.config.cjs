@@ -9,6 +9,7 @@ module.exports = {
       'sans': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
       'serif': ['Newsreader', ...defaultTheme.fontFamily.serif],
       'mono': ['Inconsolata', ...defaultTheme.fontFamily.mono],
+      // Inconsolata,Menlo,Monaco,Consolas,'Courier New',monospace;
       'display': ['Vollkorn', ...defaultTheme.fontFamily.sans],
       'body': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
       'open': ['"Open Sans"', ...defaultTheme.fontFamily.sans],
@@ -19,6 +20,7 @@ module.exports = {
       'newsreader': ['Newsreader', ...defaultTheme.fontFamily.serif],
       'fira': ['"Fira Sans"', '"Open Sans"', ...defaultTheme.fontFamily.sans],
       'josefin': ['"Josefin Sans"', '"Open Sans"', ...defaultTheme.fontFamily.sans],
+      'montserrat': ['Montserrat', '"Open Sans"', ...defaultTheme.fontFamily.sans],
 
     },
     extend: {

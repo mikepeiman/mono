@@ -13,7 +13,7 @@
 </script>
 
 {#if path.includes('blog')}
-	<div class="min-h-screen height-full flex flex-col items-center jutify-center">
+	<div class="blog bg-gray-900 min-h-screen height-full flex flex-col items-center jutify-center">
 		<slot />
 	</div>
 	<div class="">

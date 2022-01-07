@@ -8,7 +8,7 @@ export const get = async (req) => {
               title
               date
               tags
-              body {
+              article {
                 html
               }
               coverImage{
