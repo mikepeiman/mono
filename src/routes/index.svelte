@@ -157,7 +157,7 @@
 							<img class="rounded-xl p-0" src={post.coverImage.url} alt={`Cover image for ${post.title}`} />
 						</figure> -->
 							<div
-								class="z-10 article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-base font-fira text-amber-200/[0.5]"
+								class="z-10 article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-base font-fira  text-yellow-300/[0.75]"
 							>
 								<Time timestamp={post.date} />
 							</div>
@@ -174,9 +174,9 @@
 				{/each}
 			</div>
 			<div
-				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end text-sky-300 hover:text-sky-100 hover:decoration-2  transition"
+				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end mb-4"
 			>
-				<a href="/blog" class="view-more-link offset-4 no-underline ">View more articles </a>
+				<a href="/blog" class="view-more pr-4 pb-2 offset-4 no-underline  text-sky-300 hover:text-sky-100 hover:decoration-2  transition">View more articles </a>
 
 				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
@@ -217,14 +217,14 @@
 		<!-- SEPARATOR -->
 		<div class="flex flex-row items-end justify-between">
 			<h2
-				class="recent-label font-montserrat uppercase text-md lg:text-lg text-orange-200 mt-9 -mb-1 md:mb-0 xl:mb-2"
+				class="recent-label font-montserrat uppercase text-md lg:text-lg text-amber-400/[0.75] mt-9 -mb-1 md:mb-0 xl:mb-2"
 			>
 				Selected Projects
 			</h2>
 			<h2
-				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end transition text-orange-200 hover:text-white"
+				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end transition text-amber-400/[0.75] hover:text-white"
 			>
-				<a href="/creative" class="view-more-link offset-4 pr-2 no-underline ">View more projects</a
+				<a href="/creative" class="view-more offset-4 pr-4 pb-2 no-underline ">View more projects</a
 				>
 				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
@@ -254,7 +254,7 @@
 							{#if project.tags}
 							<div class="mb-4 -mt-2 lg:mb-4 lg:-mt-2 md:mb-2 md:mt-2 space-x-2">
 								{#each project.tags as tag}
-									<span class="project-tag font-light font-montserrat -ml-2 whitespace-nowrap px-2 py-1 rounded bg-emerald-900/[0.5] text-yellow-300/[0.75]">{tag}</span>
+									<span class="project-tag font-light font-montserrat -ml-2 whitespace-nowrap px-2 py-1 rounded bg-fuchsia-900/[0.5] text-yellow-300/[0.75]">{tag}</span>
 								{/each}
 							</div>
 						{/if}
@@ -351,11 +351,11 @@
 		}
 	}
 	.view-more {
-		.view-more-link {
+		.view-more {
 			@apply pr-4 pb-2;
 		}
-		transition: all 0;
-		transition-delay: 0.4s;
+		transition: all;
+		transition-delay: 0.1s;
 		&:hover {
 			transition-delay: 0s;
 			.icon-wrapper {
@@ -385,8 +385,8 @@
 			}
 		}
 		.view-more {
-			transition: all 0;
-			transition-delay: 0.4s;
+			transition: all;
+			transition-delay: 0.1s;
 			&:hover {
 				transition-delay: 0s;
 				.icon-wrapper {
@@ -519,7 +519,8 @@
 			// 	border-box;
 		// linear-gradient(to right, var(--color-winterblues-600), var(--color-deepreds-900)) border-box;
 		border-radius: 1rem;
-		border: 10px solid transparent;
+		border: 3px solid transparent;
+		// box-shadow: 0px 0px 3px 3px rgba(255,255,255,0.25);
 		.author {
 			color: var(--color-gray-300);
 		}
