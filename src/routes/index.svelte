@@ -25,7 +25,7 @@
 	import { page } from '$app/stores';
 	$: path = $page.path;
 	$: console.log(`🚀 ~ file: index.svelte ~ line 24 ~ path`, path);
-	import Posts from '$components/Posts.svelte';
+	// import Posts from '$components/Posts.svelte';
 	export let posts;
 	let selectedPosts = posts?.slice(0, 3);
 	console.log(`🚀 ~ file: index.svelte ~ line 4 ~ posts`, posts);
