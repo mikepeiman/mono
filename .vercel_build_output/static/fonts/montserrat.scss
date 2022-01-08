@@ -10,7 +10,7 @@
 // Latinotype
 
 // variables
-$path-prefix: './fonts';
+$path-prefix: '/fonts';
 $font-subfolder: 'Montserrat/';
 $font-name: 'Montserrat';
 $font-family: 'Montserrat';
@@ -37,7 +37,7 @@ $font-formats: TTF;
 /* Regular */
 @include fontFace( #{$font-name}-Regular, 500, normal );
 /* Regular Italic */
-@include fontFace( #{$font-name}-RegularItalic, 500, italic );
+@include fontFace( #{$font-name}-Italic, 500, italic );
 /* Medium */
 @include fontFace( #{$font-name}-Medium, 600, normal );
 /* Medium Italic */

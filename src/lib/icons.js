@@ -1,9 +1,9 @@
 // each icon set must be npm installed individually to access; eg. `npm i @iconify-json/bx`
 
-import * as IconsMDI from '@iconify-json/mdi-light';
-import * as IconsBX from '@iconify-json/bx';
-import { collections } from '@iconify/collections';
-console.log(`🚀 ~ file: icons.js ~ line 4 ~ collections`, collections)
+// import * as IconsMDI from '@iconify-json/mdi-light';
+// import * as IconsBX from '@iconify-json/bx';
+// import { collections } from '@iconify/collections';
+// console.log(`🚀 ~ file: icons.js ~ line 4 ~ collections`, collections)
 // import { ico } from '@iconify/json';
 // let fa = ico.locate('fa')
 // console.log(`🚀 ~ file: icons.js ~ line 4 ~ fa`, fa)
@@ -21,12 +21,12 @@ console.log(`🚀 ~ file: icons.js ~ line 4 ~ collections`, collections)
 // }
 // const renderData = iconToSVG(iconData, defaults);
 
-const IconSets = {
-    'mdi': {
-        icons: IconsMDI.icons.icons
-    },
-    'bx': {
-        icons: IconsBX.icons.icons
-    },
-}
-export default IconSets
+// const IconSets = {
+//     'mdi': {
+//         icons: IconsMDI.icons.icons
+//     },
+//     'bx': {
+//         icons: IconsBX.icons.icons
+//     },
+// }
+// export default IconSets

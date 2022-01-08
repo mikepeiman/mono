@@ -11,7 +11,7 @@
 // @include fontFace( #{$font-name}<-weight>, <weight numbers>, <font style> );
 
 // variables
-$path-prefix: './fonts' !default;
+$path-prefix: '/fonts' !default;
 $font-subfolder: '' !default;
 $font-name: 'generic-font-name' !default;
 $font-family: $font-name !default;

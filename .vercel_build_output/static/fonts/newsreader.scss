@@ -10,7 +10,7 @@
 // Latinotype
 
 // variables
-$path-prefix: './fonts';
+$path-prefix: '/fonts';
 $font-subfolder: 'newsreader/static/Newsreader';
 $font-name: 'Newsreader';
 $font-family: 'Newsreader';
@@ -33,11 +33,11 @@ $font-formats: TTF;
 /* Book */
 @include fontFace( #{$font-name}-Regular, 400, normal );
 /* Book Italic */
-@include fontFace( #{$font-name}-RegularItalic, 400, italic );
+@include fontFace( #{$font-name}-Italic, 400, italic );
 /* Regular */
 @include fontFace( #{$font-name}-Regular, 500, normal );
 /* Regular Italic */
-@include fontFace( #{$font-name}-RegularItalic, 500, italic );
+@include fontFace( #{$font-name}-Italic, 500, italic );
 /* Medium */
 @include fontFace( #{$font-name}-Medium, 600, normal );
 /* Medium Italic */
@@ -50,7 +50,7 @@ $font-formats: TTF;
 @include fontFace( #{$font-name}-ExtraBold, 800, normal );
 /* Extra Bold Italic */
 @include fontFace( #{$font-name}-ExtraBoldItalic, 800, italic );
-/* Black */
-@include fontFace( #{$font-name}-Black, 900, normal );
-/* Black Italic */
-@include fontFace( #{$font-name}-BlackItalic, 900, italic );
+// /* Black */
+// @include fontFace( #{$font-name}-Black, 900, normal );
+// /* Black Italic */
+// @include fontFace( #{$font-name}-BlackItalic, 900, italic );
