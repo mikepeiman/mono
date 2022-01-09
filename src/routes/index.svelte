@@ -142,7 +142,7 @@
 		<div class="posts-panel flex flex-col self-center mt-12 mx-0 w-full md:mt-0">
 			<div class="post w-full">
 				<div
-					class="view-more font-montserrat uppercase flex flex-row items-center justify-between -mb-4 border-t-[1px] lg:border-t-0 py-2 border-winterblues-400/[0.75]"
+					class="view-more font-montserrat uppercase flex flex-row items-center justify-between -mb-4 border-t-[1px] lg:border-t-0 py-2 lg:pt-0 border-winterblues-400/[0.75]"
 				>
 					<h2
 						class="recent-label uppercase font-montserrat text-winterblues-400/[0.75] text-base lg:text-lg"
