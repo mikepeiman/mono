@@ -85,7 +85,7 @@
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
-			<h1 class="text-3xl lg:text-5xl font-bold font-display text-winterblues-600">Hi, I'm Mike.</h1>
+			<h1 class="text-3xl lg:text-5xl font-bold font-display text-winterblues-300">Hi, I'm Mike.</h1>
 			<p class="intro-body mt-3 font-light text-xl xl:text-2xl leading-relaxed font-montserrat">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="font-bold italic color-1">user experience</span> and design that helps realize
@@ -98,7 +98,7 @@
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
 					<h2
-						class="li-heading  color-3 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading color-3 leading-none text-xl lg:text-2xl "
 					>
 						Never deny the user basic options.
 					</h2>
@@ -110,7 +110,7 @@
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading   color-3 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading   color-3 leading-none lg:text-2xl "
 					>
 						Minimize barriers to action.
 					</h2>
@@ -123,7 +123,7 @@
 				</li>
 				<li class="mt-4">
 					<h2
-						class="li-heading  color-3 leading-none md:text-2xl xl:text-3xl"
+						class="li-heading  color-3 leading-none lg:text-2xl "
 					>
 						Leverage visual intelligence.
 					</h2>
@@ -145,7 +145,7 @@
 
 		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
 			<div class="post w-full">
-				<h2 class="recent-label uppercase font-montserrat -mt-2 -mb-4 text-sky-300 text-md lg:text-lg">
+				<h2 class="recent-label uppercase font-montserrat mt-6 md:mt-0 -mb-4 text-sky-300 text-md lg:text-lg">
 					Recent posts
 				</h2>
 				{#each selectedPosts as post}
@@ -162,7 +162,7 @@
 								<Time timestamp={post.date} />
 							</div>
 							<h1
-								class="font-display font-bold text-winterblues-700 z-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
+								class="font-display font-bold text-winterblues-300 z-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
 							>
 								{post.title}
 							</h1>
@@ -176,15 +176,15 @@
 			<div
 				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end mb-4"
 			>
-				<a href="/blog" class="view-more pr-4 pb-2 offset-4 no-underline  text-sky-300 hover:text-sky-100 hover:decoration-2  transition">View more articles </a>
+				<a href="/blog" class="view-more pr-4 pb-2 -mt-3.5 xl:-mt-2 offset-4 no-underline  text-sky-300 hover:text-sky-100 hover:decoration-2  transition">View more articles </a>
 
-				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
+				<div class="icon-wrapper -top-[16px] xl:-top-[7px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
+				<div class="icon-wrapper -top-[16px] xl:-top-[7px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
+				<div class="icon-wrapper -top-[16px] xl:-top-[7px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
 			</div>
@@ -284,9 +284,9 @@
 
 	:root {
 		--color-1: var(--color-fuchsia-300);
-		--color-2: var(--color-emerald-400);
+		--color-2: var(--color-emerald-300);
 		// --color-3: var(--color-sky-400);
-		--color-3: var(--color-winterblues-600);
+		--color-3: var(--color-winterblues-400);
 	}
 
 	.color-1 {
@@ -334,7 +334,7 @@
 	}
 
 	a {
-		// @apply underline underline-offset-4  decoration-sky-500;
+		// @apply underline underline-offset-4  decoration-winterblues-500;
 	}
 
 	.icon-wrapper {
@@ -342,13 +342,13 @@
 		// padding-top: 2px;
 		@apply -mr-4 transition right-0 text-2xl;
 		&:nth-of-type(1) {
-			@apply text-sky-400 right-6 transition delay-300;
+			@apply text-winterblues-400 right-6 transition delay-300;
 		}
 		&:nth-of-type(2) {
-			@apply text-sky-600 right-4 transition delay-200;
+			@apply text-winterblues-600 right-4 transition delay-200;
 		}
 		&:nth-of-type(3) {
-			@apply text-sky-800 right-2 transition delay-100;
+			@apply text-winterblues-800 right-2 transition delay-100;
 		}
 	}
 	.view-more {
@@ -361,13 +361,13 @@
 			transition-delay: 0s;
 			.icon-wrapper {
 				&:nth-of-type(1) {
-					@apply text-sky-200 transition delay-100;
+					@apply text-winterblues-200 transition delay-100;
 				}
 				&:nth-of-type(2) {
-					@apply text-sky-400 transition delay-200;
+					@apply text-winterblues-400 transition delay-200;
 				}
 				&:nth-of-type(3) {
-					@apply text-sky-600 transition delay-300;
+					@apply text-winterblues-600 transition delay-300;
 				}
 			}
 		}
@@ -459,7 +459,7 @@
 				position: relative;
 				left: 0.75rem;
 				color: var(--color-3);
-				@apply font-semibold italic text-xl leading-none ;
+				@apply font-semibold italic leading-none ;
 			}
 			.li-snippet {
 				font-family: 'Montserrat', sans-serif;
@@ -506,7 +506,7 @@
 					var(--color-amber-500) 25%,
 					var(--color-rose-500) 50%,
 					var(--color-fuchsia-500) 75%,
-					var(--color-sky-400) 90%,
+					var(--color-winterblues-400) 90%,
 				)
 				border-box;
 			// linear-gradient(
