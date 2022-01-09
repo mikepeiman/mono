@@ -139,7 +139,7 @@
 		/> -->
 		<!-- SEPARATOR -->
 
-		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
+		<div class="posts-panel flex flex-col self-center mt-12 mx-0 w-full md:mt-0">
 			<div class="post w-full">
 				<div
 					class="view-more font-montserrat uppercase flex flex-row items-center justify-between -mb-4 border-t-[1px] lg:border-t-0 py-2 border-winterblues-400/[0.75]"
