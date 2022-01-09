@@ -200,7 +200,7 @@
 		class="flex flex-col w-full self-center text-center items-center justify-center  px-8 lg:px-0"
 	>
 		<p
-			class="statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:m-0 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
+			class="statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:mx-0 lg:mb-6 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
 		>
 			<span class=" font-medium"
 				>&ldquo;If a system is to serve the creative spirit, it must be entirely comprehensible to a
