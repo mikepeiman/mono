@@ -56,7 +56,7 @@
 	<div class="icon-nav exception-2 w-screen border-b-[1px] border-amber-400/[0.5] mt-4 md:mt-8 pl-8 ">
 		<!-- <div class="border-b-[1px] border-amber-400/[0.5] h-[1px] w-full p-1"> -->
 		<a
-			href="/"
+			href="/blog"
 			class="text-winterblues-700 rounded-xl self-start justify-self-start place-self-start"
 		>
 			<div
