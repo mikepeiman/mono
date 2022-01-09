@@ -17,7 +17,7 @@
 		<slot />
 	</div>
 	<div class="">
-		<Footer bgColor="bg-winterblues-700" textColor="text-gray-900" />
+		<Footer textColor="text-gray-900" />
 	</div>
 {:else if path !== '/' && !path.includes('egghead-discord')}
 	<div id="app-layout" class="grid w-auto min-h-screen max-h-full bg-black transition">

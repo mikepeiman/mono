@@ -21,6 +21,8 @@
 @import '../static/fonts/vollkorn.scss';
 @import '../static/fonts/montserrat.scss';
 // @import '../static/fonts/font-styles.css';
+
+@import './prose.scss';
 @layer components {
     .articles-change {
         grid-template-areas: 'intro posts'
