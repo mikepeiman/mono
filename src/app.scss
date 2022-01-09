@@ -25,7 +25,9 @@
     .articles-change {
         grid-template-areas: 'intro posts'
             'separator separator';
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: minmax(10rem, 3fr) minmax(10rem, 2fr);
+        // min-width: 10rem;
+        // width: 100%;
     }
     .blog-post-fancy-bg {
         background: linear-gradient(90deg, var(--color-winterblues-300) 0%, var(--color-winterblues-100) 5%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 80%,var(--color-winterblues-100) 95%, var(--color-winterblues-300) 100%);

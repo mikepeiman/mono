@@ -10,7 +10,7 @@
 	import IconPersonPlus from '~icons/bi/person-plus-fill';
 	import tooltip from '$utils/tooltip.js';
 	import { onMount } from 'svelte';
-	import IconSets from '$lib/icons.js';
+	// import IconSets from '$lib/icons.js';
 	import Icon from '@iconify/svelte';
 	// console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ IconSets`, IconSets);
 	// console.log(`🚀 ~ file: Channels.svelte ~ line 19 ~ BX `, IconSets.bx);

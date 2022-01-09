@@ -99,20 +99,20 @@
 
 			<ol class="pl-7 mt-6 text-xl">
 				<li class="mt-4">
-					<h2 class="li-heading color-3 leading-none text-xl lg:text-2xl ">
+					<h2 class="li-heading color-3 leading-none text-xl lg:text-2xl xl:mt-3 ">
 						Never deny the user basic options.
 					</h2>
-					<p class="li-snippet text-base lg:text-lg">
+					<p class="li-snippet text-base lg:text-lg mt-3 font-light ml-3 xl:text-xl">
 						Users should be provided the means to <span class="italic color-1 font-medium"
 							>customize the user interface</span
 						> as much as possible.
 					</p>
 				</li>
 				<li class="mt-4">
-					<h2 class="li-heading   color-3 leading-none lg:text-2xl ">
+					<h2 class="li-heading color-3 leading-none lg:text-2xl xl:mt-9">
 						Minimize barriers to action.
 					</h2>
-					<p class="li-snippet text-base lg:text-lg">
+					<p class="li-snippet text-base lg:text-lg mt-3 font-light ml-3 xl:text-xl">
 						The app (or website) is <span class="italic color-2 font-medium">for something</span>.
 						Make it as
 						<span class="italic color-1 font-medium">intuitive and efficient</span>
@@ -120,10 +120,10 @@
 					</p>
 				</li>
 				<li class="mt-4">
-					<h2 class="li-heading  color-3 leading-none lg:text-2xl ">
+					<h2 class="li-heading color-3 leading-none lg:text-2xl xl:mt-9">
 						Leverage visual intelligence.
 					</h2>
-					<p class="li-snippet text-base lg:text-lg">
+					<p class="li-snippet text-base lg:text-lg mt-3 font-light ml-3 xl:text-xl">
 						Augment words and iconography with <span class="italic color-1 font-medium">color</span>
 						and structure - <span class="italic color-2 font-medium">draw the eye</span> to key points
 						and relationships. Effectively use negative space, layout and structure, diagrams and images
@@ -152,7 +152,7 @@
 					<div class="view-more relative">
 						<a
 							href="/blog"
-							class="view-more font-montserrat text-base xl:text-lg pr-8 relative flex flex-row transition text-winterblues-400/[0.75] hover:text-white"
+							class="view-more font-montserrat text-base xl:text-lg pr-8 relative flex flex-row text-right transition text-winterblues-400/[0.75] hover:text-white"
 							>View more articles
 						</a>
 						<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
@@ -197,19 +197,19 @@
 	</section>
 
 	<section
-		class="flex flex-col w-full self-center text-center items-center justify-center  px-8 lg:px-0"
+		class="flex flex-col w-full min-w-0 shrink self-center text-center items-center justify-center  px-8 lg:px-0"
 	>
 		<p
 			class="statement text-3xl leading-relaxed font-bold italic text-center p-6 border-2 -mx-3 my-12 lg:mx-0 lg:mb-6 lg:border-none border-amber-500 rounded-lg w-auto xl:w-4/5 xl:px-16 xl:leading-loose lg:text-4xl 2xl:w-3/4 2xl:text-4xl self-center py-12 "
 		>
-			<span class=" font-medium"
+			<span class="font-medium min-w-0"
 				>&ldquo;If a system is to serve the creative spirit, it must be entirely comprehensible to a
 				single individual.&rdquo;</span
 			> <br /><span class="font-bold text-lg author uppercase ">Daniel H. H. Ingalls</span>
 		</p>
 	</section>
 
-	<section class="projects flex flex-col w-full justify-center px-4 md:px-6 lg:px-0">
+	<section class="projects min-w-0 shrink flex flex-col w-full justify-center px-4 md:px-6 lg:px-0">
 		<div
 			class="flex flex-row items-center justify-between mt-9 -mb-1 border-t-[1px] lg:border-t-0 py-2 border-amber-400/[0.75] "
 		>
@@ -223,7 +223,7 @@
 				class="view-more font-montserrat text-base xl:text-lg pr-4 relative flex flex-row transition text-amber-400/[0.75] hover:text-white"
 			>
 				<!-- -mb-3 xl:-mb-0 md:-mb-2  justify-end-->
-				<a href="/creative" class="view-more offset-4 pr-4 no-underline uppercase"
+				<a href="/creative" class="view-more offset-4 pr-4 no-underline uppercase text-right"
 					>View more projects</a
 				>
 				<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
@@ -237,14 +237,14 @@
 				</div>
 			</h2>
 		</div>
-		<div class="projects-group md:grid w-full flex flex-col mb-12">
+		<div class="projects-group min-w-0 shrink  md:grid w-full flex flex-col mb-12">
 			{#each projects as project}
 				<a href={`/${project.url}`} class="project-card-link no-underline flex my-3 md:mx-3">
 					<!-- make a 'projects' directory for these -->
 					<div
 						class="project-card card rounded-md transition-all  bg-gray-900 hover:bg-sky-800/[0.5] flex flex-col  md:flex-col-reverse md:justify-between lg:flex-col lg:justify-start p-5 lg:p-7 rounded-md  hover:-translate-x-2 md:hover:-translate-y-2 md:hover:translate-x-0"
 					>
-						<div class="text-xs ml-1 flex flex-row project-tags">
+						<div class="text-xs flex flex-row project-tags">
 							<!-- {#each project.tags as tag}
 								<span
 									class="project-tag -ml-2 mr-4 mb-4 bg-winterblues-300 bg-opacity-30 rounded-md text-xs font-thin p-1"
@@ -252,11 +252,11 @@
 								>
 							{/each} -->
 							{#if project.tags}
-								<div class="mb-4 -mt-2 lg:mb-4 lg:-mt-2 md:mb-2 md:mt-2 space-x-2">
+								<div class="mb-4 -mt-2 lg:mb-4 lg:-mt-2 md:mb-2 md:mt-2 space-x-2 flex flex-wrap justify-start align-start">
 									{#each project.tags as tag}
-										<span
-											class="project-tag font-light font-montserrat -ml-2 whitespace-nowrap px-2 py-1 rounded bg-fuchsia-900/[0.5] text-yellow-300/[0.75]"
-											>{tag}</span
+										<div
+											class="project-tag font-light font-montserrat mt-1 whitespace-nowrap px-2 py-1 rounded bg-fuchsia-900/[0.5] text-yellow-300/[0.75]"
+											>{tag}</div
 										>
 									{/each}
 								</div>
@@ -462,10 +462,6 @@
 				color: var(--color-3);
 				@apply font-semibold italic leading-none;
 			}
-			.li-snippet {
-				font-family: 'Montserrat', sans-serif;
-				@apply mt-3 font-light ml-3;
-			}
 		}
 	}
 
@@ -533,5 +529,9 @@
 	}
 	.project-tags {
 		grid-area: tags;
+		div {
+			margin-left: 0px;
+			margin-right: 4px;
+		}
 	}
 </style>
