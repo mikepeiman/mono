@@ -85,7 +85,7 @@
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
-			<h1 class="text-3xl lg:text-5xl font-bold font-display">Hi, I'm Mike.</h1>
+			<h1 class="text-3xl lg:text-5xl font-bold font-display text-winterblues-600">Hi, I'm Mike.</h1>
 			<p class="intro-body mt-3 font-light text-xl xl:text-2xl leading-relaxed font-montserrat">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="font-bold italic color-1">user experience</span> and design that helps realize
@@ -157,12 +157,12 @@
 							<img class="rounded-xl p-0" src={post.coverImage.url} alt={`Cover image for ${post.title}`} />
 						</figure> -->
 							<div
-								class="z-10 article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-base font-fira  text-yellow-300/[0.75]"
+								class="post-title z-10 article-date p-0 pb-1 m-0 text-xs md:text-sm lg:pb-2 xl:pb-3 font-base font-fira  text-yellow-300/[0.75]"
 							>
 								<Time timestamp={post.date} />
 							</div>
 							<h1
-								class="font-display font-bold text-sky-100 z-10 text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
+								class="font-display font-bold text-winterblues-700 z-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
 							>
 								{post.title}
 							</h1>
@@ -261,7 +261,7 @@
 						</div>
 						<div class="project-details flex flex-col ">
 							<h1
-								class="font-display font-bold text-sky-100 z-10 text-lg md:text-xl lg:text-2xl xl:text-3xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
+								class="font-display font-bold text-amber-200 z-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-0 md:mb-1 lg:mb-2 xl:mb-3 -mt-1"
 							>
 								{project.name}
 							</h1>
@@ -285,7 +285,8 @@
 	:root {
 		--color-1: var(--color-fuchsia-300);
 		--color-2: var(--color-emerald-400);
-		--color-3: var(--color-sky-400);
+		// --color-3: var(--color-sky-400);
+		--color-3: var(--color-winterblues-600);
 	}
 
 	.color-1 {
@@ -318,7 +319,7 @@
 	}
 
 	.separator {
-		@apply bg-gradient-to-l from-blue-400 via-electricindigo-300 to-blue-400;
+		@apply bg-gradient-to-l from-blue-400 via-electricindigo-300 to-winterblues-400;
 	}
 	.separator-2 {
 		grid-area: separator;
@@ -341,13 +342,13 @@
 		// padding-top: 2px;
 		@apply -mr-4 transition right-0 text-2xl;
 		&:nth-of-type(1) {
-			@apply text-blue-400 right-6 transition delay-300;
+			@apply text-sky-400 right-6 transition delay-300;
 		}
 		&:nth-of-type(2) {
-			@apply text-blue-600 right-4 transition delay-200;
+			@apply text-sky-600 right-4 transition delay-200;
 		}
 		&:nth-of-type(3) {
-			@apply text-blue-800 right-2 transition delay-100;
+			@apply text-sky-800 right-2 transition delay-100;
 		}
 	}
 	.view-more {
@@ -360,13 +361,13 @@
 			transition-delay: 0s;
 			.icon-wrapper {
 				&:nth-of-type(1) {
-					@apply text-blue-200 transition delay-100;
+					@apply text-sky-200 transition delay-100;
 				}
 				&:nth-of-type(2) {
-					@apply text-blue-400 transition delay-200;
+					@apply text-sky-400 transition delay-200;
 				}
 				&:nth-of-type(3) {
-					@apply text-blue-600 transition delay-300;
+					@apply text-sky-600 transition delay-300;
 				}
 			}
 		}
@@ -505,7 +506,7 @@
 					var(--color-amber-500) 25%,
 					var(--color-rose-500) 50%,
 					var(--color-fuchsia-500) 75%,
-					var(--color-sky-500) 90%,
+					var(--color-sky-400) 90%,
 				)
 				border-box;
 			// linear-gradient(

@@ -2,6 +2,9 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   important: false,
+  experimental: {
+    applyComplexClasses: true,
+  },
   mode: 'jit',
   content: ['./src/**/*.svelte'],
   theme: {
@@ -229,15 +232,15 @@ module.exports = {
           900: "#ffba08"
         },
         winterblues: {
-          100: "#03045e",
-          200: "#023e8a",
-          300: "#0077b6",
-          400: "#0096c7",
+          100: "#caf0f8",
+          200: "#ade8f4",
+          300: "#90e0ef",
+          400: "#48cae4",
           500: "#00b4d8",
-          600: "#48cae4",
-          700: "#90e0ef",
-          800: "#ade8f4",
-          900: "#caf0f8"
+          600: "#0096c7",
+          700: "#0077b6",
+          800: "#023e8a",
+          100: "#03045e",
         },
         limegreens: {
           100: "#002411",
