@@ -97,7 +97,7 @@
 				<span class="color-3 font-bold italic">design principles</span>:
 			</p>
 
-			<ol class="pl-7 mt-6">
+			<ol class="pl-7 mt-6 text-xl">
 				<li class="mt-4">
 					<h2 class="li-heading color-3 leading-none text-xl lg:text-2xl ">
 						Never deny the user basic options.
@@ -155,13 +155,13 @@
 							class="view-more font-montserrat text-base xl:text-lg pr-8 relative flex flex-row transition text-winterblues-400/[0.75] hover:text-white"
 							>View more articles
 						</a>
-						<div class="icon-wrapper -top-[1px] ">
+						<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
 							<IconChevronRight class="icon-chevron" />
 						</div>
-						<div class="icon-wrapper -top-[1px] ">
+						<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
 							<IconChevronRight class="icon-chevron" />
 						</div>
-						<div class="icon-wrapper -top-[1px] ">
+						<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
 							<IconChevronRight class="icon-chevron" />
 						</div>
 					</div>
@@ -226,13 +226,13 @@
 				<a href="/creative" class="view-more offset-4 pr-4 no-underline uppercase"
 					>View more projects</a
 				>
-				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
+				<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
+				<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
-				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
+				<div class="icon-wrapper -top-[3px] xl:-top-[1px]">
 					<IconChevronRight class="icon-chevron" />
 				</div>
 			</h2>
