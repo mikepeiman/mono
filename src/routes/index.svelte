@@ -85,7 +85,7 @@
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
-			<h1 class="text-3xl lg:text-5xl font-bold font-display text-winterblues-300">Hi, I'm Mike.</h1>
+			<h1 class="text-4xl lg:text-6xl font-bold font-display text-winterblues-300">Hi, I'm Mike.</h1>
 			<p class="intro-body mt-3 font-light text-xl xl:text-2xl leading-relaxed font-montserrat">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="font-bold italic color-1">user experience</span> and design that helps realize
