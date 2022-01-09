@@ -48,7 +48,7 @@
 			name: 'Creative Coding',
 			url: './creative/sketch03',
 			tags: ['creative coding', 'generative art', 'javascript'],
-			desc: 'Fulfilling a lifelong passion for beauty, and exploring the relationships between form, movement and number.',
+			desc: 'Fulfilling a lifelong passion for beauty, and exploring the relationships between form, movement and number.'
 			// component: Sketch03Preview
 		}
 	];
@@ -85,7 +85,9 @@
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
-			<h1 class="text-4xl lg:text-6xl font-bold font-display text-winterblues-300">Hi, I'm Mike.</h1>
+			<h1 class="text-4xl lg:text-6xl font-bold font-display text-winterblues-300">
+				Hi, I'm Mike.
+			</h1>
 			<p class="intro-body mt-3 font-light text-xl xl:text-2xl leading-relaxed font-montserrat">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="font-bold italic color-1">user experience</span> and design that helps realize
@@ -97,9 +99,7 @@
 
 			<ol class="pl-7 mt-6">
 				<li class="mt-4">
-					<h2
-						class="li-heading color-3 leading-none text-xl lg:text-2xl "
-					>
+					<h2 class="li-heading color-3 leading-none text-xl lg:text-2xl ">
 						Never deny the user basic options.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
@@ -109,9 +109,7 @@
 					</p>
 				</li>
 				<li class="mt-4">
-					<h2
-						class="li-heading   color-3 leading-none lg:text-2xl "
-					>
+					<h2 class="li-heading   color-3 leading-none lg:text-2xl ">
 						Minimize barriers to action.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
@@ -122,9 +120,7 @@
 					</p>
 				</li>
 				<li class="mt-4">
-					<h2
-						class="li-heading  color-3 leading-none lg:text-2xl "
-					>
+					<h2 class="li-heading  color-3 leading-none lg:text-2xl ">
 						Leverage visual intelligence.
 					</h2>
 					<p class="li-snippet text-base lg:text-lg">
@@ -145,15 +141,37 @@
 
 		<div class="posts-panel flex flex-col self-center mt-9 mx-0 w-full md:mt-0">
 			<div class="post w-full">
-				<h2 class="recent-label uppercase font-montserrat mt-6 md:mt-0 -mb-4 text-sky-300 text-md lg:text-lg">
-					Recent posts
-				</h2>
+				<div
+					class="view-more font-montserrat uppercase flex flex-row items-center justify-between -mb-4 border-t-[1px] lg:border-t-0 py-2 border-winterblues-400/[0.75]"
+				>
+					<h2
+						class="recent-label uppercase font-montserrat text-winterblues-400/[0.75] text-base lg:text-lg"
+					>
+						Recent posts
+					</h2>
+					<div class="view-more relative">
+						<a
+							href="/blog"
+							class="view-more font-montserrat text-base xl:text-lg pr-8 relative flex flex-row transition text-winterblues-400/[0.75] hover:text-white"
+							>View more articles
+						</a>
+						<div class="icon-wrapper -top-[1px] ">
+							<IconChevronRight class="icon-chevron" />
+						</div>
+						<div class="icon-wrapper -top-[1px] ">
+							<IconChevronRight class="icon-chevron" />
+						</div>
+						<div class="icon-wrapper -top-[1px] ">
+							<IconChevronRight class="icon-chevron" />
+						</div>
+					</div>
+				</div>
 				{#each selectedPosts as post}
 					<a href={`/blog/${post.slug}`} class="no-underline relative">
 						<div
 							class="post-card transition duration-300  p-5 lg:p-7  rounded-md bg-gray-900 my-6 hover:bg-sky-800/[0.5] hover:-translate-x-2"
 						>
-						<!-- <figure class="absolute left-0 top-0 opacity-50">
+							<!-- <figure class="absolute left-0 top-0 opacity-50">
 							<img class="rounded-xl p-0" src={post.coverImage.url} alt={`Cover image for ${post.title}`} />
 						</figure> -->
 							<div
@@ -166,34 +184,16 @@
 							>
 								{post.title}
 							</h1>
-							<p class="font-fira font-light text-sky-200 tracking-wider z-10 text-sm md:text-base xl:text-lg">
+							<p
+								class="font-fira font-light text-sky-200 tracking-wider z-10 text-sm md:text-base xl:text-lg"
+							>
 								{post.excerpt}
 							</p>
 						</div>
 					</a>
 				{/each}
 			</div>
-			<div
-				class="view-more text-base xl:text-lg text-right pr-4 relative flex flex-row justify-end mb-4"
-			>
-				<a href="/blog" class="view-more pr-4 pb-2 -mt-3.5 xl:-mt-2 offset-4 no-underline  text-sky-300 hover:text-sky-100 hover:decoration-2  transition">View more articles </a>
-
-				<div class="icon-wrapper -top-[16px] xl:-top-[7px]">
-					<IconChevronRight class="icon-chevron" />
-				</div>
-				<div class="icon-wrapper -top-[16px] xl:-top-[7px]">
-					<IconChevronRight class="icon-chevron" />
-				</div>
-				<div class="icon-wrapper -top-[16px] xl:-top-[7px]">
-					<IconChevronRight class="icon-chevron" />
-				</div>
-			</div>
 		</div>
-		<!-- SEPARATOR -->
-		<!-- <div
-			class="separator separator-2 mt-9 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cool3-500 to-emerald-500 w-full"
-		/> -->
-		<!-- SEPARATOR -->
 	</section>
 
 	<section
@@ -210,21 +210,21 @@
 	</section>
 
 	<section class="projects flex flex-col w-full justify-center px-4 md:px-6 lg:px-0">
-		<!-- SEPARATOR -->
-		<!-- <div
-			class="separator separator-3 m-0 h-6 rounded-xl bg-gradient-to-bl from-emerald-500 via-cool3-500 to-emerald-500 w-full"
-		/> -->
-		<!-- SEPARATOR -->
-		<div class="flex flex-row items-end justify-between">
+		<div
+			class="flex flex-row items-center justify-between mt-9 -mb-1 border-t-[1px] lg:border-t-0 py-2 border-amber-400/[0.75] "
+		>
 			<h2
-				class="recent-label font-montserrat uppercase text-md lg:text-lg text-amber-400/[0.75] mt-9 -mb-1 md:mb-0 xl:mb-2"
+				class="recent-label font-montserrat uppercase text-base lg:text-lg text-amber-400/[0.75] "
 			>
 				Selected Projects
 			</h2>
+			<!-- <div class="h-full w-0.5 bg-amber-400/[0.75]"></div> -->
 			<h2
-				class="view-more text-right text-base xl:text-lg pr-4 -mb-3 xl:-mb-0 md:-mb-2 relative flex flex-row justify-end transition text-amber-400/[0.75] hover:text-white"
+				class="view-more font-montserrat text-base xl:text-lg pr-4 relative flex flex-row transition text-amber-400/[0.75] hover:text-white"
 			>
-				<a href="/creative" class="view-more offset-4 pr-4 pb-2 no-underline ">View more projects</a
+				<!-- -mb-3 xl:-mb-0 md:-mb-2  justify-end-->
+				<a href="/creative" class="view-more offset-4 pr-4 no-underline uppercase"
+					>View more projects</a
 				>
 				<div class="icon-wrapper -top-[1px] xl:top-[1px]">
 					<IconChevronRight class="icon-chevron" />
@@ -252,12 +252,15 @@
 								>
 							{/each} -->
 							{#if project.tags}
-							<div class="mb-4 -mt-2 lg:mb-4 lg:-mt-2 md:mb-2 md:mt-2 space-x-2">
-								{#each project.tags as tag}
-									<span class="project-tag font-light font-montserrat -ml-2 whitespace-nowrap px-2 py-1 rounded bg-fuchsia-900/[0.5] text-yellow-300/[0.75]">{tag}</span>
-								{/each}
-							</div>
-						{/if}
+								<div class="mb-4 -mt-2 lg:mb-4 lg:-mt-2 md:mb-2 md:mt-2 space-x-2">
+									{#each project.tags as tag}
+										<span
+											class="project-tag font-light font-montserrat -ml-2 whitespace-nowrap px-2 py-1 rounded bg-fuchsia-900/[0.5] text-yellow-300/[0.75]"
+											>{tag}</span
+										>
+									{/each}
+								</div>
+							{/if}
 						</div>
 						<div class="project-details flex flex-col ">
 							<h1
@@ -265,7 +268,9 @@
 							>
 								{project.name}
 							</h1>
-							<p class="font-fira font-light text-sky-200 tracking-wider mt-2 text-sm md:text-base xl:text-lg ">
+							<p
+								class="font-fira font-light text-sky-200 tracking-wider mt-2 text-sm md:text-base xl:text-lg "
+							>
 								{project.desc}
 							</p>
 						</div>
@@ -352,9 +357,6 @@
 		}
 	}
 	.view-more {
-		.view-more {
-			@apply pr-4 pb-2;
-		}
 		transition: all;
 		transition-delay: 0.1s;
 		&:hover {
@@ -409,7 +411,6 @@
 		grid-area: posts;
 	}
 
-
 	.project-card {
 		display: flex;
 		// grid-template-columns: 3fr minmax(45%, 2fr);
@@ -459,7 +460,7 @@
 				position: relative;
 				left: 0.75rem;
 				color: var(--color-3);
-				@apply font-semibold italic leading-none ;
+				@apply font-semibold italic leading-none;
 			}
 			.li-snippet {
 				font-family: 'Montserrat', sans-serif;
@@ -506,18 +507,18 @@
 					var(--color-amber-500) 25%,
 					var(--color-rose-500) 50%,
 					var(--color-fuchsia-500) 75%,
-					var(--color-winterblues-400) 90%,
+					var(--color-winterblues-400) 90%
 				)
 				border-box;
-			// linear-gradient(
-			// 		120deg,
-			// 		rgba(131, 58, 180, 1) 10%,
-			// 		rgba(47, 174, 177, 1) 22%,
-			// 		rgba(253, 29, 29, 1) 50%,
-			// 		rgba(191, 252, 55, 1) 72%,
-			// 		rgba(252, 176, 69, 1) 90%
-			// 	)
-			// 	border-box;
+		// linear-gradient(
+		// 		120deg,
+		// 		rgba(131, 58, 180, 1) 10%,
+		// 		rgba(47, 174, 177, 1) 22%,
+		// 		rgba(253, 29, 29, 1) 50%,
+		// 		rgba(191, 252, 55, 1) 72%,
+		// 		rgba(252, 176, 69, 1) 90%
+		// 	)
+		// 	border-box;
 		// linear-gradient(to right, var(--color-winterblues-600), var(--color-deepreds-900)) border-box;
 		border-radius: 1rem;
 		border: 3px solid transparent;
@@ -533,6 +534,4 @@
 	.project-tags {
 		grid-area: tags;
 	}
-
-
 </style>
