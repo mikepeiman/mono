@@ -1,17 +1,19 @@
 <script>
     export let bgColor = 'bg-gray-900'
     export let textColor = 'text-gray-300'
-    console.log(`🚀 ~ file: Footer.svelte ~ line 3 ~ bgColor`, bgColor)
-    let icons = [
-        {name: 'Github', src: ''}
-    ]
+    import Icon from '@iconify/svelte';
+    let icons =       {
+            github: 'carbon:logo-github',
+    }
+    
 
 </script>
 
 <div class="footer grid {bgColor} {textColor} font-display text-base flex align-middle items-center justify-between h-20">
     <!-- <button class="logo btn btn-outline place-content-center mx-5 p-5 rounded-lg bg-blue-700">Footer</button> -->
     <nav class="social w-full flex items-center justify-center xl:pl-24">
-        <p>Made with <span class="text-rose-500 text-lg px-1">♥</span> by Mike Peiman.</p>
+        <div>Made with <span class="text-rose-500 text-lg px-1">♥</span> by Mike Peiman.</div>
+        <a href="https://github.com/mikepeiman" target="_blank" class="w-8 h-8 text-rose-300 hover:text-winterblues-700 transition"><Icon icon={icons.github} class="w-8 h-8 -mt-.5" /></a>
         <!-- <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/creative">Creative</a> -->
