@@ -81,14 +81,14 @@
 <svelte:window bind:innerWidth={windowInnerWidth} />
 
 <main
-	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:px-12 xl:px-24 2xl:w-4/5 2xl:px-12 3xl:w-3/4 3xl:px-36 mt-20"
+	class="homepage bg-black flex flex-col self-center justify-items-center items-center w-full lg:text-sm lg:px-12 xl:px-24 2xl:w-4/5 2xl:px-12 3xl:w-3/4 3xl:px-36 mt-4 md:mt-20"
 >
 	<section class="articles md:grid md:articles-change w-full px-4 md:px-6 lg:px-0 self-center  p-3">
 		<div class="intro flex flex-col text-lg md:pr-12 lg:pr-18 xl:pr-24 xl:text-xl">
 			<h1 class="text-4xl lg:text-6xl font-bold font-display text-winterblues-300">
 				Hi, I'm Mike.
 			</h1>
-			<p class="intro-body mt-3 font-light text-xl xl:text-2xl leading-relaxed font-montserrat">
+			<p class="intro-body mt-3 font-light text-lg md:text-xl xl:text-2xl leading-snug md:leading-relaxed font-montserrat">
 				I'm a creative software developer, and this is my professional blog. I love
 				<span class="font-bold italic color-1">user experience</span> and design that helps realize
 				human potential. I follow a
