@@ -1,16 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "mono",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-=======
 	"name": "kitplate",
 	"version": "0.0.1",
 	"scripts": {
@@ -71,5 +59,4 @@
 		"tippy.js": "^6.3.7",
 		"tweakpane": "^3.0.7"
 	}
->>>>>>> kitplate/master
 }
